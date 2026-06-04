@@ -9,8 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TheHaircareChallengeRouteImport } from './routes/the-haircare-challenge'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TheHaircareChallengeRoute = TheHaircareChallengeRouteImport.update({
+  id: '/the-haircare-challenge',
+  path: '/the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +25,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/the-haircare-challenge': typeof TheHaircareChallengeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/the-haircare-challenge': typeof TheHaircareChallengeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/the-haircare-challenge': typeof TheHaircareChallengeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/the-haircare-challenge'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/the-haircare-challenge'
+  id: '__root__' | '/' | '/the-haircare-challenge'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  TheHaircareChallengeRoute: typeof TheHaircareChallengeRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/the-haircare-challenge': {
+      id: '/the-haircare-challenge'
+      path: '/the-haircare-challenge'
+      fullPath: '/the-haircare-challenge'
+      preLoaderRoute: typeof TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  TheHaircareChallengeRoute: TheHaircareChallengeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
