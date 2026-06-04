@@ -15,10 +15,11 @@ export const Route = createFileRoute("/the-haircare-challenge")({
 
 function HaircareChallengePage() {
   return (
-    <main className="min-h-screen flex items-center justify-center px-6">
+    <main className="min-h-screen flex flex-col items-center justify-center gap-4 px-6">
       <h1 className="text-3xl font-display text-foreground text-center">
         The Haircare Challenge
       </h1>
+      <Label className="text-muted-foreground">Placeholder label</Label>
     </main>
   );
 }
