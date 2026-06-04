@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/the-haircare-challenge")({
   head: () => ({
