@@ -232,15 +232,8 @@ function Recognition() {
 /* ---------------- Section 2b — Video testimonial (9:16 vertical) ---------------- */
 function RecognitionVideo() {
   return (
-    <section className="bg-lav">
-      <div className="wrap-wide" style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingTop: 0 }}>
-        <Reveal className="center" style={{ marginBottom: 20 }}>
-          <div className="reco-header-block" style={{ maxWidth: 520 }}>
-            <div className="reco-eyebrow">REAL WOMEN. REAL RESULTS.</div>
-            <h2 className="h2 reco-headline" style={{ fontSize: 22 }}>Watch how she turned it around</h2>
-          </div>
-        </Reveal>
-
+    <section className="bg-video-section">
+      <div className="wrap-wide" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <Reveal delay={80}>
           <div className="vert-video-card">
             {/* 9:16 placeholder thumbnail */}
