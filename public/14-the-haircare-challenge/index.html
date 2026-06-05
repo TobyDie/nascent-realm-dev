@@ -340,6 +340,72 @@
     .reco-emoji { font-size: 22px; line-height: 1; }
 
     /* ===========================================================
+       Recognition — stacked skim list
+       =========================================================== */
+    .reco-header-block {
+      background: var(--cream);
+      border-radius: 18px;
+      padding: 22px 28px;
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .reco-eyebrow {
+      font-size: 12px; font-weight: 700; letter-spacing: 1.6px;
+      color: var(--orange-700); margin-bottom: 10px;
+    }
+    .reco-headline { margin: 0; font-size: 26px; line-height: 1.25; }
+    .reco-stack {
+      list-style: none; padding: 0; margin: 0 auto;
+      max-width: 760px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .reco-row {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--orange-600);
+      border-radius: 14px;
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .reco-row:hover { transform: translateY(-1px); box-shadow: 0 8px 22px -14px rgba(0,0,0,.18); }
+    .reco-line {
+      margin: 0;
+      font-size: 16.5px; line-height: 1.55;
+      color: var(--ink);
+    }
+    .reco-emoji-inline {
+      font-size: 18px; margin-right: 8px;
+    }
+    .reco-trigger {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 17.5px;
+    }
+    .reco-mid { color: var(--slate); }
+    .reco-tail {
+      color: var(--orange-700);
+      font-style: italic;
+      font-weight: 500;
+    }
+    .reco-note-wrap {
+      margin-top: 8px;
+      display: flex; justify-content: flex-end;
+      padding-right: 6px;
+    }
+    @media (max-width: 720px) {
+      .reco-header-block { padding: 18px 18px; }
+      .reco-headline { font-size: 22px; }
+      .reco-row { padding: 16px 16px; }
+      .reco-line { font-size: 15.5px; }
+      .reco-trigger { font-size: 16.5px; }
+      .reco-note-wrap { justify-content: flex-start; padding-right: 0; }
+    }
+
+    /* ===========================================================
        Science — 3-step lead-in + 6-factor cards
        =========================================================== */
     .science-leadin {

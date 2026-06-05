@@ -171,41 +171,45 @@ function Divider() {
 
 /* ---------------- Section 2 — Recognition / Mirror moment ---------------- */
 function Recognition() {
-  const cards = [
-  { e: "🪞", t: "My part used to be thin. Now I can see my scalp through it and I don't know when it happened." },
-  { e: "✂️", t: "I cut it shorter and shorter until I had a pixie I absolutely hate. I miss my long hair like crazy." },
-  { e: "😔", t: "I don’t recognise myself in photos anymore. I look older than I feel." },
-  { e: "🧴", t: "I’ve spent close to $2,000 trying to fix it. I’m still watching it fall out." },
-  { e: "📷", t: "I've stopped taking photos. I always wear it up because down makes me anxious." },
-  { e: "💪", t: "My hair was my whole identity. I was the woman known for her hair. I want her back." }];
-
-  const isMobile = useIsMobile();
-  const renderCard = (c, i) =>
-  <div className="reco-card" key={i}>
-      <span className="reco-emoji">{c.e}</span>
-      <p>“{c.t}”</p>
-    </div>;
+  const rows = [
+    { e: "✂️", trigger: "It won't grow long like it did in your 20s", mid: " — so you cut it shorter, then shorter,", tail: " until you stopped trying for the hair you actually want." },
+    { e: "🪞", trigger: "You can see your scalp through your part now", mid: " — so you part it differently and wear it up,", tail: " which hides it but never finds what's causing it.", note: "you never found out", noteColor: "#2b66c2", noteRotate: -2 },
+    { e: "🌫️", trigger: "Greys you didn't have a year ago", mid: " — so you colour them, and the dye stresses already-fragile hair,", tail: " so it breaks, so you colour again.", note: "making your hair age even faster", noteColor: "#2b66c2", noteRotate: -3 },
+    { e: "🧴", trigger: "Nothing you buy seems to work", mid: " — so you reach for the next better shampoo, the next salon visit,", tail: " close to $2,000 by now, and you're still watching it fall." },
+    { e: "📷", trigger: "You've started wearing it up in every photo", mid: " — down makes you anxious,", tail: " so up became the default, and you like your photos a little less each year." },
+    { e: "💔", trigger: "No one comments on your hair anymore", mid: " — you used to be the woman known for it,", tail: " and you want her back." },
+  ];
 
   return (
     <section className="bg-lav">
       <Anno>Section 2 — Recognition / mirror moment</Anno>
       <div className="wrap-wide">
-        <Reveal style={{ textAlign: "center", marginBottom: 28 }}>
-          <Eyebrow>Read this slowly</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 10 }}>Does any of this sound familiar?</h2>
-          <p className="mobile-only" style={{ marginTop: 12, fontSize: 14, color: "var(--slate)" }}>Swipe to read them all →</p>
-        </Reveal>
-        {isMobile ?
-        <Carousel peek={0.86} ariaLabel="recognition quotes">
-            {cards.map(renderCard)}
-          </Carousel> :
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 18 }} className="reco-grid">
-            {cards.map((c, i) =>
-          <Reveal key={i} delay={i % 2 * 80}>{renderCard(c, i)}</Reveal>
-          )}
+        <Reveal className="center" style={{ marginBottom: 28 }}>
+          <div className="reco-header-block">
+            <div className="reco-eyebrow">WHAT IS HAPPENING</div>
+            <h2 className="h2 reco-headline">Somewhere in your 30s, this started happening:</h2>
           </div>
-        }
+        </Reveal>
+
+        <ol className="reco-stack">
+          {rows.map((r, i) => (
+            <Reveal key={i} delay={i * 70}>
+              <li className="reco-row">
+                <p className="reco-line">
+                  <span className="reco-emoji-inline">{r.e}</span>
+                  <strong className="reco-trigger">{r.trigger}</strong>
+                  <span className="reco-mid">{r.mid}</span>
+                  <em className="reco-tail">{r.tail}</em>
+                </p>
+                {r.note && (
+                  <div className="reco-note-wrap">
+                    <Hand size={15} color={r.noteColor} rotate={r.noteRotate}>{r.note}</Hand>
+                  </div>
+                )}
+              </li>
+            </Reveal>
+          ))}
+        </ol>
 
         {/* Inline testimonial + soft CTA — trust anchor, not a hard sell yet */}
         <Reveal style={{ marginTop: 36 }}>
