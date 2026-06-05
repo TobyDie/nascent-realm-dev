@@ -15,7 +15,6 @@ function App() {
       <Science />
       
       <SocialProof onCta={scrollToStart} />
-      <SolutionReframe onCta={scrollToStart} />
       <HowItWorks onCta={scrollToStart} />
       <ResultsIn2Weeks onCta={scrollToStart} />
       <WhatsIncluded onCta={scrollToStart} />
