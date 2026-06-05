@@ -11,6 +11,7 @@ function App() {
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
       <Recognition />
+      <RecognitionVideo />
       <Science />
       <FailedSolutions onCta={scrollToStart} />
       <SocialProof onCta={scrollToStart} />
