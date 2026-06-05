@@ -1,58 +1,116 @@
-## Goal
+## What changes
 
-Replace the current 6-card grid/carousel ("Does any of this sound familiar?") with a single skim-friendly stacked list, on both mobile and desktop. The reader should be able to nod along in 10 seconds: bold trigger sentence → quiet consequence clause → subtle realisation cue.
+In `Science()` (sections-a.jsx, ~lines 326–342), remove the "6 forces working on your follicles" block entirely (the eyebrow + factors-desktop grid + factors-mobile carousel + the factors data array if unused elsewhere).
 
-## New section header
+Replace it with a new **"None of this was your fault"** reframe block using the copy from your screenshot — but redesigned to carry real emotional weight, not just three stacked beige boxes.
 
-- Eyebrow: `WHAT IS HAPPENING`
-- Headline (serif H2): `Somewhere in your 30s, this started happening:`
-- Subhead removed (no extra fluff).
-- Centered, contained inside a soft cream pill block (matches reference).
+## Design intent
 
-## New copy — 6 rows, "trigger → consequence" pattern
+The current screenshot reads as three flat info cards. The gravity comes from the *reframe* — the user is being absolved, then handed hope. We design for that arc: two **"not your fault"** beats that visually feel like weight being lifted, then a **third moment** that flips tone — warmer color, a hand-drawn underline, slight scale shift — so the "easy" line lands like a release.
 
-Each row: **bold trigger** (with 1 emoji for focus) — `softer consequence clause in muted ink`, with optional handwritten side-note in orange/blue script for the realisation beat.
+Key moves:
+- **Vertical timeline rail** down the left (thin ink line + small dot markers), like a confession unfolding step by step. On mobile the rail stays on the left edge, cards stack tight against it.
+- **Numbered beats** ("01 / 02") in muted ink for the first two, then a **"03 — finally"** label in orange for the turn.
+- **Eyebrow tags** ("not your fault") rendered as small **hand-drawn pill stamps** (slight rotation, sketchy border using the existing HandArrow/SVG style) instead of flat green text — feels like someone literally stamped "not your fault" on each.
+- **Serif headlines** stay large (matches existing h2/factor-name scale), but each gets a **subtle hand-drawn underline** under the most loaded word ("25", "buy", "easy") using the existing underline SVG asset already in the file.
+- The **third card breaks the pattern**: warm peach background (`var(--peach)` / orange-50 tone already in palette), slightly larger, soft glow shadow, an inline hand-drawn arrow pointing from card 2 → card 3 to signal the turn.
+- **No icons, no images.** Only: numbers, type, hand-drawn underlines, the rail, one connector arrow, and one emoji per card used sparingly inline in the headline (🙅‍♀️ for card 1, 🛍️ for card 2, ✨ for card 3) — matching the emoji-for-focus rule from the earlier "sound familiar" section.
+- Existing orange CTA button stays at the bottom (already present below this block).
 
-1. ✂️ **It won't grow long like it did in your 20s** — so you cut it shorter, then shorter, *until you stopped trying for the hair you actually want.*
-2. 🪞 **You can see your scalp through your part now** — so you part it differently and wear it up, *which hides it but never finds what's causing it.*  → handwritten note: `you never found out`
-3. 🌫️ **Greys you didn't have a year ago** — so you colour them, and the dye stresses already-fragile hair, *so it breaks, so you colour again.* → handwritten note: `making your hair age even faster`
-4. 🧴 **Nothing you buy seems to work** — so you reach for the next better shampoo, the next salon visit, *close to $2,000 by now, and you're still watching it fall.*
-5. 📷 **You've started wearing it up in every photo** — down makes you anxious, *so up became the default, and you like your photos a little less each year.*
-6. 💔 **No one comments on your hair anymore** — you used to be the woman known for it, *and you want her back.*
+## Wireframe — desktop (~720px content column, centered)
 
-Color treatment inside each row:
-- Bold trigger: ink, serif weight.
-- "so you …" middle clause: muted slate.
-- Italic consequence tail: orange-700 (the recognition punch).
-- Handwritten side-notes: existing `Hand` primitive, rotated −3°, blue or orange.
+```text
+                  BEFORE YOU BLAME YOURSELF
+            ──────────────────────────────────
+              None of this was your fault.
+            (serif h2, centered, generous space)
 
-## Layout & visual treatment
 
-- One vertical stack, full width of `.wrap` (max ~720px), centered.
-- Each row is a card: white background, `border: 1px solid var(--line)`, radius 14, padding `18px 22px`, soft shadow on hover.
-- 4px orange accent bar on the left edge of every card (matches reference).
-- Vertical gap between cards: 14px.
-- Rows reveal one-by-one with the existing `Reveal` primitive, staggered ~70ms.
-- 2–3 rows carry a hand-drawn annotation:
-  - Row 2: blue `you never found out` (Hand, rotate −2°), tucked under the consequence tail.
-  - Row 3: blue `making your hair age even faster` (Hand, rotate −3°), tucked under the right side.
-  - One subtle `HandArrow` between rows 4 and 5 pointing down-right to add rhythm.
-- Header sits in a soft cream rounded block (`background: var(--cream)`, radius 18, padding `22px 28px`), centered, max-width 560px.
+   │
+   ●   01 ·  not your fault  (hand-stamped pill, rotated -2°)
+   │
+   │   You're still using a haircare routine 🙅‍♀️
+   │   built for when you were ‾2‾5‾.   ← hand underline on "25"
+   │   ─────────────────────────────────
+   │   No one told you it would stop working — so you kept
+   │   following what used to work, and wondering why
+   │   nothing is working.
+   │
+   │
+   ●   02 ·  not your fault
+   │
+   │   You tried to 🛍️ ‾b‾u‾y‾ the fix.   ← underline on "buy"
+   │   ─────────────────────────────────
+   │   In your 30s, you start to earn more money but have
+   │   so much less time — so of course you invested in
+   │   products. But you can't buy past what no one
+   │   taught you to understand.
+   │
+   │              ↘  (hand-drawn arrow, rotated, ink)
+   │
+  ╔══════════════════════════════════════════════════╗
+  ║ ●  03 · here's the part no one tells you  (orange)║
+  ║                                                  ║
+  ║   Once you learn how to care for your hair       ║
+  ║   in your 30s, it's ✨ ‾e‾a‾s‾y‾.                 ║
+  ║   ─────────────────────────────────────          ║
+  ║   Fewer steps. Less money. Less effort and time. ║
+  ║   It's only hard because understanding your hair ║
+  ║   is the one thing the industry was never        ║
+  ║   going to sell you.                             ║
+  ╚══════════════════════════════════════════════════╝
+        (peach bg, soft shadow, ~1.04× scale, no border)
 
-## Mobile rules (no carousel)
 
-- Same vertical stack, full width with 16px horizontal padding.
-- Cards shrink to padding `16px 16px`, trigger sentence stays bold serif at ~17px.
-- Hand-drawn side-notes move below the row text on mobile (not floated right) so they don't crowd.
-- Remove the `Carousel` wrapper and the "Swipe to read them all →" hint entirely.
+              [  Show me what my hair needs now → ]
+                    (existing orange CTA, unchanged)
+```
 
-## Files to touch
+## Wireframe — mobile (~360px)
 
-- `public/14-the-haircare-challenge/src/sections-a.jsx` — rewrite the `Recognition` function: new header block, new `rows` data shape `{ emoji, trigger, mid, tail, note? }`, replace `<Carousel>` + `.reco-grid` with a single `<ol className="reco-stack">`. Keep the existing `InlineTestimonial` (Hannah) and "Tell me why this is happening" link below — only the recognition list itself changes.
-- `public/14-the-haircare-challenge/index.html` — add CSS for `.reco-stack`, `.reco-row`, `.reco-row::before` (left orange bar), `.reco-trigger`, `.reco-mid`, `.reco-tail`, `.reco-note`, and the header pill `.reco-header-block`. Remove `.reco-card`, `.reco-emoji`, `.reco-grid` rules that are no longer used.
+Same vertical rail, full-width cards, rail hugs the left edge with ~20px gutter. Third card still breaks pattern (peach bg, larger headline, connector arrow above it stays but smaller and tucked between cards). Headlines wrap to 2–3 lines. No carousel — pure stacked vertical scroll, which suits the "confession unfolding" pacing.
 
-## Out of scope
+```text
+ BEFORE YOU BLAME YOURSELF
+ None of this was
+ your fault.
 
-- No images, illustrations, or icons beyond the 6 inline emoji.
-- No changes to surrounding sections (Hero above, Science below).
-- Existing `InlineTestimonial` and the soft CTA link at the bottom of the section stay as-is.
+ │
+ ●  01 · not your fault
+ │
+ │  You're still using a
+ │  haircare routine 🙅‍♀️
+ │  built for when you
+ │  were ‾2‾5‾.
+ │  ────────────────
+ │  No one told you it would
+ │  stop working...
+ │
+ ●  02 · not your fault
+ │
+ │  You tried to 🛍️
+ │  ‾b‾u‾y‾ the fix.
+ │  ...
+ │       ↘
+ ╔══════════════════╗
+ ║ ● 03 · here's    ║
+ ║   the part...    ║
+ ║                  ║
+ ║   ...it's ✨     ║
+ ║   ‾e‾a‾s‾y‾.     ║
+ ║   ...            ║
+ ╚══════════════════╝
+
+  [ Show me what my hair needs now → ]
+```
+
+## Technical notes
+
+- New component lives in `sections-a.jsx` inside `Science()`, replacing the `science-factors-wrap` block (~lines 327–342). The `factors` array (lines 272–278) becomes unused — delete it.
+- All new CSS classes go in `index.html` under a `.fault-*` namespace (`.fault-rail`, `.fault-beat`, `.fault-stamp`, `.fault-turn`, `.fault-card-final`).
+- Hand-drawn underline reuses the existing `<Underline>` component already used in section 4.
+- Hand-drawn arrow reuses `<HandArrow>` already imported in this file.
+- Pill stamp = small `<span>` with dashed border + slight `transform: rotate(-2deg)`, no new asset.
+- Rail = single absolutely-positioned `::before` line on the wrapper + small filled `●` dots on each beat — no SVG needed.
+- The 6-forces eyebrow ("The 6 forces working on your follicles") and the "Swipe to see all six →" hint are both removed.
+- The "Perimenopause doesn't start at 50" green callout below stays. The Renee quote stays. CTA stays.
