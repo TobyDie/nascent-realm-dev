@@ -23,7 +23,7 @@ function TopBar({ onCta }) {
           <a href="#results" style={navLink}>Results</a>
           <a href="#included" style={navLink}>What's included</a>
           <Button onClick={onCta} className="topbar-cta" style={{ padding: "11px 22px", fontSize: 15 }}>
-            {isMobile ? "Join — $37" : "Join the challenge — $37"}
+            {isMobile ? "Join now" : "Join the challenge"}
           </Button>
         </nav>
       </div>
@@ -66,7 +66,7 @@ function Hero({ onCta }) {
 
             {/* CTA block — must be above fold on mobile */}
             <div id="hero-cta-sentinel" style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start", marginBottom: 24 }}>
-              <Button onClick={onCta} icon="arrow-right">Join the challenge — $37</Button>
+              <Button onClick={onCta} icon="arrow-right">Join the challenge</Button>
               <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
                 <span style={{ textDecoration: "line-through", color: "var(--slate-soft)", marginRight: 6 }}>$247</span>
                 85% off · 30-day guarantee
