@@ -96,7 +96,7 @@ function SocialProof({ onCta }) {
       <div className="wrap-wide">
         <Reveal style={{ textAlign: "center", marginBottom: 32 }}>
           <Eyebrow>Real results</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12 }}>250,000+ women got the hair like it was in their 28.<br />Real results. No filters.</h2>
+          <h2 className="h2" style={{ marginTop: 12 }}>Women in their 30s achieved better hair than they had in their 20s after learning how to care for it properly.</h2>
           <p className="mobile-only" style={{ marginTop: 12, fontSize: 14, color: "var(--slate)" }}>Swipe through the stories →</p>
         </Reveal>
 
