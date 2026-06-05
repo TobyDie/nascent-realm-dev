@@ -63,21 +63,6 @@ function VideoTestimonials() {
       <Anno>Added \u2014 Video testimonials (right after hero)</Anno>
       <div className="wrap-wide">
 
-        {/* Header row */}
-        <Reveal style={{ marginBottom: 32, display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
-          <div>
-            <Eyebrow>Real voices</Eyebrow>
-            <h2 className="h2" style={{ marginTop: 10, marginBottom: 0, maxWidth: 480 }}>
-              Women just like you.<br className="mobile-only" /> In their own words.
-            </h2>
-          </div>
-          {/* Hand-drawn label + arrow — desktop accent */}
-          <div className="video-hand-accent desktop-only-flex" style={{ alignItems: "center", gap: 4, paddingBottom: 6 }}>
-            <HandArrow direction="down" size={44} color="var(--orange-500)" style={{ opacity: 0.7 }} />
-            <Hand size={20} color="var(--orange-600)" rotate={-5}>Unfiltered \u2713</Hand>
-          </div>
-        </Reveal>
-
         {/* Cards */}
         {isMobile ?
         <Carousel peek={0.88} ariaLabel="video testimonials">
@@ -90,11 +75,6 @@ function VideoTestimonials() {
             </div>
           </Reveal>
         }
-
-        {/* Bottom hint */}
-        <Reveal style={{ marginTop: 22, display: "flex", justifyContent: "center", alignItems: "center", gap: 8 }}>
-          <Hand size={17} color="var(--slate)" rotate={0} style={{ opacity: 0.75 }}>\u23f1 2 min avg \u00b7 real women, no scripts</Hand>
-        </Reveal>
 
       </div>
     </section>);
