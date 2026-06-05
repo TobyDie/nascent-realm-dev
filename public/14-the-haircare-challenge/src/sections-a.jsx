@@ -269,29 +269,6 @@ function RecognitionVideo() {
 
 /* ---------------- Section 3 — The real reason (science) ---------------- */
 function Science() {
-  const factors = [
-  { icon: "flask-conical", emoji: "🧬", t: "Hormones", d: "From your mid-30s, estrogen and progesterone shift. As they dip, DHT thins the temples and crown — exactly the pattern you're seeing.", tag: "Primary trigger · 30–42", hero: true },
-  { icon: "brain", emoji: "🧠", t: "Stress / cortisol", d: "Career + parenting + the mental load keeps cortisol high. It pushes follicles into shedding 3–6 months later — so it feels like it came from nowhere.", tag: "Affects ~73% of women 30–45" },
-  { icon: "droplet", emoji: "🩸", t: "Iron & ferritin", d: "Iron deficiency is far more common in women 30–45. Ferritin drops quietly — and follicles are the first to feel it. Most women have never had it tested.", tag: "Most overlooked in this group" },
-  { icon: "refresh-cw", emoji: "🔄", t: "Metabolism", d: "After 30, nutrient delivery to your follicles slows down. The diet that kept your hair full at 25 no longer delivers what your follicles need. This doesn't mean eating less well — it means eating differently for your hair at this stage.", tag: "Begins as early as 28" },
-  { icon: "baby", emoji: "👶", t: "Postpartum — even years later", d: "Pregnancy can disrupt your hair cycle for 2–4 years. If you had a baby in your 30s and your hair never fully came back, this is exactly why — and it's fixable.", tag: "Up to 4 years to resolve" },
-  { icon: "leaf", emoji: "🌿", t: "Thyroid & nutrient gaps", d: "Subclinical thyroid shifts plus common zinc and B12 gaps are a leading cause of diffuse thinning — and rarely caught at the GP.", tag: "Common in women 30–50" }];
-
-
-  const renderFactor = (f, i) =>
-  <div key={i} className={`factor-card ${f.hero ? "factor-hero" : ""}`}>
-      <div className="factor-card-top">
-        <span className="factor-emoji">{f.emoji}</span>
-        <div>
-          <div className="factor-name">{f.t}</div>
-          {f.hero && <span className="factor-big-pill">The big one</span>}
-        </div>
-      </div>
-      <p className="factor-desc">{f.d}</p>
-      <span className="factor-tag">{f.tag}</span>
-    </div>;
-
-
   return (
     <section className="bg-white" id="science">
       <Anno>Section 3 — Science / education (the aha moment)</Anno>
@@ -323,22 +300,59 @@ function Science() {
           </div>
         </Reveal>
 
-        {/* 6-factor — grid on desktop, swipe on mobile */}
-        <Reveal style={{ marginTop: 44 }}>
-          <div className="science-factors-wrap">
-            <div className="center" style={{ marginBottom: 22 }}>
-              <Eyebrow style={{ color: "var(--slate)" }}>The 6 forces working on your follicles</Eyebrow>
-              <p className="mobile-only" style={{ marginTop: 8, fontSize: 14, color: "var(--slate)" }}>Swipe to see all six →</p>
-            </div>
-            <div className="factors-desktop">
-              {factors.map(renderFactor)}
-            </div>
-            <div className="factors-mobile">
-              <Carousel peek={0.86} ariaLabel="hair-loss factors">
-                {factors.map(renderFactor)}
-              </Carousel>
-            </div>
+        {/* Reframe — "None of this was your fault" timeline */}
+        <Reveal style={{ marginTop: 56 }}>
+          <div className="fault-head center">
+            <Eyebrow style={{ color: "var(--slate)" }}>Before you blame yourself</Eyebrow>
+            <h2 className="h2" style={{ marginTop: 12 }}>
+              None of this was <em>your fault.</em>
+            </h2>
           </div>
+
+          <ol className="fault-rail">
+            <li className="fault-beat">
+              <span className="fault-dot" aria-hidden="true" />
+              <div className="fault-beat-body">
+                <span className="fault-stamp">01 · not your fault</span>
+                <h3 className="fault-headline">
+                  You're still using a haircare routine <span className="fault-emoji">🙅‍♀️</span> built for when you were <Underline color="var(--ink)">25</Underline>.
+                </h3>
+                <p className="fault-copy">
+                  No one told you it would stop working — so you kept following what used to work, and wondering why nothing is.
+                </p>
+              </div>
+            </li>
+
+            <li className="fault-beat">
+              <span className="fault-dot" aria-hidden="true" />
+              <div className="fault-beat-body">
+                <span className="fault-stamp">02 · not your fault</span>
+                <h3 className="fault-headline">
+                  You tried to <span className="fault-emoji">🛍️</span> <Underline color="var(--ink)">buy</Underline> the fix.
+                </h3>
+                <p className="fault-copy">
+                  In your 30s, you earn more but have so much less time — so of course you invested in products. But you can't buy past what no one taught you to understand.
+                </p>
+              </div>
+            </li>
+
+            <li className="fault-turn-arrow" aria-hidden="true">
+              <HandArrow direction="right" size={64} color="var(--orange-600)" />
+            </li>
+
+            <li className="fault-beat fault-beat-final">
+              <span className="fault-dot fault-dot-final" aria-hidden="true" />
+              <div className="fault-beat-body">
+                <span className="fault-stamp fault-stamp-final">03 · here's the part no one tells you</span>
+                <h3 className="fault-headline fault-headline-final">
+                  Once you learn how to care for your hair in your 30s, it's <span className="fault-emoji">✨</span> <Underline color="var(--orange-600)">easy</Underline>.
+                </h3>
+                <p className="fault-copy">
+                  Fewer steps. Less money. Less effort and time. It's only hard because understanding your hair is the one thing the industry was never going to sell you.
+                </p>
+              </div>
+            </li>
+          </ol>
         </Reveal>
 
         <Reveal style={{ marginTop: 28 }}>
