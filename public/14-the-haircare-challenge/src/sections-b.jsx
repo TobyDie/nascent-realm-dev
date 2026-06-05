@@ -134,46 +134,6 @@ function SocialProof({ onCta }) {
 
 }
 
-/* ---------------- Section 6 — The solution reframe ---------------- */
-function SolutionReframe({ onCta }) {
-  const cols = [
-  { emoji: "📚", icon: "book-open", t: "Learn your biology", d: "Understand exactly what's happening in your body at this life stage — and why generic solutions were never going to work for you." },
-  { emoji: "🧪", icon: "sparkles", t: "Build your routine", d: "Create a personalised haircare ritual using ingredients from your own kitchen, for a fraction of what you've been spending." },
-  { emoji: "📈", icon: "trending-up", t: "See real change", d: "10 minutes a day. Results visible by day 14. A foundation for healthy hair for the rest of your life." }];
-
-  return (
-    <section className="bg-lav">
-      <Anno>Section 6 — Solution reframe (pain → hope)</Anno>
-      <div className="wrap-wide">
-        <Reveal style={{ textAlign: "center", marginBottom: 36 }}>
-          <Eyebrow>A different kind of answer</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12, maxWidth: 680, marginInline: "auto" }}>
-            The solution isn't a better shampoo. It's <Underline>understanding your hair</Underline>.
-          </h2>
-          <p className="lead" style={{ marginTop: 16, maxWidth: 580, marginInline: "auto" }}>
-            Not another fix. A <strong>permanent shift</strong> in how you care for your hair — for the rest of your life.
-          </p>
-        </Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22, marginBottom: 32 }} className="three-col">
-          {cols.map((c, i) =>
-          <Reveal key={i} delay={i * 90}>
-              <div className="card" style={{ height: "100%", textAlign: "left" }}>
-                <span style={{ width: 56, height: 56, borderRadius: 999, background: "var(--orange-100)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16, fontSize: 26 }}>
-                  {c.emoji}
-                </span>
-                <h3 className="h3" style={{ marginBottom: 8 }}>{c.t}</h3>
-                <p className="p" style={{ fontSize: 16 }}>{c.d}</p>
-              </div>
-            </Reveal>
-          )}
-        </div>
-        <Reveal className="center">
-          <Button onClick={onCta} icon="arrow-right">Yes — I want to understand my hair. Start the challenge</Button>
-        </Reveal>
-      </div>
-    </section>);
-
-}
 
 /* ---------------- Section 7 — How it works (vertical timeline) ---------------- */
 function HowItWorks({ onCta }) {
@@ -376,4 +336,4 @@ function WhatsIncluded({ onCta }) {
 
 }
 
-Object.assign(window, { VideoTestimonials, SocialProof, SolutionReframe, HowItWorks, WhatsIncluded, ResultsIn2Weeks });
+Object.assign(window, { VideoTestimonials, SocialProof, HowItWorks, WhatsIncluded, ResultsIn2Weeks });
