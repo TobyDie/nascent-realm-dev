@@ -7,7 +7,6 @@ function App() {
   };
   return (
     <React.Fragment>
-      <TopBar onCta={scrollToStart} />
       <AgeStripe />
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
@@ -24,7 +23,6 @@ function App() {
       <SelfQualifier onCta={scrollToStart} />
       <Faq onCta={scrollToStart} />
       <FinalCta onCta={scrollToStart} />
-      <Footer />
       <StickyCta onCta={scrollToStart} />
     </React.Fragment>
   );
