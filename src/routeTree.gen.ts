@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TheHaircareChallengeRouteImport } from './routes/the-haircare-challenge'
+import { Route as R14TheHaircareChallengeRouteImport } from './routes/14-the-haircare-challenge'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TheHaircareChallengeRoute = TheHaircareChallengeRouteImport.update({
   id: '/the-haircare-challenge',
   path: '/the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R14TheHaircareChallengeRoute = R14TheHaircareChallengeRouteImport.update({
+  id: '/14-the-haircare-challenge',
+  path: '/14-the-haircare-challenge',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,35 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/14-the-haircare-challenge': typeof R14TheHaircareChallengeRoute
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/14-the-haircare-challenge': typeof R14TheHaircareChallengeRoute
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/14-the-haircare-challenge': typeof R14TheHaircareChallengeRoute
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/the-haircare-challenge'
+  fullPaths: '/' | '/14-the-haircare-challenge' | '/the-haircare-challenge'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/the-haircare-challenge'
-  id: '__root__' | '/' | '/the-haircare-challenge'
+  to: '/' | '/14-the-haircare-challenge' | '/the-haircare-challenge'
+  id:
+    | '__root__'
+    | '/'
+    | '/14-the-haircare-challenge'
+    | '/the-haircare-challenge'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R14TheHaircareChallengeRoute: typeof R14TheHaircareChallengeRoute
   TheHaircareChallengeRoute: typeof TheHaircareChallengeRoute
 }
 
@@ -56,6 +70,13 @@ declare module '@tanstack/react-router' {
       path: '/the-haircare-challenge'
       fullPath: '/the-haircare-challenge'
       preLoaderRoute: typeof TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/14-the-haircare-challenge': {
+      id: '/14-the-haircare-challenge'
+      path: '/14-the-haircare-challenge'
+      fullPath: '/14-the-haircare-challenge'
+      preLoaderRoute: typeof R14TheHaircareChallengeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,18 +91,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R14TheHaircareChallengeRoute: R14TheHaircareChallengeRoute,
   TheHaircareChallengeRoute: TheHaircareChallengeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

@@ -1,0 +1,50 @@
+/* Rooted marketing-site UI kit — layout glue on top of colors_and_type.css */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: var(--white); overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+button { font-family: var(--font-sans); }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+.wrap-wide { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+section { padding: var(--sp-9) 0; }
+.bg-cream { background: var(--cream); }
+.bg-lav   { background: var(--lavender); }
+.bg-white { background: var(--white); }
+
+.center { text-align: center; }
+.stack-sm { display: flex; flex-direction: column; gap: 14px; }
+.lucide { stroke-width: 1.75; }
+
+/* sticky top bar */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250,245,240,0.85);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+
+/* generic image placeholder */
+.ph {
+  position: relative;
+  background:
+    repeating-linear-gradient(45deg, #EFE6DB, #EFE6DB 14px, #E8DDD0 14px, #E8DDD0 28px);
+  color: var(--slate);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; text-align: center; border-radius: var(--r-md);
+}
+.ph.cool { background: repeating-linear-gradient(45deg,#E6E6EF,#E6E6EF 14px,#DEDEEA 14px,#DEDEEA 28px); }
+.ph-label { position:absolute; top:10px; left:12px; font-size:12px; font-weight:600; color:rgba(26,26,26,.55); }
+
+.entrance { opacity: 0; transform: translateY(16px); }
+.entrance.in { opacity: 1; transform: none; transition: opacity .6s var(--ease), transform .6s var(--ease); }
+
+@media (prefers-reduced-motion: reduce) {
+  .entrance, .entrance.in { opacity: 1; transform: none; transition: none; }
+}
+
+@media (max-width: 720px) {
+  section { padding: var(--sp-8) 0; }
+}
