@@ -13,7 +13,7 @@ function App() {
       <Recognition />
       <RecognitionVideo />
       <Science />
-      <FailedSolutions onCta={scrollToStart} />
+      
       <SocialProof onCta={scrollToStart} />
       <SolutionReframe onCta={scrollToStart} />
       <HowItWorks onCta={scrollToStart} />
