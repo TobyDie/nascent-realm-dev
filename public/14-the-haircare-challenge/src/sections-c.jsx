@@ -144,8 +144,10 @@ function Faq({ onCta }) {
                   <span style={{ fontSize: 17, fontWeight: 600, color: "var(--ink)" }}>{f.q}</span>
                   <Icon name={isOpen ? "minus" : "plus"} size={20} color="var(--orange-600)" />
                 </button>
-                <div style={{ maxHeight: isOpen ? 280 : 0, transition: "max-height .3s var(--ease)", overflow: "hidden" }}>
-                  <p className="p" style={{ padding: "0 22px 22px", fontSize: 16, margin: 0 }}>{f.a}</p>
+                <div style={{ display: "grid", gridTemplateRows: isOpen ? "1fr" : "0fr", transition: "grid-template-rows .3s var(--ease)" }}>
+                  <div style={{ overflow: "hidden" }}>
+                    <p className="p" style={{ padding: "0 22px 22px", fontSize: 16, margin: 0 }}>{f.a}</p>
+                  </div>
                 </div>
               </div>
             );
@@ -242,15 +244,44 @@ const footLink = { color: "inherit", textDecoration: "none" };
 
 /* sticky bottom CTA */
 function StickyCta({ onCta }) {
-  const isMobile = useIsMobile();
   const [show, setShow] = useState(false);
   useEffect(() => {
-    const threshold = isMobile ? 120 : 700;
-    const onScroll = () => setShow(window.scrollY > threshold);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isMobile]);
+    let heroVisible = true;
+    let finalVisible = false;
+    const update = () => setShow(!heroVisible && !finalVisible);
+
+    const hero = document.getElementById("hero-cta-sentinel");
+    const finalEl = document.getElementById("start");
+
+    let heroIO, finalIO;
+    if (hero) {
+      heroIO = new IntersectionObserver(([e]) => {
+        heroVisible = e.isIntersecting;
+        update();
+      }, { threshold: 0.1 });
+      heroIO.observe(hero);
+    } else {
+      heroVisible = false;
+    }
+    if (finalEl) {
+      finalIO = new IntersectionObserver(([e]) => {
+        finalVisible = e.isIntersecting;
+        update();
+      }, { threshold: 0.15 });
+      finalIO.observe(finalEl);
+    }
+    update();
+    return () => {
+      if (heroIO) heroIO.disconnect();
+      if (finalIO) finalIO.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("has-sticky-cta", show);
+    return () => document.body.classList.remove("has-sticky-cta");
+  }, [show]);
+
   return (
     <div style={{
       position: "fixed", left: 0, right: 0, bottom: 0, zIndex: 60,
@@ -264,7 +295,7 @@ function StickyCta({ onCta }) {
           <span style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 18 }}>14-Day HairQare Challenge</span>
           <span className="small" style={{ display: "flex", alignItems: "center", gap: 6 }}><StarRow size={13} /> 4.8 · cohort starts June 6th</span>
         </div>
-        <Button onClick={onCta} icon="arrow-right" style={{ padding: "11px 24px", fontSize: 15 }}>Join Now— $37</Button>
+        <Button onClick={onCta} icon="arrow-right" style={{ padding: "11px 24px", fontSize: 15 }}>Join now — $37</Button>
       </div>
     </div>
   );

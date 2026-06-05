@@ -30,18 +30,13 @@
        Wireframe annotation
        =========================================================== */
     .anno {
-      position: absolute; top: 14px; left: 16px; z-index: 5;
-      font-family: var(--font-sans);
-      font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
-      text-transform: uppercase; color: var(--slate-soft);
-      background: rgba(255,255,255,0.6);
-      border: 1px dashed var(--line);
-      border-radius: 999px;
-      padding: 4px 11px;
-      pointer-events: none;
-      backdrop-filter: blur(2px);
+      display: none !important;
     }
     section { position: relative; }
+
+    /* body bottom padding for sticky CTA (mobile) */
+    body { padding-bottom: 0; }
+    body.has-sticky-cta { padding-bottom: 78px; }
 
     /* ===========================================================
        Age stripe + urgency pill
@@ -467,6 +462,9 @@
       padding: 6px 18px 10px;
       margin: 0 -18px;
       scroll-padding-left: 18px;
+      scroll-padding-right: 18px;
+      -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 36px), transparent 100%);
+              mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 36px), transparent 100%);
     }
     .carousel-track::-webkit-scrollbar { display: none; }
     .carousel-item { scroll-snap-align: start; }
@@ -477,6 +475,52 @@
       transition: background var(--dur) var(--ease), width var(--dur) var(--ease);
     }
     .carousel-dot.on { background: var(--orange-600); width: 22px; }
+
+    /* Counter controls for long carousels */
+    .carousel-counter {
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; margin-top: 16px;
+    }
+    .carousel-counter-btn {
+      width: 40px; height: 40px; border-radius: 999px;
+      background: #fff; border: 1.5px solid var(--orange-600);
+      color: var(--orange-700); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background var(--dur) var(--ease), opacity var(--dur) var(--ease);
+    }
+    .carousel-counter-btn:disabled { opacity: 0.35; cursor: default; }
+    .carousel-counter-btn:not(:disabled):hover { background: var(--orange-50); }
+    .carousel-counter-label {
+      font-family: var(--font-serif); font-weight: 700;
+      font-size: 16px; color: var(--ink); min-width: 56px; text-align: center;
+    }
+    .carousel-counter-label em {
+      font-style: normal; color: var(--slate-soft); font-weight: 500;
+    }
+
+    /* Founder section — desktop layout (base) */
+    .founder-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 52px;
+      align-items: start;
+    }
+    .founder-copy-wrap { display: flex; flex-direction: column; gap: 14px; }
+    .founder-copy-wrap .p { margin: 0; }
+    .founder-story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .founder-story-card { display: flex; flex-direction: column; gap: 10px; }
+    .founder-story-caption {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 14px; line-height: 1.45; color: var(--ink-soft); font-weight: 500;
+    }
+    .founder-story-num {
+      font-family: var(--font-serif); font-weight: 700; font-size: 17px;
+      color: var(--orange-600); flex: none; line-height: 1.2;
+    }
 
     /* ===========================================================
        Mobile / desktop visibility utilities
@@ -538,16 +582,18 @@
 
       /* hero fold compression on mobile */
       .hero-section { padding-top: 16px !important; }
-      .hero-h1 { font-size: 36px !important; line-height: 1.08; margin-bottom: 10px !important; }
-      .hero-sub-hl { font-size: 17px !important; margin-bottom: 12px !important; }
-      .hero-validation { font-size: 15.5px !important; margin-bottom: 16px !important; }
+      .hero-h1 { font-size: 30px !important; line-height: 1.05; margin-bottom: 8px !important; }
+      .hero-sub-hl { font-size: 16px !important; margin-bottom: 10px !important; }
+      .hero-validation { font-size: 14.5px !important; margin-bottom: 12px !important; }
       .hero-cohort { font-size: 12px; }
-      .hero-image-wrap { max-height: 220px !important; }
       .hero-grid { gap: 20px !important; }
       .hero-grid > div:nth-child(1) { order: 2; }
       .hero-grid > div:nth-child(2) { order: 1; }
-      .hero-image-wrap { aspect-ratio: 5 / 4; max-height: 260px; }
+      .hero-image-wrap { aspect-ratio: 16 / 10; max-height: 200px !important; }
       .hero-image-wrap .ph { height: 100% !important; width: 100%; }
+
+      /* age stripe slightly tighter on mobile */
+      .age-stripe { padding: 9px 14px !important; font-size: 13px !important; }
 
       /* trust bar → 2x2 + trustpilot row */
       .trust-bar {
@@ -592,6 +638,9 @@
       .founder-grid > div:nth-child(1) { order: 1; }
       .founder-grid > div:nth-child(2) { order: 2; }
       .founder-grid > div:nth-child(1) .ph { height: 320px !important; }
+      .founder-layout { grid-template-columns: 1fr !important; gap: 28px !important; }
+      .founder-story-grid { grid-template-columns: 1fr !important; }
+      .not-about-grid { grid-template-columns: 1fr !important; }
 
       /* buttons: full width inside content (not topbar) */
       .btn { padding: 14px 22px; font-size: 15.5px; }
@@ -625,33 +674,6 @@
       /* final CTA card padding */
       .final-cta-card { max-width: 100% !important; }
       .final-cta-card-body { padding: 22px 20px !important; }
-
-    /* Founder section — story layout */
-    .founder-layout {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 52px;
-      align-items: start;
-    }
-    .founder-copy-wrap { display: flex; flex-direction: column; gap: 14px; }
-    .founder-copy-wrap .p { margin: 0; }
-    .founder-story-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .founder-story-card { display: flex; flex-direction: column; gap: 10px; }
-    .founder-story-caption {
-      display: flex; gap: 10px; align-items: flex-start;
-      font-size: 14px; line-height: 1.45; color: var(--ink-soft); font-weight: 500;
-    }
-    .founder-story-num {
-      font-family: var(--font-serif); font-weight: 700; font-size: 17px;
-      color: var(--orange-600); flex: none; line-height: 1.2;
-    }
-
-    /* not-about-grid stacks on mobile */
-    .not-about-grid { grid-template-columns: 1fr !important; }
 
       /* sticky bottom CTA */
       .sticky-meta .small { display: none; }
