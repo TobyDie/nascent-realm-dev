@@ -282,6 +282,48 @@
     .trust-stat { min-width: 130px; }
     .trustpilot-wrap { display: inline-flex; align-items: center; }
 
+    /* ---- Community trust block (3 stacked rows) ---- */
+    .community-trust {
+      padding: 32px 24px 36px;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 22px;
+      text-align: center;
+    }
+    .ct-row { display: flex; align-items: center; justify-content: center; }
+    .ct-community { flex-direction: column; gap: 14px; }
+    .ct-avatars { display: inline-flex; }
+    .ct-avatar {
+      width: 38px; height: 38px; border-radius: 999px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-sans); font-weight: 700; font-size: 14px;
+      border: 2.5px solid #fff; box-shadow: var(--shadow-sm);
+      margin-left: -10px;
+    }
+    .ct-avatar:first-child { margin-left: 0; }
+    .ct-avatar-more {
+      background: var(--orange-500); color: #fff;
+      font-size: 16px; font-weight: 700;
+    }
+    .ct-community-text { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .ct-num {
+      font-family: var(--font-serif); font-weight: 700;
+      font-size: 38px; line-height: 1; color: var(--orange-600);
+      letter-spacing: -0.01em;
+    }
+    .ct-num-sm { font-size: 34px; }
+    .ct-label {
+      font-size: 14px; line-height: 1.4; color: var(--slate);
+      max-width: 200px;
+    }
+    .ct-stats { gap: 28px; width: 100%; max-width: 420px; }
+    .ct-stat { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .ct-vrule { width: 1px; align-self: stretch; background: var(--line); }
+    .ct-trustpilot {
+      padding-top: 8px; border-top: 1px solid var(--line);
+      width: 100%; max-width: 320px;
+      flex-direction: column; gap: 6px;
+    }
+
     /* ===========================================================
        Recognition cards
        =========================================================== */
