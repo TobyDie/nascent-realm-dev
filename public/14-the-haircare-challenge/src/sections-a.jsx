@@ -35,9 +35,9 @@ const navLink = { color: "var(--ink-soft)", textDecoration: "none", fontSize: 15
 /* ---------------- Section 1 — Hero ---------------- */
 function Hero({ onCta }) {
   const bullets = [
-  { e: "🧬", t: "Finally understand why your hair changed — the answer is in your body, not your bathroom cabinet" },
-  { e: "⏱️", t: "A 10-minute daily ritual — not another product to buy on repeat" },
-  { e: "💸", t: "Stop spending $100/month on the wrong things. Understand what your hair actually needs." }];
+  { e: "🌱", t: "Grow longer, denser and healthier hair than you had in your 20s." },
+  { e: "💸", t: "No fancy salon treatments or expensive products needed." },
+  { e: "⏱️", t: "See results in 14 days or get your money back." }];
 
   return (
     <section className="bg-cream hero-section" style={{ paddingTop: 48, paddingBottom: 0 }}>
@@ -54,14 +54,14 @@ function Hero({ onCta }) {
 
             {/* H1 — the single emotional hook, short enough for mobile */}
             <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
-              <span style={{ color: "#090909" }}>14 days from now, you'll know exactly what your hair needs.</span><br />
-              <span style={{ color: "#000000" }}><span style={{ color: "#e97b00" }}>....For Life</span></span>
+              <span style={{ color: "#090909" }}>Achieve the best hair of your life in your </span>
+              <span style={{ color: "#e97b00" }}>30s and beyond.</span>
             </h1>
 
             {/* Sub-headline — specificity + proof */}
             {/* Validation — one line */}
             <p className="hero-validation">
-              <strong></strong> The 14-Day HairQare Challenge teaches you what no shampoo bottle ever will.
+              The hair you had in your 20s isn't gone forever. Your body has changed but your habits haven't. Learn how to build a hair care routine for your 30s and enjoy good hair days for decades to come.
             </p>
 
             {/* CTA block — must be above fold on mobile */}
