@@ -191,41 +191,8 @@ function Recognition() {
           </div>
         </Reveal>
 
-        {/* ============ DIRECTION A — Diary Scroll ============ */}
-        <div className="ab-divider">DIRECTION A · THE DIARY SCROLL</div>
-        <div className="diary-wrap">
-          {rows.map((r, i) => {
-            const rot = [-2, 1.5, -3, 2, -1.5, 0][i];
-            const peach = i === 2 || i === 5;
-            return (
-              <Reveal key={i} delay={i * 60}>
-                <div
-                  className={`diary-card${peach ? " peach" : ""}`}
-                  style={{ transform: `rotate(${rot}deg)` }}
-                >
-                  <span className="diary-emoji">{r.e}</span>
-                  <p className="diary-trigger">{r.trigger}.</p>
-                  <hr className="diary-rule" />
-                  <p className="diary-hand">
-                    {r.mid.replace(/^[\s—-]+/, "")} {r.tail}
-                  </p>
-                  {r.note && (
-                    <div style={{ marginTop: 10 }}>
-                      <Hand size={18} color={r.noteColor} rotate={r.noteRotate}>↘ {r.note}</Hand>
-                    </div>
-                  )}
-                  <div className="diary-page">page {i + 1} / 6</div>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
-
-        {/* ============ DIRECTION B — Spiral Timeline ============ */}
-        <div className="ab-divider">DIRECTION B · THE SPIRAL TIMELINE</div>
         <div className="timeline-wrap">
           {rows.map((r, i) => {
-            const years = [31, 33, 35, 36, 37, 38];
             const isMoney = i === 3;
             const isPhotos = i === 4;
             const isFinal = i === 5;
@@ -234,7 +201,6 @@ function Recognition() {
               <Reveal key={i} delay={i * 70}>
                 <div className={`timeline-beat${isFinal ? " final" : ""}${heavy ? " heavy" : ""}`}>
                   {heavy && <span className="timeline-wash" />}
-                  <span className="timeline-year">{years[i]}</span>
                   <span className="timeline-dot" />
                   <p className="timeline-trigger">
                     <span className="emoji">{r.e}</span>{r.trigger}.
