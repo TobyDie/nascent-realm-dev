@@ -390,4 +390,4 @@ function Science() {
 }
 
 
-Object.assign(window, { AgeStripe, TopBar, Hero, Recognition, RecognitionVideo, Science, FailedSolutions });
+Object.assign(window, { AgeStripe, TopBar, Hero, Recognition, RecognitionVideo, Science });
