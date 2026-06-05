@@ -33,7 +33,7 @@ function Icon({ name, size = 20, color, stroke = 1.75, style }) {
 
 /* ---------------- Layout primitives ---------------- */
 function Anno({ children }) {
-  return <div className="anno">{children}</div>;
+  return null;
 }
 
 function Eyebrow({ children, style }) {
@@ -132,10 +132,11 @@ function HandLine({ height = 60, color = "var(--orange-500)", arrow = false, sty
 }
 
 /* ---------------- Carousel (snap-scroll, dots) ---------------- */
-function Carousel({ children, peek = 0.88, gap = 14, dots = true, ariaLabel, className = "" }) {
+function Carousel({ children, peek = 0.82, gap = 14, dots = true, controls, ariaLabel, className = "" }) {
   const trackRef = useRef(null);
   const [idx, setIdx] = useState(0);
   const items = React.Children.toArray(children);
+  const useCounter = controls === "counter" || (controls == null && items.length >= 5);
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -169,7 +170,29 @@ function Carousel({ children, peek = 0.88, gap = 14, dots = true, ariaLabel, cla
           </div>
         ))}
       </div>
-      {dots && items.length > 1 && (
+      {useCounter && items.length > 1 ? (
+        <div className="carousel-counter">
+          <button
+            className="carousel-counter-btn"
+            onClick={() => scrollTo(Math.max(0, idx - 1))}
+            disabled={idx === 0}
+            aria-label="Previous"
+          >
+            <Icon name="chevron-left" size={20} />
+          </button>
+          <span className="carousel-counter-label">
+            <strong>{idx + 1}</strong> <em>/ {items.length}</em>
+          </span>
+          <button
+            className="carousel-counter-btn"
+            onClick={() => scrollTo(Math.min(items.length - 1, idx + 1))}
+            disabled={idx === items.length - 1}
+            aria-label="Next"
+          >
+            <Icon name="chevron-right" size={20} />
+          </button>
+        </div>
+      ) : dots && items.length > 1 && (
         <div className="carousel-dots">
           {items.map((_, i) => (
             <button key={i} onClick={() => scrollTo(i)} className={`carousel-dot ${i === idx ? "on" : ""}`} aria-label={`Go to slide ${i + 1}`} />
@@ -282,12 +305,27 @@ function BeforeAfter({ day, cool }) {
   );
 }
 
-/* Inline testimonial — a compact trust card you can drop next to any section's claim.
-   Avatar is a placeholder — the user will swap it for a real photo later. */
+/* Inline testimonial — compact trust card. Initials avatar (no broken-image placeholder). */
 function InlineTestimonial({ name, age, flag, quote, accent = "var(--orange-600)", style }) {
+  const initials = (name || "?").trim().charAt(0).toUpperCase();
   return (
     <div className="inline-testi" style={{ borderLeft: `3px solid ${accent}`, ...style }}>
-      <div className="inline-testi-avatar ph" aria-label="Real photo of woman 30–45 — add later" />
+      <div
+        className="inline-testi-avatar"
+        style={{
+          background: "var(--orange-100)",
+          color: "var(--orange-700)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontWeight: 700,
+          fontSize: 18,
+          fontFamily: "var(--font-serif)",
+        }}
+        aria-hidden="true"
+      >
+        {initials}
+      </div>
       <div className="inline-testi-body">
         <StarRow size={13} />
         <p className="inline-testi-quote">“{quote}”</p>
