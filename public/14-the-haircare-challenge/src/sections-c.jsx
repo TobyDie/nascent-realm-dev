@@ -86,7 +86,7 @@ function Founder({ onCta }) {
               <div style={{ fontFamily: "var(--font-serif)", fontSize: 22, fontStyle: "italic", color: "var(--ink)", marginTop: 12 }}>— Sarah Tran</div>
 
               <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start" }}>
-                <Button onClick={onCta} icon="arrow-right">Start with me — $37</Button>
+                <Button onClick={onCta} icon="arrow-right">Start with me</Button>
                 <InlineTestimonial
                   name="Priya" age={38} flag="🇬🇧"
                   quote="Sarah doesn't talk down to you. She actually teaches you the science. I trust her more than my dermatologist now."
@@ -201,7 +201,7 @@ function FinalCta({ onCta }) {
                 <span style={{ fontSize: 20, color: "var(--slate-soft)", textDecoration: "line-through" }}>$247</span>
                 <span className="stat-num" style={{ fontSize: 64, color: "var(--orange-600)" }}>$37</span>
               </div>
-              <Button onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center" }}>Start the challenge — $37</Button>
+              <Button onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center" }}>Start the challenge</Button>
               <p className="small center" style={{ marginTop: 14, marginBottom: 0 }}>
                 Next cohort starts June 6th · 2,400 women joining · 30-day money-back guarantee
               </p>
@@ -349,7 +349,7 @@ function SelfQualifier({ onCta }) {
               ? "Tick the ones that ring true above."
               : <span>You ticked <strong style={{ color: "var(--orange-700)" }}>{count}</strong> — you're exactly who the challenge was built for. Join the <strong>250,000+ women in their 30s and 40s</strong> who started here.</span>}
           </div>
-          <Button onClick={onCta} icon="arrow-right">Take charge of my hair — start for $37</Button>
+          <Button onClick={onCta} icon="arrow-right">Take charge of my hair</Button>
         </Reveal>
       </div>
     </section>
