@@ -315,7 +315,7 @@ function Science() {
               <div className="fault-beat-body">
                 <span className="fault-stamp">01 · not your fault</span>
                 <h3 className="fault-headline">
-                  You're still using a haircare routine <span className="fault-emoji">🙅‍♀️</span> built for when you were <Underline color="var(--ink)">25</Underline>.
+                  You're still using a haircare routine <span className="fault-emoji">🙅‍♀️</span> built for when you were <Underline>25</Underline>.
                 </h3>
                 <p className="fault-copy">
                   No one told you it would stop working — so you kept following what used to work, and wondering why nothing is.
@@ -328,7 +328,7 @@ function Science() {
               <div className="fault-beat-body">
                 <span className="fault-stamp">02 · not your fault</span>
                 <h3 className="fault-headline">
-                  You tried to <span className="fault-emoji">🛍️</span> <Underline color="var(--ink)">buy</Underline> the fix.
+                  You tried to <span className="fault-emoji">🛍️</span> <Underline>buy</Underline> the fix.
                 </h3>
                 <p className="fault-copy">
                   In your 30s, you earn more but have so much less time — so of course you invested in products. But you can't buy past what no one taught you to understand.
@@ -345,7 +345,7 @@ function Science() {
               <div className="fault-beat-body">
                 <span className="fault-stamp fault-stamp-final">03 · here's the part no one tells you</span>
                 <h3 className="fault-headline fault-headline-final">
-                  Once you learn how to care for your hair in your 30s, it's <span className="fault-emoji">✨</span> <Underline color="var(--orange-600)">easy</Underline>.
+                  Once you learn how to care for your hair in your 30s, it's <span className="fault-emoji">✨</span> <Underline>easy</Underline>.
                 </h3>
                 <p className="fault-copy">
                   Fewer steps. Less money. Less effort and time. It's only hard because understanding your hair is the one thing the industry was never going to sell you.
