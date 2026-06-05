@@ -133,7 +133,7 @@ function SocialProof({ onCta }) {
         }
 
         <Reveal className="center" style={{ marginTop: 30, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-          <Button onClick={onCta} icon="arrow-right">Join 250,000+ women — $37</Button>
+          <Button onClick={onCta} icon="arrow-right">Join 250,000+ women</Button>
           <button className="btn btn-ghost" style={{ padding: "10px 20px", fontSize: 14 }}>
             See more stories <Icon name="chevron-right" size={16} />
           </button>
@@ -252,7 +252,7 @@ function HowItWorks({ onCta }) {
         </Reveal>
 
         <Reveal className="center" style={{ marginTop: 26 }}>
-          <Button onClick={onCta} icon="arrow-right">I'm ready — start for $37</Button>
+          <Button onClick={onCta} icon="arrow-right">I'm ready — start now</Button>
         </Reveal>
       </div>
     </section>);
@@ -290,7 +290,7 @@ function ResultsIn2Weeks({ onCta }) {
           </div>
         </Reveal>
         <Reveal className="center" style={{ marginTop: 30 }}>
-          <Button onClick={onCta} icon="arrow-right">Start the challenge — $37</Button>
+          <Button onClick={onCta} icon="arrow-right">Start the challenge</Button>
         </Reveal>
       </div>
     </section>);
@@ -380,7 +380,7 @@ function WhatsIncluded({ onCta }) {
                 <div className="pricing-today-amount">$37</div>
                 <span className="pricing-save">You save $503 · 93% off bundle value</span>
               </div>
-              <Button onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center", marginTop: 22 }}>Get everything — start for $37</Button>
+              <Button onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center", marginTop: 22 }}>Get everything — start now</Button>
               <div className="pricing-trust">
                 <span><Icon name="shield-check" size={15} color="var(--trust-green)" /> 30-day money-back</span>
                 <span className="pricing-trust-dot">·</span>
