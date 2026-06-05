@@ -113,14 +113,45 @@ function Hero({ onCta }) {
 
       {/* trust bar */}
       <div style={{ marginTop: 48, background: "rgba(255,255,255,0.55)", borderTop: "1px solid var(--line)" }}>
-        <div className="wrap-wide trust-bar" style={{ padding: "26px 24px" }}>
-          <TrustStat num="250K+" label="women have taken the challenge" />
-          <Divider />
-          <TrustStat num="92%" label="saw results within 14 days" />
-          <Divider />
-          <TrustStat num="86%" label="called it life-changing" />
-          <Divider />
-          <span className="trustpilot-wrap"><Trustpilot rating="4.8" reviews="12,400 reviews" /></span>
+        <div className="wrap-wide community-trust">
+          {/* Row 1 — community proof with overlapping avatars */}
+          <div className="ct-row ct-community">
+            <div className="ct-avatars" aria-hidden="true">
+              {[
+                ["#F6C9A8","#D5551F","H"],
+                ["#E8D5C0","#8B6F5E","L"],
+                ["#FCE7D8","#E8622A","M"],
+                ["#E3D5EA","#7D5BA6","R"],
+                ["#FAD7B0","#C46A2A","A"],
+                ["#EBD9C7","#A0522D","S"],
+              ].map(([bg, color, ch], i) => (
+                <span key={i} className="ct-avatar" style={{ background: bg, color }}>{ch}</span>
+              ))}
+              <span className="ct-avatar ct-avatar-more">+</span>
+            </div>
+            <div className="ct-community-text">
+              <div className="ct-num">250,000+</div>
+              <div className="ct-label">women have taken the challenge</div>
+            </div>
+          </div>
+
+          {/* Row 2 — two side-by-side stats */}
+          <div className="ct-row ct-stats">
+            <div className="ct-stat">
+              <div className="ct-num ct-num-sm">92%</div>
+              <div className="ct-label">saw results within 14 days</div>
+            </div>
+            <div className="ct-vrule" />
+            <div className="ct-stat">
+              <div className="ct-num ct-num-sm">86%</div>
+              <div className="ct-label">called it life-changing</div>
+            </div>
+          </div>
+
+          {/* Row 3 — Trustpilot */}
+          <div className="ct-row ct-trustpilot">
+            <Trustpilot rating="4.8" reviews="12,400 reviews" />
+          </div>
         </div>
       </div>
     </section>);
