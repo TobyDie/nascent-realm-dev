@@ -208,7 +208,9 @@ function StarRow({ size = 16, color = "var(--star)", count = 5 }) {
   return (
     <span style={{ display: "inline-flex", gap: 2, color }}>
       {Array.from({ length: count }).map((_, i) => (
-        <Icon key={i} name="star" size={size} style={{ fill: color, color }} />
+        <svg key={i} width={size} height={size} viewBox="0 0 24 24" fill={color} stroke={color} strokeWidth="1.5" strokeLinejoin="round" aria-hidden="true">
+          <path d="M12 2.5l2.95 6.18 6.8.74-5.08 4.6 1.45 6.68L12 17.3l-6.12 3.4 1.45-6.68L2.25 9.42l6.8-.74L12 2.5z" />
+        </svg>
       ))}
     </span>
   );
