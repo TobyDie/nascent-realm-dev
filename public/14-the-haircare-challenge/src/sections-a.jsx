@@ -297,9 +297,9 @@ function Science() {
       <Anno>Section 3 — Science / education (the aha moment)</Anno>
       <div className="wrap">
         <Reveal style={{ marginBottom: 28, textAlign: "center" }}>
-          <Eyebrow style={{ color: "var(--slate)" }}>What's actually happening</Eyebrow>
+          <Eyebrow style={{ color: "var(--slate)" }}>WHY is it happening?</Eyebrow>
           <h2 className="h2" style={{ marginTop: 12, maxWidth: 680, marginInline: "auto" }}>
-            Your hair didn't just "get worse." <em>Your body changed.</em>
+            Your hair didn't "get worse". <em>Your hair has changed, but your routine didn't change with it.</em>
           </h2>
         </Reveal>
 
