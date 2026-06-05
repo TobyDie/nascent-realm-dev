@@ -122,9 +122,13 @@ function Faq({ onCta }) {
   const faqs = [
     { q: "I've tried so many things. Why is this different?", a: "Because this is education, not a product. Products treat symptoms — this teaches you to treat the cause. Once you understand what's happening at the root, you stop guessing and start fixing." },
     { q: "I'm really busy. Can I actually do 10 minutes a day?", a: "The daily videos are designed for exactly that life. Many women watch them while doing their morning routine. Ten minutes, once a day, for fourteen days — that's the whole commitment." },
-    { q: "I'm in perimenopause / postpartum / dealing with thyroid issues. Will this work for me?", a: "Yes. The program is built around the exact hormonal and metabolic changes that happen in your 30s and 40s — including perimenopause, postpartum recovery and common deficiencies. This is not a generic plan." },
-    { q: "What if it doesn't work for me?", a: "You're covered by a 100% money-back guarantee, no questions asked, within 30 days. The risk is entirely on us." },
+    { q: "I'm in perimenopause / postpartum / dealing with thyroid issues. Will this work for me?", a: "Yes. The program is built around the exact hormonal and metabolic changes that happen in your 30s — including early perimenopause, postpartum recovery and the most common deficiencies for this decade. This is not a generic plan." },
+    { q: "Can I join from anywhere in the world?", a: "Yes. The challenge is 100% online and runs in English. Daily videos, the journal, the workshops and the community are all accessible from any country — all you need is a phone or laptop." },
+    { q: "What if I'm not free on the start day?", a: "You'll keep lifetime access to all the material, so you can catch up at your own pace if you fall behind. That said, you'll get the most out of it going through the 14 days alongside the rest of your cohort." },
+    { q: "Will I have access to the challenge after it's completed?", a: "Yes — the masterclass, journal, workshops and handbooks are yours to keep forever. You can revisit any lesson, re-run the challenge, or use the reference guides whenever you need them." },
+    { q: "Do I need to buy any special products to do this?", a: "No. Everything in the challenge is built around things you likely already have at home, plus a few inexpensive kitchen ingredients for the DIY shampoo workshop. There is nothing extra to buy from us." },
     { q: "Is this just another course I'll never finish?", a: "The 14-day structure and the community cohort — everyone starts together — are specifically designed to get you to the finish line. 86% of participants complete the challenge." },
+    { q: "Can I get a refund if I don't like it?", a: "Yes. Your purchase is 100% risk-free with a 30-day money-back guarantee. If the challenge isn't for you, email hello@hairqare.co within 30 days of starting and we'll refund you in full. No questions asked." },
   ];
   const [open, setOpen] = useState(0);
   return (
@@ -210,12 +214,6 @@ function FinalCta({ onCta }) {
         </Reveal>
         <Reveal style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18, marginTop: 8 }}>
           <Trustpilot rating="4.8" reviews="12,400 reviews" />
-          <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", justifyContent: "center", opacity: 0.7 }}>
-            <span className="small" style={{ fontWeight: 600, color: "var(--slate)" }}>As featured in</span>
-            {["[Logo]", "[Logo]", "[Logo]", "[Logo]"].map((l, i) => (
-              <span key={i} style={{ fontSize: 13, color: "var(--slate-soft)", border: "1px dashed var(--line)", borderRadius: 6, padding: "6px 16px" }}>{l}</span>
-            ))}
-          </div>
         </Reveal>
       </div>
     </section>
@@ -352,7 +350,7 @@ function SelfQualifier({ onCta }) {
           <div style={{ minHeight: 28, marginBottom: 18, fontSize: 16.5, color: "var(--ink-soft)", transition: "opacity .3s" }}>
             {count === 0
               ? "Tick the ones that ring true above."
-              : <span>You ticked <strong style={{ color: "var(--orange-700)" }}>{count}</strong> — you're exactly who the challenge was built for. Join the <strong>250,000+ women in their 30s and 40s</strong> who started here.</span>}
+              : <span>You ticked <strong style={{ color: "var(--orange-700)" }}>{count}</strong> — you're exactly who the challenge was built for. Join the <strong>250,000+ women in their 30s</strong> who started here.</span>}
           </div>
           <Button onClick={onCta} icon="arrow-right">Take charge of my hair</Button>
         </Reveal>

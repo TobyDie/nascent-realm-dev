@@ -203,7 +203,7 @@ function HowItWorks({ onCta }) {
 function ResultsIn2Weeks({ onCta }) {
   const benefits = [
   { emoji: "✂️", t: "Less shedding", d: "Real decrease in strands in your drain — at the temples, crown and part. Not a temporary patch." },
-  { emoji: "💁", t: "Volume coming back", d: "As your follicles recover from the stress of your 40s, fullness returns — without styling tricks." },
+  { emoji: "💁", t: "Volume coming back", d: "As your follicles recover from the stress of your 30s, fullness returns — without styling tricks." },
   { emoji: "💧", t: "Hydrated, resilient hair", d: "Restore the moisture balance for your hair as it is now — and stretch the time between washes." },
   { emoji: "💪", t: "Stronger strands", d: "Work with the keratin and collagen decline that starts in your 30s, so the breakage eases off." },
   { emoji: "🌱", t: "A healthier scalp", d: "Build the scalp conditions your follicles need to regrow strong, consistent hair — for years." }];
@@ -245,7 +245,7 @@ function WhatsIncluded({ onCta }) {
   { emoji: "🧴", t: "DIY Luxury Shampoo Workshop", d: "Make a salon-quality shampoo at home, from kitchen ingredients.", v: "$149", flagship: true },
   { emoji: "🧪", t: "Silicones & Sulfates Manual", d: "Decode any ingredient label in 30 seconds.", v: "$29" },
   { emoji: "📖", t: "Total Hair Wellness Handbook", d: "Your reference for hormones, nutrition, scalp care.", v: "$29" },
-  { emoji: "🚫", t: "Haircare No-No List", d: "The 47 ingredients to avoid in your 30s and 40s.", v: "$35" },
+  { emoji: "🚫", t: "Haircare No-No List", d: "The 47 ingredients to avoid in your 30s.", v: "$35" },
   { emoji: "🔬", t: "Virtual Deficiency Test", d: "Identify your specific iron, ferritin, zinc & B12 gaps.", v: "$67" },
   { emoji: "🥗", t: "Healthy Hair Recipe Book", d: "30 hormone-balancing, follicle-feeding meals.", v: "$29" },
   { emoji: "💛", t: "Members-Only Community", d: "A private circle of women your age, doing exactly this.", v: "$40", bonus: true },
