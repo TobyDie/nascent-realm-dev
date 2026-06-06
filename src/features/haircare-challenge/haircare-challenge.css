@@ -1674,7 +1674,9 @@
 .hq-sp .ti-magazine-byline strong { display: block; font-size: 14px; }
 @media (max-width: 720px) {
   .hq-sp .ti-magazine { grid-template-columns: 1fr; min-height: 0; }
-  .hq-sp .ti-magazine-img { aspect-ratio: 4/3; }
+  .hq-sp .ti-magazine-img { aspect-ratio: auto; background: var(--cream); }
+  .hq-sp .ti-magazine-img img { height: auto; width: 100%; object-fit: contain; }
+  .hq-sp .ti-magazine-img-tag { bottom: 12px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
   .hq-sp .ti-magazine-quote { padding: 32px 24px; }
   .hq-sp .ti-magazine-quote p { font-size: 20px; }
 }
