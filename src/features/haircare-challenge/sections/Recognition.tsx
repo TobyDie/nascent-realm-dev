@@ -64,7 +64,7 @@ export function Recognition() {
               <span className="timeline-wash" />
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">🧴</span>Nothing you buy seems to work.
+                <span className="emoji">🧴</span>Nothing you buy seems to work!
               </p>
               <p className="timeline-consequence">
                 so you reach for the next better shampoo, the next salon visit, close to $2,000 by now, and you're still watching it fall.
