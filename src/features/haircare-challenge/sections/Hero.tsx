@@ -47,7 +47,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
 
             {/* CTA block — must be above fold on mobile */}
             <div id="hero-cta-sentinel" style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start", marginBottom: 24 }}>
-              <Button onClick={onCta} icon="arrow-right">Join the challenge</Button>
+              <Button id="cta-hero" onClick={onCta} icon="arrow-right">Join the challenge</Button>
               <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
                 85% off · today only
               </span>
