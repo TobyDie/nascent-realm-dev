@@ -147,7 +147,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
               <div style={{ fontFamily: "var(--font-serif)", fontSize: 22, fontStyle: "italic", color: "var(--ink)", marginTop: 12 }}>— Sarah Tran</div>
 
               <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start" }}>
-                <Button onClick={onCta} icon="arrow-right">Start with me</Button>
+                <Button id="cta-founder" onClick={onCta} icon="arrow-right">Start with me</Button>
                 <GuaranteeBadge size="sm" />
                 <InlineTestimonial
                   name="Natasha" age={37} flag="🇩🇪"

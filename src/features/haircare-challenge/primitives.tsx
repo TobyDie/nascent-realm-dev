@@ -111,6 +111,7 @@ export function Button({
   onClick,
   style,
   className = "",
+  id,
 }: {
   children: React.ReactNode;
   variant?: string;
@@ -118,9 +119,10 @@ export function Button({
   onClick?: () => void;
   style?: React.CSSProperties;
   className?: string;
+  id?: string;
 }) {
   return (
-    <button className={`btn btn-${variant} ${className}`} onClick={onClick} style={style}>
+    <button id={id} className={`btn btn-${variant} ${className}`} onClick={onClick} style={style}>
       {children}
       {icon && <Icon name={icon} size={18} />}
     </button>

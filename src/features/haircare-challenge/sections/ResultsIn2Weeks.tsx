@@ -59,7 +59,7 @@ export function ResultsIn2Weeks({ onCta }: { onCta?: () => void }) {
           </div>
         </Reveal>
         <Reveal className="center" style={{ marginTop: 30 }}>
-          <Button onClick={onCta} icon="arrow-right">Start the challenge</Button>
+          <Button id="cta-results-2w" onClick={onCta} icon="arrow-right">Start the challenge</Button>
         </Reveal>
       </div>
     </section>

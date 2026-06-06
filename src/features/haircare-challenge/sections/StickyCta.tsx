@@ -117,7 +117,7 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
             {formatJoiningCount(joining)} women joining this week
           </span>
         </div>
-        <Button onClick={onCta} icon="arrow-right" className="cta-arrow-nudge" style={{ padding: "11px 18px", fontSize: 14, flex: "none" }}>Join now</Button>
+        <Button id="cta-sticky" onClick={onCta} icon="arrow-right" className="cta-arrow-nudge" style={{ padding: "11px 18px", fontSize: 14, flex: "none" }}>Join now</Button>
       </div>
     </div>
   );

@@ -146,6 +146,7 @@ export function Science() {
 
         <Reveal className="center" style={{ marginTop: 24 }}>
           <Button
+            id="cta-science"
             variant="ghost"
             onClick={() => { window.location.href = "https://join.hairqare.co/the-quiz-haircare"; }}
             icon="arrow-right"

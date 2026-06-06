@@ -45,6 +45,7 @@ export function Faq({ onCta }: { onCta?: () => void }) {
         </div>
         <div className="center" style={{ marginTop: 30 }}>
           <a
+            id="cta-faq"
             href="#start"
             onClick={(e) => { e.preventDefault(); onCta && onCta(); }}
             style={{ color: "var(--orange-700)", fontWeight: 700, fontSize: 16, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}

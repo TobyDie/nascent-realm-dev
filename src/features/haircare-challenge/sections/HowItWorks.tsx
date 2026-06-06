@@ -90,7 +90,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
         </Reveal>
 
         <Reveal className="center" style={{ marginTop: 26 }}>
-          <Button onClick={onCta} icon="arrow-right">I'm ready — start now</Button>
+          <Button id="cta-how-it-works" onClick={onCta} icon="arrow-right">I'm ready — start now</Button>
         </Reveal>
       </div>
     </section>

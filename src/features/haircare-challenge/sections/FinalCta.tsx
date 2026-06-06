@@ -46,7 +46,7 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
                 <span style={{ fontSize: 20, color: "var(--slate-soft)", textDecoration: "line-through" }}>$247</span>
                 <span className="stat-num" style={{ fontSize: 64, color: "var(--orange-600)" }}>$37</span>
               </div>
-              <Button onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center" }}>Start the challenge</Button>
+              <Button id="cta-final" onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center" }}>Start the challenge</Button>
               <div style={{ marginTop: 16 }}>
                 <GuaranteeBadge size="md" />
               </div>
