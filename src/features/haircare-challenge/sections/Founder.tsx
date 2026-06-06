@@ -11,6 +11,7 @@ import {
   useIsMobile,
 } from "../primitives";
 import profile6 from "@/assets/profile-6.webp.asset.json";
+import sarahFounder from "@/assets/sarah-tran-founder.webp.asset.json";
 
 export function Founder({ onCta }: { onCta?: () => void }) {
   const isMobile = useIsMobile();
@@ -54,7 +55,13 @@ export function Founder({ onCta }: { onCta?: () => void }) {
         <div className="founder-layout">
           <Reveal>
             <div style={{ position: "relative" }}>
-              <EditableImage h={520} label="Sarah Tran portrait — warm, direct. 120cm of healthy bleached hair. Same face from the ad. Not retouched." radius={20} style={{ boxShadow: "var(--shadow-lg)" }} />
+              <img
+                src={sarahFounder.url}
+                alt="Sarah Tran, founder of HairQare, with long healthy auburn hair, seated in a calm sunlit room."
+                loading="lazy"
+                decoding="async"
+                style={{ width: "100%", height: 520, objectFit: "cover", objectPosition: "center top", borderRadius: 20, display: "block", boxShadow: "var(--shadow-lg)" }}
+              />
               <div style={{ position: "absolute", top: -14, right: -10, zIndex: 4 }}>
                 <Pin rotate={-7} bg="var(--orange-600)" color="#fff" style={{ borderColor: "var(--orange-700)" }}>250K+ coached</Pin>
               </div>
