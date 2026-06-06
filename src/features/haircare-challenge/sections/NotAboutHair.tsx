@@ -7,6 +7,7 @@ import {
   Reveal,
   Underline,
 } from "../primitives";
+import profile1 from "@/assets/profile-1.webp.asset.json";
 
 export function NotAboutHair({ onCta }: { onCta?: () => void }) {
   return (
@@ -75,6 +76,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
           <InlineTestimonial
             name="Kate" age={36} flag="🇬🇧"
             quote="The main thing this challenge gave me — and it's the most important one — is that I fell in love with my hair again."
+            avatar={profile1.url}
             style={{ margin: "0 auto" }}
           />
         </Reveal>

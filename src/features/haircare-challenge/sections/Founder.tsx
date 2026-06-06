@@ -9,6 +9,7 @@ import {
   Reveal,
   useIsMobile,
 } from "../primitives";
+import profile6 from "@/assets/profile-6.webp.asset.json";
 
 export function Founder({ onCta }: { onCta?: () => void }) {
   const isMobile = useIsMobile();
@@ -109,6 +110,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
                 <InlineTestimonial
                   name="Natasha" age={37} flag="🇩🇪"
                   quote="I'm a scientist — I came in sceptical. In 14 days my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again."
+                  avatar={profile6.url}
                 />
               </div>
             </div>
