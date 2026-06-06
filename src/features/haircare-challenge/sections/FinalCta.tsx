@@ -54,7 +54,7 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
                 <strong style={{ color: "var(--ink-soft)" }}>Why we can promise this:</strong> 92% of women see visible change in 14 days. If you're in the 8% — full refund, you keep everything.
               </p>
               <p className="small center" style={{ marginTop: 14, marginBottom: 0 }}>
-                Next cohort starts <span className="start-date">{startDate ? fmtMonthDay(startDate) : "June 6th"}</span> · {formatJoiningCount(joining)} women joining · 30-day money-back guarantee
+                Next cohort starts <span className="start-date">{startDate ? fmtMonthDay(startDate) : "June 6th"}</span> · {formatJoiningCount(joining)} women joining this week · 30-day money-back guarantee
               </p>
             </div>
           </div>
