@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HaircareChallengePage } from "@/features/haircare-challenge/HaircareChallengePage";
 
-export const Route = createFileRoute("/14-native")({
+export const Route = createFileRoute("/14-the-haircare-challenge")({
   head: () => ({
     meta: [
       { title: "Stop Hair Loss in 14 Days | 14-Day Haircare Challenge" },
