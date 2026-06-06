@@ -5,6 +5,12 @@ import profile3 from "@/assets/profile-3.webp.asset.json";
 import profile5 from "@/assets/profile-5.webp.asset.json";
 import profile6 from "@/assets/profile-6.webp.asset.json";
 import profile7 from "@/assets/profile-7.webp.asset.json";
+import baNew1 from "@/assets/ba-new-1.png.asset.json";
+import baNew2 from "@/assets/ba-new-2.png.asset.json";
+import baNew3 from "@/assets/ba-new-3.png.asset.json";
+import baNew4 from "@/assets/ba-new-4.png.asset.json";
+import baNew5 from "@/assets/ba-new-5.png.asset.json";
+import ba13 from "@/assets/ba-13.png.asset.json";
 
 /* ------------------------------------------------------------------
    PLACEHOLDER text testimonials (5–6). Replace copy with real reviews.
@@ -32,17 +38,17 @@ const TEXT_PLACEHOLDERS = [
 /* Real customer image+text testimonials — placed where the story matches the pitch above. */
 const IMAGE_PLACEHOLDERS = [
   // After HowItWorks — the process works, visible after washing
-  { name: "Selima", initials: "S", context: "Daily hair loss · limp hair", text: "I noticed that my hair had a little bit of volume after washing it, which never happened before. It always looked limp and flat, but now I can see a little bit of volume after washing and I experienced less sweat and limpness." },
+  { name: "Selima", initials: "S", image: baNew3.url, context: "Daily hair loss · limp hair", text: "I noticed that my hair had a little bit of volume after washing it, which never happened before. It always looked limp and flat, but now I can see a little bit of volume after washing and I experienced less sweat and limpness." },
   // After WhatsIncluded — the DIY shampoo / what's in the bundle delivers
-  { name: "Alexia Zacharias", initials: "A", context: "Hair loss (hypothyroid)", text: "I see much, much difference with the shampoo — with the DIY shampoo." },
+  { name: "Alexia Zacharias", initials: "A", image: baNew2.url, context: "Hair loss (hypothyroid)", text: "I see much, much difference with the shampoo — with the DIY shampoo." },
   // After NotAboutHair — emotional, reconnecting with self
-  { name: "Aurélie Guénué", initials: "A", context: "Hair loss · irritated scalp", text: "After just a few weeks my scalp feels calmer, I'm losing less hair and more than anything I'm finally reconnecting with myself." },
+  { name: "Aurélie Guénué", initials: "A", image: baNew1.url, context: "Hair loss · irritated scalp", text: "After just a few weeks my scalp feels calmer, I'm losing less hair and more than anything I'm finally reconnecting with myself." },
   // After SelfQualifier (image slot) — hormonal / Hashimoto's, "for women like me"
-  { name: "Biljana Lemić", initials: "B", context: "Hormonal hair loss · Hashimoto's, early menopause", text: "The first time I used it, I could already see the difference. My hair looks shinier, felt stronger and somehow just healthier overall." },
+  { name: "Biljana Lemić", initials: "B", image: baNew4.url, context: "Hormonal hair loss · Hashimoto's, early menopause", text: "The first time I used it, I could already see the difference. My hair looks shinier, felt stronger and somehow just healthier overall." },
   // After FAQ (image slot) — bouncy, soft, gentle (trust before CTA)
-  { name: "Sara Gouveia", initials: "S", context: "Hair loss · stress", text: "Now that it's dried it actually feels pretty clean and it feels so smooth and so gentle and my curls are just like, hey hello! My hair is usually very flat… but now it's just quite bouncy." },
+  { name: "Sara Gouveia", initials: "S", image: baNew5.url, context: "Hair loss · stress", text: "Now that it's dried it actually feels pretty clean and it feels so smooth and so gentle and my curls are just like, hey hello! My hair is usually very flat… but now it's just quite bouncy." },
   // Final-CTA-area — the most powerful story (cancer survivor / family-level change)
-  { name: "Rosemary", initials: "R", context: "Military veteran · chemotherapy hair loss", text: "This course has changed the way my family thinks, the way I think — it is going to continue to improve our quality of life." },
+  { name: "Rosemary", initials: "R", image: ba13.url, context: "Military veteran · chemotherapy hair loss", text: "This course has changed the way my family thinks, the way I think — it is going to continue to improve our quality of life." },
 ];
 
 /* Compact strip — two testimonials side-by-side on desktop, stacked on mobile.
@@ -67,6 +73,7 @@ export function TestimonialStrip({
                 name={i.name}
                 context={i.context}
                 text={i.text}
+                image={i.image}
               />
             ) : null}
           </div>
