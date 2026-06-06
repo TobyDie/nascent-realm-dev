@@ -1674,7 +1674,9 @@
 .hq-sp .ti-magazine-byline strong { display: block; font-size: 14px; }
 @media (max-width: 720px) {
   .hq-sp .ti-magazine { grid-template-columns: 1fr; min-height: 0; }
-  .hq-sp .ti-magazine-img { aspect-ratio: 4/3; }
+  .hq-sp .ti-magazine-img { aspect-ratio: auto; background: var(--cream); }
+  .hq-sp .ti-magazine-img img { height: auto; width: 100%; object-fit: contain; }
+  .hq-sp .ti-magazine-img-tag { bottom: 12px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
   .hq-sp .ti-magazine-quote { padding: 32px 24px; }
   .hq-sp .ti-magazine-quote p { font-size: 20px; }
 }
@@ -1762,4 +1764,43 @@
 @media (max-width: 720px) {
   .hq-sp .ti-ribbon { grid-template-columns: 1fr; }
   .hq-sp .ti-ribbon-divider { display: none; }
+}
+
+/* Reviewed-by minimal seal strip */
+.hq-sp .reviewed-by-strip { padding: 36px 0 32px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.hq-sp .seal-row {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 14px 22px;
+  justify-content: center; align-items: stretch;
+}
+.hq-sp .seal-item {
+  display: inline-flex; flex-direction: column; align-items: center;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  min-width: 140px;
+  position: relative;
+}
+.hq-sp .seal-item::before, .hq-sp .seal-item::after {
+  content: ""; position: absolute; top: 50%; width: 6px; height: 1px; background: var(--slate-soft); transform: translateY(-50%);
+}
+.hq-sp .seal-item::before { left: 4px; }
+.hq-sp .seal-item::after { right: 4px; }
+.hq-sp .seal-name {
+  font-family: var(--font-serif);
+  font-size: 15px; font-weight: 600; color: var(--ink);
+  letter-spacing: 0.02em; text-transform: uppercase;
+  line-height: 1.1;
+}
+.hq-sp .seal-sub {
+  font-size: 10.5px; font-weight: 600; color: var(--slate); letter-spacing: 0.08em; text-transform: uppercase;
+  margin-top: 3px;
+}
+@media (max-width: 720px) {
+  .hq-sp .reviewed-by-strip { padding: 28px 0 24px; }
+  .hq-sp .seal-row { gap: 10px 12px; }
+  .hq-sp .seal-item { min-width: 0; padding: 6px 12px; }
+  .hq-sp .seal-name { font-size: 13px; }
+  .hq-sp .seal-sub { font-size: 9.5px; }
 }

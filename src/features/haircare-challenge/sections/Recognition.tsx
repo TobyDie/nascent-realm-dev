@@ -94,24 +94,12 @@ export function Recognition() {
             </div>
           </Reveal>
 
-          {/* Row 6 */}
-          <Reveal delay={350}>
-            <div className="timeline-beat final">
-              <span className="timeline-dot" />
-              <p className="timeline-trigger">
-                <span className="emoji">💔</span>No one comments on your hair anymore.
-              </p>
-              <p className="timeline-consequence">
-                you used to be the woman known for it, and you want her back.
-              </p>
-            </div>
-          </Reveal>
         </div>
 
         <Reveal style={{ marginTop: 36 }}>
           <InlineTestimonial
             name="Abigail" age={37} flag="🇺🇸"
-            quote="I haven't been crying every day over my hair. It's not where I want it to be yet — but it's been so much better since I changed the things I was doing wrong."
+            quote="I haven't been crying every day over my hair. It's not where I want it to be yet, but it's been so much better since I changed the things I was doing wrong."
             avatar={profile9.url}
             style={{ margin: "0 auto" }}
           />

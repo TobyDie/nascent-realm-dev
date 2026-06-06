@@ -2,7 +2,6 @@ import "./haircare-challenge.css";
 import { AgeStripe } from "./sections/AgeStripe";
 import { Hero } from "./sections/Hero";
 import { Recognition } from "./sections/Recognition";
-import { RecognitionVideo } from "./sections/RecognitionVideo";
 import { Science } from "./sections/Science";
 import { VideoTestimonials } from "./sections/VideoTestimonials";
 import { SocialProof } from "./sections/SocialProof";
@@ -17,6 +16,7 @@ import { FinalCta } from "./sections/FinalCta";
 import { StickyCta } from "./sections/StickyCta";
 import { TestimonialStrip } from "./sections/Interstitial";
 import { ReviewedBy } from "./sections/ReviewedBy";
+import brookeTestimonial from "@/assets/brooke-glad-i-found-this.webp.asset.json";
 
 function scrollToStart() {
   const el = document.getElementById("start");
@@ -30,8 +30,17 @@ export function HaircareChallengePage() {
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
       <Recognition />
-      <ReviewedBy />
-      <RecognitionVideo />
+      <section className="bg-cream" style={{ padding: "32px 0 8px" }}>
+        <div className="wrap" style={{ maxWidth: 720, textAlign: "center" }}>
+          <img
+            src={brookeTestimonial.url}
+            alt="Brooke testimonial: Glad I found this. Before and after of hair loss results from the 14-Day Haircare Challenge."
+            loading="lazy"
+            decoding="async"
+            style={{ width: "100%", height: "auto", borderRadius: 16, boxShadow: "var(--shadow-sm)" }}
+          />
+        </div>
+      </section>
       <Science />
       <SocialProof onCta={scrollToStart} />
       <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="var(--cream)" />
@@ -41,6 +50,7 @@ export function HaircareChallengePage() {
       <ResultsIn2Weeks onCta={scrollToStart} />
       <TestimonialStrip variant="magazine-split" textIndex={2} imageIndex={2} bg="var(--cream)" />
       <WhatsIncluded onCta={scrollToStart} />
+      <ReviewedBy />
       <TestimonialStrip variant="sticky-wall" textIndex={3} imageIndex={3} bg="var(--lavender)" />
       <NotAboutHair onCta={scrollToStart} />
       <SelfQualifier onCta={scrollToStart} />
