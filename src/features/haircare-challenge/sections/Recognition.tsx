@@ -94,18 +94,6 @@ export function Recognition() {
             </div>
           </Reveal>
 
-          {/* Row 6 */}
-          <Reveal delay={350}>
-            <div className="timeline-beat final">
-              <span className="timeline-dot" />
-              <p className="timeline-trigger">
-                <span className="emoji">💔</span>No one comments on your hair anymore.
-              </p>
-              <p className="timeline-consequence">
-                you used to be the woman known for it, and you want her back.
-              </p>
-            </div>
-          </Reveal>
         </div>
 
         <Reveal style={{ marginTop: 36 }}>
