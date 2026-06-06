@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TheHaircareChallengeRouteImport } from './routes/the-haircare-challenge'
 import { Route as Backup14TheHaircareChallengeRouteImport } from './routes/backup-14-the-haircare-challenge'
 import { Route as R14TheHaircareChallengeRouteImport } from './routes/14-the-haircare-challenge'
+import { Route as R14NativeRouteImport } from './routes/14-native'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TheHaircareChallengeRoute = TheHaircareChallengeRouteImport.update({
@@ -30,6 +31,11 @@ const R14TheHaircareChallengeRoute = R14TheHaircareChallengeRouteImport.update({
   path: '/14-the-haircare-challenge',
   getParentRoute: () => rootRouteImport,
 } as any)
+const R14NativeRoute = R14NativeRouteImport.update({
+  id: '/14-native',
+  path: '/14-native',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/14-native': typeof R14NativeRoute
   '/14-the-haircare-challenge': typeof R14TheHaircareChallengeRoute
   '/backup-14-the-haircare-challenge': typeof Backup14TheHaircareChallengeRoute
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/14-native': typeof R14NativeRoute
   '/14-the-haircare-challenge': typeof R14TheHaircareChallengeRoute
   '/backup-14-the-haircare-challenge': typeof Backup14TheHaircareChallengeRoute
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
@@ -51,6 +59,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/14-native': typeof R14NativeRoute
   '/14-the-haircare-challenge': typeof R14TheHaircareChallengeRoute
   '/backup-14-the-haircare-challenge': typeof Backup14TheHaircareChallengeRoute
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
@@ -59,18 +68,21 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/14-native'
     | '/14-the-haircare-challenge'
     | '/backup-14-the-haircare-challenge'
     | '/the-haircare-challenge'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/14-native'
     | '/14-the-haircare-challenge'
     | '/backup-14-the-haircare-challenge'
     | '/the-haircare-challenge'
   id:
     | '__root__'
     | '/'
+    | '/14-native'
     | '/14-the-haircare-challenge'
     | '/backup-14-the-haircare-challenge'
     | '/the-haircare-challenge'
@@ -78,6 +90,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R14NativeRoute: typeof R14NativeRoute
   R14TheHaircareChallengeRoute: typeof R14TheHaircareChallengeRoute
   Backup14TheHaircareChallengeRoute: typeof Backup14TheHaircareChallengeRoute
   TheHaircareChallengeRoute: typeof TheHaircareChallengeRoute
@@ -106,6 +119,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof R14TheHaircareChallengeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/14-native': {
+      id: '/14-native'
+      path: '/14-native'
+      fullPath: '/14-native'
+      preLoaderRoute: typeof R14NativeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -118,6 +138,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R14NativeRoute: R14NativeRoute,
   R14TheHaircareChallengeRoute: R14TheHaircareChallengeRoute,
   Backup14TheHaircareChallengeRoute: Backup14TheHaircareChallengeRoute,
   TheHaircareChallengeRoute: TheHaircareChallengeRoute,
@@ -125,3 +146,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
