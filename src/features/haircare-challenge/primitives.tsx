@@ -314,6 +314,10 @@ export function Stat({ num, label, size = 80, color }: { num: React.ReactNode; l
   );
 }
 
+export function Divider() {
+  return <div style={{ width: 1, height: 42, background: "var(--line)" }} className="trust-divider" />;
+}
+
 export function EditableImage({
   h = 220, cool = false, label = "photo", radius, style, className = "", children,
 }: { h?: number; cool?: boolean; label?: React.ReactNode; radius?: number | string; style?: React.CSSProperties; className?: string; children?: React.ReactNode }) {
