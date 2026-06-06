@@ -460,3 +460,30 @@ export function Reveal({
   }, []);
   return <div ref={ref} className={`entrance ${seen ? "in" : ""} ${className}`} style={{ transitionDelay: `${delay}ms`, ...style }}>{children}</div>;
 }
+
+/* Compact image testimonial — small thumb on the left, quote on the right.
+   Used in dense interstitial strips so we don't burn vertical space. */
+export function CompactImageTestimonial({
+  name, age, flag, context, text, image, accent = "var(--orange-600)", style,
+}: { name: string; age?: React.ReactNode; flag?: React.ReactNode; context?: React.ReactNode; text: React.ReactNode; image?: string; accent?: string; style?: React.CSSProperties }) {
+  return (
+    <div className="compact-image-testi" style={{ borderLeft: `3px solid ${accent}`, ...style }}>
+      <div className="compact-image-testi-thumb">
+        <img
+          src={image ?? beforeAfterAsset.url}
+          alt="Before and after"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div className="compact-image-testi-body">
+        <StarRow size={13} />
+        <p className="compact-image-testi-quote">“{text}”</p>
+        <div className="compact-image-testi-meta">
+          — {name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}
+          {context ? <span className="compact-image-testi-context"> · {context}</span> : null}
+        </div>
+      </div>
+    </div>
+  );
+}

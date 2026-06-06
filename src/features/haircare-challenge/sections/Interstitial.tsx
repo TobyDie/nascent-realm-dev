@@ -1,4 +1,4 @@
-import { InlineTestimonial, TestimonialCard, Reveal } from "../primitives";
+import { InlineTestimonial, CompactImageTestimonial, Reveal } from "../primitives";
 import profile1 from "@/assets/profile-1.webp.asset.json";
 import profile2 from "@/assets/profile-2.webp.asset.json";
 import profile3 from "@/assets/profile-3.webp.asset.json";
@@ -45,33 +45,31 @@ const IMAGE_PLACEHOLDERS = [
   { name: "Rosemary", initials: "R", context: "Military veteran · chemotherapy hair loss", text: "This course has changed the way my family thinks, the way I think — it is going to continue to improve our quality of life." },
 ];
 
-export function TextInterstitial({ index, bg = "var(--cream)" }: { index: number; bg?: string }) {
-  const t = TEXT_PLACEHOLDERS[index];
-  if (!t) return null;
+/* Compact strip — two testimonials side-by-side on desktop, stacked on mobile.
+   Replaces the old full-width single-testimonial sections so the page reads
+   tighter without losing any of the real reviews. */
+export function TestimonialStrip({
+  textIndex,
+  imageIndex,
+  bg = "var(--cream)",
+}: { textIndex?: number; imageIndex?: number; bg?: string }) {
+  const t = textIndex != null ? TEXT_PLACEHOLDERS[textIndex] : undefined;
+  const i = imageIndex != null ? IMAGE_PLACEHOLDERS[imageIndex] : undefined;
+  if (!t && !i) return null;
   return (
-    <section style={{ background: bg, padding: "32px 0" }}>
-      <div className="wrap-narrow" style={{ maxWidth: 720, marginInline: "auto", paddingInline: 20 }}>
-      <Reveal>
-          <InlineTestimonial name={t.name} quote={t.quote} avatar={t.avatar} />
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-export function ImageInterstitial({ index, bg = "var(--white)" }: { index: number; bg?: string }) {
-  const t = IMAGE_PLACEHOLDERS[index];
-  if (!t) return null;
-  return (
-    <section style={{ background: bg, padding: "44px 0" }}>
-      <div className="wrap-narrow" style={{ maxWidth: 520, marginInline: "auto", paddingInline: 20 }}>
-      <Reveal>
-          <TestimonialCard
-            name={t.name}
-            initials={t.initials}
-            context={t.context}
-            text={t.text}
-          />
+    <section style={{ background: bg, padding: "24px 0" }}>
+      <div className="wrap-wide" style={{ maxWidth: 960, marginInline: "auto", paddingInline: 20 }}>
+        <Reveal>
+          <div className="testi-strip">
+            {t ? <InlineTestimonial name={t.name} quote={t.quote} avatar={t.avatar} /> : null}
+            {i ? (
+              <CompactImageTestimonial
+                name={i.name}
+                context={i.context}
+                text={i.text}
+              />
+            ) : null}
+          </div>
         </Reveal>
       </div>
     </section>
