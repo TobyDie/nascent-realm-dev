@@ -23,51 +23,41 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
     <TestimonialCard
       key={0}
       name="Kim"
-      age={36}
-      flag="🇺🇸"
       initials="K"
       context="Shedding every wash · hair loss"
-      text="I think I lost maybe half of the amount of hair I normally lose every time I wash. Half. That was after two weeks."
+      text="I think I lost maybe half of the amount of hair I normally lose every time I wash."
       image={ba1.url}
     />,
     <TestimonialCard
       key={1}
-      name="Andrea"
-      age={38}
-      flag="🇺🇸"
+      name="Andrea Burns"
       initials="A"
       context="Hair loss · dry, itchy scalp"
-      text="By the end of 14 days, I was losing maybe a palm-size amount when I washed my hair. That's about a third of what I would normally lose."
+      text="By the end of 14 days, I was losing like maybe, maybe a palm size amount when I would shower and wash my hair. And that is like a third of what I would normally lose."
       image={ba2.url}
     />,
     <TestimonialCard
       key={2}
-      name="Anna"
-      age={37}
-      flag="🇺🇦"
+      name="Anna Koval"
       initials="A"
       context="Thinning · hair felt lifeless"
-      text="My hair definitely looks so much better. It feels softer. There's some life — you know — that was added back into my hair."
+      text="I can tell you that my hair definitely looks so better. Feels softer. There's some life you know was added into my hair."
       image={ba3.url}
     />,
     <TestimonialCard
       key={3}
-      name="Yer"
-      age={32}
-      flag="🇺🇸"
+      name="Yer Yang"
       initials="Y"
-      context="Postpartum · oily, weighed-down hair"
-      text="My hair felt lighter. It doesn't feel as oily, it doesn't feel as weighed down. It feels like there's more volume — it just looks so much better than before I started."
+      context="New mother · postpartum hair loss"
+      text="My hair felt lighter and it just… it does not feel as oily, it does not feel as weighed down, it feels like there's more volume and it just looks much better than before I started."
       image={ba5.url}
     />,
     <TestimonialCard
       key={4}
-      name="Mia"
-      age={34}
-      flag="🇹🇭"
+      name="Karen Patdu"
       initials="M"
-      context="Thinning crown · visible scalp"
-      text="The thin spot at my hairline filled in so much. My hair finally feels dense again — I can wear it down without feeling self-conscious."
+      context="Thinning · hair loss"
+      text="You can see hair growing right here in the front. Usually, it doesn't grow this much, but slowly, but surely, I can see where it's coming from. My hair feels a lot healthier, cleaner, not so oily."
       image={ba13.url}
     />,
   ];
