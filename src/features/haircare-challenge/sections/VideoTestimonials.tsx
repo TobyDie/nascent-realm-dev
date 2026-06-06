@@ -30,21 +30,11 @@ export function VideoTestimonials() {
       </div>
     </div>,
     <div key={1} className="video-card">
-      <div className="video-thumb">
-        <div className="ph cool" style={{ height: "100%", padding: 0 }}>
-          <span className="ph-label" style={{ fontSize: 11 }}>
-            Renee, 41 — filmed at home, emotional and genuine. Professional woman in her 40s.
-          </span>
-        </div>
-        <div className="video-play-wrap">
-          <div className="video-play-circle">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M7 5l9 5-9 5V5z" fill="var(--orange-600)" />
-            </svg>
-          </div>
-        </div>
-        <span className="video-duration">3:02</span>
-      </div>
+      <VideoPlayer
+        src="https://videos.hairqare.co/my-hair-finally-curled-again-14-days-tha-caba2635/master.m3u8"
+        aspectRatio="1080/1920"
+        autoplay
+      />
       <div className="video-body">
         <div className="video-meta">
           <div className="video-avatar">R</div>
