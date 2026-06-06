@@ -16,6 +16,7 @@ import { FinalCta } from "./sections/FinalCta";
 import { StickyCta } from "./sections/StickyCta";
 import { TestimonialStrip } from "./sections/Interstitial";
 import { ReviewedBy } from "./sections/ReviewedBy";
+import brookeTestimonial from "@/assets/brooke-glad-i-found-this.webp.asset.json";
 
 function scrollToStart() {
   const el = document.getElementById("start");
@@ -29,6 +30,17 @@ export function HaircareChallengePage() {
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
       <Recognition />
+      <section className="bg-cream" style={{ padding: "32px 0 8px" }}>
+        <div className="wrap" style={{ maxWidth: 720, textAlign: "center" }}>
+          <img
+            src={brookeTestimonial.url}
+            alt="Brooke testimonial: Glad I found this. Before and after of hair loss results from the 14-Day Haircare Challenge."
+            loading="lazy"
+            decoding="async"
+            style={{ width: "100%", height: "auto", borderRadius: 16, boxShadow: "var(--shadow-sm)" }}
+          />
+        </div>
+      </section>
       <Science />
       <SocialProof onCta={scrollToStart} />
       <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="var(--cream)" />
