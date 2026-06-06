@@ -94,11 +94,13 @@ function Hero({ onCta }) {
             <div style={{ position: "relative" }}>
               <div className="hero-image-wrap">
                 <img
-                  src="/__l5e/assets-v1/dbed01f2-d600-4ba4-92db-5a8f950363e6/sarah-hero.webp"
+                  src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/sarah-hero.webp"
+                  srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/sarah-hero.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/sarah-hero.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/sarah-hero.webp 1200w"
+                  sizes="(max-width: 720px) 100vw, (max-width: 860px) 90vw, 405px"
                   alt="Sarah Tran — founder of HairQare, with long healthy auburn hair, sunlit Mediterranean setting. Inset: before/after of a coached student."
                   className="hero-image"
                   loading="eager"
-                  decoding="async"
+                  fetchPriority="high"
                 />
                 <div className="hero-image-caption">
                   <div style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 20, lineHeight: 1.1 }}>Sarah Tran</div>
