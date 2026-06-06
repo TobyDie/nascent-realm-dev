@@ -105,8 +105,7 @@ export function Recognition() {
         </Reveal>
         <Reveal className="center" style={{ marginTop: 24 }}>
           <a
-            href="#science"
-            onClick={(e) => { e.preventDefault(); document.getElementById('science')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
+            href="https://join.hairqare.co/the-quiz-haircare"
             style={{ color: "var(--orange-700)", fontWeight: 700, fontSize: 16, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}
           >
             Tell me why this is happening <Icon name="arrow-right" size={17} />
