@@ -18,21 +18,51 @@ export function Founder({ onCta }: { onCta?: () => void }) {
 
   const storyCards = [
     <div key={0} className="founder-story-card">
-      <EditableImage h={220} label="Sarah at the peak of her influencer career — styled, on-set for a luxury hair brand campaign. 500K followers, $20K brand deals. Hair was secretly thinning the whole time." radius={16} />
+      <div style={{ height: 220, borderRadius: 16, overflow: "hidden" }}>
+        <img
+          src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20Influencer.webp"
+          srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/Sarah%20Influencer.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20Influencer.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/Sarah%20Influencer.webp 1200w"
+          sizes="(max-width: 860px) 90vw, 332px"
+          alt="Sarah at the peak of her influencer career — styled, on-set for a luxury hair brand campaign. 500K followers, $20K brand deals. Hair was secretly thinning the whole time."
+          loading="lazy"
+          decoding="async"
+          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        />
+      </div>
       <div className="founder-story-caption">
         <span className="founder-story-num">01</span>
         <span>500,000 followers. $20K brand deals. Losing hair in clumps.</span>
       </div>
     </div>,
     <div key={1} className="founder-story-card">
-      <EditableImage h={220} label="Sarah working with a chemist or dermatologist — notes, formulations, research. The years she stopped promoting products and started asking why." radius={16} cool />
+      <div style={{ height: 220, borderRadius: 16, overflow: "hidden" }}>
+        <img
+          src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20working%20with%20chemist.webp"
+          srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 1200w"
+          sizes="(max-width: 860px) 90vw, 332px"
+          alt="Sarah working with a chemist or dermatologist — notes, formulations, research. The years she stopped promoting products and started asking why."
+          loading="lazy"
+          decoding="async"
+          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        />
+      </div>
       <div className="founder-story-caption">
         <span className="founder-story-num">02</span>
         <span>The turning point: years with chemists, dermatologists & trichologists.</span>
       </div>
     </div>,
     <div key={2} className="founder-story-card">
-      <EditableImage h={220} label="Sarah today — 120cm of healthy bleached hair, casual and confident. Same woman, different knowledge. $10 a month." radius={16} />
+      <div style={{ height: 220, borderRadius: 16, overflow: "hidden" }}>
+        <img
+          src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/IMG_4153%20(1).webp"
+          srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/IMG_4153%20(1).webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/IMG_4153%20(1).webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/IMG_4153%20(1).webp 1200w"
+          sizes="(max-width: 860px) 90vw, 332px"
+          alt="Sarah today — 120cm of healthy bleached hair, casual and confident. Same woman, different knowledge. $10 a month."
+          loading="lazy"
+          decoding="async"
+          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        />
+      </div>
       <div className="founder-story-caption">
         <span className="founder-story-num">03</span>
         <span>Today: 120cm of bleached hair. $10 a month.</span>
