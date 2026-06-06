@@ -61,7 +61,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               {/* cohort line — under CTA, not above headline */}
               <span className="hero-cohort">
                 <Icon name="calendar-heart" size={13} color="var(--orange-600)" />
-                Next cohort: <strong>Fri, June 6th</strong> · 2,400 women joining
+                Next cohort: <strong>Fri, June 6th</strong> · {formatJoiningCount(joining)} women joining
               </span>
               {/* Validation paragraph — restored, after cohort line */}
               <p className="hero-validation" style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)" }}>
