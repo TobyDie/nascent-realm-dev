@@ -80,7 +80,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
           />
         </Reveal>
         <Reveal className="center" style={{ marginTop: 32 }}>
-          <Button onClick={onCta} icon="arrow-right">Bring her back — start the challenge</Button>
+          <Button id="cta-not-about-hair" onClick={onCta} icon="arrow-right">Bring her back — start the challenge</Button>
         </Reveal>
       </div>
     </section>
