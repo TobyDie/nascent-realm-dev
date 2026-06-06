@@ -57,7 +57,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             <div id="hero-cta-sentinel" style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start", marginBottom: 24 }}>
               <Button onClick={onCta} icon="arrow-right">Join the challenge</Button>
               <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
-                <span style={{ textDecoration: "line-through", color: "var(--slate-soft)", marginRight: 6 }}>$247</span>
                 85% off · today only
               </span>
               <GuaranteeBadge size="sm" />
