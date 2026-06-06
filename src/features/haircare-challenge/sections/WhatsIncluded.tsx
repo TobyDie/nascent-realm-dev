@@ -12,8 +12,10 @@ import {
   Underline,
 } from "../primitives";
 import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
+import { useStartDate, fmtShort } from "../useStartDate";
 
 export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
+  const startDate = useStartDate();
   const joining = useJoiningCount();
   return (
     <section className="bg-cream" id="included">
@@ -161,7 +163,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
 
         <Reveal style={{ marginTop: 44 }}>
           <div className="pricing-card">
-            <div className="pricing-header">85% off · cohort starts Fri, June 6th</div>
+            <div className="pricing-header">85% off · cohort starts <span className="start-date">{startDate ? fmtShort(startDate) : "Fri, June 6th"}</span></div>
             <div className="pricing-body">
               <div className="pricing-total-row">
                 <span className="pricing-label">Total bundle value</span>

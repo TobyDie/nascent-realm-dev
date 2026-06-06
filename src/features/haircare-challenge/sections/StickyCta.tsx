@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "../primitives";
 import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
+import { useStartDate, fmtShort } from "../useStartDate";
 
 // Countdown to the next 10:00 / 22:00 WITA (UTC+8) boundary.
 // Boundaries in UTC: 02:00 and 14:00. Returns "HH:MM:SS".
@@ -39,6 +40,7 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
   const [show, setShow] = useState(false);
   const countdown = useCountdown();
   const joining = useJoiningCount();
+  const startDate = useStartDate();
 
   useEffect(() => {
     let heroVisible = true;
@@ -109,7 +111,7 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
             <span className="sticky-offer-timer" aria-live="off">{countdown}</span>
           </span>
           <span style={{ fontSize: 12.5, fontWeight: 700, color: "var(--ink)", lineHeight: 1.25 }}>
-            Next cohort: <span style={{ color: "var(--orange-700)" }}>Fri, June 6th</span>
+            Next cohort: <span className="start-date" style={{ color: "var(--orange-700)" }}>{startDate ? fmtShort(startDate) : "Fri, June 6th"}</span>
           </span>
           <span style={{ fontSize: 11.5, fontWeight: 500, color: "var(--slate)", lineHeight: 1.2 }}>
             {formatJoiningCount(joining)} women joining

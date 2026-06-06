@@ -1,6 +1,7 @@
 import { Anno, Reveal, Button, GuaranteeBadge, Icon, Pin, Trustpilot, RImg } from "../primitives";
 import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
 import { r2img, HERO_WIDTHS, AVATAR_W } from "../img";
+import { useStartDate, fmtShort } from "../useStartDate";
 
 const HERO_AVATARS: string[] = [
   "hero-avatar-11.webp", "hero-avatar-13.webp", "hero-avatar-14.webp", "hero-avatar-15.webp", "hero-avatar-16.webp",
@@ -9,6 +10,7 @@ const HERO_AVATARS: string[] = [
 
 export function Hero({ onCta }: { onCta?: () => void }) {
   const joining = useJoiningCount();
+  const startDate = useStartDate();
   return (
     <section className="bg-cream hero-section" style={{ paddingTop: 48, paddingBottom: 0 }}>
       <Anno>Section 1 — Hero / recognition</Anno>
@@ -53,7 +55,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               {/* cohort line — under CTA, not above headline */}
               <span className="hero-cohort">
                 <Icon name="calendar-heart" size={13} color="var(--orange-600)" />
-                Next cohort: <strong>Fri, June 6th</strong> · {formatJoiningCount(joining)} women joining
+                Next cohort: <strong className="start-date">{startDate ? fmtShort(startDate) : "Fri, June 6th"}</strong> · {formatJoiningCount(joining)} women joining
               </span>
               {/* Validation paragraph — restored, after cohort line */}
               <p className="hero-validation" style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)" }}>

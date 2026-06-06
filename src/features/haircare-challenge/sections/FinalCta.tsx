@@ -1,8 +1,10 @@
 import { Anno, Button, Eyebrow, GuaranteeBadge, Icon, Reveal, Trustpilot } from "../primitives";
 import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
+import { useStartDate, fmtLongDay, fmtMonthDay } from "../useStartDate";
 
 export function FinalCta({ onCta }: { onCta?: () => void }) {
   const joining = useJoiningCount();
+  const startDate = useStartDate();
   const liStyle: React.CSSProperties = { display: "flex", gap: 11, alignItems: "flex-start", fontSize: 15.5, color: "var(--ink-soft)" };
   return (
     <section className="bg-cream" id="start">
@@ -20,7 +22,7 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
         <Reveal>
           <div style={{ background: "#fff", borderRadius: 24, boxShadow: "var(--shadow-lg)", border: "2px solid var(--orange-500)", overflow: "hidden", maxWidth: 540, margin: "0 auto 28px" }} className="final-cta-card">
             <div style={{ background: "var(--orange-600)", color: "#fff", padding: 10, fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" }}>
-              85% off · cohort starts Friday, June 6th
+              85% off · cohort starts <span className="start-date">{startDate ? fmtLongDay(startDate) : "Friday, June 6th"}</span>
             </div>
             <div style={{ padding: "30px 32px", textAlign: "left" }} className="final-cta-card-body">
               <ul style={{ listStyle: "none", margin: "0 0 22px", padding: 0, display: "flex", flexDirection: "column", gap: 12 }}>
@@ -52,7 +54,7 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
                 <strong style={{ color: "var(--ink-soft)" }}>Why we can promise this:</strong> 92% of women see visible change in 14 days. If you're in the 8% — full refund, you keep everything.
               </p>
               <p className="small center" style={{ marginTop: 14, marginBottom: 0 }}>
-                Next cohort starts June 6th · {formatJoiningCount(joining)} women joining · 30-day money-back guarantee
+                Next cohort starts <span className="start-date">{startDate ? fmtMonthDay(startDate) : "June 6th"}</span> · {formatJoiningCount(joining)} women joining · 30-day money-back guarantee
               </p>
             </div>
           </div>
