@@ -18,9 +18,9 @@ import { TestimonialStrip } from "./sections/Interstitial";
 import { ReviewedBy } from "./sections/ReviewedBy";
 import { RImg } from "./primitives";
 
+const CTA_URL = "https://join.hairqare.co/the-quiz-haircare";
 function scrollToStart() {
-  const el = document.getElementById("start");
-  if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: "smooth" });
+  window.location.href = CTA_URL;
 }
 
 export function HaircareChallengePage() {
