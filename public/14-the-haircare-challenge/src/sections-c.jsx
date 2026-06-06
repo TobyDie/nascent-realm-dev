@@ -88,8 +88,8 @@ function Founder({ onCta }) {
               <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start" }}>
                 <Button onClick={onCta} icon="arrow-right">Start with me</Button>
                 <InlineTestimonial
-                  name="Priya" age={38} flag="🇬🇧"
-                  quote="Sarah doesn't talk down to you. She actually teaches you the science. I trust her more than my dermatologist now."
+                  name="Natasha" age={37} flag="🇩🇪"
+                  quote="I'm a scientist — I came in sceptical. In 14 days my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again."
                 />
               </div>
             </div>
@@ -397,15 +397,15 @@ function NotAboutHair({ onCta }) {
           <div style={{ background: "#fff", borderRadius: 18, padding: "28px 30px", boxShadow: "var(--shadow-md)", borderLeft: "4px solid var(--orange-600)", maxWidth: 660, marginInline: "auto", position: "relative" }}>
             <Icon name="quote" size={26} color="var(--orange-500)" style={{ position: "absolute", top: 18, right: 22, opacity: 0.7 }} />
             <p style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 19, lineHeight: 1.5, color: "var(--ink)" }}>
-              "What struck me most was how many women weren't just pleased with their hair — but how empowered they felt afterwards. The community. The support. I wasn't expecting any of that."
+              "It's not only about the hair being silky and nice to touch. It's about the new, more inspired, more empowered me."
             </p>
-            <div style={{ marginTop: 14, fontSize: 14, color: "var(--slate)", fontWeight: 600 }}>— Tracy, 44 · finished the challenge in March</div>
+            <div style={{ marginTop: 14, fontSize: 14, color: "var(--slate)", fontWeight: 600 }}>— Nataliia, 38 🇺🇦 · finished the challenge in March</div>
           </div>
         </Reveal>
         <Reveal style={{ marginTop: 26 }}>
           <InlineTestimonial
-            name="Carol" age={43} flag="🇨🇦"
-            quote="Halfway through I realised I wasn't just doing this for my hair. It was the first thing I'd done for me in a long time."
+            name="Kate" age={36} flag="🇬🇧"
+            quote="The main thing this challenge gave me — and it's the most important one — is that I fell in love with my hair again."
             style={{ margin: "0 auto" }}
           />
         </Reveal>
