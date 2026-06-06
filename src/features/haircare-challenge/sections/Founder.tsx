@@ -37,23 +37,6 @@ export function Founder({ onCta }: { onCta?: () => void }) {
     <div key={1} className="founder-story-card">
       <div style={{ height: 220, borderRadius: 16, overflow: "hidden" }}>
         <img
-          src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20working%20with%20chemist.webp"
-          srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 1200w"
-          sizes="(max-width: 860px) 90vw, 332px"
-          alt="Sarah working with a chemist or dermatologist — notes, formulations, research. The years she stopped promoting products and started asking why."
-          loading="lazy"
-          decoding="async"
-          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-        />
-      </div>
-      <div className="founder-story-caption">
-        <span className="founder-story-num">02</span>
-        <span>The turning point: years with chemists, dermatologists & trichologists.</span>
-      </div>
-    </div>,
-    <div key={2} className="founder-story-card">
-      <div style={{ height: 220, borderRadius: 16, overflow: "hidden" }}>
-        <img
           src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/IMG_4153%20(1).webp"
           srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/IMG_4153%20(1).webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/IMG_4153%20(1).webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/IMG_4153%20(1).webp 1200w"
           sizes="(max-width: 860px) 90vw, 332px"
@@ -64,8 +47,25 @@ export function Founder({ onCta }: { onCta?: () => void }) {
         />
       </div>
       <div className="founder-story-caption">
-        <span className="founder-story-num">03</span>
+        <span className="founder-story-num">02</span>
         <span>Today: 120cm of bleached hair. $10 a month.</span>
+      </div>
+    </div>,
+    <div key={2} className="founder-story-card">
+      <div style={{ height: 220, borderRadius: 16, overflow: "hidden" }}>
+        <img
+          src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20working%20with%20chemist.webp"
+          srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 1200w"
+          sizes="(max-width: 860px) 90vw, 332px"
+          alt="Sarah working with a chemist or dermatologist — notes, formulations, research. The years she stopped promoting products and started asking why."
+          loading="lazy"
+          decoding="async"
+          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        />
+      </div>
+      <div className="founder-story-caption">
+        <span className="founder-story-num">03</span>
+        <span>The turning point: years with chemists, dermatologists & trichologists.</span>
       </div>
     </div>,
   ];
