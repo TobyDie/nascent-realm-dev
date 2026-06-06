@@ -10,6 +10,11 @@ import {
   TestimonialCard,
   useIsMobile,
 } from "../primitives";
+import ba1 from "@/assets/ba-1.png.asset.json";
+import ba2 from "@/assets/ba-2.png.asset.json";
+import ba3 from "@/assets/ba-3.png.asset.json";
+import ba5 from "@/assets/ba-5.png.asset.json";
+import ba13 from "@/assets/ba-13.png.asset.json";
 
 export function SocialProof({ onCta }: { onCta?: () => void }) {
   const isMobile = useIsMobile();
@@ -23,6 +28,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       initials="K"
       context="Shedding every wash · hair loss"
       text="I think I lost maybe half of the amount of hair I normally lose every time I wash. Half. That was after two weeks."
+      image={ba1.url}
     />,
     <TestimonialCard
       key={1}
@@ -32,6 +38,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       initials="A"
       context="Hair loss · dry, itchy scalp"
       text="By the end of 14 days, I was losing maybe a palm-size amount when I washed my hair. That's about a third of what I would normally lose."
+      image={ba2.url}
     />,
     <TestimonialCard
       key={2}
@@ -41,6 +48,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       initials="A"
       context="Thinning · hair felt lifeless"
       text="My hair definitely looks so much better. It feels softer. There's some life — you know — that was added back into my hair."
+      image={ba3.url}
     />,
     <TestimonialCard
       key={3}
@@ -50,6 +58,17 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       initials="Y"
       context="Postpartum · oily, weighed-down hair"
       text="My hair felt lighter. It doesn't feel as oily, it doesn't feel as weighed down. It feels like there's more volume — it just looks so much better than before I started."
+      image={ba5.url}
+    />,
+    <TestimonialCard
+      key={4}
+      name="Mia"
+      age={34}
+      flag="🇹🇭"
+      initials="M"
+      context="Thinning crown · visible scalp"
+      text="The thin spot at my hairline filled in so much. My hair finally feels dense again — I can wear it down without feeling self-conscious."
+      image={ba13.url}
     />,
   ];
 
@@ -73,10 +92,9 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
           </Carousel>
         ) : (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }} className="testi-grid">
-            <Reveal delay={0}>{cards[0]}</Reveal>
-            <Reveal delay={90}>{cards[1]}</Reveal>
-            <Reveal delay={0}>{cards[2]}</Reveal>
-            <Reveal delay={90}>{cards[3]}</Reveal>
+            {cards.map((c, i) => (
+              <Reveal key={i} delay={i % 2 === 0 ? 0 : 90}>{c}</Reveal>
+            ))}
           </div>
         )}
 
