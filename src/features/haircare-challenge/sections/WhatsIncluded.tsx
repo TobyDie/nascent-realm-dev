@@ -189,7 +189,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
                 <div className="pricing-today-amount">$37</div>
                 <span className="pricing-save">You save $503 · 93% off bundle value</span>
               </div>
-              <Button onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center", marginTop: 22 }}>Get everything — start now</Button>
+              <Button id="cta-whats-included" onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center", marginTop: 22 }}>Get everything — start now</Button>
               <div style={{ marginTop: 14, display: "flex", justifyContent: "center" }}>
                 <GuaranteeBadge size="sm" />
               </div>
