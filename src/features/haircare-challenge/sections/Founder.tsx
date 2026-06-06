@@ -2,7 +2,7 @@ import {
   Anno,
   Button,
   Carousel,
-  EditableImage,
+  
   Eyebrow,
   GuaranteeBadge,
   InlineTestimonial,
