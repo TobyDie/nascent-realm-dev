@@ -21,14 +21,14 @@ export function VideoTestimonials() {
       />
       <div className="video-body">
         <div className="video-meta">
-          <div className="video-avatar">H</div>
+          <div className="video-avatar">E</div>
           <div>
-            <div className="video-name">Hannah, 39 🇬🇧</div>
-            <div className="video-context">Mum of 2 · crown thinning at 37</div>
+            <div className="video-name">Evelyn, 37</div>
+            <div className="video-context">10-Year Hair Loss Survivor · Excessive Hair Shedding</div>
           </div>
           <StarRow size={13} style={{ marginLeft: "auto", alignSelf: "flex-start" }} />
         </div>
-        <p className="video-quote">“I assumed this was just what happens after babies. I was so wrong.”</p>
+        <p className="video-quote">“How I overcame 10 years of excessive hair loss in just 14 days.”</p>
       </div>
     </div>,
     <div key={1} className="video-card">
@@ -40,14 +40,14 @@ export function VideoTestimonials() {
       />
       <div className="video-body">
         <div className="video-meta">
-          <div className="video-avatar">R</div>
+          <div className="video-avatar">J</div>
           <div>
-            <div className="video-name">Renee, 41 🇺🇸</div>
-            <div className="video-context">Corporate role · widening part at 38</div>
+            <div className="video-name">Jacqueline, 35</div>
+            <div className="video-context">Curly Hair Community Member · Dry, Lifeless Curls</div>
           </div>
           <StarRow size={13} style={{ marginLeft: "auto", alignSelf: "flex-start" }} />
         </div>
-        <p className="video-quote">“The cortisol explanation was the first time anyone connected my job to my hair.”</p>
+        <p className="video-quote">“My hair improved SOO dramatically in 14 days my friends had to join the Challenge too!”</p>
       </div>
     </div>,
     <div key={2} className="video-card">
@@ -59,14 +59,14 @@ export function VideoTestimonials() {
       />
       <div className="video-body">
         <div className="video-meta">
-          <div className="video-avatar">C</div>
+          <div className="video-avatar">D</div>
           <div>
-            <div className="video-name">Carol, 43 🇨🇦</div>
-            <div className="video-context">Perimenopausal · diffuse thinning</div>
+            <div className="video-name">Danielle, 32</div>
+            <div className="video-context">Natural Curly Hair Enthusiast · Expensive Product Dependence</div>
           </div>
           <StarRow size={13} style={{ marginLeft: "auto", alignSelf: "flex-start" }} />
         </div>
-        <p className="video-quote">“I’m 43, in perimenopause, and I finally have a routine built for my body now.”</p>
+        <p className="video-quote">“How I found a more affordable (and more effective) way to care for my curls after a decade of overspending.”</p>
       </div>
     </div>,
   ];
