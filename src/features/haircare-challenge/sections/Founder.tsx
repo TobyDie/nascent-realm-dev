@@ -114,7 +114,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
                 <GuaranteeBadge size="sm" />
                 <InlineTestimonial
                   name="Natasha" age={37} flag="🇩🇪"
-                  quote="I'm a scientist — I came in sceptical. In 14 days my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again."
+                  quote="I'm a scientist, I came in sceptical. In 14 days my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again."
                   avatar={profile6.url}
                 />
               </div>
