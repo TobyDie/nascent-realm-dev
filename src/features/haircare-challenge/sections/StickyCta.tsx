@@ -7,7 +7,19 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
   useEffect(() => {
     let heroVisible = true;
     let finalVisible = false;
-    const update = () => setShow(!heroVisible && !finalVisible);
+    let scrolledPast = false;
+    const update = () => setShow(scrolledPast && !heroVisible && !finalVisible);
+
+    const onScroll = () => {
+      const threshold = window.innerHeight * 0.9;
+      const next = window.scrollY > threshold;
+      if (next !== scrolledPast) {
+        scrolledPast = next;
+        update();
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
 
     const hero = document.getElementById("hero-cta-sentinel");
     const finalEl = document.getElementById("start");
@@ -34,6 +46,7 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
     return () => {
       if (heroIO) heroIO.disconnect();
       if (finalIO) finalIO.disconnect();
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 

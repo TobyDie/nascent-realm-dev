@@ -1,4 +1,4 @@
-import { Anno, Reveal, Button, Icon, Pin, Hand, Trustpilot } from "../primitives";
+import { Anno, Reveal, Button, Icon, Pin, Trustpilot } from "../primitives";
 import a11 from "@/assets/hero-avatar-11.webp.asset.json";
 import a13 from "@/assets/hero-avatar-13.webp.asset.json";
 import a14 from "@/assets/hero-avatar-14.webp.asset.json";
@@ -28,7 +28,22 @@ export function Hero({ onCta }: { onCta?: () => void }) {
 
           {/* TEXT column */}
           <Reveal>
-            <div className="eyebrow" style={{ marginBottom: 14 }}>BECOME THE MOST BEAUTIFUL VERSION OF YOURSELF</div>
+            <div
+              className="hero-handwritten-eyebrow"
+              style={{
+                fontFamily: '"Caveat", cursive',
+                fontWeight: 700,
+                color: "var(--orange-700)",
+                fontSize: 26,
+                lineHeight: 1.1,
+                transform: "rotate(-2deg)",
+                transformOrigin: "left center",
+                marginBottom: 10,
+                display: "inline-block",
+              }}
+            >
+              Become the most beautiful version of yourself
+            </div>
 
             {/* H1 — the single emotional hook, short enough for mobile */}
             <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
@@ -92,9 +107,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               </div>
               <div style={{ position: "absolute", top: -14, right: -8, zIndex: 4 }}>
                 <Pin rotate={-7}>★ 4.8 · 12K reviews</Pin>
-              </div>
-              <div style={{ position: "absolute", bottom: -22, left: -12, zIndex: 4 }} className="mobile-only">
-                <Hand size={26} color="var(--orange-700)" rotate={-4}>← That's your coach</Hand>
               </div>
             </div>
           </Reveal>
