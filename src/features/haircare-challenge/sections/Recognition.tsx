@@ -99,7 +99,7 @@ export function Recognition() {
         <Reveal style={{ marginTop: 36 }}>
           <InlineTestimonial
             name="Abigail" age={37} flag="🇺🇸"
-            quote="I haven't been crying every day over my hair. It's not where I want it to be yet — but it's been so much better since I changed the things I was doing wrong."
+            quote="I haven't been crying every day over my hair. It's not where I want it to be yet, but it's been so much better since I changed the things I was doing wrong."
             avatar={profile9.url}
             style={{ margin: "0 auto" }}
           />
