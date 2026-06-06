@@ -93,7 +93,13 @@ function Hero({ onCta }) {
           <Reveal delay={120}>
             <div style={{ position: "relative" }}>
               <div className="hero-image-wrap">
-                <Photo h={440} label="Sarah Tran portrait — same face from the Meta ad. Confident, warm, natural lighting." radius={24} style={{ height: 440 }} />
+                <img
+                  src="/__l5e/assets-v1/dbed01f2-d600-4ba4-92db-5a8f950363e6/sarah-hero.webp"
+                  alt="Sarah Tran — founder of HairQare, with long healthy auburn hair, sunlit Mediterranean setting. Inset: before/after of a coached student."
+                  className="hero-image"
+                  loading="eager"
+                  decoding="async"
+                />
                 <div className="hero-image-caption">
                   <div style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 20, lineHeight: 1.1 }}>Sarah Tran</div>
                   <div style={{ color: "rgba(255,255,255,.88)", fontSize: 13.5, fontWeight: 600, marginTop: 3 }}>Founder · 250,000+ women coached</div>

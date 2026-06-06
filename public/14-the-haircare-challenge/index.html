@@ -77,6 +77,14 @@
       position: relative; border-radius: 24px; overflow: hidden;
       box-shadow: var(--shadow-lg);
     }
+    .hero-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+    }
     .hero-image-caption {
       position: absolute; left: 0; right: 0; bottom: 0;
       padding: 26px 18px 16px;
@@ -982,8 +990,9 @@
       .hero-grid { gap: 20px !important; }
       .hero-grid > div:nth-child(1) { order: 2; }
       .hero-grid > div:nth-child(2) { order: 1; }
-      .hero-image-wrap { aspect-ratio: 16 / 10; max-height: 200px !important; }
+      .hero-image-wrap { aspect-ratio: 4 / 5; max-height: none !important; max-width: 360px; margin-inline: auto; }
       .hero-image-wrap .ph { height: 100% !important; width: 100%; }
+      .hero-image { aspect-ratio: 4 / 5; }
 
       /* age stripe slightly tighter on mobile */
       .age-stripe { padding: 9px 14px !important; font-size: 13px !important; }
