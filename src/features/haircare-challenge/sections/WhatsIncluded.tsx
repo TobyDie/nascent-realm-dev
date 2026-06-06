@@ -1,7 +1,6 @@
 import {
   Anno,
   Button,
-  EditableImage,
   Eyebrow,
   GuaranteeBadge,
   Hand,
