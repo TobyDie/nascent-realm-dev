@@ -4,6 +4,11 @@ import { Hero } from "./sections/Hero";
 import { Recognition } from "./sections/Recognition";
 import { RecognitionVideo } from "./sections/RecognitionVideo";
 import { Science } from "./sections/Science";
+import { VideoTestimonials } from "./sections/VideoTestimonials";
+import { SocialProof } from "./sections/SocialProof";
+import { HowItWorks } from "./sections/HowItWorks";
+import { ResultsIn2Weeks } from "./sections/ResultsIn2Weeks";
+import { WhatsIncluded } from "./sections/WhatsIncluded";
 
 function scrollToStart() {
   const el = document.getElementById("start");
@@ -15,9 +20,14 @@ export function HaircareChallengePage() {
     <div className="hq-sp rooted">
       <AgeStripe />
       <Hero onCta={scrollToStart} />
+      <VideoTestimonials />
       <Recognition />
       <RecognitionVideo />
       <Science />
+      <SocialProof onCta={scrollToStart} />
+      <HowItWorks onCta={scrollToStart} />
+      <ResultsIn2Weeks onCta={scrollToStart} />
+      <WhatsIncluded onCta={scrollToStart} />
     </div>
   );
 }
