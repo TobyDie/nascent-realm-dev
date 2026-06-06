@@ -12,10 +12,12 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The Course — Sales Page" },
-      { name: "description", content: "Join the course and transform your skills in just 14 days." },
-      { property: "og:title", content: "The Course — Sales Page" },
-      { property: "og:description", content: "Join the course and transform your skills in just 14 days." },
+      { title: "Hairqare — Science-Backed Haircare for Women in Their 30s" },
+      { name: "description", content: "Science-backed haircare for women in their 30s and beyond — from the team behind the 14-Day Haircare Challenge." },
+      { property: "og:title", content: "Hairqare — Science-Backed Haircare for Women in Their 30s" },
+      { property: "og:description", content: "Science-backed haircare for women in their 30s and beyond — from the team behind the 14-Day Haircare Challenge." },
+      { name: "twitter:title", content: "Hairqare — Science-Backed Haircare for Women in Their 30s" },
+      { name: "twitter:description", content: "Science-backed haircare for women in their 30s and beyond — from the team behind the 14-Day Haircare Challenge." },
     ],
   }),
   component: Index,
