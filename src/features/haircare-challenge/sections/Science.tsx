@@ -97,10 +97,10 @@ export function Science() {
               “I was in the cortisol video and I cried. It was the first time in years anyone had connected my job to my hair.”
             </p>
             <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 12 }}>
-              <div style={{ width: 44, height: 44, borderRadius: 999, background: "var(--orange-100)", color: "var(--orange-700)", fontWeight: 700, fontSize: 15, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>R</div>
+              <div style={{ width: 44, height: 44, borderRadius: 999, background: "var(--orange-100)", color: "var(--orange-700)", fontWeight: 700, fontSize: 15, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>G</div>
               <div>
-                <div style={{ fontWeight: 700, fontSize: 15 }}>Renee, 41 🇺🇸</div>
-                <div style={{ fontSize: 13, color: "var(--slate)" }}>Corporate role · widening part at 38</div>
+                <div style={{ fontWeight: 700, fontSize: 15 }}>Gema, 38 🇪🇸</div>
+                <div style={{ fontSize: 13, color: "var(--slate)" }}>Thinning · always blamed her genetics</div>
               </div>
               <StarRow size={14} style={{ marginLeft: "auto" }} />
             </div>
