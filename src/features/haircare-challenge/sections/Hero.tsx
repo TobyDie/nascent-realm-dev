@@ -1,4 +1,19 @@
 import { Anno, Reveal, Button, Icon, Pin, Hand, Trustpilot } from "../primitives";
+import a11 from "@/assets/hero-avatar-11.webp.asset.json";
+import a13 from "@/assets/hero-avatar-13.webp.asset.json";
+import a14 from "@/assets/hero-avatar-14.webp.asset.json";
+import a15 from "@/assets/hero-avatar-15.webp.asset.json";
+import a16 from "@/assets/hero-avatar-16.webp.asset.json";
+import a17 from "@/assets/hero-avatar-17.webp.asset.json";
+import a18 from "@/assets/hero-avatar-18.webp.asset.json";
+import a19 from "@/assets/hero-avatar-19.webp.asset.json";
+import a20 from "@/assets/hero-avatar-20.webp.asset.json";
+import a4 from "@/assets/profile-4.webp.asset.json";
+
+const HERO_AVATARS: string[] = [
+  a11.url, a13.url, a14.url, a15.url, a16.url,
+  a17.url, a18.url, a19.url, a20.url, a4.url,
+];
 
 export function Hero({ onCta }: { onCta?: () => void }) {
   return (
@@ -93,21 +108,18 @@ export function Hero({ onCta }: { onCta?: () => void }) {
           {/* Row 1 — community proof with overlapping avatars */}
           <div className="ct-row ct-community">
             <div className="ct-avatars" aria-hidden="true">
-              {([
-                ["#F6C9A8","#D5551F","H"],
-                ["#E8D5C0","#8B6F5E","L"],
-                ["#FCE7D8","#E8622A","M"],
-                ["#E3D5EA","#7D5BA6","R"],
-                ["#FAD7B0","#C46A2A","A"],
-                ["#EBD9C7","#A0522D","S"],
-              ] as const).map(([bg, color, ch], i) => (
-                <span key={i} className="ct-avatar" style={{ background: bg, color }}>{ch}</span>
+              {HERO_AVATARS.map((src, i) => (
+                <span key={i} className="ct-avatar ct-avatar-img">
+                  <img src={src} alt="" loading="lazy" decoding="async" />
+                </span>
               ))}
               <span className="ct-avatar ct-avatar-more">+</span>
             </div>
             <div className="ct-community-text">
-              <div className="ct-num">250,000+</div>
-              <div className="ct-label">women have taken the challenge</div>
+              <div className="ct-community-inline">
+                <span className="ct-num">250,000+</span>
+                <span className="ct-label">women have taken the challenge</span>
+              </div>
             </div>
           </div>
 
