@@ -4,6 +4,7 @@ import {
   Carousel,
   EditableImage,
   Eyebrow,
+  GuaranteeBadge,
   InlineTestimonial,
   Pin,
   Reveal,
@@ -95,6 +96,9 @@ export function Founder({ onCta }: { onCta?: () => void }) {
               <p className="p">
                 <strong>250,000 women across 149 countries</strong> have been through this with her. Most of them tried everything before they found her.
               </p>
+              <p className="p" style={{ fontSize: 15, color: "var(--slate)", fontStyle: "italic" }}>
+                The protocol was reviewed by board-certified dermatologists and trichology researchers before launch.
+              </p>
 
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 8 }}>
                 <span style={{ fontSize: 12.5, fontWeight: 600, color: "var(--ink-soft)", background: "var(--cream)", border: "1px solid var(--line)", borderRadius: 999, padding: "6px 13px" }}>Certified Hair Loss Specialist</span>
@@ -107,6 +111,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
 
               <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start" }}>
                 <Button onClick={onCta} icon="arrow-right">Start with me</Button>
+                <GuaranteeBadge size="sm" />
                 <InlineTestimonial
                   name="Natasha" age={37} flag="🇩🇪"
                   quote="I'm a scientist — I came in sceptical. In 14 days my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again."

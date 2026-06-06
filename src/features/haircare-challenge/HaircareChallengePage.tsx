@@ -16,6 +16,7 @@ import { Faq } from "./sections/Faq";
 import { FinalCta } from "./sections/FinalCta";
 import { StickyCta } from "./sections/StickyCta";
 import { TestimonialStrip } from "./sections/Interstitial";
+import { ReviewedBy } from "./sections/ReviewedBy";
 
 function scrollToStart() {
   const el = document.getElementById("start");
@@ -29,22 +30,23 @@ export function HaircareChallengePage() {
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
       <Recognition />
+      <ReviewedBy />
       <RecognitionVideo />
       <Science />
       <SocialProof onCta={scrollToStart} />
-      <TestimonialStrip textIndex={0} imageIndex={0} bg="var(--cream)" />
+      <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="var(--cream)" />
+      <Founder onCta={scrollToStart} />
+      <TestimonialStrip variant="polaroid-duo" textIndex={1} imageIndex={1} bg="var(--white)" />
       <HowItWorks onCta={scrollToStart} />
       <ResultsIn2Weeks onCta={scrollToStart} />
-      <TestimonialStrip textIndex={1} imageIndex={1} bg="var(--white)" />
+      <TestimonialStrip variant="magazine-split" textIndex={2} imageIndex={2} bg="var(--cream)" />
       <WhatsIncluded onCta={scrollToStart} />
-      <TestimonialStrip textIndex={2} imageIndex={2} bg="var(--cream)" />
-      <Founder onCta={scrollToStart} />
+      <TestimonialStrip variant="sticky-wall" textIndex={3} imageIndex={3} bg="var(--lavender)" />
       <NotAboutHair onCta={scrollToStart} />
-      <TestimonialStrip textIndex={3} imageIndex={3} bg="var(--white)" />
       <SelfQualifier onCta={scrollToStart} />
-      <TestimonialStrip textIndex={4} imageIndex={4} bg="var(--cream)" />
+      <TestimonialStrip variant="single-hero" textIndex={4} imageIndex={4} bg="var(--cream)" />
       <Faq onCta={scrollToStart} />
-      <TestimonialStrip textIndex={5} imageIndex={5} bg="var(--lavender)" />
+      <TestimonialStrip variant="ribbon" textIndex={5} imageIndex={5} bg="var(--white)" />
       <FinalCta onCta={scrollToStart} />
       <StickyCta onCta={scrollToStart} />
     </div>

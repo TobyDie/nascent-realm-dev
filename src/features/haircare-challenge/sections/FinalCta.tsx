@@ -1,4 +1,4 @@
-import { Anno, Button, Eyebrow, Icon, Reveal, Trustpilot } from "../primitives";
+import { Anno, Button, Eyebrow, GuaranteeBadge, Icon, Reveal, Trustpilot } from "../primitives";
 import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
 
 export function FinalCta({ onCta }: { onCta?: () => void }) {
@@ -36,12 +36,21 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
                 <li style={liStyle}>
                   <Icon name="check" size={18} color="var(--orange-600)" stroke={2.5} style={{ marginTop: 2, flex: "none" }} />Certificate of completion
                 </li>
+                <li style={liStyle}>
+                  <Icon name="check" size={18} color="var(--orange-600)" stroke={2.5} style={{ marginTop: 2, flex: "none" }} />Fits into 10 minutes a day — no extra trips, no salon appointments
+                </li>
               </ul>
               <div style={{ display: "flex", alignItems: "baseline", gap: 12, justifyContent: "center", marginBottom: 18 }}>
                 <span style={{ fontSize: 20, color: "var(--slate-soft)", textDecoration: "line-through" }}>$247</span>
                 <span className="stat-num" style={{ fontSize: 64, color: "var(--orange-600)" }}>$37</span>
               </div>
               <Button onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center" }}>Start the challenge</Button>
+              <div style={{ marginTop: 16 }}>
+                <GuaranteeBadge size="md" />
+              </div>
+              <p style={{ marginTop: 12, marginBottom: 0, fontSize: 13.5, color: "var(--slate)", textAlign: "center", lineHeight: 1.55 }}>
+                <strong style={{ color: "var(--ink-soft)" }}>Why we can promise this:</strong> 92% of women see visible change in 14 days. If you're in the 8% — full refund, you keep everything.
+              </p>
               <p className="small center" style={{ marginTop: 14, marginBottom: 0 }}>
                 Next cohort starts June 6th · {formatJoiningCount(joining)} women joining · 30-day money-back guarantee
               </p>

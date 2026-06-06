@@ -3,6 +3,7 @@ import {
   Button,
   EditableImage,
   Eyebrow,
+  GuaranteeBadge,
   Hand,
   HandArrow,
   Icon,
@@ -176,6 +177,9 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
                 <span className="pricing-save">You save $503 · 93% off bundle value</span>
               </div>
               <Button onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center", marginTop: 22 }}>Get everything — start now</Button>
+              <div style={{ marginTop: 14, display: "flex", justifyContent: "center" }}>
+                <GuaranteeBadge size="sm" />
+              </div>
               <div className="pricing-trust">
                 <span><Icon name="shield-check" size={15} color="var(--trust-green)" /> 30-day money-back</span>
                 <span className="pricing-trust-dot">·</span>
