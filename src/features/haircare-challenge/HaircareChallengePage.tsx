@@ -2,7 +2,6 @@ import "./haircare-challenge.css";
 import { AgeStripe } from "./sections/AgeStripe";
 import { Hero } from "./sections/Hero";
 import { Recognition } from "./sections/Recognition";
-import { RecognitionVideo } from "./sections/RecognitionVideo";
 import { Science } from "./sections/Science";
 import { VideoTestimonials } from "./sections/VideoTestimonials";
 import { SocialProof } from "./sections/SocialProof";
@@ -30,8 +29,6 @@ export function HaircareChallengePage() {
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
       <Recognition />
-      <ReviewedBy />
-      <RecognitionVideo />
       <Science />
       <SocialProof onCta={scrollToStart} />
       <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="var(--cream)" />
@@ -41,6 +38,7 @@ export function HaircareChallengePage() {
       <ResultsIn2Weeks onCta={scrollToStart} />
       <TestimonialStrip variant="magazine-split" textIndex={2} imageIndex={2} bg="var(--cream)" />
       <WhatsIncluded onCta={scrollToStart} />
+      <ReviewedBy />
       <TestimonialStrip variant="sticky-wall" textIndex={3} imageIndex={3} bg="var(--lavender)" />
       <NotAboutHair onCta={scrollToStart} />
       <SelfQualifier onCta={scrollToStart} />
