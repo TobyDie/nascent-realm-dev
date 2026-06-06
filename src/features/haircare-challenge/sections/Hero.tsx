@@ -93,21 +93,18 @@ export function Hero({ onCta }: { onCta?: () => void }) {
           {/* Row 1 — community proof with overlapping avatars */}
           <div className="ct-row ct-community">
             <div className="ct-avatars" aria-hidden="true">
-              {([
-                ["#F6C9A8","#D5551F","H"],
-                ["#E8D5C0","#8B6F5E","L"],
-                ["#FCE7D8","#E8622A","M"],
-                ["#E3D5EA","#7D5BA6","R"],
-                ["#FAD7B0","#C46A2A","A"],
-                ["#EBD9C7","#A0522D","S"],
-              ] as const).map(([bg, color, ch], i) => (
-                <span key={i} className="ct-avatar" style={{ background: bg, color }}>{ch}</span>
+              {HERO_AVATARS.map((src, i) => (
+                <span key={i} className="ct-avatar ct-avatar-img">
+                  <img src={src} alt="" loading="lazy" decoding="async" />
+                </span>
               ))}
               <span className="ct-avatar ct-avatar-more">+</span>
             </div>
             <div className="ct-community-text">
-              <div className="ct-num">250,000+</div>
-              <div className="ct-label">women have taken the challenge</div>
+              <div className="ct-community-inline">
+                <span className="ct-num">250,000+</span>
+                <span className="ct-label">women have taken the challenge</span>
+              </div>
             </div>
           </div>
 
