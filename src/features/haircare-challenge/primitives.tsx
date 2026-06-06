@@ -376,8 +376,8 @@ export function BeforeAfter({ day, cool }: { day: React.ReactNode; cool?: boolea
 }
 
 export function TestimonialCard({
-  name, age, flag, initials, context, text,
-}: { name: string; age: React.ReactNode; flag?: React.ReactNode; initials: React.ReactNode; context: React.ReactNode; text: React.ReactNode }) {
+  name, age, flag, initials, context, text, image,
+}: { name: string; age: React.ReactNode; flag?: React.ReactNode; initials: React.ReactNode; context: React.ReactNode; text: React.ReactNode; image?: string }) {
   return (
     <div className="testi-card">
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -391,7 +391,7 @@ export function TestimonialCard({
       <p style={{ margin: 0, fontSize: 16, lineHeight: 1.6, color: "var(--ink)" }}>“{text}”</p>
       <div style={{ marginTop: "auto", borderRadius: 12, overflow: "hidden" }}>
         <img
-          src={beforeAfterAsset.url}
+          src={image ?? beforeAfterAsset.url}
           alt="Before and after — Day 1 vs Day 14"
           loading="lazy"
           decoding="async"
