@@ -1,4 +1,10 @@
 import { InlineTestimonial, TestimonialCard, Reveal } from "../primitives";
+import profile1 from "@/assets/profile-1.webp.asset.json";
+import profile2 from "@/assets/profile-2.webp.asset.json";
+import profile3 from "@/assets/profile-3.webp.asset.json";
+import profile5 from "@/assets/profile-5.webp.asset.json";
+import profile6 from "@/assets/profile-6.webp.asset.json";
+import profile7 from "@/assets/profile-7.webp.asset.json";
 
 /* ------------------------------------------------------------------
    PLACEHOLDER text testimonials (5–6). Replace copy with real reviews.
@@ -6,17 +12,17 @@ import { InlineTestimonial, TestimonialCard, Reveal } from "../primitives";
 /* Real customer text testimonials — placed to reinforce the section above. */
 const TEXT_PLACEHOLDERS = [
   // After Science — scientist endorses the root-cause approach
-  { name: "Natasha Bloch", quote: "I feel my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again. I feel in this 14 days, my curls came back." },
+  { name: "Natasha Bloch", avatar: profile6.url, quote: "I feel my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again. I feel in this 14 days, my curls came back." },
   // After Results in 2 Weeks — visible results inside 14 days
-  { name: "Limor Mills", quote: "By day 14, I could actually see little baby hairs growing in! My hair feels so much stronger, it's got more volume, and it just looks so much healthier." },
+  { name: "Limor Mills", avatar: profile2.url, quote: "By day 14, I could actually see little baby hairs growing in! My hair feels so much stronger, it's got more volume, and it just looks so much healthier." },
   // After Founder — emotional / confidence
-  { name: "Cintia Irtzl", quote: "My hair started to be shinier and softer so I got back a lot of self-confidence and that felt really nice honestly." },
+  { name: "Cintia Irtzl", avatar: profile5.url, quote: "My hair started to be shinier and softer so I got back a lot of self-confidence and that felt really nice honestly." },
   // After SelfQualifier — habits over genetics (reassurance for women like me)
-  { name: "Gema", quote: "This challenge showed me that I have to change my habits to get a better hair and that my genetics are going to influence my hair but not so much." },
+  { name: "Gema", avatar: profile3.url, quote: "This challenge showed me that I have to change my habits to get a better hair and that my genetics are going to influence my hair but not so much." },
   // After FAQ — simple, accessible, easy
-  { name: "Paola Fernandez", quote: "It's super simple. You can find all the ingredients on the internet, on Amazon. They're very accessible and I've been having amazing results." },
+  { name: "Paola Fernandez", avatar: profile7.url, quote: "It's super simple. You can find all the ingredients on the internet, on Amazon. They're very accessible and I've been having amazing results." },
   // Final reassurance before CTA — fall-in-love-again moment
-  { name: "Kate", quote: "The main thing I could say that this challenge gave me was the most important one and that's that I fell in love — I fell in love with my hair again." },
+  { name: "Kate", avatar: profile1.url, quote: "The main thing I could say that this challenge gave me was the most important one and that's that I fell in love — I fell in love with my hair again." },
 ];
 
 /* ------------------------------------------------------------------
@@ -46,7 +52,7 @@ export function TextInterstitial({ index, bg = "var(--cream)" }: { index: number
     <section style={{ background: bg, padding: "32px 0" }}>
       <div className="wrap-narrow" style={{ maxWidth: 720, marginInline: "auto", paddingInline: 20 }}>
       <Reveal>
-          <InlineTestimonial name={t.name} quote={t.quote} />
+          <InlineTestimonial name={t.name} quote={t.quote} avatar={t.avatar} />
         </Reveal>
       </div>
     </section>
