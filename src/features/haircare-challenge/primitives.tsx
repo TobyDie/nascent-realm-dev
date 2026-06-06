@@ -405,8 +405,8 @@ export function TestimonialCard({
 }
 
 export function InlineTestimonial({
-  name, age, flag, quote, accent = "var(--orange-600)", style,
-}: { name: string; age?: React.ReactNode; flag?: React.ReactNode; quote: React.ReactNode; accent?: string; style?: React.CSSProperties }) {
+  name, age, flag, quote, accent = "var(--orange-600)", avatar, style,
+}: { name: string; age?: React.ReactNode; flag?: React.ReactNode; quote: React.ReactNode; accent?: string; avatar?: string; style?: React.CSSProperties }) {
   const initials = (name || "?").trim().charAt(0).toUpperCase();
   return (
     <div className="inline-testi" style={{ borderLeft: `3px solid ${accent}`, ...style }}>
@@ -421,10 +421,21 @@ export function InlineTestimonial({
           fontWeight: 700,
           fontSize: 18,
           fontFamily: "var(--font-serif)",
+          overflow: "hidden",
         }}
         aria-hidden="true"
       >
-        {initials}
+        {avatar ? (
+          <img
+            src={avatar}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          />
+        ) : (
+          initials
+        )}
       </div>
       <div className="inline-testi-body">
         <StarRow size={13} />
