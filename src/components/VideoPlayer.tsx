@@ -71,11 +71,39 @@ export default function VideoPlayer({
     } else {
       import("hls.js").then(({ default: HlsLib }) => {
         if (cancelled || !videoRef.current) return;
+        const v = videoRef.current;
         if (HlsLib.isSupported()) {
-          hlsInstance = new HlsLib({ startLevel: -1, capLevelToPlayerSize: true });
-          hlsInstance.loadSource(src);
-          hlsInstance.attachMedia(videoRef.current);
-          if (autoplay) videoRef.current.play().catch(() => {});
+          const hls = new HlsLib({
+            startLevel: -1,
+            capLevelToPlayerSize: true,
+            // Retry transient cold-load failures instead of giving up.
+            manifestLoadingMaxRetry: 6,
+            manifestLoadingRetryDelay: 500,
+            levelLoadingMaxRetry: 6,
+            fragLoadingMaxRetry: 6,
+          });
+          hlsInstance = hls;
+          hls.on(HlsLib.Events.MANIFEST_PARSED, () => {
+            if (autoplay) v.play().catch(() => {});
+          });
+          // Self-heal fatal errors so a single cold-load hiccup doesn't leave
+          // the player permanently broken (the "fails on first load, works on
+          // reload" symptom).
+          hls.on(HlsLib.Events.ERROR, (_evt, data) => {
+            if (!data.fatal) return;
+            if (data.type === HlsLib.ErrorTypes.NETWORK_ERROR) {
+              hls.startLoad();
+            } else if (data.type === HlsLib.ErrorTypes.MEDIA_ERROR) {
+              hls.recoverMediaError();
+            } else {
+              hls.destroy();
+            }
+          });
+          hls.loadSource(src);
+          hls.attachMedia(v);
+        } else if (v.canPlayType("application/vnd.apple.mpegurl")) {
+          v.src = src;
+          if (autoplay) v.play().catch(() => {});
         }
       });
     }
