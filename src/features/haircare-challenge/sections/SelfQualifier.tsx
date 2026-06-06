@@ -75,7 +75,7 @@ export function SelfQualifier({ onCta }: { onCta?: () => void }) {
               <span>You ticked <strong style={{ color: "var(--orange-700)" }}>{count}</strong> — you're exactly who the challenge was built for. Join the <strong>250,000+ women in their 30s</strong> who started here.</span>
             )}
           </div>
-          <Button onClick={onCta} icon="arrow-right">Take charge of my hair</Button>
+          <Button id="cta-self-qualifier" onClick={onCta} icon="arrow-right">Take charge of my hair</Button>
         </Reveal>
       </div>
     </section>
