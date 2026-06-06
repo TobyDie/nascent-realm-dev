@@ -1,3 +1,4 @@
+import VideoPlayer from "@/components/VideoPlayer";
 import {
   Anno,
   Carousel,
