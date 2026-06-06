@@ -239,8 +239,8 @@ function Recognition() {
         {/* Inline testimonial + soft CTA — trust anchor, not a hard sell yet */}
         <Reveal style={{ marginTop: 36 }}>
           <InlineTestimonial
-            name="Hannah" age={39} flag="🇬🇧"
-            quote="I was the girl with the thick hair growing up. Three years after baby #2, I cried in front of the mirror most mornings. I'm not crying anymore."
+            name="Abigail" age={37} flag="🇺🇸"
+            quote="I haven't been crying every day over my hair. It's not where I want it to be yet — but it's been so much better since I changed the things I was doing wrong."
             style={{ margin: "0 auto" }} />
           
         </Reveal>
@@ -392,13 +392,13 @@ function Science() {
           <div style={{ background: "var(--lavender)", borderRadius: 20, padding: "32px 36px", position: "relative", maxWidth: 720, marginInline: "auto" }}>
             <Icon name="quote" size={36} color="var(--orange-500)" style={{ position: "absolute", top: 20, right: 24, opacity: 0.5 }} />
             <p style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 22, lineHeight: 1.45, color: "var(--ink)" }}>
-              “I was in the cortisol video and I cried. It was the first time in years anyone had connected my job to my hair.”
+              “This challenge showed me I have to change my habits to get better hair — that my genetics influence my hair, but not nearly as much as I thought.”
             </p>
             <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 12 }}>
-              <div style={{ width: 44, height: 44, borderRadius: 999, background: "var(--orange-100)", color: "var(--orange-700)", fontWeight: 700, fontSize: 15, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>R</div>
+              <div style={{ width: 44, height: 44, borderRadius: 999, background: "var(--orange-100)", color: "var(--orange-700)", fontWeight: 700, fontSize: 15, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>G</div>
               <div>
-                <div style={{ fontWeight: 700, fontSize: 15 }}>Renee, 41 🇺🇸</div>
-                <div style={{ fontSize: 13, color: "var(--slate)" }}>Corporate role · widening part at 38</div>
+                <div style={{ fontWeight: 700, fontSize: 15 }}>Gema, 38 🇪🇸</div>
+                <div style={{ fontSize: 13, color: "var(--slate)" }}>Thinning · always blamed her genetics</div>
               </div>
               <StarRow size={14} style={{ marginLeft: "auto" }} />
             </div>

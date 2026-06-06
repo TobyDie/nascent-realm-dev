@@ -84,10 +84,10 @@ function VideoTestimonials() {
 /* ---------------- Section 5 — Social proof (ICP-matched) ---------------- */
 function SocialProof({ onCta }) {
   const testimonials = [
-  { name: "Hannah", age: 39, flag: "🇬🇧", initials: "H", context: "Mum of 2 · noticed crown thinning at 37", text: "I was the girl with the thick hair growing up. Five years after baby #2, I thought she was gone. She's coming back — and now I finally know why." },
-  { name: "Renee", age: 41, flag: "🇺🇸", initials: "R", context: "Corporate role · widening part at 38", text: "Honestly, I don't think it was about hair. It was the first thing I'd done for me in years. I look in the mirror now and I see me." },
-  { name: "Megan", age: 36, flag: "🇦🇺", initials: "M", context: "Tried everything · very skeptical buyer", text: "I almost didn't buy it — I'd spent so much already. What got me wasn't the promise. It was the other women. Now I'm the one recommending it." },
-  { name: "Carol", age: 43, flag: "🇨🇦", initials: "C", context: "Perimenopausal · diffuse thinning", text: "I'm 43, perimenopausal, and for the first time I have something that's MINE. A routine I built, for my body now. Not a fix — a foundation." }];
+  { name: "Kim", age: 36, flag: "🇺🇸", initials: "K", context: "Shedding every wash · hair loss", text: "I think I lost maybe half of the amount of hair I normally lose every time I wash. Half. That was after two weeks." },
+  { name: "Andrea", age: 38, flag: "🇺🇸", initials: "A", context: "Hair loss · dry, itchy scalp", text: "By the end of 14 days, I was losing maybe a palm-size amount when I washed my hair. That's about a third of what I would normally lose." },
+  { name: "Anna", age: 37, flag: "🇺🇦", initials: "A", context: "Thinning · hair felt lifeless", text: "My hair definitely looks so much better. It feels softer. There's some life — you know — that was added back into my hair." },
+  { name: "Yer", age: 32, flag: "🇺🇸", initials: "Y", context: "Postpartum · oily, weighed-down hair", text: "My hair felt lighter. It doesn't feel as oily, it doesn't feel as weighed down. It feels like there's more volume — it just looks so much better than before I started." }];
 
   const isMobile = useIsMobile();
   return (
@@ -185,8 +185,8 @@ function HowItWorks({ onCta }) {
         {/* Inline testimonial — completion proof */}
         <Reveal style={{ marginTop: 26 }}>
           <InlineTestimonial
-            name="Lila" age={40} flag="🇨🇦"
-            quote="I'm not a finisher. I finished this. The 10-minute videos and starting on the same day as 2,000 other women got me there."
+            name="Intan" age={36} flag="🇲🇾"
+            quote="Before this, every time I ran my fingers through my hair, strands would come out. Now when I do it, I don't see anything. That's the good news."
             style={{ margin: "0 auto" }} />
           
         </Reveal>
