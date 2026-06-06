@@ -31,7 +31,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
         </Reveal>
 
         <Reveal>
-          <div style={{ position: "relative", maxWidth: 600, margin: "0 auto 36px" }}>
+          <div style={{ position: "relative", maxWidth: 420, margin: "0 auto 36px" }}>
             <img
               src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20Tran%20Image%20for%20stack%20.webp"
               srcSet="
@@ -39,11 +39,11 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
                 https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20Tran%20Image%20for%20stack%20.webp 800w,
                 https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/Sarah%20Tran%20Image%20for%20stack%20.webp 1200w
               "
-              sizes="(max-width: 600px) 100vw, 600px"
+              sizes="(max-width: 480px) 90vw, 420px"
               alt="Haircare bundle product stack"
               loading="lazy"
               decoding="async"
-              style={{ width: "100%", height: 300, objectFit: "cover", borderRadius: 20, boxShadow: "var(--shadow-lg)", display: "block" }}
+              style={{ width: "100%", height: "auto", objectFit: "contain", borderRadius: 20, boxShadow: "var(--shadow-lg)", display: "block" }}
             />
             <div style={{ position: "absolute", top: -18, right: -8, zIndex: 4 }}>
               <Pin rotate={-7} bg="var(--orange-600)" color="#fff" style={{ borderColor: "var(--orange-700)", fontSize: 22, padding: "8px 16px" }}>Save $503</Pin>
