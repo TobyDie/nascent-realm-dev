@@ -108,12 +108,6 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
             <span className="sticky-offer-label">85% OFF</span>
             <span className="sticky-offer-timer" aria-live="off">{countdown}</span>
           </span>
-          <span className="sticky-refund-chip" aria-label="14-day refund guarantee">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-            Refund in 14d
-          </span>
           <span style={{ fontSize: 12.5, fontWeight: 700, color: "var(--ink)", lineHeight: 1.25 }}>
             Next cohort: <span style={{ color: "var(--orange-700)" }}>Fri, June 6th</span>
           </span>
