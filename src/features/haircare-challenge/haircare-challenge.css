@@ -1305,3 +1305,32 @@
 @media (min-width: 641px) and (max-width: 860px) {
 .hq-sp .h-hero { font-size: 42px; }
 }
+
+/* Sticky CTA offer chip + countdown timer */
+.hq-sp .sticky-offer-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange-100);
+  color: var(--orange-700);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  align-self: flex-start;
+}
+.hq-sp .sticky-offer-label { white-space: nowrap; }
+.hq-sp .sticky-offer-timer {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  background: var(--orange-700);
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  min-width: 70px;
+  text-align: center;
+}
