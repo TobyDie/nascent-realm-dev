@@ -147,7 +147,7 @@ export function Science() {
         <Reveal className="center" style={{ marginTop: 24 }}>
           <Button
             variant="ghost"
-            onClick={() => { const el = document.getElementById('included'); if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' }); }}
+            onClick={() => { window.location.href = "https://join.hairqare.co/the-quiz-haircare"; }}
             icon="arrow-right"
           >
             Show me how to fix it
