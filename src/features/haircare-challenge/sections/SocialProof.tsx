@@ -85,7 +85,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
         )}
 
         <Reveal className="center" style={{ marginTop: 30, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-          <Button onClick={onCta} icon="arrow-right">Join 250,000+ women</Button>
+          <Button id="cta-social-proof" onClick={onCta} icon="arrow-right">Join 250,000+ women</Button>
           <GuaranteeBadge size="sm" />
           <button className="btn btn-ghost" style={{ padding: "10px 20px", fontSize: 14 }}>
             See more stories <Icon name="chevron-right" size={16} />
