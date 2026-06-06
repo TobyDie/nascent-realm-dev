@@ -109,8 +109,8 @@ export function Recognition() {
 
         <Reveal style={{ marginTop: 36 }}>
           <InlineTestimonial
-            name="Hannah" age={39} flag="🇬🇧"
-            quote="I was the girl with the thick hair growing up. Three years after baby #2, I cried in front of the mirror most mornings. I'm not crying anymore."
+            name="Abigail" age={37} flag="🇺🇸"
+            quote="I haven't been crying every day over my hair. It's not where I want it to be yet — but it's been so much better since I changed the things I was doing wrong."
             style={{ margin: "0 auto" }}
           />
         </Reveal>
