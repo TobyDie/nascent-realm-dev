@@ -51,10 +51,9 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               <span style={{ color: "#e97b00" }}>30s and beyond.</span>
             </h1>
 
-            {/* Sub-headline — specificity + proof */}
             {/* Validation — one line */}
             <p className="hero-validation">
-              The hair you had in your 20s isn't gone forever. Your body has changed but your habits haven't. Learn how to build a hair care routine for your 30s and enjoy good hair days for decades to come.
+              Build a hair routine for your 30s — see results in 14 days, or your money back.
             </p>
 
             {/* CTA block — must be above fold on mobile */}
@@ -100,10 +99,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                   loading="eager"
                   fetchPriority="high"
                 />
-                <div className="hero-image-caption">
-                  <div style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 20, lineHeight: 1.1 }}>Sarah Tran</div>
-                  <div style={{ color: "rgba(255,255,255,.88)", fontSize: 13.5, fontWeight: 600, marginTop: 3 }}>Founder · 250,000+ women coached</div>
-                </div>
               </div>
               <div style={{ position: "absolute", top: -14, right: -8, zIndex: 4 }}>
                 <Pin rotate={-7}>★ 4.8 · 12K reviews</Pin>
