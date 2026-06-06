@@ -18,8 +18,9 @@ import {
 
 /* ---------------- Hooks ---------------- */
 export function useIsMobile(bp = 720) {
-  const [m, setM] = useState(typeof window !== "undefined" ? window.innerWidth < bp : false);
+  const [m, setM] = useState(false);
   useEffect(() => {
+    setM(window.innerWidth < bp);
     const onR = () => setM(window.innerWidth < bp);
     window.addEventListener("resize", onR);
     return () => window.removeEventListener("resize", onR);
@@ -273,9 +274,9 @@ export function Carousel({
 }
 
 /* ---------------- StarRow, CheckItem, Stat, Photo, Trustpilot, GreenCallout ---------------- */
-export function StarRow({ size = 16, color = "var(--star)", count = 5 }: { size?: number; color?: string; count?: number }) {
+export function StarRow({ size = 16, color = "var(--star)", count = 5, style }: { size?: number; color?: string; count?: number; style?: React.CSSProperties }) {
   return (
-    <span style={{ display: "inline-flex", gap: 2, color }}>
+    <span style={{ display: "inline-flex", gap: 2, color, ...style }}>
       {Array.from({ length: count }).map((_, i) => (
         <svg key={i} width={size} height={size} viewBox="0 0 24 24" fill={color} stroke={color} strokeWidth="1.5" strokeLinejoin="round" aria-hidden="true">
           <path d="M12 2.5l2.95 6.18 6.8.74-5.08 4.6 1.45 6.68L12 17.3l-6.12 3.4 1.45-6.68L2.25 9.42l6.8-.74L12 2.5z" />
@@ -313,17 +314,29 @@ export function Stat({ num, label, size = 80, color }: { num: React.ReactNode; l
   );
 }
 
-export function Photo({
-  h = 220, cool = false, label = "photo", radius, style, children,
-}: { h?: number; cool?: boolean; label?: React.ReactNode; radius?: number | string; style?: React.CSSProperties; children?: React.ReactNode }) {
+export function EditableImage({
+  h = 220, cool = false, label = "photo", radius, style, className = "", children,
+}: { h?: number; cool?: boolean; label?: React.ReactNode; radius?: number | string; style?: React.CSSProperties; className?: string; children?: React.ReactNode }) {
+  const labelText = typeof label === "string" ? label : undefined;
   return (
-    <div className={`ph ${cool ? "cool" : ""}`} style={{ height: h, borderRadius: radius, padding: 20, ...style }}>
-      <span className="ph-label">IMAGE</span>
-      <span style={{ maxWidth: "82%", fontSize: 13, lineHeight: 1.45, color: "rgba(26,26,26,.62)", fontWeight: 500 }}>{label}</span>
+    <div
+      className={`ph ${cool ? "cool" : ""} ${className}`}
+      style={{ height: h, borderRadius: radius, overflow: "hidden", position: "relative", padding: 0, ...style }}
+    >
+      <img
+        src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/placeholder.webp"
+        alt={labelText || "photo"}
+        loading="lazy"
+        decoding="async"
+        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+      />
+      <span className="ph-label" style={{ position: "absolute", top: 8, left: 8 }}>{label}</span>
       {children}
     </div>
   );
 }
+
+export const Photo = EditableImage;
 
 export function Trustpilot({ rating = "4.8", reviews }: { rating?: string; reviews?: string }) {
   return (
@@ -351,10 +364,9 @@ export function GreenCallout({ children }: { children: React.ReactNode }) {
 }
 
 export function BeforeAfter({ day, cool }: { day: React.ReactNode; cool?: boolean }) {
+  const label = `${day} · crown / part`;
   return (
-    <div className={`ph ${cool ? "cool" : ""}`} style={{ height: 120, borderRadius: 12, padding: 0 }}>
-      <span className="ph-label" style={{ fontSize: 11 }}>{day} · crown / part</span>
-    </div>
+    <EditableImage h={120} radius={12} cool={cool} label={label} />
   );
 }
 

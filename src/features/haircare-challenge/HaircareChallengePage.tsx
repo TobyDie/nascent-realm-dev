@@ -1,6 +1,9 @@
 import "./haircare-challenge.css";
 import { AgeStripe } from "./sections/AgeStripe";
 import { Hero } from "./sections/Hero";
+import { Recognition } from "./sections/Recognition";
+import { RecognitionVideo } from "./sections/RecognitionVideo";
+import { Science } from "./sections/Science";
 
 function scrollToStart() {
   const el = document.getElementById("start");
@@ -12,6 +15,9 @@ export function HaircareChallengePage() {
     <div className="hq-sp rooted">
       <AgeStripe />
       <Hero onCta={scrollToStart} />
+      <Recognition />
+      <RecognitionVideo />
+      <Science />
     </div>
   );
 }
