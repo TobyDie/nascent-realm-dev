@@ -77,24 +77,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "A sales page for an online course featuring a mobile-first design, a carousel slider, and a prominent call-to-action." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "A sales page for an online course featuring a mobile-first design, a carousel slider, and a prominent call-to-action." },
+      { title: "Stop Hair Loss in 14 Days | 14-Day Haircare Challenge" },
+      { name: "description", content: "200,000+ women stopped their hair loss in just 14 days by fixing the 5 root causes that traditional treatments miss. Science-backed program. 30-day guarantee." },
+      { name: "author", content: "Hairqare" },
+      { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "A sales page for an online course featuring a mobile-first design, a carousel slider, and a prominent call-to-action." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/43d2c2c5-3c02-4c3a-bda3-e4f3a215c7fb/id-preview-479d5d0d--cc909add-97cb-4508-80fc-0b874c9821db.lovable.app-1780564644146.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/43d2c2c5-3c02-4c3a-bda3-e4f3a215c7fb/id-preview-479d5d0d--cc909add-97cb-4508-80fc-0b874c9821db.lovable.app-1780564644146.png" },
+      { property: "og:image", content: "https://pub.hairqare.co/sarah-fferstack-bhc.webp" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://pub.hairqare.co/sarah-fferstack-bhc.webp" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/webclip.png" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://pub.hairqare.co", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://hairqare.co", crossOrigin: "anonymous" },
+      { rel: "dns-prefetch", href: "https://pub.hairqare.co" },
     ],
   }),
   shellComponent: RootShell,
@@ -108,6 +108,10 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <style dangerouslySetInnerHTML={{ __html: `body{font-feature-settings:'ss04' on,'ss10' on;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;}` }} />
+        <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){var _c='GTM'+'-'+'TT5'+'MJ'+'DF';w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://hairqare.co/static/bundle-8f3a.js?id='+_c+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer');` }} />
+        <script src="https://hairqare.co/cvg/static/pixels/NyDCDi.js" async></script>
+        <script dangerouslySetInnerHTML={{ __html: `window.cvg||(cvg=function(){cvg.process?cvg.process.apply(cvg,arguments):cvg.queue.push(arguments)},cvg.queue=[]);cvg({method:"proxy",tracking:"https://hairqare.co/cvg",static:"https://hairqare.co/cvg/static"});cvg({method:"track",eventName:"$page_load"});cvg({method:"link_domain",domain:"try.hairqare.co"});cvg({method:"link_domain",domain:"app.hairqare.co"});cvg({method:"link_domain",domain:"join.hairqare.co"});cvg({method:"link_domain",domain:"community.hairqare.co"});cvg({method:"link_domain",domain:"checkout.hairqare.co"});` }} />
       </head>
       <body>
         {children}
