@@ -26,6 +26,14 @@ export default function VideoPlayer({
   const wrapRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [active, setActive] = useState(false); // has entered the viewport at least once
+  const [interacted, setInteracted] = useState(false); // user tapped → show native controls
+
+  // First tap pauses the (muted, autoplaying) video and reveals native controls.
+  const handleTap = () => {
+    if (interacted) return;
+    setInteracted(true);
+    videoRef.current?.pause();
+  };
 
   // Activate (mount HLS) when the player nears the viewport.
   useEffect(() => {
@@ -78,7 +86,8 @@ export default function VideoPlayer({
     };
   }, [active, src, autoplay]);
 
-  // Pause when scrolled out of view (and resume when back) for autoplay videos.
+  // Autoplay (muted) when in view, pause when out. Once the user has taken
+  // control (tapped to pause), never auto-resume — only keep pausing off-screen.
   useEffect(() => {
     if (!active || !autoplay) return;
     const video = videoRef.current;
@@ -86,15 +95,18 @@ export default function VideoPlayer({
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
-          if (e.isIntersecting) video.play().catch(() => {});
-          else video.pause();
+          if (e.isIntersecting) {
+            if (!interacted) video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
         }
       },
       { threshold: 0.25 },
     );
     io.observe(video);
     return () => io.disconnect();
-  }, [active, autoplay]);
+  }, [active, autoplay, interacted]);
 
   return (
     <div
@@ -113,12 +125,14 @@ export default function VideoPlayer({
         preload="none"
         playsInline
         muted={autoplay}
-        controls
+        controls={interacted}
+        onClick={handleTap}
         style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",
           display: "block",
+          cursor: interacted ? "default" : "pointer",
         }}
       />
     </div>
