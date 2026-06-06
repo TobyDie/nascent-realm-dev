@@ -10,8 +10,10 @@ import {
   Reveal,
   Underline,
 } from "../primitives";
+import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
 
 export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
+  const joining = useJoiningCount();
   return (
     <section className="bg-cream" id="included">
       <Anno>Section 8 — What's included (premium value)</Anno>
@@ -177,7 +179,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
               <div className="pricing-trust">
                 <span><Icon name="shield-check" size={15} color="var(--trust-green)" /> 30-day money-back</span>
                 <span className="pricing-trust-dot">·</span>
-                <span><Icon name="users" size={15} color="var(--orange-600)" /> 2,400 joining Friday</span>
+                <span><Icon name="users" size={15} color="var(--orange-600)" /> {formatJoiningCount(joining)} women joining Friday</span>
                 <span className="pricing-trust-dot">·</span>
                 <span><Icon name="infinity" size={15} color="var(--slate)" /> Pay once. Yours forever.</span>
               </div>

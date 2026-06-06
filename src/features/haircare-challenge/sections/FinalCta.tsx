@@ -1,6 +1,8 @@
 import { Anno, Button, Eyebrow, Icon, Reveal, Trustpilot } from "../primitives";
+import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
 
 export function FinalCta({ onCta }: { onCta?: () => void }) {
+  const joining = useJoiningCount();
   const liStyle: React.CSSProperties = { display: "flex", gap: 11, alignItems: "flex-start", fontSize: 15.5, color: "var(--ink-soft)" };
   return (
     <section className="bg-cream" id="start">
@@ -41,7 +43,7 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
               </div>
               <Button onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center" }}>Start the challenge</Button>
               <p className="small center" style={{ marginTop: 14, marginBottom: 0 }}>
-                Next cohort starts June 6th · 2,400 women joining · 30-day money-back guarantee
+                Next cohort starts June 6th · {formatJoiningCount(joining)} women joining · 30-day money-back guarantee
               </p>
             </div>
           </div>

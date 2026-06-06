@@ -1,4 +1,5 @@
 import { Anno, Reveal, Button, Icon, Pin, Trustpilot } from "../primitives";
+import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
 import a11 from "@/assets/hero-avatar-11.webp.asset.json";
 import a13 from "@/assets/hero-avatar-13.webp.asset.json";
 import a14 from "@/assets/hero-avatar-14.webp.asset.json";
@@ -17,6 +18,7 @@ const HERO_AVATARS: string[] = [
 ];
 
 export function Hero({ onCta }: { onCta?: () => void }) {
+  const joining = useJoiningCount();
   return (
     <section className="bg-cream hero-section" style={{ paddingTop: 48, paddingBottom: 0 }}>
       <Anno>Section 1 — Hero / recognition</Anno>
@@ -61,7 +63,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               {/* cohort line — under CTA, not above headline */}
               <span className="hero-cohort">
                 <Icon name="calendar-heart" size={13} color="var(--orange-600)" />
-                Next cohort: <strong>Fri, June 6th</strong> · 2,400 women joining
+                Next cohort: <strong>Fri, June 6th</strong> · {formatJoiningCount(joining)} women joining
               </span>
               {/* Validation paragraph — restored, after cohort line */}
               <p className="hero-validation" style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)" }}>
