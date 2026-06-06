@@ -15,6 +15,7 @@ import {
   Plus,
   Infinity as InfinityIcon,
 } from "lucide-react";
+import beforeAfterAsset from "@/assets/hairloss-before-after.png.asset.json";
 
 /* ---------------- Hooks ---------------- */
 export function useIsMobile(bp = 720) {
@@ -388,9 +389,14 @@ export function TestimonialCard({
         <StarRow size={14} />
       </div>
       <p style={{ margin: 0, fontSize: 16, lineHeight: 1.6, color: "var(--ink)" }}>“{text}”</p>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: "auto" }}>
-        <BeforeAfter day="Day 1" cool />
-        <BeforeAfter day="Day 14" />
+      <div style={{ marginTop: "auto", borderRadius: 12, overflow: "hidden" }}>
+        <img
+          src={beforeAfterAsset.url}
+          alt="Before and after — Day 1 vs Day 14"
+          loading="lazy"
+          decoding="async"
+          style={{ width: "100%", height: "auto", display: "block" }}
+        />
       </div>
     </div>
   );
