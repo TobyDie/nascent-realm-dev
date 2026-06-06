@@ -487,3 +487,20 @@ export function CompactImageTestimonial({
     </div>
   );
 }
+
+/* ---------- GuaranteeBadge — risk reversal next to every primary CTA ---------- */
+export function GuaranteeBadge({
+  size = "sm",
+  style,
+  className = "",
+}: { size?: "sm" | "md"; style?: React.CSSProperties; className?: string }) {
+  return (
+    <span className={`guarantee-badge guarantee-${size} ${className}`} style={style}>
+      <Icon name="shield-check" size={size === "md" ? 18 : 15} color="var(--trust-green)" />
+      <span className="guarantee-text">
+        <strong>14-day results or 100% refund.</strong>{" "}
+        <span className="guarantee-sub">No questions, no forms — just email us.</span>
+      </span>
+    </span>
+  );
+}

@@ -34,7 +34,10 @@ export function SelfQualifier({ onCta }: { onCta?: () => void }) {
       <div className="wrap" style={{ maxWidth: 720 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 32 }}>
           <Eyebrow>Is this you?</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12 }}>Tick every one that sounds like you</h2>
+          <h2 className="h2" style={{ marginTop: 12 }}>If any of this sounds like you, it's not your fault — and it's fixable.</h2>
+          <p className="lead" style={{ marginTop: 12, fontSize: 17 }}>
+            Tick every one that rings true.
+          </p>
         </Reveal>
         <Reveal>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

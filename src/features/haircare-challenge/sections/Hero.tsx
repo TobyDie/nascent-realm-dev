@@ -1,4 +1,4 @@
-import { Anno, Reveal, Button, Icon, Pin, Trustpilot } from "../primitives";
+import { Anno, Reveal, Button, GuaranteeBadge, Icon, Pin, Trustpilot } from "../primitives";
 import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
 import a11 from "@/assets/hero-avatar-11.webp.asset.json";
 import a13 from "@/assets/hero-avatar-13.webp.asset.json";
@@ -58,8 +58,9 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               <Button onClick={onCta} icon="arrow-right">Join the challenge</Button>
               <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
                 <span style={{ textDecoration: "line-through", color: "var(--slate-soft)", marginRight: 6 }}>$247</span>
-                85% off · 30-day guarantee
+                85% off · today only
               </span>
+              <GuaranteeBadge size="sm" />
               {/* cohort line — under CTA, not above headline */}
               <span className="hero-cohort">
                 <Icon name="calendar-heart" size={13} color="var(--orange-600)" />
@@ -83,7 +84,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               </li>
               <li>
                 <span className="hero-bullet-emoji">⏱️</span>
-                <span>See results in 14 days or get your money back.</span>
+                <span>10 minutes a day. While the coffee brews. That's all it takes.</span>
               </li>
             </ul>
           </Reveal>
