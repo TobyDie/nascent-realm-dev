@@ -13,7 +13,37 @@ export function Science() {
         </Reveal>
 
         <Reveal>
-          <div className="science-leadin">
+          <div className="biology-callout">
+            <div className="biology-callout-eyebrow">Why this is happening</div>
+            <h3 className="biology-callout-headline">It's not you. It's your biology.</h3>
+            <p className="biology-callout-body">
+              In your 30s, estrogen starts shifting, sebum production changes, and the hair-growth phase shortens. Most products were formulated for the body you had in your 20s — which is exactly why nothing's been working.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal style={{ marginTop: 22 }}>
+          <div className="biology-tile-row">
+            <div className="biology-tile">
+              <span className="biology-tile-icon">🌡️</span>
+              <div className="biology-tile-title">Hormonal shifts</div>
+              <div className="biology-tile-sub">Perimenopause window opens in your mid-30s — long before menopause.</div>
+            </div>
+            <div className="biology-tile">
+              <span className="biology-tile-icon">🦠</span>
+              <div className="biology-tile-title">Scalp microbiome changes</div>
+              <div className="biology-tile-sub">The friendly bacteria your scalp relies on are slowly disrupted by 30s-era products.</div>
+            </div>
+            <div className="biology-tile">
+              <span className="biology-tile-icon">🥦</span>
+              <div className="biology-tile-title">Nutrient absorption drops</div>
+              <div className="biology-tile-sub">Iron, ferritin, zinc, B12 — the exact nutrients your follicles need most.</div>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div className="science-leadin" style={{ marginTop: 40 }}>
             <div className="science-leadin-card">
               <span className="leadin-num">1</span>
               <p>From your mid-30s, <strong>estrogen and progesterone begin to drop</strong>. When they do, DHT — a hormone that shrinks follicles — goes relatively unopposed. The result is exactly what you're seeing: a wider part, thinning at the temples, a ponytail that's lost its thickness.</p>
@@ -89,6 +119,12 @@ export function Science() {
           <GreenCallout>
             <strong>Perimenopause doesn't start at 50.</strong> Hormonal fluctuations that affect your hair can begin as early as 35 — and most doctors never mention it.
           </GreenCallout>
+        </Reveal>
+
+        <Reveal style={{ marginTop: 28 }}>
+          <p className="biology-reassurance">
+            You didn't do anything wrong. You were just never taught what changes after 30.
+          </p>
         </Reveal>
 
         <Reveal style={{ marginTop: 32 }}>

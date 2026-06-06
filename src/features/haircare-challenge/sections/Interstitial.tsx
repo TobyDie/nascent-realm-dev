@@ -1,4 +1,4 @@
-import { InlineTestimonial, CompactImageTestimonial, Reveal } from "../primitives";
+import { InlineTestimonial, CompactImageTestimonial, Reveal, StarRow } from "../primitives";
 import profile1 from "@/assets/profile-1.webp.asset.json";
 import profile2 from "@/assets/profile-2.webp.asset.json";
 import profile3 from "@/assets/profile-3.webp.asset.json";
@@ -51,17 +51,194 @@ const IMAGE_PLACEHOLDERS = [
   { name: "Rosemary", initials: "R", image: ba13.url, context: "Military veteran · chemotherapy hair loss", text: "This course has changed the way my family thinks, the way I think — it is going to continue to improve our quality of life." },
 ];
 
-/* Compact strip — two testimonials side-by-side on desktop, stacked on mobile.
-   Replaces the old full-width single-testimonial sections so the page reads
-   tighter without losing any of the real reviews. */
+export type InterstitialVariant =
+  | "default"
+  | "pull-quote"
+  | "polaroid-duo"
+  | "magazine-split"
+  | "sticky-wall"
+  | "single-hero"
+  | "ribbon";
+
+/* Six visually distinct interstitial variants so the page never reads
+   mechanical. Same underlying testimonial data — different rendering. */
 export function TestimonialStrip({
   textIndex,
   imageIndex,
   bg = "var(--cream)",
-}: { textIndex?: number; imageIndex?: number; bg?: string }) {
+  variant = "default",
+}: { textIndex?: number; imageIndex?: number; bg?: string; variant?: InterstitialVariant }) {
   const t = textIndex != null ? TEXT_PLACEHOLDERS[textIndex] : undefined;
   const i = imageIndex != null ? IMAGE_PLACEHOLDERS[imageIndex] : undefined;
   if (!t && !i) return null;
+
+  if (variant === "pull-quote" && t) {
+    return (
+      <section style={{ background: bg, padding: "44px 0" }}>
+        <div className="wrap" style={{ maxWidth: 760, textAlign: "center" }}>
+          <Reveal>
+            <div className="ti-pullquote">
+              <span className="ti-pullquote-mark" aria-hidden="true">"</span>
+              <p className="ti-pullquote-text">{t.quote}</p>
+              <div className="ti-pullquote-byline">
+                <img src={t.avatar} alt="" loading="lazy" className="ti-pullquote-avatar" />
+                <span>{t.name}</span>
+                <StarRow size={13} />
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
+
+  if (variant === "polaroid-duo") {
+    return (
+      <section className="ti-polaroid-section" style={{ background: bg, padding: "48px 0" }}>
+        <div className="wrap-wide" style={{ maxWidth: 920 }}>
+          <Reveal>
+            <div className="ti-polaroid-wrap">
+              {i ? (
+                <figure className="ti-polaroid">
+                  <img src={i.image} alt={`${i.name} — ${i.context}`} loading="lazy" />
+                  <figcaption>
+                    <strong>{i.name}</strong>
+                    <span>{i.context}</span>
+                    <p>"{i.text}"</p>
+                  </figcaption>
+                </figure>
+              ) : null}
+              {t ? (
+                <div className="ti-handnote">
+                  <span className="ti-handnote-pin" aria-hidden="true" />
+                  <p>"{t.quote}"</p>
+                  <span className="ti-handnote-sig">— {t.name}</span>
+                </div>
+              ) : null}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
+
+  if (variant === "magazine-split") {
+    return (
+      <section style={{ background: bg, padding: "0" }}>
+        <Reveal>
+          <div className="ti-magazine">
+            {i ? (
+              <div className="ti-magazine-img">
+                <img src={i.image} alt={`${i.name} result`} loading="lazy" />
+                <span className="ti-magazine-img-tag">{i.name} · {i.context}</span>
+              </div>
+            ) : null}
+            {t ? (
+              <div className="ti-magazine-quote">
+                <span className="ti-magazine-eyebrow">Real review · cohort graduate</span>
+                <p>"{t.quote}"</p>
+                <div className="ti-magazine-byline">
+                  <img src={t.avatar} alt="" loading="lazy" />
+                  <div>
+                    <strong>{t.name}</strong>
+                    <StarRow size={12} />
+                  </div>
+                </div>
+              </div>
+            ) : null}
+          </div>
+        </Reveal>
+      </section>
+    );
+  }
+
+  if (variant === "sticky-wall") {
+    return (
+      <section style={{ background: bg, padding: "56px 0" }}>
+        <div className="wrap-wide" style={{ maxWidth: 880 }}>
+          <Reveal>
+            <div className="ti-stickywall">
+              {t ? (
+                <div className="ti-sticky ti-sticky-a">
+                  <p>"{t.quote}"</p>
+                  <span>— {t.name}</span>
+                </div>
+              ) : null}
+              {i ? (
+                <div className="ti-sticky ti-sticky-b">
+                  <p>"{i.text}"</p>
+                  <span>— {i.name} · {i.context}</span>
+                </div>
+              ) : null}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
+
+  if (variant === "single-hero" && i) {
+    return (
+      <section style={{ background: bg, padding: "56px 0" }}>
+        <div className="wrap" style={{ maxWidth: 720, textAlign: "center" }}>
+          <Reveal>
+            <div className="ti-single-hero">
+              <div className="ti-single-hero-avatar">
+                <img src={i.image} alt={i.name} loading="lazy" />
+              </div>
+              <StarRow size={18} style={{ justifyContent: "center" }} />
+              <p className="ti-single-hero-quote">"{i.text}"</p>
+              <div className="ti-single-hero-name">{i.name}</div>
+              <div className="ti-single-hero-context">{i.context}</div>
+              {t ? (
+                <div className="ti-single-hero-also">
+                  <span className="ti-single-hero-also-label">Also from this week:</span>
+                  <span className="ti-single-hero-also-quote">"{t.quote}"</span>
+                  <span className="ti-single-hero-also-name">— {t.name}</span>
+                </div>
+              ) : null}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
+
+  if (variant === "ribbon") {
+    return (
+      <section style={{ background: bg, padding: "28px 0" }}>
+        <div className="wrap-wide" style={{ maxWidth: 980 }}>
+          <Reveal>
+            <div className="ti-ribbon">
+              {t ? (
+                <div className="ti-ribbon-side">
+                  <img src={t.avatar} alt="" loading="lazy" className="ti-ribbon-avatar" />
+                  <div className="ti-ribbon-body">
+                    <StarRow size={12} />
+                    <p>"{t.quote}"</p>
+                    <span>— {t.name}</span>
+                  </div>
+                </div>
+              ) : null}
+              <span className="ti-ribbon-divider" aria-hidden="true" />
+              {i ? (
+                <div className="ti-ribbon-side">
+                  <img src={i.image} alt="" loading="lazy" className="ti-ribbon-thumb" />
+                  <div className="ti-ribbon-body">
+                    <strong>{i.name}</strong>
+                    <p>"{i.text}"</p>
+                    <span>{i.context}</span>
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
+
+  // default — original compact strip
   return (
     <section style={{ background: bg, padding: "24px 0" }}>
       <div className="wrap-wide" style={{ maxWidth: 960, marginInline: "auto", paddingInline: 20 }}>
