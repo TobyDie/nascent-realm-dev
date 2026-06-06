@@ -51,11 +51,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               <span style={{ color: "#e97b00" }}>30s and beyond.</span>
             </h1>
 
-            {/* Validation — one line */}
-            <p className="hero-validation">
-              Build a hair routine for your 30s — see results in 14 days, or your money back.
-            </p>
-
             {/* CTA block — must be above fold on mobile */}
             <div id="hero-cta-sentinel" style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start", marginBottom: 24 }}>
               <Button onClick={onCta} icon="arrow-right">Join the challenge</Button>
@@ -68,6 +63,10 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                 <Icon name="calendar-heart" size={13} color="var(--orange-600)" />
                 Next cohort: <strong>Fri, June 6th</strong> · 2,400 women joining
               </span>
+              {/* Validation paragraph — restored, after cohort line */}
+              <p className="hero-validation" style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)" }}>
+                The hair you had in your 20s isn't gone forever. Your body has changed but your habits haven't. Learn how to build a hair care routine for your 30's and enjoy good hair days for decades to come.
+              </p>
             </div>
 
             {/* Bullets — proof layer, below the CTA */}
@@ -100,8 +99,8 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                   fetchPriority="high"
                 />
               </div>
-              <div style={{ position: "absolute", top: -14, right: -8, zIndex: 4 }}>
-                <Pin rotate={-7}>★ 4.8 · 12K reviews</Pin>
+              <div style={{ position: "absolute", top: -14, left: -8, zIndex: 4 }}>
+                <Pin rotate={7}>★ 4.8 · 12K reviews</Pin>
               </div>
             </div>
           </Reveal>
