@@ -28,7 +28,7 @@ const TEXT_PLACEHOLDERS = [
   // After FAQ — simple, accessible, easy
   { name: "Paola Fernandez", avatar: profile7.url, quote: "It's super simple. You can find all the ingredients on the internet, on Amazon. They're very accessible and I've been having amazing results." },
   // Final reassurance before CTA — fall-in-love-again moment
-  { name: "Kate", avatar: profile1.url, quote: "The main thing I could say that this challenge gave me was the most important one and that's that I fell in love — I fell in love with my hair again." },
+  { name: "Kate", avatar: profile1.url, quote: "The main thing I could say that this challenge gave me was the most important one and that's that I fell in love. I fell in love with my hair again." },
 ];
 
 /* ------------------------------------------------------------------
@@ -40,7 +40,7 @@ const IMAGE_PLACEHOLDERS = [
   // After HowItWorks — the process works, visible after washing
   { name: "Selima", initials: "S", image: baNew3.url, context: "Daily hair loss · limp hair", text: "I noticed that my hair had a little bit of volume after washing it, which never happened before. It always looked limp and flat, but now I can see a little bit of volume after washing and I experienced less sweat and limpness." },
   // After WhatsIncluded — the DIY shampoo / what's in the bundle delivers
-  { name: "Alexia Zacharias", initials: "A", image: baNew2.url, context: "Hair loss (hypothyroid)", text: "I see much, much difference with the shampoo — with the DIY shampoo." },
+  { name: "Alexia Zacharias", initials: "A", image: baNew2.url, context: "Hair loss (hypothyroid)", text: "I see much, much difference with the shampoo, with the DIY shampoo." },
   // After NotAboutHair — emotional, reconnecting with self
   { name: "Aurélie Guénué", initials: "A", image: baNew1.url, context: "Hair loss · irritated scalp", text: "After just a few weeks my scalp feels calmer, I'm losing less hair and more than anything I'm finally reconnecting with myself." },
   // After SelfQualifier (image slot) — hormonal / Hashimoto's, "for women like me"
@@ -48,7 +48,7 @@ const IMAGE_PLACEHOLDERS = [
   // After FAQ (image slot) — bouncy, soft, gentle (trust before CTA)
   { name: "Sara Gouveia", initials: "S", image: baNew5.url, context: "Hair loss · stress", text: "Now that it's dried it actually feels pretty clean and it feels so smooth and so gentle and my curls are just like, hey hello! My hair is usually very flat… but now it's just quite bouncy." },
   // Final-CTA-area — the most powerful story (cancer survivor / family-level change)
-  { name: "Rosemary", initials: "R", image: ba13.url, context: "Military veteran · chemotherapy hair loss", text: "This course has changed the way my family thinks, the way I think — it is going to continue to improve our quality of life." },
+  { name: "Rosemary", initials: "R", image: ba13.url, context: "Military veteran · chemotherapy hair loss", text: "This course has changed the way my family thinks, the way I think, and it is going to continue to improve our quality of life." },
 ];
 
 export type InterstitialVariant =
