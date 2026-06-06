@@ -48,21 +48,11 @@ export function VideoTestimonials() {
       </div>
     </div>,
     <div key={2} className="video-card">
-      <div className="video-thumb">
-        <div className="ph" style={{ height: "100%", padding: 0 }}>
-          <span className="ph-label" style={{ fontSize: 11 }}>
-            Carol, 43 — outdoor natural light, relaxed and warm. Real and unretouched.
-          </span>
-        </div>
-        <div className="video-play-wrap">
-          <div className="video-play-circle">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M7 5l9 5-9 5V5z" fill="var(--orange-600)" />
-            </svg>
-          </div>
-        </div>
-        <span className="video-duration">1:48</span>
-      </div>
+      <VideoPlayer
+        src="https://videos.hairqare.co/danielle-s-14-day-haircare-challenge-rep-ddc1023a/master.m3u8"
+        aspectRatio="1080/1440"
+        autoplay
+      />
       <div className="video-body">
         <div className="video-meta">
           <div className="video-avatar">C</div>
