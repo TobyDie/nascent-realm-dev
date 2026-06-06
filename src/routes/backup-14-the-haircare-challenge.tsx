@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { HaircareChallengePage } from "@/features/haircare-challenge/HaircareChallengePage";
 
-export const Route = createFileRoute("/14-native")({
+export const Route = createFileRoute("/backup-14-the-haircare-challenge")({
   head: () => ({
     meta: [
       { title: "Stop Hair Loss in 14 Days | 14-Day Haircare Challenge" },
@@ -17,5 +16,15 @@ export const Route = createFileRoute("/14-native")({
       { rel: "canonical", href: "https://glow.hairqare.co/14-the-haircare-challenge" },
     ],
   }),
-  component: HaircareChallengePage,
+  component: SalesPage,
 });
+
+function SalesPage() {
+  return (
+    <iframe
+      src="/14-the-haircare-challenge/index.html"
+      title="HairQare 14-Day Challenge"
+      className="block w-screen h-screen border-0"
+    />
+  );
+}

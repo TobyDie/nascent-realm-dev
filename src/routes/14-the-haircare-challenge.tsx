@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HaircareChallengePage } from "@/features/haircare-challenge/HaircareChallengePage";
 
 export const Route = createFileRoute("/14-the-haircare-challenge")({
   head: () => ({
@@ -16,15 +17,5 @@ export const Route = createFileRoute("/14-the-haircare-challenge")({
       { rel: "canonical", href: "https://glow.hairqare.co/14-the-haircare-challenge" },
     ],
   }),
-  component: SalesPage,
+  component: HaircareChallengePage,
 });
-
-function SalesPage() {
-  return (
-    <iframe
-      src="/14-the-haircare-challenge/index.html"
-      title="HairQare 14-Day Challenge"
-      className="block w-screen h-screen border-0"
-    />
-  );
-}
