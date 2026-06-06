@@ -4,13 +4,20 @@
 const BASE = "https://pub.hairqare.co/cdn-cgi/image";
 const PREFIX = "glow";
 
-/** Build a single transformed image URL for an R2 file key (e.g. "ba-1.webp"). */
+/** True when the value is already a full URL or absolute path (not an R2 key). */
+const isResolved = (file: string) => /^https?:\/\//.test(file) || file.startsWith("/");
+
+/** Build a single transformed image URL for an R2 file key (e.g. "ba-1.webp").
+   Safety net: if a fully-qualified URL or absolute path is passed, return it
+   unchanged so we never produce a broken `glow//__l5e/...` concatenation. */
 export function r2img(file: string, w: number, q = 80): string {
+  if (isResolved(file)) return file;
   return `${BASE}/width=${w},quality=${q},format=auto/${PREFIX}/${file}`;
 }
 
-/** Build a responsive srcSet string across the given widths. */
+/** Build a responsive srcSet string across the given widths. Empty for non-keys. */
 export function r2srcset(file: string, widths: number[], q = 80): string {
+  if (isResolved(file)) return "";
   return widths.map((w) => `${r2img(file, w, q)} ${w}w`).join(", ");
 }
 

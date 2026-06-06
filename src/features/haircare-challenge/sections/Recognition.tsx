@@ -1,5 +1,4 @@
 import { Reveal, InlineTestimonial, Hand, Icon } from "../primitives";
-import profile9 from "@/assets/profile-9.webp.asset.json";
 
 export function Recognition() {
   return (
@@ -100,7 +99,7 @@ export function Recognition() {
           <InlineTestimonial
             name="Abigail" age={37} flag="🇺🇸"
             quote="I haven't been crying every day over my hair. It's not where I want it to be yet, but it's been so much better since I changed the things I was doing wrong."
-            avatar={profile9.url}
+            avatar="profile-9.webp"
             style={{ margin: "0 auto" }}
           />
         </Reveal>

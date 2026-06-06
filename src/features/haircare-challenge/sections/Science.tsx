@@ -1,5 +1,5 @@
 import { Reveal, Eyebrow, HandArrow, Underline, GreenCallout, Icon, StarRow, Button } from "../primitives";
-import profile13 from "@/assets/profile-13.webp.asset.json";
+import { r2img } from "../img";
 
 export function Science() {
   return (
@@ -134,7 +134,7 @@ export function Science() {
               “This challenge showed me I have to change my habits to get better hair — that my genetics influence my hair, but not nearly as much as I thought.”
             </p>
             <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 12 }}>
-              <img src={profile13.url} alt="Gema" style={{ width: 44, height: 44, borderRadius: 999, objectFit: "cover", flex: "none" }} />
+              <img src={r2img("profile-13.webp", 96)} alt="Gema" loading="lazy" decoding="async" style={{ width: 44, height: 44, borderRadius: 999, objectFit: "cover", flex: "none" }} />
               <div>
                 <div style={{ fontWeight: 700, fontSize: 15 }}>Gema, 38 🇪🇸</div>
                 <div style={{ fontSize: 13, color: "var(--slate)" }}>Thinning · always blamed her genetics</div>

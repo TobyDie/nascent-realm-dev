@@ -7,7 +7,6 @@ import {
   InlineTestimonial,
   Reveal,
 } from "../primitives";
-import profile10 from "@/assets/profile-10.webp.asset.json";
 
 export function HowItWorks({ onCta }: { onCta?: () => void }) {
   return (
@@ -85,7 +84,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
             age={36}
             flag="🇲🇾"
             quote="Before this, every time I ran my fingers through my hair, strands would come out. Now when I do it, I don't see anything. That's the good news."
-            avatar={profile10.url}
+            avatar="profile-10.webp"
             style={{ margin: "0 auto" }}
           />
         </Reveal>
