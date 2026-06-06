@@ -105,6 +105,7 @@ export function Recognition() {
         </Reveal>
         <Reveal className="center" style={{ marginTop: 24 }}>
           <a
+            id="cta-recognition"
             href="https://join.hairqare.co/the-quiz-haircare"
             style={{ color: "var(--orange-700)", fontWeight: 700, fontSize: 16, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}
           >
