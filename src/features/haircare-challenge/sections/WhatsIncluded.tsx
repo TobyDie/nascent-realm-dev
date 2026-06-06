@@ -185,7 +185,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
               <div className="pricing-trust">
                 <span><Icon name="shield-check" size={15} color="var(--trust-green)" /> 30-day money-back</span>
                 <span className="pricing-trust-dot">·</span>
-                <span><Icon name="users" size={15} color="var(--orange-600)" /> {formatJoiningCount(joining)} women joining Friday</span>
+                <span><Icon name="users" size={15} color="var(--orange-600)" /> {formatJoiningCount(joining)} women joining this week</span>
                 <span className="pricing-trust-dot">·</span>
                 <span><Icon name="infinity" size={15} color="var(--slate)" /> Pay once. Yours forever.</span>
               </div>
