@@ -1,27 +1,13 @@
-# Mobile ATF — strip to image + promise + button
+Mobile + desktop Hero tweaks in `src/features/haircare-challenge/sections/Hero.tsx`:
 
-Mobile-only (≤720px). Desktop layout unchanged.
+1. **Remove the one-liner** `hero-validation` paragraph ("Build a hair routine for your 30s — see results in 14 days, or your money back.") that currently sits between H1 and CTA. It's repetitive with the CTA microline.
 
-## Cuts (mobile)
-1. **Black age-stripe** — hide on mobile. Repeats the H1's "30s" framing and steals the top 64px.
-2. **Image caption** (`Sarah Tran / Founder · 250,000+ women coached`) — remove entirely. Duplicates the trust bar and Founder section. Lets the portrait + before/after insets be the hero.
-3. **Validation paragraph** — replace the 4-line copy with a single line: *"Build a hair routine for your 30s — see results in 14 days, or your money back."*
+2. **Restore the original validation paragraph** as a new block placed AFTER the cohort line ("Next cohort: Fri, June 6th · 2,400 women joining"), inside the CTA stack (still above the bullets):
 
-## Resizes (mobile)
-- Hero image: bump from 46vh back to ~60vh, `max-width` removed (full width of column), `object-position: center 22%` so face stays in frame and BEFORE/AFTER insets remain visible.
-- Eyebrow→H1→sub gaps tightened (~6px each).
+   > The hair you had in your 20s isn't gone forever. Your body has changed but your habits haven't. Learn how to build a hair care routine for your 30's and enjoy good hair days for decades to come.
 
-## Keeps
-- "★ 4.8 · 12K reviews" pin top-right (only ATF social proof).
-- Handwritten tagline above H1.
-- H1 + orange "30s and beyond".
-- CTA button + the cohort/85%-off microline directly under it.
-- Bullets, trust avatars, Trustpilot row — all stay where they are, below the fold.
+   Style it as muted body copy (small/secondary color, ~14–15px, comfortable line-height), with a little top margin to separate from the cohort line.
 
-## Files
-- `src/features/haircare-challenge/sections/Hero.tsx` — remove `<div className="hero-image-caption">…</div>`; replace the multi-sentence `<p className="hero-validation">` content with the one-liner.
-- `src/features/haircare-challenge/sections/AgeStripe.tsx` — add a `mobile-hidden` class (or wrap in `.desktop-only`) so it disappears under 720px.
-- `src/features/haircare-challenge/haircare-challenge.css` — in the `@media (max-width: 720px)` block: raise `.hero-image-wrap` / `.hero-image` to 60vh, drop the 280px max-width cap, set `object-position: center 22%`; tighten eyebrow/H1/sub margins; hide the age stripe.
+3. **Move the "★ 4.8 · 12K reviews" Pin** from `top: -14, right: -8` to `top: -14, left: -8` (rotate stays negative or flip to `rotate={7}` so it leans into the image). Empty space sits on the image's left side on mobile.
 
-## Out of scope
-- Desktop layout, copy of H1, CTA, bullets, trust bar, all other sections.
+No CSS file changes required beyond optional small margin tweak on the new paragraph; can be done inline. No other sections touched.
