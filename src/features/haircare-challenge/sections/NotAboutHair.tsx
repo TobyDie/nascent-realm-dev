@@ -75,7 +75,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
         <Reveal style={{ marginTop: 26 }}>
           <InlineTestimonial
             name="Kate" age={36} flag="🇬🇧"
-            quote="The main thing this challenge gave me — and it's the most important one — is that I fell in love with my hair again."
+            quote="The main thing this challenge gave me, and it's the most important one, is that I fell in love with my hair again."
             avatar={profile1.url}
             style={{ margin: "0 auto" }}
           />
