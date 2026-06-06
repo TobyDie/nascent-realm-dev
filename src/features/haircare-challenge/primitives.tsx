@@ -377,13 +377,15 @@ export function BeforeAfter({ day, cool }: { day: React.ReactNode; cool?: boolea
 
 export function TestimonialCard({
   name, age, flag, initials, context, text, image,
-}: { name: string; age: React.ReactNode; flag?: React.ReactNode; initials: React.ReactNode; context: React.ReactNode; text: React.ReactNode; image?: string }) {
+}: { name: string; age?: React.ReactNode; flag?: React.ReactNode; initials: React.ReactNode; context: React.ReactNode; text: React.ReactNode; image?: string }) {
   return (
     <div className="testi-card">
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
         <div style={{ width: 48, height: 48, borderRadius: 999, background: "var(--orange-100)", color: "var(--orange-700)", fontWeight: 700, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>{initials}</div>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontWeight: 700, fontSize: 15.5 }}>{name}, {age} <span style={{ fontWeight: 400 }}>{flag}</span></div>
+          <div style={{ fontWeight: 700, fontSize: 15.5 }}>
+            {name}{age ? `, ${age}` : ""}{flag ? <> <span style={{ fontWeight: 400 }}>{flag}</span></> : null}
+          </div>
           <div style={{ fontSize: 13, color: "var(--slate)" }}>{context}</div>
         </div>
         <StarRow size={14} />
@@ -427,7 +429,7 @@ export function InlineTestimonial({
       <div className="inline-testi-body">
         <StarRow size={13} />
         <p className="inline-testi-quote">“{quote}”</p>
-        <div className="inline-testi-meta">— {name}, {age}{flag ? ` · ${flag}` : ""}</div>
+        <div className="inline-testi-meta">— {name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}</div>
       </div>
     </div>
   );
