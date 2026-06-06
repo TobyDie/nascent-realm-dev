@@ -16,7 +16,7 @@ import { FinalCta } from "./sections/FinalCta";
 import { StickyCta } from "./sections/StickyCta";
 import { TestimonialStrip } from "./sections/Interstitial";
 import { ReviewedBy } from "./sections/ReviewedBy";
-import brookeTestimonial from "@/assets/brooke-glad-i-found-this.webp.asset.json";
+import { RImg } from "./primitives";
 
 function scrollToStart() {
   const el = document.getElementById("start");
@@ -32,11 +32,11 @@ export function HaircareChallengePage() {
       <Recognition />
       <section className="bg-cream" style={{ padding: "32px 0 8px" }}>
         <div className="wrap" style={{ maxWidth: 720, textAlign: "center" }}>
-          <img
-            src={brookeTestimonial.url}
+          <RImg
+            file="brooke-glad-i-found-this.webp"
+            widths={[500, 800, 1200]}
+            sizes="(max-width: 760px) 92vw, 720px"
             alt="Brooke testimonial: Glad I found this. Before and after of hair loss results from the 14-Day Haircare Challenge."
-            loading="lazy"
-            decoding="async"
             style={{ width: "100%", height: "auto", borderRadius: 16, boxShadow: "var(--shadow-sm)" }}
           />
         </div>

@@ -1,20 +1,10 @@
-import { Anno, Reveal, Button, GuaranteeBadge, Icon, Pin, Trustpilot } from "../primitives";
+import { Anno, Reveal, Button, GuaranteeBadge, Icon, Pin, Trustpilot, RImg } from "../primitives";
 import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
-import a11 from "@/assets/hero-avatar-11.webp.asset.json";
-import a13 from "@/assets/hero-avatar-13.webp.asset.json";
-import a14 from "@/assets/hero-avatar-14.webp.asset.json";
-import a15 from "@/assets/hero-avatar-15.webp.asset.json";
-import a16 from "@/assets/hero-avatar-16.webp.asset.json";
-import a17 from "@/assets/hero-avatar-17.webp.asset.json";
-import a18 from "@/assets/hero-avatar-18.webp.asset.json";
-import a19 from "@/assets/hero-avatar-19.webp.asset.json";
-import a20 from "@/assets/hero-avatar-20.webp.asset.json";
-import a4 from "@/assets/profile-4.webp.asset.json";
-import sarahHero from "@/assets/sarah-hero-v2.webp.asset.json";
+import { r2img, HERO_WIDTHS, AVATAR_W } from "../img";
 
 const HERO_AVATARS: string[] = [
-  a11.url, a13.url, a14.url, a15.url, a16.url,
-  a17.url, a18.url, a19.url, a20.url, a4.url,
+  "hero-avatar-11.webp", "hero-avatar-13.webp", "hero-avatar-14.webp", "hero-avatar-15.webp", "hero-avatar-16.webp",
+  "hero-avatar-17.webp", "hero-avatar-18.webp", "hero-avatar-19.webp", "hero-avatar-20.webp", "profile-4.webp",
 ];
 
 export function Hero({ onCta }: { onCta?: () => void }) {
@@ -92,13 +82,13 @@ export function Hero({ onCta }: { onCta?: () => void }) {
           <Reveal delay={120}>
             <div style={{ position: "relative" }}>
               <div className="hero-image-wrap">
-                <img
-                  src={sarahHero.url}
+                <RImg
+                  file="sarah-hero-v2.webp"
+                  widths={HERO_WIDTHS}
                   sizes="(max-width: 720px) 100vw, (max-width: 860px) 90vw, 405px"
                   alt="Sarah Tran — founder of HairQare, with long healthy auburn hair, sunlit Mediterranean setting. Inset: before/after of a coached student."
                   className="hero-image"
-                  loading="eager"
-                  fetchPriority="high"
+                  eager
                 />
               </div>
               <div style={{ position: "absolute", top: -14, left: -8, zIndex: 4 }}>
@@ -116,9 +106,9 @@ export function Hero({ onCta }: { onCta?: () => void }) {
           {/* Row 1 — community proof with overlapping avatars */}
           <div className="ct-row ct-community">
             <div className="ct-avatars" aria-hidden="true">
-              {HERO_AVATARS.map((src, i) => (
+              {HERO_AVATARS.map((file, i) => (
                 <span key={i} className="ct-avatar ct-avatar-img">
-                  <img src={src} alt="" loading="lazy" decoding="async" />
+                  <img src={r2img(file, AVATAR_W)} alt="" loading="lazy" decoding="async" />
                 </span>
               ))}
               <span className="ct-avatar ct-avatar-more">+</span>

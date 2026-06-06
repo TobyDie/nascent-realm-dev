@@ -11,11 +11,6 @@ import {
   TestimonialCard,
   useIsMobile,
 } from "../primitives";
-import ba1 from "@/assets/ba-1.png.asset.json";
-import ba2 from "@/assets/ba-2.png.asset.json";
-import ba3 from "@/assets/ba-3.png.asset.json";
-import ba5 from "@/assets/ba-5.png.asset.json";
-import ba13 from "@/assets/ba-13.png.asset.json";
 
 export function SocialProof({ onCta }: { onCta?: () => void }) {
   const isMobile = useIsMobile();
@@ -27,7 +22,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       initials="K"
       context="Shedding every wash · hair loss"
       text="I think I lost maybe half of the amount of hair I normally lose every time I wash."
-      image={ba1.url}
+      image="ba-1.webp"
     />,
     <TestimonialCard
       key={1}
@@ -35,7 +30,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       initials="A"
       context="Hair loss · dry, itchy scalp"
       text="By the end of 14 days, I was losing like maybe, maybe a palm size amount when I would shower and wash my hair. And that is like a third of what I would normally lose."
-      image={ba2.url}
+      image="ba-2.webp"
     />,
     <TestimonialCard
       key={2}
@@ -43,7 +38,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       initials="A"
       context="Thinning · hair felt lifeless"
       text="I can tell you that my hair definitely looks so better. Feels softer. There's some life you know was added into my hair."
-      image={ba3.url}
+      image="ba-3.webp"
     />,
     <TestimonialCard
       key={3}
@@ -51,7 +46,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       initials="Y"
       context="New mother · postpartum hair loss"
       text="My hair felt lighter and it just… it does not feel as oily, it does not feel as weighed down, it feels like there's more volume and it just looks much better than before I started."
-      image={ba5.url}
+      image="ba-5.webp"
     />,
     <TestimonialCard
       key={4}
@@ -59,7 +54,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       initials="M"
       context="Thinning · hair loss"
       text="You can see hair growing right here in the front. Usually, it doesn't grow this much, but slowly, but surely, I can see where it's coming from. My hair feels a lot healthier, cleaner, not so oily."
-      image={ba13.url}
+      image="ba-13.webp"
     />,
   ];
 

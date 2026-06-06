@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HaircareChallengePage } from "@/features/haircare-challenge/HaircareChallengePage";
+import { r2img, r2srcset, HERO_WIDTHS } from "@/features/haircare-challenge/img";
+
+const HERO_SIZES = "(max-width: 720px) 100vw, (max-width: 860px) 90vw, 405px";
 
 export const Route = createFileRoute("/14-the-haircare-challenge")({
   head: () => ({
@@ -15,6 +18,14 @@ export const Route = createFileRoute("/14-the-haircare-challenge")({
     ],
     links: [
       { rel: "canonical", href: "https://glow.hairqare.co/14-the-haircare-challenge" },
+      {
+        rel: "preload",
+        as: "image",
+        href: r2img("sarah-hero-v2.webp", 800),
+        imageSrcSet: r2srcset("sarah-hero-v2.webp", HERO_WIDTHS),
+        imageSizes: HERO_SIZES,
+        fetchPriority: "high",
+      },
     ],
   }),
   component: HaircareChallengePage,

@@ -8,10 +8,10 @@ import {
   InlineTestimonial,
   Pin,
   Reveal,
+  RImg,
   useIsMobile,
 } from "../primitives";
-import profile6 from "@/assets/profile-6.webp.asset.json";
-import sarahFounder from "@/assets/sarah-tran-founder.webp.asset.json";
+import { PORTRAIT_WIDTHS } from "../img";
 
 export function Founder({ onCta }: { onCta?: () => void }) {
   const isMobile = useIsMobile();
@@ -55,11 +55,11 @@ export function Founder({ onCta }: { onCta?: () => void }) {
         <div className="founder-layout">
           <Reveal>
             <div style={{ position: "relative" }}>
-              <img
-                src={sarahFounder.url}
+              <RImg
+                file="sarah-tran-founder.webp"
+                widths={PORTRAIT_WIDTHS}
+                sizes="(max-width: 860px) 92vw, 480px"
                 alt="Sarah Tran, founder of HairQare, with long healthy auburn hair, seated in a calm sunlit room."
-                loading="lazy"
-                decoding="async"
                 style={{ width: "100%", height: 520, objectFit: "cover", objectPosition: "center top", borderRadius: 20, display: "block", boxShadow: "var(--shadow-lg)" }}
               />
               <div style={{ position: "absolute", top: -14, right: -10, zIndex: 4 }}>
@@ -122,7 +122,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
                 <InlineTestimonial
                   name="Natasha" age={37} flag="🇩🇪"
                   quote="I'm a scientist, I came in sceptical. In 14 days my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again."
-                  avatar={profile6.url}
+                  avatar="profile-6.webp"
                 />
               </div>
             </div>

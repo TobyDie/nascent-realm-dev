@@ -6,6 +6,7 @@ import {
   StarRow,
   useIsMobile,
 } from "../primitives";
+import { r2img } from "../img";
 
 export function VideoTestimonials() {
   const isMobile = useIsMobile();
@@ -14,6 +15,7 @@ export function VideoTestimonials() {
     <div key={0} className="video-card">
       <VideoPlayer
         src="https://videos.hairqare.co/from-hopeless-to-hair-happy-in-14-days-e-1ebc67cf/master.m3u8"
+        poster={r2img("posters/video-hannah.webp", 700)}
         aspectRatio="1080/1920"
         autoplay
       />
@@ -32,6 +34,7 @@ export function VideoTestimonials() {
     <div key={1} className="video-card">
       <VideoPlayer
         src="https://videos.hairqare.co/my-hair-finally-curled-again-14-days-tha-caba2635/master.m3u8"
+        poster={r2img("posters/video-renee.webp", 700)}
         aspectRatio="1080/1920"
         autoplay
       />
@@ -50,6 +53,7 @@ export function VideoTestimonials() {
     <div key={2} className="video-card">
       <VideoPlayer
         src="https://videos.hairqare.co/danielle-s-14-day-haircare-challenge-rep-ddc1023a/master.m3u8"
+        poster={r2img("posters/video-carol.webp", 700)}
         aspectRatio="1080/1440"
         autoplay
       />

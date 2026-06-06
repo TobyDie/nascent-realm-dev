@@ -15,7 +15,31 @@ import {
   Plus,
   Infinity as InfinityIcon,
 } from "lucide-react";
-import beforeAfterAsset from "@/assets/hairloss-before-after.png.asset.json";
+import { r2img, r2srcset, BA_WIDTHS, AVATAR_W } from "./img";
+
+const DEFAULT_BA = "hairloss-before-after.webp";
+
+/* Responsive R2 image. Pass an R2 file key (e.g. "ba-1.webp"). Above-the-fold
+   images set eager (loading=eager + fetchPriority=high); everything else lazy. */
+export function RImg({
+  file, widths, sizes, alt = "", eager = false, className, style,
+}: { file: string; widths: number[]; sizes?: string; alt?: string; eager?: boolean; className?: string; style?: React.CSSProperties }) {
+  const fallbackW = widths.find((w) => w >= 800) ?? widths[widths.length - 1];
+  const loadProps = eager
+    ? ({ loading: "eager", fetchPriority: "high" } as const)
+    : ({ loading: "lazy", decoding: "async" } as const);
+  return (
+    <img
+      src={r2img(file, fallbackW)}
+      srcSet={r2srcset(file, widths)}
+      sizes={sizes}
+      alt={alt}
+      className={className}
+      style={style}
+      {...loadProps}
+    />
+  );
+}
 
 /* ---------------- Hooks ---------------- */
 export function useIsMobile(bp = 720) {
@@ -392,11 +416,11 @@ export function TestimonialCard({
       </div>
       <p style={{ margin: 0, fontSize: 16, lineHeight: 1.6, color: "var(--ink)" }}>“{text}”</p>
       <div style={{ marginTop: "auto", borderRadius: 12, overflow: "hidden" }}>
-        <img
-          src={image ?? beforeAfterAsset.url}
+        <RImg
+          file={image ?? DEFAULT_BA}
+          widths={BA_WIDTHS}
+          sizes="(max-width: 860px) 92vw, 440px"
           alt="Before and after — Day 1 vs Day 14"
-          loading="lazy"
-          decoding="async"
           style={{ width: "100%", height: "auto", display: "block" }}
         />
       </div>
@@ -427,7 +451,7 @@ export function InlineTestimonial({
       >
         {avatar ? (
           <img
-            src={avatar}
+            src={r2img(avatar, AVATAR_W)}
             alt=""
             loading="lazy"
             decoding="async"
@@ -470,7 +494,9 @@ export function CompactImageTestimonial({
     <div className="compact-image-testi" style={{ borderLeft: `3px solid ${accent}`, ...style }}>
       <div className="compact-image-testi-thumb">
         <img
-          src={image ?? beforeAfterAsset.url}
+          src={r2img(image ?? DEFAULT_BA, 700)}
+          srcSet={r2srcset(image ?? DEFAULT_BA, [200, 400, 700])}
+          sizes="120px"
           alt="Before and after"
           loading="lazy"
           decoding="async"
