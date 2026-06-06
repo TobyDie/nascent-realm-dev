@@ -9,6 +9,7 @@ import a18 from "@/assets/hero-avatar-18.webp.asset.json";
 import a19 from "@/assets/hero-avatar-19.webp.asset.json";
 import a20 from "@/assets/hero-avatar-20.webp.asset.json";
 import a4 from "@/assets/profile-4.webp.asset.json";
+import sarahHero from "@/assets/sarah-hero-v2.webp.asset.json";
 
 const HERO_AVATARS: string[] = [
   a11.url, a13.url, a14.url, a15.url, a16.url,
@@ -77,8 +78,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             <div style={{ position: "relative" }}>
               <div className="hero-image-wrap">
                 <img
-                  src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/sarah-hero.webp"
-                  srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/sarah-hero.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/sarah-hero.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/sarah-hero.webp 1200w"
+                  src={sarahHero.url}
                   sizes="(max-width: 720px) 100vw, (max-width: 860px) 90vw, 405px"
                   alt="Sarah Tran — founder of HairQare, with long healthy auburn hair, sunlit Mediterranean setting. Inset: before/after of a coached student."
                   className="hero-image"
