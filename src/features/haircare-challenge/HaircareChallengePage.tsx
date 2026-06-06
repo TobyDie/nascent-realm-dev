@@ -15,7 +15,7 @@ import { SelfQualifier } from "./sections/SelfQualifier";
 import { Faq } from "./sections/Faq";
 import { FinalCta } from "./sections/FinalCta";
 import { StickyCta } from "./sections/StickyCta";
-import { TextInterstitial, ImageInterstitial } from "./sections/Interstitial";
+import { TestimonialStrip } from "./sections/Interstitial";
 
 function scrollToStart() {
   const el = document.getElementById("start");
@@ -31,26 +31,20 @@ export function HaircareChallengePage() {
       <Recognition />
       <RecognitionVideo />
       <Science />
-      <TextInterstitial index={0} />
       <SocialProof onCta={scrollToStart} />
+      <TestimonialStrip textIndex={0} imageIndex={0} bg="var(--cream)" />
       <HowItWorks onCta={scrollToStart} />
-      <ImageInterstitial index={0} />
       <ResultsIn2Weeks onCta={scrollToStart} />
-      <TextInterstitial index={1} />
+      <TestimonialStrip textIndex={1} imageIndex={1} bg="var(--white)" />
       <WhatsIncluded onCta={scrollToStart} />
-      <ImageInterstitial index={1} />
+      <TestimonialStrip textIndex={2} imageIndex={2} bg="var(--cream)" />
       <Founder onCta={scrollToStart} />
-      <TextInterstitial index={2} />
       <NotAboutHair onCta={scrollToStart} />
-      <ImageInterstitial index={2} />
+      <TestimonialStrip textIndex={3} imageIndex={3} bg="var(--white)" />
       <SelfQualifier onCta={scrollToStart} />
-      <TextInterstitial index={3} />
-      <ImageInterstitial index={3} />
+      <TestimonialStrip textIndex={4} imageIndex={4} bg="var(--cream)" />
       <Faq onCta={scrollToStart} />
-      <TextInterstitial index={4} />
-      <ImageInterstitial index={4} />
-      <TextInterstitial index={5} bg="var(--lavender)" />
-      <ImageInterstitial index={5} />
+      <TestimonialStrip textIndex={5} imageIndex={5} bg="var(--lavender)" />
       <FinalCta onCta={scrollToStart} />
       <StickyCta onCta={scrollToStart} />
     </div>
