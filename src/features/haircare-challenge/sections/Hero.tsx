@@ -1,4 +1,19 @@
 import { Anno, Reveal, Button, Icon, Pin, Hand, Trustpilot } from "../primitives";
+import a11 from "@/assets/hero-avatar-11.webp.asset.json";
+import a13 from "@/assets/hero-avatar-13.webp.asset.json";
+import a14 from "@/assets/hero-avatar-14.webp.asset.json";
+import a15 from "@/assets/hero-avatar-15.webp.asset.json";
+import a16 from "@/assets/hero-avatar-16.webp.asset.json";
+import a17 from "@/assets/hero-avatar-17.webp.asset.json";
+import a18 from "@/assets/hero-avatar-18.webp.asset.json";
+import a19 from "@/assets/hero-avatar-19.webp.asset.json";
+import a20 from "@/assets/hero-avatar-20.webp.asset.json";
+import a4 from "@/assets/profile-4.webp.asset.json";
+
+const HERO_AVATARS: string[] = [
+  a11.url, a13.url, a14.url, a15.url, a16.url,
+  a17.url, a18.url, a19.url, a20.url, a4.url,
+];
 
 export function Hero({ onCta }: { onCta?: () => void }) {
   return (
