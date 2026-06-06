@@ -92,9 +92,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: "/webclip.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" },
       { rel: "preconnect", href: "https://pub.hairqare.co", crossOrigin: "anonymous" },
       { rel: "preconnect", href: "https://hairqare.co", crossOrigin: "anonymous" },
       { rel: "preconnect", href: "https://videos.hairqare.co", crossOrigin: "anonymous" },
@@ -115,10 +112,15 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
         <style dangerouslySetInnerHTML={{ __html: `body{font-feature-settings:'ss04' on,'ss10' on;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;}` }} />
-        <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){var _c='GTM'+'-'+'TT5'+'MJ'+'DF';w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://hairqare.co/static/bundle-8f3a.js?id='+_c+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer');` }} />
+        {/* Fonts: single combined request, injected non-render-blocking (display=swap) */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap";l.media="print";l.onload=function(){this.media="all"};document.head.appendChild(l);})();` }} />
+        <noscript dangerouslySetInnerHTML={{ __html: '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap">' }} />
+        {/* GTM (loads Mixpanel + GA4): deferred 1s to free the first-paint window; Converge counts the visit at t=0 regardless. */}
+        <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];setTimeout(function(){(function(w,d,s,l,i){var _c='GTM'+'-'+'TT5'+'MJ'+'DF';w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://hairqare.co/static/bundle-8f3a.js?id='+_c+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer');},1000);` }} />
         <script src="https://hairqare.co/cvg/static/pixels/NyDCDi.js" async></script>
         <script dangerouslySetInnerHTML={{ __html: `window.cvg||(cvg=function(){cvg.process?cvg.process.apply(cvg,arguments):cvg.queue.push(arguments)},cvg.queue=[]);cvg({method:"proxy",tracking:"https://hairqare.co/cvg",static:"https://hairqare.co/cvg/static"});cvg({method:"track",eventName:"$page_load"});cvg({method:"link_domain",domain:"try.hairqare.co"});cvg({method:"link_domain",domain:"app.hairqare.co"});cvg({method:"link_domain",domain:"join.hairqare.co"});cvg({method:"link_domain",domain:"community.hairqare.co"});cvg({method:"link_domain",domain:"checkout.hairqare.co"});` }} />
-        <script dangerouslySetInnerHTML={{ __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","9qhrxrpdfw");` }} />
+        {/* Microsoft Clarity (session recording): deferred to idle — not time-critical */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){function L(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","9qhrxrpdfw");}if("requestIdleCallback"in window){requestIdleCallback(L,{timeout:5000});}else{setTimeout(L,3000);}})();` }} />
       </head>
       <body>
         {children}
