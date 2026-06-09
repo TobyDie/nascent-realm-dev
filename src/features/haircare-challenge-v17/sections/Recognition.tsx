@@ -30,8 +30,6 @@ export function Recognition() {
                   widths={[200, 400]}
                   sizes="(max-width: 760px) 40vw, 160px"
                   alt="Reference image (placeholder) — shorter hair length"
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
             </div>
@@ -56,16 +54,12 @@ export function Recognition() {
                   widths={[200, 400]}
                   sizes="(max-width: 760px) 45vw, 150px"
                   alt="Reference image (placeholder) — visible part"
-                  loading="lazy"
-                  decoding="async"
                 />
                 <RImg
                   file="profile-5.webp"
                   widths={[200, 400]}
                   sizes="(max-width: 760px) 45vw, 150px"
                   alt="Reference image (placeholder) — hair pulled back"
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
             </div>
@@ -91,8 +85,6 @@ export function Recognition() {
                   widths={[200, 400]}
                   sizes="(max-width: 760px) 40vw, 160px"
                   alt="Reference image (placeholder) — greys appearing"
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
             </div>
@@ -133,8 +125,6 @@ export function Recognition() {
                   widths={[500, 800, 1200]}
                   sizes="(max-width: 760px) 92vw, 720px"
                   alt="Reference image (placeholder) — hair worn up"
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
             </div>
