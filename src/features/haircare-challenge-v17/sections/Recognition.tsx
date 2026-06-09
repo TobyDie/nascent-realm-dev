@@ -1,4 +1,4 @@
-import { Reveal, InlineTestimonial, Hand, Button, Icon, RImg } from "../primitives";
+import { Reveal, InlineTestimonial, Hand, Button, Icon } from "../primitives";
 
 const QUIZ_URL = "https://join.hairqare.co/the-quiz-haircare";
 
@@ -25,11 +25,13 @@ export function Recognition() {
                 so you cut it shorter, then shorter, until you stopped trying for the hair you actually want.
               </p>
               <div className="timeline-img timeline-img--sm">
-                <RImg
-                  file="profile-1.webp"
-                  widths={[200, 400]}
+                <img
+                  src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/upset%20with%20hair.webp"
+                  srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/upset%20with%20hair.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/upset%20with%20hair.webp 800w"
                   sizes="(max-width: 760px) 40vw, 160px"
-                  alt="Reference image (placeholder) — shorter hair length"
+                  alt="Woman frustrated with her hair not growing long"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -49,17 +51,21 @@ export function Recognition() {
                 <Hand size={16} color="#2b66c2" rotate={-2}>↘ you never found out</Hand>
               </div>
               <div className="timeline-img-pair">
-                <RImg
-                  file="profile-3.webp"
-                  widths={[200, 400]}
+                <img
+                  src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/You%20can%20see%20your%20scalp-2.webp"
+                  srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/You%20can%20see%20your%20scalp-2.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/You%20can%20see%20your%20scalp-2.webp 800w"
                   sizes="(max-width: 760px) 45vw, 150px"
-                  alt="Reference image (placeholder) — visible part"
+                  alt="Woman with visible scalp through hair part"
+                  loading="lazy"
+                  decoding="async"
                 />
-                <RImg
-                  file="profile-5.webp"
-                  widths={[200, 400]}
+                <img
+                  src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/You%20can%20see%20your%20scalp-1.webp"
+                  srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/You%20can%20see%20your%20scalp-1.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/You%20can%20see%20your%20scalp-1.webp 800w"
                   sizes="(max-width: 760px) 45vw, 150px"
-                  alt="Reference image (placeholder) — hair pulled back"
+                  alt="Hair pulled back showing scalp visibility"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -80,11 +86,13 @@ export function Recognition() {
                 <Hand size={16} color="#2b66c2" rotate={-3}>↘ making your hair age even faster</Hand>
               </div>
               <div className="timeline-img timeline-img--sm">
-                <RImg
-                  file="profile-7.webp"
-                  widths={[200, 400]}
+                <img
+                  src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/grey%20hair.jpg"
+                  srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/grey%20hair.jpg 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/grey%20hair.jpg 800w"
                   sizes="(max-width: 760px) 40vw, 160px"
-                  alt="Reference image (placeholder) — greys appearing"
+                  alt="Woman with grey hair appearing"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -120,11 +128,13 @@ export function Recognition() {
                 down makes you anxious, so up became the default, and you like your photos a little less each year.
               </p>
               <div className="timeline-img timeline-img--wide">
-                <RImg
-                  file="hairloss-before-after.webp"
-                  widths={[500, 800, 1200]}
+                <img
+                  src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/You%27ve%20started%20wearing%20it%20up%20in%20every%20photo.webp"
+                  srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/You%27ve%20started%20wearing%20it%20up%20in%20every%20photo.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/You%27ve%20started%20wearing%20it%20up%20in%20every%20photo.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/You%27ve%20started%20wearing%20it%20up%20in%20every%20photo.webp 1200w"
                   sizes="(max-width: 760px) 92vw, 720px"
-                  alt="Reference image (placeholder) — hair worn up"
+                  alt="Woman wearing her hair up in photos"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
