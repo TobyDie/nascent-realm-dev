@@ -1,4 +1,6 @@
-import { Reveal, InlineTestimonial, Hand, Icon } from "../primitives";
+import { Reveal, InlineTestimonial, Hand, Button, Icon } from "../primitives";
+
+const QUIZ_URL = "https://join.hairqare.co/the-quiz-haircare";
 
 export function Recognition() {
   return (
@@ -95,22 +97,34 @@ export function Recognition() {
 
         </div>
 
-        <Reveal style={{ marginTop: 36 }}>
+        {/* V17: primary CTA sits BEFORE Abigail so the story arc is
+            pain timeline → "I want to know why" CTA → proof. */}
+        <Reveal className="center reco-cta-block" style={{ marginTop: 36 }}>
+          <Button
+            id="cta-recognition"
+            onClick={() => { window.location.href = QUIZ_URL; }}
+            icon="arrow-right"
+            className="reco-cta-btn"
+          >
+            Show me why this is happening
+          </Button>
+          <a
+            href={QUIZ_URL}
+            className="reco-cta-nudge"
+            aria-label="Take the 60-second quiz"
+          >
+            <Icon name="info" size={14} />
+            <span>Take the 60-second quiz · 250,000+ women have taken it</span>
+          </a>
+        </Reveal>
+
+        <Reveal style={{ marginTop: 28 }}>
           <InlineTestimonial
             name="Abigail" age={37} flag="🇺🇸"
             quote="I haven't been crying every day over my hair. It's not where I want it to be yet, but it's been so much better since I changed the things I was doing wrong."
             avatar="profile-9.webp"
             style={{ margin: "0 auto" }}
           />
-        </Reveal>
-        <Reveal className="center" style={{ marginTop: 24 }}>
-          <a
-            id="cta-recognition"
-            href="https://join.hairqare.co/the-quiz-haircare"
-            style={{ color: "var(--orange-700)", fontWeight: 700, fontSize: 16, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}
-          >
-            Tell me why this is happening <Icon name="arrow-right" size={17} />
-          </a>
         </Reveal>
       </div>
     </section>
