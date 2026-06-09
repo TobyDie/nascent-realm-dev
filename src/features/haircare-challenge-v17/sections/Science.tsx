@@ -1,5 +1,6 @@
 import { Reveal, Eyebrow, HandArrow, Underline, GreenCallout, Icon, StarRow, Button, RImg } from "../primitives";
 import { r2img } from "../img";
+import { TestimonialStrip } from "./Interstitial";
 import { TrendingDown, Activity, Leaf } from "lucide-react";
 
 export function Science() {
@@ -94,6 +95,11 @@ export function Science() {
             </div>
           </div>
         </Reveal>
+
+        <div className="ti-interrupt ti-interrupt--cream">
+          <div className="ti-interrupt-eyebrow"><span>REAL STORY · 14 DAYS</span></div>
+          <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="transparent" />
+        </div>
 
         <Reveal style={{ marginTop: 56 }}>
           <div className="fault-head center">
