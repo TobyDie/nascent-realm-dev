@@ -70,9 +70,26 @@ export function Science() {
         </Reveal>
 
         <Reveal style={{ marginTop: 28 }}>
+          <GreenCallout>
+            <strong>Perimenopause doesn't start at 50.</strong> Hormonal fluctuations that affect your hair can begin as early as 35 — and most doctors never mention it.
+          </GreenCallout>
+        </Reveal>
+
+        <Reveal style={{ marginTop: 28 }}>
           <p className="biology-reassurance">
             You didn't do anything wrong. You were just never taught what changes after 30.
           </p>
+        </Reveal>
+
+        <Reveal className="center" style={{ marginTop: 24 }}>
+          <Button
+            id="cta-science"
+            variant="ghost"
+            onClick={() => { window.location.href = "https://join.hairqare.co/the-quiz-haircare"; }}
+            icon="arrow-right"
+          >
+            Show me how to fix it
+          </Button>
         </Reveal>
 
         <Reveal style={{ marginTop: 32 }}>
@@ -92,18 +109,7 @@ export function Science() {
           </div>
         </Reveal>
 
-        <Reveal className="center" style={{ marginTop: 24, marginBottom: 56 }}>
-          <Button
-            id="cta-science"
-            variant="ghost"
-            onClick={() => { window.location.href = "https://join.hairqare.co/the-quiz-haircare"; }}
-            icon="arrow-right"
-          >
-            Show me how to fix it
-          </Button>
-        </Reveal>
-
-        <Reveal style={{ textAlign: "center" }}>
+        <Reveal style={{ textAlign: "center", marginTop: 56 }}>
           <h2 className="h2" style={{ maxWidth: 640, marginInline: "auto" }}>
             It's not you. It's your biology.
           </h2>
@@ -175,12 +181,6 @@ export function Science() {
           <div className="ti-interrupt-eyebrow"><span>{"\n"}</span></div>
           <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="transparent" />
         </div>
-
-        <Reveal style={{ marginTop: 28 }}>
-          <GreenCallout>
-            <strong>Perimenopause doesn't start at 50.</strong> Hormonal fluctuations that affect your hair can begin as early as 35 — and most doctors never mention it.
-          </GreenCallout>
-        </Reveal>
       </div>
     </section>
   );
