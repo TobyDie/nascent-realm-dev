@@ -1220,7 +1220,23 @@
 /* Mobile: hero image full-width of column, taller so face + before/after insets are visible */
 .hq-sp-v17 .hero-image-wrap { aspect-ratio: auto !important; max-width: none !important; max-height: 60vh !important; margin-inline: 0 !important; }
 .hq-sp-v17 .hero-image { aspect-ratio: auto !important; height: 60vh !important; max-height: 60vh !important; width: 100% !important; object-fit: cover; object-position: center 22%; }
-.hq-sp-v17 .hero-handwritten-eyebrow { font-size: 22px !important; margin-bottom: 4px !important; }
+.hq-sp-v17 .hero-handwritten-eyebrow { display: none !important; }
+.hq-sp-v17 .hero-image-wrap { position: relative; }
+.hq-sp-v17 .hero-image-overlay-text {
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 56px 18px 16px;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.1;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.6);
+  background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.42) 45%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
 .hq-sp-v17 .hero-h1 { margin-bottom: 6px !important; }
 .hq-sp-v17 .hero-validation { margin-bottom: 10px !important; }
 /* age stripe slightly tighter on mobile */
