@@ -57,7 +57,6 @@ export function HaircareChallengePageV17() {
       </ThumbStop>
       <Science />
       <SocialProof onCta={scrollToStart} />
-      <ThumbStop tone="cream"><TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="transparent" /></ThumbStop>
       <Founder onCta={scrollToStart} />
       <ThumbStop tone="lavender"><TestimonialStrip variant="polaroid-duo" textIndex={1} imageIndex={1} bg="transparent" /></ThumbStop>
       <HowItWorks onCta={scrollToStart} />
