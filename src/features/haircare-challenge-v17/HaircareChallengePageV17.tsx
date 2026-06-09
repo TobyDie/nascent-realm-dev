@@ -23,6 +23,18 @@ function scrollToStart() {
   window.location.href = CTA_URL;
 }
 
+/* V17 thumb-stop wrapper: gives any interstitial a distinct scroll-interrupt
+   band (orange top/bottom rule + REAL STORY eyebrow + alternating tone).
+   Tone alternates per usage so adjacent thumb-stops never share a color. */
+function ThumbStop({ tone = "cream", children }: { tone?: "cream" | "lavender"; children: React.ReactNode }) {
+  return (
+    <div className={`ti-interrupt ti-interrupt--${tone}`}>
+      <div className="ti-interrupt-eyebrow"><span>REAL STORY · 14 DAYS</span></div>
+      {children}
+    </div>
+  );
+}
+
 export function HaircareChallengePageV17() {
   return (
     <div className="hq-sp-v17 rooted">
@@ -30,33 +42,35 @@ export function HaircareChallengePageV17() {
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
       <Recognition />
-      <section className="bg-cream" style={{ padding: "32px 0 8px" }}>
-        <div className="wrap" style={{ maxWidth: 720, textAlign: "center" }}>
-          <RImg
-            file="brooke-glad-i-found-this.webp"
-            widths={[500, 800, 1200]}
-            sizes="(max-width: 760px) 92vw, 720px"
-            alt="Brooke testimonial: Glad I found this. Before and after of hair loss results from the 14-Day Haircare Challenge."
-            style={{ width: "100%", height: "auto", borderRadius: 16, boxShadow: "var(--shadow-sm)" }}
-          />
-        </div>
-      </section>
+      <ThumbStop tone="lavender">
+        <section style={{ background: "transparent", padding: "8px 0 28px" }}>
+          <div className="wrap" style={{ maxWidth: 720, textAlign: "center" }}>
+            <RImg
+              file="brooke-glad-i-found-this.webp"
+              widths={[500, 800, 1200]}
+              sizes="(max-width: 760px) 92vw, 720px"
+              alt="Brooke testimonial: Glad I found this. Before and after of hair loss results from the 14-Day Haircare Challenge."
+              style={{ width: "100%", height: "auto", borderRadius: 16, boxShadow: "var(--shadow-md)" }}
+            />
+          </div>
+        </section>
+      </ThumbStop>
       <Science />
       <SocialProof onCta={scrollToStart} />
-      <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="var(--cream)" />
+      <ThumbStop tone="cream"><TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="transparent" /></ThumbStop>
       <Founder onCta={scrollToStart} />
-      <TestimonialStrip variant="polaroid-duo" textIndex={1} imageIndex={1} bg="var(--white)" />
+      <ThumbStop tone="lavender"><TestimonialStrip variant="polaroid-duo" textIndex={1} imageIndex={1} bg="transparent" /></ThumbStop>
       <HowItWorks onCta={scrollToStart} />
       <ResultsIn2Weeks onCta={scrollToStart} />
-      <TestimonialStrip variant="magazine-split" textIndex={2} imageIndex={2} bg="var(--cream)" />
+      <ThumbStop tone="cream"><TestimonialStrip variant="magazine-split" textIndex={2} imageIndex={2} bg="transparent" /></ThumbStop>
       <WhatsIncluded onCta={scrollToStart} />
       <ReviewedBy />
-      <TestimonialStrip variant="sticky-wall" textIndex={3} imageIndex={3} bg="var(--lavender)" />
+      <ThumbStop tone="lavender"><TestimonialStrip variant="sticky-wall" textIndex={3} imageIndex={3} bg="transparent" /></ThumbStop>
       <NotAboutHair onCta={scrollToStart} />
       <SelfQualifier onCta={scrollToStart} />
-      <TestimonialStrip variant="single-hero" textIndex={4} imageIndex={4} bg="var(--cream)" />
+      <ThumbStop tone="cream"><TestimonialStrip variant="single-hero" textIndex={4} imageIndex={4} bg="transparent" /></ThumbStop>
       <Faq onCta={scrollToStart} />
-      <TestimonialStrip variant="ribbon" textIndex={5} imageIndex={5} bg="var(--white)" />
+      <ThumbStop tone="lavender"><TestimonialStrip variant="ribbon" textIndex={5} imageIndex={5} bg="transparent" /></ThumbStop>
       <FinalCta onCta={scrollToStart} />
       <StickyCta onCta={scrollToStart} />
     </div>

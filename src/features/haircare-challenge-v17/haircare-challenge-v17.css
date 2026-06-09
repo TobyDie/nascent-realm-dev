@@ -1803,3 +1803,94 @@
   .hq-sp-v17 .seal-name { font-size: 13px; }
   .hq-sp-v17 .seal-sub { font-size: 9.5px; }
 }
+
+/* =========================================================================
+   V17 — Thumb-stop testimonial interrupts (#1)
+   Wraps any interstitial in a distinct band so it interrupts scroll
+   instead of reading as continued body copy.
+   ========================================================================= */
+.hq-sp-v17 .ti-interrupt {
+  position: relative;
+  padding: 14px 0 8px;
+  border-top: 2px solid var(--orange-500);
+  border-bottom: 2px solid var(--orange-500);
+  box-shadow: inset 0 8px 18px -14px rgba(0,0,0,.18), inset 0 -8px 18px -14px rgba(0,0,0,.18);
+}
+.hq-sp-v17 .ti-interrupt--cream     { background: var(--cream); }
+.hq-sp-v17 .ti-interrupt--lavender  { background: var(--lavender); }
+.hq-sp-v17 .ti-interrupt > section  { background: transparent !important; }
+
+.hq-sp-v17 .ti-interrupt-eyebrow {
+  display: flex; justify-content: center;
+  margin: 4px 0 -4px;
+}
+.hq-sp-v17 .ti-interrupt-eyebrow > span {
+  font-family: var(--font-sans);
+  font-size: 11px; font-weight: 800; letter-spacing: 0.16em;
+  color: var(--orange-700);
+  background: #fff;
+  padding: 4px 12px;
+  border: 1px solid var(--orange-500);
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+/* =========================================================================
+   V17 — Recognition section CTA + quiz nudge (#4)
+   ========================================================================= */
+.hq-sp-v17 .reco-cta-block {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.hq-sp-v17 .reco-cta-btn {
+  min-height: 52px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 8px 22px -10px rgba(232,93,4,.55);
+}
+.hq-sp-v17 .reco-cta-nudge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12.5px; font-weight: 500;
+  color: var(--slate);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-bottom: 1px dashed var(--orange-500);
+  line-height: 1.3;
+  transition: color .15s var(--ease);
+}
+.hq-sp-v17 .reco-cta-nudge:hover { color: var(--orange-700); }
+.hq-sp-v17 .reco-cta-nudge .lucide { color: var(--orange-600); }
+
+/* =========================================================================
+   V17 — Sticky CTA non-pill urgency (#2)
+   ========================================================================= */
+.hq-sp-v17 .sticky-meta--v17 .sticky-urgency-line {
+  display: flex; align-items: baseline; gap: 8px;
+  font-family: var(--font-sans);
+  line-height: 1.1;
+}
+.hq-sp-v17 .sticky-urgency-label {
+  font-size: 10.5px; font-weight: 800; letter-spacing: 0.14em;
+  color: var(--orange-700); text-transform: uppercase;
+}
+.hq-sp-v17 .sticky-urgency-timer {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  font-size: 15px; font-weight: 800;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.hq-sp-v17 .sticky-urgency-bar {
+  display: block; height: 3px; width: 100%;
+  background: rgba(232,93,4,.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.hq-sp-v17 .sticky-urgency-bar-fill {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, var(--orange-500), var(--orange-700));
+  border-radius: 2px;
+  transition: width 1s linear;
+}

@@ -42,6 +42,11 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
   const joining = useJoiningCount();
   const startDate = useStartDate();
 
+  // V17: drain progress for the urgency bar (0..100, fills as countdown shrinks).
+  const drainParts = countdown.split(":").map(Number);
+  const remainingSec = (drainParts[0] || 0) * 3600 + (drainParts[1] || 0) * 60 + (drainParts[2] || 0);
+  const drainPct = Math.max(0, Math.min(100, (1 - remainingSec / (12 * 3600)) * 100));
+
   useEffect(() => {
     let heroVisible = true;
     let finalVisible = false;
@@ -105,19 +110,22 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
       borderTop: "1px solid var(--line)", boxShadow: "0 -6px 24px rgba(60,40,20,.08)",
     }}>
       <div className="wrap-wide sticky-cta-inner" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 16px", gap: 10 }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 3, minWidth: 0, flex: 1 }} className="sticky-meta">
-          <span className="sticky-offer-chip">
-            <span className="sticky-offer-label">85% OFF</span>
-            <span className="sticky-offer-timer" aria-live="off">{countdown}</span>
+        {/* V17: non-pill urgency. Whole meta block is pointer-events:none so
+            users stop tapping the timer expecting it to act. */}
+        <div className="sticky-meta sticky-meta--v17" style={{ display: "flex", flexDirection: "column", gap: 4, minWidth: 0, flex: 1, pointerEvents: "none" }}>
+          <span className="sticky-urgency-line">
+            <span className="sticky-urgency-label">85% OFF ENDS IN</span>
+            <span className="sticky-urgency-timer" aria-live="off">{countdown}</span>
           </span>
-          <span style={{ fontSize: 12.5, fontWeight: 700, color: "var(--ink)", lineHeight: 1.25 }}>
-            Next cohort: <span className="start-date" style={{ color: "var(--orange-700)" }}>{startDate ? fmtShort(startDate) : "Fri, June 6th"}</span>
+          <span className="sticky-urgency-bar" aria-hidden="true">
+            <span className="sticky-urgency-bar-fill" style={{ width: `${drainPct}%` }} />
           </span>
-          <span style={{ fontSize: 11.5, fontWeight: 500, color: "var(--slate)", lineHeight: 1.2 }}>
-            {formatJoiningCount(joining)} women joining this week
+          <span style={{ fontSize: 12, fontWeight: 600, color: "var(--ink)", lineHeight: 1.25 }}>
+            Next cohort: <span className="start-date" style={{ color: "var(--orange-700)", fontWeight: 700 }}>{startDate ? fmtShort(startDate) : "Fri, June 6th"}</span>
+            <span style={{ color: "var(--slate)", fontWeight: 500 }}> · {formatJoiningCount(joining)} joining</span>
           </span>
         </div>
-        <Button id="cta-sticky" onClick={onCta} icon="arrow-right" className="cta-arrow-nudge" style={{ padding: "11px 18px", fontSize: 14, flex: "none" }}>Join now</Button>
+        <Button id="cta-sticky" onClick={onCta} icon="arrow-right" className="cta-arrow-nudge" style={{ padding: "13px 20px", fontSize: 14, minHeight: 48, flex: "none" }}>Join now</Button>
       </div>
     </div>
   );
