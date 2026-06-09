@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { HaircareChallengePage } from "@/features/haircare-challenge/HaircareChallengePage";
-import { r2img, r2srcset, HERO_WIDTHS } from "@/features/haircare-challenge/img";
+import { HaircareChallengePageV17 } from "@/features/haircare-challenge-v17/HaircareChallengePageV17";
+import { r2img, r2srcset, HERO_WIDTHS } from "@/features/haircare-challenge-v17/img";
 
 const HERO_SIZES = "(max-width: 720px) 100vw, (max-width: 860px) 90vw, 405px";
 
@@ -40,5 +40,5 @@ export const Route = createFileRoute("/17-the-haircare-challenge")({
       },
     ],
   }),
-  component: HaircareChallengePage,
+  component: HaircareChallengePageV17,
 });
