@@ -113,20 +113,23 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
       <span className="sticky-urgency-bar" aria-hidden="true">
         <span className="sticky-urgency-bar-fill" style={{ width: `${drainPct}%` }} />
       </span>
-      <div className="wrap-wide sticky-cta-inner" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 14px 10px", gap: 10 }}>
+      <div className="wrap-wide sticky-cta-inner" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 14px 12px", gap: 16 }}>
         {/* Meta block is pointer-events:none so only the button is tappable. */}
         <div className="sticky-meta sticky-meta--v17" style={{ display: "flex", flexDirection: "column", minWidth: 0, flex: 1, pointerEvents: "none" }}>
-          <span className="sticky-urgency-line">
-            <span className="sticky-urgency-label">85% OFF</span>
-            <span className="sticky-urgency-dot" aria-hidden="true">·</span>
-            <span className="sticky-urgency-timer" aria-live="off">{countdown}</span>
+          {/* Tier 1 — offer + its timer, tightly grouped */}
+          <span className="sticky-offer-row">
+            <span className="sticky-offer">85% OFF</span>
+            <span className="sticky-offer-timer" aria-live="off">{countdown}</span>
           </span>
-          <span className="sticky-urgency-sub">
-            <span className="start-date">{startDate ? fmtShort(startDate) : "Fri, June 6th"}</span>
-            <span className="sticky-urgency-sub-rest"> · {formatJoiningCount(joining)} women joining</span>
+          {/* Tier 2 — cohort start, distinct row */}
+          <span className="sticky-cohort">
+            <span className="sticky-cohort-label">Next batch </span>
+            <span className="sticky-cohort-date start-date">{startDate ? fmtShort(startDate) : "Wed, June 10th"}</span>
           </span>
+          {/* Tier 3 — supporting trust, smallest */}
+          <span className="sticky-trust">{formatJoiningCount(joining)} women joining</span>
         </div>
-        <Button id="cta-sticky" onClick={onCta} icon="arrow-right" className="cta-arrow-nudge" style={{ padding: "11px 16px", fontSize: 13.5, minHeight: 44, borderRadius: 12, flex: "none" }}>Join now</Button>
+        <Button id="cta-sticky" onClick={onCta} icon="arrow-right" className="cta-arrow-nudge" style={{ padding: "12px 18px", fontSize: 14, minHeight: 48, borderRadius: 12, flex: "none" }}>Join now</Button>
       </div>
     </div>
   );
