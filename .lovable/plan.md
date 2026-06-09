@@ -1,46 +1,41 @@
-## Scope
-Edit only `src/features/haircare-challenge-v17/sections/Science.tsx` and `src/features/haircare-challenge-v17/haircare-challenge-v17.css`. No changes to v14 or any other route. Mobile-first.
+## Answer first: will this hurt UX?
 
-## What changes (top of Science section only)
+No — it improves it. Auto-muted video is a known dark-pattern hazard: viewers don't realise sound exists and bounce. A small, persistent "🔊 Tap to unmute" badge is the industry-standard pattern (Instagram, Twitter/X, LinkedIn, TikTok web). It:
 
-**Remove:**
-- Top Reveal block: eyebrow "WHY is it happening?" + italic h2 "Your hair didn't get worse…"
-- `.biology-callout` wrapper (eyebrow + headline + body)
-- Old `.biology-tile-row` (3 emoji tiles with short subs)
+- removes ambiguity (people often think the video has no audio)
+- doesn't block the video (small, corner-anchored, semi-transparent)
+- disappears the moment the user engages, so it never nags
 
-**Replace with a single, tighter unit:**
+The current behaviour is actually slightly worse for UX: tapping the video pauses it and shows controls — users expect tap-to-unmute, not tap-to-pause. We'll fix that too.
 
-1. **Section headline (promoted):**
-   - `h2.h2`: "It's not you. It's your biology."
-   - Sub-line (single sentence, normal weight): "In your 30s, your body changes faster than the products on your shelf do. Same routine. Different body. That's the gap."
+## What changes
 
-2. **One 3-column card system** (replaces both old systems). Each card:
-   - Small uppercase label (var(--orange-600), letter-spacing): `ESTROGEN DROPS` · `CORTISOL CLIMBS` · `NUTRIENTS DON'T LAND`
-   - Short body copy (per user's text):
-     - From your mid-30s, estrogen quietly declines. DHT — the hormone that shrinks follicles — gets the upper hand. Wider part. Thinner ponytail.
-     - Career, kids, the mental load. Your body deprioritises hair when it's busy keeping you upright. More follicles shed early than they should.
-     - Iron, ferritin, zinc, B12 — the exact nutrients your follicles need — drop with age and absorb less efficiently than they did at 25.
+Single file: `src/components/VideoPlayer.tsx` (used by both /17 and any other page — it's a shared component; behaviour change is global, which is what you want for consistency).
 
-3. **Bridge line** below the cards, centered, slightly emphasized:
-   "You can't fix an inside change with an outside product."
+### New interaction model
+- Video autoplays muted on scroll-in (unchanged).
+- A small pill in the bottom-right shows `🔊 Tap to unmute` while muted.
+- First tap → unmutes and keeps playing (no pause), pill swaps to `🔇 Tap to mute`.
+- Second tap → mutes again, pill swaps back. Native controls stay hidden so the pill remains the single, clean affordance.
+- Pill auto-fades after ~4s of no interaction once the user has unmuted once, so it doesn't sit on top of the video forever. Reappears on hover/tap.
+- Scroll-out still pauses; scroll-in resumes (unchanged), preserving the user's mute/unmute choice.
 
-Everything below this (the `.science-leadin` 1/2/3 cards, fault rail, green callout, reassurance, quote, ghost CTA) stays untouched.
+### Visual
+- Pill: ~28px tall, rounded-full, `bg-black/55`, `text-white`, 12–13px, 8px inset from bottom-right, subtle backdrop-blur, drop-shadow.
+- Mobile: same size, easy thumb target (full video surface is tappable too).
+- Respects `prefers-reduced-motion` for the fade.
 
-## Mobile-first layout (cards)
-New class `.biology-cards-v2` scoped under `.hq-sp-v17`:
-- Default (mobile): `display: grid; grid-template-columns: 1fr; gap: 14px;` — cards stack full-width.
-- `@media (min-width: 760px)`: `grid-template-columns: repeat(3, 1fr); gap: 18px;`
-- Card: subtle cream/lavender bg, 16px radius, 18px padding, no heavy borders.
-- Label: 12px, 700, uppercase, tracking ~0.08em, orange.
-- Body: 15px / 1.5, ink.
-
-Bridge line: `.biology-bridge` — centered, max-width 560px, italic serif, 18–20px mobile, 22px desktop, margin-top 20px.
-
-## Technical details
-- Reuse existing tokens (`--orange-600`, `--ink`, `--cream`, `--lavender`, `--font-serif`).
-- Keep the existing outer `<section className="bg-white" id="science">` and `.wrap` — only swap the inner top blocks.
-- Delete CSS rules `.biology-callout*` and `.biology-tile*` only if unused elsewhere in v17 (they are not used by v14 since v14 has its own CSS file). Quick grep before removal; if unsure, leave the orphan CSS rules in place.
-- Verify by viewing /17-the-haircare-challenge at 390px and 942px.
+### Accessibility
+- Pill is a real `<button>` with `aria-pressed` reflecting mute state and `aria-label="Unmute video" / "Mute video"`.
+- Whole video surface remains clickable as a secondary toggle target.
 
 ## Out of scope
-- v14 page, fault rail, leadin cards, quote, CTAs, any other section.
+- No change to autoplay, lazy HLS loading, IntersectionObserver pause/resume, or poster behaviour.
+- No per-page overrides; the affordance is universal for any `<VideoPlayer autoplay />`.
+- No global volume memory across videos (keep it simple; each player tracks its own state).
+
+## Technical notes
+- Replace the `interacted` + `handleTap` pause-and-show-controls flow with a `muted` state toggle.
+- Drop `controls={interacted}` — keep `controls={false}` always; the pill is the control.
+- Keep `muted={autoplay}` as the initial value but drive it from state after mount so toggling works.
+- Add a small `useEffect` timer for the auto-fade; clear on hover/focus.

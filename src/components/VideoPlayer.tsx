@@ -26,13 +26,29 @@ export default function VideoPlayer({
   const wrapRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [active, setActive] = useState(false); // has entered the viewport at least once
-  const [interacted, setInteracted] = useState(false); // user tapped → show native controls
+  const [muted, setMuted] = useState(!!autoplay); // starts muted when autoplaying
+  const [pillVisible, setPillVisible] = useState(true);
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // First tap pauses the (muted, autoplaying) video and reveals native controls.
-  const handleTap = () => {
-    if (interacted) return;
-    setInteracted(true);
-    videoRef.current?.pause();
+  const scheduleHide = () => {
+    if (hideTimer.current) clearTimeout(hideTimer.current);
+    hideTimer.current = setTimeout(() => setPillVisible(false), 4000);
+  };
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const next = !muted;
+    v.muted = next;
+    setMuted(next);
+    setPillVisible(true);
+    if (!next) {
+      // unmuted → make sure it's playing, then auto-fade the pill
+      v.play().catch(() => {});
+      scheduleHide();
+    } else if (hideTimer.current) {
+      clearTimeout(hideTimer.current);
+    }
   };
 
   // Activate (mount HLS) when the player nears the viewport.
@@ -115,7 +131,7 @@ export default function VideoPlayer({
   }, [active, src, autoplay]);
 
   // Autoplay (muted) when in view, pause when out. Once the user has taken
-  // control (tapped to pause), never auto-resume — only keep pausing off-screen.
+  // control (toggled mute), preserve their mute choice across scroll pauses.
   useEffect(() => {
     if (!active || !autoplay) return;
     const video = videoRef.current;
@@ -124,7 +140,7 @@ export default function VideoPlayer({
       (entries) => {
         for (const e of entries) {
           if (e.isIntersecting) {
-            if (!interacted) video.play().catch(() => {});
+            video.play().catch(() => {});
           } else {
             video.pause();
           }
@@ -134,7 +150,11 @@ export default function VideoPlayer({
     );
     io.observe(video);
     return () => io.disconnect();
-  }, [active, autoplay, interacted]);
+  }, [active, autoplay]);
+
+  useEffect(() => () => {
+    if (hideTimer.current) clearTimeout(hideTimer.current);
+  }, []);
 
   return (
     <div
@@ -146,23 +166,58 @@ export default function VideoPlayer({
         overflow: "hidden",
         background: "#000",
       }}
+      onMouseEnter={() => setPillVisible(true)}
+      onMouseLeave={() => { if (!muted) scheduleHide(); }}
     >
       <video
         ref={videoRef}
         poster={poster}
         preload="none"
         playsInline
-        muted={autoplay}
-        controls={interacted}
-        onClick={handleTap}
+        muted={muted}
+        onClick={toggleMute}
         style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",
           display: "block",
-          cursor: interacted ? "default" : "pointer",
+          cursor: "pointer",
         }}
       />
+      {autoplay && (
+        <button
+          type="button"
+          onClick={(e) => { e.stopPropagation(); toggleMute(); }}
+          aria-pressed={!muted}
+          aria-label={muted ? "Unmute video" : "Mute video"}
+          style={{
+            position: "absolute",
+            right: 10,
+            bottom: 10,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+            padding: "6px 10px",
+            borderRadius: 999,
+            background: "rgba(0,0,0,0.55)",
+            color: "#fff",
+            fontSize: 12,
+            fontWeight: 600,
+            lineHeight: 1,
+            border: "1px solid rgba(255,255,255,0.18)",
+            backdropFilter: "blur(6px)",
+            WebkitBackdropFilter: "blur(6px)",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
+            cursor: "pointer",
+            opacity: pillVisible ? 1 : 0,
+            pointerEvents: pillVisible ? "auto" : "none",
+            transition: "opacity 250ms ease",
+          }}
+        >
+          <span aria-hidden="true">{muted ? "🔊" : "🔇"}</span>
+          <span>{muted ? "Tap to unmute" : "Tap to mute"}</span>
+        </button>
+      )}
     </div>
   );
 }
