@@ -1,46 +1,45 @@
-
-# Plan — Fork /17-the-haircare-challenge into an isolated v17 namespace
-
 ## Goal
-Make `/17-the-haircare-challenge` 100% independent of `/14-the-haircare-challenge`, `/14-native`, and `/the-haircare-challenge`. After this fork, edits to `src/features/haircare-challenge/*` will never affect /17, and edits inside `src/features/haircare-challenge-v17/*` will never affect any other page.
+Rebuild the sticky bar on `/17-the-haircare-challenge` to be visually quiet, properly aligned, and shorter vertically. Keep the progress bar (it's the most useful urgency cue) but make it ultra-thin. Everything else: smaller, calmer, perfectly aligned.
 
-## Steps
+Scope: ONLY `src/features/haircare-challenge-v17/` (StickyCta.tsx + haircare-challenge-v17.css under `.hq-sp-v17`). No other route, no shared file, no v14 page touched.
 
-1. **Create the v17 folder** `src/features/haircare-challenge-v17/` by copying these 25 files verbatim from `src/features/haircare-challenge/`:
-   - `HaircareChallengePage.tsx` → rename export to `HaircareChallengePageV17`
-   - `primitives.tsx`
-   - `img.ts`
-   - `useJoiningCount.ts`
-   - `useStartDate.ts`
-   - `haircare-challenge.css` → renamed `haircare-challenge-v17.css`
-   - `sections/` — all 18 files copied as-is:
-     AgeStripe, Faq, FinalCta, Founder, Hero, HowItWorks, Interstitial, NotAboutHair, Recognition, RecognitionVideo, ResultsIn2Weeks, ReviewedBy, Science, SelfQualifier, SocialProof, StickyCta, VideoTestimonials, WhatsIncluded
+## Final layout (mobile, ~56px tall total)
 
-2. **Rewire imports inside the v17 folder** so every file imports only from siblings within `haircare-challenge-v17/` (no `../haircare-challenge/` references). Section files already use relative `../primitives` / `../img` paths, which after copy resolve to the v17 copies automatically — no changes needed beyond the page assembly file.
+```text
+┌────────────────────────────────────────────────────────┐
+│ ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ │ ← 2px progress bar, flush to top edge
+│                                                        │
+│  85% OFF · 09:42:17           ┌──────────────────┐    │ ← row 1: tiny label + mono timer
+│  Jun 6 · 312 women joining    │   Join now  →    │    │ ← row 2: muted supporting line
+│                               └──────────────────┘    │
+└────────────────────────────────────────────────────────┘
+```
 
-3. **Scope the CSS** in `haircare-challenge-v17.css`:
-   - Change the root selector from `.hq-sp` to `.hq-sp-v17` everywhere in the file (global find/replace within that one file only).
-   - Update `HaircareChallengePageV17.tsx` to render `<div className="hq-sp-v17 rooted">`.
-   - This guarantees CSS cannot bleed in either direction.
+## Changes
 
-4. **Update the route file** `src/routes/17-the-haircare-challenge.tsx`:
-   - Import `HaircareChallengePageV17` from `@/features/haircare-challenge-v17/HaircareChallengePageV17`.
-   - Import `r2img`, `r2srcset`, `HERO_WIDTHS` from `@/features/haircare-challenge-v17/img` (so even the preload helper is namespaced).
-   - `head()` metadata unchanged.
+### 1. `StickyCta.tsx` JSX restructure
+- Move the progress bar OUT of the meta column and render it as the first child of the outer container (full-width, flush to the top border). Removes the awkward bar-between-text-lines feel.
+- Row 1 (meta): single line — `85% OFF` (label) + bullet separator + `HH:MM:SS` (mono). Drop the word "ENDS IN" entirely. Inline dot keeps it tight.
+- Row 2 (meta): `Jun 6 · 312 women joining`. Single line, `white-space: nowrap; overflow: hidden; text-overflow: ellipsis`. Drop the "Next cohort:" prefix — date alone reads cleanly.
+- Outer padding `8px 14px 10px` (was `10px 16px`).
+- Remove the `gap: 4` on meta column; rely on natural line-height.
+- Keep `pointer-events: none` on meta block.
 
-5. **Verify isolation**:
-   - `rg "haircare-challenge-v17" src/routes/` → only `/17` route references it.
-   - `rg "from \"@/features/haircare-challenge\"" src/routes/17-the-haircare-challenge.tsx` → zero matches.
-   - Build passes (TanStack Router code-splits per route, so the v17 bundle is independent).
+### 2. Button
+- Tighten to `padding: 11px 16px; font-size: 13.5px; min-height: 44px; border-radius: 12px`. Aligns with the slimmer meta column.
+- Stays right, vertically centered against the 2-line meta.
 
-6. **Save the isolation rule to project memory** so every future cloned sales page is forked the same way by default.
+### 3. CSS adjustments (`.hq-sp-v17` only)
+- `.sticky-urgency-bar`: move to top, height `2px`, no border-radius, full bleed (no horizontal padding interference).
+- `.sticky-urgency-line`: `font-size: 11px` label, `font-size: 13px` timer, gap `6px`, single line.
+- New `.sticky-urgency-sub`: `font-size: 11.5px; font-weight: 500; color: var(--slate); line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;` with the date span in `var(--orange-700) / weight 700`.
+- Remove the old inline-styled cohort line styling from JSX (move into CSS class).
 
-## Out of scope (this turn)
-- No design changes yet. The 4 conversion fixes (thumb-stop testimonials, sticky-CTA urgency redesign, visual-story Recognition, re-sequenced CTA + quiz nudge) will be implemented in a follow-up turn, applied only inside `src/features/haircare-challenge-v17/`.
-- `/14-native` and `/the-haircare-challenge` stay on the shared v14 component for now.
+## Out of scope
+- No changes to thumb-stop testimonials, Recognition CTA sequence, hero, or any other section.
+- No JS behavior change (countdown math, drainPct, visibility logic untouched).
+- No edits outside `src/features/haircare-challenge-v17/`.
 
-## Files touched
-- **Added** (25): everything under `src/features/haircare-challenge-v17/`
-- **Edited** (1): `src/routes/17-the-haircare-challenge.tsx`
-- **Added** (2): `mem://index.md` (or update), `mem://preferences/page-fork-rule.md`
-- **Not touched**: `src/features/haircare-challenge/**`, all other routes
+## Verification after build
+- `rg "sticky-urgency" src/` should match only files under `src/features/haircare-challenge-v17/`.
+- Visual check at 390×680 to confirm new height ≈ 56px and alignment.
