@@ -5,41 +5,42 @@ export function Science() {
   return (
     <section className="bg-white" id="science">
       <div className="wrap">
-        <Reveal style={{ marginBottom: 28, textAlign: "center" }}>
-          <Eyebrow style={{ color: "var(--slate)" }}>WHY is it happening?</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12, maxWidth: 680, marginInline: "auto" }}>
-            Your hair didn't "get worse". <em>Your hair has changed, but your routine didn't change with it.</em>
+        <Reveal style={{ textAlign: "center" }}>
+          <h2 className="h2" style={{ maxWidth: 640, marginInline: "auto" }}>
+            It's not you. It's your biology.
           </h2>
+          <p className="biology-lead">
+            In your 30s, your body changes faster than the products on your shelf do. Same routine. Different body. That's the gap.
+          </p>
         </Reveal>
 
-        <Reveal>
-          <div className="biology-callout">
-            <div className="biology-callout-eyebrow">Why this is happening</div>
-            <h3 className="biology-callout-headline">It's not you. It's your biology.</h3>
-            <p className="biology-callout-body">
-              In your 30s, estrogen starts shifting, sebum production changes, and the hair-growth phase shortens. Most products were formulated for the body you had in your 20s — which is exactly why nothing's been working.
-            </p>
+        <Reveal style={{ marginTop: 24 }}>
+          <div className="biology-cards-v2">
+            <div className="biology-card-v2">
+              <div className="biology-card-v2-label">Estrogen drops</div>
+              <p className="biology-card-v2-body">
+                From your mid-30s, estrogen quietly declines. DHT — the hormone that shrinks follicles — gets the upper hand. Wider part. Thinner ponytail.
+              </p>
+            </div>
+            <div className="biology-card-v2">
+              <div className="biology-card-v2-label">Cortisol climbs</div>
+              <p className="biology-card-v2-body">
+                Career, kids, the mental load. Your body deprioritises hair when it's busy keeping you upright. More follicles shed early than they should.
+              </p>
+            </div>
+            <div className="biology-card-v2">
+              <div className="biology-card-v2-label">Nutrients don't land</div>
+              <p className="biology-card-v2-body">
+                Iron, ferritin, zinc, B12 — the exact nutrients your follicles need — drop with age and absorb less efficiently than they did at 25.
+              </p>
+            </div>
           </div>
         </Reveal>
 
-        <Reveal style={{ marginTop: 22 }}>
-          <div className="biology-tile-row">
-            <div className="biology-tile">
-              <span className="biology-tile-icon">🌡️</span>
-              <div className="biology-tile-title">Hormonal shifts</div>
-              <div className="biology-tile-sub">Perimenopause window opens in your mid-30s — long before menopause.</div>
-            </div>
-            <div className="biology-tile">
-              <span className="biology-tile-icon">🦠</span>
-              <div className="biology-tile-title">Scalp microbiome changes</div>
-              <div className="biology-tile-sub">The friendly bacteria your scalp relies on are slowly disrupted by 30s-era products.</div>
-            </div>
-            <div className="biology-tile">
-              <span className="biology-tile-icon">🥦</span>
-              <div className="biology-tile-title">Nutrient absorption drops</div>
-              <div className="biology-tile-sub">Iron, ferritin, zinc, B12 — the exact nutrients your follicles need most.</div>
-            </div>
-          </div>
+        <Reveal style={{ marginTop: 20 }}>
+          <p className="biology-bridge">
+            You can't fix an inside change with an outside product.
+          </p>
         </Reveal>
 
         <Reveal>
