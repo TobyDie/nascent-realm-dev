@@ -115,8 +115,11 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
       </span>
       <div className="wrap-wide sticky-cta-inner" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 16px", gap: 10 }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 3, minWidth: 0, flex: 1 }} className="sticky-meta">
-          <span className="sticky-offer-chip">
+          <span className="sticky-offer-line">
+            <span className="sticky-live-dot" aria-hidden="true" />
             <span className="sticky-offer-label">85% OFF</span>
+            <span className="sticky-offer-sep">·</span>
+            <span className="sticky-offer-ends">ends in</span>
             <span className="sticky-offer-timer" aria-live="off">{countdown}</span>
           </span>
           <span style={{ fontSize: 12.5, fontWeight: 700, color: "var(--ink)", lineHeight: 1.25 }}>
