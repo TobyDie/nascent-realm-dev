@@ -91,7 +91,7 @@ export function Science() {
             </Button>
             <div className="biology-bridge-trust">
               <StarRow size={14} />
-              <span>Trusted by <strong>52,000+ women</strong> in their 30s &amp; 40s · Free · No card needed</span>
+              <span>Trusted by <strong>250,000+ women</strong> in their 30s &amp; 40s.</span>
             </div>
           </div>
         </Reveal>
