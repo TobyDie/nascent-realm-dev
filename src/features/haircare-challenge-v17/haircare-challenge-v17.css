@@ -2004,6 +2004,11 @@
   font-size: 13px; font-weight: 700;
   color: var(--ink);
   letter-spacing: 0.02em;
+  /* Override the v14-style pill — keep it as plain text so it doesn't read as a button. */
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  min-width: 0;
 }
 
 /* Tier 2 — cohort row */
