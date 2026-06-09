@@ -96,6 +96,11 @@ export function Science() {
           </div>
         </Reveal>
 
+        <div className="ti-interrupt ti-interrupt--cream">
+          <div className="ti-interrupt-eyebrow"><span>REAL STORY · 14 DAYS</span></div>
+          <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="transparent" />
+        </div>
+
         <Reveal style={{ marginTop: 56 }}>
           <div className="fault-head center">
             <Eyebrow style={{ color: "var(--slate)" }}>Before you blame yourself</Eyebrow>
