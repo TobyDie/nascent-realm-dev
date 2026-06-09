@@ -42,6 +42,11 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
   const joining = useJoiningCount();
   const startDate = useStartDate();
 
+  // V17: drain progress for the urgency bar (0..100, fills as countdown shrinks).
+  const drainParts = countdown.split(":").map(Number);
+  const remainingSec = (drainParts[0] || 0) * 3600 + (drainParts[1] || 0) * 60 + (drainParts[2] || 0);
+  const drainPct = Math.max(0, Math.min(100, (1 - remainingSec / (12 * 3600)) * 100));
+
   useEffect(() => {
     let heroVisible = true;
     let finalVisible = false;
