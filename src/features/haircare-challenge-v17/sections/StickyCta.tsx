@@ -122,7 +122,7 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
           </span>
           <span style={{ fontSize: 12, fontWeight: 600, color: "var(--ink)", lineHeight: 1.25 }}>
             Next cohort: <span className="start-date" style={{ color: "var(--orange-700)", fontWeight: 700 }}>{startDate ? fmtShort(startDate) : "Fri, June 6th"}</span>
-            <span style={{ color: "var(--slate)", fontWeight: 500 }}> · {formatJoiningCount(joining)} joining</span>
+            <span style={{ color: "var(--slate)", fontWeight: 500 }}> · {formatJoiningCount(joining)} women joining</span>
           </span>
         </div>
         <Button id="cta-sticky" onClick={onCta} icon="arrow-right" className="cta-arrow-nudge" style={{ padding: "13px 20px", fontSize: 14, minHeight: 48, flex: "none" }}>Join now</Button>
