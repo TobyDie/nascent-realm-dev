@@ -21,15 +21,8 @@ export function Science() {
           <div className="biology-cards-v2">
             <div className="biology-card-v2">
               <div className="biology-card-v2-visual">
-                <RImg
-                  file="profile-2.webp"
-                  widths={[240, 480]}
-                  sizes="(max-width:760px) 35vw,140px"
-                  alt=""
-                  className="biology-card-v2-img"
-                />
                 <span className="biology-card-v2-icon" aria-hidden="true">
-                  <TrendingDown size={20} strokeWidth={2.25} />
+                  <TrendingDown size={28} strokeWidth={2.25} />
                 </span>
               </div>
               <div className="biology-card-v2-label">Estrogen drops</div>
@@ -39,15 +32,8 @@ export function Science() {
             </div>
             <div className="biology-card-v2">
               <div className="biology-card-v2-visual">
-                <RImg
-                  file="profile-8.webp"
-                  widths={[240, 480]}
-                  sizes="(max-width:760px) 35vw,140px"
-                  alt=""
-                  className="biology-card-v2-img"
-                />
                 <span className="biology-card-v2-icon" aria-hidden="true">
-                  <Activity size={20} strokeWidth={2.25} />
+                  <Activity size={28} strokeWidth={2.25} />
                 </span>
               </div>
               <div className="biology-card-v2-label">Cortisol climbs</div>
@@ -57,15 +43,8 @@ export function Science() {
             </div>
             <div className="biology-card-v2">
               <div className="biology-card-v2-visual">
-                <RImg
-                  file="profile-11.webp"
-                  widths={[240, 480]}
-                  sizes="(max-width:760px) 35vw,140px"
-                  alt=""
-                  className="biology-card-v2-img"
-                />
                 <span className="biology-card-v2-icon" aria-hidden="true">
-                  <Leaf size={20} strokeWidth={2.25} />
+                  <Leaf size={28} strokeWidth={2.25} />
                 </span>
               </div>
               <div className="biology-card-v2-label">Nutrients don't land</div>
