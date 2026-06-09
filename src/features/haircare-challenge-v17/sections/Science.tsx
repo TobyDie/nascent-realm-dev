@@ -97,7 +97,7 @@ export function Science() {
         </Reveal>
 
         <div className="ti-interrupt ti-interrupt--cream">
-          <div className="ti-interrupt-eyebrow"><span>REAL STORY · 14 DAYS</span></div>
+          <div className="ti-interrupt-eyebrow"><span>{"\n"}</span></div>
           <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="transparent" />
         </div>
 

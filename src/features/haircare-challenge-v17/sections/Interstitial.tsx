@@ -13,7 +13,7 @@ const ri = (file: string, sizes: string, widths: number[] = BA_WIDTHS) => ({
 /* Real customer text testimonials — placed to reinforce the section above. */
 const TEXT_PLACEHOLDERS = [
   // After Science — scientist endorses the root-cause approach
-  { name: "Natasha Bloch", avatar: "profile-6.webp", quote: "I feel my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again. I feel in this 14 days, my curls came back." },
+  { name: "Natasha Bloch", avatar: "profile-6.webp", quote: "I feel my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again." },
   // After Results in 2 Weeks — visible results inside 14 days
   { name: "Limor Mills", avatar: "profile-2.webp", quote: "By day 14, I could actually see little baby hairs growing in! My hair feels so much stronger, it's got more volume, and it just looks so much healthier." },
   // After Founder — emotional / confidence
