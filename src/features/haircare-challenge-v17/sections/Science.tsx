@@ -1,5 +1,6 @@
-import { Reveal, Eyebrow, HandArrow, Underline, GreenCallout, Icon, StarRow, Button } from "../primitives";
+import { Reveal, Eyebrow, HandArrow, Underline, GreenCallout, Icon, StarRow, Button, RImg } from "../primitives";
 import { r2img } from "../img";
+import { TrendingDown, Activity, Leaf } from "lucide-react";
 
 export function Science() {
   return (
@@ -17,18 +18,54 @@ export function Science() {
         <Reveal style={{ marginTop: 24 }}>
           <div className="biology-cards-v2">
             <div className="biology-card-v2">
+              <div className="biology-card-v2-visual">
+                <RImg
+                  file="profile-2.webp"
+                  widths={[240, 480]}
+                  sizes="(max-width:760px) 35vw,140px"
+                  alt=""
+                  className="biology-card-v2-img"
+                />
+                <span className="biology-card-v2-icon" aria-hidden="true">
+                  <TrendingDown size={20} strokeWidth={2.25} />
+                </span>
+              </div>
               <div className="biology-card-v2-label">Estrogen drops</div>
               <p className="biology-card-v2-body">
                 From your mid-30s, estrogen quietly declines. DHT — the hormone that shrinks follicles — gets the upper hand. Wider part. Thinner ponytail.
               </p>
             </div>
             <div className="biology-card-v2">
+              <div className="biology-card-v2-visual">
+                <RImg
+                  file="profile-8.webp"
+                  widths={[240, 480]}
+                  sizes="(max-width:760px) 35vw,140px"
+                  alt=""
+                  className="biology-card-v2-img"
+                />
+                <span className="biology-card-v2-icon" aria-hidden="true">
+                  <Activity size={20} strokeWidth={2.25} />
+                </span>
+              </div>
               <div className="biology-card-v2-label">Cortisol climbs</div>
               <p className="biology-card-v2-body">
                 Career, kids, the mental load. Your body deprioritises hair when it's busy keeping you upright. More follicles shed early than they should.
               </p>
             </div>
             <div className="biology-card-v2">
+              <div className="biology-card-v2-visual">
+                <RImg
+                  file="profile-11.webp"
+                  widths={[240, 480]}
+                  sizes="(max-width:760px) 35vw,140px"
+                  alt=""
+                  className="biology-card-v2-img"
+                />
+                <span className="biology-card-v2-icon" aria-hidden="true">
+                  <Leaf size={20} strokeWidth={2.25} />
+                </span>
+              </div>
               <div className="biology-card-v2-label">Nutrients don't land</div>
               <p className="biology-card-v2-body">
                 Iron, ferritin, zinc, B12 — the exact nutrients your follicles need — drop with age and absorb less efficiently than they did at 25.
@@ -37,27 +74,23 @@ export function Science() {
           </div>
         </Reveal>
 
-        <Reveal style={{ marginTop: 20 }}>
-          <p className="biology-bridge">
-            You can't fix an inside change with an outside product.
-          </p>
-        </Reveal>
-
-        <Reveal>
-          <div className="science-leadin" style={{ marginTop: 40 }}>
-            <div className="science-leadin-card">
-              <span className="leadin-num">1</span>
-              <p>From your mid-30s, <strong>estrogen and progesterone begin to drop</strong>. When they do, DHT — a hormone that shrinks follicles — goes relatively unopposed. The result is exactly what you're seeing: a wider part, thinning at the temples, a ponytail that's lost its thickness.</p>
-            </div>
-            <HandArrow direction="right" size={56} style={{ alignSelf: "center", opacity: 0.7 }} />
-            <div className="science-leadin-card">
-              <span className="leadin-num">2</span>
-              <p>Life on top — career, kids, the mental load — keeps <strong>cortisol high</strong>. Even more follicles shed early. Your hair gets quietly deprioritised by your body.</p>
-            </div>
-            <HandArrow direction="right" size={56} style={{ alignSelf: "center", opacity: 0.7 }} />
-            <div className="science-leadin-card science-leadin-card-final">
-              <span className="leadin-num">3</span>
-              <p>Your follicles are responding to <strong>signals from inside your body</strong>. A shampoo can't reach those signals. That's not a failure of your effort — it's a mismatch between the problem and the tool.</p>
+        <Reveal style={{ marginTop: 24 }}>
+          <div className="biology-bridge-card">
+            <p className="biology-bridge">
+              You can't fix an inside change with an outside product.
+            </p>
+            <Button
+              id="cta-biology-bridge"
+              variant="primary"
+              onClick={() => { window.location.href = "https://join.hairqare.co/the-quiz-haircare"; }}
+              icon="arrow-right"
+              style={{ marginTop: 18 }}
+            >
+              Take the 60-sec hair quiz
+            </Button>
+            <div className="biology-bridge-trust">
+              <StarRow size={14} />
+              <span>Trusted by <strong>52,000+ women</strong> in their 30s &amp; 40s · Free · No card needed</span>
             </div>
           </div>
         </Reveal>
