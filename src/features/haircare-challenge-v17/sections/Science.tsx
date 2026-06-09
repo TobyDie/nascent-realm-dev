@@ -1,5 +1,6 @@
 import { Reveal, Eyebrow, HandArrow, Underline, GreenCallout, Icon, StarRow, Button, RImg } from "../primitives";
 import { r2img } from "../img";
+import { TestimonialStrip } from "./Interstitial";
 import { TrendingDown, Activity, Leaf } from "lucide-react";
 
 export function Science() {
