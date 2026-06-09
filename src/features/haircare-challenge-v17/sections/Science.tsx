@@ -2,6 +2,7 @@ import { Reveal, Eyebrow, HandArrow, Underline, GreenCallout, Icon, StarRow, But
 import { r2img } from "../img";
 import { TestimonialStrip } from "./Interstitial";
 import { TrendingDown, Activity, Leaf } from "lucide-react";
+import VideoPlayer from "@/components/VideoPlayer";
 
 export function Science() {
   return (
@@ -150,6 +151,13 @@ export function Science() {
                 <p className="fault-copy">
                   Fewer steps. Less money. Less effort and time. It's only hard because understanding your hair is the one thing the industry was never going to sell you.
                 </p>
+                <div style={{ marginTop: 18 }}>
+                  <VideoPlayer
+                    src="https://videos.hairqare.co/ytdown-youtube-haircare-challenge-introd-10ee1138/master.m3u8"
+                    aspectRatio="1920/1080"
+                    autoplay
+                  />
+                </div>
               </div>
             </li>
           </ol>
