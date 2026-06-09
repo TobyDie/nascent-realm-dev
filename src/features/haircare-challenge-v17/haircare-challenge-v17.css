@@ -862,6 +862,22 @@
 .hq-sp-v17 .timeline-marginalia {
       position: absolute; left: -160px; top: 22px; width: 140px; text-align: right;
     }
+.hq-sp-v17 .timeline-img { margin-top: 12px; }
+.hq-sp-v17 .timeline-img--sm img {
+      width: min(140px, 40%); aspect-ratio: 1/1; object-fit: cover;
+      border-radius: 10px; box-shadow: 0 6px 18px rgba(20,20,40,.08); display: block;
+    }
+.hq-sp-v17 .timeline-img-pair {
+      display: flex; gap: 8px; margin-top: 12px; max-width: min(300px, 90%);
+    }
+.hq-sp-v17 .timeline-img-pair img {
+      width: 100%; aspect-ratio: 1/1; object-fit: cover;
+      border-radius: 10px; box-shadow: 0 6px 18px rgba(20,20,40,.08); display: block;
+    }
+.hq-sp-v17 .timeline-img--wide img {
+      width: 100%; aspect-ratio: 16/7; object-fit: cover;
+      border-radius: 12px; box-shadow: 0 6px 18px rgba(20,20,40,.08); display: block;
+    }
 @media (max-width: 720px) {
 .hq-sp-v17 .timeline-wrap { padding-left: 56px; }
 .hq-sp-v17 .timeline-wrap::before { left: 40px; }
