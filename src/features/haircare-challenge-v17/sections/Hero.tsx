@@ -93,6 +93,9 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                   loading="eager"
                   fetchPriority="high"
                 />
+                <div className="hero-image-overlay-text" aria-hidden="true">
+                  Become the most beautiful version of yourself
+                </div>
               </div>
               <div style={{ position: "absolute", top: -14, left: -8, zIndex: 4 }}>
                 <Pin rotate={7}>★ 4.8 · 12K reviews</Pin>
