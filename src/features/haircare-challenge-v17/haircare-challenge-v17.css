@@ -1492,6 +1492,57 @@
   .hq-sp-v17 .biology-reassurance { font-size: 18px; padding: 16px 18px; }
 }
 
+/* Biology v2 — trimmed intro (mobile-first) */
+.hq-sp-v17 .biology-lead {
+  margin: 12px auto 0;
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--slate);
+}
+.hq-sp-v17 .biology-cards-v2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.hq-sp-v17 .biology-card-v2 {
+  background: var(--cream);
+  border-radius: 16px;
+  padding: 18px 18px;
+}
+.hq-sp-v17 .biology-card-v2:nth-child(2) { background: var(--lavender); }
+.hq-sp-v17 .biology-card-v2-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-600);
+  margin-bottom: 8px;
+}
+.hq-sp-v17 .biology-card-v2-body {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.hq-sp-v17 .biology-bridge {
+  text-align: center;
+  max-width: 560px;
+  margin: 20px auto 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+@media (min-width: 760px) {
+  .hq-sp-v17 .biology-cards-v2 { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .hq-sp-v17 .biology-lead { font-size: 17px; }
+  .hq-sp-v17 .biology-bridge { font-size: 22px; margin-top: 28px; }
+}
+
 /* ===========================================================
    ReviewedBy — advisor cards
    =========================================================== */
