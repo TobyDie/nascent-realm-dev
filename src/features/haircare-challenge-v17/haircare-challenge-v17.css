@@ -292,6 +292,7 @@
       padding: 26px 18px 16px;
       background: linear-gradient(to top, rgba(26,26,26,.85), rgba(26,26,26,0));
     }
+.hq-sp-v17 .hero-image-overlay-text { display: none; }
 /* ===========================================================
        Video testimonials section
        =========================================================== */
