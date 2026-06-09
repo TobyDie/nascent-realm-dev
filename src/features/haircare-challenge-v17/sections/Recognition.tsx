@@ -1,4 +1,4 @@
-import { Reveal, InlineTestimonial, Hand, Button, Icon } from "../primitives";
+import { Reveal, InlineTestimonial, Hand, Button, Icon, RImg } from "../primitives";
 
 const QUIZ_URL = "https://join.hairqare.co/the-quiz-haircare";
 
@@ -24,6 +24,16 @@ export function Recognition() {
               <p className="timeline-consequence">
                 so you cut it shorter, then shorter, until you stopped trying for the hair you actually want.
               </p>
+              <div className="timeline-img timeline-img--sm">
+                <RImg
+                  file="profile-1.webp"
+                  widths={[200, 400]}
+                  sizes="(max-width: 760px) 40vw, 160px"
+                  alt="Reference image (placeholder) — shorter hair length"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
           </Reveal>
 
@@ -39,6 +49,24 @@ export function Recognition() {
               </p>
               <div className="timeline-marginalia">
                 <Hand size={16} color="#2b66c2" rotate={-2}>↘ you never found out</Hand>
+              </div>
+              <div className="timeline-img-pair">
+                <RImg
+                  file="profile-3.webp"
+                  widths={[200, 400]}
+                  sizes="(max-width: 760px) 45vw, 150px"
+                  alt="Reference image (placeholder) — visible part"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <RImg
+                  file="profile-5.webp"
+                  widths={[200, 400]}
+                  sizes="(max-width: 760px) 45vw, 150px"
+                  alt="Reference image (placeholder) — hair pulled back"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </Reveal>
@@ -56,6 +84,16 @@ export function Recognition() {
               </p>
               <div className="timeline-marginalia">
                 <Hand size={16} color="#2b66c2" rotate={-3}>↘ making your hair age even faster</Hand>
+              </div>
+              <div className="timeline-img timeline-img--sm">
+                <RImg
+                  file="profile-7.webp"
+                  widths={[200, 400]}
+                  sizes="(max-width: 760px) 40vw, 160px"
+                  alt="Reference image (placeholder) — greys appearing"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </Reveal>
@@ -89,8 +127,15 @@ export function Recognition() {
               <p className="timeline-consequence">
                 down makes you anxious, so up became the default, and you like your photos a little less each year.
               </p>
-              <div className="timeline-photos" aria-hidden="true">
-                {[0,1,2,3,4,5].map(n => <span key={n} className="timeline-photo" />)}
+              <div className="timeline-img timeline-img--wide">
+                <RImg
+                  file="hairloss-before-after.webp"
+                  widths={[500, 800, 1200]}
+                  sizes="(max-width: 760px) 92vw, 720px"
+                  alt="Reference image (placeholder) — hair worn up"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </Reveal>
