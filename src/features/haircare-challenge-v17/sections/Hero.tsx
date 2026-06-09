@@ -84,13 +84,14 @@ export function Hero({ onCta }: { onCta?: () => void }) {
           <Reveal delay={120}>
             <div style={{ position: "relative" }}>
               <div className="hero-image-wrap">
-                <RImg
-                  file="sarah-hero-v2.webp"
-                  widths={HERO_WIDTHS}
+                <img
+                  src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20ATF%205%20(1).webp"
+                  srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/Sarah%20ATF%205%20(1).webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20ATF%205%20(1).webp 800w"
                   sizes="(max-width: 720px) 100vw, (max-width: 860px) 90vw, 405px"
-                  alt="Sarah Tran — founder of HairQare, with long healthy auburn hair, sunlit Mediterranean setting. Inset: before/after of a coached student."
+                  alt="Sarah Tran — founder of HairQare, with long healthy auburn hair, sunlit Mediterranean setting."
                   className="hero-image"
-                  eager
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
               <div style={{ position: "absolute", top: -14, left: -8, zIndex: 4 }}>
