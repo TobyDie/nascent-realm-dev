@@ -44,7 +44,7 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
               </ul>
               <div style={{ display: "flex", alignItems: "baseline", gap: 12, justifyContent: "center", marginBottom: 18 }}>
                 <span style={{ fontSize: 20, color: "var(--slate-soft)", textDecoration: "line-through" }}>$247</span>
-                <span className="stat-num" style={{ fontSize: 64, color: "var(--orange-600)" }}>$37</span>
+                <span className="stat-num" style={{ fontSize: 64, color: "var(--orange-600)" }}>$59</span>
               </div>
               <Button id="cta-final" onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center" }}>Start the challenge</Button>
               <div style={{ marginTop: 16 }}>

@@ -148,7 +148,7 @@ export function Science() {
           <Button
             id="cta-science"
             variant="ghost"
-            onClick={() => { window.location.href = "https://join.hairqare.co/the-quiz-haircare"; }}
+            onClick={() => { window.location.href = "https://join.hairqare.co/38-the-quiz-haircare"; }}
             icon="arrow-right"
           >
             Show me how to fix it

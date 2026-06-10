@@ -1,4 +1,4 @@
-import "./haircare-challenge.css";
+import "./haircare-challenge-v19.css";
 import { AgeStripe } from "./sections/AgeStripe";
 import { Hero } from "./sections/Hero";
 import { Recognition } from "./sections/Recognition";
@@ -18,14 +18,14 @@ import { TestimonialStrip } from "./sections/Interstitial";
 import { ReviewedBy } from "./sections/ReviewedBy";
 import { RImg } from "./primitives";
 
-const CTA_URL = "https://join.hairqare.co/the-quiz-haircare";
+const CTA_URL = "https://join.hairqare.co/38-the-quiz-haircare";
 function scrollToStart() {
   window.location.href = CTA_URL;
 }
 
-export function HaircareChallengePage() {
+export function HaircareChallengePageV19() {
   return (
-    <div className="hq-sp rooted">
+    <div className="hq-sp-v19 rooted">
       <AgeStripe />
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
@@ -63,4 +63,4 @@ export function HaircareChallengePage() {
   );
 }
 
-export default HaircareChallengePage;
+export default HaircareChallengePageV19;
