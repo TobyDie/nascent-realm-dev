@@ -94,7 +94,7 @@ export function StickyCta({ onCta }: { onCta?: () => void }) {
   }, []);
 
   useEffect(() => {
-    const root = document.querySelector(".hq-sp-v17");
+    const root = document.querySelector(".hq-sp-v18");
     root?.classList.toggle("has-sticky-cta", show);
     return () => {
       root?.classList.remove("has-sticky-cta");

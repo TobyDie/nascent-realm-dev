@@ -1,4 +1,4 @@
-import "./haircare-challenge-v17.css";
+import "./haircare-challenge-v18.css";
 import { AgeStripe } from "./sections/AgeStripe";
 import { Hero } from "./sections/Hero";
 import { Recognition } from "./sections/Recognition";
@@ -35,9 +35,9 @@ function ThumbStop({ tone = "cream", children }: { tone?: "cream" | "lavender"; 
   );
 }
 
-export function HaircareChallengePageV17() {
+export function HaircareChallengePageV18() {
   return (
-    <div className="hq-sp-v17 rooted">
+    <div className="hq-sp-v18 rooted">
       <AgeStripe />
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
@@ -76,4 +76,4 @@ export function HaircareChallengePageV17() {
   );
 }
 
-export default HaircareChallengePageV17;
+export default HaircareChallengePageV18;
