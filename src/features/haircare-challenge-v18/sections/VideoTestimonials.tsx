@@ -72,7 +72,7 @@ export function VideoTestimonials() {
   ];
 
   return (
-    <section className="bg-white" style={{ paddingTop: 52, paddingBottom: 52 }}>
+    <section className="bg-cream" style={{ paddingTop: 24, paddingBottom: 52 }}>
       <Anno>Added, Video testimonials (right after hero)</Anno>
       <div className="wrap-wide">
         {isMobile ? (
