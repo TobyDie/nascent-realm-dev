@@ -5,55 +5,107 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 type Slide = {
   headline: string;
   caption: string;
-  image?: string;
   alt: string;
+  imageBrief: string;
+  overlay: string;
+  overlayPos?: "top" | "bottom" | "topCorner";
+  overlayStyle?: "handwritten" | "anchor" | "label";
 };
 
 const SLIDES: Slide[] = [
   {
-    headline: "120cm of bleached hair. Two products. About $10 a month.",
+    alt: "Sarah in her kitchen, hair down past her shoulders in soft morning light.",
+    imageBrief:
+      "Sarah in her kitchen · hair past shoulders · soft morning light · phone-shot, no styling · hair is the focal point.",
+    overlay: "“The best hair of my life and I'm in my 30s.”",
+    overlayPos: "top",
+    overlayStyle: "handwritten",
+    headline: "Achieve the best hair of your life in your 30s. And beyond.",
     caption:
-      "Healthy hair was never about more products. Once I figured that out, I never went back — and I've been teaching it since.",
-    image:
-      "https://pub.hairqare.co/cdn-cgi/image/width=900,quality=80,format=auto/Sarah%20ATF%205%20(1).webp",
-    alt: "Sarah showing her long bleached hair in natural light.",
+      "Most women think their hair peaks in their 20s — that from 30 on, it just thins out and dulls down. I believed it too… until I figured out what the beauty industry never tells you. Now I have better hair than I did at 25. So do 250,000 women I've coached.",
   },
   {
-    headline: "I tried twelve shampoos in twelve months. None of them were the problem.",
+    alt: "Stacked DM-style screenshot quotes pinned like sticky notes.",
+    imageBrief:
+      "Stacked overlay of real DM-style screenshots, pinned like sticky notes. No Sarah — her audience's voice reflected back.",
+    overlay:
+      "“My ponytail is half the size it used to be.”  ·  “More products than ever, less to show for it.”  ·  “I wear it up every day now.”  ·  “My stylist said it's just my age.”  ·  “I don't recognize my hair in photos.”",
+    overlayPos: "top",
+    overlayStyle: "label",
+    headline: "It's not your age. It's not your genes. And it's not in your head.",
     caption:
-      "By the time most women find us, they've tried five, ten, twenty things. That's not a coincidence.",
-    alt: "Sarah at her bathroom counter.",
+      "Something shifted after 30. Maybe a pregnancy. Maybe stress, or a year of bad sleep, or a slow hormonal change you didn't notice until the shower drain told you. You've spent more on hair in the last two years than the previous ten, and you have less to show for it. There's a reason — and once you understand it, everything changes.",
   },
   {
-    headline: "Brands paid me $20,000 to promote products that were destroying my hair.",
+    alt: "Split visual: cluttered counter of 20+ products vs Sarah's simple DIY ingredients.",
+    imageBrief:
+      "Split image — LEFT: cluttered bathroom counter, 20+ designer bottles, caption ‘My old routine.’  RIGHT: Sarah in her kitchen with DIY shampoo ingredients (aloe, oils, glass jar), caption ‘What replaced it.’",
+    overlay:
+      "15 years in the beauty industry. The answer wasn't in any of those bottles.",
+    overlayPos: "topCorner",
+    overlayStyle: "label",
+    headline: "I got this hair by doing less. Not more.",
     caption:
-      "When I figured out what my hair actually needed, I walked away from the deals and started teaching what they wouldn't.",
-    alt: "Sarah, founder of HairQare.",
+      "I worked in beauty for 15 years. I had access to every product, every salon, every treatment that promised the world. My hair only got worse. So I stopped buying and started learning — how hair actually grows, what it actually needs, and which ingredients were quietly working against me. I threw most of it out. My hair came back stronger than it had been in a decade.",
   },
   {
-    headline: "On day 3 you make your own shampoo. The one you'll still use in five years.",
+    alt: "Pinterest-style grid of customer before-and-afters with an anchor stat.",
+    imageBrief:
+      "Pinterest-style grid of 6–9 real customer before-and-afters, slightly overlapping, camera-roll feel. One large anchor stat layered on top. One floating selfie-style testimonial.",
+    overlay:
+      "250,000 women. Same method. Same results.   —   “I never thought I'd feel confident about my hair again.” — Ana, 32",
+    overlayPos: "top",
+    overlayStyle: "anchor",
+    headline: "This isn't theory. A quarter of a million women have already done it.",
     caption:
-      "It's not a routine you buy — it's a method you keep. Two products, your kitchen, about $10 a month from here on.",
-    alt: "Sarah making her DIY shampoo at her kitchen counter.",
+      "Postpartum moms watching their hair fall out in clumps. Women in their late 30s who'd written off their hair entirely. Busy professionals who didn't have time for a 10-step routine. They all started exactly where you are right now. You can read their stories in our community before you ever pay a cent.",
   },
   {
-    headline: "250,000 women. 149 countries. The same two products on the counter.",
+    alt: "Notes-app style Q&A thread on cream background, Sarah's portrait at top.",
+    imageBrief:
+      "DM / notes-app mock-up on soft cream. Looks like Sarah is texting back. Small portrait of her at the top of the thread makes it her voice.",
+    overlay:
+      "❓ “I've tried everything.” 💬 You haven't tried understanding your own hair yet.   ❓ “Is 14 days enough?” 💬 For shine, less shedding, calmer scalp — yes.   ❓ “Will I need new products?” 💬 You'll throw out more than you buy.   ❓ “What if it doesn't work?” 💬 You get your money back.",
+    overlayPos: "top",
+    overlayStyle: "label",
+    headline: "The questions every woman asks me before she joins.",
     caption:
-      "This isn't a launch. It's a community that's been doing this for years. Sunday's cohort is the next one in.",
-    alt: "Sarah with HairQare community members.",
+      "These are the same questions I get in my DMs every day — and the same honest answers I'd give you in person. No fine print. No catch.",
   },
   {
-    headline: "14 days. Two products. A method you keep for life.",
+    alt: "Sarah outside in golden-hour light, hair loose, candid smile.",
+    imageBrief:
+      "Sarah outside in golden-hour light · hair loose · candid smile · the ‘after’ frame for the viewer.",
+    overlay: "“Two weeks from now, you'll wish you'd started earlier.”",
+    overlayPos: "bottom",
+    overlayStyle: "handwritten",
+    headline: "Your hair. Your confidence. The way you walk into a room.",
     caption:
-      "Sunday's cohort is the next one in. 30-day money-back guarantee, no questions asked.",
-    alt: "Sarah at home with her two-product routine.",
+      "You can spend the next two weeks the way you spent the last two — same routine, same frustration, same drain. Or you can finally learn what your hair has been trying to tell you. 250,000 women have already made that choice. I'll see you inside on day one.",
   },
 ];
 
-function Placeholder({ index, alt }: { index: number; alt: string }) {
+function SlideMedia({ slide, index }: { slide: Slide; index: number }) {
+  const posClass =
+    slide.overlayPos === "bottom"
+      ? "is-bottom"
+      : slide.overlayPos === "topCorner"
+      ? "is-top-corner"
+      : "is-top";
+  const styleClass =
+    slide.overlayStyle === "handwritten"
+      ? "is-handwritten"
+      : slide.overlayStyle === "anchor"
+      ? "is-anchor"
+      : "is-label";
   return (
-    <div className="hq-v18-hc-ph" role="img" aria-label={alt}>
-      <span>[ Slide {index + 1} — {alt} ]</span>
+    <div className="hq-v18-hc-ph" role="img" aria-label={slide.alt}>
+      <span className="hq-v18-hc-ph-brief">
+        [ Slide {index + 1} image · {slide.imageBrief} ]
+      </span>
+      <div className={`hq-v18-hc-overlay ${posClass} ${styleClass}`}>
+        {slide.overlay}
+      </div>
     </div>
   );
 }
@@ -149,19 +201,7 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
                   data-slide={i + 1}
                 >
                   <div className="hq-v18-hc-media">
-                    {s.image ? (
-                      <img
-                        src={s.image}
-                        alt={s.alt}
-                        className="hq-v18-hc-img"
-                        loading={i === 0 ? "eager" : "lazy"}
-                        // @ts-ignore
-                        fetchpriority={i === 0 ? "high" : "auto"}
-                        decoding={i === 0 ? "sync" : "async"}
-                      />
-                    ) : (
-                      <Placeholder index={i} alt={s.alt} />
-                    )}
+                    <SlideMedia slide={s} index={i} />
                   </div>
                   <div className="hq-v18-hc-text">
                     {i === 0 ? (
@@ -212,11 +252,7 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
               data-method="thumb"
             >
               <span className="hq-v18-hc-thumb-img">
-                {s.image ? (
-                  <img src={s.image} alt="" loading="lazy" decoding="async" />
-                ) : (
-                  <span className="hq-v18-hc-thumb-ph">{i + 1}</span>
-                )}
+                <span className="hq-v18-hc-thumb-ph">{i + 1}</span>
               </span>
             </button>
           ))}
