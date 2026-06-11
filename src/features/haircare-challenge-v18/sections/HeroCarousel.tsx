@@ -4,14 +4,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "../primitives";
 
 type Slide = {
-  headlineLead: string;
-  headlineAccent: string;
-  caption: string;
   alt: string;
   imageBrief: string;
   pinText: string;
   pinRotate: number;
   pinPos?: "tl" | "tr" | "bl" | "br";
+  scriptText: string;
 };
 
 const SLIDES: Slide[] = [
@@ -22,10 +20,7 @@ const SLIDES: Slide[] = [
     pinText: "★ best hair of my life",
     pinRotate: -4,
     pinPos: "tl",
-    headlineLead: "Achieve the best hair of your life",
-    headlineAccent: "in your 30s. And beyond.",
-    caption:
-      "Most women think their hair peaks in their 20s, that from 30 on, it just thins out and dulls down. I believed it too, until I figured out what the beauty industry never tells you. Now I have better hair than I did at 25. So do 250,000 women I've coached.",
+    scriptText: "best hair of your 30s",
   },
   {
     alt: "Stacked DM-style screenshot quotes pinned like sticky notes.",
@@ -34,10 +29,7 @@ const SLIDES: Slide[] = [
     pinText: "not your age",
     pinRotate: 5,
     pinPos: "tr",
-    headlineLead: "It's not your age. It's not your genes.",
-    headlineAccent: "And it's not in your head.",
-    caption:
-      "Something shifted after 30. Maybe a pregnancy. Maybe stress, or a year of bad sleep, or a slow hormonal change you didn't notice until the shower drain told you. You've spent more on hair in the last two years than the previous ten, and you have less to show for it. There's a reason, and once you understand it, everything changes.",
+    scriptText: "not your age. not your genes.",
   },
   {
     alt: "Split visual: cluttered counter of 20+ products vs Sarah's simple DIY ingredients.",
@@ -46,10 +38,7 @@ const SLIDES: Slide[] = [
     pinText: "less, not more",
     pinRotate: -3,
     pinPos: "tl",
-    headlineLead: "I got this hair by doing less.",
-    headlineAccent: "Not more.",
-    caption:
-      "I worked in beauty for 15 years. I had access to every product, every salon, every treatment that promised the world. My hair only got worse. So I stopped buying and started learning, how hair actually grows, what it actually needs, and which ingredients were quietly working against me. I threw most of it out. My hair came back stronger than it had been in a decade.",
+    scriptText: "i did less, not more",
   },
   {
     alt: "Pinterest-style grid of customer before-and-afters with an anchor stat.",
@@ -58,10 +47,7 @@ const SLIDES: Slide[] = [
     pinText: "250,000 women",
     pinRotate: 4,
     pinPos: "tr",
-    headlineLead: "This isn't theory.",
-    headlineAccent: "A quarter of a million women have already done it.",
-    caption:
-      "Postpartum moms watching their hair fall out in clumps. Women in their late 30s who'd written off their hair entirely. Busy professionals who didn't have time for a 10-step routine. They all started exactly where you are right now. You can read their stories in our community before you ever pay a cent.",
+    scriptText: "250,000 women, already",
   },
   {
     alt: "Notes-app style Q&A thread on cream background, Sarah's portrait at top.",
@@ -70,10 +56,7 @@ const SLIDES: Slide[] = [
     pinText: "real Qs, real As",
     pinRotate: -5,
     pinPos: "tl",
-    headlineLead: "The questions every woman asks me",
-    headlineAccent: "before she joins.",
-    caption:
-      "These are the same questions I get in my DMs every day, and the same honest answers I'd give you in person. No fine print. No catch.",
+    scriptText: "every question, answered",
   },
   {
     alt: "Sarah outside in golden-hour light, hair loose, candid smile.",
@@ -82,10 +65,7 @@ const SLIDES: Slide[] = [
     pinText: "see you on day 1",
     pinRotate: 3,
     pinPos: "br",
-    headlineLead: "Your hair. Your confidence.",
-    headlineAccent: "The way you walk into a room.",
-    caption:
-      "You can spend the next two weeks the way you spent the last two, same routine, same frustration, same drain. Or you can finally learn what your hair has been trying to tell you. 250,000 women have already made that choice. I'll see you inside on day one.",
+    scriptText: "see you on day one",
   },
 ];
 
@@ -109,7 +89,8 @@ function SlideMedia({ slide, index }: { slide: Slide; index: number }) {
       >
         {slide.pinText}
       </span>
-      <span className="hq-v18-hc-fade" aria-hidden="true" />
+      <span className="hq-v18-hc-shade" aria-hidden="true" />
+      <span className="hq-v18-hc-script">{slide.scriptText}</span>
     </div>
   );
 }
@@ -191,6 +172,11 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
       <div ref={liveRef} aria-live="polite" className="hq-v18-hc-sr" />
 
       <div className="hq-v18-hc-inner">
+        <h2 className="hq-v18-hc-h1">
+          <span className="lead">The best hair of your life,</span>{" "}
+          <span className="accent">in your 30s. And beyond.</span>
+        </h2>
+
         <div className="hq-v18-hc-stage">
           <div className="hq-v18-hc-viewport" ref={emblaRef}>
             <div className="hq-v18-hc-track">
@@ -206,20 +192,6 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
                 >
                   <div className="hq-v18-hc-media">
                     <SlideMedia slide={s} index={i} />
-                  </div>
-                  <div className="hq-v18-hc-text">
-                    {i === 0 ? (
-                      <h1 className="hq-v18-hc-headline">
-                        <span className="lead">{s.headlineLead}</span>{" "}
-                        <span className="accent">{s.headlineAccent}</span>
-                      </h1>
-                    ) : (
-                      <h2 className="hq-v18-hc-headline">
-                        <span className="lead">{s.headlineLead}</span>{" "}
-                        <span className="accent">{s.headlineAccent}</span>
-                      </h2>
-                    )}
-                    <p className="hq-v18-hc-caption">{s.caption}</p>
                   </div>
                 </article>
               ))}
