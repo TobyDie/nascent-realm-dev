@@ -8,6 +8,7 @@ import { useStartDate, fmtShort } from "../useStartDate";
 type Slide = {
   alt: string;
   imageBrief: string;
+  imageFile?: string; // pub.hairqare.co path (after the host), unencoded
   pinText: string;
   pinRotate: number;
   pinPos?: "tl" | "tr" | "bl" | "br";
@@ -21,6 +22,7 @@ const SLIDES: Slide[] = [
     alt: "Sarah in her kitchen, hair down past her shoulders, soft morning light. Hair is the focal point.",
     imageBrief:
       "Sarah in her kitchen · hair down past shoulders · soft morning light · phone-shot, no styling · full, shiny, healthy hair is the focal point.",
+    imageFile: "Sarah ATF 5 (1).webp",
     pinText: "This is the best hair I've ever had.",
     pinRotate: -4,
     pinPos: "tr",
