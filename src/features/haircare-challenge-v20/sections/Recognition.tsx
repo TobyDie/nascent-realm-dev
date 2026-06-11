@@ -1,18 +1,21 @@
-import { Reveal, InlineTestimonial, Icon } from "../primitives";
+import { Reveal, InlineTestimonial, Hand, Icon } from "../primitives";
 
 export function Recognition() {
   return (
     <section className="bg-lav">
       <div className="wrap-wide">
         <Reveal className="center" style={{ marginBottom: 12 }}>
-          <div className="reco-eyebrow">WHAT IS HAPPENING</div>
+          <div className="reco-eyebrow">WHAT'S ACTUALLY HAPPENING</div>
         </Reveal>
         <Reveal className="center" style={{ marginBottom: 8 }}>
-          <h2 className="h2 reco-headline">WHAT'S HOLDING YOUR HAIR (&amp; your confidence) BACK</h2>
+          <h2 className="h2 reco-headline">
+            You're doing more for your hair than ever.<br />
+            So why is it doing <em style={{ fontStyle: "italic" }}>less</em>?
+          </h2>
         </Reveal>
         <Reveal className="center" style={{ marginBottom: 28 }}>
           <p className="lead" style={{ maxWidth: 520, margin: "0 auto" }}>
-            You've been doing more. Your hair is doing less.
+            Five quiet things that pile up in your 20s and early 30s — and slowly decide what your hair will look like for the next decade.
           </p>
         </Reveal>
 
@@ -22,11 +25,14 @@ export function Recognition() {
             <div className="timeline-beat">
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">✂️</span>It grows… but breaks off at the same spot every month.
+                <span className="emoji">✂️</span>It grows… then snaps off at the same spot every month.
               </p>
               <p className="timeline-consequence">
-                You measure it, get excited, then cut it shorter again. The length you grew is sitting in the bathroom bin.
+                You measure it, get a little excited, then cut it shorter again. The length you grew is sitting in the bathroom bin.
               </p>
+              <div className="timeline-marginalia">
+                <Hand size={16} color="#2b66c2" rotate={-2}>↘ this is breakage, not slow growth</Hand>
+              </div>
             </div>
           </Reveal>
 
@@ -35,11 +41,15 @@ export function Recognition() {
             <div className="timeline-beat">
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">🪞</span>You're spending more on your hair than ever, and seeing less for it.
+                <span className="emoji">🪞</span>You're spending more on your hair than ever — and seeing less for it.
               </p>
               <p className="timeline-consequence">
-                The serum, the bond builder, the silk pillowcase, the supplements. Closer to $1,000 by now. Your hair feels exactly the same.
+                The serum. The bond builder. The silk pillowcase. The supplements. Your hair feels exactly the same.
               </p>
+              <div className="timeline-meter">
+                <span className="timeline-meter-bar"><span className="timeline-meter-fill" /></span>
+                ~$1,000 this year
+              </div>
             </div>
           </Reveal>
 
@@ -49,11 +59,14 @@ export function Recognition() {
               <span className="timeline-wash" />
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">🌫️</span>You've started believing this is just your hair.
+                <span className="emoji">🌫️</span>You've quietly started believing this is just your hair.
               </p>
               <p className="timeline-consequence">
-                "It just doesn't grow past my shoulders." "I have thin hair, that's just genetics." You've accepted a limit no one taught you was a limit.
+                "It just doesn't grow past my shoulders." "I have thin hair, it's genetics." You've accepted a limit no one ever proved was a limit.
               </p>
+              <div className="timeline-marginalia">
+                <Hand size={16} color="#2b66c2" rotate={-3}>↘ almost never true</Hand>
+              </div>
             </div>
           </Reveal>
 
@@ -63,11 +76,14 @@ export function Recognition() {
               <span className="timeline-wash" />
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">🧴</span>The bleach changed it forever and nothing's been the same since.
+                <span className="emoji">🧴</span>The bleach (or the heat, or the box dye) changed it — and nothing's been the same since.
               </p>
               <p className="timeline-consequence">
-                You wouldn't go back, but your ends are paying for it. And no $80 mask is bringing them back.
+                You wouldn't go back to your natural colour, but your ends are paying for it. And no $80 mask is bringing them back.
               </p>
+              <div className="timeline-marginalia">
+                <Hand size={16} color="#2b66c2" rotate={-2}>↘ masks coat. they don't repair.</Hand>
+              </div>
             </div>
           </Reveal>
 
@@ -77,11 +93,14 @@ export function Recognition() {
               <span className="timeline-wash" />
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">📷</span>You see hair on TikTok and assume those girls were just born with it.
+                <span className="emoji">📷</span>You scroll past hair on TikTok and assume those girls were just born with it.
               </p>
               <p className="timeline-consequence">
-                They weren't. Almost none of them were. You just haven't seen what they do behind the scenes.
+                Almost none of them were. You just haven't seen the boring, behind-the-scenes routine that built it.
               </p>
+              <div className="timeline-photos" aria-hidden="true">
+                {[0,1,2,3,4,5].map(n => <span key={n} className="timeline-photo" />)}
+              </div>
             </div>
           </Reveal>
 
