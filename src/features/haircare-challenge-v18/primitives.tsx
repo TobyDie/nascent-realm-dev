@@ -466,7 +466,7 @@ export function InlineTestimonial({
       <div className="inline-testi-body">
         <StarRow size={13} />
         <p className="inline-testi-quote">“{quote}”</p>
-        <div className="inline-testi-meta">,  {name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}</div>
+        <div className="inline-testi-meta">{name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}</div>
       </div>
     </div>
   );
@@ -508,7 +508,7 @@ export function CompactImageTestimonial({
         <StarRow size={13} />
         <p className="compact-image-testi-quote">“{text}”</p>
         <div className="compact-image-testi-meta">
-         , {name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}
+         {name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}
           {context ? <span className="compact-image-testi-context"> · {context}</span> : null}
         </div>
       </div>
