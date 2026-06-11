@@ -172,10 +172,10 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
       <div ref={liveRef} aria-live="polite" className="hq-v18-hc-sr" />
 
       <div className="hq-v18-hc-inner">
-        <h1 className="hq-v18-hc-h1">
+        <h2 className="hq-v18-hc-h1">
           <span className="lead">The best hair of your life,</span>{" "}
           <span className="accent">in your 30s. And beyond.</span>
-        </h1>
+        </h2>
 
         <div className="hq-v18-hc-stage">
           <div className="hq-v18-hc-viewport" ref={emblaRef}>
