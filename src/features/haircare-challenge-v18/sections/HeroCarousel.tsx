@@ -124,6 +124,9 @@ function SlideMedia({ slide, index }: { slide: Slide; index: number }) {
           [ Slide {index + 1} image · {slide.imageBrief} ]
         </span>
       )}
+      {slide.topBadge && (
+        <span className="hq-v18-hc-badge">{slide.topBadge}</span>
+      )}
       <span
         className={`hq-v18-hc-pin ${posClass}`}
         style={{ transform: `rotate(${slide.pinRotate}deg)` }}
