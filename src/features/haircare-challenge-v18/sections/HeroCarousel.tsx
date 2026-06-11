@@ -12,6 +12,7 @@ type Slide = {
   pinText: string;
   pinRotate: number;
   pinPos?: "tl" | "tr" | "bl" | "br";
+  topBadge?: string;
   headlineLead: string;
   headlineAccent: string;
   caption: string;
@@ -25,7 +26,8 @@ const SLIDES: Slide[] = [
     imageFile: "Sarah ATF 5 (1).webp",
     pinText: "This is the best hair I've ever had.",
     pinRotate: -4,
-    pinPos: "tr",
+    pinPos: "bl",
+    topBadge: "14-Day Haircare Challenge",
     headlineLead: "Your best hair",
     headlineAccent: "isn't behind you.",
     caption:
@@ -121,6 +123,9 @@ function SlideMedia({ slide, index }: { slide: Slide; index: number }) {
         <span className="hq-v18-hc-ph-brief">
           [ Slide {index + 1} image · {slide.imageBrief} ]
         </span>
+      )}
+      {slide.topBadge && (
+        <span className="hq-v18-hc-badge">{slide.topBadge}</span>
       )}
       <span
         className={`hq-v18-hc-pin ${posClass}`}

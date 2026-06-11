@@ -2217,6 +2217,27 @@
 .hq-sp-v18 .hq-v18-hc-pin.is-bl { bottom: 18px; left: 14px; transform-origin: bottom left; }
 .hq-sp-v18 .hq-v18-hc-pin.is-br { bottom: 18px; right: 14px; transform-origin: bottom right; }
 
+/* Top-left badge — smaller, clean sans pill */
+.hq-sp-v18 .hq-v18-hc-badge {
+  position: absolute;
+  top: 14px; left: 14px;
+  display: inline-flex; align-items: center;
+  background: #fff;
+  color: var(--orange-700, #c96900);
+  border: 1.5px solid var(--orange-700, #c96900);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.2;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  box-shadow: 0 3px 8px rgba(60,40,20,0.18);
+  z-index: 3;
+  pointer-events: none;
+}
+
 /* Arrows, desktop only */
 .hq-sp-v18 .hq-v18-hc-arrow {
   display: none;
