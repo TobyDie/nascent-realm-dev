@@ -26,7 +26,8 @@ const SLIDES: Slide[] = [
     imageFile: "Sarah ATF 5 (1).webp",
     pinText: "This is the best hair I've ever had.",
     pinRotate: -4,
-    pinPos: "tr",
+    pinPos: "bl",
+    topBadge: "14-Day Haircare Challenge",
     headlineLead: "Your best hair",
     headlineAccent: "isn't behind you.",
     caption:
