@@ -190,7 +190,7 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
       <div ref={liveRef} aria-live="polite" className="hq-v18-hc-sr" />
 
       <div className="hq-v18-hc-inner">
-        <h1 className="hq-v18-hc-h1 h-hero">
+        <h1 className="hq-v18-hc-h1">
           <span className="hc-lead">Achieve the best hair of your life in your</span>{" "}
           <span className="hc-accent">30s and beyond.</span>
         </h1>
