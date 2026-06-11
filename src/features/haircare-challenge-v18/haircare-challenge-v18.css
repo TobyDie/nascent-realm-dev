@@ -2137,6 +2137,8 @@
 .hq-sp-v18 .hq-v18-hc-slide {
   position: relative;
   flex: 0 0 86%;
+  height: 100%;
+  min-height: 0;
   background: #FFFBF3;
   border-radius: 22px;
   overflow: hidden;
