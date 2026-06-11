@@ -9,7 +9,6 @@ type Slide = {
   pinText: string;
   pinRotate: number;
   pinPos?: "tl" | "tr" | "bl" | "br";
-  scriptText: string;
   headlineLead: string;
   headlineAccent: string;
   caption: string;
@@ -17,82 +16,76 @@ type Slide = {
 
 const SLIDES: Slide[] = [
   {
-    alt: "Sarah in her kitchen, hair down past her shoulders in soft morning light.",
+    alt: "Sarah in her kitchen, hair down past her shoulders, soft morning light. Hair is the focal point.",
     imageBrief:
-      "Sarah in her kitchen · hair past shoulders · soft morning light · phone-shot, no styling · hair is the focal point.",
-    pinText: "★ best hair of my life",
+      "Sarah in her kitchen · hair down past shoulders · soft morning light · phone-shot, no styling · full, shiny, healthy hair is the focal point.",
+    pinText: "This is the best hair I've ever had.",
     pinRotate: -4,
-    pinPos: "tl",
-    scriptText: "best hair of your 30s",
-    headlineLead: "The best hair of your life,",
-    headlineAccent: "in your 30s.",
+    pinPos: "tr",
+    headlineLead: "Your best hair",
+    headlineAccent: "isn't behind you.",
     caption:
-      "Not the hair you had at 22. Better. Without salon visits or a 12-step routine.",
+      "Most women think their hair peaks in their 20s. That from 30 on, it just thins out and dulls down. I believed it too… until I figured out what the beauty industry never tells you.",
   },
   {
-    alt: "Stacked DM-style screenshot quotes pinned like sticky notes.",
+    alt: "Stacked DM-style screenshot quotes pinned like sticky notes — her audience's voice reflected back.",
     imageBrief:
-      "Stacked overlay of real DM-style screenshots, pinned like sticky notes. No Sarah, her audience's voice reflected back.",
-    pinText: "not your age",
+      "Stacked overlay of real DM-style screenshots, pinned like sticky notes. Quotes: 'My ponytail is half the size it used to be.' / 'Using more products than ever and seeing less.' / 'I wear it up every day now.' / 'My stylist said it's just my age.' / 'I don't recognize my hair in photos.' No Sarah in frame.",
+    pinText: "Not your age",
     pinRotate: 5,
     pinPos: "tr",
-    scriptText: "not your age. not your genes.",
-    headlineLead: "It's not your age.",
-    headlineAccent: "Not your genes.",
+    headlineLead: "It's not your age. It's not your genes.",
+    headlineAccent: "And it's not in your head.",
     caption:
-      "It's that no one taught you what your hair actually needs after 30. Now someone has.",
+      "Something changed after 30. Maybe pregnancy, stress or hormones. You spent more on your hair than ever, yet have less to show for it. Once you understand why, everything starts to make sense.",
   },
   {
     alt: "Split visual: cluttered counter of 20+ products vs Sarah's simple DIY ingredients.",
     imageBrief:
-      "Split image, LEFT: cluttered bathroom counter, 20+ designer bottles, caption 'My old routine.'  RIGHT: Sarah in her kitchen with DIY shampoo ingredients (aloe, oils, glass jar), caption 'What replaced it.'",
-    pinText: "less, not more",
+      "Split image. LEFT: cluttered bathroom counter overflowing with 20+ designer bottles, captioned 'My old routine.' RIGHT: Sarah in her kitchen with DIY shampoo ingredients (aloe, oils, glass jar), captioned 'What replaced it.'",
+    pinText: "The answer wasn't in any of those bottles.",
     pinRotate: -3,
     pinPos: "tl",
-    scriptText: "i did less, not more",
-    headlineLead: "I did less,",
-    headlineAccent: "not more.",
+    headlineLead: "I got this hair by doing less.",
+    headlineAccent: "Not more.",
     caption:
-      "Threw out the 20+ bottles. Replaced them with one simple DIY routine. My hair came back.",
+      "I spent 15 years chasing better hair with the best products and treatments money could buy. My hair only got worse. So I stopped buying and started learning. I changed my routine, threw most of it away, and my hair came back stronger than it had been in ten years.",
   },
   {
-    alt: "Pinterest-style grid of customer before-and-afters with an anchor stat.",
+    alt: "Pinterest-style grid of real customer before-and-afters with an anchor stat overlay.",
     imageBrief:
-      "Pinterest-style grid of 6-9 real customer before-and-afters, slightly overlapping, camera-roll feel. One large anchor stat layered on top. One floating selfie-style testimonial.",
-    pinText: "250,000 women",
+      "Pinterest-style grid of 6-9 real customer before-and-afters, slightly overlapping, camera-roll feel. One large anchor stat layered on top. One floating selfie-caption testimonial: '\"I never thought I'd feel confident about my hair again.\" — Ana, 32'.",
+    pinText: "250,000 women. Same method. Same results.",
     pinRotate: 4,
     pinPos: "tr",
-    scriptText: "250,000 women, already",
-    headlineLead: "250,000 women.",
-    headlineAccent: "The same shift.",
+    headlineLead: "This isn't theory.",
+    headlineAccent: "250,000+ women have already done it.",
     caption:
-      "Not a fluke. A pattern — across 149 countries, every hair type, every stage of life.",
+      "Women in their late 30s who'd written off their hair entirely. They all started exactly where you are right now. You can read their stories in our community before you ever pay a cent.",
   },
   {
-    alt: "Notes-app style Q&A thread on cream background, Sarah's portrait at top.",
+    alt: "DM / notes-app style Q&A thread on a soft cream background, Sarah's portrait at the top.",
     imageBrief:
-      "DM / notes-app mock-up on soft cream. Looks like Sarah is texting back. Small portrait of her at the top of the thread makes it her voice.",
-    pinText: "real Qs, real As",
+      "DM / notes-app mock-up on soft cream. Looks like Sarah is texting back. Small portrait of her at the top of the thread. Q&A bubbles: 'I've tried everything.' / 'Is 14 days really enough?' / 'Will I need new products?' / 'What if my situation is different?' / 'What if it doesn't work for me?'",
+    pinText: "FAQs",
     pinRotate: -5,
     pinPos: "tl",
-    scriptText: "every question, answered",
-    headlineLead: "Every question",
-    headlineAccent: "you have, answered.",
+    headlineLead: "The only thing standing between you and better hair is",
+    headlineAccent: "one more \u201Cwhat if.\u201D",
     caption:
-      "Postpartum. Perimenopause. Color-treated. Fine, thick, curly. Sarah has heard it and answered it.",
+      "I get the hesitation. Every woman in this community felt the same. They simply stopped letting doubt steal another year of hair they didn't love.",
   },
   {
-    alt: "Sarah outside in golden-hour light, hair loose, candid smile.",
+    alt: "Sarah outside in golden-hour light, hair loose, candid smile — the 'after' frame for the viewer.",
     imageBrief:
       "Sarah outside in golden-hour light · hair loose · candid smile · the 'after' frame for the viewer.",
-    pinText: "see you on day 1",
+    pinText: "Two weeks from now, you'll wish you'd started earlier.",
     pinRotate: 3,
     pinPos: "br",
-    scriptText: "see you on day one",
-    headlineLead: "Two weeks from today,",
-    headlineAccent: "you'll look back.",
+    headlineLead: "Your hair. Your confidence.",
+    headlineAccent: "The way you walk into a room.",
     caption:
-      "The only question is whether you started, or you didn't. See you on day one.",
+      "You can spend the next two weeks the way you spent the last two: same routine, same frustration, same drain. Or you can finally learn what your hair has been trying to tell you. 250,000 women have already made that choice. I'll see you inside on day one.",
   },
 ];
 
@@ -116,8 +109,6 @@ function SlideMedia({ slide, index }: { slide: Slide; index: number }) {
       >
         {slide.pinText}
       </span>
-      <span className="hq-v18-hc-shade" aria-hidden="true" />
-      <span className="hq-v18-hc-script">{slide.scriptText}</span>
     </div>
   );
 }
@@ -253,7 +244,7 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
           <p className="hq-v18-hc-cap-p">{SLIDES[active].caption}</p>
         </div>
 
-        <div className="hq-v18-hc-thumbs" role="tablist" aria-label="Jump to slide">
+        <div className="hq-v18-hc-dots" role="tablist" aria-label="Jump to slide">
           {SLIDES.map((_, i) => (
             <button
               key={i}
@@ -261,17 +252,13 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
               role="tab"
               aria-selected={active === i}
               aria-label={`Go to slide ${i + 1}`}
-              className={`hq-v18-hc-thumb ${active === i ? "is-active" : ""}`}
+              className={`hq-v18-hc-dot ${active === i ? "is-active" : ""}`}
               onClick={() => scrollTo(i)}
               data-analytics="hero_advance"
               data-from={active + 1}
               data-to={i + 1}
               data-method="thumb"
-            >
-              <span className="hq-v18-hc-thumb-img">
-                <span className="hq-v18-hc-thumb-ph">{i + 1}</span>
-              </span>
-            </button>
+            />
           ))}
         </div>
 

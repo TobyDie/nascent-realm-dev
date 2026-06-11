@@ -2131,7 +2131,7 @@
   flex: 0 0 86%;
   aspect-ratio: 4 / 5;
   /* Cap slide height to fit page H1, thumbs, CTA, trust strip within the viewport */
-  max-height: calc(100svh - 340px);
+  max-height: calc(100svh - 300px);
   background: #FFFBF3;
   border-radius: 22px;
   overflow: hidden;
@@ -2193,44 +2193,30 @@
   pointer-events: none; z-index: 1;
 }
 
-/* Handwritten pin overlay, white pill with orange border */
+/* Pin overlay — white pill with orange border, can wrap to 2 lines */
 .hq-sp-v18 .hq-v18-hc-pin {
   position: absolute;
   display: inline-flex; align-items: center;
   background: #fff;
   color: var(--orange-700, #c96900);
   border: 1.5px solid var(--orange-700, #c96900);
-  border-radius: 999px;
-  padding: 5px 12px;
+  border-radius: 18px;
+  padding: 6px 12px;
   font-family: 'Caveat', cursive;
   font-weight: 700;
-  font-size: 19px;
-  line-height: 1;
-  white-space: nowrap;
+  font-size: 18px;
+  line-height: 1.15;
+  white-space: normal;
+  max-width: calc(100% - 28px);
+  text-align: center;
   box-shadow: 0 4px 10px rgba(60,40,20,0.22);
   z-index: 3;
   pointer-events: none;
 }
 .hq-sp-v18 .hq-v18-hc-pin.is-tl { top: 14px; left: 14px; transform-origin: top left; }
 .hq-sp-v18 .hq-v18-hc-pin.is-tr { top: 14px; right: 14px; transform-origin: top right; }
-.hq-sp-v18 .hq-v18-hc-pin.is-bl { bottom: 84px; left: 14px; transform-origin: bottom left; }
-.hq-sp-v18 .hq-v18-hc-pin.is-br { bottom: 84px; right: 14px; transform-origin: bottom right; }
-
-/* Handwritten script at the bottom of the image */
-.hq-sp-v18 .hq-v18-hc-script {
-  position: absolute;
-  left: 14px; right: 14px; bottom: 18px;
-  text-align: center;
-  font-family: 'Caveat', cursive;
-  font-weight: 700;
-  font-size: clamp(28px, 7.6vw, 38px);
-  line-height: 1.05;
-  color: #fff;
-  letter-spacing: 0.005em;
-  text-shadow: 0 2px 14px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.4);
-  z-index: 2;
-  pointer-events: none;
-}
+.hq-sp-v18 .hq-v18-hc-pin.is-bl { bottom: 18px; left: 14px; transform-origin: bottom left; }
+.hq-sp-v18 .hq-v18-hc-pin.is-br { bottom: 18px; right: 14px; transform-origin: bottom right; }
 
 /* Arrows, desktop only */
 .hq-sp-v18 .hq-v18-hc-arrow {
@@ -2247,43 +2233,24 @@
 .hq-sp-v18 .hq-v18-hc-arrow-prev { left: -6px; }
 .hq-sp-v18 .hq-v18-hc-arrow-next { right: -6px; }
 
-/* Rounded-rectangle thumbnails */
-.hq-sp-v18 .hq-v18-hc-thumbs {
+/* Minimalist dot indicators */
+.hq-sp-v18 .hq-v18-hc-dots {
   display: flex; gap: 8px; justify-content: center; align-items: center;
   flex: 0 0 auto;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
   padding: 2px 4px;
 }
-.hq-sp-v18 .hq-v18-hc-thumbs::-webkit-scrollbar { display: none; }
-.hq-sp-v18 .hq-v18-hc-thumb {
+.hq-sp-v18 .hq-v18-hc-dot {
   flex: 0 0 auto;
-  background: none; border: none; padding: 0; cursor: pointer;
-  transition: transform 200ms cubic-bezier(.2,.7,.3,1);
+  width: 7px; height: 7px;
+  border-radius: 999px;
+  background: rgba(80,50,20,0.22);
+  border: none; padding: 0; cursor: pointer;
+  transition: width 200ms ease, background-color 200ms ease;
 }
-.hq-sp-v18 .hq-v18-hc-thumb.is-active { transform: translateY(-2px); }
-.hq-sp-v18 .hq-v18-hc-thumb-img {
-  display: block;
-  width: 48px; height: 38px;
-  overflow: hidden; border-radius: 10px;
-  background: #efe7dc;
-  box-shadow: inset 0 0 0 1px rgba(80,50,20,0.10), 0 2px 6px rgba(60,30,10,0.08);
-  transition: box-shadow 180ms ease, opacity 180ms ease;
-  opacity: 0.7;
-}
-.hq-sp-v18 .hq-v18-hc-thumb:hover .hq-v18-hc-thumb-img { opacity: 1; }
-.hq-sp-v18 .hq-v18-hc-thumb.is-active .hq-v18-hc-thumb-img {
-  opacity: 1;
-  box-shadow:
-    inset 0 0 0 2px var(--orange-600, #e97b00),
-    0 6px 14px rgba(233,123,0,0.28);
-}
-.hq-sp-v18 .hq-v18-hc-thumb-img img { width: 100%; height: 100%; object-fit: cover; }
-.hq-sp-v18 .hq-v18-hc-thumb-ph {
-  display: flex; align-items: center; justify-content: center;
-  width: 100%; height: 100%;
-  color: #8a7a60; font-family: ui-monospace, monospace; font-size: 11px; font-weight: 700;
+.hq-sp-v18 .hq-v18-hc-dot:hover { background: rgba(80,50,20,0.42); }
+.hq-sp-v18 .hq-v18-hc-dot.is-active {
+  width: 22px;
+  background: var(--orange-600, #e97b00);
 }
 
 /* CTA wrap, the Button primitive supplies the pill style */
@@ -2340,7 +2307,8 @@
   .hq-sp-v18 .hq-v18-hc-arrow { display: inline-flex; }
   .hq-sp-v18 .hq-v18-hc-arrow-prev { left: -22px; }
   .hq-sp-v18 .hq-v18-hc-arrow-next { right: -22px; }
-  .hq-sp-v18 .hq-v18-hc-thumb-img { width: 56px; height: 44px; border-radius: 11px; }
+  .hq-sp-v18 .hq-v18-hc-dot { width: 8px; height: 8px; }
+  .hq-sp-v18 .hq-v18-hc-dot.is-active { width: 26px; }
 }
 
 /* Reduced motion */
