@@ -1,101 +1,84 @@
-# Redesign: `/18` Hero Carousel Section
+Scope: `src/features/haircare-challenge-v18/` only. No changes to v17, v19, or the original page. All CSS scoped under `.hq-sp-v18`.
 
-Scope: ONLY `src/features/haircare-challenge-v18/sections/HeroCarousel.tsx` + the `.hq-v18-hc-*` rules in `haircare-challenge-v18.css`. Zero spillover to /14, /17, /19, or the base feature folder.
+## 1. Headlines styled like the rest of the page (dual color)
+In `HeroCarousel.tsx` each slide gets a `headlineLead` + `headlineAccent` split (e.g. lead = "Achieve the best hair of your life ", accent = "in your 30s. And beyond."). Render as:
 
----
-
-## Problems being fixed
-
-1. **No mobile thumbnails** — users can't see how many slides remain or jump ahead.
-2. **Image and text feel like two separate cards** — swiping the image leaves the text behind visually, which reads as broken. Horizontal swipe also competes with the page's vertical scroll.
-3. **CTA disappears when text gets long** — conversion risk.
-4. **Typography doesn't match the rest of /18** — looks like a bolted-on widget.
-5. **Section has no visual identity** — blends into the page so it doesn't feel like a "story" worth tapping through.
-
----
-
-## New layout (mobile-first, 390px reference)
-
-```text
-┌─────────────────────────────────────┐
-│  ░░ distinct cream/lavender bg ░░   │  ← whole section
-│                                     │
-│   "Sarah's story · swipe →"  eyebrow│
-│  ┌───────────────────────────────┐  │
-│  │                               │  │
-│  │       IMAGE (4:5)             │  │  ← single unified card
-│  │                               │  │     image + text live INSIDE
-│  │   ⌐ chapter chip    1/6 ¬     │  │     one rounded container,
-│  │                               │  │     swipe moves the whole card
-│  │  ─────────────────────────    │  │
-│  │   Headline (matches /18 type) │  │
-│  │   Caption (1–2 lines)         │  │
-│  └───────────────────────────────┘  │
-│                                     │
-│   ● ● ● ○ ○ ○   ← mobile thumb strip│  ← small image thumbs (NEW on mobile)
-│                                     │
-│  ┌───────────────────────────────┐  │
-│  │   Start the 14-Day Challenge  │  │  ← CTA pinned BELOW card,
-│  └───────────────────────────────┘  │     ALWAYS visible (not inside slide)
-│   See real results →                │
-│   ★ 4.9 · 250k women · 149 countries│
-└─────────────────────────────────────┘
+```tsx
+<h2 className="hq-v18-hc-headline">
+  <span className="lead">{s.headlineLead}</span>{" "}
+  <span className="accent">{s.headlineAccent}</span>
+</h2>
 ```
 
-### Key structural changes
+CSS in `haircare-challenge-v18.css`:
+- `.hq-v18-hc-headline` uses the same display family as `.h-hero` (Hanken Grotesk, 700, tight leading), larger size, ink black for `.lead`, `var(--orange-600)` for `.accent`.
+- Slide 1 stays `<h1>`; remaining slides `<h2>` (already the case).
 
-- **One card, not two.** Image + headline + caption become a single Embla slide (image on top, copy block underneath inside the same rounded white card with shared shadow). Swiping animates the whole card horizontally → reads as one object, not two disconnected panels.
-- **CTA lives OUTSIDE the carousel**, directly below it, always rendered, never re-mounted between slides → guaranteed visible during entire interaction. Trust strip + secondary link also outside.
-- **Mobile thumbnail strip** (NEW): horizontal row of 6 tiny 36×44 image thumbs under the card. Active thumb gets a 2px primary-color border + slight scale. Tapping jumps to that slide. Replaces the current "1 of 6" chip as primary progress affordance (chip stays as backup).
-- **Swipe affordance**: eyebrow reads "Sarah's story · swipe →" with a subtle right-pointing arrow that does a 1.5s ease-in-out nudge animation on mount (respecting `prefers-reduced-motion`). Also a partial peek of the next card (~6%) on the right edge to telegraph horizontal motion.
-- **Vertical scroll is preserved.** Embla already only captures horizontal gestures; we'll set `watchDrag` to true with `dragThreshold: 12` so vertical scroll wins on near-vertical motion.
+## 2. Body copy styled for storytelling
+`.hq-v18-hc-caption` switches from the generic body font to a serif/editorial pairing already loaded for storytelling sections (reuse `"Source Serif 4", Georgia, serif` if available in `styles.css`; otherwise add a single `@import` via `<link>` is unnecessary — fall back to `Georgia, "Times New Roman", serif`). Size 17px, line-height 1.65, color `var(--ink-soft)`, slightly reduced contrast so the dual-color headline dominates. First line gets a subtle drop-cap-free emphasis (no fancy drop cap — just `letter-spacing: 0.005em` and a thin top rule via `border-top: 1px solid rgba(0,0,0,.06); padding-top: 14px`).
 
----
+## 3. Em-dash removal
+Sweep the WHOLE `/18` page tree (`src/features/haircare-challenge-v18/**/*.{tsx,ts,css}`) and replace every `—` (U+2014) and `–` (U+2013) with `,` or `.` depending on grammatical sense per occurrence. Done by hand to keep copy natural. Verified with `rg "[—–]" src/features/haircare-challenge-v18` returning empty after edits.
 
-## Visual / brand alignment
+## 4. Unified 4:5 image + text card with gradient bleed
+Carousel returns to **4:5 image aspect**. Structure becomes one tall card per slide where image and text share a single rounded container, separated by a soft gradient seam.
 
-- **Section background**: distinct from page. Use a soft warm gradient `linear-gradient(180deg, #FBF4EA 0%, #F3E7D7 100%)` (cream → deeper cream) with a 1px top/bottom hairline in `rgba(0,0,0,0.06)`. This makes the section read as its own "chapter" and matches the cream tone already used in `ThumbStop tone="cream"` blocks on /18.
-- **Card surface**: pure white, `border-radius: 20px`, `box-shadow: 0 10px 30px -12px rgba(40,20,10,0.18)`.
-- **Typography**: switch headline/caption to the same font stack the rest of /18 uses (inherit from `.hq-sp-v18` — currently using its serif display for h1s and sans for body). Headline goes to `clamp(20px, 5.4vw, 26px)`, line-height 1.2, weight 600. Caption `15px/1.5`, color `#3b2f25`. Drops the current generic system styling.
-- **Chapter chip**: change from dark pill to a small uppercase letter-spaced label `#8a6a3b` on translucent cream — feels editorial, not button-like.
-- **Mobile thumbs**: rounded 8px, 1px hairline border, active = 2px `#C2410C` (warm accent matching page).
+```text
+┌────────────────────────────┐
+│         IMAGE (4:5)        │
+│   handwritten pill overlay │
+│····· gradient fade ········│  <- image bottom → cream/white text bg
+│  HEADLINE (dual color)     │
+│  Story paragraph (serif)   │
+└────────────────────────────┘
+```
 
----
+CSS:
+- `.hq-v18-hc-slide`: single white card, `border-radius: 24px`, `overflow: hidden`, soft shadow, no inner gap.
+- `.hq-v18-hc-media`: `aspect-ratio: 4 / 5;` again, image fills.
+- New `.hq-v18-hc-fade`: positioned absolutely at media bottom, 80px tall, `background: linear-gradient(to bottom, rgba(255,253,248,0) 0%, var(--cream, #FFFBF3) 100%)`, sits over image so the text background appears to bleed up into the photo.
+- `.hq-v18-hc-text`: same `--cream` background, padding 22px 22px 24px, no top border (the gradient is the seam). Readability preserved because text sits fully on cream, not on the image.
+- Desktop ≥1024px: keep a single-column tall card (max-width 520px, centered) so the "big card" feel reads on every device, instead of switching to side-by-side which would break the gradient bleed.
 
-## Desktop (≥860px)
+## 5. Handwritten Pin-style overlays
+Reuse the existing `Pin` primitive look (`Caveat` 700, orange border, white pill, slight rotation, soft shadow) for image overlays.
 
-- Same single-card structure, but card becomes a 2-col split inside the slide (image left 55%, copy right 45%) so desktop doesn't waste vertical space.
-- Keep existing left/right arrow buttons.
-- Replace large thumbnail-row-under-copy with the same compact thumb strip used on mobile, centered under the card.
-- CTA + trust strip stay below the card, full-width-of-card, centered.
+In `HeroCarousel.tsx` add a `<Pin>`-equivalent rendered absolutely on the image. Per slide, keep one short handwritten line so the device stays delightful, not noisy:
+- S1: `★ "best hair of my life"` (rotate -4)
+- S2: `not your age` (rotate 5)
+- S3: `less, not more` (rotate -3)
+- S4: `250,000 women` (rotate 4)
+- S5: `real Qs, real As` (rotate -5)
+- S6: `see you on day 1` (rotate 3)
 
----
+CSS `.hq-v18-hc-pin` mirrors `Pin` exactly (Caveat 700, 18px, white bg, 1.5px orange border, 999px radius, 5px 12px, rotate via inline style, shadow `0 4px 10px rgba(60,40,20,.12)`). Drop the previous `is-handwritten` / `is-anchor` / `is-label` overlay system entirely — one consistent visual language across all 6 slides, varied only by copy and rotation.
 
-## Behavior preserved from current build
+## 6. Rounded-rectangle thumbnails
+`.hq-v18-hc-thumb` and `.hq-v18-hc-thumb-img` change from circular to rectangle:
+- Size: 56x44 on mobile, 64x48 on desktop
+- `border-radius: 10px`
+- Active state: 2px solid `var(--orange-600)` ring + slight `transform: translateY(-2px)`, no scale jump
+- Inactive: 1px solid rgba(0,0,0,.08), 70% opacity
+- Same R2 image used in the slide, `object-fit: cover` (when images are added later); for now the numbered placeholder stays inside the rounded rect.
 
-- 6 slides, verbatim copy unchanged.
-- `aria-roledescription="carousel"`, per-slide `role="group"`, polite live region.
-- Keyboard ← → navigation.
-- Slide 1 `<h1>`, slides 2–6 `<h2>`.
-- Slide 1 image `loading="eager" fetchpriority="high"`; rest lazy.
-- All existing analytics attrs (`hero_slide_view`, `hero_cta_click`, `hero_secondary_click`, `hero_dropoff`, `hero_advance`) — plus new `hero_advance` emitted on swipe and arrow too (closes one of the earlier gaps).
-- `prefers-reduced-motion` disables swipe nudge + any transitions.
+## 7. CTA matches site-wide pill
+Replace the custom `<button className="hq-v18-hc-cta">` with the shared `Button` primitive used elsewhere on the page:
 
----
+```tsx
+import { Button } from "../primitives";
+<Button id="cta-hero-carousel" onClick={onCta} icon="arrow-right">
+  Join the challenge
+</Button>
+```
 
-## Files touched (v18 only)
+Remove `.hq-v18-hc-cta`, `.hq-v18-hc-cta:hover`, `.hq-v18-hc-cta:active` rules. Keep `.hq-v18-hc-cta-wrap` for layout (centered, persistent, 16px top spacing) and keep the trust strip below.
 
-- `src/features/haircare-challenge-v18/sections/HeroCarousel.tsx` — restructure JSX (single card, CTA outside carousel, mobile thumb strip, swipe-hint eyebrow).
-- `src/features/haircare-challenge-v18/haircare-challenge-v18.css` — replace `.hq-v18-hc-*` block with new styles (cream gradient bg, unified card, mobile thumb strip, type alignment, peek). All class names stay `.hq-v18-hc-*` scoped under `.hq-sp-v18`.
+## Files touched
+- `src/features/haircare-challenge-v18/sections/HeroCarousel.tsx` — split headlines, add pin overlays, swap CTA to `Button`, remove em-dashes in copy, restructure card.
+- `src/features/haircare-challenge-v18/haircare-challenge-v18.css` — update `.hq-v18-hc-*` rules per sections 1, 2, 4, 5, 6, 7; remove now-unused `is-handwritten/is-anchor/is-label` blocks.
+- Sweep other v18 section files only to strip em-dashes (no other changes).
 
-No other files change. /14, /17, /19, base `haircare-challenge` untouched.
-
----
-
-## Out of scope (ask if wanted)
-
-- Replacing slide 2–6 placeholder images with real photos.
-- Auto-advance / loop (still off per original brief).
-- Changing slide copy.
-
-Ready to build on approval.
+## Verification
+- `rg "[—–]" src/features/haircare-challenge-v18` returns no matches.
+- Preview at 390x844 and 1280x720: 4:5 image, gradient seam visible, headline reads as two colors, body reads as serif, one pin overlay per slide, rectangle thumbnails with orange ring on active, CTA pill identical to the Hero `Join the challenge` button.
+- Confirm `/17-the-haircare-challenge` and `/19-the-haircare-challenge` are visually unchanged.
