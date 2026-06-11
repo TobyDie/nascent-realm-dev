@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "../primitives";
+import { Button, GuaranteeBadge, Icon } from "../primitives";
+import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
+import { useStartDate, fmtShort } from "../useStartDate";
 
 type Slide = {
   alt: string;
@@ -114,6 +116,8 @@ function SlideMedia({ slide, index }: { slide: Slide; index: number }) {
 }
 
 export function HeroCarousel({ onCta }: { onCta?: () => void }) {
+  const joining = useJoiningCount();
+  const startDate = useStartDate();
   const [emblaRef, embla] = useEmblaCarousel({
     loop: false,
     align: "center",
@@ -266,13 +270,14 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
           <Button id="cta-hero-carousel" onClick={onCta} icon="arrow-right">
             Join the challenge
           </Button>
-          <div className="hq-v18-hc-trust">
-            <span>★ 4.9</span>
-            <span aria-hidden="true">·</span>
-            <span>250,000+ women</span>
-            <span aria-hidden="true">·</span>
-            <span>149 countries</span>
-          </div>
+          <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginTop: 6 }}>
+            85% off · today only
+          </span>
+          <GuaranteeBadge size="sm" style={{ marginTop: 8 }} />
+          <span className="hero-cohort" style={{ marginTop: 8 }}>
+            <Icon name="calendar-heart" size={13} color="var(--orange-600)" />
+            Next cohort: <strong className="start-date">{startDate ? fmtShort(startDate) : "Fri, June 6th"}</strong> · {formatJoiningCount(joining)} women joining this week
+          </span>
         </div>
       </div>
     </section>
