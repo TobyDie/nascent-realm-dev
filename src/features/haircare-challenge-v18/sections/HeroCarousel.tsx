@@ -12,6 +12,7 @@ type Slide = {
   pinText: string;
   pinRotate: number;
   pinPos?: "tl" | "tr" | "bl" | "br";
+  topBadge?: string;
   headlineLead: string;
   headlineAccent: string;
   caption: string;
