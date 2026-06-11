@@ -14,7 +14,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
 
         {/* removed urgency pill from top, moved to cohort line under CTA */}
 
-        <div style={{ display: "grid", gridTemplateColumns: "1.02fr 0.98fr", gap: 52, alignItems: "center" }} className="hero-grid">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 52, alignItems: "center" }} className="hero-grid">
 
           {/* TEXT column */}
           <Reveal>
@@ -55,29 +55,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                 <span>10 minutes a day. While the coffee brews. That's all it takes.</span>
               </li>
             </ul>
-          </Reveal>
-
-          {/* IMAGE column, Sarah's portrait (image, not video), with a sketchy trust pin */}
-          <Reveal delay={120}>
-            <div style={{ position: "relative" }}>
-              <div className="hero-image-wrap">
-                <img
-                  src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20ATF%205%20(1).webp"
-                  srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/Sarah%20ATF%205%20(1).webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20ATF%205%20(1).webp 800w"
-                  sizes="(max-width: 720px) 100vw, (max-width: 860px) 90vw, 405px"
-                  alt="Sarah Tran, founder of HairQare, with long healthy auburn hair, sunlit Mediterranean setting."
-                  className="hero-image"
-                  loading="eager"
-                  fetchPriority="high"
-                />
-                <div className="hero-image-overlay-text" aria-hidden="true">
-                  14-Day Haircare Challenge
-                </div>
-              </div>
-              <div style={{ position: "absolute", top: -14, left: -8, zIndex: 4 }}>
-                <Pin rotate={7}>★ 4.8 · 12K reviews</Pin>
-              </div>
-            </div>
           </Reveal>
 
         </div>
