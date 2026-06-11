@@ -43,27 +43,27 @@ export function SelfQualifier({ onCta }: { onCta?: () => void }) {
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <button onClick={() => toggle(0)} style={btnStyle(on0)}>
               <span style={boxStyle(on0)}>{on0 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>My hair started changing sometime after I turned 30.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>My hair grows to a point and just stops — I can't get past my current length.</span>
             </button>
             <button onClick={() => toggle(1)} style={btnStyle(on1)}>
               <span style={boxStyle(on1)}>{on1 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>My part looks wider, or I can see more scalp than I used to.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I color, bleach or heat-style my hair and I can see the damage.</span>
             </button>
             <button onClick={() => toggle(2)} style={btnStyle(on2)}>
               <span style={boxStyle(on2)}>{on2 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>My ponytail is noticeably thinner than it was five years ago.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I had a baby and the shedding never fully came back.</span>
             </button>
             <button onClick={() => toggle(3)} style={btnStyle(on3)}>
               <span style={boxStyle(on3)}>{on3 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I've tried products, serums or supplements that didn't really work.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>My hair looks limp or flat no matter what I spend on products.</span>
             </button>
             <button onClick={() => toggle(4)} style={btnStyle(on4)}>
               <span style={boxStyle(on4)}>{on4 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I'm managing a lot — career, kids, or both — and I'm often stressed.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I'm stressed a lot and I think it's starting to show up in my hair.</span>
             </button>
             <button onClick={() => toggle(5)} style={btnStyle(on5)}>
               <span style={boxStyle(on5)}>{on5 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I had a baby in my 30s, or I think I may be perimenopausal.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I want to fix this <strong>before</strong> it becomes a real problem.</span>
             </button>
           </div>
         </Reveal>
@@ -72,7 +72,7 @@ export function SelfQualifier({ onCta }: { onCta?: () => void }) {
             {count === 0 ? (
               "Tick the ones that ring true above."
             ) : (
-              <span>You ticked <strong style={{ color: "var(--orange-700)" }}>{count}</strong> — you're exactly who the challenge was built for. Join the <strong>250,000+ women in their 30s</strong> who started here.</span>
+              <span>You ticked <strong style={{ color: "var(--orange-700)" }}>{count}</strong> — you're exactly who the challenge was built for. Join <strong>250,000+ women in their 20s and 30s</strong> who started here.</span>
             )}
           </div>
           <Button id="cta-self-qualifier" onClick={onCta} icon="arrow-right">Take charge of my hair</Button>

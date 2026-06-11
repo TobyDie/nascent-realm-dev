@@ -15,31 +15,31 @@ const TEXT_PLACEHOLDERS = [
   // After Science — scientist endorses the root-cause approach
   { name: "Natasha Bloch", avatar: "profile-6.webp", quote: "I feel my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again. I feel in this 14 days, my curls came back." },
   // After Results in 2 Weeks — visible results inside 14 days
-  { name: "Limor Mills", avatar: "profile-2.webp", quote: "By day 14, I could actually see little baby hairs growing in! My hair feels so much stronger, it's got more volume, and it just looks so much healthier." },
+  { name: "Limor Mills", avatar: "profile-2.webp", quote: "By day 14, I could actually see baby hairs growing in and my length finally moving — my hair feels stronger, fuller, and like it's actually going somewhere." },
   // After Founder — emotional / confidence
   { name: "Cintia Irtzl", avatar: "profile-5.webp", quote: "My hair started to be shinier and softer so I got back a lot of self-confidence and that felt really nice honestly." },
   // After SelfQualifier — habits over genetics (reassurance for women like me)
   { name: "Gema", avatar: "profile-3.webp", quote: "This challenge showed me that I have to change my habits to get a better hair and that my genetics are going to influence my hair but not so much." },
   // After FAQ — simple, accessible, easy
   { name: "Paola Fernandez", avatar: "profile-7.webp", quote: "It's super simple. You can find all the ingredients on the internet, on Amazon. They're very accessible and I've been having amazing results." },
-  // Final reassurance before CTA — fall-in-love-again moment
-  { name: "Kate", avatar: "profile-1.webp", quote: "The main thing I could say that this challenge gave me was the most important one and that's that I fell in love. I fell in love with my hair again." },
+  // Final reassurance before CTA — control/understanding moment
+  { name: "Kate", avatar: "profile-1.webp", quote: "The biggest thing this gave me is that I finally understand my hair. I'm not guessing or buying the next bottle anymore — I'm actually building it." },
 ];
 
 /* Real customer image+text testimonials — placed where the story matches the pitch above. */
 const IMAGE_PLACEHOLDERS = [
-  // After HowItWorks — the process works, visible after washing
-  { name: "Selima", initials: "S", image: "ba-new-3.webp", context: "Daily hair loss · limp hair", text: "I noticed that my hair had a little bit of volume after washing it, which never happened before. It always looked limp and flat, but now I can see a little bit of volume after washing and I experienced less sweat and limpness." },
-  // After WhatsIncluded — the DIY shampoo / what's in the bundle delivers
-  { name: "Alexia Zacharias", initials: "A", image: "ba-new-2.webp", context: "Hair loss (hypothyroid)", text: "I see much, much difference with the shampoo, with the DIY shampoo." },
-  // After NotAboutHair — emotional, reconnecting with self
-  { name: "Aurélie Guénué", initials: "A", image: "ba-new-1.webp", context: "Hair loss · irritated scalp", text: "After just a few weeks my scalp feels calmer, I'm losing less hair and more than anything I'm finally reconnecting with myself." },
-  // After SelfQualifier (image slot) — hormonal / Hashimoto's, "for women like me"
-  { name: "Biljana Lemić", initials: "B", image: "ba-new-4.webp", context: "Hormonal hair loss · Hashimoto's, early menopause", text: "The first time I used it, I could already see the difference. My hair looks shinier, felt stronger and somehow just healthier overall." },
-  // After FAQ (image slot) — bouncy, soft, gentle (trust before CTA)
-  { name: "Sara Gouveia", initials: "S", image: "ba-new-5.webp", context: "Hair loss · stress", text: "Now that it's dried it actually feels pretty clean and it feels so smooth and so gentle and my curls are just like, hey hello! My hair is usually very flat… but now it's just quite bouncy." },
-  // Final-CTA-area — the most powerful story (cancer survivor / family-level change)
-  { name: "Rosemary", initials: "R", image: "ba-13.webp", context: "Military veteran · chemotherapy hair loss", text: "This course has changed the way my family thinks, the way I think, and it is going to continue to improve our quality of life." },
+  // After HowItWorks — limp/flat hair, finally volume (very 25–34 pain)
+  { name: "Selima", initials: "S", image: "ba-new-3.webp", context: "Limp, flat hair · spending more, seeing less", text: "My hair always looked flat and lifeless no matter what I spent. After washing now, I can actually see volume — and the constant greasiness is gone too." },
+  // After WhatsIncluded — DIY shampoo / damage from colored hair
+  { name: "Alexia Zacharias", initials: "A", image: "ba-new-2.webp", context: "Color-damaged, shedding daily", text: "I can see so much difference with the DIY shampoo — my color-treated hair feels softer and stronger, and the daily shedding has dropped off." },
+  // After NotAboutHair — postpartum recovery
+  { name: "Aurélie Guénué", initials: "A", image: "ba-new-1.webp", context: "Postpartum shedding · irritated scalp", text: "After just a few weeks my scalp feels calmer, the postpartum shedding has slowed down, and more than anything I'm finally feeling like myself again." },
+  // After SelfQualifier (image slot) — damage from bleach/heat, length plateau
+  { name: "Biljana Lemić", initials: "B", image: "ba-new-4.webp", context: "Years of bleach & heat · length plateau", text: "First time I used it I could already see the difference — shinier, stronger, and for the first time in years it actually feels like my length is moving." },
+  // After FAQ (image slot) — stress + texture change → bouncy
+  { name: "Sara Gouveia", initials: "S", image: "ba-new-5.webp", context: "Stress shedding · flat lifeless hair", text: "Now that it's dried it feels so clean, so smooth and gentle, and my curls are like, hey hello! My hair was always flat — now it's bouncy." },
+  // Final-CTA-area — long-term, knowledge-as-an-asset story
+  { name: "Rosemary", initials: "R", image: "ba-13.webp", context: "Spent years buying products that didn't work", text: "This course changed the way I think about my hair. I'm not buying the next bottle anymore — I finally know what I'm doing." },
 ];
 
 export type InterstitialVariant =
