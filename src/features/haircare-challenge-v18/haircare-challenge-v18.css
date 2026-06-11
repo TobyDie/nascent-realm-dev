@@ -2117,8 +2117,8 @@
   text-align: center;
   text-wrap: balance;
 }
-.hq-sp-v18 .hq-v18-hc-h1 .lead { color: #090909; }
-.hq-sp-v18 .hq-v18-hc-h1 .accent { color: var(--orange-600, #e97b00); }
+.hq-sp-v18 .hq-v18-hc-h1 .hc-lead { color: #090909; font: inherit; }
+.hq-sp-v18 .hq-v18-hc-h1 .hc-accent { color: var(--orange-600, #e97b00); font: inherit; }
 
 /* Stage */
 .hq-sp-v18 .hq-v18-hc-stage { position: relative; }
@@ -2317,8 +2317,8 @@
   margin: 0;
   text-wrap: balance;
 }
-.hq-sp-v18 .hq-v18-hc-cap-h .lead { color: #090909; }
-.hq-sp-v18 .hq-v18-hc-cap-h .accent { color: var(--orange-600, #e97b00); }
+.hq-sp-v18 .hq-v18-hc-cap-h .hc-lead { color: #090909; font: inherit; }
+.hq-sp-v18 .hq-v18-hc-cap-h .hc-accent { color: var(--orange-600, #e97b00); font: inherit; }
 .hq-sp-v18 .hq-v18-hc-cap-p {
   font-family: var(--font-sans);
   font-size: 13.5px;
