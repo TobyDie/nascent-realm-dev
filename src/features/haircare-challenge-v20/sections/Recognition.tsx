@@ -1,14 +1,19 @@
-import { Reveal, InlineTestimonial, Hand, Icon } from "../primitives";
+import { Reveal, InlineTestimonial, Icon } from "../primitives";
 
 export function Recognition() {
   return (
     <section className="bg-lav">
       <div className="wrap-wide">
+        <Reveal className="center" style={{ marginBottom: 12 }}>
+          <div className="reco-eyebrow">WHAT IS HAPPENING</div>
+        </Reveal>
+        <Reveal className="center" style={{ marginBottom: 8 }}>
+          <h2 className="h2 reco-headline">WHAT'S HOLDING YOUR HAIR (&amp; your confidence) BACK</h2>
+        </Reveal>
         <Reveal className="center" style={{ marginBottom: 28 }}>
-          <div className="reco-header-block">
-            <div className="reco-eyebrow">WHAT IS HAPPENING</div>
-            <h2 className="h2 reco-headline">Sometime in your 20s or early 30s, this started happening:</h2>
-          </div>
+          <p className="lead" style={{ maxWidth: 520, margin: "0 auto" }}>
+            You've been doing more. Your hair is doing less.
+          </p>
         </Reveal>
 
         <div className="timeline-wrap">
@@ -17,10 +22,10 @@ export function Recognition() {
             <div className="timeline-beat">
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">📏</span>It grows to a certain point and just… stops.
+                <span className="emoji">✂️</span>It grows… but breaks off at the same spot every month.
               </p>
               <p className="timeline-consequence">
-                so you trim the ends, blame the ends, and never find what's actually capping your length.
+                You measure it, get excited, then cut it shorter again. The length you grew is sitting in the bathroom bin.
               </p>
             </div>
           </Reveal>
@@ -30,14 +35,11 @@ export function Recognition() {
             <div className="timeline-beat">
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">🔥</span>Color, heat, bleach — and the bond builder you bought to fix the bleach.
+                <span className="emoji">🪞</span>You're spending more on your hair than ever, and seeing less for it.
               </p>
               <p className="timeline-consequence">
-                so the breakage outruns the growth, and your length never actually moves.
+                The serum, the bond builder, the silk pillowcase, the supplements. Closer to $1,000 by now. Your hair feels exactly the same.
               </p>
-              <div className="timeline-marginalia">
-                <Hand size={16} color="#2b66c2" rotate={-2}>↘ the damage compounds</Hand>
-              </div>
             </div>
           </Reveal>
 
@@ -47,14 +49,11 @@ export function Recognition() {
               <span className="timeline-wash" />
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">👶</span>Postpartum shedding that didn't come back.
+                <span className="emoji">🌫️</span>You've started believing this is just your hair.
               </p>
               <p className="timeline-consequence">
-                so you wait, and wait, and start to wonder if this is just your hair now.
+                "It just doesn't grow past my shoulders." "I have thin hair, that's just genetics." You've accepted a limit no one taught you was a limit.
               </p>
-              <div className="timeline-marginalia">
-                <Hand size={16} color="#2b66c2" rotate={-3}>↘ it's been 18 months</Hand>
-              </div>
             </div>
           </Reveal>
 
@@ -64,15 +63,11 @@ export function Recognition() {
               <span className="timeline-wash" />
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">🧴</span>Limp and lifeless despite the whole routine.
+                <span className="emoji">🧴</span>The bleach changed it forever and nothing's been the same since.
               </p>
               <p className="timeline-consequence">
-                $200 in the shower and it still looks flat by noon — so you buy the next better thing, and the next, ~$1,000 deep this year alone.
+                You wouldn't go back, but your ends are paying for it. And no $80 mask is bringing them back.
               </p>
-              <div className="timeline-meter">
-                <span className="timeline-meter-bar"><span className="timeline-meter-fill" /></span>
-                ~$1,000 this year
-              </div>
             </div>
           </Reveal>
 
@@ -82,14 +77,11 @@ export function Recognition() {
               <span className="timeline-wash" />
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">😮‍💨</span>Stress is showing in your hair before it shows anywhere else.
+                <span className="emoji">📷</span>You see hair on TikTok and assume those girls were just born with it.
               </p>
               <p className="timeline-consequence">
-                the shedding in the brush, the temple thinning, the texture change you can feel before you can see.
+                They weren't. Almost none of them were. You just haven't seen what they do behind the scenes.
               </p>
-              <div className="timeline-photos" aria-hidden="true">
-                {[0,1,2,3,4,5].map(n => <span key={n} className="timeline-photo" />)}
-              </div>
             </div>
           </Reveal>
 
@@ -97,8 +89,8 @@ export function Recognition() {
 
         <Reveal style={{ marginTop: 36 }}>
           <InlineTestimonial
-            name="Maya" age={28} flag="🇺🇸"
-            quote="My hair has been stuck at the same length for years. Two weeks in I'm already seeing baby hairs and less shedding — for the first time it actually feels like it's going somewhere."
+            name="Lina" age={28} flag="🇩🇪"
+            quote="I thought my hair just couldn't grow past my shoulders. Turns out it could — I was just snapping it off faster than it grew."
             avatar="profile-4.webp"
             style={{ margin: "0 auto" }}
           />
@@ -109,7 +101,7 @@ export function Recognition() {
             href="https://join.hairqare.co/the-quiz-haircare"
             style={{ color: "var(--orange-700)", fontWeight: 700, fontSize: 16, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}
           >
-            Tell me why this is happening <Icon name="arrow-right" size={17} />
+            Show me what to change in my routine <Icon name="arrow-right" size={17} />
           </a>
         </Reveal>
       </div>
