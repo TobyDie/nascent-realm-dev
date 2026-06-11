@@ -6,18 +6,18 @@ export function Science() {
     <section className="bg-white" id="science">
       <div className="wrap">
         <Reveal style={{ marginBottom: 28, textAlign: "center" }}>
-          <Eyebrow style={{ color: "var(--slate)" }}>WHY is it happening?</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12, maxWidth: 680, marginInline: "auto" }}>
-            Your hair isn't broken. <em>You're just running a routine no one ever actually taught you.</em>
+          <Eyebrow style={{ color: "var(--slate)" }}>WHY IS IT HAPPENING</Eyebrow>
+          <h2 className="h2" style={{ marginTop: 12, maxWidth: 720, marginInline: "auto" }}>
+            It's not your hair. <em>It's the things no one taught you about how hair actually grows.</em>
           </h2>
         </Reveal>
 
         <Reveal>
           <div className="biology-callout">
-            <div className="biology-callout-eyebrow">Why this is happening</div>
-            <h3 className="biology-callout-headline">It's not you. It's your biology.</h3>
+            <div className="biology-callout-eyebrow">The myth</div>
+            <h3 className="biology-callout-headline">The "terminal length" myth</h3>
             <p className="biology-callout-body">
-              Stress hormones, low iron and ferritin, and years of color/heat/surfactant damage quietly cap your hair long before anything hormonal is the issue. Most products are built to mask symptoms, not fix any of this — which is exactly why nothing's been working.
+              Most women never get past shoulder length — not because their hair can't grow longer, but because their hair is breaking off as fast as it grows. Every product you've used was sold to you as the fix. None of them were ever going to teach you the cause.
             </p>
           </div>
         </Reveal>
@@ -25,19 +25,19 @@ export function Science() {
         <Reveal style={{ marginTop: 22 }}>
           <div className="biology-tile-row">
             <div className="biology-tile">
-              <span className="biology-tile-icon">🌡️</span>
-              <div className="biology-tile-title">Cortisol stays high</div>
-              <div className="biology-tile-sub">Chronic stress pushes follicles into shedding mode — months before you'll connect the dots.</div>
-            </div>
-            <div className="biology-tile">
               <span className="biology-tile-icon">🩸</span>
-              <div className="biology-tile-title">Iron & ferritin are low</div>
-              <div className="biology-tile-sub">Extremely common under 35, almost never tested for — and your follicles need it before almost anything else.</div>
+              <div className="biology-tile-title">Your scalp is the soil</div>
+              <div className="biology-tile-sub">Hair grows from a follicle that needs blood flow, the right nutrients, and the right pH at the surface. Most shampoos disrupt all three.</div>
             </div>
             <div className="biology-tile">
-              <span className="biology-tile-icon">🔥</span>
-              <div className="biology-tile-title">The damage–product cycle</div>
-              <div className="biology-tile-sub">Color, heat and stripping surfactants compound — and the products you bought to fix them often make it worse.</div>
+              <span className="biology-tile-icon">🥦</span>
+              <div className="biology-tile-title">Iron and ferritin run hair growth</div>
+              <div className="biology-tile-sub">Women in their 20s and 30s are the single most deficient demographic. Your body deprioritises hair before almost anything else.</div>
+            </div>
+            <div className="biology-tile">
+              <span className="biology-tile-icon">🧬</span>
+              <div className="biology-tile-title">Damage compounds</div>
+              <div className="biology-tile-sub">Every wash, brush, heat tool, and UV exposure adds a tiny crack. Without a plan to seal them, the crack travels up the strand and snaps the length you grew.</div>
             </div>
           </div>
         </Reveal>
@@ -46,17 +46,17 @@ export function Science() {
           <div className="science-leadin" style={{ marginTop: 40 }}>
             <div className="science-leadin-card">
               <span className="leadin-num">1</span>
-              <p>Chronic stress keeps <strong>cortisol elevated</strong>, which shortens the growth phase and pushes more follicles into shedding. You see it first as extra hair in the brush and a slower-than-usual length gain — long before anything dramatic.</p>
+              <p>Hair grows about a centimetre a month — for everyone. The reason most women's hair doesn't look like it's growing isn't a slow follicle. It's that <strong>the end of the strand is being destroyed at the same rate as the root is producing it.</strong></p>
             </div>
             <HandArrow direction="right" size={56} style={{ alignSelf: "center", opacity: 0.7 }} />
             <div className="science-leadin-card">
               <span className="leadin-num">2</span>
-              <p>Underneath that, <strong>iron and ferritin run low</strong> — extremely common in women under 35, almost never flagged on routine bloodwork. Hair is the first thing your body deprioritises when those run out.</p>
+              <p>Every product on the shelf is solving for one strand at a time. <strong>None of them touch the system:</strong> the scalp, the nutrients, the routine, the protection. That's why you stack five products and still see nothing.</p>
             </div>
             <HandArrow direction="right" size={56} style={{ alignSelf: "center", opacity: 0.7 }} />
             <div className="science-leadin-card science-leadin-card-final">
               <span className="leadin-num">3</span>
-              <p>On top of all that, <strong>color, heat and stripping surfactants compound</strong> on the cuticle. The breakage outruns the growth, so your length never moves — even when the follicle is doing its job. A shampoo can't fix any of this, because it's not the right tool for any of it.</p>
+              <p><strong>Hair length is a math problem.</strong> Growth minus breakage. The whole industry has been selling you growth boosters. The real lever is breakage. Once you fix it, the hair you've been growing all along finally shows up.</p>
             </div>
           </div>
         </Reveal>
