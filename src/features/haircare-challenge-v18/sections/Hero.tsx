@@ -32,12 +32,12 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                 display: "inline-block",
               }}
             >
-              Become the most beautiful version of yourself
+              14-Day Haircare Challenge
             </div>
 
             {/* Validation paragraph (H1/CTA/urgency/refund/cohort moved into HeroCarousel above) */}
-            <p className="hero-validation" style={{ marginTop: 6, marginBottom: 20, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)" }}>
-              The hair you had in your 20s isn't gone forever. Your body has changed but your habits haven't. Learn how to build a hair care routine for your 30's and enjoy good hair days for decades to come.
+            <p className="hero-validation" style={{ marginTop: 6, marginBottom: 20 }}>
+              Better hair in your 30s takes less than you think. Not more.
             </p>
 
             {/* Bullets, proof layer, below the CTA */}
@@ -71,7 +71,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                   fetchPriority="high"
                 />
                 <div className="hero-image-overlay-text" aria-hidden="true">
-                  Become the most beautiful version of yourself
+                  14-Day Haircare Challenge
                 </div>
               </div>
               <div style={{ position: "absolute", top: -14, left: -8, zIndex: 4 }}>
