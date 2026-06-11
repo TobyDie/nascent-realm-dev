@@ -11,7 +11,7 @@ import {
 export function HowItWorks({ onCta }: { onCta?: () => void }) {
   return (
     <section className="bg-white">
-      <Anno>Section 7 — How it works</Anno>
+      <Anno>Section 7, How it works</Anno>
       <div className="wrap" style={{ maxWidth: 720 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
           <Eyebrow>The structure</Eyebrow>
@@ -45,7 +45,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
             <div className="timeline-step">
               <div className="timeline-circle">02</div>
               <div className="timeline-card">
-                <div className="timeline-tag">Days 1–14 · 🎥</div>
+                <div className="timeline-tag">Days 1-14 · 🎥</div>
                 <h3 className="h3" style={{ marginBottom: 6, marginTop: 2 }}>10 minutes a day</h3>
                 <p className="p" style={{ fontSize: 15.5, margin: 0 }}>
                   One daily coaching video. Each day builds on the last. You customise everything to your hair type and your body.
@@ -73,7 +73,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
         <Reveal style={{ marginTop: 36 }}>
           <div style={{ background: "var(--cream)", borderRadius: 18, padding: "22px 24px", textAlign: "center", border: "1px solid var(--line)" }}>
             <p className="p" style={{ margin: 0, fontSize: 16.5, lineHeight: 1.55 }}>
-              This is not passive content. You <em>do</em> things. You notice things. <strong>By day 14 you won't need to buy another product</strong> — because you'll know what your hair actually needs.
+              This is not passive content. You <em>do</em> things. You notice things. <strong>By day 14 you won't need to buy another product</strong>, because you'll know what your hair actually needs.
             </p>
           </div>
         </Reveal>
@@ -90,7 +90,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
         </Reveal>
 
         <Reveal className="center" style={{ marginTop: 26 }}>
-          <Button id="cta-how-it-works" onClick={onCta} icon="arrow-right">I'm ready — start now</Button>
+          <Button id="cta-how-it-works" onClick={onCta} icon="arrow-right">I'm ready, start now</Button>
         </Reveal>
       </div>
     </section>

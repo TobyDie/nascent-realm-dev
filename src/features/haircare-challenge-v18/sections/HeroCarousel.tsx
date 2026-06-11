@@ -1,15 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "../primitives";
 
 type Slide = {
-  headline: string;
+  headlineLead: string;
+  headlineAccent: string;
   caption: string;
   alt: string;
   imageBrief: string;
-  overlay: string;
-  overlayPos?: "top" | "bottom" | "topCorner";
-  overlayStyle?: "handwritten" | "anchor" | "label";
+  pinText: string;
+  pinRotate: number;
+  pinPos?: "tl" | "tr" | "bl" | "br";
 };
 
 const SLIDES: Slide[] = [
@@ -17,46 +19,47 @@ const SLIDES: Slide[] = [
     alt: "Sarah in her kitchen, hair down past her shoulders in soft morning light.",
     imageBrief:
       "Sarah in her kitchen · hair past shoulders · soft morning light · phone-shot, no styling · hair is the focal point.",
-    overlay: "“The best hair of my life and I'm in my 30s.”",
-    overlayPos: "top",
-    overlayStyle: "handwritten",
-    headline: "Achieve the best hair of your life in your 30s. And beyond.",
+    pinText: "★ best hair of my life",
+    pinRotate: -4,
+    pinPos: "tl",
+    headlineLead: "Achieve the best hair of your life",
+    headlineAccent: "in your 30s. And beyond.",
     caption:
-      "Most women think their hair peaks in their 20s — that from 30 on, it just thins out and dulls down. I believed it too… until I figured out what the beauty industry never tells you. Now I have better hair than I did at 25. So do 250,000 women I've coached.",
+      "Most women think their hair peaks in their 20s, that from 30 on, it just thins out and dulls down. I believed it too, until I figured out what the beauty industry never tells you. Now I have better hair than I did at 25. So do 250,000 women I've coached.",
   },
   {
     alt: "Stacked DM-style screenshot quotes pinned like sticky notes.",
     imageBrief:
-      "Stacked overlay of real DM-style screenshots, pinned like sticky notes. No Sarah — her audience's voice reflected back.",
-    overlay:
-      "“My ponytail is half the size it used to be.”  ·  “More products than ever, less to show for it.”  ·  “I wear it up every day now.”  ·  “My stylist said it's just my age.”  ·  “I don't recognize my hair in photos.”",
-    overlayPos: "top",
-    overlayStyle: "label",
-    headline: "It's not your age. It's not your genes. And it's not in your head.",
+      "Stacked overlay of real DM-style screenshots, pinned like sticky notes. No Sarah, her audience's voice reflected back.",
+    pinText: "not your age",
+    pinRotate: 5,
+    pinPos: "tr",
+    headlineLead: "It's not your age. It's not your genes.",
+    headlineAccent: "And it's not in your head.",
     caption:
-      "Something shifted after 30. Maybe a pregnancy. Maybe stress, or a year of bad sleep, or a slow hormonal change you didn't notice until the shower drain told you. You've spent more on hair in the last two years than the previous ten, and you have less to show for it. There's a reason — and once you understand it, everything changes.",
+      "Something shifted after 30. Maybe a pregnancy. Maybe stress, or a year of bad sleep, or a slow hormonal change you didn't notice until the shower drain told you. You've spent more on hair in the last two years than the previous ten, and you have less to show for it. There's a reason, and once you understand it, everything changes.",
   },
   {
     alt: "Split visual: cluttered counter of 20+ products vs Sarah's simple DIY ingredients.",
     imageBrief:
-      "Split image — LEFT: cluttered bathroom counter, 20+ designer bottles, caption ‘My old routine.’  RIGHT: Sarah in her kitchen with DIY shampoo ingredients (aloe, oils, glass jar), caption ‘What replaced it.’",
-    overlay:
-      "15 years in the beauty industry. The answer wasn't in any of those bottles.",
-    overlayPos: "topCorner",
-    overlayStyle: "label",
-    headline: "I got this hair by doing less. Not more.",
+      "Split image, LEFT: cluttered bathroom counter, 20+ designer bottles, caption 'My old routine.'  RIGHT: Sarah in her kitchen with DIY shampoo ingredients (aloe, oils, glass jar), caption 'What replaced it.'",
+    pinText: "less, not more",
+    pinRotate: -3,
+    pinPos: "tl",
+    headlineLead: "I got this hair by doing less.",
+    headlineAccent: "Not more.",
     caption:
-      "I worked in beauty for 15 years. I had access to every product, every salon, every treatment that promised the world. My hair only got worse. So I stopped buying and started learning — how hair actually grows, what it actually needs, and which ingredients were quietly working against me. I threw most of it out. My hair came back stronger than it had been in a decade.",
+      "I worked in beauty for 15 years. I had access to every product, every salon, every treatment that promised the world. My hair only got worse. So I stopped buying and started learning, how hair actually grows, what it actually needs, and which ingredients were quietly working against me. I threw most of it out. My hair came back stronger than it had been in a decade.",
   },
   {
     alt: "Pinterest-style grid of customer before-and-afters with an anchor stat.",
     imageBrief:
-      "Pinterest-style grid of 6–9 real customer before-and-afters, slightly overlapping, camera-roll feel. One large anchor stat layered on top. One floating selfie-style testimonial.",
-    overlay:
-      "250,000 women. Same method. Same results.   —   “I never thought I'd feel confident about my hair again.” — Ana, 32",
-    overlayPos: "top",
-    overlayStyle: "anchor",
-    headline: "This isn't theory. A quarter of a million women have already done it.",
+      "Pinterest-style grid of 6-9 real customer before-and-afters, slightly overlapping, camera-roll feel. One large anchor stat layered on top. One floating selfie-style testimonial.",
+    pinText: "250,000 women",
+    pinRotate: 4,
+    pinPos: "tr",
+    headlineLead: "This isn't theory.",
+    headlineAccent: "A quarter of a million women have already done it.",
     caption:
       "Postpartum moms watching their hair fall out in clumps. Women in their late 30s who'd written off their hair entirely. Busy professionals who didn't have time for a 10-step routine. They all started exactly where you are right now. You can read their stories in our community before you ever pay a cent.",
   },
@@ -64,48 +67,49 @@ const SLIDES: Slide[] = [
     alt: "Notes-app style Q&A thread on cream background, Sarah's portrait at top.",
     imageBrief:
       "DM / notes-app mock-up on soft cream. Looks like Sarah is texting back. Small portrait of her at the top of the thread makes it her voice.",
-    overlay:
-      "❓ “I've tried everything.” 💬 You haven't tried understanding your own hair yet.   ❓ “Is 14 days enough?” 💬 For shine, less shedding, calmer scalp — yes.   ❓ “Will I need new products?” 💬 You'll throw out more than you buy.   ❓ “What if it doesn't work?” 💬 You get your money back.",
-    overlayPos: "top",
-    overlayStyle: "label",
-    headline: "The questions every woman asks me before she joins.",
+    pinText: "real Qs, real As",
+    pinRotate: -5,
+    pinPos: "tl",
+    headlineLead: "The questions every woman asks me",
+    headlineAccent: "before she joins.",
     caption:
-      "These are the same questions I get in my DMs every day — and the same honest answers I'd give you in person. No fine print. No catch.",
+      "These are the same questions I get in my DMs every day, and the same honest answers I'd give you in person. No fine print. No catch.",
   },
   {
     alt: "Sarah outside in golden-hour light, hair loose, candid smile.",
     imageBrief:
-      "Sarah outside in golden-hour light · hair loose · candid smile · the ‘after’ frame for the viewer.",
-    overlay: "“Two weeks from now, you'll wish you'd started earlier.”",
-    overlayPos: "bottom",
-    overlayStyle: "handwritten",
-    headline: "Your hair. Your confidence. The way you walk into a room.",
+      "Sarah outside in golden-hour light · hair loose · candid smile · the 'after' frame for the viewer.",
+    pinText: "see you on day 1",
+    pinRotate: 3,
+    pinPos: "br",
+    headlineLead: "Your hair. Your confidence.",
+    headlineAccent: "The way you walk into a room.",
     caption:
-      "You can spend the next two weeks the way you spent the last two — same routine, same frustration, same drain. Or you can finally learn what your hair has been trying to tell you. 250,000 women have already made that choice. I'll see you inside on day one.",
+      "You can spend the next two weeks the way you spent the last two, same routine, same frustration, same drain. Or you can finally learn what your hair has been trying to tell you. 250,000 women have already made that choice. I'll see you inside on day one.",
   },
 ];
 
 function SlideMedia({ slide, index }: { slide: Slide; index: number }) {
   const posClass =
-    slide.overlayPos === "bottom"
-      ? "is-bottom"
-      : slide.overlayPos === "topCorner"
-      ? "is-top-corner"
-      : "is-top";
-  const styleClass =
-    slide.overlayStyle === "handwritten"
-      ? "is-handwritten"
-      : slide.overlayStyle === "anchor"
-      ? "is-anchor"
-      : "is-label";
+    slide.pinPos === "tr"
+      ? "is-tr"
+      : slide.pinPos === "bl"
+      ? "is-bl"
+      : slide.pinPos === "br"
+      ? "is-br"
+      : "is-tl";
   return (
     <div className="hq-v18-hc-ph" role="img" aria-label={slide.alt}>
       <span className="hq-v18-hc-ph-brief">
         [ Slide {index + 1} image · {slide.imageBrief} ]
       </span>
-      <div className={`hq-v18-hc-overlay ${posClass} ${styleClass}`}>
-        {slide.overlay}
-      </div>
+      <span
+        className={`hq-v18-hc-pin ${posClass}`}
+        style={{ transform: `rotate(${slide.pinRotate}deg)` }}
+      >
+        {slide.pinText}
+      </span>
+      <span className="hq-v18-hc-fade" aria-hidden="true" />
     </div>
   );
 }
@@ -205,9 +209,15 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
                   </div>
                   <div className="hq-v18-hc-text">
                     {i === 0 ? (
-                      <h1 className="hq-v18-hc-headline">{s.headline}</h1>
+                      <h1 className="hq-v18-hc-headline">
+                        <span className="lead">{s.headlineLead}</span>{" "}
+                        <span className="accent">{s.headlineAccent}</span>
+                      </h1>
                     ) : (
-                      <h2 className="hq-v18-hc-headline">{s.headline}</h2>
+                      <h2 className="hq-v18-hc-headline">
+                        <span className="lead">{s.headlineLead}</span>{" "}
+                        <span className="accent">{s.headlineAccent}</span>
+                      </h2>
                     )}
                     <p className="hq-v18-hc-caption">{s.caption}</p>
                   </div>
@@ -237,7 +247,7 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
         </div>
 
         <div className="hq-v18-hc-thumbs" role="tablist" aria-label="Jump to slide">
-          {SLIDES.map((s, i) => (
+          {SLIDES.map((_, i) => (
             <button
               key={i}
               type="button"
@@ -259,15 +269,9 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
         </div>
 
         <div className="hq-v18-hc-cta-wrap">
-          <button
-            type="button"
-            className="hq-v18-hc-cta"
-            onClick={onCta}
-            data-analytics="hero_cta_click"
-            data-slide={active + 1}
-          >
-            Start the 14-Day Challenge
-          </button>
+          <Button id="cta-hero-carousel" onClick={onCta} icon="arrow-right">
+            Join the challenge
+          </Button>
           <div className="hq-v18-hc-trust">
             <span>★ 4.9</span>
             <span aria-hidden="true">·</span>

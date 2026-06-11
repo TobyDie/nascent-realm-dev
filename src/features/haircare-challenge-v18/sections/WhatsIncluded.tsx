@@ -18,7 +18,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
   const joining = useJoiningCount();
   return (
     <section className="bg-cream" id="included">
-      <Anno>Section 8 — What's included (premium value)</Anno>
+      <Anno>Section 8, What's included (premium value)</Anno>
       <div className="wrap-wide">
         <Reveal style={{ textAlign: "center", marginBottom: 28 }}>
           <Eyebrow>Inside the bundle</Eyebrow>
@@ -26,7 +26,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
             10 pieces. One complete system. <Underline>Yours forever.</Underline>
           </h2>
           <p className="lead" style={{ marginTop: 14, maxWidth: 580, marginInline: "auto" }}>
-            A full library plus a personalised assessment — built specifically for women 30–45.
+            A full library plus a personalised assessment, built specifically for women 30-45.
           </p>
         </Reveal>
 
@@ -189,7 +189,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
                 <div className="pricing-today-amount">$37</div>
                 <span className="pricing-save">You save $503 · 93% off bundle value</span>
               </div>
-              <Button id="cta-whats-included" onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center", marginTop: 22 }}>Get everything — start now</Button>
+              <Button id="cta-whats-included" onClick={onCta} icon="arrow-right" style={{ width: "100%", justifyContent: "center", marginTop: 22 }}>Get everything, start now</Button>
               <div style={{ marginTop: 14, display: "flex", justifyContent: "center" }}>
                 <GuaranteeBadge size="sm" />
               </div>
