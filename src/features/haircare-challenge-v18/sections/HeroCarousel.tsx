@@ -3,7 +3,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type Slide = {
-  chapter: string;
   headline: string;
   caption: string;
   image?: string;
@@ -12,7 +11,6 @@ type Slide = {
 
 const SLIDES: Slide[] = [
   {
-    chapter: "the proof",
     headline: "120cm of bleached hair. Two products. About $10 a month.",
     caption:
       "Healthy hair was never about more products. Once I figured that out, I never went back — and I've been teaching it since.",
@@ -21,35 +19,30 @@ const SLIDES: Slide[] = [
     alt: "Sarah showing her long bleached hair in natural light.",
   },
   {
-    chapter: "the search",
     headline: "I tried twelve shampoos in twelve months. None of them were the problem.",
     caption:
       "By the time most women find us, they've tried five, ten, twenty things. That's not a coincidence.",
     alt: "Sarah at her bathroom counter.",
   },
   {
-    chapter: "the founder",
     headline: "Brands paid me $20,000 to promote products that were destroying my hair.",
     caption:
       "When I figured out what my hair actually needed, I walked away from the deals and started teaching what they wouldn't.",
     alt: "Sarah, founder of HairQare.",
   },
   {
-    chapter: "the method",
     headline: "On day 3 you make your own shampoo. The one you'll still use in five years.",
     caption:
       "It's not a routine you buy — it's a method you keep. Two products, your kitchen, about $10 a month from here on.",
     alt: "Sarah making her DIY shampoo at her kitchen counter.",
   },
   {
-    chapter: "the community",
     headline: "250,000 women. 149 countries. The same two products on the counter.",
     caption:
       "This isn't a launch. It's a community that's been doing this for years. Sunday's cohort is the next one in.",
     alt: "Sarah with HairQare community members.",
   },
   {
-    chapter: "the start",
     headline: "14 days. Two products. A method you keep for life.",
     caption:
       "Sunday's cohort is the next one in. 30-day money-back guarantee, no questions asked.",
@@ -85,7 +78,7 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
     setActive(idx);
     reachedRef.current = Math.max(reachedRef.current, idx);
     if (liveRef.current) {
-      liveRef.current.textContent = `${SLIDES[idx].chapter}, slide ${idx + 1} of ${SLIDES.length}`;
+      liveRef.current.textContent = `Slide ${idx + 1} of ${SLIDES.length}`;
     }
     if (from !== idx && sectionRef.current) {
       sectionRef.current.setAttribute("data-hero-advance-from", String(from + 1));
@@ -127,13 +120,12 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
   }, []);
 
   const scrollTo = (i: number) => embla?.scrollTo(i);
-  const current = SLIDES[active];
 
   return (
     <section
       id="hero-carousel"
       ref={sectionRef}
-      className="hq-v18-hc"
+      className={`hq-v18-hc ${active === 0 ? "is-first" : ""}`}
       aria-label="HairQare story"
       aria-roledescription="carousel"
       role="region"
@@ -143,14 +135,6 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
       <div ref={liveRef} aria-live="polite" className="hq-v18-hc-sr" />
 
       <div className="hq-v18-hc-inner">
-        <div className="hq-v18-hc-eyebrow">
-          <span className="hq-v18-hc-eyebrow-label">Sarah's story</span>
-          <span className="hq-v18-hc-eyebrow-dot" aria-hidden="true">·</span>
-          <span className="hq-v18-hc-eyebrow-hint">
-            swipe <span className="hq-v18-hc-eyebrow-arrow" aria-hidden="true">→</span>
-          </span>
-        </div>
-
         <div className="hq-v18-hc-stage">
           <div className="hq-v18-hc-viewport" ref={emblaRef}>
             <div className="hq-v18-hc-track">
@@ -178,10 +162,6 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
                     ) : (
                       <Placeholder index={i} alt={s.alt} />
                     )}
-                    <span className="hq-v18-hc-chip hq-v18-hc-chip-tl">{s.chapter}</span>
-                    <span className="hq-v18-hc-chip hq-v18-hc-chip-tr">
-                      {i + 1} / {SLIDES.length}
-                    </span>
                   </div>
                   <div className="hq-v18-hc-text">
                     {i === 0 ? (
@@ -223,7 +203,7 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
               type="button"
               role="tab"
               aria-selected={active === i}
-              aria-label={`Slide ${i + 1}: ${s.chapter}`}
+              aria-label={`Go to slide ${i + 1}`}
               className={`hq-v18-hc-thumb ${active === i ? "is-active" : ""}`}
               onClick={() => scrollTo(i)}
               data-analytics="hero_advance"
@@ -252,15 +232,6 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
           >
             Start the 14-Day Challenge
           </button>
-          <button
-            type="button"
-            className="hq-v18-hc-secondary"
-            onClick={onCta}
-            data-analytics="hero_secondary_click"
-            data-slide={active + 1}
-          >
-            See real results →
-          </button>
           <div className="hq-v18-hc-trust">
             <span>★ 4.9</span>
             <span aria-hidden="true">·</span>
@@ -268,9 +239,6 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
             <span aria-hidden="true">·</span>
             <span>149 countries</span>
           </div>
-          <span className="hq-v18-hc-progress">
-            Chapter {active + 1} of {SLIDES.length} — {current.chapter}
-          </span>
         </div>
       </div>
     </section>
