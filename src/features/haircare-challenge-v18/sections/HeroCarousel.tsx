@@ -191,8 +191,8 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
 
       <div className="hq-v18-hc-inner">
         <h1 className="hq-v18-hc-h1 h-hero">
-          <span className="hc-lead">The best hair of your life,</span>{" "}
-          <span className="hc-accent">in your 30s. And beyond.</span>
+          <span className="hc-lead">Achieve the best hair of your life in your</span>{" "}
+          <span className="hc-accent">30s and beyond.</span>
         </h1>
 
         <div className="hq-v18-hc-stage">
