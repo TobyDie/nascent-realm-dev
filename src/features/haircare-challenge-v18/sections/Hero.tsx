@@ -83,8 +83,8 @@ export function Hero({ onCta }: { onCta?: () => void }) {
         </div>
       </div>
 
-      {/* trust bar */}
-      <div style={{ marginTop: 48, background: "rgba(255,255,255,0.55)", borderTop: "1px solid var(--line)" }}>
+      {/* trust bar — shares cream background with VideoTestimonials below */}
+      <div style={{ marginTop: 48, background: "transparent", borderTop: "1px solid var(--line)" }}>
         <div className="wrap-wide community-trust">
           {/* Row 1, community proof with overlapping avatars */}
           <div className="ct-row ct-community">
