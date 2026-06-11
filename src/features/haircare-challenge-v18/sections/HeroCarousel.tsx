@@ -102,11 +102,26 @@ function SlideMedia({ slide, index }: { slide: Slide; index: number }) {
       : slide.pinPos === "br"
       ? "is-br"
       : "is-tl";
+  const cdn = (file: string, w: number) =>
+    `https://pub.hairqare.co/cdn-cgi/image/width=${w},quality=80,format=auto/${encodeURIComponent(file)}`;
   return (
     <div className="hq-v18-hc-ph" role="img" aria-label={slide.alt}>
-      <span className="hq-v18-hc-ph-brief">
-        [ Slide {index + 1} image · {slide.imageBrief} ]
-      </span>
+      {slide.imageFile ? (
+        <img
+          className="hq-v18-hc-img"
+          src={cdn(slide.imageFile, 800)}
+          srcSet={`${cdn(slide.imageFile, 500)} 500w, ${cdn(slide.imageFile, 800)} 800w, ${cdn(slide.imageFile, 1200)} 1200w`}
+          sizes="(max-width: 720px) 100vw, 720px"
+          alt={slide.alt}
+          loading={index === 0 ? "eager" : "lazy"}
+          fetchPriority={index === 0 ? "high" : "auto"}
+          decoding="async"
+        />
+      ) : (
+        <span className="hq-v18-hc-ph-brief">
+          [ Slide {index + 1} image · {slide.imageBrief} ]
+        </span>
+      )}
       <span
         className={`hq-v18-hc-pin ${posClass}`}
         style={{ transform: `rotate(${slide.pinRotate}deg)` }}
