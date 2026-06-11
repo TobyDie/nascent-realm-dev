@@ -1,5 +1,6 @@
 import "./haircare-challenge-v18.css";
 import { AgeStripe } from "./sections/AgeStripe";
+import { HeroCarousel } from "./sections/HeroCarousel";
 import { Hero } from "./sections/Hero";
 import { Recognition } from "./sections/Recognition";
 import { Science } from "./sections/Science";
@@ -39,6 +40,7 @@ export function HaircareChallengePageV18() {
   return (
     <div className="hq-sp-v18 rooted">
       <AgeStripe />
+      <HeroCarousel onCta={scrollToStart} />
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
       <Recognition />
