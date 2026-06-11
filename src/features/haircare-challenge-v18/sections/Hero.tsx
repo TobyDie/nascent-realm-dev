@@ -1,7 +1,5 @@
-import { Anno, Reveal, Button, GuaranteeBadge, Icon, Pin, Trustpilot } from "../primitives";
-import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
+import { Anno, Reveal, Pin, Trustpilot } from "../primitives";
 import { r2img, AVATAR_W } from "../img";
-import { useStartDate, fmtShort } from "../useStartDate";
 
 const HERO_AVATARS: string[] = [
   "hero-avatar-11.webp", "hero-avatar-13.webp", "hero-avatar-14.webp", "hero-avatar-15.webp", "hero-avatar-16.webp",
@@ -9,8 +7,6 @@ const HERO_AVATARS: string[] = [
 ];
 
 export function Hero({ onCta }: { onCta?: () => void }) {
-  const joining = useJoiningCount();
-  const startDate = useStartDate();
   return (
     <section className="bg-cream hero-section" style={{ paddingTop: 48, paddingBottom: 0 }}>
       <Anno>Section 1, Hero / recognition</Anno>
@@ -39,29 +35,10 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               Become the most beautiful version of yourself
             </div>
 
-            {/* H1, the single emotional hook, short enough for mobile */}
-            <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
-              <span style={{ color: "#090909" }}>Achieve the best hair of your life in your </span>
-              <span style={{ color: "#e97b00" }}>30s and beyond.</span>
-            </h1>
-
-            {/* CTA block, must be above fold on mobile */}
-            <div id="hero-cta-sentinel" style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start", marginBottom: 24 }}>
-              <Button id="cta-hero" onClick={onCta} icon="arrow-right">Join the challenge</Button>
-              <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
-                85% off · today only
-              </span>
-              <GuaranteeBadge size="sm" />
-              {/* cohort line, under CTA, not above headline */}
-              <span className="hero-cohort">
-                <Icon name="calendar-heart" size={13} color="var(--orange-600)" />
-                Next cohort: <strong className="start-date">{startDate ? fmtShort(startDate) : "Fri, June 6th"}</strong> · {formatJoiningCount(joining)} women joining this week
-              </span>
-              {/* Validation paragraph, restored, after cohort line */}
-              <p className="hero-validation" style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)" }}>
-                The hair you had in your 20s isn't gone forever. Your body has changed but your habits haven't. Learn how to build a hair care routine for your 30's and enjoy good hair days for decades to come.
-              </p>
-            </div>
+            {/* Validation paragraph (H1/CTA/urgency/refund/cohort moved into HeroCarousel above) */}
+            <p className="hero-validation" style={{ marginTop: 6, marginBottom: 20, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)" }}>
+              The hair you had in your 20s isn't gone forever. Your body has changed but your habits haven't. Learn how to build a hair care routine for your 30's and enjoy good hair days for decades to come.
+            </p>
 
             {/* Bullets, proof layer, below the CTA */}
             <ul className="hero-bullets">
