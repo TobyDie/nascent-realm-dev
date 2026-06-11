@@ -10,6 +10,9 @@ type Slide = {
   pinRotate: number;
   pinPos?: "tl" | "tr" | "bl" | "br";
   scriptText: string;
+  headlineLead: string;
+  headlineAccent: string;
+  caption: string;
 };
 
 const SLIDES: Slide[] = [
@@ -21,6 +24,10 @@ const SLIDES: Slide[] = [
     pinRotate: -4,
     pinPos: "tl",
     scriptText: "best hair of your 30s",
+    headlineLead: "The best hair of your life,",
+    headlineAccent: "in your 30s.",
+    caption:
+      "Not the hair you had at 22. Better. Without salon visits or a 12-step routine.",
   },
   {
     alt: "Stacked DM-style screenshot quotes pinned like sticky notes.",
@@ -30,6 +37,10 @@ const SLIDES: Slide[] = [
     pinRotate: 5,
     pinPos: "tr",
     scriptText: "not your age. not your genes.",
+    headlineLead: "It's not your age.",
+    headlineAccent: "Not your genes.",
+    caption:
+      "It's that no one taught you what your hair actually needs after 30. Now someone has.",
   },
   {
     alt: "Split visual: cluttered counter of 20+ products vs Sarah's simple DIY ingredients.",
@@ -39,6 +50,10 @@ const SLIDES: Slide[] = [
     pinRotate: -3,
     pinPos: "tl",
     scriptText: "i did less, not more",
+    headlineLead: "I did less,",
+    headlineAccent: "not more.",
+    caption:
+      "Threw out the 20+ bottles. Replaced them with one simple DIY routine. My hair came back.",
   },
   {
     alt: "Pinterest-style grid of customer before-and-afters with an anchor stat.",
@@ -48,6 +63,10 @@ const SLIDES: Slide[] = [
     pinRotate: 4,
     pinPos: "tr",
     scriptText: "250,000 women, already",
+    headlineLead: "250,000 women.",
+    headlineAccent: "The same shift.",
+    caption:
+      "Not a fluke. A pattern — across 149 countries, every hair type, every stage of life.",
   },
   {
     alt: "Notes-app style Q&A thread on cream background, Sarah's portrait at top.",
@@ -57,6 +76,10 @@ const SLIDES: Slide[] = [
     pinRotate: -5,
     pinPos: "tl",
     scriptText: "every question, answered",
+    headlineLead: "Every question",
+    headlineAccent: "you have, answered.",
+    caption:
+      "Postpartum. Perimenopause. Color-treated. Fine, thick, curly. Sarah has heard it and answered it.",
   },
   {
     alt: "Sarah outside in golden-hour light, hair loose, candid smile.",
@@ -66,6 +89,10 @@ const SLIDES: Slide[] = [
     pinRotate: 3,
     pinPos: "br",
     scriptText: "see you on day one",
+    headlineLead: "Two weeks from today,",
+    headlineAccent: "you'll look back.",
+    caption:
+      "The only question is whether you started, or you didn't. See you on day one.",
   },
 ];
 
@@ -172,10 +199,10 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
       <div ref={liveRef} aria-live="polite" className="hq-v18-hc-sr" />
 
       <div className="hq-v18-hc-inner">
-        <h2 className="hq-v18-hc-h1">
+        <h1 className="hq-v18-hc-h1 h-hero">
           <span className="lead">The best hair of your life,</span>{" "}
           <span className="accent">in your 30s. And beyond.</span>
-        </h2>
+        </h1>
 
         <div className="hq-v18-hc-stage">
           <div className="hq-v18-hc-viewport" ref={emblaRef}>
@@ -216,6 +243,14 @@ export function HeroCarousel({ onCta }: { onCta?: () => void }) {
           >
             <ChevronRight size={20} />
           </button>
+        </div>
+
+        <div className="hq-v18-hc-caption" aria-live="polite">
+          <h3 className="hq-v18-hc-cap-h">
+            <span className="lead">{SLIDES[active].headlineLead}</span>{" "}
+            <span className="accent">{SLIDES[active].headlineAccent}</span>
+          </h3>
+          <p className="hq-v18-hc-cap-p">{SLIDES[active].caption}</p>
         </div>
 
         <div className="hq-v18-hc-thumbs" role="tablist" aria-label="Jump to slide">
