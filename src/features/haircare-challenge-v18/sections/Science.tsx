@@ -25,7 +25,7 @@ export function Science() {
                   You're still using a haircare routine <span className="fault-emoji">🙅‍♀️</span> built for when you were <Underline>25</Underline>.
                 </h3>
                 <p className="fault-copy">
-                  No one told you it would stop working — so you kept following what used to work, and wondering why nothing is.
+                  No one told you it would stop working, so you kept following what used to work, and wondering why nothing is.
                 </p>
               </div>
             </li>
@@ -38,7 +38,7 @@ export function Science() {
                   You tried to <span className="fault-emoji">🛍️</span> <Underline>buy</Underline> the fix.
                 </h3>
                 <p className="fault-copy">
-                  In your 30s, you earn more but have so much less time — so of course you invested in products. But you can't buy past what no one taught you to understand.
+                  In your 30s, you earn more but have so much less time, so of course you invested in products. But you can't buy past what no one taught you to understand.
                 </p>
               </div>
             </li>
@@ -71,7 +71,7 @@ export function Science() {
 
         <Reveal style={{ marginTop: 28 }}>
           <GreenCallout>
-            <strong>Perimenopause doesn't start at 50.</strong> Hormonal fluctuations that affect your hair can begin as early as 35 — and most doctors never mention it.
+            <strong>Perimenopause doesn't start at 50.</strong> Hormonal fluctuations that affect your hair can begin as early as 35, and most doctors never mention it.
           </GreenCallout>
         </Reveal>
 
@@ -96,7 +96,7 @@ export function Science() {
           <div style={{ background: "var(--lavender)", borderRadius: 20, padding: "32px 36px", position: "relative", maxWidth: 720, marginInline: "auto" }}>
             <Icon name="quote" size={36} color="var(--orange-500)" style={{ position: "absolute", top: 20, right: 24, opacity: 0.5 }} />
             <p style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 22, lineHeight: 1.45, color: "var(--ink)" }}>
-              “This challenge showed me I have to change my habits to get better hair — that my genetics influence my hair, but not nearly as much as I thought.”
+              “This challenge showed me I have to change my habits to get better hair, that my genetics influence my hair, but not nearly as much as I thought.”
             </p>
             <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 12 }}>
               <img src={r2img("profile-13.webp", 96)} alt="Gema" loading="lazy" decoding="async" style={{ width: 44, height: 44, borderRadius: 999, objectFit: "cover", flex: "none" }} />
@@ -128,7 +128,7 @@ export function Science() {
               </div>
               <div className="biology-card-v2-label">Estrogen drops</div>
               <p className="biology-card-v2-body">
-                From your mid-30s, estrogen quietly declines. DHT — the hormone that shrinks follicles — gets the upper hand. Wider part. Thinner ponytail.
+                From your mid-30s, estrogen quietly declines. DHT, the hormone that shrinks follicles, gets the upper hand. Wider part. Thinner ponytail.
               </p>
             </div>
             <div className="biology-card-v2">
@@ -150,7 +150,7 @@ export function Science() {
               </div>
               <div className="biology-card-v2-label">Nutrients don't land</div>
               <p className="biology-card-v2-body">
-                Iron, ferritin, zinc, B12 — the exact nutrients your follicles need — drop with age and absorb less efficiently than they did at 25.
+                Iron, ferritin, zinc, B12, the exact nutrients your follicles need, drop with age and absorb less efficiently than they did at 25.
               </p>
             </div>
           </div>

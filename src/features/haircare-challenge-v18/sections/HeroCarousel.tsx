@@ -22,38 +22,38 @@ const SLIDES: Slide[] = [
     overlayStyle: "handwritten",
     headline: "Achieve the best hair of your life in your 30s. And beyond.",
     caption:
-      "Most women think their hair peaks in their 20s — that from 30 on, it just thins out and dulls down. I believed it too… until I figured out what the beauty industry never tells you. Now I have better hair than I did at 25. So do 250,000 women I've coached.",
+      "Most women think their hair peaks in their 20s, that from 30 on, it just thins out and dulls down. I believed it too… until I figured out what the beauty industry never tells you. Now I have better hair than I did at 25. So do 250,000 women I've coached.",
   },
   {
     alt: "Stacked DM-style screenshot quotes pinned like sticky notes.",
     imageBrief:
-      "Stacked overlay of real DM-style screenshots, pinned like sticky notes. No Sarah — her audience's voice reflected back.",
+      "Stacked overlay of real DM-style screenshots, pinned like sticky notes. No Sarah, her audience's voice reflected back.",
     overlay:
       "“My ponytail is half the size it used to be.”  ·  “More products than ever, less to show for it.”  ·  “I wear it up every day now.”  ·  “My stylist said it's just my age.”  ·  “I don't recognize my hair in photos.”",
     overlayPos: "top",
     overlayStyle: "label",
     headline: "It's not your age. It's not your genes. And it's not in your head.",
     caption:
-      "Something shifted after 30. Maybe a pregnancy. Maybe stress, or a year of bad sleep, or a slow hormonal change you didn't notice until the shower drain told you. You've spent more on hair in the last two years than the previous ten, and you have less to show for it. There's a reason — and once you understand it, everything changes.",
+      "Something shifted after 30. Maybe a pregnancy. Maybe stress, or a year of bad sleep, or a slow hormonal change you didn't notice until the shower drain told you. You've spent more on hair in the last two years than the previous ten, and you have less to show for it. There's a reason, and once you understand it, everything changes.",
   },
   {
     alt: "Split visual: cluttered counter of 20+ products vs Sarah's simple DIY ingredients.",
     imageBrief:
-      "Split image — LEFT: cluttered bathroom counter, 20+ designer bottles, caption ‘My old routine.’  RIGHT: Sarah in her kitchen with DIY shampoo ingredients (aloe, oils, glass jar), caption ‘What replaced it.’",
+      "Split image, LEFT: cluttered bathroom counter, 20+ designer bottles, caption ‘My old routine.’  RIGHT: Sarah in her kitchen with DIY shampoo ingredients (aloe, oils, glass jar), caption ‘What replaced it.’",
     overlay:
       "15 years in the beauty industry. The answer wasn't in any of those bottles.",
     overlayPos: "topCorner",
     overlayStyle: "label",
     headline: "I got this hair by doing less. Not more.",
     caption:
-      "I worked in beauty for 15 years. I had access to every product, every salon, every treatment that promised the world. My hair only got worse. So I stopped buying and started learning — how hair actually grows, what it actually needs, and which ingredients were quietly working against me. I threw most of it out. My hair came back stronger than it had been in a decade.",
+      "I worked in beauty for 15 years. I had access to every product, every salon, every treatment that promised the world. My hair only got worse. So I stopped buying and started learning, how hair actually grows, what it actually needs, and which ingredients were quietly working against me. I threw most of it out. My hair came back stronger than it had been in a decade.",
   },
   {
     alt: "Pinterest-style grid of customer before-and-afters with an anchor stat.",
     imageBrief:
-      "Pinterest-style grid of 6–9 real customer before-and-afters, slightly overlapping, camera-roll feel. One large anchor stat layered on top. One floating selfie-style testimonial.",
+      "Pinterest-style grid of 6-9 real customer before-and-afters, slightly overlapping, camera-roll feel. One large anchor stat layered on top. One floating selfie-style testimonial.",
     overlay:
-      "250,000 women. Same method. Same results.   —   “I never thought I'd feel confident about my hair again.” — Ana, 32",
+      "250,000 women. Same method. Same results.  ,   “I never thought I'd feel confident about my hair again.”, Ana, 32",
     overlayPos: "top",
     overlayStyle: "anchor",
     headline: "This isn't theory. A quarter of a million women have already done it.",
@@ -65,12 +65,12 @@ const SLIDES: Slide[] = [
     imageBrief:
       "DM / notes-app mock-up on soft cream. Looks like Sarah is texting back. Small portrait of her at the top of the thread makes it her voice.",
     overlay:
-      "❓ “I've tried everything.” 💬 You haven't tried understanding your own hair yet.   ❓ “Is 14 days enough?” 💬 For shine, less shedding, calmer scalp — yes.   ❓ “Will I need new products?” 💬 You'll throw out more than you buy.   ❓ “What if it doesn't work?” 💬 You get your money back.",
+      "❓ “I've tried everything.” 💬 You haven't tried understanding your own hair yet.   ❓ “Is 14 days enough?” 💬 For shine, less shedding, calmer scalp, yes.   ❓ “Will I need new products?” 💬 You'll throw out more than you buy.   ❓ “What if it doesn't work?” 💬 You get your money back.",
     overlayPos: "top",
     overlayStyle: "label",
     headline: "The questions every woman asks me before she joins.",
     caption:
-      "These are the same questions I get in my DMs every day — and the same honest answers I'd give you in person. No fine print. No catch.",
+      "These are the same questions I get in my DMs every day, and the same honest answers I'd give you in person. No fine print. No catch.",
   },
   {
     alt: "Sarah outside in golden-hour light, hair loose, candid smile.",
@@ -81,7 +81,7 @@ const SLIDES: Slide[] = [
     overlayStyle: "handwritten",
     headline: "Your hair. Your confidence. The way you walk into a room.",
     caption:
-      "You can spend the next two weeks the way you spent the last two — same routine, same frustration, same drain. Or you can finally learn what your hair has been trying to tell you. 250,000 women have already made that choice. I'll see you inside on day one.",
+      "You can spend the next two weeks the way you spent the last two, same routine, same frustration, same drain. Or you can finally learn what your hair has been trying to tell you. 250,000 women have already made that choice. I'll see you inside on day one.",
   },
 ];
 

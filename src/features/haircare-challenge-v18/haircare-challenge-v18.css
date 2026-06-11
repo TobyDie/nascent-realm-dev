@@ -1,19 +1,19 @@
 /* Google Fonts (Hanken Grotesk, Caveat) imported from src/styles.css top-level. */
 
 /* =====================================================================
-   ROOTED — Design System Foundations
+   ROOTED, Design System Foundations
    Warm, empathetic hair-wellness brand. Editorial serif + clean sans.
    Import this file anywhere you need the brand tokens.
    ===================================================================== */
 /* ---- Webfonts -------------------------------------------------------
    Display serif: Georgia (system-safe, specified in brand brief).
-   Body sans:     Hanken Grotesk (Google Fonts — friendly grotesque).
+   Body sans:     Hanken Grotesk (Google Fonts, friendly grotesque).
    NOTE: Hanken Grotesk is loaded from CDN below. For offline / production
    use, drop the .woff2 files into /fonts and swap the @font-face src.
    --------------------------------------------------------------------- */
 .hq-sp-v18 {
   /* ---------- Brand color ---------- */
-  --orange-500: #F07030;   /* primary brand — CTAs, accents, icon fills */
+  --orange-500: #F07030;   /* primary brand, CTAs, accents, icon fills */
   --orange-600: #E8622A;   /* slightly deeper brand variant */
   --orange-700: #D5551F;   /* hover / pressed CTA */
   --orange-100: #FCE7D8;   /* badge / chip background */
@@ -127,7 +127,7 @@
   color: var(--orange-500);
 }
 /* =====================================================================
-   Buttons — pill-shaped, solid orange, repeated CTA
+   Buttons, pill-shaped, solid orange, repeated CTA
    ===================================================================== */
 .hq-sp-v18 .btn {
   font-family: var(--font-sans);
@@ -175,7 +175,7 @@
     --fs-lead: 18px;
   }
 }
-/* Rooted marketing-site UI kit — layout glue on top of colors_and_type.css */
+/* Rooted marketing-site UI kit, layout glue on top of colors_and_type.css */
 .hq-sp-v18 * { box-sizing: border-box; }
 
 .hq-sp-v18 { background: var(--white); overflow-x: hidden; }
@@ -418,7 +418,7 @@
       background: radial-gradient(ellipse at 50% 45%, #FAF7F4 0%, #F0F0F6 55%);
     }
 /* ===========================================================
-       What's included — premium bundle grid + pricing reveal
+       What's included, premium bundle grid + pricing reveal
        =========================================================== */
 .hq-sp-v18 .bundle-grid {
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
@@ -538,7 +538,7 @@
       color: var(--ink); font-style: italic;
     }
 .hq-sp-v18 .inline-testi-meta { font-size: 12.5px; color: var(--slate); font-weight: 600; }
-/* Compact image testimonial — used in TestimonialStrip */
+/* Compact image testimonial, used in TestimonialStrip */
 .hq-sp-v18 .compact-image-testi {
       background: #fff; border-radius: 16px;
       padding: 14px; box-shadow: var(--shadow-sm);
@@ -562,7 +562,7 @@
     }
 .hq-sp-v18 .compact-image-testi-meta { font-size: 12.5px; color: var(--slate); font-weight: 600; }
 .hq-sp-v18 .compact-image-testi-context { color: var(--slate-soft); font-weight: 500; }
-/* Strip layout — 2 testimonials side-by-side on desktop, stacked on mobile */
+/* Strip layout, 2 testimonials side-by-side on desktop, stacked on mobile */
 .hq-sp-v18 .testi-strip {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -656,7 +656,7 @@
 .hq-sp-v18 .reco-card p { margin: 0; }
 .hq-sp-v18 .reco-emoji { font-size: 22px; line-height: 1; }
 /* ===========================================================
-       Recognition — stacked skim list
+       Recognition, stacked skim list
        =========================================================== */
 .hq-sp-v18 .reco-header-block {
       background: var(--cream);
@@ -721,7 +721,7 @@
 .hq-sp-v18 .reco-note-wrap { justify-content: flex-start; padding-right: 0; }
 }
 /* ===========================================================
-       Recognition — DIRECTION A: Diary Scroll
+       Recognition, DIRECTION A: Diary Scroll
        =========================================================== */
 .hq-sp-v18 .diary-wrap {
       max-width: 560px; margin: 0 auto;
@@ -778,7 +778,7 @@
 .hq-sp-v18 .diary-card { padding: 20px 18px 16px; }
 }
 /* ===========================================================
-       Recognition — DIRECTION B: Spiral Timeline
+       Recognition, DIRECTION B: Spiral Timeline
        =========================================================== */
 .hq-sp-v18 .timeline-wrap {
       max-width: 680px; margin: 0 auto;
@@ -901,7 +901,7 @@
       margin: 0 14px;
     }
 /* ===========================================================
-       Science — 3-step lead-in + 6-factor cards
+       Science, 3-step lead-in + 6-factor cards
        =========================================================== */
 .hq-sp-v18 .science-leadin {
       display: grid;
@@ -927,7 +927,7 @@
     }
 .hq-sp-v18 .science-leadin-arrow { align-self: center; opacity: 0.7; }
 /* ===========================================================
-       "None of this was your fault" — timeline reframe
+       "None of this was your fault", timeline reframe
        =========================================================== */
 .hq-sp-v18 .fault-head { margin-bottom: 40px; }
 .hq-sp-v18 .fault-rail {
@@ -1007,7 +1007,7 @@
       left: -22px; top: 36px;
     }
 /* ===========================================================
-       Failed solutions — sticky note + stacked X→✓ cards
+       Failed solutions, sticky note + stacked X→✓ cards
        =========================================================== */
 .hq-sp-v18 .fail-stack { display: flex; flex-direction: column; gap: 18px; }
 .hq-sp-v18 .fail-card {
@@ -1036,7 +1036,7 @@
 .hq-sp-v18 .fail-check-circle { background: var(--check-bg); color: #fff; }
 .hq-sp-v18 .fail-arrow { display: flex; align-items: center; justify-content: center; }
 /* ===========================================================
-       Social proof — testimonial card
+       Social proof, testimonial card
        =========================================================== */
 .hq-sp-v18 .testi-card {
       background: #fff; border-radius: 22px;
@@ -1046,7 +1046,7 @@
       height: 100%;
     }
 /* ===========================================================
-       How it works — vertical timeline (works on desktop & mobile)
+       How it works, vertical timeline (works on desktop & mobile)
        =========================================================== */
 .hq-sp-v18 .timeline { position: relative; }
 .hq-sp-v18 .timeline-step {
@@ -1080,7 +1080,7 @@
       margin: 2px 0 2px 0;
     }
 /* ===========================================================
-       Results-in-2-weeks — emoji-led row cards
+       Results-in-2-weeks, emoji-led row cards
        =========================================================== */
 .hq-sp-v18 .result-row {
       display: flex; gap: 16px; align-items: flex-start;
@@ -1139,7 +1139,7 @@
 .hq-sp-v18 .carousel-counter-label em {
       font-style: normal; color: var(--slate-soft); font-weight: 500;
     }
-/* Founder section — desktop layout (base) */
+/* Founder section, desktop layout (base) */
 .hq-sp-v18 .founder-layout {
       display: grid;
       grid-template-columns: 0.85fr 1.15fr;
@@ -1170,7 +1170,7 @@
 .hq-sp-v18 .desktop-only-flex { display: flex; }
 .hq-sp-v18 .desktop-only-grid { display: grid; }
 /* ===========================================================
-       Responsive — tablet
+       Responsive, tablet
        =========================================================== */
 @media (max-width: 860px) {
 .hq-sp-v18 .topnav a { display: none; }
@@ -1186,7 +1186,7 @@
 .hq-sp-v18 .science-leadin-arrow { transform: rotate(90deg); justify-self: center; }
 }
 /* ===========================================================
-       Responsive — mobile (the 99% case)
+       Responsive, mobile (the 99% case)
        =========================================================== */
 @media (max-width: 720px) {
 .hq-sp-v18 section { padding: 56px 0; }
@@ -1254,11 +1254,11 @@
 .hq-sp-v18 .trust-stat { min-width: 0 !important; }
 .hq-sp-v18 .trust-stat > div:first-child { font-size: 26px !important; }
 .hq-sp-v18 .trustpilot-wrap { grid-column: 1 / -1; justify-content: center; }
-/* big-stat trust-bar (4.8/5 · 250K+ · 92%) — stack cleanly, never overlap */
+/* big-stat trust-bar (4.8/5 · 250K+ · 92%), stack cleanly, never overlap */
 .hq-sp-v18 .trust-bar .stat-num { font-size: 40px !important; white-space: nowrap; }
 /* cards general */
 .hq-sp-v18 .card { padding: 22px 20px !important; }
-/* fault timeline — mobile */
+/* fault timeline, mobile */
 .hq-sp-v18 .fault-rail { padding-left: 32px; }
 .hq-sp-v18 .fault-rail::before { left: 9px; }
 .hq-sp-v18 .fault-dot { left: -30px; width: 12px; height: 12px; top: 12px; }
@@ -1271,7 +1271,7 @@
 .hq-sp-v18 .fault-turn-arrow { transform: translateX(-10px) rotate(60deg); padding: 0 0 14px; }
 /* failed: hide raw arrows between cards on mobile, the arrow inside each card already rotates */
 .hq-sp-v18 .fail-card { padding: 18px 18px; gap: 12px; }
-/* WhatsIncluded — single-column bundle grid on mobile */
+/* WhatsIncluded, single-column bundle grid on mobile */
 .hq-sp-v18 .bundle-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
 .hq-sp-v18 .bundle-item { grid-template-columns: 56px 1fr; padding: 14px 16px; gap: 12px; }
 .hq-sp-v18 .bundle-item-thumb { width: 56px; height: 56px; font-size: 26px; border-radius: 12px; }
@@ -1338,7 +1338,7 @@
 .hq-sp-v18 .h-hero { font-size: 42px; }
 }
 
-/* Sticky CTA — minimalist offer + countdown (no pill / no button look) */
+/* Sticky CTA, minimalist offer + countdown (no pill / no button look) */
 .hq-sp-v18 .sticky-offer-line {
   display: inline-flex;
   align-items: baseline;
@@ -1413,7 +1413,7 @@
 }
 
 /* ===========================================================
-   GuaranteeBadge — risk-reversal pill next to every CTA
+   GuaranteeBadge, risk-reversal pill next to every CTA
    =========================================================== */
 .hq-sp-v18 .guarantee-badge {
   display: inline-flex;
@@ -1466,7 +1466,7 @@
 }
 
 /* ===========================================================
-   Science — biology callout + tiles + reassurance line
+   Science, biology callout + tiles + reassurance line
    =========================================================== */
 .hq-sp-v18 .biology-callout {
   background: #fff;
@@ -1537,7 +1537,7 @@
   .hq-sp-v18 .biology-reassurance { font-size: 18px; padding: 16px 18px; }
 }
 
-/* Biology v2 — trimmed intro (mobile-first) */
+/* Biology v2, trimmed intro (mobile-first) */
 .hq-sp-v18 .biology-lead {
   margin: 12px auto 0;
   max-width: 560px;
@@ -1633,7 +1633,7 @@
 }
 
 /* ===========================================================
-   ReviewedBy — advisor cards
+   ReviewedBy, advisor cards
    =========================================================== */
 .hq-sp-v18 .reviewed-by { padding: 56px 0 !important; }
 .hq-sp-v18 .advisor-grid {
@@ -1696,7 +1696,7 @@
 }
 
 /* ===========================================================
-   Interstitial variants — six distinct looks
+   Interstitial variants, six distinct looks
    =========================================================== */
 
 /* A. Pull-quote band */
@@ -1961,7 +1961,7 @@
 }
 
 /* =========================================================================
-   V17 — Thumb-stop testimonial interrupts (#1)
+   V17, Thumb-stop testimonial interrupts (#1)
    Wraps any interstitial in a distinct band so it interrupts scroll
    instead of reading as continued body copy.
    ========================================================================= */
@@ -1992,7 +1992,7 @@
 }
 
 /* =========================================================================
-   V17 — Recognition section CTA + quiz nudge (#4)
+   V17, Recognition section CTA + quiz nudge (#4)
    ========================================================================= */
 .hq-sp-v18 .reco-cta-block {
   display: flex; flex-direction: column; align-items: center; gap: 10px;
@@ -2020,7 +2020,7 @@
 .hq-sp-v18 .reco-cta-nudge .lucide { color: var(--orange-600); }
 
 /* =========================================================================
-   V17 — Sticky CTA non-pill urgency (#2)
+   V17, Sticky CTA non-pill urgency (#2)
    ========================================================================= */
 .hq-sp-v18 .sticky-urgency-bar {
   display: block; height: 2px; width: 100%;
@@ -2033,7 +2033,7 @@
   transition: width 1s linear;
 }
 
-/* Tier 1 — offer + timer (tight pair) */
+/* Tier 1, offer + timer (tight pair) */
 .hq-sp-v18 .sticky-offer-row {
   display: flex; align-items: baseline; gap: 10px;
   font-family: var(--font-sans); line-height: 1.1;
@@ -2049,14 +2049,14 @@
   font-size: 13px; font-weight: 700;
   color: var(--ink);
   letter-spacing: 0.02em;
-  /* Override the v14-style pill — keep it as plain text so it doesn't read as a button. */
+  /* Override the v14-style pill, keep it as plain text so it doesn't read as a button. */
   background: transparent;
   padding: 0;
   border-radius: 0;
   min-width: 0;
 }
 
-/* Tier 2 — cohort row */
+/* Tier 2, cohort row */
 .hq-sp-v18 .sticky-cohort {
   display: block;
   font-family: var(--font-sans);
@@ -2071,7 +2071,7 @@
   color: var(--ink); font-weight: 700;
 }
 
-/* Tier 3 — supporting trust */
+/* Tier 3, supporting trust */
 .hq-sp-v18 .sticky-trust {
   display: block;
   font-family: var(--font-sans);
@@ -2084,7 +2084,7 @@
 
 
 /* ============================================================
-   Hero Carousel (v18 only) — scoped under .hq-v18-hc
+   Hero Carousel (v18 only), scoped under .hq-v18-hc
    Unified image+text card · mobile thumbs · sticky CTA
    ============================================================ */
 .hq-sp-v18 .hq-v18-hc {
@@ -2122,7 +2122,7 @@
   display: flex; flex-direction: column;
 }
 
-/* Swipe nudge on the carousel itself — only on first slide, first view */
+/* Swipe nudge on the carousel itself, only on first slide, first view */
 .hq-sp-v18 .hq-v18-hc.is-first .hq-v18-hc-track {
   animation: hq-v18-hc-swipe-nudge 2.6s ease-in-out 0.8s 2;
 }
@@ -2197,7 +2197,7 @@
   backdrop-filter: blur(2px);
 }
 
-/* Text block inside the card — typography matches /18 */
+/* Text block inside the card, typography matches /18 */
 .hq-sp-v18 .hq-v18-hc-text {
   padding: 16px 18px 20px;
   display: flex; flex-direction: column; gap: 8px;
@@ -2219,7 +2219,7 @@
   margin: 0;
 }
 
-/* Arrows — desktop only */
+/* Arrows, desktop only */
 .hq-sp-v18 .hq-v18-hc-arrow {
   display: none;
   position: absolute; top: 38%; transform: translateY(-50%);
@@ -2234,7 +2234,7 @@
 .hq-sp-v18 .hq-v18-hc-arrow-prev { left: -6px; }
 .hq-sp-v18 .hq-v18-hc-arrow-next { right: -6px; }
 
-/* Modern thumbnail strip — circular avatars with active ring */
+/* Modern thumbnail strip, circular avatars with active ring */
 .hq-sp-v18 .hq-v18-hc-thumbs {
   display: flex; gap: 10px; justify-content: center; align-items: center;
   margin: 2px 0 2px;
@@ -2274,7 +2274,7 @@
   color: #8a7a60; font-family: ui-monospace, monospace; font-size: 12px; font-weight: 700;
 }
 
-/* CTA — always visible, outside carousel */
+/* CTA, always visible, outside carousel */
 .hq-sp-v18 .hq-v18-hc-cta-wrap {
   display: flex; flex-direction: column; gap: 8px;
   align-items: center;

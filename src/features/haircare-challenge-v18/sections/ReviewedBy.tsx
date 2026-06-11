@@ -12,7 +12,7 @@ const SEALS = [
 export function ReviewedBy() {
   return (
     <section className="bg-white reviewed-by-strip">
-      <Anno>Reviewed-by — minimal seal strip</Anno>
+      <Anno>Reviewed-by, minimal seal strip</Anno>
       <div className="wrap-wide">
         <Reveal className="center" style={{ marginBottom: 18 }}>
           <Eyebrow style={{ color: "var(--slate)" }}>Reviewed by clinicians · featured in</Eyebrow>

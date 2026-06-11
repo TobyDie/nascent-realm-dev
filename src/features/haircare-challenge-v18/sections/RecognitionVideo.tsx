@@ -9,7 +9,7 @@ export function RecognitionVideo() {
             <div className="vert-video-thumb">
               <EditableImage
                 h={560}
-                label="Vertical testimonial video placeholder — woman speaking to camera, natural home setting, warm lighting. 9:16 phone video style."
+                label="Vertical testimonial video placeholder, woman speaking to camera, natural home setting, warm lighting. 9:16 phone video style."
                 radius={20}
                 style={{ height: "100%", width: "100%" }}
               >

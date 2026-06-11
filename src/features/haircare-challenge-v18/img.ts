@@ -25,4 +25,4 @@ export function r2srcset(file: string, widths: number[], q = 80): string {
 export const BA_WIDTHS = [400, 700, 1000, 1400]; // before/after cards + figures
 export const HERO_WIDTHS = [400, 600, 800, 1100];
 export const PORTRAIT_WIDTHS = [500, 800, 1040];
-export const AVATAR_W = 96; // small round avatars (display ~38–52px)
+export const AVATAR_W = 96; // small round avatars (display ~38-52px)
