@@ -7,7 +7,7 @@ export function Recognition() {
         <Reveal className="center" style={{ marginBottom: 28 }}>
           <div className="reco-header-block">
             <div className="reco-eyebrow">WHAT IS HAPPENING</div>
-            <h2 className="h2 reco-headline">Somewhere in your 30s, this started happening:</h2>
+            <h2 className="h2 reco-headline">Sometime in your 20s or early 30s, this started happening:</h2>
           </div>
         </Reveal>
 
@@ -17,10 +17,10 @@ export function Recognition() {
             <div className="timeline-beat">
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">✂️</span>It won't grow long like it did in your 20s.
+                <span className="emoji">📏</span>It grows to a certain point and just… stops.
               </p>
               <p className="timeline-consequence">
-                so you cut it shorter, then shorter, until you stopped trying for the hair you actually want.
+                so you trim the ends, blame the ends, and never find what's actually capping your length.
               </p>
             </div>
           </Reveal>
@@ -30,13 +30,13 @@ export function Recognition() {
             <div className="timeline-beat">
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">🪞</span>You can see your scalp through your part now.
+                <span className="emoji">🔥</span>Color, heat, bleach — and the bond builder you bought to fix the bleach.
               </p>
               <p className="timeline-consequence">
-                so you part it differently and wear it up, which hides it but never finds what's causing it.
+                so the breakage outruns the growth, and your length never actually moves.
               </p>
               <div className="timeline-marginalia">
-                <Hand size={16} color="#2b66c2" rotate={-2}>↘ you never found out</Hand>
+                <Hand size={16} color="#2b66c2" rotate={-2}>↘ the damage compounds</Hand>
               </div>
             </div>
           </Reveal>
@@ -47,13 +47,13 @@ export function Recognition() {
               <span className="timeline-wash" />
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">🌫️</span>Greys you didn't have a year ago.
+                <span className="emoji">👶</span>Postpartum shedding that didn't come back.
               </p>
               <p className="timeline-consequence">
-                so you colour them, and the dye stresses already-fragile hair, so it breaks, so you colour again.
+                so you wait, and wait, and start to wonder if this is just your hair now.
               </p>
               <div className="timeline-marginalia">
-                <Hand size={16} color="#2b66c2" rotate={-3}>↘ making your hair age even faster</Hand>
+                <Hand size={16} color="#2b66c2" rotate={-3}>↘ it's been 18 months</Hand>
               </div>
             </div>
           </Reveal>
@@ -64,14 +64,14 @@ export function Recognition() {
               <span className="timeline-wash" />
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">🧴</span>Nothing you buy seems to work.
+                <span className="emoji">🧴</span>Limp and lifeless despite the whole routine.
               </p>
               <p className="timeline-consequence">
-                so you reach for the next better shampoo, the next salon visit, close to $2,000 by now, and you're still watching it fall.
+                $200 in the shower and it still looks flat by noon — so you buy the next better thing, and the next, ~$1,000 deep this year alone.
               </p>
               <div className="timeline-meter">
                 <span className="timeline-meter-bar"><span className="timeline-meter-fill" /></span>
-                ~$2,000 spent
+                ~$1,000 this year
               </div>
             </div>
           </Reveal>
@@ -82,10 +82,10 @@ export function Recognition() {
               <span className="timeline-wash" />
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">📷</span>You've started wearing it up in every photo.
+                <span className="emoji">😮‍💨</span>Stress is showing in your hair before it shows anywhere else.
               </p>
               <p className="timeline-consequence">
-                down makes you anxious, so up became the default, and you like your photos a little less each year.
+                the shedding in the brush, the temple thinning, the texture change you can feel before you can see.
               </p>
               <div className="timeline-photos" aria-hidden="true">
                 {[0,1,2,3,4,5].map(n => <span key={n} className="timeline-photo" />)}
@@ -97,9 +97,9 @@ export function Recognition() {
 
         <Reveal style={{ marginTop: 36 }}>
           <InlineTestimonial
-            name="Abigail" age={37} flag="🇺🇸"
-            quote="I haven't been crying every day over my hair. It's not where I want it to be yet, but it's been so much better since I changed the things I was doing wrong."
-            avatar="profile-9.webp"
+            name="Maya" age={28} flag="🇺🇸"
+            quote="My hair has been stuck at the same length for years. Two weeks in I'm already seeing baby hairs and less shedding — for the first time it actually feels like it's going somewhere."
+            avatar="profile-4.webp"
             style={{ margin: "0 auto" }}
           />
         </Reveal>

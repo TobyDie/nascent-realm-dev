@@ -36,13 +36,13 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                 display: "inline-block",
               }}
             >
-              Become the most beautiful version of yourself
+              Stop spending more for less.
             </div>
 
             {/* H1 — the single emotional hook, short enough for mobile */}
             <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
-              <span style={{ color: "#090909" }}>Achieve the best hair of your life in your </span>
-              <span style={{ color: "#e97b00" }}>30s and beyond.</span>
+              <span style={{ color: "#090909" }}>Grow the longest, thickest, fullest hair you actually want — </span>
+              <span style={{ color: "#e97b00" }}>in 14 days of doing it right.</span>
             </h1>
 
             {/* CTA block — must be above fold on mobile */}
@@ -59,7 +59,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               </span>
               {/* Validation paragraph — restored, after cohort line */}
               <p className="hero-validation" style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)" }}>
-                The hair you had in your 20s isn't gone forever. Your body has changed but your habits haven't. Learn how to build a hair care routine for your 30's and enjoy good hair days for decades to come.
+                You're not doing anything wrong — you were just never taught how hair actually grows. Learn the system in 14 days, get past your length plateau, and build the hair you're going for before bad habits compound.
               </p>
             </div>
 
@@ -67,15 +67,15 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             <ul className="hero-bullets">
               <li>
                 <span className="hero-bullet-emoji">🌱</span>
-                <span>Grow longer, denser and healthier hair than you had in your 20s.</span>
+                <span>Break past your length plateau — finally see your hair grow past where it always stops.</span>
               </li>
               <li>
-                <span className="hero-bullet-emoji">💸</span>
-                <span>No fancy salon treatments or expensive products needed.</span>
+                <span className="hero-bullet-emoji">✨</span>
+                <span>Real density and shine — without $90 serums, bond builders, or another "miracle" bottle.</span>
               </li>
               <li>
-                <span className="hero-bullet-emoji">⏱️</span>
-                <span>10 minutes a day. While the coffee brews. That's all it takes.</span>
+                <span className="hero-bullet-emoji">🛡️</span>
+                <span>Undo the damage from color, heat and bleach — before it quietly caps your hair for the next decade.</span>
               </li>
             </ul>
           </Reveal>
@@ -94,7 +94,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                 />
               </div>
               <div style={{ position: "absolute", top: -14, left: -8, zIndex: 4 }}>
-                <Pin rotate={7}>★ 4.8 · 12K reviews</Pin>
+                <Pin rotate={7}>Joined by 250K+ women in their 20s & 30s</Pin>
               </div>
             </div>
           </Reveal>

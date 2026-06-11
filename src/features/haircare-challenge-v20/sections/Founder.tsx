@@ -31,7 +31,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
       </div>
       <div className="founder-story-caption">
         <span className="founder-story-num">01</span>
-        <span>500,000 followers. $20K brand deals. Losing hair in clumps.</span>
+        <span>Today: 120cm of bleached hair. $10 a month. Teaches the system she built.</span>
       </div>
     </div>,
     <div key={1} className="founder-story-card">
@@ -48,7 +48,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
       </div>
       <div className="founder-story-caption">
         <span className="founder-story-num">02</span>
-        <span>Today: 120cm of bleached hair. $10 a month.</span>
+        <span>Years working with chemists, dermatologists & trichologists to actually understand hair.</span>
       </div>
     </div>,
     <div key={2} className="founder-story-card">
@@ -65,7 +65,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
       </div>
       <div className="founder-story-caption">
         <span className="founder-story-num">03</span>
-        <span>The turning point: years with chemists, dermatologists & trichologists.</span>
+        <span>The backstory: 500K followers, $20K brand deals — and quietly figuring out the industry was selling her nothing real.</span>
       </div>
     </div>,
   ];
@@ -77,8 +77,8 @@ export function Founder({ onCta }: { onCta?: () => void }) {
         <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
           <Eyebrow>Meet your coach</Eyebrow>
           <h2 className="h2" style={{ marginTop: 12, maxWidth: 760, marginInline: "auto" }}>
-            She lost half her hair at the peak of her career.<br />
-            <span style={{ color: "var(--orange-700)" }}>That's why she's the right person to help you.</span>
+            120cm of healthy hair. $10 a month. No products to sell you.<br />
+            <span style={{ color: "var(--orange-700)" }}>This is the system she teaches.</span>
           </h2>
         </Reveal>
 
@@ -105,40 +105,34 @@ export function Founder({ onCta }: { onCta?: () => void }) {
           <Reveal delay={80}>
             <div className="founder-copy-wrap">
               <p className="p">
-                In her late 20s, Sarah was a haircare influencer with 500,000 followers. Luxury brands were mailing her $300 shampoos. She was walking into the best salons in the country. She was getting paid <strong>$20,000 deals</strong> to promote hair products to women just like you.
+                Sarah maintains <strong>120cm of bleached hair</strong> for roughly <strong>$10 a month</strong>. No salon protocol. No $90 serum. No bond-builder stack. Just the system she built once she finally understood what her hair actually needed.
               </p>
 
               <div style={{ borderLeft: "4px solid var(--orange-600)", paddingLeft: 20, margin: "20px 0" }}>
                 <p style={{ margin: 0, fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 26, lineHeight: 1.25, color: "var(--ink)" }}>
-                  And she was losing her hair in clumps.
+                  This is what she teaches — the system, not another product.
                 </p>
               </div>
 
               <p className="p">
-                Bald patches. An oily scalp. Hair she'd stopped wearing down because she was too embarrassed. She dodged social events to hide her dandruff. She didn't feel feminine anymore — and she had access to everything the industry had to offer.
+                She figured this out the hard way. In her late 20s she was a haircare influencer with 500,000 followers, taking <strong>$20,000 brand deals</strong> to promote $300 shampoos. The industry had access to her — and was selling her nothing that actually worked.
               </p>
               <p className="p">
-                <strong>That's when she stopped promoting products and started asking why.</strong>
+                <strong>So she stopped promoting products and started asking why.</strong>
               </p>
               <p className="p">
-                She spent years working with chemists, dermatologists, trichologists, and nutritionists — not to build a product to sell you, but to understand what was actually happening. Then she built the program she wished she'd had: honest, science-backed, with nothing to sell you except the knowledge itself.
+                Years working with chemists, dermatologists, trichologists and nutritionists — not to build another product, but to actually understand what hair needs. Then she built the program she wished she'd had at 25: honest, science-backed, with nothing to sell you except the knowledge itself.
               </p>
 
-              <div style={{ background: "var(--green-bg)", borderLeft: "4px solid var(--green-line)", borderRadius: 12, padding: "16px 18px" }}>
-                <p style={{ margin: 0, fontSize: 16, lineHeight: 1.6, color: "var(--green-text)" }}>
-                  Today, Sarah maintains <strong>120cm of bleached hair</strong> for roughly <strong>$10 a month</strong>. Not because she found an expensive secret. Because she finally understood what her hair actually needed.
-                </p>
-              </div>
-
               <p className="p">
-                <strong>250,000 women across 149 countries</strong> have been through this with her. Most of them tried everything before they found her.
+                <strong>250,000 women across 149 countries</strong> have been through this with her — most of them in their 20s and 30s, most of them tired of spending more and seeing less.
               </p>
               <p className="p" style={{ fontSize: 15, color: "var(--slate)", fontStyle: "italic" }}>
                 The protocol was reviewed by board-certified dermatologists and trichology researchers before launch.
               </p>
 
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 8 }}>
-                <span style={{ fontSize: 12.5, fontWeight: 600, color: "var(--ink-soft)", background: "var(--cream)", border: "1px solid var(--line)", borderRadius: 999, padding: "6px 13px" }}>Certified Hair Loss Specialist</span>
+                <span style={{ fontSize: 12.5, fontWeight: 600, color: "var(--ink-soft)", background: "var(--cream)", border: "1px solid var(--line)", borderRadius: 999, padding: "6px 13px" }}>Certified Trichology Specialist</span>
                 <span style={{ fontSize: 12.5, fontWeight: 600, color: "var(--ink-soft)", background: "var(--cream)", border: "1px solid var(--line)", borderRadius: 999, padding: "6px 13px" }}>Founder of HairQare</span>
                 <span style={{ fontSize: 12.5, fontWeight: 600, color: "var(--ink-soft)", background: "var(--cream)", border: "1px solid var(--line)", borderRadius: 999, padding: "6px 13px" }}>250,000+ women coached</span>
                 <span style={{ fontSize: 12.5, fontWeight: 600, color: "var(--ink-soft)", background: "var(--cream)", border: "1px solid var(--line)", borderRadius: 999, padding: "6px 13px" }}>13+ years in haircare</span>
@@ -150,7 +144,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
                 <Button id="cta-founder" onClick={onCta} icon="arrow-right">Start with me</Button>
                 <GuaranteeBadge size="sm" />
                 <InlineTestimonial
-                  name="Natasha" age={37} flag="🇩🇪"
+                  name="Natasha" age={29} flag="🇩🇪"
                   quote="I'm a scientist, I came in sceptical. In 14 days my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again."
                   avatar="profile-6.webp"
                 />
