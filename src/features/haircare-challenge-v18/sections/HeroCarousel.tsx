@@ -8,6 +8,7 @@ import { useStartDate, fmtShort } from "../useStartDate";
 type Slide = {
   alt: string;
   imageBrief: string;
+  imageFile?: string; // pub.hairqare.co path (after the host), unencoded
   pinText: string;
   pinRotate: number;
   pinPos?: "tl" | "tr" | "bl" | "br";
@@ -21,6 +22,7 @@ const SLIDES: Slide[] = [
     alt: "Sarah in her kitchen, hair down past her shoulders, soft morning light. Hair is the focal point.",
     imageBrief:
       "Sarah in her kitchen · hair down past shoulders · soft morning light · phone-shot, no styling · full, shiny, healthy hair is the focal point.",
+    imageFile: "Sarah ATF 5 (1).webp",
     pinText: "This is the best hair I've ever had.",
     pinRotate: -4,
     pinPos: "tr",
@@ -100,11 +102,26 @@ function SlideMedia({ slide, index }: { slide: Slide; index: number }) {
       : slide.pinPos === "br"
       ? "is-br"
       : "is-tl";
+  const cdn = (file: string, w: number) =>
+    `https://pub.hairqare.co/cdn-cgi/image/width=${w},quality=80,format=auto/${encodeURIComponent(file)}`;
   return (
     <div className="hq-v18-hc-ph" role="img" aria-label={slide.alt}>
-      <span className="hq-v18-hc-ph-brief">
-        [ Slide {index + 1} image · {slide.imageBrief} ]
-      </span>
+      {slide.imageFile ? (
+        <img
+          className="hq-v18-hc-img"
+          src={cdn(slide.imageFile, 800)}
+          srcSet={`${cdn(slide.imageFile, 500)} 500w, ${cdn(slide.imageFile, 800)} 800w, ${cdn(slide.imageFile, 1200)} 1200w`}
+          sizes="(max-width: 720px) 100vw, 720px"
+          alt={slide.alt}
+          loading={index === 0 ? "eager" : "lazy"}
+          fetchPriority={index === 0 ? "high" : "auto"}
+          decoding="async"
+        />
+      ) : (
+        <span className="hq-v18-hc-ph-brief">
+          [ Slide {index + 1} image · {slide.imageBrief} ]
+        </span>
+      )}
       <span
         className={`hq-v18-hc-pin ${posClass}`}
         style={{ transform: `rotate(${slide.pinRotate}deg)` }}
