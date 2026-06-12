@@ -117,19 +117,27 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
             style={{
               background: "var(--lavender)",
               borderRadius: 16,
-              padding: "14px 12px",
+              padding: isMobile ? "10px 8px" : "14px 16px",
               display: "flex",
               alignItems: "center",
-              justifyContent: "space-around",
-              gap: 8,
+              justifyContent: "space-between",
+              gap: isMobile ? 6 : 16,
               flexWrap: "nowrap",
             }}
           >
-            <Stat num="4.8/5" label="Trustpilot rating" size={isMobile ? 26 : 36} />
-            <Divider />
-            <Stat num="250K+" label="women completed" size={isMobile ? 26 : 36} />
-            <Divider />
-            <Stat num="92%" label="saw results by day 14" size={isMobile ? 26 : 36} />
+            {[
+              { num: "4.8/5", label: "Trustpilot" },
+              { num: "250K+", label: "women" },
+              { num: "92%", label: "by day 14" },
+            ].map((s, i, arr) => (
+              <>
+                <div key={s.num} style={{ textAlign: "center", flex: 1, minWidth: 0 }}>
+                  <div className="stat-num" style={{ fontSize: isMobile ? 20 : 30, lineHeight: 1.1 }}>{s.num}</div>
+                  <div className="small" style={{ marginTop: 2, fontSize: isMobile ? 11 : 13, whiteSpace: "nowrap" }}>{s.label}</div>
+                </div>
+                {i < arr.length - 1 && <div style={{ width: 1, height: isMobile ? 28 : 36, background: "var(--line)", flexShrink: 0 }} />}
+              </>
+            ))}
           </div>
         </Reveal>
 
