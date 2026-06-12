@@ -7,7 +7,7 @@ export function ResultsIn2Weeks({ onCta }: { onCta?: () => void }) {
       <div className="wrap" style={{ maxWidth: 760 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 36 }}>
           <Eyebrow>Built for women 30–42</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12 }}>What you'll actually see in 2 weeks</h2>
+          <h2 className="h2" style={{ marginTop: 12 }}>What you'll actually see <span className="hl">in 2 weeks</span></h2>
         </Reveal>
         <Reveal>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

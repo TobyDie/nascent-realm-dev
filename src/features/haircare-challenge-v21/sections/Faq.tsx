@@ -30,7 +30,7 @@ export function Faq({ onCta }: { onCta?: () => void }) {
       <div className="wrap" style={{ maxWidth: 760 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 36 }}>
           <Eyebrow>Before you start</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12 }}>Questions she usually has before she starts</h2>
+          <h2 className="h2" style={{ marginTop: 12 }}>Questions she usually has <span className="hl">before she starts</span></h2>
         </Reveal>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {item(0, "I've tried so many things. Why is this different?", "Because this is education, not a product. Products treat symptoms - this teaches you to treat the cause. Once you understand what's happening at the root, you stop guessing and start fixing.")}

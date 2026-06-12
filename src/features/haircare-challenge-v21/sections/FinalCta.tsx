@@ -12,8 +12,8 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
       <div className="wrap" style={{ textAlign: "center" }}>
         <Reveal>
           <Eyebrow>The decision</Eyebrow>
-          <h2 className="h-hero" style={{ marginTop: 14, marginBottom: 20, maxWidth: 720, marginInline: "auto" }}>
-            Bring her back.
+          <h2 className="h2" style={{ marginTop: 14, marginBottom: 20, maxWidth: 720, marginInline: "auto" }}>
+            Bring <span className="hl">her</span> back.
           </h2>
           <p className="lead" style={{ marginBottom: 36, maxWidth: 620, marginInline: "auto" }}>
             You used to be known for your hair. She's not gone - she's been waiting for someone to finally explain what happened. In 14 days, you'll have the knowledge to bring her back. And it'll be <strong>yours forever</strong>.

@@ -23,7 +23,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
         <Reveal style={{ textAlign: "center", marginBottom: 28 }}>
           <Eyebrow>Inside the bundle</Eyebrow>
           <h2 className="h2" style={{ marginTop: 12, maxWidth: 660, marginInline: "auto" }}>
-            10 pieces. One complete system. <Underline>Yours forever.</Underline>
+            10 pieces. One complete system. <span className="hl">Yours forever.</span>
           </h2>
           <p className="lead" style={{ marginTop: 14, maxWidth: 580, marginInline: "auto" }}>
             A full library plus a personalised assessment - built specifically for women 30–45.

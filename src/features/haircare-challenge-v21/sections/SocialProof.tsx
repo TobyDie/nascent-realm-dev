@@ -4,6 +4,7 @@ import {
   Button,
   Carousel,
   Divider,
+  Eyebrow,
   GuaranteeBadge,
   RImg,
   Reveal,
@@ -95,8 +96,9 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       <Anno>Section 5 - Social proof / ICP-matched results</Anno>
       <div className="wrap-wide">
         <Reveal style={{ textAlign: "center", marginBottom: 20, maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
-          <h2 className="h2" style={{ margin: 0, fontSize: "clamp(22px, 4.6vw, 32px)", lineHeight: 1.2 }}>
-            Women in their 30s achieved better hair than they had in their 20s after learning how to care for it properly.&nbsp;&nbsp;&nbsp;
+          <Eyebrow>Real results</Eyebrow>
+          <h2 className="h2" style={{ margin: "12px 0 0", lineHeight: 1.2 }}>
+            Women in their 30s achieved <span className="hl">better hair than they had in their 20s</span> after learning how to care for it properly.
           </h2>
         </Reveal>
 

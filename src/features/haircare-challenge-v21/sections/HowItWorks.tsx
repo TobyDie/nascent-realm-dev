@@ -58,9 +58,9 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
       <Anno> </Anno>
       <div className="wrap" style={{ maxWidth: 720 }}>
         <Reveal className="mx-head">
-          <p className="mx-eyebrow">Anytime · Anywhere.</p>
-          <h2 className="h2 mx-headline">
-            10 minutes a day.<br />14 days - 14 Simple Missions.
+          <p className="eyebrow">Anytime · Anywhere</p>
+          <h2 className="h2 mx-headline" style={{ marginTop: 12 }}>
+            10 minutes a day.<br /><span className="hl">14 days - 14 Simple Missions.</span>
           </h2>
         </Reveal>
 
