@@ -1862,6 +1862,8 @@
 .hq-sp-v21 .nyf-head { text-align: center; max-width: 680px; margin: 0 auto 28px; }
 .hq-sp-v21 .nyf-headline {
   font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--ink);
   font-size: clamp(28px, 6.4vw, 44px);
   line-height: 1.1;
   letter-spacing: -0.01em;
