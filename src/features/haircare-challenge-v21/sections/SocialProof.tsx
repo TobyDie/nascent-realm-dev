@@ -111,19 +111,31 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
           </div>
         )}
 
-        <Reveal className="center" style={{ marginTop: 24, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-          <Button id="cta-social-proof" onClick={onCta} icon="arrow-right">Join 250,000+ women</Button>
-          <GuaranteeBadge size="sm" />
+        <Reveal style={{ marginTop: 20 }}>
+          <div
+            className="trust-bar"
+            style={{
+              background: "var(--lavender)",
+              borderRadius: 16,
+              padding: "14px 12px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-around",
+              gap: 8,
+              flexWrap: "nowrap",
+            }}
+          >
+            <Stat num="4.8/5" label="Trustpilot rating" size={isMobile ? 26 : 36} />
+            <Divider />
+            <Stat num="250K+" label="women completed" size={isMobile ? 26 : 36} />
+            <Divider />
+            <Stat num="92%" label="saw results by day 14" size={isMobile ? 26 : 36} />
+          </div>
         </Reveal>
 
-        <Reveal style={{ marginTop: 32 }}>
-          <div className="trust-bar" style={{ background: "var(--lavender)", borderRadius: 24, padding: "32px 24px", justifyContent: "space-around" }}>
-            <Stat num="4.8/5" label="Trustpilot rating" size={56} />
-            <Divider />
-            <Stat num="250K+" label="women completed the challenge" size={56} />
-            <Divider />
-            <Stat num="92%" label="saw results by day 14" size={56} />
-          </div>
+        <Reveal className="center" style={{ marginTop: 18, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+          <Button id="cta-social-proof" onClick={onCta} icon="arrow-right">Join 250,000+ women</Button>
+          <GuaranteeBadge size="sm" />
         </Reveal>
       </div>
     </section>
