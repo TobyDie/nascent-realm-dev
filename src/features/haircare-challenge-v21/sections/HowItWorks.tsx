@@ -2,86 +2,152 @@ import * as React from "react";
 import {
   Anno,
   Button,
-  Eyebrow,
-  HandLine,
   InlineTestimonial,
   Reveal,
 } from "../primitives";
+import { r2img } from "../img";
+
+const COHORT_AVATARS = [
+  "profile-1.webp",
+  "profile-5.webp",
+  "profile-3.webp",
+  "profile-7.webp",
+  "profile-2.webp",
+];
+
+const DAYS = Array.from({ length: 14 }, (_, i) => i + 1);
+const ANCHORS: Record<number, string> = { 1: "Start", 7: "Midway", 14: "Finish" };
+
+function Chapter({
+  num,
+  tag,
+  meta,
+  headline,
+  body,
+  caption,
+  children,
+}: {
+  num: string;
+  tag: string;
+  meta: string;
+  headline: string;
+  body: string;
+  caption: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <article className="mx-chapter">
+      <header className="mx-chapter-rule">
+        <span className="mx-chapter-num">{num}</span>
+        <span className="mx-chapter-tag">{tag}</span>
+        <span className="mx-chapter-meta">{meta}</span>
+      </header>
+      <h3 className="mx-chapter-headline">{headline}</h3>
+      <p className="mx-chapter-body">{body}</p>
+      {children}
+      <p className="mx-chapter-caption">↳ {caption}</p>
+    </article>
+  );
+}
 
 export function HowItWorks({ onCta }: { onCta?: () => void }) {
   return (
-    <section className="bg-white">
+    <section className="bg-white missions-section">
       <Anno>Section 7 — How it works</Anno>
       <div className="wrap" style={{ maxWidth: 720 }}>
-        <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
-          <h2 className="h2" style={{ marginTop: 12 }}>10 minutes a day.<br />14 days - 14 Simple Missions.</h2>
-          <p className="lead" style={{ marginTop: 12, color: "var(--ink-soft)" }}>
-            Anytime - Anywhere.
-          </p>
-          <p style={{ marginTop: 18, fontSize: 17, color: "var(--ink)", maxWidth: 560, marginInline: "auto", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-            You're not in this alone
-          </p>
-          <p style={{ marginTop: 8, fontSize: 16, color: "var(--slate)", maxWidth: 560, marginInline: "auto" }}>
-            Hundreds of women start the same day you do.
-          </p>
+        <Reveal className="mx-head">
+          <p className="mx-eyebrow">Anytime · Anywhere.</p>
+          <h2 className="h2 mx-headline">
+            10 minutes a day.<br />14 days — 14 Simple Missions.
+          </h2>
         </Reveal>
 
-        <div className="timeline">
+        <Reveal delay={60}>
+          <div className="mx-cohort-pill">
+            <div className="mx-cohort-avatars" aria-hidden="true">
+              {COHORT_AVATARS.map((file) => (
+                <span key={file} className="mx-cohort-avatar">
+                  <img src={r2img(file, 96)} alt="" loading="lazy" decoding="async" />
+                </span>
+              ))}
+              <span className="mx-cohort-avatar mx-cohort-more">+</span>
+            </div>
+            <div className="mx-cohort-copy">
+              <p className="mx-cohort-eyebrow">You're not in this alone</p>
+              <p className="mx-cohort-line">Hundreds of women start the same day you do.</p>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={120}>
+          <div className="mx-calendar" role="img" aria-label="14 day calendar walked together">
+            <div className="mx-calendar-frame">
+              <span className="mx-calendar-corner mx-calendar-corner-tl" />
+              <span className="mx-calendar-corner mx-calendar-corner-tr" />
+              <span className="mx-calendar-corner mx-calendar-corner-bl" />
+              <span className="mx-calendar-corner mx-calendar-corner-br" />
+              <div className="mx-calendar-label">14-Day Calendar · walked together</div>
+              <div className="mx-calendar-grid">
+                {DAYS.map((d) => {
+                  const anchor = ANCHORS[d];
+                  return (
+                    <div
+                      key={d}
+                      className={`mx-day${anchor ? " mx-day-anchor" : ""}`}
+                      style={{ ["--mx-i" as any]: d }}
+                    >
+                      <span className="mx-day-num">D{d}</span>
+                      <span className="mx-day-dot" aria-hidden="true" />
+                      {anchor && <span className="mx-day-anchor-label">{anchor}</span>}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        <div className="mx-chapters">
           <Reveal delay={0}>
-            <div className="timeline-step">
-              <div className="timeline-circle">01</div>
-              <div className="timeline-card">
-                <div className="timeline-tag">Start Together</div>
-                <h3 className="h3" style={{ marginBottom: 6, marginTop: 2 }}>Day 1, everyone drops what's not working.</h3>
-                <p className="p" style={{ fontSize: 15.5, margin: 0 }}>
-                  You're not the only one who's tried everything. Every woman shows up the same way — done with what hasn't worked.
-                </p>
-                <p className="p" style={{ fontSize: 13.5, margin: "10px 0 0", color: "var(--slate)", fontStyle: "italic" }}>
-                  Prep video · your group begins
-                </p>
-              </div>
-            </div>
+            <Chapter
+              num="01"
+              tag="Start Together"
+              meta="Day 1"
+              headline="Day 1, everyone drops what's not working."
+              body="You're not the only one who's tried everything. Every woman shows up the same way — done with what hasn't worked."
+              caption="Prep video · your group begins"
+            />
           </Reveal>
-          <div className="timeline-connector">
-            <HandLine height={56} arrow={false} />
-          </div>
           <Reveal delay={80}>
-            <div className="timeline-step">
-              <div className="timeline-circle">02</div>
-              <div className="timeline-card">
-                <div className="timeline-tag">Learn Together</div>
-                <h3 className="h3" style={{ marginBottom: 6, marginTop: 2 }}>Same lessons. Same chat. Same questions.</h3>
-                <p className="p" style={{ fontSize: 15.5, margin: 0 }}>
-                  Ten minutes a day, figuring it out with women asking what you're asking — and answering each other along the way.
-                </p>
-                <p className="p" style={{ fontSize: 13.5, margin: "10px 0 0", color: "var(--slate)", fontStyle: "italic" }}>
-                  Days 1–14 · you build your own routine
-                </p>
+            <Chapter
+              num="02"
+              tag="Learn Together"
+              meta="Days 1–14"
+              headline="Same lessons. Same chat. Same questions."
+              body="Ten minutes a day, figuring it out with women asking what you're asking — and answering each other along the way."
+              caption="Days 1–14 · you build your own routine"
+            >
+              <div className="mx-bars" aria-hidden="true">
+                {DAYS.map((d) => (
+                  <span key={d} className="mx-bar" style={{ ["--mx-i" as any]: d }} />
+                ))}
               </div>
-            </div>
+            </Chapter>
           </Reveal>
-          <div className="timeline-connector">
-            <HandLine height={56} arrow={true} />
-          </div>
           <Reveal delay={160}>
-            <div className="timeline-step">
-              <div className="timeline-circle">03</div>
-              <div className="timeline-card">
-                <div className="timeline-tag">Finish Together</div>
-                <h3 className="h3" style={{ marginBottom: 6, marginTop: 2 }}>Day 14, you walk out with results — and a group that saw it happen.</h3>
-                <p className="p" style={{ fontSize: 15.5, margin: 0 }}>
-                  Less falling out. More shine. Women who get it because they just did it too.
-                </p>
-                <p className="p" style={{ fontSize: 13.5, margin: "10px 0 0", color: "var(--slate)", fontStyle: "italic" }}>
-                  Day 14+ · your system, your people
-                </p>
-              </div>
-            </div>
+            <Chapter
+              num="03"
+              tag="Finish Together"
+              meta="Day 14+"
+              headline="Day 14, you walk out with results — and a group that saw it happen."
+              body="Less falling out. More shine. Women who get it because they just did it too."
+              caption="Day 14+ · your system, your people"
+            />
           </Reveal>
         </div>
 
         <Reveal style={{ marginTop: 36 }}>
-          <div style={{ background: "var(--cream)", borderRadius: 18, padding: "22px 24px", textAlign: "center", border: "1px solid var(--line)" }}>
+          <div className="mx-callout">
             <p className="p" style={{ margin: 0, fontSize: 16.5, lineHeight: 1.55 }}>
               This is not passive content. You <em>do</em> things. You notice things. <strong>By day 14 you won't need to buy another product</strong> — because you'll know what your hair actually needs.
             </p>
