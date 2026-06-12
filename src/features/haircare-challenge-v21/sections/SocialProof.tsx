@@ -3,95 +3,120 @@ import {
   Button,
   Carousel,
   Divider,
-  Eyebrow,
   GuaranteeBadge,
+  RImg,
   Reveal,
+  StarRow,
   Stat,
-  TestimonialCard,
   useIsMobile,
 } from "../primitives";
+import { BA_WIDTHS } from "../img";
+
+type Testi = {
+  name: string;
+  initials: string;
+  context: string;
+  text: string;
+  image: string;
+};
+
+function CompactTesti({ t }: { t: Testi }) {
+  return (
+    <div
+      className="testi-card-compact"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        background: "#fff",
+        border: "1px solid var(--line, #eee)",
+        borderRadius: 16,
+        overflow: "hidden",
+        boxShadow: "0 1px 2px rgba(15,23,42,.04)",
+      }}
+    >
+      <div style={{ position: "relative", background: "var(--cream, #faf6f1)" }}>
+        <RImg
+          file={t.image}
+          widths={BA_WIDTHS}
+          sizes="(max-width: 860px) 86vw, 360px"
+          alt={`Before and after — ${t.name}`}
+          style={{ width: "100%", height: "auto", display: "block" }}
+        />
+      </div>
+      <div style={{ padding: "14px 14px 14px" }}>
+        <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.5, color: "var(--ink)" }}>
+          “{t.text}”
+        </p>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 12 }}>
+          <div
+            aria-hidden="true"
+            style={{
+              width: 32,
+              height: 32,
+              borderRadius: 999,
+              background: "var(--orange-100)",
+              color: "var(--orange-700)",
+              fontWeight: 700,
+              fontSize: 13,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flex: "none",
+            }}
+          >
+            {t.initials}
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontWeight: 700, fontSize: 13.5, lineHeight: 1.2 }}>{t.name}</div>
+            <div style={{ fontSize: 11.5, color: "var(--slate)", lineHeight: 1.3 }}>{t.context}</div>
+          </div>
+          <StarRow size={12} />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function SocialProof({ onCta }: { onCta?: () => void }) {
   const isMobile = useIsMobile();
 
-  const cards = [
-    <TestimonialCard
-      key={0}
-      name="Kim"
-      initials="K"
-      context="Shedding every wash · hair loss"
-      text="I think I lost maybe half of the amount of hair I normally lose every time I wash."
-      image="ba-1.webp"
-    />,
-    <TestimonialCard
-      key={1}
-      name="Andrea Burns"
-      initials="A"
-      context="Hair loss · dry, itchy scalp"
-      text="By the end of 14 days, I was losing like maybe, maybe a palm size amount when I would shower and wash my hair. And that is like a third of what I would normally lose."
-      image="ba-2.webp"
-    />,
-    <TestimonialCard
-      key={2}
-      name="Anna Koval"
-      initials="A"
-      context="Thinning · hair felt lifeless"
-      text="I can tell you that my hair definitely looks so better. Feels softer. There's some life you know was added into my hair."
-      image="ba-3.webp"
-    />,
-    <TestimonialCard
-      key={3}
-      name="Yer Yang"
-      initials="Y"
-      context="New mother · postpartum hair loss"
-      text="My hair felt lighter and it just… it does not feel as oily, it does not feel as weighed down, it feels like there's more volume and it just looks much better than before I started."
-      image="ba-5.webp"
-    />,
-    <TestimonialCard
-      key={4}
-      name="Karen Patdu"
-      initials="M"
-      context="Thinning · hair loss"
-      text="You can see hair growing right here in the front. Usually, it doesn't grow this much, but slowly, but surely, I can see where it's coming from. My hair feels a lot healthier, cleaner, not so oily."
-      image="ba-13.webp"
-    />,
+  const testimonials: Testi[] = [
+    { name: "Kim", initials: "K", context: "Shedding every wash · hair loss", text: "I think I lost maybe half of the amount of hair I normally lose every time I wash.", image: "ba-1.webp" },
+    { name: "Andrea Burns", initials: "A", context: "Hair loss · dry, itchy scalp", text: "By the end of 14 days, I was losing maybe a palm size amount when I'd wash my hair — about a third of what I used to lose.", image: "ba-2.webp" },
+    { name: "Anna Koval", initials: "A", context: "Thinning · hair felt lifeless", text: "My hair definitely looks so much better. Feels softer. There's some life added back into it.", image: "ba-3.webp" },
+    { name: "Yer Yang", initials: "Y", context: "New mother · postpartum hair loss", text: "My hair feels lighter — not as oily, not as weighed down. There's more volume and it just looks so much better.", image: "ba-5.webp" },
+    { name: "Karen Patdu", initials: "M", context: "Thinning · hair loss", text: "You can see hair growing right here in the front. Slowly but surely it's coming back. My hair feels healthier, cleaner, not so oily.", image: "ba-13.webp" },
   ];
+  const cards = testimonials.map((t, i) => <CompactTesti key={i} t={t} />);
 
   return (
-    <section className="bg-white" id="results">
+    <section className="bg-white" id="results" style={{ paddingTop: 36, paddingBottom: 40 }}>
       <Anno>Section 5 — Social proof / ICP-matched results</Anno>
       <div className="wrap-wide">
-        <Reveal style={{ textAlign: "center", marginBottom: 32 }}>
-          <Eyebrow>Real results</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12 }}>
-            Women in their 30s achieved better hair than they had in their 20s after learning how to care for it properly.
+        <Reveal style={{ textAlign: "center", marginBottom: 20, maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
+          <h2 className="h2" style={{ margin: 0, fontSize: "clamp(22px, 4.6vw, 32px)", lineHeight: 1.2 }}>
+            Better hair in their 30s than they had in their 20s.
           </h2>
-          <p className="mobile-only" style={{ marginTop: 12, fontSize: 14, color: "var(--slate)" }}>
-            Swipe through the stories →
-          </p>
         </Reveal>
 
         {isMobile ? (
-          <Carousel peek={0.88} ariaLabel="testimonials">
+          <Carousel peek={0.78} ariaLabel="testimonials">
             {cards}
           </Carousel>
         ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }} className="testi-grid">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }} className="testi-grid">
             {cards.map((c, i) => (
-              <Reveal key={i} delay={i % 2 === 0 ? 0 : 90}>{c}</Reveal>
+              <Reveal key={i} delay={(i % 3) * 80}>{c}</Reveal>
             ))}
           </div>
         )}
 
-        <Reveal className="center" style={{ marginTop: 30, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+        <Reveal className="center" style={{ marginTop: 24, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
           <Button id="cta-social-proof" onClick={onCta} icon="arrow-right">Join 250,000+ women</Button>
           <GuaranteeBadge size="sm" />
-          <Button id="cta-social-proof-more" onClick={onCta} icon="arrow-right" style={{ padding: "10px 20px", fontSize: 14 }}>
-            See more stories
-          </Button>
         </Reveal>
 
-        <Reveal style={{ marginTop: 44 }}>
+        <Reveal style={{ marginTop: 32 }}>
           <div className="trust-bar" style={{ background: "var(--lavender)", borderRadius: 24, padding: "32px 24px", justifyContent: "space-around" }}>
             <Stat num="4.8/5" label="Trustpilot rating" size={56} />
             <Divider />
