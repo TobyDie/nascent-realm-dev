@@ -17,7 +17,7 @@ const COHORT_AVATARS = [
 ];
 
 const DAYS = Array.from({ length: 14 }, (_, i) => i + 1);
-const ANCHORS: Record<number, string> = { 1: "Start", 7: " ", 14: " " };
+const ANCHORS: Record<number, string> = { 1: "\n", 7: "\n", 14: "\n" };
 
 function Chapter({
   num,
