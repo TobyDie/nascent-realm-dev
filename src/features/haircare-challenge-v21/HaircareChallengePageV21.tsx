@@ -41,7 +41,7 @@ export function HaircareChallengePageV21() {
           />
         </div>
       </section>
-      <Science />
+      <Science onCta={scrollToStart} />
       <SocialProof onCta={scrollToStart} />
       <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="var(--cream)" />
       <Founder onCta={scrollToStart} />
