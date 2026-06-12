@@ -5,22 +5,6 @@ import { NotYourFault } from "./NotYourFault";
 export function Science({ onCta }: { onCta?: () => void }) {
   return (
     <section className="bg-white" id="science">
-      <div className="wrap">
-        <Reveal style={{ marginBottom: 28, textAlign: "center" }}>
-          <Eyebrow style={{ color: "var(--slate)" }}>WHY is it happening?</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12, maxWidth: 680, marginInline: "auto" }}>
-            Your hair didn't "get worse". <em>Your hair has changed, but your routine didn't change with it.</em>
-          </h2>
-        </Reveal>
-
-
-        <Reveal style={{ marginTop: 28 }}>
-          <p className="biology-reassurance">
-            You didn't do anything wrong. You were just never taught what changes after 30.
-          </p>
-        </Reveal>
-      </div>
-
       <NotYourFault onCta={onCta} />
 
       <div className="wrap">
