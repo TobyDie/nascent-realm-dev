@@ -3,7 +3,7 @@ import { Anno, Button, Eyebrow, Reveal } from "../primitives";
 export function ResultsIn2Weeks({ onCta }: { onCta?: () => void }) {
   return (
     <section className="bg-cream">
-      <Anno>Added — What changes in 14 days (outcomes)</Anno>
+      <Anno>Added - What changes in 14 days (outcomes)</Anno>
       <div className="wrap" style={{ maxWidth: 760 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 36 }}>
           <Eyebrow>Built for women 30–42</Eyebrow>
@@ -16,7 +16,7 @@ export function ResultsIn2Weeks({ onCta }: { onCta?: () => void }) {
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 3 }}>Less shedding</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  Real decrease in strands in your drain — at the temples, crown and part. Not a temporary patch.
+                  Real decrease in strands in your drain - at the temples, crown and part. Not a temporary patch.
                 </div>
               </div>
             </div>
@@ -25,7 +25,7 @@ export function ResultsIn2Weeks({ onCta }: { onCta?: () => void }) {
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 3 }}>Volume coming back</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  As your follicles recover from the stress of your 30s, fullness returns — without styling tricks.
+                  As your follicles recover from the stress of your 30s, fullness returns - without styling tricks.
                 </div>
               </div>
             </div>
@@ -34,7 +34,7 @@ export function ResultsIn2Weeks({ onCta }: { onCta?: () => void }) {
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 3 }}>Hydrated, resilient hair</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  Restore the moisture balance for your hair as it is now — and stretch the time between washes.
+                  Restore the moisture balance for your hair as it is now - and stretch the time between washes.
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@ export function ResultsIn2Weeks({ onCta }: { onCta?: () => void }) {
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 3 }}>A healthier scalp</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  Build the scalp conditions your follicles need to regrow strong, consistent hair — for years.
+                  Build the scalp conditions your follicles need to regrow strong, consistent hair - for years.
                 </div>
               </div>
             </div>

@@ -40,7 +40,7 @@ function CompactTesti({ t }: { t: Testi }) {
           file={t.image}
           widths={BA_WIDTHS}
           sizes="(max-width: 860px) 86vw, 360px"
-          alt={`Before and after — ${t.name}`}
+          alt={`Before and after - ${t.name}`}
           style={{ width: "100%", height: "auto", display: "block" }}
         />
       </div>
@@ -83,16 +83,16 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
 
   const testimonials: Testi[] = [
     { name: "Kim", initials: "K", context: "Shedding every wash · hair loss", text: "I think I lost maybe half of the amount of hair I normally lose every time I wash.", image: "ba-1.webp" },
-    { name: "Andrea Burns", initials: "A", context: "Hair loss · dry, itchy scalp", text: "By the end of 14 days, I was losing maybe a palm size amount when I'd wash my hair — about a third of what I used to lose.", image: "ba-2.webp" },
+    { name: "Andrea Burns", initials: "A", context: "Hair loss · dry, itchy scalp", text: "By the end of 14 days, I was losing maybe a palm size amount when I'd wash my hair - about a third of what I used to lose.", image: "ba-2.webp" },
     { name: "Anna Koval", initials: "A", context: "Thinning · hair felt lifeless", text: "My hair definitely looks so much better. Feels softer. There's some life added back into it.", image: "ba-3.webp" },
-    { name: "Yer Yang", initials: "Y", context: "New mother · postpartum hair loss", text: "My hair feels lighter — not as oily, not as weighed down. There's more volume and it just looks so much better.", image: "ba-5.webp" },
+    { name: "Yer Yang", initials: "Y", context: "New mother · postpartum hair loss", text: "My hair feels lighter - not as oily, not as weighed down. There's more volume and it just looks so much better.", image: "ba-5.webp" },
     { name: "Karen Patdu", initials: "M", context: "Thinning · hair loss", text: "You can see hair growing right here in the front. Slowly but surely it's coming back. My hair feels healthier, cleaner, not so oily.", image: "ba-13.webp" },
   ];
   const cards = testimonials.map((t, i) => <CompactTesti key={i} t={t} />);
 
   return (
     <section className="bg-white" id="results" style={{ paddingTop: 36, paddingBottom: 40 }}>
-      <Anno>Section 5 — Social proof / ICP-matched results</Anno>
+      <Anno>Section 5 - Social proof / ICP-matched results</Anno>
       <div className="wrap-wide">
         <Reveal style={{ textAlign: "center", marginBottom: 20, maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
           <h2 className="h2" style={{ margin: 0, fontSize: "clamp(22px, 4.6vw, 32px)", lineHeight: 1.2 }}>

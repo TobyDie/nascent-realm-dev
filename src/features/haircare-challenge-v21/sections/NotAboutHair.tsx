@@ -11,7 +11,7 @@ import {
 export function NotAboutHair({ onCta }: { onCta?: () => void }) {
   return (
     <section className="bg-cream">
-      <Anno>Added — The deeper change</Anno>
+      <Anno>Added - The deeper change</Anno>
       <div className="wrap" style={{ maxWidth: 880 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 36 }}>
           <Eyebrow>The deeper change</Eyebrow>
@@ -29,7 +29,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 4 }}>Looking like you again</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  No more dodging mirrors. The version of you that you remember — quietly coming back.
+                  No more dodging mirrors. The version of you that you remember - quietly coming back.
                 </div>
               </div>
             </div>
@@ -47,7 +47,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 4 }}>Knowledge that's yours forever</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  Not another product. A clear understanding of why your hair does what it does — and exactly what to do about it.
+                  Not another product. A clear understanding of why your hair does what it does - and exactly what to do about it.
                 </div>
               </div>
             </div>
@@ -68,7 +68,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
             <p style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 19, lineHeight: 1.5, color: "var(--ink)" }}>
               "It's not only about the hair being silky and nice to touch. It's about the new, more inspired, more empowered me."
             </p>
-            <div style={{ marginTop: 14, fontSize: 14, color: "var(--slate)", fontWeight: 600 }}>— Nataliia, 38 🇺🇦 · finished the challenge in March</div>
+            <div style={{ marginTop: 14, fontSize: 14, color: "var(--slate)", fontWeight: 600 }}>- Nataliia, 38 🇺🇦 · finished the challenge in March</div>
           </div>
         </Reveal>
         <Reveal style={{ marginTop: 26 }}>
@@ -80,7 +80,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
           />
         </Reveal>
         <Reveal className="center" style={{ marginTop: 32 }}>
-          <Button id="cta-not-about-hair" onClick={onCta} icon="arrow-right">Bring her back — start the challenge</Button>
+          <Button id="cta-not-about-hair" onClick={onCta} icon="arrow-right">Bring her back - start the challenge</Button>
         </Reveal>
       </div>
     </section>
