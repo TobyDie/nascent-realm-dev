@@ -931,8 +931,8 @@
       margin-bottom: 6px;
     }
 .hq-sp-v20 .math-eq {
-      display: flex; align-items: center; justify-content: center;
-      flex-wrap: wrap; gap: 14px 18px;
+      display: flex; align-items: flex-start; justify-content: center;
+      flex-wrap: nowrap; gap: 8px;
       font-family: var(--font-serif);
       font-weight: 600;
       color: var(--ink);
@@ -940,17 +940,17 @@
     }
 .hq-sp-v20 .math-term {
       display: inline-flex; flex-direction: column; align-items: center;
-      gap: 4px; min-width: 84px;
+      gap: 4px; min-width: 0; flex: 0 1 auto;
     }
 .hq-sp-v20 .math-term-emoji { font-size: 26px; line-height: 1; }
-.hq-sp-v20 .math-term-word { font-size: 30px; line-height: 1.05; }
+.hq-sp-v20 .math-term-word { font-size: 30px; line-height: 1.05; white-space: nowrap; }
 .hq-sp-v20 .math-term-sub {
       font-family: "Caveat", cursive; font-weight: 700;
-      font-size: 17px; color: #2C5BAA;
+      font-size: 17px; color: #2C5BAA; white-space: nowrap;
     }
 .hq-sp-v20 .math-op {
       font-size: 38px; line-height: 1; color: var(--orange-600);
-      font-weight: 700;
+      font-weight: 700; align-self: center; flex: 0 0 auto;
     }
 .hq-sp-v20 .math-formula-foot {
       text-align: center; margin-top: 18px;
@@ -998,9 +998,12 @@
       font-size: 22px; line-height: 1.35; color: var(--ink);
     }
 @media (max-width: 720px) {
-  .hq-sp-v20 .math-term-word { font-size: 22px; }
-  .hq-sp-v20 .math-op { font-size: 28px; }
-  .hq-sp-v20 .math-term { min-width: 70px; }
+  .hq-sp-v20 .math-formula { padding: 22px 12px 24px; }
+  .hq-sp-v20 .math-eq { gap: 4px; }
+  .hq-sp-v20 .math-term-emoji { font-size: 18px; }
+  .hq-sp-v20 .math-term-word { font-size: 17px; }
+  .hq-sp-v20 .math-term-sub { font-size: 12px; }
+  .hq-sp-v20 .math-op { font-size: 20px; }
   .hq-sp-v20 .math-aha { font-size: 18px; }
 }
 /* ===========================================================
