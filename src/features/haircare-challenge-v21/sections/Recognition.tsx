@@ -1,4 +1,4 @@
-import { Reveal, InlineTestimonial, Hand, Button } from "../primitives";
+import { Reveal, InlineTestimonial, Hand, Button, Eyebrow } from "../primitives";
 
 export function Recognition({ onCta }: { onCta?: () => void }) {
   return (
@@ -6,8 +6,8 @@ export function Recognition({ onCta }: { onCta?: () => void }) {
       <div className="wrap-wide">
         <Reveal className="center" style={{ marginBottom: 28 }}>
           <div className="reco-header-block">
-            <div className="reco-eyebrow">WHAT IS HAPPENING</div>
-            <h2 className="h2 reco-headline">Somewhere in your 30s, this started happening:</h2>
+            <Eyebrow>What is happening</Eyebrow>
+            <h2 className="h2 reco-headline" style={{ marginTop: 12 }}>Somewhere in your 30s, <span className="hl">this started happening:</span></h2>
           </div>
         </Reveal>
 
