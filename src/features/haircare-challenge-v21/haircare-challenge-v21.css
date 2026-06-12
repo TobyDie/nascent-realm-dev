@@ -1193,23 +1193,23 @@
 .hq-sp-v21 .topbar-inner > div:first-child { font-size: 20px !important; }
 .hq-sp-v21 .topbar-cta { padding: 9px 16px !important; font-size: 13.5px !important; }
 /* hero fold compression on mobile */
-.hq-sp-v21 .hero-section { padding-top: 16px !important; }
-.hq-sp-v21 .hero-h1 { font-size: 30px !important; line-height: 1.05; margin-bottom: 8px !important; }
+.hq-sp-v21 .hero-section { padding-top: 8px !important; }
+.hq-sp-v21 .hero-h1 { font-size: 28px !important; line-height: 1.05; margin-bottom: 6px !important; }
 .hq-sp-v21 .hero-sub-hl { font-size: 16px !important; margin-bottom: 10px !important; }
 .hq-sp-v21 .hero-validation { font-size: 14.5px !important; margin-bottom: 12px !important; }
 .hq-sp-v21 .hero-cohort { font-size: 12px; }
-.hq-sp-v21 .hero-grid { gap: 20px !important; }
+.hq-sp-v21 .hero-grid { gap: 12px !important; }
 .hq-sp-v21 .hero-grid > div:nth-child(1) { order: 2; }
 .hq-sp-v21 .hero-grid > div:nth-child(2) { order: 1; }
 .hq-sp-v21 .hero-image-wrap { aspect-ratio: 4 / 5; max-height: none !important; max-width: 360px; margin-inline: auto; }
 .hq-sp-v21 .hero-image-wrap .ph { height: 100% !important; width: 100%; }
 .hq-sp-v21 .hero-image { aspect-ratio: 4 / 5; }
 /* Mobile: hero image full-width of column, taller so face + before/after insets are visible */
-.hq-sp-v21 .hero-image-wrap { aspect-ratio: auto !important; max-width: none !important; max-height: 60vh !important; margin-inline: 0 !important; }
-.hq-sp-v21 .hero-image { aspect-ratio: auto !important; height: 60vh !important; max-height: 60vh !important; width: 100% !important; object-fit: cover; object-position: center 22%; }
-.hq-sp-v21 .hero-handwritten-eyebrow { font-size: 22px !important; margin-bottom: 4px !important; }
-.hq-sp-v21 .hero-h1 { margin-bottom: 6px !important; }
-.hq-sp-v21 .hero-validation { margin-bottom: 10px !important; }
+.hq-sp-v21 .hero-image-wrap { aspect-ratio: auto !important; max-width: none !important; max-height: 46vh !important; margin-inline: 0 !important; }
+.hq-sp-v21 .hero-image { aspect-ratio: auto !important; height: 46vh !important; max-height: 46vh !important; width: 100% !important; object-fit: cover; object-position: center 22%; }
+.hq-sp-v21 .hero-handwritten-eyebrow { font-size: 20px !important; margin-bottom: 2px !important; }
+.hq-sp-v21 .hero-h1 { margin-bottom: 4px !important; }
+.hq-sp-v21 .hero-validation { margin-bottom: 8px !important; }
 /* age stripe slightly tighter on mobile */
 .hq-sp-v21 .age-stripe { padding: 9px 14px !important; font-size: 13px !important; }
 /* trust bar → 2x2 + trustpilot row */
