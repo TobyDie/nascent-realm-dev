@@ -29,7 +29,7 @@ export function HaircareChallengePageV21() {
       <AgeStripe />
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
-      <Recognition />
+      <Recognition onCta={scrollToStart} />
       <section className="bg-cream" style={{ padding: "32px 0 8px" }}>
         <div className="wrap" style={{ maxWidth: 720, textAlign: "center" }}>
           <RImg

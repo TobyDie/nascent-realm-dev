@@ -1,6 +1,6 @@
-import { Reveal, InlineTestimonial, Hand, Icon } from "../primitives";
+import { Reveal, InlineTestimonial, Hand, Button } from "../primitives";
 
-export function Recognition() {
+export function Recognition({ onCta }: { onCta?: () => void }) {
   return (
     <section className="bg-lav">
       <div className="wrap-wide">
@@ -104,13 +104,9 @@ export function Recognition() {
           />
         </Reveal>
         <Reveal className="center" style={{ marginTop: 24 }}>
-          <a
-            id="cta-recognition"
-            href="https://join.hairqare.co/the-quiz-haircare"
-            style={{ color: "var(--orange-700)", fontWeight: 700, fontSize: 16, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}
-          >
-            Tell me why this is happening <Icon name="arrow-right" size={17} />
-          </a>
+          <Button id="cta-recognition" onClick={onCta} icon="arrow-right">
+            Tell me why this is happening
+          </Button>
         </Reveal>
       </div>
     </section>
