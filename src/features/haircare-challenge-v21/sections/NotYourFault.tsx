@@ -116,7 +116,7 @@ export function NotYourFault({ onCta }: { onCta?: () => void }) {
               </div>
               <h3 className="nyf-quote">You're still using a haircare routine built for when you were 25.</h3>
               <p className="nyf-body">
-                No one told you it would stop working — so you kept following what used to work, and wondering why nothing is working.
+                No one told you it would stop working. So you kept following what used to work, and wondering why nothing is working.{"\n\n"}
               </p>
               <DoodleBottle />
             </article>
@@ -131,7 +131,7 @@ export function NotYourFault({ onCta }: { onCta?: () => void }) {
               </div>
               <h3 className="nyf-quote">You tried to buy the fix.</h3>
               <p className="nyf-body">
-                In your 30s, you start to earn more money but have so much less time — so of course you invested in products to solve the problem. But you can't buy past what no one taught you to understand.
+                In your 30s, you start to earn more money but have so much less time so of course you invested in products to solve the problem.{"\n\n"}But you can't buy past what no one taught you to understand.{"\n\n"}
               </p>
               <DoodleStack />
             </article>
@@ -143,11 +143,11 @@ export function NotYourFault({ onCta }: { onCta?: () => void }) {
             <article className="nyf-card nyf-card-hope">
               <SunriseBackdrop />
               <div className="nyf-chapter nyf-chapter-hope">
-                <span className="nyf-chapter-num">HERE'S THE PART NO ONE TELLS YOU</span>
+                <span className="nyf-chapter-num">HERE'S THE PART{"\n"}THAT NO ONE TELLS YOU</span>
               </div>
               <h3 className="nyf-quote">Once you learn how to care for your hair in your 30s, it's easy.</h3>
               <p className="nyf-body">
-                Fewer steps. Less money. Less effort and time. It's only hard because understanding your hair is the one thing the industry was never going to sell you.
+                Fewer steps. Less money.{"\n"}Less effort and time.{"\n"}It's only hard for your right now because understanding your hair is the one thing the industry was never going to sell you.{"\n\n"}
               </p>
               <DoodleSun />
             </article>
