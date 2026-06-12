@@ -1,114 +1,105 @@
-# Retarget /20-the-haircare-challenge to women 25–34
 
-Goal: rewrite the emotional spine of /20 from **"bring her back"** (decline/recovery, 35–45) to **"build her forward"** (length, fullness, damage repair, postpartum, before-it-gets-worse). All work is fully scoped inside `src/features/haircare-challenge-v20/` — no other route is touched.
+# Redesign "None of this was your fault" — a scannable, hopeful story
 
-The 25–34 reader has two sub-modes the page must hold simultaneously:
+Goal: turn the three flat cards into a visual storyline that a skimmer instantly "gets" in 3 beats, then closes on a hopeful CTA. Mobile-first (390px), still scoped under `.hq-sp-v21`.
 
-- **25–29**: length plateau, damage from coloring/heat/bleach, limp/flat hair, "I spend a lot and see less."
-- **30–34**: bridge — postpartum shedding that isn't coming back, early stress signals, "before it gets worse."
+## The narrative arc (unchanged copy, new staging)
 
-## What changes (section by section)
+The section becomes a **three-beat journey** with a clear emotional curve:
 
-### 1. AgeStripe — `sections/AgeStripe.tsx`
+```text
+  Beat 1 (heavy)   →   Beat 2 (heavier)   →   Beat 3 (RELIEF, hopeful)
+  "routine for 25"     "tried to buy fix"     "it's actually easy"
+        ◯  ───────────────  ◯  ───────────────  ★
+   muted cream          muted cream         warm sunrise card
+```
 
-Replace the "different cause than at 22" line (age-gates out every 26-year-old).
-New: `Built for women in their 20s and 30s — the years your hair decides what it'll look like for the next decade.`
+A hand-drawn vertical squiggle/path (inline SVG) connects the three beats on the left rail — like a story timeline. Each beat is a numbered "chapter" (01 / 02 / 03). Beat 3 visually "blooms": warmer color, a hand-drawn sunrise/sparkle doodle, larger type — the moment of hope.
 
-### 2. Hero — `sections/Hero.tsx`
+## Visual moves (scoped to `.nyf-*`, no new deps)
 
-This is the make-or-break.
+1. **Section frame**
+   - Soft gradient background (cream → very light peach) instead of flat white, signaling a shift from the heavy "WHY" block above.
+   - Centered eyebrow stays. Headline gets a **hand-underline SVG** under the word "fault" (orange, wobbly stroke).
 
-- Remove **"hair loss"** language from H1, eyebrow, and bullets.
-- Remove "best hair of your life in your 30s and beyond."
-- New H1 (forward-looking, present tense): `Grow the long, thick, full hair you actually want — in 14 days of doing it right.`
-- New eyebrow: `Stop spending more for less.`
-- Rewrite the 3 bullets toward: (a) length past your plateau, (b) density and shine without $90 serums, (c) repair damage from coloring/heat/bleach before it compounds.
-- Replace trust pin "★4.8 · 12K reviews" with a peer-signal: `Joined by 250,000+ women in their 20s and 30s.`
-- Hero image: keep current Sarah image (already young-skewing).
+2. **Storyline rail (the spine)**
+   - Inline SVG vertical dashed/wavy line on the left, drawn as if by hand.
+   - Three numbered circles (01, 02, 03) sit on the rail. 01 + 02 are muted ink; 03 is filled orange with a tiny sparkle doodle.
+   - On desktop (≥820px) the rail becomes horizontal: three beats in a row with the squiggle connecting them.
 
-### 3. Recognition — `sections/Recognition.tsx`
+3. **Beat cards (chapters, not feature tiles)**
+   - Card 1: small "Chapter 01 · The routine" label, headline, 1-sentence body. A tiny hand-drawn doodle to the right: a crossed-out shampoo bottle (inline SVG, 2-color, sketchy stroke).
+   - Card 2: "Chapter 02 · The spend". Doodle: a stack of products with a small "$$$" sketch and a question mark.
+   - Card 3 (the turn): "Chapter 03 · The truth" tag in orange. Card has warm peach background, slightly larger, soft sunrise SVG behind the title (rays + half-sun, very subtle, ~12% opacity). Hand-drawn checkmark doodle replaces the question mark.
 
-Currently 5 beats; **3 of 5 age-gate** (won't grow like in your 20s / greys / $2,000 spent on salons). Rewrite all 5 beats and the header.
+4. **Micro-engagement for skimmers**
+   - Each card has a **pull-quote line** rendered in serif italic above the body — the single sentence a skimmer needs to "get it" without reading the paragraph. Examples (derived from existing copy, not new claims):
+     - 01: *"You followed what used to work."*
+     - 02: *"You tried to buy the answer."*
+     - 03: *"Once you understand it, it's easy."*
+   - Body paragraph stays for readers who slow down.
 
-New header: `Sometime in your 20s or early 30s, this started happening:`
+5. **Reveal motion (reuse existing `Reveal`)**
+   - Stagger 0 / 120 / 260ms so the eye is pulled down the rail.
+   - The orange Chapter 03 circle pulses once on reveal (CSS keyframe, respects `prefers-reduced-motion`).
 
-New 5 beats:
+6. **Closing CTA**
+   - Keep the orange pill `Button` (unchanged style per page-wide rule).
+   - Add a tiny hand-drawn arrow doodle (SVG) curving from Chapter 03 down to the button — visually saying "this is where it leads".
+   - Above the button, a small hopeful kicker line in serif italic: *"The hard part is already behind you."*
 
-1. **Length plateau** — "It grows to a certain point and just… stops." → so you trim the ends, blame the ends, and never find what's actually capping it.
-2. **Damage stacking** — "Color, heat, bleach, the bond builder you bought to fix the bleach." → so the breakage outruns the growth and your length never moves.
-3. **Postpartum shedding that didn't come back** — (heavy beat with marginalia: "↘ it's been 18 months") → so you wait, and wait, and start to wonder if this is just your hair now.
-4. **Limp and lifeless despite the routine** — "$200 in the shower and it still looks flat by noon." → so you buy the next better thing, and the next, ~$1,000 deep this year alone.
-5. **Stress is showing in your hair before it shows anywhere else** → the shedding in the brush, the temple thinning, the texture change you can feel before you can see.
+## Hand-drawn assets (all inline SVG, no new files)
 
-Replace the "$2,000 spent" meter with **"~$1,000 this year"** (matches the age bracket's actual spend pattern).
-Keep Abigail-style testimonial slot but **swap to a 27–30-year-old** profile (use a younger `profile-*.webp` — pick during build).
-CTA link copy stays.
+- Squiggle rail (vertical + horizontal variants)
+- Wobbly underline under "fault"
+- Crossed-out shampoo bottle (Chapter 01)
+- Product stack + "$$$" sketch (Chapter 02)
+- Half-sun with rays + sparkle (Chapter 03)
+- Curved arrow to CTA
 
-### 4. Science — `sections/Science.tsx`
+All strokes use `currentColor` so they inherit ink/orange tokens. Kept under ~40 lines of SVG total.
 
-Reorder root causes. Lead with what hits 25–34:
+## Mobile-first layout (390px)
 
-1. **Cortisol / chronic stress** (telogen effluvium)
-2. **Iron + ferritin deficiency** (extremely common pre-35, often missed)
-3. **The damage–product cycle** (coloring, heat, surfactants stripping the cuticle)
-4. **Postpartum hormone shifts**
-5. Perimenopause demoted to a one-line "and by your mid-30s…" mention, not the opener.
+```text
+┌─────────────────────────────┐
+│   BEFORE YOU BLAME YOURSELF │
+│   None of this was your     │
+│           ~~~fault~~~       │
+│                             │
+│ ◯ 01  Chapter · The routine │
+│ │     "You followed what    │
+│ │      used to work."       │
+│ │     [body sentence]       │
+│ │                  🍶✗      │
+│ ◯ 02  Chapter · The spend   │
+│ │     "You tried to buy…"   │
+│ │     [body sentence]       │
+│ │                  💰?      │
+│ ★ 03  Chapter · The truth   │
+│       "Once you understand  │
+│        it, it's easy."      │
+│       [body sentence]       │
+│  ☀ ✨           ✓           │
+│                             │
+│   "The hard part is         │
+│    already behind you."     │
+│      ↘  [ Show me what my   │
+│           hair needs now → ]│
+└─────────────────────────────┘
+```
 
-DHT / estrogen-drop framing comes out of the lead.
+Desktop (≥820px): rail becomes horizontal, three chapters sit in a row, Chapter 03 slightly larger; squiggle connects them; CTA centered below.
 
-### 5. Founder — `sections/Founder.tsx`
+## Files to change (build phase)
 
-Re-order Sarah's arc. Lead with **where she is now** (120cm healthy hair, $10/month, taught herself the system), then back-fill the discovery. Remove the heavy "secretly thinning at peak career / lost half my hair" trauma framing from the opening beat — it's a deterrent for a 27-year-old who doesn't want to imagine that future. Keep the facts, change the ordering and emphasis: teacher first, survivor second.
+- `src/features/haircare-challenge-v21/sections/NotYourFault.tsx` — full rewrite of the JSX: chapter rail, three beat cards with inline SVG doodles, pull-quote lines, closing kicker + curved arrow to CTA. Keep `onCta` prop and `Button` import.
+- `src/features/haircare-challenge-v21/haircare-challenge-v21.css` — replace the existing `.nyf-*` block (lines ~1818–1880) with the new storyline styles: gradient section bg, rail, numbered chapter markers, doodle positioning, Chapter 03 accent, pull-quote serif italic, mobile→desktop layout, reduced-motion guard, pulse keyframe.
 
-### 6. SelfQualifier — `sections/SelfQualifier.tsx`
+No changes to `Science.tsx`, page wiring, or other CTAs. Copy is preserved verbatim; only the pull-quote lines are added as visual scan-anchors derived from the same content.
 
-Replace all 6 checklist items (currently 5 of 6 age-gate). New:
+## Out of scope
 
-1. My hair grows to a point and stops — I can't get past my current length.
-2. I color, bleach, or heat-style and I can see the damage.
-3. I had a baby and the shedding never fully came back.
-4. My hair looks limp or flat no matter what I spend on products.
-5. I'm stressed a lot and I think it's showing up in my hair.
-6. I want to fix this **before** it becomes a real problem.
-
-Result copy: `you're exactly who the challenge was built for. Join 250,000+ women in their 20s and 30s who started here.`
-
-### 8. NotAboutHair, HowItWorks, ResultsIn2Weeks, WhatsIncluded, Faq, FinalCta
-
-- **NotAboutHair**: light pass — strip nostalgia phrases ("bring her back," "looking like you again," "fell in love with my hair again") and replace with forward verbs (build, unlock, get there sooner, before you lose it).
-- **HowItWorks / ResultsIn2Weeks / WhatsIncluded**: copy is largely mechanism/deliverables — keep structure, sweep for any "in your 30s and beyond" or "decline" phrasing.
-- **Faq**: replace the perimenopause/thyroid-led question with a length-plateau question and a postpartum question at the top; demote perimenopause lower.
-- **FinalCta**: rewrite closing CTA copy from "get your hair back" → "get the hair you're actually going for."
-
-### 9. What stays untouched
-
-- `$37` price, bundle, cohort/start-date structure, DIY shampoo, education-not-products positioning
-- Social proof numbers, guarantee, ReviewedBy, StickyCta layout
-- All component structure, all CSS (`haircare-challenge-v20.css`), all assets, all routes
-- `/14`, `/17`, `/18`, `/19`, and original `/the-haircare-challenge` — **zero changes**
-
-## Scope guarantee
-
-Every edit lands inside `src/features/haircare-challenge-v20/`. No shared components, no other route files, no global CSS. Per the page-fork rule, /20 stays isolated.
-
-## Files to edit
-
-- `src/features/haircare-challenge-v20/sections/AgeStripe.tsx`
-- `src/features/haircare-challenge-v20/sections/Hero.tsx`
-- `src/features/haircare-challenge-v20/sections/Recognition.tsx`
-- `src/features/haircare-challenge-v20/sections/Science.tsx`
-- `src/features/haircare-challenge-v20/sections/Founder.tsx`
-- `src/features/haircare-challenge-v20/sections/SelfQualifier.tsx`
-- `src/features/haircare-challenge-v20/sections/NotAboutHair.tsx`
-- `src/features/haircare-challenge-v20/sections/Faq.tsx`
-- `src/features/haircare-challenge-v20/sections/FinalCta.tsx`
-- `src/features/haircare-challenge-v20/sections/Interstitial.tsx` (retune textIndex/imageIndex picks + 1–2 quote rewrites)
-- `src/routes/20-the-haircare-challenge.tsx` — update `<title>`, meta description, OG/Twitter title+description to reflect 25–34 forward framing (canonical URL unchanged)
-
-## Open question before I build
-
-**Hero H1 direction** — pick one (or say "go with #1"): go with #1
-
-1. *Grow the longest, thickest, fullest hair you actually want - in 14 days of doing it right.* (length-led, broadest) 
-2. *Build the hair you want now — before your 30s decide for you.* (urgency-led, sharper for 28–32)
-3. *Stop spending more on your hair and seeing less.* (spend-fatigue-led, sharpest for 25–29)
+- No new images uploaded (all doodles inline SVG).
+- No new dependencies.
+- No changes to other sections, CTAs, or routes.
