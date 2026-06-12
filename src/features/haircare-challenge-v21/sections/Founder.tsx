@@ -78,7 +78,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
           <Eyebrow>Meet your coach</Eyebrow>
           <h2 className="h2" style={{ marginTop: 12, maxWidth: 760, marginInline: "auto" }}>
             She lost half her hair at the peak of her career.<br />
-            <span style={{ color: "var(--orange-700)" }}>That's why she's the right person to help you.</span>
+            <span className="hl">That's why she's the right person to help you.</span>
           </h2>
         </Reveal>
 
