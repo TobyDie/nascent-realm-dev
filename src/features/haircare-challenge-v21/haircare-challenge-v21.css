@@ -672,7 +672,7 @@
       font-size: 12px; font-weight: 700; letter-spacing: 1.6px;
       color: var(--orange-700); margin-bottom: 10px;
     }
-.hq-sp-v21 .reco-headline { margin: 0; font-size: 26px; line-height: 1.25; }
+.hq-sp-v21 .reco-headline { margin: 0; line-height: 1.2; }
 .hq-sp-v21 .reco-stack {
       list-style: none; padding: 0; margin: 0 auto;
       max-width: 760px;
@@ -716,7 +716,7 @@
     }
 @media (max-width: 720px) {
 .hq-sp-v21 .reco-header-block { padding: 18px 18px; }
-.hq-sp-v21 .reco-headline { font-size: 22px; }
+
 .hq-sp-v21 .reco-row { padding: 16px 16px; }
 .hq-sp-v21 .reco-line { font-size: 15.5px; }
 .hq-sp-v21 .reco-trigger { font-size: 16.5px; }
@@ -1862,8 +1862,10 @@
 .hq-sp-v21 .nyf-head { text-align: center; max-width: 680px; margin: 0 auto 28px; }
 .hq-sp-v21 .nyf-headline {
   font-family: var(--font-serif);
-  font-size: clamp(28px, 6.4vw, 44px);
-  line-height: 1.1;
+  font-weight: 700;
+  color: var(--ink);
+  font-size: var(--fs-h2);
+  line-height: 1.2;
   letter-spacing: -0.01em;
   margin: 10px 0 0;
 }
