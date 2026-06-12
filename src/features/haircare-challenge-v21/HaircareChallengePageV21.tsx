@@ -30,21 +30,12 @@ export function HaircareChallengePageV21() {
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
       <Recognition onCta={scrollToStart} />
-      <section className="bg-cream" style={{ padding: "32px 0 8px" }}>
-        <div className="wrap" style={{ maxWidth: 720, textAlign: "center" }}>
-          <RImg
-            file="brooke-glad-i-found-this.webp"
-            widths={[500, 800, 1200]}
-            sizes="(max-width: 760px) 92vw, 720px"
-            alt="Brooke testimonial: Glad I found this. Before and after of hair loss results from the 14-Day Haircare Challenge."
-            style={{ width: "100%", height: "auto", borderRadius: 16, boxShadow: "var(--shadow-sm)" }}
-          />
-        </div>
-      </section>
+      <TestimonialStrip variant="single-hero" imageIndex={1} bg="var(--cream)" />
+      <TestimonialStrip variant="ribbon" textIndex={5} imageIndex={5} bg="var(--white)" />
       <Science onCta={scrollToStart} />
       <SocialProof onCta={scrollToStart} />
       <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="var(--cream)" />
-      <TestimonialStrip variant="polaroid-duo" textIndex={1} imageIndex={1} bg="var(--white)" />
+      <TestimonialStrip variant="polaroid-duo" textIndex={1} bg="var(--white)" />
       <HowItWorks onCta={scrollToStart} />
       <ResultsIn2Weeks onCta={scrollToStart} />
       <TestimonialStrip variant="magazine-split" textIndex={2} imageIndex={2} bg="var(--cream)" />
@@ -56,7 +47,6 @@ export function HaircareChallengePageV21() {
       <SelfQualifier onCta={scrollToStart} />
       <TestimonialStrip variant="single-hero" textIndex={4} imageIndex={4} bg="var(--cream)" />
       <Faq onCta={scrollToStart} />
-      <TestimonialStrip variant="ribbon" textIndex={5} imageIndex={5} bg="var(--white)" />
       <FinalCta onCta={scrollToStart} />
       <StickyCta onCta={scrollToStart} />
     </div>
