@@ -466,7 +466,7 @@ export function InlineTestimonial({
       <div className="inline-testi-body">
         <StarRow size={13} />
         <p className="inline-testi-quote">“{quote}”</p>
-        <div className="inline-testi-meta">— {name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}</div>
+        <div className="inline-testi-meta">{metaPrefix}{name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}</div>
       </div>
     </div>
   );
