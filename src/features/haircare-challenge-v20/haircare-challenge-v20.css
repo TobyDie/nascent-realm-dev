@@ -583,17 +583,13 @@
       display: inline-block;
       font-family: "Caveat", cursive;
       font-weight: 700;
-      font-size: 22px;
-      line-height: 1;
-      color: var(--orange-700);
-      background: #FFF1E2;
-      border: 1.5px solid var(--orange-300, #F5C99B);
-      padding: 8px 16px 9px;
-      border-radius: 999px;
-      transform: rotate(-2.5deg);
+      font-size: 23px;
+      line-height: 1.15;
+      color: var(--orange-600);
+      padding: 0;
+      margin: 2px 0 14px 8px;
+      transform: rotate(-2deg);
       transform-origin: left center;
-      margin: 4px 0 16px;
-      box-shadow: 0 2px 0 rgba(233,123,0,0.10);
     }
 .hq-sp-v20 .hero-supporting {
       max-width: 480px;
@@ -1332,7 +1328,7 @@
 .hq-sp-v20 .hero-handwritten-eyebrow { font-size: 22px !important; margin-bottom: 4px !important; }
 .hq-sp-v20 .hero-h1 { margin-bottom: 6px !important; }
 .hq-sp-v20 .hero-validation { margin-bottom: 10px !important; }
-.hq-sp-v20 .hero-handwritten-pill { font-size: 18px !important; padding: 6px 13px 7px !important; margin: 2px 0 12px !important; }
+.hq-sp-v20 .hero-handwritten-pill { font-size: 19px !important; padding: 0 !important; margin: 2px 0 10px 6px !important; }
 .hq-sp-v20 .hero-supporting { font-size: 14px !important; margin-bottom: 14px !important; }
 .hq-sp-v20 .hero-h1 { font-size: 28px !important; }
 /* age stripe slightly tighter on mobile */
