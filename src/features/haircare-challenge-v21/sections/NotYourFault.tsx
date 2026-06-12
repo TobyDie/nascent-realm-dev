@@ -104,9 +104,6 @@ export function NotYourFault({ onCta }: { onCta?: () => void }) {
             </span>
             .
           </h2>
-          <p className="nyf-subhead">
-            Three quiet things happened — none of them are on you. Here's the story, in order.
-          </p>
         </Reveal>
 
         <div className="nyf-rail">
@@ -115,12 +112,11 @@ export function NotYourFault({ onCta }: { onCta?: () => void }) {
             <div className="nyf-dot" aria-hidden="true">01</div>
             <article className="nyf-card">
               <div className="nyf-chapter">
-                <span className="nyf-chapter-num">Chapter 01</span>
-                <span>The routine</span>
+                <span className="nyf-chapter-num">NOT YOUR FAULT</span>
               </div>
-              <h3 className="nyf-quote">"You followed what used to work."</h3>
+              <h3 className="nyf-quote">You're still using a haircare routine built for when you were 25.</h3>
               <p className="nyf-body">
-                You're still using a haircare routine built for when you were 25. No one told you it would stop working — so you kept following it, wondering why nothing was working anymore.
+                No one told you it would stop working — so you kept following what used to work, and wondering why nothing is working.
               </p>
               <DoodleBottle />
             </article>
@@ -131,12 +127,11 @@ export function NotYourFault({ onCta }: { onCta?: () => void }) {
             <div className="nyf-dot" aria-hidden="true">02</div>
             <article className="nyf-card">
               <div className="nyf-chapter">
-                <span className="nyf-chapter-num">Chapter 02</span>
-                <span>The spend</span>
+                <span className="nyf-chapter-num">NOT YOUR FAULT</span>
               </div>
-              <h3 className="nyf-quote">"You tried to buy the answer."</h3>
+              <h3 className="nyf-quote">You tried to buy the fix.</h3>
               <p className="nyf-body">
-                In your 30s you earn more but have so much less time — so of course you invested in products to solve it. But you can't buy past what no one taught you to understand.
+                In your 30s, you start to earn more money but have so much less time — so of course you invested in products to solve the problem. But you can't buy past what no one taught you to understand.
               </p>
               <DoodleStack />
             </article>
@@ -148,10 +143,9 @@ export function NotYourFault({ onCta }: { onCta?: () => void }) {
             <article className="nyf-card nyf-card-hope">
               <SunriseBackdrop />
               <div className="nyf-chapter nyf-chapter-hope">
-                <span className="nyf-chapter-num">Chapter 03</span>
-                <span>The truth no one tells you</span>
+                <span className="nyf-chapter-num">HERE'S THE PART NO ONE TELLS YOU</span>
               </div>
-              <h3 className="nyf-quote">"Once you understand it — it's easy."</h3>
+              <h3 className="nyf-quote">Once you learn how to care for your hair in your 30s, it's easy.</h3>
               <p className="nyf-body">
                 Fewer steps. Less money. Less effort and time. It's only hard because understanding your hair is the one thing the industry was never going to sell you.
               </p>
