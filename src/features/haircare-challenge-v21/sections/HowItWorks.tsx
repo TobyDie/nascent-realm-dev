@@ -46,7 +46,7 @@ function Chapter({
       <h3 className="mx-chapter-headline">{headline}</h3>
       <p className="mx-chapter-body" style={{ whiteSpace: 'pre-line' }}>{body}</p>
       {children}
-      <p className="mx-chapter-caption">↳ {caption}</p>
+      {caption && <p className="mx-chapter-caption">↳ {caption}</p>}
     </article>
   );
 }
