@@ -431,8 +431,8 @@ export function TestimonialCard({
 }
 
 export function InlineTestimonial({
-  name, age, flag, quote, accent = "var(--orange-600)", avatar, style,
-}: { name: string; age?: React.ReactNode; flag?: React.ReactNode; quote: React.ReactNode; accent?: string; avatar?: string; style?: React.CSSProperties }) {
+  name, age, flag, quote, accent = "var(--orange-600)", avatar, metaPrefix = "— ", style,
+}: { name: string; age?: React.ReactNode; flag?: React.ReactNode; quote: React.ReactNode; accent?: string; avatar?: string; metaPrefix?: string; style?: React.CSSProperties }) {
   const initials = (name || "?").trim().charAt(0).toUpperCase();
   return (
     <div className="inline-testi" style={{ borderLeft: `3px solid ${accent}`, ...style }}>
@@ -466,7 +466,7 @@ export function InlineTestimonial({
       <div className="inline-testi-body">
         <StarRow size={13} />
         <p className="inline-testi-quote">“{quote}”</p>
-        <div className="inline-testi-meta">— {name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}</div>
+        <div className="inline-testi-meta">{metaPrefix}{name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}</div>
       </div>
     </div>
   );

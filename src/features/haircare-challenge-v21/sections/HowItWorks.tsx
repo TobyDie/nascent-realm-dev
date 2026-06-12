@@ -55,12 +55,12 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
   const joining = useJoiningCount();
   return (
     <section className="bg-white missions-section">
-      <Anno>Section 7 — How it works</Anno>
+      <Anno> </Anno>
       <div className="wrap" style={{ maxWidth: 720 }}>
         <Reveal className="mx-head">
           <p className="mx-eyebrow">Anytime · Anywhere.</p>
           <h2 className="h2 mx-headline">
-            10 minutes a day.<br />14 days — 14 Simple Missions.
+            10 minutes a day.<br />14 days - 14 Simple Missions.
           </h2>
         </Reveal>
 
@@ -167,6 +167,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
             flag="🇲🇾"
             quote="Before this, every time I ran my fingers through my hair, strands would come out. Now when I do it, I don't see anything. That's the good news."
             avatar="profile-10.webp"
+            metaPrefix="- "
             style={{ margin: "0 auto" }}
           />
         </Reveal>
