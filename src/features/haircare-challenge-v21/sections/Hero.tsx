@@ -48,9 +48,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             {/* CTA block - must be above fold on mobile */}
             <div id="hero-cta-sentinel" style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start", marginBottom: 24 }}>
               <Button id="cta-hero" onClick={onCta} icon="arrow-right">Join the challenge</Button>
-              <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
-                85% off · today only
-              </span>
+              {"\n"}
               <GuaranteeBadge size="sm" />
               {/* cohort line - under CTA, not above headline */}
               <span className="hero-cohort">
@@ -68,7 +66,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             <ul className="hero-bullets">
               <li>
                 <span className="hero-bullet-emoji">🌱</span>
-                <span>Grow longer, denser and healthier hair than you had in your 20s.</span>
+                <span>Grow longer, denser and healthier hair. Permanently.&nbsp;</span>
               </li>
               <li>
                 <span className="hero-bullet-emoji">💸</span>
