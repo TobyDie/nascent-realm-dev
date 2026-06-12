@@ -21,7 +21,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
             Anytime - Anywhere.<br />Here's exactly what happens.
           </p>
           <p style={{ marginTop: 14, fontSize: 15.5, color: "var(--slate)", maxWidth: 560, marginInline: "auto", fontStyle: "italic" }}>
-            Designed for women who don't have an hour for self-care. Watch on your phone, do it while your kids brush their teeth.
+            Designed for women who don't have an hour for self-care. Watch on your phone, fits any morning routine.
           </p>
         </Reveal>
 

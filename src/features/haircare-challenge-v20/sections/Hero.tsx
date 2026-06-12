@@ -22,23 +22,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
 
           {/* TEXT column */}
           <Reveal>
-            <div
-              className="hero-handwritten-eyebrow"
-              style={{
-                fontFamily: '"Caveat", cursive',
-                fontWeight: 700,
-                color: "var(--orange-700)",
-                fontSize: 26,
-                lineHeight: 1.1,
-                transform: "rotate(-2deg)",
-                transformOrigin: "left center",
-                marginBottom: 10,
-                display: "inline-block",
-              }}
-            >
-              Stop spending more for less.
-            </div>
-
             {/* H1 - the single emotional hook, short enough for mobile */}
             <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
               <span style={{ color: "#090909" }}>Grow the longest, thickest, fullest hair you actually want - </span>
@@ -57,10 +40,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                 <Icon name="calendar-heart" size={13} color="var(--orange-600)" />
                 Next cohort: <strong className="start-date">{startDate ? fmtShort(startDate) : "Fri, June 6th"}</strong> · {formatJoiningCount(joining)} women joining this week
               </span>
-              {/* Validation paragraph - restored, after cohort line */}
-              <p className="hero-validation" style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)" }}>
-                You're not doing anything wrong - you were just never taught how hair actually grows. Learn the system in 14 days, get past your length plateau, and build the hair you're going for before bad habits compound.
-              </p>
             </div>
 
             {/* Bullets - proof layer, below the CTA */}

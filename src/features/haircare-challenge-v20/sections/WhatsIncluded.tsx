@@ -140,7 +140,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
               <div className="bundle-item-thumb">🥗</div>
               <div className="bundle-item-body">
                 <div className="bundle-item-title">Healthy Hair Recipe Book</div>
-                <div className="bundle-item-desc">30 hormone-balancing, follicle-feeding meals.</div>
+                <div className="bundle-item-desc">30 follicle-feeding, growth-supporting meals.</div>
                 <div className="bundle-item-tag-row">
                   <span className="bundle-item-tag">$29 value</span>
                 </div>

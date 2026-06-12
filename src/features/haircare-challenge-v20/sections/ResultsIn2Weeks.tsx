@@ -6,7 +6,7 @@ export function ResultsIn2Weeks({ onCta }: { onCta?: () => void }) {
       <Anno>Added - What changes in 14 days (outcomes)</Anno>
       <div className="wrap" style={{ maxWidth: 760 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 36 }}>
-          <Eyebrow>Built for women 30–42</Eyebrow>
+          <Eyebrow>Built for women in their 20s and 30s</Eyebrow>
           <h2 className="h2" style={{ marginTop: 12 }}>What you'll actually see in 2 weeks</h2>
         </Reveal>
         <Reveal>
@@ -23,9 +23,9 @@ export function ResultsIn2Weeks({ onCta }: { onCta?: () => void }) {
             <div className="result-row">
               <span className="result-emoji">💁</span>
               <div style={{ flex: 1 }}>
-                <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 3 }}>Volume coming back</div>
+                <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 3 }}>Visible thickness - not styling tricks</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  As your follicles recover from the stress of your 30s, fullness returns - without styling tricks.
+                  Real density that shows up in the mirror - the fullness you thought you had to fake with product.
                 </div>
               </div>
             </div>
@@ -43,7 +43,7 @@ export function ResultsIn2Weeks({ onCta }: { onCta?: () => void }) {
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 3 }}>Stronger strands</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  Work with the keratin and collagen decline that starts in your 30s, so the breakage eases off.
+                  Protect the keratin you're already building, so breakage stops outrunning growth - and your length finally compounds.
                 </div>
               </div>
             </div>
