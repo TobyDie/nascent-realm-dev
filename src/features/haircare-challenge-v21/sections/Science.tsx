@@ -1,7 +1,8 @@
 import { Reveal, Eyebrow, Icon, StarRow, Button } from "../primitives";
 import { r2img } from "../img";
+import { NotYourFault } from "./NotYourFault";
 
-export function Science() {
+export function Science({ onCta }: { onCta?: () => void }) {
   return (
     <section className="bg-white" id="science">
       <div className="wrap">
@@ -18,6 +19,11 @@ export function Science() {
             You didn't do anything wrong. You were just never taught what changes after 30.
           </p>
         </Reveal>
+      </div>
+
+      <NotYourFault onCta={onCta} />
+
+      <div className="wrap">
 
         <Reveal style={{ marginTop: 32 }}>
           <div style={{ background: "var(--lavender)", borderRadius: 20, padding: "32px 36px", position: "relative", maxWidth: 720, marginInline: "auto" }}>
