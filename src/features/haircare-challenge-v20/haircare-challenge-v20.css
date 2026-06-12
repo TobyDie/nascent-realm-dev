@@ -583,17 +583,13 @@
       display: inline-block;
       font-family: "Caveat", cursive;
       font-weight: 700;
-      font-size: 22px;
-      line-height: 1;
-      color: var(--orange-700);
-      background: #FFF1E2;
-      border: 1.5px solid var(--orange-300, #F5C99B);
-      padding: 8px 16px 9px;
-      border-radius: 999px;
-      transform: rotate(-2.5deg);
+      font-size: 23px;
+      line-height: 1.15;
+      color: var(--orange-600);
+      padding: 0;
+      margin: 2px 0 14px 8px;
+      transform: rotate(-2deg);
       transform-origin: left center;
-      margin: 4px 0 16px;
-      box-shadow: 0 2px 0 rgba(233,123,0,0.10);
     }
 .hq-sp-v20 .hero-supporting {
       max-width: 480px;
