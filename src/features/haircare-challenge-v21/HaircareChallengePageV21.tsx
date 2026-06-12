@@ -44,12 +44,12 @@ export function HaircareChallengePageV21() {
       <Science onCta={scrollToStart} />
       <SocialProof onCta={scrollToStart} />
       <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="var(--cream)" />
-      <Founder onCta={scrollToStart} />
       <TestimonialStrip variant="polaroid-duo" textIndex={1} imageIndex={1} bg="var(--white)" />
       <HowItWorks onCta={scrollToStart} />
       <ResultsIn2Weeks onCta={scrollToStart} />
       <TestimonialStrip variant="magazine-split" textIndex={2} imageIndex={2} bg="var(--cream)" />
       <WhatsIncluded onCta={scrollToStart} />
+      <Founder onCta={scrollToStart} />
       <ReviewedBy />
       <TestimonialStrip variant="sticky-wall" textIndex={3} imageIndex={3} bg="var(--lavender)" />
       <NotAboutHair onCta={scrollToStart} />
