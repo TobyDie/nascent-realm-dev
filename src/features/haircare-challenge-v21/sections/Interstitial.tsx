@@ -170,17 +170,16 @@ export function TestimonialStrip({
 
   if (variant === "single-hero" && i) {
     return (
-      <section style={{ background: bg, padding: "56px 0" }}>
+      <section style={{ background: bg, padding: "28px 0" }}>
         <div className="wrap" style={{ maxWidth: 720, textAlign: "center" }}>
           <Reveal>
-            <div className="ti-single-hero">
-              <div className="ti-single-hero-avatar">
-                <img {...ri(i.image, "180px", [200, 400, 700])} alt={i.name} loading="lazy" />
+            <div className="ti-single-hero ti-single-hero-ba">
+              <div className="ti-single-hero-ba-img">
+                <img {...ri(i.image, "(max-width: 760px) 92vw, 640px")} alt={`${i.name} - before and after`} loading="lazy" />
               </div>
               <StarRow size={18} style={{ justifyContent: "center" }} />
+              <div className="ti-single-hero-name">{i.name} <span className="ti-single-hero-context">· {i.context}</span></div>
               <p className="ti-single-hero-quote">"{i.text}"</p>
-              <div className="ti-single-hero-name">{i.name}</div>
-              <div className="ti-single-hero-context">{i.context}</div>
               {t ? (
                 <div className="ti-single-hero-also">
                   <span className="ti-single-hero-also-label">Also from this week:</span>
