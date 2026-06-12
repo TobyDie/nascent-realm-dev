@@ -46,7 +46,7 @@ function Chapter({
       <h3 className="mx-chapter-headline">{headline}</h3>
       <p className="mx-chapter-body" style={{ whiteSpace: 'pre-line' }}>{body}</p>
       {children}
-      <p className="mx-chapter-caption">↳ {caption}</p>
+      {caption && <p className="mx-chapter-caption">↳ {caption}</p>}
     </article>
   );
 }
@@ -121,7 +121,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
               meta="Day 1"
               headline="You let go of the routine that is not working"
               body="You're not the only one who's tried everything. Every woman shows up the same way, done with what hasn't worked."
-              caption="Prep mission · Your group begins"
+              caption=""
             />
           </Reveal>
           <Reveal delay={80}>
@@ -145,20 +145,13 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
               num="03"
               tag="FLOURISH TOGETHER"
               meta="Day 14+"
-              headline="Day 14, you walk out with results and a group that saw it happen."
-              body="Less falling out. More shine. Women who get it because they just did it too."
-              caption="Day 14+ · Your system, your people"
+              headline="By day 14 you won't need to buy another product because you'll know what your hair actually needs."
+              body="Less falling out. More shine. More confidence.&nbsp;"
+              caption=""
             />
           </Reveal>
         </div>
 
-        <Reveal style={{ marginTop: 36 }}>
-          <div className="mx-callout">
-            <p className="p" style={{ margin: 0, fontSize: 16.5, lineHeight: 1.55 }}>
-              By day 14 you won't need to buy another product&nbsp;because you'll know what your hair actually needs.
-            </p>
-          </div>
-        </Reveal>
 
         <Reveal style={{ marginTop: 26 }}>
           <InlineTestimonial

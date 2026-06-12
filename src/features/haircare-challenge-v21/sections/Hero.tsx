@@ -66,7 +66,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             <ul className="hero-bullets">
               <li>
                 <span className="hero-bullet-emoji">🌱</span>
-                <span>Grow longer, denser and healthier hair. Permanently.&nbsp;</span>
+                <span>Grow longer, denser and healthier hair than you had in your 20s.</span>
               </li>
               <li>
                 <span className="hero-bullet-emoji">💸</span>
