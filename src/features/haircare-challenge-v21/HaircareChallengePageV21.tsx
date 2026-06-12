@@ -16,8 +16,6 @@ import { FinalCta } from "./sections/FinalCta";
 import { StickyCta } from "./sections/StickyCta";
 import { TestimonialStrip } from "./sections/Interstitial";
 import { ReviewedBy } from "./sections/ReviewedBy";
-import { RImg } from "./primitives";
-
 const CTA_URL = "https://join.hairqare.co/the-quiz-haircare";
 function scrollToStart() {
   window.location.href = CTA_URL;
