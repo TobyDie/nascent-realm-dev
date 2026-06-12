@@ -97,15 +97,15 @@ export function NotYourFault({ onCta }: { onCta?: () => void }) {
         <Reveal className="nyf-head">
           <Eyebrow style={{ color: "var(--slate)" }}>WHY IT'S HAPPENING</Eyebrow>
           <h2 className="nyf-headline">
-            Your hair didn't get worse — it <em>changed</em>. Your routine just didn't change with it.
+            Your hair didn't get worse. It changed.{"\n"}Your routine just didn't change with it.
           </h2>
           <p className="nyf-subhead">
-            You didn't do anything wrong. No one ever taught you what shifts after 30 — so none of this was your{" "}
+            You didn't do anything wrong.{"\n"}No one ever taught you what shifts after 30, so none of this was your{" "}
             <span className="nyf-fault">
               fault
               <FaultUnderline />
             </span>
-            .
+            {"\n"}.
           </p>
         </Reveal>
 
