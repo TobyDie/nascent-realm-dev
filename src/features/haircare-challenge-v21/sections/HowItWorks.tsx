@@ -167,6 +167,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
             flag="🇲🇾"
             quote="Before this, every time I ran my fingers through my hair, strands would come out. Now when I do it, I don't see anything. That's the good news."
             avatar="profile-10.webp"
+            metaPrefix="- "
             style={{ margin: "0 auto" }}
           />
         </Reveal>
