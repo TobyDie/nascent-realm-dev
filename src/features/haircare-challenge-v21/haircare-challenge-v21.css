@@ -2057,9 +2057,9 @@
    Missions section (HowItWorks redesign - cohort calendar)
    Scoped to .hq-sp-v21 .missions-section
    ============================================================ */
-.hq-sp-v21 .missions-section { padding: 56px 0 40px; }
+.hq-sp-v21 .missions-section { padding: 36px 0 40px; }
 
-.hq-sp-v21 .mx-head { text-align: center; margin-bottom: 22px; }
+.hq-sp-v21 .mx-head { text-align: center; margin-bottom: 18px; }
 .hq-sp-v21 .mx-eyebrow {
   margin: 0 0 10px;
   font-size: 11px;
@@ -2138,10 +2138,21 @@
 .hq-sp-v21 .mx-calendar { margin: 0 auto 36px; max-width: 560px; }
 .hq-sp-v21 .mx-calendar-frame {
   position: relative;
-  padding: 22px 16px 18px;
+  padding: 18px 16px 18px;
   background: var(--cream);
   border: 1px solid var(--line);
   border-radius: 18px;
+}
+.hq-sp-v21 .mx-cohort-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 6px 14px;
+}
+.hq-sp-v21 .mx-cohort-divider {
+  height: 1px;
+  background: var(--line);
+  margin: 0 4px 14px;
 }
 .hq-sp-v21 .mx-calendar-corner {
   position: absolute;
