@@ -16,10 +16,13 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
         <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
           <h2 className="h2" style={{ marginTop: 12 }}>10 minutes a day.<br />14 days - 14 Simple Missions.</h2>
           <p className="lead" style={{ marginTop: 12, color: "var(--ink-soft)" }}>
-            Anytime - Anywhere.<br />Here's exactly what happens.
+            Anytime - Anywhere.
           </p>
-          <p style={{ marginTop: 14, fontSize: 15.5, color: "var(--slate)", maxWidth: 560, marginInline: "auto", fontStyle: "italic" }}>
-            Designed for women who don't have an hour for self-care. Watch on your phone, do it while your kids brush their teeth.
+          <p style={{ marginTop: 18, fontSize: 17, color: "var(--ink)", maxWidth: 560, marginInline: "auto", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+            You're not in this alone
+          </p>
+          <p style={{ marginTop: 8, fontSize: 16, color: "var(--slate)", maxWidth: 560, marginInline: "auto" }}>
+            Hundreds of women start the same day you do.
           </p>
         </Reveal>
 
@@ -28,10 +31,13 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
             <div className="timeline-step">
               <div className="timeline-circle">01</div>
               <div className="timeline-card">
-                <div className="timeline-tag">Day 1 · 📦</div>
-                <h3 className="h3" style={{ marginBottom: 6, marginTop: 2 }}>You get set up</h3>
+                <div className="timeline-tag">Start Together</div>
+                <h3 className="h3" style={{ marginBottom: 6, marginTop: 2 }}>Day 1, everyone drops what's not working.</h3>
                 <p className="p" style={{ fontSize: 15.5, margin: 0 }}>
-                  You receive your preparation video and the DIY shampoo ingredient list. You join 2,000+ women starting on exactly the same day.
+                  You're not the only one who's tried everything. Every woman shows up the same way — done with what hasn't worked.
+                </p>
+                <p className="p" style={{ fontSize: 13.5, margin: "10px 0 0", color: "var(--slate)", fontStyle: "italic" }}>
+                  Prep video · your group begins
                 </p>
               </div>
             </div>
@@ -43,10 +49,13 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
             <div className="timeline-step">
               <div className="timeline-circle">02</div>
               <div className="timeline-card">
-                <div className="timeline-tag">Days 1–14 · 🎥</div>
-                <h3 className="h3" style={{ marginBottom: 6, marginTop: 2 }}>10 minutes a day</h3>
+                <div className="timeline-tag">Learn Together</div>
+                <h3 className="h3" style={{ marginBottom: 6, marginTop: 2 }}>Same lessons. Same chat. Same questions.</h3>
                 <p className="p" style={{ fontSize: 15.5, margin: 0 }}>
-                  One daily coaching video. Each day builds on the last. You customise everything to your hair type and your body.
+                  Ten minutes a day, figuring it out with women asking what you're asking — and answering each other along the way.
+                </p>
+                <p className="p" style={{ fontSize: 13.5, margin: "10px 0 0", color: "var(--slate)", fontStyle: "italic" }}>
+                  Days 1–14 · you build your own routine
                 </p>
               </div>
             </div>
@@ -58,10 +67,13 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
             <div className="timeline-step">
               <div className="timeline-circle">03</div>
               <div className="timeline-card">
-                <div className="timeline-tag">Day 14+ · ✨</div>
-                <h3 className="h3" style={{ marginBottom: 6, marginTop: 2 }}>You can see it</h3>
+                <div className="timeline-tag">Finish Together</div>
+                <h3 className="h3" style={{ marginBottom: 6, marginTop: 2 }}>Day 14, you walk out with results — and a group that saw it happen.</h3>
                 <p className="p" style={{ fontSize: 15.5, margin: 0 }}>
-                  A personalised haircare system, a real understanding of your hair biology, and results you can actually see.
+                  Less falling out. More shine. Women who get it because they just did it too.
+                </p>
+                <p className="p" style={{ fontSize: 13.5, margin: "10px 0 0", color: "var(--slate)", fontStyle: "italic" }}>
+                  Day 14+ · your system, your people
                 </p>
               </div>
             </div>
