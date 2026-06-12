@@ -105,7 +105,7 @@ export function NotYourFault({ onCta }: { onCta?: () => void }) {
               fault
               <FaultUnderline />
             </span>
-            {"\n"}.
+            {"\n"} .
           </p>
         </Reveal>
 
