@@ -526,7 +526,7 @@ export function GuaranteeBadge({
     <span className={`guarantee-badge guarantee-${size} ${className}`} style={style}>
       <Icon name="shield-check" size={size === "md" ? 18 : 15} color="var(--trust-green)" />
       <span className="guarantee-text">
-        <strong>14-day results or 100% refund.</strong>{" "}
+        <strong>See results in 14 days or get your money back.&nbsp;&nbsp;</strong>{" "}
         <span className="guarantee-sub">No questions, no forms — just email us.</span>
       </span>
     </span>
