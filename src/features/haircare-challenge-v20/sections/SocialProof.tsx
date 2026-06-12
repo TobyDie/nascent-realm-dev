@@ -63,9 +63,9 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       <Anno>Section 5 - Social proof / ICP-matched results</Anno>
       <div className="wrap-wide">
         <Reveal style={{ textAlign: "center", marginBottom: 32 }}>
-          <Eyebrow>Real results</Eyebrow>
+          <Eyebrow>The plateau wasn't real</Eyebrow>
           <h2 className="h2" style={{ marginTop: 12 }}>
-            Women in their 30s achieved better hair than they had in their 20s after learning how to care for it properly.
+            Real women, finally seeing the length they were already growing - once they stopped the leak.
           </h2>
           <p className="mobile-only" style={{ marginTop: 12, fontSize: 14, color: "var(--slate)" }}>
             Swipe through the stories →

@@ -76,7 +76,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
         <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
           <Eyebrow>Meet your coach</Eyebrow>
           <h2 className="h2" style={{ marginTop: 12, maxWidth: 760, marginInline: "auto" }}>
-            She grew her hip-length hair (that she curls and colours but still pretty healthy).<br />
+            She grew 120cm of hair while colouring and curling it.<br />
             <span style={{ color: "var(--orange-700)" }}>That's why she's the right person to help you.</span>
           </h2>
         </Reveal>
