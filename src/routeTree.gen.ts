@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TheHaircareChallengeRouteImport } from './routes/the-haircare-challenge'
 import { Route as Backup14TheHaircareChallengeRouteImport } from './routes/backup-14-the-haircare-challenge'
+import { Route as R21TheHaircareChallengeRouteImport } from './routes/21-the-haircare-challenge'
 import { Route as R20TheHaircareChallengeRouteImport } from './routes/20-the-haircare-challenge'
 import { Route as R19TheHaircareChallengeRouteImport } from './routes/19-the-haircare-challenge'
 import { Route as R18TheHaircareChallengeRouteImport } from './routes/18-the-haircare-challenge'
@@ -30,6 +31,11 @@ const Backup14TheHaircareChallengeRoute =
     path: '/backup-14-the-haircare-challenge',
     getParentRoute: () => rootRouteImport,
   } as any)
+const R21TheHaircareChallengeRoute = R21TheHaircareChallengeRouteImport.update({
+  id: '/21-the-haircare-challenge',
+  path: '/21-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const R20TheHaircareChallengeRoute = R20TheHaircareChallengeRouteImport.update({
   id: '/20-the-haircare-challenge',
   path: '/20-the-haircare-challenge',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/18-the-haircare-challenge': typeof R18TheHaircareChallengeRoute
   '/19-the-haircare-challenge': typeof R19TheHaircareChallengeRoute
   '/20-the-haircare-challenge': typeof R20TheHaircareChallengeRoute
+  '/21-the-haircare-challenge': typeof R21TheHaircareChallengeRoute
   '/backup-14-the-haircare-challenge': typeof Backup14TheHaircareChallengeRoute
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
 }
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/18-the-haircare-challenge': typeof R18TheHaircareChallengeRoute
   '/19-the-haircare-challenge': typeof R19TheHaircareChallengeRoute
   '/20-the-haircare-challenge': typeof R20TheHaircareChallengeRoute
+  '/21-the-haircare-challenge': typeof R21TheHaircareChallengeRoute
   '/backup-14-the-haircare-challenge': typeof Backup14TheHaircareChallengeRoute
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
 }
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/18-the-haircare-challenge': typeof R18TheHaircareChallengeRoute
   '/19-the-haircare-challenge': typeof R19TheHaircareChallengeRoute
   '/20-the-haircare-challenge': typeof R20TheHaircareChallengeRoute
+  '/21-the-haircare-challenge': typeof R21TheHaircareChallengeRoute
   '/backup-14-the-haircare-challenge': typeof Backup14TheHaircareChallengeRoute
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
 }
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/18-the-haircare-challenge'
     | '/19-the-haircare-challenge'
     | '/20-the-haircare-challenge'
+    | '/21-the-haircare-challenge'
     | '/backup-14-the-haircare-challenge'
     | '/the-haircare-challenge'
   fileRoutesByTo: FileRoutesByTo
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/18-the-haircare-challenge'
     | '/19-the-haircare-challenge'
     | '/20-the-haircare-challenge'
+    | '/21-the-haircare-challenge'
     | '/backup-14-the-haircare-challenge'
     | '/the-haircare-challenge'
   id:
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/18-the-haircare-challenge'
     | '/19-the-haircare-challenge'
     | '/20-the-haircare-challenge'
+    | '/21-the-haircare-challenge'
     | '/backup-14-the-haircare-challenge'
     | '/the-haircare-challenge'
   fileRoutesById: FileRoutesById
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   R18TheHaircareChallengeRoute: typeof R18TheHaircareChallengeRoute
   R19TheHaircareChallengeRoute: typeof R19TheHaircareChallengeRoute
   R20TheHaircareChallengeRoute: typeof R20TheHaircareChallengeRoute
+  R21TheHaircareChallengeRoute: typeof R21TheHaircareChallengeRoute
   Backup14TheHaircareChallengeRoute: typeof Backup14TheHaircareChallengeRoute
   TheHaircareChallengeRoute: typeof TheHaircareChallengeRoute
 }
@@ -162,6 +175,13 @@ declare module '@tanstack/react-router' {
       path: '/backup-14-the-haircare-challenge'
       fullPath: '/backup-14-the-haircare-challenge'
       preLoaderRoute: typeof Backup14TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/21-the-haircare-challenge': {
+      id: '/21-the-haircare-challenge'
+      path: '/21-the-haircare-challenge'
+      fullPath: '/21-the-haircare-challenge'
+      preLoaderRoute: typeof R21TheHaircareChallengeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/20-the-haircare-challenge': {
@@ -224,9 +244,20 @@ const rootRouteChildren: RootRouteChildren = {
   R18TheHaircareChallengeRoute: R18TheHaircareChallengeRoute,
   R19TheHaircareChallengeRoute: R19TheHaircareChallengeRoute,
   R20TheHaircareChallengeRoute: R20TheHaircareChallengeRoute,
+  R21TheHaircareChallengeRoute: R21TheHaircareChallengeRoute,
   Backup14TheHaircareChallengeRoute: Backup14TheHaircareChallengeRoute,
   TheHaircareChallengeRoute: TheHaircareChallengeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
