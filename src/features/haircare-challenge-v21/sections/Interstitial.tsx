@@ -196,7 +196,7 @@ export function TestimonialStrip({
 
   if (variant === "ribbon") {
     return (
-      <section style={{ background: bg, padding: "28px 0" }}>
+      <section style={{ background: bg, padding: "20px 0 28px" }}>
         <div className="wrap-wide" style={{ maxWidth: 980 }}>
           <Reveal>
             <div className="ti-ribbon">
@@ -212,8 +212,8 @@ export function TestimonialStrip({
               ) : null}
               <span className="ti-ribbon-divider" aria-hidden="true" />
               {i ? (
-                <div className="ti-ribbon-side">
-                  <img {...ri(i.image, "120px", [200, 400, 700])} alt="" loading="lazy" className="ti-ribbon-thumb" />
+                <div className="ti-ribbon-side ti-ribbon-side-ba">
+                  <img {...ri(i.image, "(max-width: 720px) 44vw, 220px", [300, 500, 800])} alt={`${i.name} before and after`} loading="lazy" className="ti-ribbon-thumb ti-ribbon-thumb-ba" />
                   <div className="ti-ribbon-body">
                     <strong>{i.name}</strong>
                     <p>"{i.text}"</p>
