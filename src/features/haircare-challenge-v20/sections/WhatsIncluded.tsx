@@ -26,7 +26,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
             10 pieces. One complete system. <Underline>Yours forever.</Underline>
           </h2>
           <p className="lead" style={{ marginTop: 14, maxWidth: 580, marginInline: "auto" }}>
-            A full library plus a personalised assessment - built specifically for women 30–45.
+            A full library plus a personalised assessment - built for women 25-35 who want to actually understand their hair.
           </p>
         </Reveal>
 
@@ -118,7 +118,7 @@ export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
               <div className="bundle-item-thumb">🚫</div>
               <div className="bundle-item-body">
                 <div className="bundle-item-title">Haircare No-No List</div>
-                <div className="bundle-item-desc">The 47 ingredients to avoid in your 30s.</div>
+                <div className="bundle-item-desc">47 ingredients sabotaging the length you're growing.</div>
                 <div className="bundle-item-tag-row">
                   <span className="bundle-item-tag">$35 value</span>
                 </div>

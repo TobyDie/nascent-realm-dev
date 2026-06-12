@@ -27,6 +27,7 @@ export function SelfQualifier({ onCta }: { onCta?: () => void }) {
   const on3 = checked.includes(3);
   const on4 = checked.includes(4);
   const on5 = checked.includes(5);
+  const on6 = checked.includes(6);
 
   return (
     <section className="bg-white">
@@ -34,36 +35,40 @@ export function SelfQualifier({ onCta }: { onCta?: () => void }) {
       <div className="wrap" style={{ maxWidth: 720 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 32 }}>
           <Eyebrow>Is this you?</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12 }}>If any of this sounds like you, it's not your fault - and it's fixable.</h2>
+          <h2 className="h2" style={{ marginTop: 12 }}>Tick every one that rings true.</h2>
           <p className="lead" style={{ marginTop: 12, fontSize: 17 }}>
-            Tick every one that rings true.
+            If you tick even three, this was built for you.
           </p>
         </Reveal>
         <Reveal>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <button onClick={() => toggle(0)} style={btnStyle(on0)}>
               <span style={boxStyle(on0)}>{on0 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>My hair grows to a point and just stops - I can't get past my current length.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>My hair seems to grow to a certain length and then just stops.</span>
             </button>
             <button onClick={() => toggle(1)} style={btnStyle(on1)}>
               <span style={boxStyle(on1)}>{on1 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I color, bleach or heat-style my hair and I can see the damage.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I've spent more on hair products this year than I want to admit.</span>
             </button>
             <button onClick={() => toggle(2)} style={btnStyle(on2)}>
               <span style={boxStyle(on2)}>{on2 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I had a baby and the shedding never fully came back.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I bleach, colour, or heat-style my hair and I'm not stopping.</span>
             </button>
             <button onClick={() => toggle(3)} style={btnStyle(on3)}>
               <span style={boxStyle(on3)}>{on3 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>My hair looks limp or flat no matter what I spend on products.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>My ends are wrecked and I'm tired of trimming the length off.</span>
             </button>
             <button onClick={() => toggle(4)} style={btnStyle(on4)}>
               <span style={boxStyle(on4)}>{on4 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I'm stressed a lot and I think it's starting to show up in my hair.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I see other girls' hair online and assume they were just born with it.</span>
             </button>
             <button onClick={() => toggle(5)} style={btnStyle(on5)}>
               <span style={boxStyle(on5)}>{on5 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I want to fix this <strong>before</strong> it becomes a real problem.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I had a baby and my hair hasn't come back yet.</span>
+            </button>
+            <button onClick={() => toggle(6)} style={btnStyle(on6)}>
+              <span style={boxStyle(on6)}>{on6 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>I'm done buying my way out of this and want to actually understand it.</span>
             </button>
           </div>
         </Reveal>
