@@ -17,7 +17,7 @@ const COHORT_AVATARS = [
 ];
 
 const DAYS = Array.from({ length: 14 }, (_, i) => i + 1);
-const ANCHORS: Record<number, string> = { 1: "Start", 7: "Midway", 14: "Finish" };
+const ANCHORS: Record<number, string> = { 1: "Start", 7: " ", 14: " " };
 
 function Chapter({
   num,
@@ -44,7 +44,7 @@ function Chapter({
         <span className="mx-chapter-meta">{meta}</span>
       </header>
       <h3 className="mx-chapter-headline">{headline}</h3>
-      <p className="mx-chapter-body">{body}</p>
+      <p className="mx-chapter-body" style={{ whiteSpace: 'pre-line' }}>{body}</p>
       {children}
       <p className="mx-chapter-caption">↳ {caption}</p>
     </article>
@@ -76,7 +76,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
             </div>
             <div className="mx-cohort-copy">
               <p className="mx-cohort-eyebrow">You're not in this alone</p>
-              <p className="mx-cohort-line">Hundreds of women start the same day you do.</p>
+              <p className="mx-cohort-line"> </p>
               <p className="mx-cohort-count">
                 <span className="mx-cohort-pulse" aria-hidden="true" />
                 <strong>{formatJoiningCount(joining)}</strong> women joining this week
@@ -117,21 +117,21 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
           <Reveal delay={0}>
             <Chapter
               num="01"
-              tag="Start Together"
+              tag="UNLEARN TOGETHER"
               meta="Day 1"
-              headline="Day 1, everyone drops what's not working."
-              body="You're not the only one who's tried everything. Every woman shows up the same way — done with what hasn't worked."
-              caption="Prep video · your group begins"
+              headline="You let go of the routine that is not working"
+              body="You're not the only one who's tried everything. Every woman shows up the same way, done with what hasn't worked."
+              caption="Prep mission · Your group begins"
             />
           </Reveal>
           <Reveal delay={80}>
             <Chapter
               num="02"
-              tag="Learn Together"
+              tag="RELEARN TOGETHER"
               meta="Days 1–14"
-              headline="Same lessons. Same chat. Same questions."
-              body="Ten minutes a day, figuring it out with women asking what you're asking — and answering each other along the way."
-              caption="Days 1–14 · you build your own routine"
+              headline="You actually figure out what your hair needs."
+              body={"10 minutes a day. You find out why your shampoo stopped working, why your scalp matters more than your strands, and what your hair needs now that nobody's told you.\n\nAnd you ask questions in the group. Compare notes. Figure it out alongside women in the exact same spot. Not alone, not guessing."}
+              caption="Days 1–14 · You build your own PERSONALISED routine"
             >
               <div className="mx-bars" aria-hidden="true">
                 {DAYS.map((d) => (
@@ -143,11 +143,11 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
           <Reveal delay={160}>
             <Chapter
               num="03"
-              tag="Finish Together"
+              tag="FLOURISH TOGETHER"
               meta="Day 14+"
-              headline="Day 14, you walk out with results — and a group that saw it happen."
+              headline="Day 14, you walk out with results and a group that saw it happen."
               body="Less falling out. More shine. Women who get it because they just did it too."
-              caption="Day 14+ · your system, your people"
+              caption="Day 14+ · Your system, your people"
             />
           </Reveal>
         </div>
@@ -155,7 +155,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
         <Reveal style={{ marginTop: 36 }}>
           <div className="mx-callout">
             <p className="p" style={{ margin: 0, fontSize: 16.5, lineHeight: 1.55 }}>
-              This is not passive content. You <em>do</em> things. You notice things. <strong>By day 14 you won't need to buy another product</strong> — because you'll know what your hair actually needs.
+              By day 14 you won't need to buy another product&nbsp;because you'll know what your hair actually needs.
             </p>
           </div>
         </Reveal>
