@@ -5,7 +5,6 @@ import {
   Divider,
   Eyebrow,
   GuaranteeBadge,
-  Icon,
   Reveal,
   Stat,
   TestimonialCard,
