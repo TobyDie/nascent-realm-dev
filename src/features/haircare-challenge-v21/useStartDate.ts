@@ -32,7 +32,7 @@ function computeStartDate(): Date {
   const target = new Date(pacificTime);
 
   if (currentHour >= 20) {
-    // After 8PM — apply tomorrow's rule
+    // After 8PM - apply tomorrow's rule
     const tomorrow = (currentDay + 1) % 7;
     switch (tomorrow) {
       case 0: target.setDate(target.getDate() + 1); break; // Sun -> Sun
@@ -44,7 +44,7 @@ function computeStartDate(): Date {
       case 6: target.setDate(target.getDate() + 2); break; // Sat -> Sun
     }
   } else {
-    // Before 8PM — apply today's rule
+    // Before 8PM - apply today's rule
     switch (currentDay) {
       case 0: break; // Sun -> Sun
       case 1: if (currentHour >= 12) target.setDate(target.getDate() + 2); break; // Mon: noon+ -> Wed

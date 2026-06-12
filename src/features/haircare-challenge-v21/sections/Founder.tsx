@@ -23,7 +23,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
           src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20Influencer.webp"
           srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/Sarah%20Influencer.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20Influencer.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/Sarah%20Influencer.webp 1200w"
           sizes="(max-width: 860px) 90vw, 332px"
-          alt="Sarah at the peak of her influencer career — styled, on-set for a luxury hair brand campaign. 500K followers, $20K brand deals. Hair was secretly thinning the whole time."
+          alt="Sarah at the peak of her influencer career - styled, on-set for a luxury hair brand campaign. 500K followers, $20K brand deals. Hair was secretly thinning the whole time."
           loading="lazy"
           decoding="async"
           style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
@@ -40,7 +40,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
           src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/IMG_4153%20(1).webp"
           srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/IMG_4153%20(1).webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/IMG_4153%20(1).webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/IMG_4153%20(1).webp 1200w"
           sizes="(max-width: 860px) 90vw, 332px"
-          alt="Sarah today — 120cm of healthy bleached hair, casual and confident. Same woman, different knowledge. $10 a month."
+          alt="Sarah today - 120cm of healthy bleached hair, casual and confident. Same woman, different knowledge. $10 a month."
           loading="lazy"
           decoding="async"
           style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
@@ -57,7 +57,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
           src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20working%20with%20chemist.webp"
           srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/Sarah%20working%20with%20chemist.webp 1200w"
           sizes="(max-width: 860px) 90vw, 332px"
-          alt="Sarah working with a chemist or dermatologist — notes, formulations, research. The years she stopped promoting products and started asking why."
+          alt="Sarah working with a chemist or dermatologist - notes, formulations, research. The years she stopped promoting products and started asking why."
           loading="lazy"
           decoding="async"
           style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
@@ -72,7 +72,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
 
   return (
     <section className="bg-white" id="founder">
-      <Anno>Section 9 — Founder credibility</Anno>
+      <Anno>Section 9 - Founder credibility</Anno>
       <div className="wrap-wide">
         <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
           <Eyebrow>Meet your coach</Eyebrow>
@@ -115,13 +115,13 @@ export function Founder({ onCta }: { onCta?: () => void }) {
               </div>
 
               <p className="p">
-                Bald patches. An oily scalp. Hair she'd stopped wearing down because she was too embarrassed. She dodged social events to hide her dandruff. She didn't feel feminine anymore — and she had access to everything the industry had to offer.
+                Bald patches. An oily scalp. Hair she'd stopped wearing down because she was too embarrassed. She dodged social events to hide her dandruff. She didn't feel feminine anymore - and she had access to everything the industry had to offer.
               </p>
               <p className="p">
                 <strong>That's when she stopped promoting products and started asking why.</strong>
               </p>
               <p className="p">
-                She spent years working with chemists, dermatologists, trichologists, and nutritionists — not to build a product to sell you, but to understand what was actually happening. Then she built the program she wished she'd had: honest, science-backed, with nothing to sell you except the knowledge itself.
+                She spent years working with chemists, dermatologists, trichologists, and nutritionists - not to build a product to sell you, but to understand what was actually happening. Then she built the program she wished she'd had: honest, science-backed, with nothing to sell you except the knowledge itself.
               </p>
 
               <div style={{ background: "var(--green-bg)", borderLeft: "4px solid var(--green-line)", borderRadius: 12, padding: "16px 18px" }}>
@@ -144,7 +144,7 @@ export function Founder({ onCta }: { onCta?: () => void }) {
                 <span style={{ fontSize: 12.5, fontWeight: 600, color: "var(--ink-soft)", background: "var(--cream)", border: "1px solid var(--line)", borderRadius: 999, padding: "6px 13px" }}>13+ years in haircare</span>
               </div>
 
-              <div style={{ fontFamily: "var(--font-serif)", fontSize: 22, fontStyle: "italic", color: "var(--ink)", marginTop: 12 }}>— Sarah Tran</div>
+              <div style={{ fontFamily: "var(--font-serif)", fontSize: 22, fontStyle: "italic", color: "var(--ink)", marginTop: 12 }}>- Sarah Tran</div>
 
               <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start" }}>
                 <Button id="cta-founder" onClick={onCta} icon="arrow-right">Start with me</Button>

@@ -14,7 +14,7 @@ function FaultUnderline() {
   );
 }
 
-/* Doodle 1 — shampoo bottle with a crossed-out swipe */
+/* Doodle 1 - shampoo bottle with a crossed-out swipe */
 function DoodleBottle() {
   return (
     <svg className="nyf-doodle" viewBox="0 0 64 64" fill="none" aria-hidden="true">
@@ -28,7 +28,7 @@ function DoodleBottle() {
   );
 }
 
-/* Doodle 2 — stack of products with a question mark */
+/* Doodle 2 - stack of products with a question mark */
 function DoodleStack() {
   return (
     <svg className="nyf-doodle" viewBox="0 0 64 64" fill="none" aria-hidden="true">
@@ -48,7 +48,7 @@ function DoodleStack() {
   );
 }
 
-/* Doodle 3 — sun rising with a sparkle */
+/* Doodle 3 - sun rising with a sparkle */
 function DoodleSun() {
   return (
     <svg className="nyf-doodle" viewBox="0 0 64 64" fill="none" aria-hidden="true">
@@ -140,7 +140,7 @@ export function NotYourFault({ onCta }: { onCta?: () => void }) {
             </article>
           </Reveal>
 
-          {/* Beat 3 — the turn */}
+          {/* Beat 3 - the turn */}
           <Reveal delay={260} className="nyf-beat">
             <div className="nyf-dot nyf-dot-hope" aria-hidden="true">03</div>
             <article className="nyf-card nyf-card-hope">
