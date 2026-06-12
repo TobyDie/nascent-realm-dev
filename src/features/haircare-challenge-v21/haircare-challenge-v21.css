@@ -1746,6 +1746,40 @@
   .hq-sp-v21 .ti-single-hero-avatar { width: 110px; height: 110px; }
 }
 
+/* E2. Single hero - before/after image focus variant */
+.hq-sp-v21 .ti-single-hero-ba { gap: 10px; }
+.hq-sp-v21 .ti-single-hero-ba-img {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: #fff;
+}
+.hq-sp-v21 .ti-single-hero-ba-img img { width: 100%; height: auto; display: block; }
+.hq-sp-v21 .ti-single-hero-ba .ti-single-hero-quote {
+  font-size: 17px;
+  line-height: 1.45;
+  margin: 2px 0 0;
+  color: var(--ink-soft);
+  max-width: 560px;
+}
+.hq-sp-v21 .ti-single-hero-ba .ti-single-hero-name { font-size: 15px; }
+.hq-sp-v21 .ti-single-hero-ba .ti-single-hero-context { font-weight: 500; color: var(--slate); }
+@media (max-width: 720px) {
+  .hq-sp-v21 .ti-single-hero-ba .ti-single-hero-quote { font-size: 15.5px; }
+}
+
+/* F2. Ribbon - bigger before/after thumb for Rosemary side */
+.hq-sp-v21 .ti-ribbon-thumb-ba {
+  width: 168px;
+  height: 132px;
+  border-radius: 12px;
+}
+@media (max-width: 720px) {
+  .hq-sp-v21 .ti-ribbon-thumb-ba { width: 44vw; max-width: 200px; height: auto; aspect-ratio: 4/3; }
+}
+
 /* F. Ribbon */
 .hq-sp-v21 .ti-ribbon {
   display: grid;
