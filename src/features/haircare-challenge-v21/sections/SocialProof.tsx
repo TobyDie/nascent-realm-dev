@@ -95,7 +95,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
       <div className="wrap-wide">
         <Reveal style={{ textAlign: "center", marginBottom: 20, maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
           <h2 className="h2" style={{ margin: 0, fontSize: "clamp(22px, 4.6vw, 32px)", lineHeight: 1.2 }}>
-            Better hair in their 30s than they had in their 20s.
+            Women in their 30s achieved better hair than they had in their 20s after learning how to care for it properly.&nbsp;&nbsp;&nbsp;
           </h2>
         </Reveal>
 
