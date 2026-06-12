@@ -58,10 +58,11 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                 Next cohort: <strong className="start-date">{startDate ? fmtShort(startDate) : "Fri, June 6th"}</strong> · {formatJoiningCount(joining)} women joining this week
               </span>
               {/* Validation paragraph - restored, after cohort line */}
-              <p className="hero-validation" style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)" }}>
-                The hair you had in your 20s isn't gone forever. Your body has changed but your habits haven't. Learn how to build a hair care routine for your 30's and enjoy good hair days for decades to come.
+              <p className="hero-validation" style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)", whiteSpace: 'pre-line' }}>
+                The hair you had in your 20s isn't gone forever. Your body has changed but your habits haven't.{"\n"}Learn how to build a hair care routine for your 30's and enjoy good hair days for decades to come.
               </p>
             </div>
+
 
             {/* Bullets - proof layer, below the CTA */}
             <ul className="hero-bullets">
@@ -75,8 +76,9 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               </li>
               <li>
                 <span className="hero-bullet-emoji">⏱️</span>
-                <span>10 minutes a day. While the coffee brews. That's all it takes.</span>
+                <span style={{ whiteSpace: 'pre-line' }}>{"10 minutes a day.\nWhile the coffee brews. That's all it takes."}</span>
               </li>
+
             </ul>
           </Reveal>
 
@@ -117,8 +119,9 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             </div>
             <div className="ct-community-text">
               <div className="ct-community-inline">
-                <span className="ct-num">250,000+</span>
-                <span className="ct-label">women have taken the challenge</span>
+                <span className="ct-num">250,000+ Women</span>
+                <span className="ct-label">have taken the challenge</span>
+
               </div>
             </div>
           </div>
