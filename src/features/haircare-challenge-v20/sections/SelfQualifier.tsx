@@ -30,11 +30,11 @@ export function SelfQualifier({ onCta }: { onCta?: () => void }) {
 
   return (
     <section className="bg-white">
-      <Anno>Added — self-qualifier</Anno>
+      <Anno>Added - self-qualifier</Anno>
       <div className="wrap" style={{ maxWidth: 720 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 32 }}>
           <Eyebrow>Is this you?</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12 }}>If any of this sounds like you, it's not your fault — and it's fixable.</h2>
+          <h2 className="h2" style={{ marginTop: 12 }}>If any of this sounds like you, it's not your fault - and it's fixable.</h2>
           <p className="lead" style={{ marginTop: 12, fontSize: 17 }}>
             Tick every one that rings true.
           </p>
@@ -43,7 +43,7 @@ export function SelfQualifier({ onCta }: { onCta?: () => void }) {
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <button onClick={() => toggle(0)} style={btnStyle(on0)}>
               <span style={boxStyle(on0)}>{on0 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
-              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>My hair grows to a point and just stops — I can't get past my current length.</span>
+              <span style={{ fontSize: 16.5, color: "var(--ink)" }}>My hair grows to a point and just stops - I can't get past my current length.</span>
             </button>
             <button onClick={() => toggle(1)} style={btnStyle(on1)}>
               <span style={boxStyle(on1)}>{on1 && <Icon name="check" size={16} color="#fff" stroke={3} />}</span>
@@ -72,7 +72,7 @@ export function SelfQualifier({ onCta }: { onCta?: () => void }) {
             {count === 0 ? (
               "Tick the ones that ring true above."
             ) : (
-              <span>You ticked <strong style={{ color: "var(--orange-700)" }}>{count}</strong> — you're exactly who the challenge was built for. Join <strong>250,000+ women in their 20s and 30s</strong> who started here.</span>
+              <span>You ticked <strong style={{ color: "var(--orange-700)" }}>{count}</strong> - you're exactly who the challenge was built for. Join <strong>250,000+ women in their 20s and 30s</strong> who started here.</span>
             )}
           </div>
           <Button id="cta-self-qualifier" onClick={onCta} icon="arrow-right">Take charge of my hair</Button>

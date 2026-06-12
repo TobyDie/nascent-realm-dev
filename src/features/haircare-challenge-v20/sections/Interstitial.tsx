@@ -10,36 +10,36 @@ const ri = (file: string, sizes: string, widths: number[] = BA_WIDTHS) => ({
   sizes,
 });
 
-/* Real customer text testimonials — placed to reinforce the section above. */
+/* Real customer text testimonials - placed to reinforce the section above. */
 const TEXT_PLACEHOLDERS = [
-  // After Science — scientist endorses the root-cause approach
+  // After Science - scientist endorses the root-cause approach
   { name: "Natasha Bloch", avatar: "profile-6.webp", quote: "I feel my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again. I feel in this 14 days, my curls came back." },
-  // After Results in 2 Weeks — visible results inside 14 days
-  { name: "Limor Mills", avatar: "profile-2.webp", quote: "By day 14, I could actually see baby hairs growing in and my length finally moving — my hair feels stronger, fuller, and like it's actually going somewhere." },
-  // After Founder — emotional / confidence
+  // After Results in 2 Weeks - visible results inside 14 days
+  { name: "Limor Mills", avatar: "profile-2.webp", quote: "By day 14, I could actually see baby hairs growing in and my length finally moving - my hair feels stronger, fuller, and like it's actually going somewhere." },
+  // After Founder - emotional / confidence
   { name: "Cintia Irtzl", avatar: "profile-5.webp", quote: "My hair started to be shinier and softer so I got back a lot of self-confidence and that felt really nice honestly." },
-  // After SelfQualifier — habits over genetics (reassurance for women like me)
+  // After SelfQualifier - habits over genetics (reassurance for women like me)
   { name: "Gema", avatar: "profile-3.webp", quote: "This challenge showed me that I have to change my habits to get a better hair and that my genetics are going to influence my hair but not so much." },
-  // After FAQ — simple, accessible, easy
+  // After FAQ - simple, accessible, easy
   { name: "Paola Fernandez", avatar: "profile-7.webp", quote: "It's super simple. You can find all the ingredients on the internet, on Amazon. They're very accessible and I've been having amazing results." },
-  // Final reassurance before CTA — control/understanding moment
-  { name: "Kate", avatar: "profile-1.webp", quote: "The biggest thing this gave me is that I finally understand my hair. I'm not guessing or buying the next bottle anymore — I'm actually building it." },
+  // Final reassurance before CTA - control/understanding moment
+  { name: "Kate", avatar: "profile-1.webp", quote: "The biggest thing this gave me is that I finally understand my hair. I'm not guessing or buying the next bottle anymore - I'm actually building it." },
 ];
 
-/* Real customer image+text testimonials — placed where the story matches the pitch above. */
+/* Real customer image+text testimonials - placed where the story matches the pitch above. */
 const IMAGE_PLACEHOLDERS = [
-  // After HowItWorks — limp/flat hair, finally volume (very 25–34 pain)
-  { name: "Selima", initials: "S", image: "ba-new-3.webp", context: "Limp, flat hair · spending more, seeing less", text: "My hair always looked flat and lifeless no matter what I spent. After washing now, I can actually see volume — and the constant greasiness is gone too." },
-  // After WhatsIncluded — DIY shampoo / damage from colored hair
-  { name: "Alexia Zacharias", initials: "A", image: "ba-new-2.webp", context: "Color-damaged, shedding daily", text: "I can see so much difference with the DIY shampoo — my color-treated hair feels softer and stronger, and the daily shedding has dropped off." },
-  // After NotAboutHair — postpartum recovery
+  // After HowItWorks - limp/flat hair, finally volume (very 25–34 pain)
+  { name: "Selima", initials: "S", image: "ba-new-3.webp", context: "Limp, flat hair · spending more, seeing less", text: "My hair always looked flat and lifeless no matter what I spent. After washing now, I can actually see volume - and the constant greasiness is gone too." },
+  // After WhatsIncluded - DIY shampoo / damage from colored hair
+  { name: "Alexia Zacharias", initials: "A", image: "ba-new-2.webp", context: "Color-damaged, shedding daily", text: "I can see so much difference with the DIY shampoo - my color-treated hair feels softer and stronger, and the daily shedding has dropped off." },
+  // After NotAboutHair - postpartum recovery
   { name: "Aurélie Guénué", initials: "A", image: "ba-new-1.webp", context: "Postpartum shedding · irritated scalp", text: "After just a few weeks my scalp feels calmer, the postpartum shedding has slowed down, and more than anything I'm finally feeling like myself again." },
-  // After SelfQualifier (image slot) — damage from bleach/heat, length plateau
-  { name: "Biljana Lemić", initials: "B", image: "ba-new-4.webp", context: "Years of bleach & heat · length plateau", text: "First time I used it I could already see the difference — shinier, stronger, and for the first time in years it actually feels like my length is moving." },
-  // After FAQ (image slot) — stress + texture change → bouncy
-  { name: "Sara Gouveia", initials: "S", image: "ba-new-5.webp", context: "Stress shedding · flat lifeless hair", text: "Now that it's dried it feels so clean, so smooth and gentle, and my curls are like, hey hello! My hair was always flat — now it's bouncy." },
-  // Final-CTA-area — long-term, knowledge-as-an-asset story
-  { name: "Rosemary", initials: "R", image: "ba-13.webp", context: "Spent years buying products that didn't work", text: "This course changed the way I think about my hair. I'm not buying the next bottle anymore — I finally know what I'm doing." },
+  // After SelfQualifier (image slot) - damage from bleach/heat, length plateau
+  { name: "Biljana Lemić", initials: "B", image: "ba-new-4.webp", context: "Years of bleach & heat · length plateau", text: "First time I used it I could already see the difference - shinier, stronger, and for the first time in years it actually feels like my length is moving." },
+  // After FAQ (image slot) - stress + texture change → bouncy
+  { name: "Sara Gouveia", initials: "S", image: "ba-new-5.webp", context: "Stress shedding · flat lifeless hair", text: "Now that it's dried it feels so clean, so smooth and gentle, and my curls are like, hey hello! My hair was always flat - now it's bouncy." },
+  // Final-CTA-area - long-term, knowledge-as-an-asset story
+  { name: "Rosemary", initials: "R", image: "ba-13.webp", context: "Spent years buying products that didn't work", text: "This course changed the way I think about my hair. I'm not buying the next bottle anymore - I finally know what I'm doing." },
 ];
 
 export type InterstitialVariant =
@@ -52,7 +52,7 @@ export type InterstitialVariant =
   | "ribbon";
 
 /* Six visually distinct interstitial variants so the page never reads
-   mechanical. Same underlying testimonial data — different rendering. */
+   mechanical. Same underlying testimonial data - different rendering. */
 export function TestimonialStrip({
   textIndex,
   imageIndex,
@@ -91,7 +91,7 @@ export function TestimonialStrip({
             <div className="ti-polaroid-wrap">
               {i ? (
                 <figure className="ti-polaroid">
-                  <img {...ri(i.image, "(max-width: 920px) 92vw, 460px")} alt={`${i.name} — ${i.context}`} loading="lazy" />
+                  <img {...ri(i.image, "(max-width: 920px) 92vw, 460px")} alt={`${i.name} - ${i.context}`} loading="lazy" />
                   <figcaption>
                     <strong>{i.name}</strong>
                     <span>{i.context}</span>
@@ -103,7 +103,7 @@ export function TestimonialStrip({
                 <div className="ti-handnote">
                   <span className="ti-handnote-pin" aria-hidden="true" />
                   <p>"{t.quote}"</p>
-                  <span className="ti-handnote-sig">— {t.name}</span>
+                  <span className="ti-handnote-sig">- {t.name}</span>
                 </div>
               ) : null}
             </div>
@@ -152,13 +152,13 @@ export function TestimonialStrip({
               {t ? (
                 <div className="ti-sticky ti-sticky-a">
                   <p>"{t.quote}"</p>
-                  <span>— {t.name}</span>
+                  <span>- {t.name}</span>
                 </div>
               ) : null}
               {i ? (
                 <div className="ti-sticky ti-sticky-b">
                   <p>"{i.text}"</p>
-                  <span>— {i.name} · {i.context}</span>
+                  <span>- {i.name} · {i.context}</span>
                 </div>
               ) : null}
             </div>
@@ -185,7 +185,7 @@ export function TestimonialStrip({
                 <div className="ti-single-hero-also">
                   <span className="ti-single-hero-also-label">Also from this week:</span>
                   <span className="ti-single-hero-also-quote">"{t.quote}"</span>
-                  <span className="ti-single-hero-also-name">— {t.name}</span>
+                  <span className="ti-single-hero-also-name">- {t.name}</span>
                 </div>
               ) : null}
             </div>
@@ -207,7 +207,7 @@ export function TestimonialStrip({
                   <div className="ti-ribbon-body">
                     <StarRow size={12} />
                     <p>"{t.quote}"</p>
-                    <span>— {t.name}</span>
+                    <span>- {t.name}</span>
                   </div>
                 </div>
               ) : null}
@@ -229,7 +229,7 @@ export function TestimonialStrip({
     );
   }
 
-  // default — original compact strip
+  // default - original compact strip
   return (
     <section style={{ background: bg, padding: "24px 0" }}>
       <div className="wrap-wide" style={{ maxWidth: 960, marginInline: "auto", paddingInline: 20 }}>

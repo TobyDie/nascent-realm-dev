@@ -13,10 +13,10 @@ export function Hero({ onCta }: { onCta?: () => void }) {
   const startDate = useStartDate();
   return (
     <section className="bg-cream hero-section" style={{ paddingTop: 48, paddingBottom: 0 }}>
-      <Anno>Section 1 — Hero / recognition</Anno>
+      <Anno>Section 1 - Hero / recognition</Anno>
       <div className="wrap-wide">
 
-        {/* removed urgency pill from top — moved to cohort line under CTA */}
+        {/* removed urgency pill from top - moved to cohort line under CTA */}
 
         <div style={{ display: "grid", gridTemplateColumns: "1.02fr 0.98fr", gap: 52, alignItems: "center" }} className="hero-grid">
 
@@ -39,48 +39,48 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               Stop spending more for less.
             </div>
 
-            {/* H1 — the single emotional hook, short enough for mobile */}
+            {/* H1 - the single emotional hook, short enough for mobile */}
             <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
-              <span style={{ color: "#090909" }}>Grow the longest, thickest, fullest hair you actually want — </span>
+              <span style={{ color: "#090909" }}>Grow the longest, thickest, fullest hair you actually want - </span>
               <span style={{ color: "#e97b00" }}>in 14 days of doing it right.</span>
             </h1>
 
-            {/* CTA block — must be above fold on mobile */}
+            {/* CTA block - must be above fold on mobile */}
             <div id="hero-cta-sentinel" style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start", marginBottom: 24 }}>
               <Button id="cta-hero" onClick={onCta} icon="arrow-right">Join the challenge</Button>
               <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
                 85% off · today only
               </span>
               <GuaranteeBadge size="sm" />
-              {/* cohort line — under CTA, not above headline */}
+              {/* cohort line - under CTA, not above headline */}
               <span className="hero-cohort">
                 <Icon name="calendar-heart" size={13} color="var(--orange-600)" />
                 Next cohort: <strong className="start-date">{startDate ? fmtShort(startDate) : "Fri, June 6th"}</strong> · {formatJoiningCount(joining)} women joining this week
               </span>
-              {/* Validation paragraph — restored, after cohort line */}
+              {/* Validation paragraph - restored, after cohort line */}
               <p className="hero-validation" style={{ marginTop: 6, fontSize: 14.5, lineHeight: 1.55, color: "var(--slate-soft)" }}>
-                You're not doing anything wrong — you were just never taught how hair actually grows. Learn the system in 14 days, get past your length plateau, and build the hair you're going for before bad habits compound.
+                You're not doing anything wrong - you were just never taught how hair actually grows. Learn the system in 14 days, get past your length plateau, and build the hair you're going for before bad habits compound.
               </p>
             </div>
 
-            {/* Bullets — proof layer, below the CTA */}
+            {/* Bullets - proof layer, below the CTA */}
             <ul className="hero-bullets">
               <li>
                 <span className="hero-bullet-emoji">🌱</span>
-                <span>Break past your length plateau — finally see your hair grow past where it always stops.</span>
+                <span>Break past your length plateau - finally see your hair grow past where it always stops.</span>
               </li>
               <li>
                 <span className="hero-bullet-emoji">✨</span>
-                <span>Real density and shine — without $90 serums, bond builders, or another "miracle" bottle.</span>
+                <span>Real density and shine - without $90 serums, bond builders, or another "miracle" bottle.</span>
               </li>
               <li>
                 <span className="hero-bullet-emoji">🛡️</span>
-                <span>Undo the damage from color, heat and bleach — before it quietly caps your hair for the next decade.</span>
+                <span>Undo the damage from color, heat and bleach - before it quietly caps your hair for the next decade.</span>
               </li>
             </ul>
           </Reveal>
 
-          {/* IMAGE column — Sarah's portrait (image, not video), with a sketchy trust pin */}
+          {/* IMAGE column - Sarah's portrait (image, not video), with a sketchy trust pin */}
           <Reveal delay={120}>
             <div style={{ position: "relative" }}>
               <div className="hero-image-wrap">
@@ -88,7 +88,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                   file="sarah-hero-v2.webp"
                   widths={HERO_WIDTHS}
                   sizes="(max-width: 720px) 100vw, (max-width: 860px) 90vw, 405px"
-                  alt="Sarah Tran — founder of HairQare, with long healthy auburn hair, sunlit Mediterranean setting. Inset: before/after of a coached student."
+                  alt="Sarah Tran - founder of HairQare, with long healthy auburn hair, sunlit Mediterranean setting. Inset: before/after of a coached student."
                   className="hero-image"
                   eager
                 />
@@ -105,7 +105,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
       {/* trust bar */}
       <div style={{ marginTop: 48, background: "rgba(255,255,255,0.55)", borderTop: "1px solid var(--line)" }}>
         <div className="wrap-wide community-trust">
-          {/* Row 1 — community proof with overlapping avatars */}
+          {/* Row 1 - community proof with overlapping avatars */}
           <div className="ct-row ct-community">
             <div className="ct-avatars" aria-hidden="true">
               {HERO_AVATARS.map((file, i) => (
@@ -123,7 +123,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             </div>
           </div>
 
-          {/* Row 2 — two side-by-side stats */}
+          {/* Row 2 - two side-by-side stats */}
           <div className="ct-row ct-stats">
             <div className="ct-stat">
               <div className="ct-num ct-num-sm">92%</div>
@@ -136,7 +136,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             </div>
           </div>
 
-          {/* Row 3 — Trustpilot */}
+          {/* Row 3 - Trustpilot */}
           <div className="ct-row ct-trustpilot">
             <Trustpilot rating="4.8" reviews="12,400 reviews" />
           </div>

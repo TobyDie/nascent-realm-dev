@@ -17,7 +17,7 @@ export function Science() {
             <div className="biology-callout-eyebrow">The myth</div>
             <h3 className="biology-callout-headline">The "terminal length" myth</h3>
             <p className="biology-callout-body">
-              Most women never get past shoulder length — not because their hair can't grow longer, but because their hair is breaking off as fast as it grows. Every product you've used was sold to you as the fix. None of them were ever going to teach you the cause.
+              Most women never get past shoulder length - not because their hair can't grow longer, but because their hair is breaking off as fast as it grows. Every product you've used was sold to you as the fix. None of them were ever going to teach you the cause.
             </p>
           </div>
         </Reveal>
@@ -82,7 +82,7 @@ export function Science() {
             <span className="skim-emoji">📏</span>
             <div>
               <h4>Your hair <em>is</em> growing. You're just losing it at the same speed.</h4>
-              <p>Every woman grows roughly a centimetre a month. The reason yours looks stuck isn't a slow follicle — it's that the ends are snapping off as fast as the roots push new hair out.</p>
+              <p>Every woman grows roughly a centimetre a month. The reason yours looks stuck isn't a slow follicle - it's that the ends are snapping off as fast as the roots push new hair out.</p>
               <span className="skim-note">↳ no plateau. just a leak.</span>
             </div>
           </div>
@@ -90,7 +90,7 @@ export function Science() {
             <span className="skim-emoji">🧴</span>
             <div>
               <h4>Every product on the shelf treats one strand at a time.</h4>
-              <p>None of them touch the actual system — the scalp, the nutrients, the routine, the protection. That's why you can stack five products and still see nothing in the mirror.</p>
+              <p>None of them touch the actual system - the scalp, the nutrients, the routine, the protection. That's why you can stack five products and still see nothing in the mirror.</p>
               <span className="skim-note">↳ shampoo can't fix what your routine is breaking.</span>
             </div>
           </div>
@@ -115,7 +115,7 @@ export function Science() {
           <div style={{ background: "var(--lavender)", borderRadius: 20, padding: "32px 36px", position: "relative", maxWidth: 720, marginInline: "auto" }}>
             <Icon name="quote" size={36} color="var(--orange-500)" style={{ position: "absolute", top: 20, right: 24, opacity: 0.5 }} />
             <p style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 22, lineHeight: 1.45, color: "var(--ink)" }}>
-              “This challenge showed me I have to change my habits to get better hair — that my genetics influence my hair, but not nearly as much as I thought.”
+              “This challenge showed me I have to change my habits to get better hair - that my genetics influence my hair, but not nearly as much as I thought.”
             </p>
             <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 12 }}>
               <img src={r2img("profile-13.webp", 96)} alt="Gema" loading="lazy" decoding="async" style={{ width: 44, height: 44, borderRadius: 999, objectFit: "cover", flex: "none" }} />
