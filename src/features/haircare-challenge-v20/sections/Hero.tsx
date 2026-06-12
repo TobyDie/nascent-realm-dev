@@ -1,4 +1,4 @@
-import { Anno, Reveal, Button, GuaranteeBadge, Icon, Pin, Trustpilot, RImg } from "../primitives";
+import { Anno, Reveal, Button, GuaranteeBadge, Icon, Trustpilot, RImg } from "../primitives";
 import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
 import { r2img, HERO_WIDTHS, AVATAR_W } from "../img";
 import { useStartDate, fmtShort } from "../useStartDate";
@@ -24,13 +24,23 @@ export function Hero({ onCta }: { onCta?: () => void }) {
           <Reveal>
             {/* H1 - the single emotional hook, short enough for mobile */}
             <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
-              <span style={{ color: "#090909" }}>Grow the longest, thickest, fullest hair you actually want - </span>
-              <span style={{ color: "#e97b00" }}>in 14 days of doing it right.</span>
+              <span style={{ color: "#090909", fontWeight: 800 }}>Grow the longest, healthiest, shiniest hair </span>
+              <span style={{ color: "#e97b00", fontWeight: 800 }}>of your life.</span>
             </h1>
+
+            {/* Handwritten tilted pill */}
+            <div className="hero-handwritten-pill">
+              You still colour, curl, bleach and all.
+            </div>
+
+            {/* Short supporting paragraph */}
+            <p className="hero-supporting">
+              Hip-length, bleached, still thick at the ends, still shines like a salon shoot. Built on $10 a month and three things nobody teaches you. <strong>All three are inside, in 14 days.</strong>
+            </p>
 
             {/* CTA block - must be above fold on mobile */}
             <div id="hero-cta-sentinel" style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start", marginBottom: 24 }}>
-              <Button id="cta-hero" onClick={onCta} icon="arrow-right">Join the challenge</Button>
+              <Button id="cta-hero" onClick={onCta} icon="arrow-right">Join the 14 Day Challenge</Button>
               <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
                 85% off · today only
               </span>
@@ -42,21 +52,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               </span>
             </div>
 
-            {/* Bullets - proof layer, below the CTA */}
-            <ul className="hero-bullets">
-              <li>
-                <span className="hero-bullet-emoji">🌱</span>
-                <span>Break past your length plateau - finally see your hair grow past where it always stops.</span>
-              </li>
-              <li>
-                <span className="hero-bullet-emoji">✨</span>
-                <span>Real density and shine - without $90 serums, bond builders, or another "miracle" bottle.</span>
-              </li>
-              <li>
-                <span className="hero-bullet-emoji">🛡️</span>
-                <span>Undo the damage from color, heat and bleach - before it quietly caps your hair for the next decade.</span>
-              </li>
-            </ul>
           </Reveal>
 
           {/* IMAGE column - Sarah's portrait (image, not video), with a sketchy trust pin */}
@@ -71,9 +66,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                   className="hero-image"
                   eager
                 />
-              </div>
-              <div style={{ position: "absolute", top: -14, left: -8, zIndex: 4 }}>
-                <Pin rotate={7}>Joined by 250K+ women in their 20s & 30s</Pin>
               </div>
             </div>
           </Reveal>
