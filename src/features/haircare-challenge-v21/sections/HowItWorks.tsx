@@ -6,6 +6,7 @@ import {
   Reveal,
 } from "../primitives";
 import { r2img } from "../img";
+import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
 
 const COHORT_AVATARS = [
   "profile-1.webp",
@@ -51,6 +52,7 @@ function Chapter({
 }
 
 export function HowItWorks({ onCta }: { onCta?: () => void }) {
+  const joining = useJoiningCount();
   return (
     <section className="bg-white missions-section">
       <Anno>Section 7 — How it works</Anno>
@@ -75,6 +77,10 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
             <div className="mx-cohort-copy">
               <p className="mx-cohort-eyebrow">You're not in this alone</p>
               <p className="mx-cohort-line">Hundreds of women start the same day you do.</p>
+              <p className="mx-cohort-count">
+                <span className="mx-cohort-pulse" aria-hidden="true" />
+                <strong>{formatJoiningCount(joining)}</strong> women joining this week
+              </p>
             </div>
           </div>
         </Reveal>
