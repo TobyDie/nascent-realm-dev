@@ -72,11 +72,11 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               </li>
               <li>
                 <span className="hero-bullet-emoji">💸</span>
-                <span>No fancy salon treatments or expensive products needed.</span>
+                <span>No fancy salon treatments or expensive products needed....EVER. </span>
               </li>
               <li>
                 <span className="hero-bullet-emoji">⏱️</span>
-                <span style={{ whiteSpace: 'pre-line' }}>{"10 minutes a day.\nWhile the coffee brews. That's all it takes."}</span>
+                <span style={{ whiteSpace: 'pre-line' }}>{"10 minutes a day. That's all it takes."}</span>
               </li>
 
             </ul>
