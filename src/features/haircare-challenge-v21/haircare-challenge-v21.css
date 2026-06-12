@@ -1811,3 +1811,71 @@
   .hq-sp-v21 .seal-name { font-size: 13px; }
   .hq-sp-v21 .seal-sub { font-size: 9.5px; }
 }
+
+/* =======================================================
+   None of this was your fault — NotYourFault section
+   ======================================================= */
+.hq-sp-v21 .nyf-section { padding: 40px 0 8px; }
+.hq-sp-v21 .nyf-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 6.2vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  max-width: 720px;
+  margin-inline: auto;
+}
+.hq-sp-v21 .nyf-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+  margin-inline: auto;
+}
+.hq-sp-v21 .nyf-card {
+  background: #fff;
+  border: 1px solid #EFE7DA;
+  border-radius: 18px;
+  padding: 22px 20px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.hq-sp-v21 .nyf-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -16px rgba(0,0,0,0.18);
+  border-color: #E4D9C2;
+}
+.hq-sp-v21 .nyf-card-accent {
+  background: #FFEFE2;
+  border-color: #FFD9BD;
+}
+.hq-sp-v21 .nyf-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.hq-sp-v21 .nyf-tag-green { color: var(--green-text); }
+.hq-sp-v21 .nyf-tag-orange { color: var(--orange-700); }
+.hq-sp-v21 .nyf-card-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(19px, 4.6vw, 24px);
+  line-height: 1.22;
+  color: var(--ink);
+  margin: 0 0 10px;
+  letter-spacing: -0.005em;
+}
+.hq-sp-v21 .nyf-card-body {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--slate);
+}
+@media (min-width: 760px) {
+  .hq-sp-v21 .nyf-section { padding: 56px 0 16px; }
+  .hq-sp-v21 .nyf-stack { gap: 16px; }
+  .hq-sp-v21 .nyf-card { padding: 26px 28px; }
+  .hq-sp-v21 .nyf-card-body { font-size: 16px; }
+}
