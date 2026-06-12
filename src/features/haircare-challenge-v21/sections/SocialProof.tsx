@@ -130,13 +130,13 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
               { num: "250K+", label: "women" },
               { num: "92%", label: "by day 14" },
             ].map((s, i, arr) => (
-              <>
-                <div key={s.num} style={{ textAlign: "center", flex: 1, minWidth: 0 }}>
+              <React.Fragment key={s.num}>
+                <div style={{ textAlign: "center", flex: 1, minWidth: 0 }}>
                   <div className="stat-num" style={{ fontSize: isMobile ? 20 : 30, lineHeight: 1.1 }}>{s.num}</div>
                   <div className="small" style={{ marginTop: 2, fontSize: isMobile ? 11 : 13, whiteSpace: "nowrap" }}>{s.label}</div>
                 </div>
                 {i < arr.length - 1 && <div style={{ width: 1, height: isMobile ? 28 : 36, background: "var(--line)", flexShrink: 0 }} />}
-              </>
+              </React.Fragment>
             ))}
           </div>
         </Reveal>
