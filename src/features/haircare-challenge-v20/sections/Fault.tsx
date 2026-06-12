@@ -1,4 +1,5 @@
-import { Reveal, Eyebrow, HandArrow, Underline } from "../primitives";
+import { Reveal, Eyebrow, HandArrow, Underline, GreenCallout } from "../primitives";
+import VideoPlayer from "@/components/VideoPlayer";
 
 export function Fault() {
   return (
@@ -53,9 +54,22 @@ export function Fault() {
                 <p className="fault-copy">
                   Fewer steps. Less money. Less effort and time. It's only hard because understanding your hair is the one thing the industry was never going to sell you.
                 </p>
+                <div style={{ marginTop: 18 }}>
+                  <VideoPlayer
+                    src="https://videos.hairqare.co/ytdown-youtube-haircare-challenge-introd-10ee1138/master.m3u8"
+                    aspectRatio="1920/1080"
+                    autoplay
+                  />
+                </div>
               </div>
             </li>
           </ol>
+        </Reveal>
+
+        <Reveal style={{ marginTop: 28 }}>
+          <GreenCallout>
+            <strong>Perimenopause doesn't start at 50.</strong> Hormonal fluctuations that affect your hair can begin as early as 35 — and most doctors never mention it.
+          </GreenCallout>
         </Reveal>
       </div>
     </section>
