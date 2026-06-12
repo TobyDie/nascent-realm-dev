@@ -1,4 +1,4 @@
-import { Reveal, Eyebrow, HandArrow, Underline, GreenCallout, Icon, StarRow, Button } from "../primitives";
+import { Reveal, Eyebrow, Icon, StarRow, Button } from "../primitives";
 import { r2img } from "../img";
 
 export function Science() {
