@@ -5,7 +5,6 @@ import {
   Divider,
   Eyebrow,
   GuaranteeBadge,
-  Icon,
   Reveal,
   Stat,
   TestimonialCard,
@@ -87,9 +86,9 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
         <Reveal className="center" style={{ marginTop: 30, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
           <Button id="cta-social-proof" onClick={onCta} icon="arrow-right">Join 250,000+ women</Button>
           <GuaranteeBadge size="sm" />
-          <button className="btn btn-ghost" style={{ padding: "10px 20px", fontSize: 14 }}>
-            See more stories <Icon name="chevron-right" size={16} />
-          </button>
+          <Button id="cta-social-proof-more" onClick={onCta} icon="arrow-right" style={{ padding: "10px 20px", fontSize: 14 }}>
+            See more stories
+          </Button>
         </Reveal>
 
         <Reveal style={{ marginTop: 44 }}>
