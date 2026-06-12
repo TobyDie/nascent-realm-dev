@@ -52,6 +52,22 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               </span>
             </div>
 
+            {/* Bullets - proof layer, below the CTA */}
+            <ul className="hero-bullets">
+              <li>
+                <span className="hero-bullet-emoji">🌱</span>
+                <span>Break past your length plateau - finally see your hair grow past where it always stops.</span>
+              </li>
+              <li>
+                <span className="hero-bullet-emoji">✨</span>
+                <span>Real density and shine - without $90 serums, bond builders, or another "miracle" bottle.</span>
+              </li>
+              <li>
+                <span className="hero-bullet-emoji">🛡️</span>
+                <span>Undo the damage from color, heat and bleach - before it quietly caps your hair for the next decade.</span>
+              </li>
+            </ul>
+
           </Reveal>
 
           {/* IMAGE column - Sarah's portrait (image, not video), with a sketchy trust pin */}
