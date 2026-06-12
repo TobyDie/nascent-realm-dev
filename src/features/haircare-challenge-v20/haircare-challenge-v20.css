@@ -578,6 +578,34 @@
       display: flex; flex-direction: column; gap: 10px;
       max-width: 480px;
     }
+/* Handwritten tilted pill - sub-headline */
+.hq-sp-v20 .hero-handwritten-pill {
+      display: inline-block;
+      font-family: "Caveat", cursive;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1;
+      color: var(--orange-700);
+      background: #FFF1E2;
+      border: 1.5px solid var(--orange-300, #F5C99B);
+      padding: 8px 16px 9px;
+      border-radius: 999px;
+      transform: rotate(-2.5deg);
+      transform-origin: left center;
+      margin: 4px 0 16px;
+      box-shadow: 0 2px 0 rgba(233,123,0,0.10);
+    }
+.hq-sp-v20 .hero-supporting {
+      max-width: 480px;
+      margin: 0 0 20px;
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: var(--slate-soft, #5a5a5a);
+    }
+.hq-sp-v20 .hero-supporting strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
 .hq-sp-v20 .hero-bullets li {
       display: flex; gap: 12px; align-items: flex-start;
       font-size: 16px; color: var(--ink); line-height: 1.45;
