@@ -29,7 +29,7 @@ export function Science({ onCta }: { onCta?: () => void }) {
           <div style={{ background: "var(--lavender)", borderRadius: 20, padding: "32px 36px", position: "relative", maxWidth: 720, marginInline: "auto" }}>
             <Icon name="quote" size={36} color="var(--orange-500)" style={{ position: "absolute", top: 20, right: 24, opacity: 0.5 }} />
             <p style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 22, lineHeight: 1.45, color: "var(--ink)" }}>
-              “This challenge showed me I have to change my habits to get better hair — that my genetics influence my hair, but not nearly as much as I thought.”
+              “This challenge showed me I have to change my habits to get better hair that my genetics influence my hair, but not nearly as much as I thought.”
             </p>
             <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 12 }}>
               <img src={r2img("profile-13.webp", 96)} alt="Gema" loading="lazy" decoding="async" style={{ width: 44, height: 44, borderRadius: 999, objectFit: "cover", flex: "none" }} />

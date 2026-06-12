@@ -1945,10 +1945,12 @@
 .hq-sp-v21 .nyf-chapter-num {
   background: #F1E6D2;
   color: var(--ink-soft);
-  padding: 2px 7px;
-  border-radius: 999px;
+  padding: 4px 10px;
+  border-radius: 12px;
   font-size: 10px;
+  white-space: pre-line;
 }
+
 .hq-sp-v21 .nyf-chapter-hope .nyf-chapter-num {
   background: var(--orange-500);
   color: #fff;
@@ -1968,7 +1970,9 @@
   font-size: 14.5px;
   line-height: 1.55;
   color: var(--slate);
+  white-space: pre-line;
 }
+
 
 /* Doodle in card corner */
 .hq-sp-v21 .nyf-doodle {
