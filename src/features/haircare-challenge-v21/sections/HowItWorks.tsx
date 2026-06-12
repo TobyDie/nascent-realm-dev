@@ -119,7 +119,7 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
               num="01"
               tag="UNLEARN TOGETHER"
               meta="Day 1"
-              headline="You let go of the routine that is not working"
+              headline="You let go of the routine that's not working"
               body="You're not the only one who's tried everything. Every woman shows up the same way, done with what hasn't worked."
               caption=""
             />
@@ -130,8 +130,8 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
               tag="RELEARN TOGETHER"
               meta="Days 1–14"
               headline="You actually figure out what your hair needs."
-              body={"10 minutes a day. You find out why your shampoo stopped working, why your scalp matters more than your strands, and what your hair needs now that nobody's told you.\n\nAnd you ask questions in the group. Compare notes. Figure it out alongside women in the exact same spot. Not alone, not guessing."}
-              caption="Days 1–14 · You build your own PERSONALISED routine"
+              body={"10 minutes a day. You find out why your shampoo stopped working, why your scalp matters more than your strands, and what your hair needs now that nobody's told you.\n\nAnd you ask questions in the group. Compare notes. Figure it out alongside women in the exact same spot."}
+              caption="10 minutes a day. You build your own personalised routine.\u00a0You learn the knowledge your hairdresser never explained.\n"
             >
               <div className="mx-bars" aria-hidden="true">
                 {DAYS.map((d) => (
@@ -145,8 +145,8 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
               num="03"
               tag="FLOURISH TOGETHER"
               meta="Day 14+"
-              headline="By day 14 you won't need to buy another product because you'll know what your hair actually needs."
-              body="Less falling out. More shine. More confidence.&nbsp;"
+              headline="By Day 14, you get a version of your hair you haven't seen in years."
+              body="Less falling out. More shine. More confidence.\nAnd the shampoo aisle, the salon chair, the next miracle product, none of it pulls at you anymore, because you finally understand how to fix it from the inside."
               caption=""
             />
           </Reveal>
