@@ -422,7 +422,7 @@ export function TestimonialCard({
           file={image ?? DEFAULT_BA}
           widths={BA_WIDTHS}
           sizes="(max-width: 860px) 92vw, 440px"
-          alt="Before and after — Day 1 vs Day 14"
+          alt="Before and after - Day 1 vs Day 14"
           style={{ width: "100%", height: "auto", display: "block" }}
         />
       </div>
@@ -466,7 +466,7 @@ export function InlineTestimonial({
       <div className="inline-testi-body">
         <StarRow size={13} />
         <p className="inline-testi-quote">“{quote}”</p>
-        <div className="inline-testi-meta">— {name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}</div>
+        <div className="inline-testi-meta">- {name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}</div>
       </div>
     </div>
   );
@@ -487,7 +487,7 @@ export function Reveal({
   return <div ref={ref} className={`entrance ${seen ? "in" : ""} ${className}`} style={{ transitionDelay: `${delay}ms`, ...style }}>{children}</div>;
 }
 
-/* Compact image testimonial — small thumb on the left, quote on the right.
+/* Compact image testimonial - small thumb on the left, quote on the right.
    Used in dense interstitial strips so we don't burn vertical space. */
 export function CompactImageTestimonial({
   name, age, flag, context, text, image, accent = "var(--orange-600)", style,
@@ -508,7 +508,7 @@ export function CompactImageTestimonial({
         <StarRow size={13} />
         <p className="compact-image-testi-quote">“{text}”</p>
         <div className="compact-image-testi-meta">
-          — {name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}
+          - {name}{age ? `, ${age}` : ""}{flag ? ` · ${flag}` : ""}
           {context ? <span className="compact-image-testi-context"> · {context}</span> : null}
         </div>
       </div>
@@ -516,7 +516,7 @@ export function CompactImageTestimonial({
   );
 }
 
-/* ---------- GuaranteeBadge — risk reversal next to every primary CTA ---------- */
+/* ---------- GuaranteeBadge - risk reversal next to every primary CTA ---------- */
 export function GuaranteeBadge({
   size = "sm",
   style,
@@ -527,7 +527,7 @@ export function GuaranteeBadge({
       <Icon name="shield-check" size={size === "md" ? 18 : 15} color="var(--trust-green)" />
       <span className="guarantee-text">
         <strong>14-day results or 100% refund.</strong>{" "}
-        <span className="guarantee-sub">No questions, no forms — just email us.</span>
+        <span className="guarantee-sub">No questions, no forms - just email us.</span>
       </span>
     </span>
   );

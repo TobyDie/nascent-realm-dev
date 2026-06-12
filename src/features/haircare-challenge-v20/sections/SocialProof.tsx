@@ -60,7 +60,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
 
   return (
     <section className="bg-white" id="results">
-      <Anno>Section 5 — Social proof / ICP-matched results</Anno>
+      <Anno>Section 5 - Social proof / ICP-matched results</Anno>
       <div className="wrap-wide">
         <Reveal style={{ textAlign: "center", marginBottom: 32 }}>
           <Eyebrow>Real results</Eyebrow>

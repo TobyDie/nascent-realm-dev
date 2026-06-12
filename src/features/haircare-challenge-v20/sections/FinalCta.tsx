@@ -8,7 +8,7 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
   const liStyle: React.CSSProperties = { display: "flex", gap: 11, alignItems: "flex-start", fontSize: 15.5, color: "var(--ink-soft)" };
   return (
     <section className="bg-cream" id="start">
-      <Anno>Section 11 — Final CTA / urgency close</Anno>
+      <Anno>Section 11 - Final CTA / urgency close</Anno>
       <div className="wrap" style={{ textAlign: "center" }}>
         <Reveal>
           <Eyebrow>The decision</Eyebrow>
@@ -16,7 +16,7 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
             Build the hair you're actually going for.
           </h2>
           <p className="lead" style={{ marginBottom: 36, maxWidth: 620, marginInline: "auto" }}>
-            You've spent enough on bottles. In 14 days, you'll finally understand what your hair actually needs — past the plateau, past the damage, past the guessing. And the knowledge is <strong>yours forever</strong>.
+            You've spent enough on bottles. In 14 days, you'll finally understand what your hair actually needs - past the plateau, past the damage, past the guessing. And the knowledge is <strong>yours forever</strong>.
           </p>
         </Reveal>
         <Reveal>
@@ -39,7 +39,7 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
                   <Icon name="check" size={18} color="var(--orange-600)" stroke={2.5} style={{ marginTop: 2, flex: "none" }} />Certificate of completion
                 </li>
                 <li style={liStyle}>
-                  <Icon name="check" size={18} color="var(--orange-600)" stroke={2.5} style={{ marginTop: 2, flex: "none" }} />Fits into 10 minutes a day — no extra trips, no salon appointments
+                  <Icon name="check" size={18} color="var(--orange-600)" stroke={2.5} style={{ marginTop: 2, flex: "none" }} />Fits into 10 minutes a day - no extra trips, no salon appointments
                 </li>
               </ul>
               <div style={{ display: "flex", alignItems: "baseline", gap: 12, justifyContent: "center", marginBottom: 18 }}>
@@ -51,7 +51,7 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
                 <GuaranteeBadge size="md" />
               </div>
               <p style={{ marginTop: 12, marginBottom: 0, fontSize: 13.5, color: "var(--slate)", textAlign: "center", lineHeight: 1.55 }}>
-                <strong style={{ color: "var(--ink-soft)" }}>Why we can promise this:</strong> 92% of women see visible change in 14 days. If you're in the 8% — full refund, you keep everything.
+                <strong style={{ color: "var(--ink-soft)" }}>Why we can promise this:</strong> 92% of women see visible change in 14 days. If you're in the 8% - full refund, you keep everything.
               </p>
               <p className="small center" style={{ marginTop: 14, marginBottom: 0 }}>
                 Next cohort starts <span className="start-date">{startDate ? fmtMonthDay(startDate) : "June 6th"}</span> · {formatJoiningCount(joining)} women joining this week · 30-day money-back guarantee

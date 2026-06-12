@@ -11,7 +11,7 @@ import {
 export function NotAboutHair({ onCta }: { onCta?: () => void }) {
   return (
     <section className="bg-cream">
-      <Anno>Added — The deeper change</Anno>
+      <Anno>Added - The deeper change</Anno>
       <div className="wrap" style={{ maxWidth: 880 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 36 }}>
           <Eyebrow>The deeper change</Eyebrow>
@@ -29,7 +29,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 4 }}>Hair that's actually going somewhere</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  Past the length plateau. Past the breakage. The growth you stopped expecting — quietly happening.
+                  Past the length plateau. Past the breakage. The growth you stopped expecting - quietly happening.
                 </div>
               </div>
             </div>
@@ -38,7 +38,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 4 }}>Photos where your hair is the win</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  The candid shot that catches you off guard — and your hair is the part you actually like.
+                  The candid shot that catches you off guard - and your hair is the part you actually like.
                 </div>
               </div>
             </div>
@@ -47,7 +47,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 4 }}>Knowledge that's yours forever</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  Not another product. A clear understanding of why your hair does what it does — and exactly what to do about it.
+                  Not another product. A clear understanding of why your hair does what it does - and exactly what to do about it.
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 4 }}>Built before it gets worse</div>
                 <div className="p" style={{ fontSize: 15, margin: 0, lineHeight: 1.5 }}>
-                  The version of you in 10 years will be glad you started now, not after — when fixing this is much harder.
+                  The version of you in 10 years will be glad you started now, not after - when fixing this is much harder.
                 </div>
               </div>
             </div>
@@ -68,19 +68,19 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
             <p style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 19, lineHeight: 1.5, color: "var(--ink)" }}>
               "It's not only about the hair being silky and nice to touch. It's about a more confident, more in-control version of me."
             </p>
-            <div style={{ marginTop: 14, fontSize: 14, color: "var(--slate)", fontWeight: 600 }}>— Nataliia, 27 🇺🇦 · finished the challenge in March</div>
+            <div style={{ marginTop: 14, fontSize: 14, color: "var(--slate)", fontWeight: 600 }}>- Nataliia, 27 🇺🇦 · finished the challenge in March</div>
           </div>
         </Reveal>
         <Reveal style={{ marginTop: 26 }}>
           <InlineTestimonial
             name="Kate" age={28} flag="🇬🇧"
-            quote="The main thing this challenge gave me is that I finally understand my hair. I'm not guessing anymore — I'm building it."
+            quote="The main thing this challenge gave me is that I finally understand my hair. I'm not guessing anymore - I'm building it."
             avatar="profile-1.webp"
             style={{ margin: "0 auto" }}
           />
         </Reveal>
         <Reveal className="center" style={{ marginTop: 32 }}>
-          <Button id="cta-not-about-hair" onClick={onCta} icon="arrow-right">Start building it — join the challenge</Button>
+          <Button id="cta-not-about-hair" onClick={onCta} icon="arrow-right">Start building it - join the challenge</Button>
         </Reveal>
       </div>
     </section>

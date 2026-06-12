@@ -15,7 +15,7 @@ export function Recognition() {
         </Reveal>
         <Reveal className="center" style={{ marginBottom: 28 }}>
           <p className="lead" style={{ maxWidth: 520, margin: "0 auto" }}>
-            Five quiet things that pile up in your 20s and early 30s — and slowly decide what your hair will look like for the next decade.
+            Five quiet things that pile up in your 20s and early 30s - and slowly decide what your hair will look like for the next decade.
           </p>
         </Reveal>
 
@@ -41,7 +41,7 @@ export function Recognition() {
             <div className="timeline-beat">
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">🪞</span>You're spending more on your hair than ever — and seeing less for it.
+                <span className="emoji">🪞</span>You're spending more on your hair than ever - and seeing less for it.
               </p>
               <p className="timeline-consequence">
                 The serum. The bond builder. The silk pillowcase. The supplements. Your hair feels exactly the same.
@@ -76,7 +76,7 @@ export function Recognition() {
               <span className="timeline-wash" />
               <span className="timeline-dot" />
               <p className="timeline-trigger">
-                <span className="emoji">🧴</span>The bleach (or the heat, or the box dye) changed it — and nothing's been the same since.
+                <span className="emoji">🧴</span>The bleach (or the heat, or the box dye) changed it - and nothing's been the same since.
               </p>
               <p className="timeline-consequence">
                 You wouldn't go back to your natural colour, but your ends are paying for it. And no $80 mask is bringing them back.
@@ -109,7 +109,7 @@ export function Recognition() {
         <Reveal style={{ marginTop: 36 }}>
           <InlineTestimonial
             name="Lina" age={28} flag="🇩🇪"
-            quote="I thought my hair just couldn't grow past my shoulders. Turns out it could — I was just snapping it off faster than it grew."
+            quote="I thought my hair just couldn't grow past my shoulders. Turns out it could - I was just snapping it off faster than it grew."
             avatar="profile-4.webp"
             style={{ margin: "0 auto" }}
           />
