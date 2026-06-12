@@ -1,4 +1,4 @@
-import "./haircare-challenge.css";
+import "./haircare-challenge-v21.css";
 import { AgeStripe } from "./sections/AgeStripe";
 import { Hero } from "./sections/Hero";
 import { Recognition } from "./sections/Recognition";
@@ -23,9 +23,9 @@ function scrollToStart() {
   window.location.href = CTA_URL;
 }
 
-export function HaircareChallengePage() {
+export function HaircareChallengePageV21() {
   return (
-    <div className="hq-sp rooted">
+    <div className="hq-sp-v21 rooted">
       <AgeStripe />
       <Hero onCta={scrollToStart} />
       <VideoTestimonials />
@@ -63,4 +63,4 @@ export function HaircareChallengePage() {
   );
 }
 
-export default HaircareChallengePage;
+export default HaircareChallengePageV21;
