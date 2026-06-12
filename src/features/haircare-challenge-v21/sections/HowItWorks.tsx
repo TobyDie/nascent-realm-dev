@@ -65,33 +65,33 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
         </Reveal>
 
         <Reveal delay={60}>
-          <div className="mx-cohort-pill">
-            <div className="mx-cohort-avatars" aria-hidden="true">
-              {COHORT_AVATARS.map((file) => (
-                <span key={file} className="mx-cohort-avatar">
-                  <img src={r2img(file, 96)} alt="" loading="lazy" decoding="async" />
-                </span>
-              ))}
-              <span className="mx-cohort-avatar mx-cohort-more">+</span>
-            </div>
-            <div className="mx-cohort-copy">
-              <p className="mx-cohort-eyebrow">You're not in this alone</p>
-              <p className="mx-cohort-line"> </p>
-              <p className="mx-cohort-count">
-                <span className="mx-cohort-pulse" aria-hidden="true" />
-                <strong>{formatJoiningCount(joining)}</strong> women joining this week
-              </p>
-            </div>
-          </div>
-        </Reveal>
-
-        <Reveal delay={120}>
-          <div className="mx-calendar" role="img" aria-label="14 day calendar walked together">
+          <div className="mx-calendar" role="group" aria-label="You're not in this alone — 14 day calendar walked together">
             <div className="mx-calendar-frame">
               <span className="mx-calendar-corner mx-calendar-corner-tl" />
               <span className="mx-calendar-corner mx-calendar-corner-tr" />
               <span className="mx-calendar-corner mx-calendar-corner-bl" />
               <span className="mx-calendar-corner mx-calendar-corner-br" />
+
+              <div className="mx-cohort-row">
+                <div className="mx-cohort-avatars" aria-hidden="true">
+                  {COHORT_AVATARS.map((file) => (
+                    <span key={file} className="mx-cohort-avatar">
+                      <img src={r2img(file, 96)} alt="" loading="lazy" decoding="async" />
+                    </span>
+                  ))}
+                  <span className="mx-cohort-avatar mx-cohort-more">+</span>
+                </div>
+                <div className="mx-cohort-copy">
+                  <p className="mx-cohort-eyebrow">You're not in this alone</p>
+                  <p className="mx-cohort-count">
+                    <span className="mx-cohort-pulse" aria-hidden="true" />
+                    <strong>{formatJoiningCount(joining)}</strong> women joining this week
+                  </p>
+                </div>
+              </div>
+
+              <div className="mx-cohort-divider" aria-hidden="true" />
+
               <div className="mx-calendar-label">14-Day Calendar · walked together</div>
               <div className="mx-calendar-grid">
                 {DAYS.map((d) => {
