@@ -9,6 +9,7 @@ import { HowItWorks } from "./sections/HowItWorks";
 import { ResultsIn2Weeks } from "./sections/ResultsIn2Weeks";
 import { WhatsIncluded } from "./sections/WhatsIncluded";
 import { Founder } from "./sections/Founder";
+import { Fault } from "./sections/Fault";
 import { NotAboutHair } from "./sections/NotAboutHair";
 import { SelfQualifier } from "./sections/SelfQualifier";
 import { Faq } from "./sections/Faq";
@@ -44,6 +45,7 @@ export function HaircareChallengePageV20() {
       <Science />
       <SocialProof onCta={scrollToStart} />
       <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="var(--cream)" />
+      <Fault />
       <Founder onCta={scrollToStart} />
       <TestimonialStrip variant="polaroid-duo" textIndex={1} imageIndex={1} bg="var(--white)" />
       <HowItWorks onCta={scrollToStart} />
