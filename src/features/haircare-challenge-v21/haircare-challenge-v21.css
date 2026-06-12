@@ -1211,10 +1211,10 @@
 .hq-sp-v21 .age-stripe { padding: 9px 14px !important; font-size: 13px !important; }
 /* trust bar → 2x2 + trustpilot row */
 .hq-sp-v21 .trust-bar {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px 12px !important;
-        padding: 22px 18px !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 6px !important;
+        padding: 10px 8px !important;
         text-align: center;
       }
 .hq-sp-v21 .trust-bar .trust-divider { display: none; }
@@ -1222,7 +1222,7 @@
 .hq-sp-v21 .trust-stat > div:first-child { font-size: 26px !important; }
 .hq-sp-v21 .trustpilot-wrap { grid-column: 1 / -1; justify-content: center; }
 /* big-stat trust-bar (4.8/5 · 250K+ · 92%) — stack cleanly, never overlap */
-.hq-sp-v21 .trust-bar .stat-num { font-size: 40px !important; white-space: nowrap; }
+.hq-sp-v21 .trust-bar .stat-num { font-size: 20px !important; white-space: nowrap; }
 /* cards general */
 .hq-sp-v21 .card { padding: 22px 20px !important; }
 /* fault timeline — mobile */
