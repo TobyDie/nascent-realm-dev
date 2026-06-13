@@ -13,10 +13,10 @@ export function Fault() {
               <div className="fault-beat-body">
                 <span className="fault-stamp">01 · not your fault</span>
                 <h3 className="fault-headline">
-                  Your daily <Underline>habits</Underline>{"\n"} are causing the breakage
+                  Your daily <Underline>habits</Underline> are causing the breakage.
                 </h3>
                 <p className="fault-copy">
-                  Shampooing, blow-drying, styling — none of these are meant to damage your hair. But there's a right way and a wrong way to do each, and most women were never taught the difference.
+                  The things you do often like shampooing, blow-drying and styling aren't meant to be damaging. There's a way to do each one that protects the length you grow but many people don't know the difference.
                 </p>
                 <p className="fault-copy"><strong>The technique matters more than any product you'll ever buy.</strong></p>
               </div>
@@ -27,10 +27,10 @@ export function Fault() {
               <div className="fault-beat-body">
                 <span className="fault-stamp">02 · not your fault</span>
                 <h3 className="fault-headline">
-                  Your products are <Underline>adding</Underline> to the damage — not preventing it.
+                  Your products are <Underline>adding</Underline> to the damage, not preventing it.
                 </h3>
                 <p className="fault-copy">
-                  Heat protectants damage almost as much as they protect. Shampoos dry your hair out instead of just cleaning it. Conditioners coat it in residue instead of actually conditioning.
+                  Many heat protectants damage your hair almost as much as they protect it. Shampoos dry it out instead of just cleaning it. Conditioners coat it in residue instead of actually conditioning it.
                 </p>
                 <p className="fault-copy">The things you bought to save your hair are <strong>quietly hurting it</strong> — even when the label promises the opposite.</p>
               </div>
@@ -48,10 +48,10 @@ export function Fault() {
                   Once you understand how hair actually grows, it's <span className="fault-emoji">✨</span> <Underline>easy</Underline>.
                 </h3>
                 <p className="fault-copy">
-                  Your hair grows whether you ask it to or not. As long as you're alive, it grows — <strong>your only job is to get out of its way.</strong>
+                  Your hair grows whether you ask it to or not. As long as you're alive, it grows — your only job is to get out of its way.
                 </p>
                 <p className="fault-copy">
-                  And getting out of the way means <strong>less, not more</strong>. Fewer products. Less money. Less effort. Stop the unnecessary damage, and the length you've been growing all along finally shows up.
+                  <strong>And getting out of the way means less, not more.</strong> Fewer products, less money, less effort. Stop the unnecessary damage, and the length you've been growing all along shows up.
                 </p>
                 <div style={{ marginTop: 18 }}>
                   <VideoPlayer
