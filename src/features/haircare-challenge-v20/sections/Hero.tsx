@@ -54,15 +54,15 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             <ul className="hero-bullets">
               <li>
                 <span className="hero-bullet-emoji">🌱</span>
-                <span>Build a simple $10 per month routine that's easy to stick to.</span>
+                <span>Build a simple $10-a-month routine that's easy to stick to.</span>
               </li>
               <li>
                 <span className="hero-bullet-emoji">✨</span>
-                <span>Heat-style and color without the damage holding your length back so you enjoy the hair styles your love with - Guilt free.&nbsp;</span>
+                <span>Heat-style and color without the damage holding your length back&nbsp;so you keep the hairstyles you love without any guilt.</span>
               </li>
               <li>
                 <span className="hero-bullet-emoji">🛡️</span>
-                <span>Ditch the hair extensions and grow hair that makes you feel confident and proud.</span>
+                <span>Ditch the hair extensions for good and grow hair that makes you feel confident and proud.</span>
               </li>
             </ul>
 
