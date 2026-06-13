@@ -81,11 +81,11 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
   const isMobile = useIsMobile();
 
   const testimonials: Testi[] = [
-    { name: "Kim", initials: "K", context: "Shedding every wash · hair loss", text: "I think I lost maybe half of the amount of hair I normally lose every time I wash.", image: "ba-1.webp" },
-    { name: "Andrea Burns", initials: "A", context: "Hair loss · dry, itchy scalp", text: "By the end of 14 days, I was losing like maybe, maybe a palm size amount when I would shower and wash my hair. And that is like a third of what I would normally lose.", image: "ba-2.webp" },
-    { name: "Anna Koval", initials: "A", context: "Thinning · hair felt lifeless", text: "I can tell you that my hair definitely looks so better. Feels softer. There's some life you know was added into my hair.", image: "ba-3.webp" },
-    { name: "Yer Yang", initials: "Y", context: "New mother · postpartum hair loss", text: "My hair felt lighter and it just… it does not feel as oily, it does not feel as weighed down, it feels like there's more volume and it just looks much better than before I started.", image: "ba-5.webp" },
-    { name: "Karen Patdu", initials: "M", context: "Thinning · hair loss", text: "You can see hair growing right here in the front. Usually, it doesn't grow this much, but slowly, but surely, I can see where it's coming from. My hair feels a lot healthier, cleaner, not so oily.", image: "ba-13.webp" },
+    { name: "Eline Mulders", initials: "E", context: "Dry hair · length plateau", text: "My hair feels softer, it's clean… I like my hair, it feels good - and cutting off the split ends feels amazing honestly, it helps also with less tangling.", image: "ba-1.webp" },
+    { name: "Elena", initials: "E", context: "General hair health", text: "My hair is soft and it truly is good. It's a good cleansing shampoo.", image: "ba-2.webp" },
+    { name: "Alina Nuno", initials: "A", context: "Shine restoration", text: "My before and after photos were a wake up call! I could see how much shine my hair has now compared to day 1. It is so much smoother and softer, lighter, fluffier! I am loving the way my hair feels - seeing the marked change in just 14 days reinforces that the work is working!", image: "ba-3.webp" },
+    { name: "Brianna Reetz", initials: "B", context: "Split ends · dull, brittle hair", text: "I kept eating what I should be, and just from that, my hair has already changed. It's already becoming a lot thicker, it's already have a bit more shine to it. I trimmed the split ends, and it's already going great. Now my hair is softer.", image: "ba-5.webp" },
+    { name: "Haydée Fernández", initials: "H", context: "Frizz · wants shine & volume", text: "As you can see my hair is shiny - it feels super soft, it has volume.", image: "ba-13.webp" },
   ];
   const cards = testimonials.map((t, i) => <CompactTesti key={i} t={t} />);
 
