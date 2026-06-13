@@ -1397,9 +1397,10 @@
         background: transparent !important;
       }
 .hq-sp-v20 .hero-handwritten-eyebrow { font-size: 22px !important; margin-bottom: 4px !important; }
-.hq-sp-v20 .hero-h1 { margin-bottom: 6px !important; margin-top: -56px !important; position: relative; z-index: 3; }
+.hq-sp-v20 .hero-h1 { margin-bottom: 6px !important; }
 /* Pull the text column up so the H1 overlays the bottom of the hero image, closing the empty gap on mobile */
-.hq-sp-v20 .hero-grid > div:nth-child(1) { margin-top: -48px !important; position: relative; z-index: 3; }
+.hq-sp-v20 .hero-grid { gap: 0 !important; }
+.hq-sp-v20 .hero-grid > div:nth-child(1) { margin-top: -64px !important; position: relative; z-index: 3; }
 .hq-sp-v20 .hero-validation { margin-bottom: 10px !important; }
 .hq-sp-v20 .hero-handwritten-pill { font-size: 19px !important; padding: 0 !important; margin: 2px 0 10px 6px !important; }
 .hq-sp-v20 .hero-supporting { font-size: 14px !important; margin-bottom: 14px !important; }
