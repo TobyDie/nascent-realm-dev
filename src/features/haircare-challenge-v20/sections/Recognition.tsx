@@ -1,16 +1,14 @@
-import { Reveal, InlineTestimonial, Icon } from "../primitives";
+import { Reveal, InlineTestimonial, Icon, Eyebrow } from "../primitives";
 
 export function Recognition() {
   return (
     <section className="bg-lav">
       <div className="wrap-wide">
-        <Reveal className="center" style={{ marginBottom: 12 }}>
-          <div className="reco-eyebrow">WHAT'S ACTUALLY HAPPENING</div>
-        </Reveal>
         <Reveal className="center" style={{ marginBottom: 8 }}>
-          <h2 className="h2 reco-headline">
+          <Eyebrow>What's actually happening</Eyebrow>
+          <h2 className="h2" style={{ marginTop: 12, lineHeight: 1.2 }}>
             You're doing more for your hair than ever.<br />
-            So why is it doing <em style={{ fontStyle: "italic" }}>less</em>?
+            So why is it doing <span style={{ color: "var(--orange-600)", fontStyle: "italic" }}>less</span>?
           </h2>
         </Reveal>
         <Reveal className="center" style={{ marginBottom: 28 }}>
