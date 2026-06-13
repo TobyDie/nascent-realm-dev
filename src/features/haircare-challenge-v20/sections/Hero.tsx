@@ -25,10 +25,19 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             {/* H1 - the single emotional hook, short enough for mobile */}
             <h1 className="h-hero hero-h1 hero-h1-stack" style={{ marginBottom: 12 }}>
               <span className="hh-intro">Grow the</span>
-              <span className="hh-key hh-key-italic">longest,</span>
+              <span className="hh-key">longest,</span>
               <span className="hh-key">healthiest,</span>
               <span className="hh-key">shiniest</span>
-              <span className="hh-tail">hair <span className="hh-payoff">of your life,</span></span>
+              <span className="hh-script">
+                <span className="hh-script-text">hair of your life,</span>
+                <svg className="hh-script-underline" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M2 7 Q 75 1, 150 6 T 298 5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+                  <path d="M4 14 Q 80 9, 155 13 T 296 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+                <svg className="hh-script-spark" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2 L12 9 M4 12 L10 12 M19 6 L15 10 M19 18 L15 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              </span>
               <span className="hh-sub">without giving up the color, heat, and styling you love.</span>
             </h1>
 
