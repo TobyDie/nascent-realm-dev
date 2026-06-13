@@ -292,6 +292,33 @@
       padding: 26px 18px 16px;
       background: linear-gradient(to top, rgba(26,26,26,.85), rgba(26,26,26,0));
     }
+/* Handwritten top-left trust note */
+.hq-sp-v20 .hero-trust-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: "Caveat", cursive;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+      color: var(--ink);
+      transform: rotate(-3deg);
+      transform-origin: left center;
+      margin-bottom: 10px;
+    }
+.hq-sp-v20 .hero-trust-note .hero-trust-stars {
+      color: var(--star, #F5A623);
+      font-size: 14px;
+      letter-spacing: -1px;
+    }
+.hq-sp-v20 .hero-trust-note .hero-trust-num {
+      color: var(--orange-600);
+    }
+.hq-sp-v20 .hero-trust-note .hero-trust-count {
+      color: var(--slate);
+      font-weight: 500;
+      font-size: 16px;
+    }
 /* ===========================================================
        Video testimonials section
        =========================================================== */
