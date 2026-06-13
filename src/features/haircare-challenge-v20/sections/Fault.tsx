@@ -13,7 +13,7 @@ export function Fault() {
               <div className="fault-beat-body">
                 <span className="fault-stamp">01 · not your fault</span>
                 <h3 className="fault-headline">
-                  Your daily <Underline>habits</Underline> are causing the breakage — not your hair.
+                  Your daily <Underline>habits</Underline>{"\n"} are causing the breakage
                 </h3>
                 <p className="fault-copy">
                   Shampooing, blow-drying, styling — none of these are meant to damage your hair. But there's a right way and a wrong way to do each, and most women were never taught the difference.
