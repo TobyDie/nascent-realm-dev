@@ -43,9 +43,9 @@ export function HaircareChallengePageV20() {
         </div>
       </section>
       <Science />
+      <Fault />
       <SocialProof onCta={scrollToStart} />
       <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="var(--cream)" />
-      <Fault />
       <Founder onCta={scrollToStart} />
       <TestimonialStrip variant="polaroid-duo" textIndex={1} imageIndex={1} bg="var(--white)" />
       <HowItWorks onCta={scrollToStart} />
