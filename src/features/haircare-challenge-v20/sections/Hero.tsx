@@ -24,8 +24,8 @@ export function Hero({ onCta }: { onCta?: () => void }) {
           <Reveal>
             {/* H1 - the single emotional hook, short enough for mobile */}
             <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
-              <span style={{ color: "#090909", fontWeight: 800 }}>Grow the longest, healthiest, shiniest hair </span>
-              <span style={{ color: "#e97b00", fontWeight: 800 }}>of your life.</span>
+              <span style={{ color: "#090909", fontWeight: 800 }}>Grow the longest, healthiest and shiniest hair of your life </span>
+              <span style={{ color: "#e97b00", fontWeight: 800 }}>— without giving up coloring, heat-styling and other "damaging" practices that you love.</span>
             </h1>
 
             {/* Handwritten tilted pill */}
@@ -35,14 +35,14 @@ export function Hero({ onCta }: { onCta?: () => void }) {
 
             {/* Short supporting paragraph */}
             <p className="hero-supporting">
-              Hip-length, bleached, still thick at the ends, still shines like a salon shoot. Built on $10 a month and three things nobody teaches you. <strong>All three are inside, in 14 days.</strong>
+              Grow waist-length hair, volume at the roots, thick at the ends and shines healthily. <strong>Invest 14 days and enjoy beautiful hair for decades to come.</strong>
             </p>
 
             {/* CTA block - must be above fold on mobile */}
             <div id="hero-cta-sentinel" style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start", marginBottom: 24 }}>
               <Button id="cta-hero" onClick={onCta} icon="arrow-right">Join the 14 Day Challenge</Button>
               <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
-                85% off · today only
+                Grow long hair or get your money back
               </span>
               <GuaranteeBadge size="sm" />
               {/* cohort line - under CTA, not above headline */}
@@ -56,15 +56,15 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             <ul className="hero-bullets">
               <li>
                 <span className="hero-bullet-emoji">🌱</span>
-                <span>Break past your length plateau - finally see your hair grow past where it always stops.</span>
+                <span>Build a simple $10 per month routine that's easy to stick to.</span>
               </li>
               <li>
                 <span className="hero-bullet-emoji">✨</span>
-                <span>Real density and shine - without $90 serums, bond builders, or another "miracle" bottle.</span>
+                <span>Heat-style and colour without the damage affecting your length so you enjoy your favourite hair styles without guilt.</span>
               </li>
               <li>
                 <span className="hero-bullet-emoji">🛡️</span>
-                <span>Undo the damage from color, heat and bleach - before it quietly caps your hair for the next decade.</span>
+                <span>Ditch the hair extensions and grow hair that makes you feel confident and proud.</span>
               </li>
             </ul>
 
