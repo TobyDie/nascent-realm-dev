@@ -1,52 +1,56 @@
-# Redesign: "What's Actually Happening" section (/20 only)
+## Goal
 
-## Problem with current UI
-- The bold lead-in reads like a **heading**, breaking scan flow.
-- Half the sentence is **black**, half **orange** — both heavy weights → shouty, hard to skim.
-- Five dense paragraphs on a flat dotted timeline → nothing for the eye to grab.
+Restyle the mobile hero H1 on `/20-the-haircare-challenge` using the selected **Scale contrast** direction. Words stay byte-for-byte identical — only typographic hierarchy changes, so the eye lands on `longest / healthiest / shiniest / of your life` first.
 
-## Intent of the section
-Make the reader nod: *"that's me."* Five quick gut-punches, not five paragraphs. Each item = a small confession → quiet consequence.
-
-## New UI: "Confession cards"
-Each pain point becomes a small conversational card with three readable layers — using the **exact existing copy** (`lead`, `neutral`, `accent`), nothing rewritten, nothing deleted.
+## Selected lockup (mobile, ~340px column)
 
 ```
-┌──────────────────────────────────────────────┐
-│  01                                          │  ← small handwritten orange number
-│                                              │
-│  You got keratin treatments                  │  ← lead (serif, regular weight, ink)
-│  and for a few weeks it looked incredible,   │  ← neutral (sans, slate)
-│                                              │
-│  ↳ then left your hair worse than before,    │  ← accent (sans, italic, indented under
-│    so you booked the next one. And the next. │     a small orange ↳ — feels like the
-│                                              │     quiet aftermath thought)
-└──────────────────────────────────────────────┘
+Grow the          ← serif, 32px, regular
+longest,          ← serif, 56px, black ITALIC
+healthiest,       ← serif, 56px, black
+shiniest          ← serif, 56px, black
+hair of your life,← serif, 36px ; "of your life," in orange
+without giving up the color, heat, and styling you love.
+                  ← serif, 22px, orange, regular (sentence 2 kept)
 ```
 
-### Visual rules
-- **No bold-orange blocks.** Orange is reserved for: the small number (`01`–`05`) and the ↳ glyph. The `accent` text itself uses `var(--ink-soft)` italic — readable, not shouty.
-- **Lead line**: serif (Georgia), 19–21px, regular weight (not bold), color `var(--ink)`. Feels like the reader's own voice, not a heading.
-- **Neutral line**: sans, 16px, `var(--slate)`. Continues the thought.
-- **Accent line**: sans, 15px, italic, `var(--ink-soft)`, indented with a small orange `↳` glyph.
-- **Card**: white surface, 1px `var(--line)` border, 18px radius, 22px padding, soft hover lift.
-- **Number badge**: 24–28px caveat font, `var(--orange-600)`, top-left corner of card.
-- Cards stack vertically with 14px gap. **No vertical timeline line** — the numbers carry the sequence and let the reader skim.
-- Optional 3px orange left accent strip per card for rhythm.
+Left-aligned, tight leading (`1.05`), `-0.02em` tracking. Single orange accent (#E97B00) reserved for the payoff phrase and the second sentence. No rotations, no SVG underlines, no highlight pills.
 
-### Important
-The three text fragments per item (`lead`, `neutral`, `accent`) are rendered **verbatim** from the existing data array. No copy rewriting, no additions to the text, no deletions. The only added text is the visual "01"–"05" numerals.
+Desktop scales the same lockup up proportionally (~40 / 76 / 76 / 76 / 48 / 28).
 
-## Header
-Unchanged (eyebrow, headline, sub paragraph all stay).
+## Files (scoped to /20 fork only)
 
-## Closing
-Inline testimonial + CTA link below the cards stay exactly as today.
+1. **`src/features/haircare-challenge-v20/sections/Hero.tsx`**
+   Replace the current two-span H1 with a structured stack:
+   ```tsx
+   <h1 className="h-hero hero-h1 hero-h1-stack" style={{ marginBottom: 12 }}>
+     <span className="hh-intro">Grow the</span>
+     <span className="hh-key hh-key-italic">longest,</span>
+     <span className="hh-key">healthiest,</span>
+     <span className="hh-key">shiniest</span>
+     <span className="hh-tail">hair <span className="hh-payoff">of your life,</span></span>
+     <span className="hh-sub">without giving up the color, heat, and styling you love.</span>
+   </h1>
+   ```
+   Every word identical to today — only re-grouped into spans for hierarchy.
 
-## Files to change
-- `src/features/haircare-challenge-v20/sections/Recognition.tsx` — restructure JSX into the new card shape. Keep the existing `lead` / `neutral` / `accent` data array text **unchanged**.
-- `src/features/haircare-challenge-v20/haircare-challenge-v20.css` — add scoped styles (`.hq-sp-v20 .confess-card`, `.confess-num`, `.confess-lead`, `.confess-neutral`, `.confess-accent`) under the v20 root class. Existing `.timeline-*` / `.reco-*` styles left untouched.
+2. **`src/features/haircare-challenge-v20/haircare-challenge-v20.css`**
+   Add a scoped block under `.hq-sp-v20`:
+   - `.hero-h1-stack` — `display: flex; flex-direction: column; line-height: 1.05; letter-spacing: -0.02em;`
+   - `.hh-intro` — 32px regular, black
+   - `.hh-key` — 56px black (900), black, tracking -0.03em
+   - `.hh-key-italic` — adds `font-style: italic` to the first key (`longest,`)
+   - `.hh-tail` — 36px black; `.hh-payoff` — orange (#E97B00)
+   - `.hh-sub` — 22px orange, regular, mt 10px
+   - Mobile (`@media (max-width: 640px)`) overrides bumping sizes to fit 340px column; **remove** the existing flat `.hero-h1 { font-size: 28px/30px !important }` rules that currently flatten the headline
+   - Desktop (`@media (min-width: 900px)`) bumps to ~40 / 76 / 76 / 76 / 48 / 28
 
-## Scope guardrails
-- Edits only inside `src/features/haircare-challenge-v20/`. No other route or page touched.
-- No new dependencies, images, or copy changes.
+3. No other files touched. No changes to /17, /18, /19, sections list, route, head meta, or copy.
+
+## Out of scope
+
+- No new fonts (reuses Fraunces already loaded).
+- No copy edits.
+- No layout changes to the hero image, trust pill, CTA, or anything below the H1.
+
+Ready to implement on switch to build mode.
