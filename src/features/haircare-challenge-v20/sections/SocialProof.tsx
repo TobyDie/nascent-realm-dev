@@ -96,7 +96,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
         <Reveal style={{ textAlign: "center", marginBottom: 20, maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
           <Eyebrow>The plateau wasn't real</Eyebrow>
           <h2 className="h2" style={{ margin: "12px 0 0", lineHeight: 1.2 }}>
-            Real women, finally seeing the length <span style={{ color: "var(--orange-600)" }}>once they learned the right technique.</span>
+            Thousands of women, finally seeing the length <span style={{ color: "var(--orange-600)" }}>once they learned the right technique.</span>
           </h2>
         </Reveal>
 
