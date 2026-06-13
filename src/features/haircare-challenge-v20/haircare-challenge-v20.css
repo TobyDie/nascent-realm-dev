@@ -1412,7 +1412,7 @@
 .hq-sp-v20 .hero-grid > div:nth-child(1) {
         position: relative;
         z-index: 2;
-        margin-top: -55vw;
+        margin-top: -55vw !important;
       }
 /* Float a transparent triangular spacer that mimics Sarah's trailing hair on
    the right, so the first H1 lines wrap tight and later lines flow full width.
