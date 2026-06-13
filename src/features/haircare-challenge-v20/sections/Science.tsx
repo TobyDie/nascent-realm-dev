@@ -6,9 +6,9 @@ export function Science() {
     <section className="bg-white" id="science">
       <div className="wrap">
         <Reveal style={{ marginBottom: 28, textAlign: "center" }}>
-          <Eyebrow style={{ color: "var(--slate)" }}>WHY IS IT HAPPENING</Eyebrow>
+          <Eyebrow style={{ color: "var(--slate)" }}>WHY YOUR HAIR NEVER GETS LONGER</Eyebrow>
           <h2 className="h2" style={{ marginTop: 12, maxWidth: 720, marginInline: "auto" }}>
-            It's not your hair. <em>It's the things no one taught you about how hair actually grows.</em>
+            It's not your genetics. <em>Turns out, it's just simple math.</em>
           </h2>
         </Reveal>
 
