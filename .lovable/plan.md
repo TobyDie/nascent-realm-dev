@@ -1,52 +1,41 @@
-# Redesign: "What's Actually Happening" section (/20 only)
+## Goal
+On `/20-the-haircare-challenge` (mobile only), move the H1 ("Grow the longest, healthiest, shiniest hair of your life…") upward so it sits in the empty cream pocket at the bottom-left of the hero — under Sarah's body and to the left of her trailing hair. Desktop layout stays untouched.
 
-## Problem with current UI
-- The bold lead-in reads like a **heading**, breaking scan flow.
-- Half the sentence is **black**, half **orange** — both heavy weights → shouty, hard to skim.
-- Five dense paragraphs on a flat dotted timeline → nothing for the eye to grab.
+## What the screenshot shows
+- Hero image is full-bleed with a transparent/cream background, so the image's bottom area visually blends with the page.
+- Sarah's body sits in the top half; her hair trails diagonally across the bottom-right.
+- The entire **bottom-left quadrant** (roughly the lower 30–35% of the hero, left ~55% wide) is empty cream — ideal canvas for the H1.
+- Trust pill is already pinned to top-left and must stay there.
 
-## Intent of the section
-Make the reader nod: *"that's me."* Five quick gut-punches, not five paragraphs. Each item = a small confession → quiet consequence.
+## Approach (CSS-only, mobile breakpoint)
+Edit only `src/features/haircare-challenge-v20/haircare-challenge-v20.css` inside the existing `@media (max-width: 720px)` block. No JSX changes, no desktop changes, no other routes.
 
-## New UI: "Confession cards"
-Each pain point becomes a small conversational card with three readable layers — using the **exact existing copy** (`lead`, `neutral`, `accent`), nothing rewritten, nothing deleted.
+1. **Pull the text column up into the hero**
+   - On mobile, the grid already reorders so the image is `order: 1` and the text column is `order: 2`.
+   - Apply a negative `margin-top` to the text column (`.hero-grid > div:nth-child(1)`) of roughly `-30vw` (≈ -117px at 390px width) so the H1's first line lands just below Sarah's seated body.
+   - Add `position: relative; z-index: 2;` on the text column so it paints above the image's empty area.
 
-```
-┌──────────────────────────────────────────────┐
-│  01                                          │  ← small handwritten orange number
-│                                              │
-│  You got keratin treatments                  │  ← lead (serif, regular weight, ink)
-│  and for a few weeks it looked incredible,   │  ← neutral (sans, slate)
-│                                              │
-│  ↳ then left your hair worse than before,    │  ← accent (sans, italic, indented under
-│    so you booked the next one. And the next. │     a small orange ↳ — feels like the
-│                                              │     quiet aftermath thought)
-└──────────────────────────────────────────────┘
-```
+2. **Constrain H1 width so it stays in the left pocket**
+   - Set `.hero-h1` to `max-width: 62%` (or `padding-right: 38%`) on mobile so the headline wraps in the left column and never collides with the trailing hair on the right.
+   - Keep current font-size (28–30px) and weight; no copy changes.
 
-### Visual rules
-- **No bold-orange blocks.** Orange is reserved for: the small number (`01`–`05`) and the ↳ glyph. The `accent` text itself uses `var(--ink-soft)` italic — readable, not shouty.
-- **Lead line**: serif (Georgia), 19–21px, regular weight (not bold), color `var(--ink)`. Feels like the reader's own voice, not a heading.
-- **Neutral line**: sans, 16px, `var(--slate)`. Continues the thought.
-- **Accent line**: sans, 15px, italic, `var(--ink-soft)`, indented with a small orange `↳` glyph.
-- **Card**: white surface, 1px `var(--line)` border, 18px radius, 22px padding, soft hover lift.
-- **Number badge**: 24–28px caveat font, `var(--orange-600)`, top-left corner of card.
-- Cards stack vertically with 14px gap. **No vertical timeline line** — the numbers carry the sequence and let the reader skim.
-- Optional 3px orange left accent strip per card for rhythm.
+3. **Re-tighten spacing below the overlay**
+   - Because the H1 moved up, reduce `.hero-supporting` top margin slightly so the supporting paragraph + CTA still flow naturally without a gap.
+   - Leave CTA, guarantee badge, cohort line, and bullets exactly where they are visually (they continue to sit in the normal flow below the H1).
 
-### Important
-The three text fragments per item (`lead`, `neutral`, `accent`) are rendered **verbatim** from the existing data array. No copy rewriting, no additions to the text, no deletions. The only added text is the visual "01"–"05" numerals.
-
-## Header
-Unchanged (eyebrow, headline, sub paragraph all stay).
-
-## Closing
-Inline testimonial + CTA link below the cards stay exactly as today.
+4. **Safety checks**
+   - Trust pill (`.hero-trust-note`) stays `position: absolute; top/left` on the image — unaffected.
+   - Image stays `object-fit: contain`, full-bleed, transparent — no crop, no frame.
+   - Wider breakpoints (>720px) are not touched, so desktop and tablet keep the current side-by-side hero.
 
 ## Files to change
-- `src/features/haircare-challenge-v20/sections/Recognition.tsx` — restructure JSX into the new card shape. Keep the existing `lead` / `neutral` / `accent` data array text **unchanged**.
-- `src/features/haircare-challenge-v20/haircare-challenge-v20.css` — add scoped styles (`.hq-sp-v20 .confess-card`, `.confess-num`, `.confess-lead`, `.confess-neutral`, `.confess-accent`) under the v20 root class. Existing `.timeline-*` / `.reco-*` styles left untouched.
+- `src/features/haircare-challenge-v20/haircare-challenge-v20.css` — additions inside the existing mobile `@media (max-width: 720px)` block only.
 
-## Scope guardrails
-- Edits only inside `src/features/haircare-challenge-v20/`. No other route or page touched.
-- No new dependencies, images, or copy changes.
+## Out of scope
+- No copy edits.
+- No changes to other sections, routes, or the Hero JSX.
+- No new images or assets.
+
+## Verification
+- Use `browser--view_preview` at 390×844 to confirm the H1 sits in the bottom-left pocket of the hero with hair trailing to its right, and that the trust pill, CTA, bullets, and trust bar render correctly below.
+- Spot-check at 360px and 414px widths to confirm no overlap with Sarah's hair.

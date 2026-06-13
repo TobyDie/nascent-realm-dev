@@ -1396,6 +1396,17 @@
         box-shadow: none !important;
         background: transparent !important;
       }
+/* Overlay H1 into the empty bottom-left pocket of the hero on mobile */
+.hq-sp-v20 .hero-grid > div:nth-child(1) {
+        position: relative;
+        z-index: 2;
+        margin-top: -32vw;
+      }
+.hq-sp-v20 .hero-h1 {
+        max-width: 62% !important;
+        padding-right: 4px;
+      }
+.hq-sp-v20 .hero-supporting { margin-top: 4px !important; }
 .hq-sp-v20 .hero-handwritten-eyebrow { font-size: 22px !important; margin-bottom: 4px !important; }
 .hq-sp-v20 .hero-h1 { margin-bottom: 6px !important; }
 .hq-sp-v20 .hero-validation { margin-bottom: 10px !important; }
