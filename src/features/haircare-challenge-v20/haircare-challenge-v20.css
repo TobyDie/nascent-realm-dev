@@ -1535,6 +1535,24 @@
 }
 .hq-sp-v20 .guarantee-badge .guarantee-text strong { color: var(--ink); font-weight: 700; }
 .hq-sp-v20 .guarantee-badge .guarantee-sub { color: var(--slate); font-weight: 500; }
+
+/* ATF guarantee — prominent green trust signal, not a CTA pill */
+.hq-sp-v20 .guarantee-badge.guarantee-not-cta {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 2px 0;
+  gap: 10px;
+}
+.hq-sp-v20 .guarantee-badge.guarantee-not-cta .guarantee-text strong {
+  color: #007A52;
+  font-weight: 700;
+  font-size: 14.5px;
+}
+.hq-sp-v20 .guarantee-badge.guarantee-not-cta .guarantee-sub {
+  color: var(--slate);
+  font-weight: 500;
+}
 .hq-sp-v20 .guarantee-md {
   display: flex;
   width: 100%;

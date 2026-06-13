@@ -42,7 +42,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
                 {"\n"}
               </span>
-              <GuaranteeBadge size="sm" />
+              <GuaranteeBadge size="sm" className="guarantee-not-cta" />
               {/* cohort line - under CTA, not above headline */}
               <span className="hero-cohort">
                 <Icon name="calendar-heart" size={13} color="var(--orange-600)" />
