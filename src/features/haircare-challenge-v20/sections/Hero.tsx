@@ -58,7 +58,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               </li>
               <li>
                 <span className="hero-bullet-emoji">✨</span>
-                <span>Heat-style and colour without the damage affecting your length so you enjoy your favourite hair styles without guilt.</span>
+                <span>Heat-style and color without the damage affecting your length so you enjoy your favourite hair styles without guilt.</span>
               </li>
               <li>
                 <span className="hero-bullet-emoji">🛡️</span>
