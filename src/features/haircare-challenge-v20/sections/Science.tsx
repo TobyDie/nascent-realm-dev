@@ -26,7 +26,7 @@ export function Science() {
               </span>
               <span className="math-op">
                 <span className="math-op-sym">=</span>
-                <span className="math-op-word">equals</span>
+                <span className="math-op-word">{"\n"}</span>
               </span>
               <span className="math-term">
                 <span className="math-term-emoji">🌱</span>
@@ -35,7 +35,7 @@ export function Science() {
               </span>
               <span className="math-op">
                 <span className="math-op-sym">−</span>
-                <span className="math-op-word">minus</span>
+                <span className="math-op-word">{"\n"}</span>
               </span>
               <span className="math-term">
                 <span className="math-term-emoji" aria-hidden="true">

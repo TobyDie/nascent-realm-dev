@@ -13,7 +13,7 @@ export function Recognition() {
         </Reveal>
         <Reveal className="center" style={{ marginBottom: 28 }}>
           <p className="lead" style={{ maxWidth: 520, margin: "0 auto" }}>
-            Five quiet things that pile up in your 20s and early 30s - and slowly decide what your hair will look like for the next decade.
+            jhghkjhkgfhgkhgkhgkhg
           </p>
         </Reveal>
 
