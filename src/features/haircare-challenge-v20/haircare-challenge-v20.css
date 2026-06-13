@@ -1381,6 +1381,10 @@
 .hq-sp-v20 .hero-validation { font-size: 14.5px !important; margin-bottom: 12px !important; }
 .hq-sp-v20 .hero-cohort { font-size: 12px; }
 .hq-sp-v20 .hero-grid { gap: 20px !important; }
+.hq-sp-v20 .hero-grid {
+        display: flex !important;
+        flex-direction: column !important;
+      }
 .hq-sp-v20 .hero-grid > div:nth-child(1) { order: 2; }
 .hq-sp-v20 .hero-grid > div:nth-child(2) { order: 1; }
 .hq-sp-v20 .hero-image-wrap { aspect-ratio: 4 / 5; max-height: none !important; max-width: 360px; margin-inline: auto; }
