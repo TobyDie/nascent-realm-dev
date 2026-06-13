@@ -23,9 +23,13 @@ export function Hero({ onCta }: { onCta?: () => void }) {
           {/* TEXT column */}
           <Reveal>
             {/* H1 - the single emotional hook, short enough for mobile */}
-            <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
-              <span style={{ color: "#090909", fontWeight: 800 }}>Grow the longest, healthiest, shiniest hair of your life,&nbsp;</span>
-              <span style={{ color: "#e97b00", fontWeight: 800 }}>without giving up the color, heat, and styling you love.</span>
+            <h1 className="h-hero hero-h1 hero-h1-stack" style={{ marginBottom: 12 }}>
+              <span className="hh-intro">Grow the</span>
+              <span className="hh-key hh-key-italic">longest,</span>
+              <span className="hh-key">healthiest,</span>
+              <span className="hh-key">shiniest</span>
+              <span className="hh-tail">hair <span className="hh-payoff">of your life,</span></span>
+              <span className="hh-sub">without giving up the color, heat, and styling you love.</span>
             </h1>
 
             {/* Handwritten tilted pill removed as requested */}
