@@ -28,10 +28,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               <span style={{ color: "#e97b00", fontWeight: 800 }}>— without giving up coloring, heat-styling and other "damaging" practices that you love.</span>
             </h1>
 
-            {/* Handwritten tilted pill */}
-            <div className="hero-handwritten-pill">
-              You still colour, curl, bleach and all.
-            </div>
+            {/* Handwritten tilted pill removed as requested */}
 
             {/* Short supporting paragraph */}
             <p className="hero-supporting">
