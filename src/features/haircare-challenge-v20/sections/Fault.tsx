@@ -18,7 +18,7 @@ export function Fault() {
                 <p className="fault-copy">
                   Shampooing, blow-drying, styling — none of these are meant to damage your hair. But there's a right way and a wrong way to do each, and most women were never taught the difference.
                 </p>
-                <p className="fault-copy"><strong>The <Underline>technique</Underline> matters more than any product you'll ever buy.</strong></p>
+                <p className="fault-copy"><strong>The technique matters more than any product you'll ever buy.</strong></p>
               </div>
             </li>
 
@@ -32,7 +32,7 @@ export function Fault() {
                 <p className="fault-copy">
                   Heat protectants damage almost as much as they protect. Shampoos dry your hair out instead of just cleaning it. Conditioners coat it in residue instead of actually conditioning.
                 </p>
-                <p className="fault-copy">The things you bought to save your hair are <strong>quietly <Underline>hurting</Underline> it</strong> — even when the label promises the opposite.</p>
+                <p className="fault-copy">The things you bought to save your hair are <strong>quietly hurting it</strong> — even when the label promises the opposite.</p>
               </div>
             </li>
 
@@ -51,7 +51,7 @@ export function Fault() {
                   Your hair grows whether you ask it to or not. As long as you're alive, it grows — <strong>your only job is to get out of its way.</strong>
                 </p>
                 <p className="fault-copy">
-                  And getting out of the way means <Underline>less, not more</Underline>. Fewer products. Less money. Less effort. Stop the unnecessary damage, and the length you've been growing all along finally shows up.
+                  And getting out of the way means <strong>less, not more</strong>. Fewer products. Less money. Less effort. Stop the unnecessary damage, and the length you've been growing all along finally shows up.
                 </p>
                 <div style={{ marginTop: 18 }}>
                   <VideoPlayer
