@@ -33,13 +33,31 @@ export function HaircareChallengePageV20() {
       <Recognition />
       <section className="bg-cream" style={{ padding: "32px 0 8px" }}>
         <div className="wrap" style={{ maxWidth: 720, textAlign: "center" }}>
-          <RImg
-            file="brooke-glad-i-found-this.webp"
-            widths={[500, 800, 1200]}
-            sizes="(max-width: 760px) 92vw, 720px"
-            alt="Brooke testimonial: Glad I found this. Before and after of hair loss results from the 14-Day Haircare Challenge."
-            style={{ width: "100%", height: "auto", borderRadius: 16, boxShadow: "var(--shadow-sm)" }}
-          />
+          <div
+            style={{
+              background: "var(--white)",
+              borderRadius: 20,
+              boxShadow: "var(--shadow-sm)",
+              overflow: "hidden",
+              textAlign: "left",
+            }}
+          >
+            <RImg
+              file="ba-new-5.webp"
+              widths={[500, 800, 1200]}
+              sizes="(max-width: 760px) 92vw, 720px"
+              alt="Sara Gouveia - before and after results from the 14-Day Haircare Challenge."
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+            <div style={{ padding: "20px 22px 22px" }}>
+              <p style={{ margin: 0, fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>
+                "I used to lose so much length to frizz and breakage at the ends — strands would snap before they ever got long. Now my hair finally feels smooth and strong from root to tip, and for the first time it's actually holding its length."
+              </p>
+              <div style={{ marginTop: 12, fontSize: 14, color: "var(--slate)" }}>
+                <strong style={{ color: "var(--ink)" }}>Sara Gouveia</strong> · Frizz &amp; breakage · long-hair journey
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <Science />
