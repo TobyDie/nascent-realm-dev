@@ -1375,8 +1375,18 @@
 .hq-sp-v20 .hero-image-wrap .ph { height: 100% !important; width: 100%; }
 .hq-sp-v20 .hero-image { aspect-ratio: 4 / 5; }
 /* Mobile: hero image full-width of column, taller so face + before/after insets are visible */
-.hq-sp-v20 .hero-image-wrap { aspect-ratio: auto !important; max-width: none !important; max-height: 60vh !important; margin-inline: 0 !important; }
-.hq-sp-v20 .hero-image { aspect-ratio: auto !important; height: 60vh !important; max-height: 60vh !important; width: 100% !important; object-fit: cover; object-position: center 22%; }
+.hq-sp-v20 .hero-image-wrap {
+        aspect-ratio: auto !important;
+        max-width: none !important;
+        max-height: 60vh !important;
+        margin-inline: -18px !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+        background: transparent !important;
+      }
+.hq-sp-v20 .hero-image { aspect-ratio: auto !important; height: 60vh !important; max-height: 60vh !important; width: 100% !important; object-fit: cover; object-position: center 22%; border-radius: 0 !important; box-shadow: none !important; background: transparent !important; }
+.hq-sp-v20 .hero-trust-note { display: none !important; }
 .hq-sp-v20 .hero-handwritten-eyebrow { font-size: 22px !important; margin-bottom: 4px !important; }
 .hq-sp-v20 .hero-h1 { margin-bottom: 6px !important; }
 .hq-sp-v20 .hero-validation { margin-bottom: 10px !important; }
