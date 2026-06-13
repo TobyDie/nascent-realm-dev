@@ -35,7 +35,7 @@ export function Science() {
               </span>
             </div>
             <div className="math-formula-foot">
-              You don't have a <span className="math-strike">growing</span> problem. <strong>You have a keeping problem.</strong>
+              You don't have a <span className="math-strike">growing</span> problem. <strong>{"\n"}You have a keeping problem.</strong>
             </div>
           </div>
         </Reveal>
