@@ -30,7 +30,7 @@ export function Science() {
               <span className="math-op">−</span>
               <span className="math-term">
                 <span className="math-term-emoji">✂️</span>
-                <span className="math-term-word"><Underline>Breakage</Underline></span>
+                <span className="math-term-word">Breakage</span>
                 <span className="math-term-sub">the only part you control</span>
               </span>
             </div>
