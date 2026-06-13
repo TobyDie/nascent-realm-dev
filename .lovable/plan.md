@@ -1,78 +1,77 @@
-## Goal
+## Scope
 
-Make the cohort strip impossible to miss while staying minimal and on-brand. Replace the current quiet two-block label/value layout with a **live, gamified scarcity bar** — a thin gradient progress meter, a live-pulsing tick-up counter, a "just joined" micro-ticker, and a small avatar cluster. Free vertical space by removing the redundant GuaranteeBadge under the hero CTA.
+Redesign the visual presentation of the 5 pointers in `src/features/haircare-challenge-v20/sections/ResultsIn2Weeks.tsx`. **All existing copy stays byte-for-byte identical** — eyebrow, H2, the 5 titles, the 5 descriptions, and the CTA. Only visual treatment, layout, and added decorative graphics change.
+
+## Why it's boring now
+
+- 5 identical white rounded cards + 5 identical orange emoji circles = visual monotony.
+- The section's promise is "in 2 weeks" but nothing on screen signals progression or time.
+- Emoji-as-icon reads casual/AI-generic; not editorial.
+
+## Concept: "The 14-day shift list" — editorial timeline
+
+Reframe the 5 unchanged pointers as a dated transformation journal with magazine-grade asymmetry. Each row gains a numbered chapter (01–05), a day tag (Day 3 → Day 14), a soft pastel wash that rotates per row, and a custom inline SVG glyph beside (not replacing) the existing emoji. A faint dashed rail runs down the left so the eye reads it as a journey, not a list.
+
+The day tags and 01–05 numerals are **added supporting graphics**, not copy edits — they don't replace or alter any sentence in the section.
+
+## Layout per row
+
+```text
+                  ┌─ DAY 3 ─┐
+   01    (☼ peach + 💧)  Less shedding
+   │                    Real decrease in hair loss — not...
+   │
+                          ┌─ DAY 5 ─┐
+       02    (✿ blush + 💁) Visible thickness — not styling tricks
+            Density that shows up...
+   │
+   ⋮  (dashed vertical journey rail on the left, faint)
+```
+
+- Container: vertical stack, max-width 720px, gap 28px desktop / 20px mobile.
+- Per row: CSS grid `grid-template-columns: 64px 1fr` (numeral column + body).
+- Numeral column: large serif outline `01`–`05`, 52px, `var(--font-serif)`, `-webkit-text-stroke: 1px var(--orange-500); color: transparent;` — magazine drop-cap feel.
+- Body column: small day-tag pill (DAY 3 … DAY 14) + the existing emoji bubble kept at smaller size next to a new custom SVG glyph. Below: existing title (unchanged) in current heading style, then existing description (unchanged) underneath.
+- Soft pastel wash behind the body block: `linear-gradient(135deg, <tint>, transparent 60%)`, low opacity, `border-radius: 18px`, `padding: 18px 20px`. Five tints rotate: peach `#FCE7D8`, blush `#FBE3E3`, sage `#E6EFE3`, cream `#FFF7E8`, lavender `#EFEBF6`. No border, no shadow.
+- Journey rail: absolutely-positioned dashed vertical line on the left behind the numerals, color `var(--orange-200)` (one new token), faint. Stops at the last numeral.
+- Asymmetric offset: rows 2 and 4 get `margin-left: 28px` on desktop; mobile resets to 0.
+
+## Custom SVG glyphs (additive — emojis stay)
+
+Five hand-drawn-feel inline SVGs (24×24, 1.5px stroke, rounded caps, `currentColor`) placed beside each existing emoji bubble — they add visual variety without removing the current iconography:
+1. Comb with a falling strand — beside row 1
+2. Ponytail tie with arrows out — beside row 2
+3. Drop with a small ripple — beside row 3
+4. Strand with a check mark — beside row 4
+5. Sprout from a follicle circle — beside row 5
+
+## Day tags (added decorative chips, not copy)
+
+`DAY 3`, `DAY 5`, `DAY 7`, `DAY 10`, `DAY 14` — small caps pill chips above each row's existing title. These are added UI labels, not edits to any existing sentence.
+
+## Motion (subtle, respects reduced-motion)
+
+- Existing `Reveal` primitive handles entrance, stagger `i * 90ms`.
+- The 01–05 numerals draw in via `stroke-dashoffset` (1.2s ease-out) on first view — pen-stroke feel.
+- Each SVG glyph does a one-time `rotate(-6deg) → 0` settle on view.
+- All disabled under `@media (prefers-reduced-motion: reduce)`.
 
 ## Files to change
 
-1. `src/features/haircare-challenge-v20/sections/Hero.tsx`
-  - Remove the `<GuaranteeBadge size="sm" className="guarantee-not-cta" />` line directly under the CTA (final-CTA guarantee remains untouched, this one is duplicative — guarantee already lives inside the CTA button area visually and is repeated near final-cta).
-  - Replace the current `.hero-cohort-strip` block with the new gamified strip described below.
-  - Add a small local `useEffect` to drive the live tick-up.
-2. `src/features/haircare-challenge-v20/haircare-challenge-v20.css`
-  - Replace `.hero-cohort-strip` and `.hcs-*` rules + the mobile overrides with the new `.live-cohort` ruleset.
-3. `src/features/haircare-challenge-v20/useJoiningCount.ts`
-  - No behavior change; just expose a derived `COHORT_CAPACITY = 3000` constant alongside existing exports so progress % is computed in one place.
+1. `src/features/haircare-challenge-v20/sections/ResultsIn2Weeks.tsx` — restructure the row JSX to add: numeral column, day-tag chip, decorative SVG glyph, tint wash class. **Existing title and description strings are passed through verbatim**; the underlying `RESULTS`/`items` array is not edited. Eyebrow, H2, CTA, and section bg untouched.
+2. `src/features/haircare-challenge-v20/haircare-challenge-v20.css` — replace `.result-row` / `.result-emoji` rules and their mobile overrides with `.shift-list`, `.shift-row`, `.shift-num`, `.shift-tag`, `.shift-glyph`, `.shift-body`, `.shift-wash`, `.tint-1`…`.tint-5`, plus dashed journey rail and reduced-motion rules. Add `--orange-200` once in the v20 scope.
+3. No new packages, no new files, no other sections touched.
 
-No new packages, no new files, no Reveal wrappers (must render instantly above the fold).
+## Mobile (≤480px)
 
-## New strip — anatomy (mobile-first, ~64px tall)
+- Single column, gap 18px, no asymmetric offset.
+- Numeral shrinks to 40px and sits inline above the title.
+- Glyph + emoji bubble shrink to 28–32px; day tag stays inline with them.
 
-```text
- 🟢 LIVE  ·  Next community batch starts sun, june 14th                 ▲ 12 joined in the last hour
- ────────────────────────────────────────────────── 
- [👤][👤][👤][👤]+   2,364 women have joined
-```
+## Guardrails
 
-Three short rows, no borders, no card, sits flush in the hero column under the CTA. The whole strip has `margin-top: 14px` and no padding.
-
-### Row 1 — live eyebrow (single line, space-between)
-
-Left: green `.live-cohort-pulse` dot (8px) with a 2.2s ping ring + the label `Live · cohort fills` in 10.5px uppercase tracked `--slate-soft`, followed by the date `Sun, June 14th` in serif italic 12.5px `--ink`.
-
-Right (mobile: wraps under on ≤360px): a tiny "just joined" chip — `↑ 12 joined in the last hour` in 11px `--orange-700`, no background. The number animates +1 every 18–28s (randomized) with a `scale(1)→1.18→1` pop and re-settles; resets when it crosses 30.
-
-### Row 2 — scarcity progress bar (full width, 5px tall)
-
-A hairline track in `rgba(0,0,0,0.06)` with a gradient fill `linear-gradient(90deg, var(--orange-100), var(--orange-500), var(--orange-700))` and a soft glow `box-shadow: 0 0 6px rgba(232,98,42,0.45)`. Width animates from `0%` to the real percentage (`joining / 3000 * 100`) over 1.4s `cubic-bezier(.2,.7,.2,1)` once on mount.
-
-Right of the bar: a small `78%` label, 11px tabular-nums, `--slate`. The percent number also animates (CSS `transition` on a JS-updated value).
-
-A subtle moving sheen sweeps left→right across the filled portion every 4s (`::after` with a linear-gradient highlight, 18% width, translating from -30% to 130%) to telegraph "live filling". Disabled under `prefers-reduced-motion`.
-
-### Row 3 — proof line
-
-Left: overlapping mini avatars (5 round 22px images from `HERO_AVATARS`, `-8px` overlap, 1.5px `--cream` ring) + a `+` chip.
-
-Right of avatars (same line): `**2,364** of 3,000 women have joined` — number in serif 18px `--ink` weight 700 tabular-nums, the rest in 12.5px sans `--slate`. The big number gets a subtle `pop` animation each time the live tick fires (synced with row 1's "+X joined").
-
-## Live behavior (no backend, deterministic-feeling but lightweight)
-
-- Base count comes from existing `useJoiningCount()` (already updates each minute).
-- Add a local `useEffect` that, every 14–26s (randomized), increments a `localBump` state by 1, plays the pop animation, and pushes the "+X joined in the last hour" number up by 1. Every 60s, decay that "last hour" number by 1 toward 0 so it feels organic and never balloons.
-- Displayed count = `useJoiningCount() + localBump`. When `useJoiningCount()` ticks the next minute, reset `localBump` to 0 so we never exceed real ramp drift.
-- All animations honor `prefers-reduced-motion`.
-
-## Color & spacing revision
-
-- Use brand orange ramp (no new colors): track on neutral, fill on brand gradient, percent in slate, live dot in `--trust-green`.
-- Generous breathing room: `gap: 10px` between rows on mobile, `12px` desktop.
-- Typography: row 1 eyebrow tracked uppercase, row 2 numeric, row 3 mixes serif emphasis (the count number) with sans to draw the eye. This is the only place in the hero block that uses serif at body size, so it stands out.
-- No box, no border, no background fill anywhere — relies on the progress bar and pulse motion to anchor attention.
-
-## Vertical budget
-
-Removing the hero GuaranteeBadge frees ~28–34px on mobile. New strip is ~60–66px tall (three short lines + 5px bar + 6px gaps). Net change: roughly neutral on mobile (≤6px more), zero or negative on desktop. Well within the "don't grow vertical space" guardrail.
-
-## Edge cases / safety
-
-- Avatars hidden on `< 340px` viewports (already done in current rule, kept).
-- Progress bar capped at 100%; if `joining > 3000`, label switches to `cohort full · join the waitlist` (still no background, just text color shifts to `--orange-700`).
-- All timers cleaned up on unmount.
-- `useReducedMotion` check: no pop, no sheen, no ping; progress bar still renders at final width but skips the width transition.
-
-## Explicitly out of scope
-
-- The desktop layout / image column on /20 — untouched.
-- Other sales pages (v17/v18/v19) — untouched, per page-fork rule.
-- Final-CTA cohort line further down the page — untouched.
-- The GuaranteeBadge component itself — only the hero usage is removed; component remains for FinalCta which still uses it.
+- **No text changes anywhere.** Every existing word — eyebrow, H2, the 5 titles, the 5 descriptions, CTA — is preserved exactly.
+- Added: numerals `01–05`, day-tag chips, decorative SVGs, tint washes, dashed rail. All purely visual.
+- Scoped to `.hq-sp-v20` per page-fork rule. /20 only — /17, /18, /19 untouched.
+- No new icon libraries; SVGs are inline.
+- Section vertical rhythm and CTA position stay the same; vertical height stays within ~±20px of current.
