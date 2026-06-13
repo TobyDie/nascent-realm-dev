@@ -35,7 +35,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
 
             {/* Short supporting paragraph */}
             <p className="hero-supporting">
-              Grow waist-length hair, volume at the roots, thick at the ends and shines healthily. <strong>Invest 14 days and enjoy beautiful hair for decades to come.</strong>
+              Grow waist-length hair, volume at the roots, thick at the ends and shines healthily. <strong>Just 10 min/Day for 14 days and you'll enjoy beautiful hair for decades to come.</strong>
             </p>
 
             {/* CTA block - must be above fold on mobile */}
