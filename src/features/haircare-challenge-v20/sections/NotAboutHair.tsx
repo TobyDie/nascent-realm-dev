@@ -16,7 +16,7 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
         <Reveal style={{ textAlign: "center", marginBottom: 36 }}>
           <Eyebrow>The deeper change</Eyebrow>
           <h2 className="h-hero" style={{ marginTop: 12, fontSize: 44, maxWidth: 620, marginInline: "auto" }}>
-            It's not really about the hair.
+            It's not really <span style={{ color: "var(--orange-600)" }}>about the hair.</span>
           </h2>
           <p className="lead" style={{ marginTop: 16, maxWidth: 600, marginInline: "auto" }}>
             When women finish the challenge, they don't talk about the centimetres. They talk about <Underline>proving something to themselves.</Underline>

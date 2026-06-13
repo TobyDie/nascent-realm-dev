@@ -15,8 +15,10 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
       <div className="wrap" style={{ maxWidth: 720 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
           <Eyebrow>The structure</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12 }}>10 minutes a day.
-14 days - 14 Simple Missions.</h2>
+          <h2 className="h2" style={{ marginTop: 12 }}>
+            <span style={{ color: "var(--orange-600)" }}>10 minutes a day.</span>
+            <br />14 days - 14 Simple Missions.
+          </h2>
           <p className="lead" style={{ marginTop: 12, color: "var(--ink-soft)" }}>
             Anytime - Anywhere.<br />Here's exactly what happens.
           </p>

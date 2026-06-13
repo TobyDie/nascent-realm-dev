@@ -30,7 +30,7 @@ export function Faq({ onCta }: { onCta?: () => void }) {
       <div className="wrap" style={{ maxWidth: 760 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 36 }}>
           <Eyebrow>Before you start</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12 }}>Questions she usually has before she starts</h2>
+          <h2 className="h2" style={{ marginTop: 12 }}>Questions she usually has <span style={{ color: "var(--orange-600)" }}>before she starts</span></h2>
         </Reveal>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {item(0, "My hair stops growing past a certain length - will this actually help?", "Yes. The length plateau is almost never genetic - it's a combination of breakage outrunning growth, low ferritin, and a shortened growth phase from chronic stress. The challenge addresses all three. Most women see their first new length within the 14 days.")}

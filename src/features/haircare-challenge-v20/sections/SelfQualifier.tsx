@@ -35,7 +35,7 @@ export function SelfQualifier({ onCta }: { onCta?: () => void }) {
       <div className="wrap" style={{ maxWidth: 720 }}>
         <Reveal style={{ textAlign: "center", marginBottom: 32 }}>
           <Eyebrow>Is this you?</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 12 }}>Tick every one that rings true.</h2>
+          <h2 className="h2" style={{ marginTop: 12 }}>Tick every one <span style={{ color: "var(--orange-600)" }}>that rings true.</span></h2>
           <p className="lead" style={{ marginTop: 12, fontSize: 17 }}>
             If you tick even three, this was built for you.
           </p>
