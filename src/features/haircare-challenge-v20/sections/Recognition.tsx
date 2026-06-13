@@ -146,27 +146,29 @@ export function Recognition() {
             />
           </svg>
 
-          <ol className="cycle-list">
+          <div className="cycle-list">
             {ITEMS.map((b, i) => {
               const Glyph = GLYPHS[i];
               return (
-                <Reveal key={i} delay={i * 80} as="li" className={`cycle-card side-${i % 2 === 0 ? "l" : "r"}`}>
-                  <span className="cycle-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
-                  <div className="cycle-node" aria-hidden="true">
-                    <Glyph />
-                  </div>
-                  <div className="cycle-body">
-                    <p className="cycle-lead">{b.lead}</p>
-                    <p className="cycle-neutral">{b.neutral}</p>
-                    <p className="cycle-accent">
-                      <span className="cycle-arrow" aria-hidden="true"><ArrowDoodle /></span>
-                      <span>{b.accent}</span>
-                    </p>
+                <Reveal key={i} delay={i * 80} className={`cycle-card side-${i % 2 === 0 ? "l" : "r"}`}>
+                  <div className="cycle-card-inner">
+                    <span className="cycle-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                    <div className="cycle-node" aria-hidden="true">
+                      <Glyph />
+                    </div>
+                    <div className="cycle-body">
+                      <p className="cycle-lead">{b.lead}</p>
+                      <p className="cycle-neutral">{b.neutral}</p>
+                      <p className="cycle-accent">
+                        <span className="cycle-arrow" aria-hidden="true"><ArrowDoodle /></span>
+                        <span>{b.accent}</span>
+                      </p>
+                    </div>
                   </div>
                 </Reveal>
               );
             })}
-          </ol>
+          </div>
 
           {/* Closing loop — the trap completes back to the top */}
           <div className="cycle-loop" aria-hidden="true">
