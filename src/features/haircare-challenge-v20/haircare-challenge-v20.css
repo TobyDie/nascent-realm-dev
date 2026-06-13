@@ -1646,9 +1646,17 @@
 .hq-sp-v20 .timeline-step { grid-template-columns: 52px 1fr; gap: 12px; }
 .hq-sp-v20 .timeline-circle { width: 52px; height: 52px; font-size: 22px; }
 .hq-sp-v20 .timeline-card { padding: 18px 18px; }
-/* result-row tight */
-.hq-sp-v20 .result-row { padding: 16px 18px; gap: 12px; }
-.hq-sp-v20 .result-emoji { width: 44px; height: 44px; font-size: 22px; }
+/* shift-list mobile */
+.hq-sp-v20 .shift-list { gap: 18px; }
+.hq-sp-v20 .shift-row { grid-template-columns: 44px 1fr; gap: 10px; }
+.hq-sp-v20 .shift-row.shift-offset { margin-left: 0; }
+.hq-sp-v20 .shift-num { font-size: 38px; }
+.hq-sp-v20 .shift-rail { left: 21px; top: 16px; bottom: 16px; }
+.hq-sp-v20 .shift-body { padding: 14px 16px 16px; border-radius: 16px; }
+.hq-sp-v20 .shift-title { font-size: 18px; }
+.hq-sp-v20 .shift-desc { font-size: 14.5px; }
+.hq-sp-v20 .shift-emoji { width: 28px; height: 28px; font-size: 17px; }
+.hq-sp-v20 .shift-glyph { width: 22px; height: 22px; }
 /* whatsIncluded list mobile */
 .hq-sp-v20 .included-list li { padding: 11px 0 !important; font-size: 15px; }
 .hq-sp-v20 .included-grid { gap: 28px !important; }
