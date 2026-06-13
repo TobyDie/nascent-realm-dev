@@ -255,10 +255,11 @@
 /* Desktop default for the second clause — inherits H1 typography, orange,
    no handwritten treatment. Mobile media block overrides this. */
 .hq-sp-v20 .hero-h1-handwritten {
-      font-family: inherit;
+      font-family: var(--font-serif);
       font-weight: 800;
-      font-size: inherit;
-      line-height: inherit;
+      font-size: var(--fs-hero);
+      line-height: 1.12;
+      letter-spacing: -0.01em;
       color: #e97b00;
       display: block;
       margin: 0 0 12px;
