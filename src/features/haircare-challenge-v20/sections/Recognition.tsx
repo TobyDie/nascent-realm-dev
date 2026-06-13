@@ -1,4 +1,4 @@
-import { Reveal, InlineTestimonial, Hand, Icon } from "../primitives";
+import { Reveal, InlineTestimonial, Icon } from "../primitives";
 
 export function Recognition() {
   return (
@@ -20,90 +20,43 @@ export function Recognition() {
         </Reveal>
 
         <div className="timeline-wrap">
-          {/* Row 1 */}
-          <Reveal delay={0}>
-            <div className="timeline-beat">
-              <span className="timeline-dot" />
-              <p className="timeline-trigger">
-                <span className="emoji">✂️</span>It grows… then snaps off at the same spot every month.
-              </p>
-              <p className="timeline-consequence">
-                You measure it, get a little excited, then cut it shorter again. The length you grew is sitting in the bathroom bin.
-              </p>
-              <div className="timeline-marginalia">
-                <Hand size={16} color="#2b66c2" rotate={-2}>↘ this is breakage, not slow growth</Hand>
+          {[
+            {
+              lead: "You got keratin treatments",
+              neutral: "and for a few weeks it looked incredible,",
+              accent: "then left your hair worse than before, so you booked the next one. And the next.",
+            },
+            {
+              lead: "You got extensions to fake the length",
+              neutral: "but the tension thins the real hair underneath,",
+              accent: "so it grows back weaker, and you need them more than before.",
+            },
+            {
+              lead: "You cut off the damage to start fresh",
+              neutral: "but the breakage was never really about the ends,",
+              accent: "so the new length snapped off in the exact same place.",
+            },
+            {
+              lead: "You loaded on oils, masks and serums",
+              neutral: "piling product onto hair that needed less,",
+              accent: "coating it and weighing it down instead of fixing why it breaks.",
+            },
+            {
+              lead: "You decided it was just your genetics",
+              neutral: "so you quietly gave up,",
+              accent: "on length you were actually capable of growing all along.",
+            },
+          ].map((b, i) => (
+            <Reveal key={i} delay={i * 70}>
+              <div className="timeline-beat">
+                <span className="timeline-dot" />
+                <p className="timeline-trigger">
+                  <strong>{b.lead}</strong> — {b.neutral}{" "}
+                  <span style={{ color: "var(--orange-700)" }}>{b.accent}</span>
+                </p>
               </div>
-            </div>
-          </Reveal>
-
-          {/* Row 2 */}
-          <Reveal delay={70}>
-            <div className="timeline-beat">
-              <span className="timeline-dot" />
-              <p className="timeline-trigger">
-                <span className="emoji">🪞</span>You're spending more on your hair than ever - and seeing less for it.
-              </p>
-              <p className="timeline-consequence">
-                The serum. The bond builder. The silk pillowcase. The supplements. Your hair feels exactly the same.
-              </p>
-              <div className="timeline-meter">
-                <span className="timeline-meter-bar"><span className="timeline-meter-fill" /></span>
-                ~$1,000 this year
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Row 3 */}
-          <Reveal delay={140}>
-            <div className="timeline-beat heavy">
-              <span className="timeline-wash" />
-              <span className="timeline-dot" />
-              <p className="timeline-trigger">
-                <span className="emoji">🌫️</span>You've quietly started believing this is just your hair.
-              </p>
-              <p className="timeline-consequence">
-                "It just doesn't grow past my shoulders." "I have thin hair, it's genetics." You've accepted a limit no one ever proved was a limit.
-              </p>
-              <div className="timeline-marginalia">
-                <Hand size={16} color="#2b66c2" rotate={-3}>↘ almost never true</Hand>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Row 4 */}
-          <Reveal delay={210}>
-            <div className="timeline-beat heavy">
-              <span className="timeline-wash" />
-              <span className="timeline-dot" />
-              <p className="timeline-trigger">
-                <span className="emoji">🧴</span>The bleach (or the heat, or the box dye) changed it - and nothing's been the same since.
-              </p>
-              <p className="timeline-consequence">
-                You wouldn't go back to your natural colour, but your ends are paying for it. And no $80 mask is bringing them back.
-              </p>
-              <div className="timeline-marginalia">
-                <Hand size={16} color="#2b66c2" rotate={-2}>↘ masks coat. they don't repair.</Hand>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Row 5 */}
-          <Reveal delay={280}>
-            <div className="timeline-beat heavy">
-              <span className="timeline-wash" />
-              <span className="timeline-dot" />
-              <p className="timeline-trigger">
-                <span className="emoji">📷</span>You scroll past hair on TikTok and assume those girls were just born with it.
-              </p>
-              <p className="timeline-consequence">
-                Almost none of them were. You just haven't seen the boring, behind-the-scenes routine that built it.
-              </p>
-              <div className="timeline-photos" aria-hidden="true">
-                {[0,1,2,3,4,5].map(n => <span key={n} className="timeline-photo" />)}
-              </div>
-            </div>
-          </Reveal>
-
+            </Reveal>
+          ))}
         </div>
 
         <Reveal style={{ marginTop: 36 }}>
