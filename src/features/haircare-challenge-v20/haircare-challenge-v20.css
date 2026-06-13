@@ -1019,15 +1019,7 @@
       padding-top: 18px; border-top: 1px solid var(--line);
       font-size: 15px; color: var(--slate);
     }
-.hq-sp-v20 .math-formula-foot strong {
-      display: inline-block; margin-top: 6px;
-      font-family: var(--font-serif, Georgia, serif);
-      font-style: italic; font-weight: 800;
-      font-size: 1.45em; line-height: 1.2;
-      color: var(--ink);
-      background: linear-gradient(180deg, transparent 62%, rgba(233,123,0,0.28) 62%, rgba(233,123,0,0.28) 92%, transparent 92%);
-      padding: 0 4px;
-    }
+.hq-sp-v20 .math-formula-foot strong { color: var(--ink); }
 .hq-sp-v20 .math-strike {
       position: relative; display: inline-block;
       color: var(--slate);
