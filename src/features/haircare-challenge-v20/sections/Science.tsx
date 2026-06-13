@@ -1,4 +1,4 @@
-import { Reveal, Eyebrow, Icon, StarRow, Button, Hand } from "../primitives";
+import { Reveal, Eyebrow, Icon, StarRow, Button, Hand, Underline } from "../primitives";
 import { r2img } from "../img";
 
 export function Science() {
@@ -8,7 +8,7 @@ export function Science() {
         <Reveal style={{ marginBottom: 28, textAlign: "center" }}>
           <Eyebrow style={{ color: "var(--slate)" }}>WHY YOUR HAIR NEVER GETS LONGER</Eyebrow>
           <h2 className="h2" style={{ marginTop: 12, maxWidth: 720, marginInline: "auto" }}>
-            It's not your genetics. <em>Turns out, it's just simple math.</em>
+            It's not your <span className="math-strike">genetics</span>. <em>Turns out, it's just simple <Underline>math</Underline>.</em>
           </h2>
         </Reveal>
 
@@ -30,17 +30,17 @@ export function Science() {
               <span className="math-op">−</span>
               <span className="math-term">
                 <span className="math-term-emoji">✂️</span>
-                <span className="math-term-word">Breakage</span>
+                <span className="math-term-word"><Underline>Breakage</Underline></span>
                 <span className="math-term-sub">the only part you control</span>
               </span>
             </div>
             <div className="math-formula-foot">
-              You don't have a growing problem. <strong>You have a keeping problem.</strong>
+              You don't have a <span className="math-strike">growing</span> problem. <strong>You have a keeping problem.</strong>
             </div>
           </div>
         </Reveal>
 
-        <Reveal style={{ marginTop: 28, textAlign: "center" }}>
+        <Reveal style={{ marginTop: 18, textAlign: "center" }}>
           <Hand color="#2C5BAA" size={22} rotate={-2}>
             ↳ spoiler: it's fixable
           </Hand>
