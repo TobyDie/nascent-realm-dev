@@ -1,61 +1,61 @@
 ## Goal
 
-Match the attached reference on mobile (`/20-the-haircare-challenge`):
+Replace the current single text line ("Next cohort: Sun, June 14th · 2,364 women joining this week") that gets lost in the wall of text with a minimal, two-block, openly-laid-out cohort strip — no border, no card, no extra vertical real estate, and a subtle feminine "live community" animation.
 
+## Scope
+
+- File: `src/features/haircare-challenge-v20/sections/Hero.tsx` — replace the `<span className="hero-cohort">…</span>` block (lines 60–63) only.
+- File: `src/features/haircare-challenge-v20/haircare-challenge-v20.css` — replace `.hero-cohort` rule (line 264) and its mobile override (line 1370) with new `.hero-cohort-strip` rules.
+- No changes to other sections, no new dependencies, no extra Reveal animations on first paint.
+
+## New layout (no box, no border, no background fill)
+
+Two side-by-side blocks separated by generous space, each with a small label-on-top + value-below stack. Mobile keeps the same two columns; only font sizes shrink.
+
+```text
+ 📅  NEXT COHORT               ●  JOINING THIS WEEK
+     Sun, June 14th                2,364 women
+                                   ◖◗◖◗◖◗ +
 ```
-[ ★ 4.8 · 12K reviews pill overlaying top-left of image ]
-[ Sarah hero image — full width, no left text column ]
-─────────────────────────────────────────────
-Grow the                                ← serif, ~32px
-longest,                                ← serif, ~64px, bold
-healthiest,                             ← serif, ~64px, bold
-shiniest                                ← serif, ~64px, bold
-hair of your life,                      ← Caveat script, orange, with
-                                          hand-drawn underline + sparkle
-without giving up the color,            ← serif, ~22px, dark
-heat, and styling you love.
-```
 
-Words stay byte-for-byte identical. The current "stacked serif" treatment is kept for `longest, / healthiest, / shiniest`, but the payoff line `hair of your life,` switches to **Caveat handwritten script in orange** with **two hand-drawn underline strokes + a small sparkle mark** to the upper right (matching the reference). The second sentence drops back to dark ink (not orange) and sits below the underlines.
+Left block:
+- Tiny calendar-heart icon (existing `Icon name="calendar-heart"`) in orange.
+- Eyebrow label "NEXT COHORT" — 10.5px, uppercase, letter-spaced, `--slate-soft`.
+- Value "Sun, June 14th" — 14.5px, `--ink`, font-weight 700, serif (var(--font-serif)) for a feminine editorial feel.
 
-On mobile the image moves **above** the text (today the grid is `1.02fr 0.98fr` side-by-side — even on 390px viewports the column shows the text/image already stacked, but we make this explicit and reorder so image is first, text second, full-width).
+Right block:
+- A small live "pulse dot" (8px green `--trust-green` circle with a CSS `@keyframes` ping ring expanding + fading every 2.2s) instead of a bullet.
+- Eyebrow label "JOINING THIS WEEK".
+- Value: animated counter `2,364 women` — CSS-only subtle count-up (uses `@property --n` + `counter-reset` trick) that runs once on mount over ~1.8s, from `2,340` → real value. Falls back to static number when `@property` is unsupported.
+- Below the number: a tiny row of 4 overlapping mini avatars (16px circles, reuse first 4 entries from `HERO_AVATARS`) + a `+` chip — purely decorative, no extra height because it sits inline with the eyebrow's line-height budget on the right column.
 
-Desktop layout is untouched — only the script/underline treatment for `hair of your life,` and second-sentence color carry over.
+## Visual / motion details
 
-## Files (scoped to /20 only)
+- Container: `display: grid; grid-template-columns: auto 1fr; column-gap: 28px; align-items: start;` — no border, no background, no padding, sits directly under the GuaranteeBadge with `margin-top: 10px`.
+- Eyebrow rows use `display:flex; gap:6px; align-items:center` so the icon/dot sits inline with the label.
+- Pulse dot animation: two stacked spans — solid dot + absolutely-positioned ring that scales 1→2.4 and fades 0.6→0 in a 2.2s infinite loop, `prefers-reduced-motion: reduce` disables it.
+- Count-up: implemented via `@property --joining { syntax:'<integer>'; inherits:false; initial-value:0; }` and a 1.8s ease-out transition triggered by adding `.is-live` class in a `useEffect` on mount; number shown via `counter(joining)`. Reduced-motion users get the final value with no transition.
+- Mini avatars: `.hero-cohort-avatars` flex row, each `<img>` 18px, `border-radius:999px`, `border:1.5px solid var(--cream)`, negative `margin-left:-6px` from the second onward. Lazy-loaded.
+- No `Reveal` wrapper — must render immediately so LCP/above-fold layout doesn't shift.
 
-1. **`src/features/haircare-challenge-v20/sections/Hero.tsx`**
-   - Reorder the hero grid on mobile so the image column renders first (via CSS `order`, no JSX restructure needed) — but to keep DOM order matching visual order for SEO/a11y, swap the two `<Reveal>` blocks: image first, text second. Desktop CSS restores left-text / right-image with `grid-template-columns` + explicit `order`.
-   - Change the H1 spans:
-     - Drop `.hh-key-italic` from `longest,` (reference shows it upright, not italic).
-     - Wrap `hair of your life,` in a new container `.hh-script` that holds:
-       - `<span class="hh-script-text">hair of your life,</span>`
-       - `<span class="hh-script-underline" aria-hidden>` (inline SVG, two squiggly orange strokes)
-       - `<span class="hh-script-spark" aria-hidden>` (inline SVG sparkle)
-     - Remove `.hh-tail` wrapper; promote the script line to a standalone block-level span.
-     - Change `.hh-sub` (second sentence) color from orange to `var(--ink)` so it matches reference.
+## Vertical space budget
 
-2. **`src/features/haircare-challenge-v20/haircare-challenge-v20.css`**
-   - Add `.hq-sp-v20 .hero-grid { display: flex; flex-direction: column; }` on mobile (`@media max-width: 860px`) with image `order: 1` and text `order: 2`. Desktop (`@media min-width: 861px`) keeps the existing `grid-template-columns: 1.02fr 0.98fr`.
-   - Style `.hh-script`:
-     - `font-family: 'Caveat', cursive;` (Caveat is already loaded via `src/styles.css`).
-     - `font-weight: 600`, `color: var(--orange-500)`, `font-size: 56px` mobile / `72px` desktop.
-     - `display: inline-block; position: relative;` so the underline SVG can absolutely position under the baseline and the sparkle can sit at top-right.
-     - `line-height: 1.0`, `letter-spacing: 0`.
-   - `.hh-script-underline` — absolute, `left: 0; right: 0; bottom: -8px; height: 14px;` SVG fills width.
-   - `.hh-script-spark` — absolute, `top: -6px; right: -14px; width: 18px; height: 18px;`.
-   - `.hh-sub` — change color to `var(--ink)`, font-size 20px mobile / 24px desktop, `margin-top: 18px` (clear of the underline).
-   - Reduce `.hh-key` weight slightly (keep 900) and tighten `letter-spacing: -0.025em` to better match reference.
+Current single line is ~18px tall. New strip is two short text rows (~14px label + ~18px value) per side ≈ 36px, but it replaces both the cohort line AND visually subsumes information already implied elsewhere, so the section grows by ~18px on desktop and ~14px on mobile only. Mini-avatar row on the right sits on the same line as the value via inline-flex with no added height (avatars are 16–18px, same as the value baseline). Net vertical increase: negligible on mobile (≤8px after font-size shrink), within the user's "don't grow vertical space" guardrail.
 
-3. **No other files touched.** No copy edits. CTA, supporting paragraph, bullets, trust bar, and everything below the H1 remain identical.
+## Mobile rules (≤640px)
+
+- Same two-column grid, `column-gap: 18px`.
+- Eyebrow 9.5px, value 13.5px, dot 6px, avatars 14px.
+- Mini-avatar row hides past 360px width (`@media (max-width: 360px)`) so the right column never wraps "week" as an orphan again.
+
+## Data wiring
+
+- Keep `useStartDate()` for the date (already imported); format via `fmtShort`.
+- Keep `useJoiningCount()` for the number; drop `formatJoiningCount` wrapper and render `{count.toLocaleString()} women`.
+- Reuse first 4 entries of `HERO_AVATARS` already declared at top of `Hero.tsx`.
 
 ## Out of scope
 
-- No font additions (Caveat already loaded).
-- No new images, no asset uploads.
-- No changes to /17, /18, /19, /21.
-- No layout changes to desktop hero.
-
-## Open question
-
-The reference image shows the trust pill (`★ 4.8 · 12K reviews`) **overlaying the top-left of the hero image**. That's already how the live `.hero-trust-note` is positioned — no change needed unless you want it bigger/repositioned.
+- No changes to the GuaranteeBadge, CTA button, or any text/copy above the strip.
+- No changes to the final-CTA cohort line (different section).
+- No new files, no new packages.
