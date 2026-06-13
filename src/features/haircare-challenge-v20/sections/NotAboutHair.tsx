@@ -73,8 +73,8 @@ export function NotAboutHair({ onCta }: { onCta?: () => void }) {
         </Reveal>
         <Reveal style={{ marginTop: 26 }}>
           <InlineTestimonial
-            name="Kate" age={28} flag="🇬🇧"
-            quote="The main thing this challenge gave me is that I finally understand my hair. I'm not guessing anymore - I'm building it."
+            name="Brianna Reetz" age={28} flag="🇺🇸"
+            quote="I kept eating what I should be, and just from that, my hair has already changed. It's already becoming a lot thicker, it's already have a bit more shine to it. I trimmed the split ends, and it's already going great. Now my hair is softer."
             avatar="profile-1.webp"
             style={{ margin: "0 auto" }}
           />

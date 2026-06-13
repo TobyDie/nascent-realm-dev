@@ -146,8 +146,8 @@ export function Founder({ onCta }: { onCta?: () => void }) {
                 <Button id="cta-founder" onClick={onCta} icon="arrow-right">Start a new routine with her</Button>
                 <GuaranteeBadge size="sm" />
                 <InlineTestimonial
-                  name="Natasha" age={29} flag="🇩🇪"
-                  quote="I'm a scientist, I came in sceptical. In 14 days my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again."
+                  name="Sophie" age={27} flag="🇺🇸"
+                  quote="I absolutely loved the course. It was so informative and it just blew my mind how easy and affordable it can be to have like amazing, beautiful, long hair."
                   avatar="profile-6.webp"
                 />
               </div>

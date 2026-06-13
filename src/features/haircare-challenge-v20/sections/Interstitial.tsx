@@ -12,34 +12,34 @@ const ri = (file: string, sizes: string, widths: number[] = BA_WIDTHS) => ({
 
 /* Real customer text testimonials - placed to reinforce the section above. */
 const TEXT_PLACEHOLDERS = [
-  // After Science - scientist endorses the root-cause approach
-  { name: "Natasha Bloch", avatar: "profile-6.webp", quote: "I feel my hair changed drastically from this dry, frizzy, puffy thing. I found my love for my curly hair again. I feel in this 14 days, my curls came back." },
-  // After Results in 2 Weeks - visible results inside 14 days
-  { name: "Limor Mills", avatar: "profile-2.webp", quote: "By day 14, I could actually see baby hairs growing in and my length finally moving - my hair feels stronger, fuller, and like it's actually going somewhere." },
-  // After Founder - emotional / confidence
-  { name: "Cintia Irtzl", avatar: "profile-5.webp", quote: "My hair started to be shinier and softer so I got back a lot of self-confidence and that felt really nice honestly." },
-  // After SelfQualifier - habits over genetics (reassurance for women like me)
-  { name: "Gema", avatar: "profile-3.webp", quote: "This challenge showed me that I have to change my habits to get a better hair and that my genetics are going to influence my hair but not so much." },
-  // After FAQ - simple, accessible, easy
-  { name: "Paola Fernandez", avatar: "profile-7.webp", quote: "It's super simple. You can find all the ingredients on the internet, on Amazon. They're very accessible and I've been having amazing results." },
-  // Final reassurance before CTA - control/understanding moment
-  { name: "Kate", avatar: "profile-1.webp", quote: "The biggest thing this gave me is that I finally understand my hair. I'm not guessing or buying the next bottle anymore - I'm actually building it." },
+  // 0 - pull-quote after SocialProof
+  { name: "Aubrie St. Louis", avatar: "profile-6.webp", quote: "In just 14 days, my hair feels incredibly soft, looks so much shinier, and the breakage has significantly reduced. I feel so much more confident and beautiful now; it's truly a game-changer for my self-esteem." },
+  // 1 - polaroid-duo after Founder
+  { name: "Mariana Lopez Cervantes", avatar: "profile-2.webp", quote: "I absolutely loved the 14 day hair care challenge. I wish it was longer… I definitely feel like it has a lot more volume." },
+  // 2 - magazine-split after ResultsIn2Weeks
+  { name: "Sabrina", avatar: "profile-5.webp", quote: "I have to say that after this already 14 days I can see results. Already they have, you know, like not oily but they are like more rich." },
+  // 3 - sticky-wall after ReviewedBy
+  { name: "Marisel Kigembe", avatar: "profile-3.webp", quote: "Day by day… I got it - and making my own shampoo felt powerful!" },
+  // 4 - single-hero (also-from quote)
+  { name: "Léa", avatar: "profile-7.webp", quote: "My hair improved over the 14 days… I think my hair is more, it's shinier… now I'm very happy with the way my hair looks and I'm looking forward to use my shampoo again." },
+  // 5 - ribbon before FinalCta
+  { name: "Johanna Fall", avatar: "profile-1.webp", quote: "So happy I joined this, it's life changing! My scalp and hair feels amazing already, the scalp feels relaxed and the hair feels so soft and shiny. Thank you so much!" },
 ];
 
 /* Real customer image+text testimonials - placed where the story matches the pitch above. */
 const IMAGE_PLACEHOLDERS = [
-  // After HowItWorks - limp/flat hair, finally volume (very 25–34 pain)
-  { name: "Selima", initials: "S", image: "ba-new-3.webp", context: "Limp, flat hair · spending more, seeing less", text: "My hair always looked flat and lifeless no matter what I spent. After washing now, I can actually see volume - and the constant greasiness is gone too." },
-  // After WhatsIncluded - DIY shampoo / damage from colored hair
-  { name: "Alexia Zacharias", initials: "A", image: "ba-new-2.webp", context: "Color-damaged, shedding daily", text: "I can see so much difference with the DIY shampoo - my color-treated hair feels softer and stronger, and the daily shedding has dropped off." },
-  // After NotAboutHair - postpartum recovery
-  { name: "Aurélie Guénué", initials: "A", image: "ba-new-1.webp", context: "Postpartum shedding · irritated scalp", text: "After just a few weeks my scalp feels calmer, the postpartum shedding has slowed down, and more than anything I'm finally feeling like myself again." },
-  // After SelfQualifier (image slot) - damage from bleach/heat, length plateau
-  { name: "Biljana Lemić", initials: "B", image: "ba-new-4.webp", context: "Years of bleach & heat · length plateau", text: "First time I used it I could already see the difference - shinier, stronger, and for the first time in years it actually feels like my length is moving." },
-  // After FAQ (image slot) - frizz/breakage from long-hair perspective
-  { name: "Sara Gouveia", initials: "S", image: "ba-new-5.webp", context: "Frizz & breakage · long-hair journey", text: "I used to lose so much length to frizz and breakage at the ends — strands would snap before they ever got long. Now my hair finally feels smooth and strong from root to tip, and it's actually holding its length." },
-  // Final-CTA-area - long-term, knowledge-as-an-asset story
-  { name: "Rosemary", initials: "R", image: "ba-13.webp", context: "Spent years buying products that didn't work", text: "This course changed the way I think about my hair. I'm not buying the next bottle anymore - I finally know what I'm doing." },
+  // 0 - (unused render slot, kept for parity)
+  { name: "Haydée Fernández", initials: "H", image: "ba-new-3.webp", context: "Frizz · wants shine & volume", text: "As you can see my hair is shiny - it feels super soft, it has volume." },
+  // 1 - polaroid-duo
+  { name: "Lina Cleys", initials: "L", image: "ba-new-2.webp", context: "Curly hair · breakage, never grew long", text: "I really feel like the tips I got in this course are gonna help me so much, so much further… I'm really happy I signed up for it and this whole thing made me so excited that yeah I just want to work more on it." },
+  // 2 - magazine-split
+  { name: "Celeste Ku", initials: "C", image: "ba-new-1.webp", context: "Dream of long hair · frizzy, split ends", text: "I tried aloe vera gel and I made my own shampoo. It was fun… and the result was amazing, at least for me." },
+  // 3 - sticky-wall
+  { name: "Ariadne Reyna Cruz Nava", initials: "A", image: "ba-new-4.webp", context: "Wavy hair · general hair health", text: "I feel my hair that is really soft… I really feel like it was so much easier to be able to comb my hair and as you can see I have a lot of volume, my wavy hair just, it was perfect - I didn't do much, just went out of the shower and combed my hair." },
+  // 4 - single-hero
+  { name: "Dani Steffan", initials: "D", image: "ba-new-5.webp", context: "Frizz · dry hair · long-hair goals", text: "As you can see I've got quite long hair and I just can't wait to keep improving its look and luster every day and making me feel more confident and beautiful." },
+  // 5 - ribbon before FinalCta
+  { name: "Ana", initials: "A", image: "ba-13.webp", context: "Dyed-damage repair · length growth", text: "My hair has never been so smooth… it made my hair so smooth and so amazing feeling straight after the wash after the first use." },
 ];
 
 export type InterstitialVariant =

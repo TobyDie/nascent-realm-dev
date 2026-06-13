@@ -60,8 +60,8 @@ export function Recognition() {
 
         <Reveal style={{ marginTop: 36 }}>
           <InlineTestimonial
-            name="Lina" age={28} flag="🇩🇪"
-            quote="I thought my hair just couldn't grow past my shoulders. Turns out it could - I was just snapping it off faster than it grew."
+            name="Lucía Gonzalo Carabias" age={26} flag="🇪🇸"
+            quote="I have used it only once, now you can see it's the fourth day without washing my hair and it looks very clean for me, it's not oily at all and my scalp feels great… and I also feel my ends better, more lubricated."
             avatar="profile-4.webp"
             style={{ margin: "0 auto" }}
           />

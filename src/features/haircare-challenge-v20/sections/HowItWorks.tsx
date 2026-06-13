@@ -82,10 +82,10 @@ export function HowItWorks({ onCta }: { onCta?: () => void }) {
 
         <Reveal style={{ marginTop: 26 }}>
           <InlineTestimonial
-            name="Intan"
-            age={36}
-            flag="🇲🇾"
-            quote="Before this, every time I ran my fingers through my hair, strands would come out. Now when I do it, I don't see anything. That's the good news."
+            name="Tiffany Owen-Ray"
+            age={30}
+            flag="🇺🇸"
+            quote="It's winter and my hair feels amazing. I haven't been using any conditioner for this entire two weeks challenge. I haven't needed it because the shampoo that we made… it has really helped my hair a lot. It looks less dry and it feels great."
             avatar="profile-10.webp"
             style={{ margin: "0 auto" }}
           />

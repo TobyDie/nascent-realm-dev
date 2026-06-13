@@ -46,15 +46,15 @@ export function HaircareChallengePageV20() {
               file="ba-new-5.webp"
               widths={[500, 800, 1200]}
               sizes="(max-width: 760px) 92vw, 720px"
-              alt="Sara Gouveia - before and after results from the 14-Day Haircare Challenge."
+              alt="Tai Mane - before and after results from the 14-Day Haircare Challenge."
               style={{ width: "100%", height: "auto", display: "block" }}
             />
             <div style={{ padding: "20px 22px 22px" }}>
               <p style={{ margin: 0, fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>
-                "I used to lose so much length to frizz and breakage at the ends — strands would snap before they ever got long. Now my hair finally feels smooth and strong from root to tip, and for the first time it's actually holding its length."
+                "Today was hair wash day… and this is blow-dried. That's it. And I think it's because I threw out a lot of things that were on the no-go list… And I stopped ignoring my split ends."
               </p>
               <div style={{ marginTop: 12, fontSize: 14, color: "var(--slate)" }}>
-                <strong style={{ color: "var(--ink)" }}>Sara Gouveia</strong> · Frizz &amp; breakage · long-hair journey
+                <strong style={{ color: "var(--ink)" }}>Tai Mane</strong> · Length goals · split ends &amp; dryness
               </div>
             </div>
           </div>
