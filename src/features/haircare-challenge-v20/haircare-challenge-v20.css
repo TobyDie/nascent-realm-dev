@@ -2088,3 +2088,51 @@
   .hq-sp-v20 .confess-accent { font-size: 14.5px; }
   .hq-sp-v20 .confess-num { font-size: 23px; margin-bottom: 8px; }
 }
+
+/* ============================================================
+   Hero H1 — Scale Contrast lockup (v20 only)
+   ============================================================ */
+.hq-sp-v20 .hero-h1-stack {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #090909;
+  font-weight: 400;
+}
+.hq-sp-v20 .hero-h1-stack .hh-intro {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hq-sp-v20 .hero-h1-stack .hh-key {
+  font-size: 76px;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+.hq-sp-v20 .hero-h1-stack .hh-key-italic { font-style: italic; }
+.hq-sp-v20 .hero-h1-stack .hh-tail {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-top: 6px;
+  letter-spacing: -0.025em;
+}
+.hq-sp-v20 .hero-h1-stack .hh-payoff { color: #e97b00; }
+.hq-sp-v20 .hero-h1-stack .hh-sub {
+  font-size: 28px;
+  font-weight: 500;
+  color: #e97b00;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .hq-sp-v20 .hero-h1-stack .hh-intro { font-size: 32px !important; }
+  .hq-sp-v20 .hero-h1-stack .hh-key   { font-size: 56px !important; }
+  .hq-sp-v20 .hero-h1-stack .hh-tail  { font-size: 36px !important; }
+  .hq-sp-v20 .hero-h1-stack .hh-sub   { font-size: 22px !important; }
+}
