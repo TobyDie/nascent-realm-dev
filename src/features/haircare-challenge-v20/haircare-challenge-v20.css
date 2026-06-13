@@ -1469,13 +1469,15 @@
 .hq-sp-v20 .hero-sub-hl { font-size: 16px !important; margin-bottom: 10px !important; }
 .hq-sp-v20 .hero-validation { font-size: 14.5px !important; margin-bottom: 12px !important; }
 .hq-sp-v20 .hero-cohort { font-size: 12px; }
-.hq-sp-v20 .live-cohort { margin-top: 10px; gap: 8px; }
-.hq-sp-v20 .lc-date { font-size: 12.5px; }
-.hq-sp-v20 .lc-ticker { font-size: 11px; }
-.hq-sp-v20 .lc-count { font-size: 17px; }
-.hq-sp-v20 .lc-proof { font-size: 12px; }
+.hq-sp-v20 .live-cohort { margin: 18px 0 16px; gap: 10px; }
+.hq-sp-v20 .lc-live-label,
+.hq-sp-v20 .lc-fills { font-size: 11px; }
+.hq-sp-v20 .lc-date { font-size: 18px; }
+.hq-sp-v20 .lc-ticker { font-size: 12.5px; }
+.hq-sp-v20 .lc-count { font-size: 20px; }
+.hq-sp-v20 .lc-proof { font-size: 13.5px; }
 .hq-sp-v20 .lc-avatars img,
-.hq-sp-v20 .lc-avatar-more { width: 20px; height: 20px; }
+.hq-sp-v20 .lc-avatar-more { width: 24px; height: 24px; }
 .hq-sp-v20 .hero-grid { gap: 20px !important; }
 .hq-sp-v20 .hero-grid > div:nth-child(1) { order: 2; }
 .hq-sp-v20 .hero-grid > div:nth-child(2) { order: 1; }
