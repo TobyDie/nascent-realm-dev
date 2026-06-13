@@ -104,9 +104,20 @@ export function Hero({ onCta }: { onCta?: () => void }) {
 
                 <div className="lc-row3">
                   <div className="lc-avatars" aria-hidden="true">
-                    {HERO_AVATARS.slice(0, 5).map((file, i) => (
-                      <img key={i} src={r2img(file, AVATAR_W)} alt="" loading="lazy" decoding="async" />
-                    ))}
+                    {Array.from({ length: 5 }).map((_, i) => {
+                      const file = HERO_AVATARS[(pop + i) % HERO_AVATARS.length];
+                      const isNew = i === 4;
+                      return (
+                        <img
+                          key={isNew ? `new-${pop}` : `slot-${i}`}
+                          className={isNew ? "lc-avatar-new" : ""}
+                          src={r2img(file, AVATAR_W)}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      );
+                    })}
                     <span className="lc-avatar-more">+</span>
                   </div>
                   <div className="lc-proof">
