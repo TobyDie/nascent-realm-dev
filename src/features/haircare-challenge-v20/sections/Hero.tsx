@@ -1,5 +1,5 @@
 import { Anno, Reveal, Button, GuaranteeBadge, Icon, Trustpilot } from "../primitives";
-import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
+import { useJoiningCount } from "../useJoiningCount";
 import { r2img, AVATAR_W } from "../img";
 import { useStartDate, fmtShort } from "../useStartDate";
 
