@@ -1,5 +1,6 @@
-import { Anno, Reveal, Button, GuaranteeBadge, Icon, Trustpilot } from "../primitives";
-import { useJoiningCount } from "../useJoiningCount";
+import { useEffect, useState } from "react";
+import { Anno, Reveal, Button, Icon, Trustpilot } from "../primitives";
+import { useJoiningCount, COHORT_CAPACITY } from "../useJoiningCount";
 import { r2img, AVATAR_W } from "../img";
 import { useStartDate, fmtShort } from "../useStartDate";
 
@@ -11,6 +12,38 @@ const HERO_AVATARS: string[] = [
 export function Hero({ onCta }: { onCta?: () => void }) {
   const joining = useJoiningCount();
   const startDate = useStartDate();
+  const [localBump, setLocalBump] = useState(0);
+  const [lastHour, setLastHour] = useState(8);
+  const [pop, setPop] = useState(0);
+
+  // Live tick: every 14-26s add a "join". Decay last-hour every 60s.
+  useEffect(() => {
+    const reduce = typeof window !== "undefined" &&
+      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    let cancelled = false;
+    const schedule = () => {
+      const delay = 14000 + Math.random() * 12000;
+      return setTimeout(() => {
+        if (cancelled) return;
+        setLocalBump((b) => b + 1);
+        setLastHour((h) => Math.min(h + 1, 28));
+        setPop((p) => p + 1);
+        t = schedule();
+      }, delay);
+    };
+    let t = schedule();
+    const decay = setInterval(() => setLastHour((h) => (h > 4 ? h - 1 : h)), 60000);
+    return () => { cancelled = true; clearTimeout(t); clearInterval(decay); };
+  }, []);
+
+  // Reset localBump when the minute-level base count advances.
+  useEffect(() => { setLocalBump(0); }, [joining]);
+
+  const displayed = Math.min(joining + localBump, COHORT_CAPACITY);
+  const pct = Math.min(100, (displayed / COHORT_CAPACITY) * 100);
+  const isFull = displayed >= COHORT_CAPACITY;
+
   return (
     <section className="bg-cream hero-section" style={{ paddingTop: 48, paddingBottom: 0 }}>
       <Anno>Section 1 - Hero / recognition</Anno>
@@ -55,36 +88,46 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
                 {"\n"}
               </span>
-              <GuaranteeBadge size="sm" className="guarantee-not-cta" />
-              {/* cohort strip - two minimal blocks, no box */}
-              <div className="hero-cohort-strip" role="group" aria-label="Next cohort and community size">
-                <div className="hcs-block">
-                  <div className="hcs-eyebrow">
-                    <Icon name="calendar-heart" size={12} color="var(--orange-600)" />
-                    <span>Next cohort</span>
-                  </div>
-                  <div className="hcs-value start-date">
-                    {startDate ? fmtShort(startDate) : "Fri, June 6th"}
-                  </div>
-                </div>
-                <div className="hcs-block hcs-block-right">
-                  <div className="hcs-eyebrow">
-                    <span className="hcs-pulse" aria-hidden="true">
-                      <span className="hcs-pulse-ring" />
-                      <span className="hcs-pulse-dot" />
+              {/* Live gamified cohort strip */}
+              <div className="live-cohort" role="group" aria-label="Live cohort status">
+                <div className="lc-row1">
+                  <span className="lc-live">
+                    <span className="lc-pulse" aria-hidden="true">
+                      <span className="lc-pulse-ring" />
+                      <span className="lc-pulse-dot" />
                     </span>
-                    <span>Joining this week</span>
+                    <span className="lc-live-label">Live</span>
+                    <span className="lc-sep" aria-hidden="true">·</span>
+                    <span className="lc-fills">cohort fills</span>
+                    <span className="lc-date start-date">
+                      {startDate ? fmtShort(startDate) : "Sun, June 14th"}
+                    </span>
+                  </span>
+                  <span className="lc-ticker" aria-live="polite">
+                    <span className="lc-arrow" aria-hidden="true">↑</span>
+                    <span key={`h-${lastHour}`} className="lc-ticker-num">{lastHour}</span> joined this hour
+                  </span>
+                </div>
+
+                <div className="lc-row2">
+                  <div className={`lc-bar ${isFull ? "is-full" : ""}`}>
+                    <span className="lc-bar-fill" style={{ width: `${pct}%` }}>
+                      <span className="lc-bar-sheen" aria-hidden="true" />
+                    </span>
                   </div>
-                  <div className="hcs-value-row">
-                    <div className="hcs-value hcs-count">
-                      {joining.toLocaleString("en-US")} <span className="hcs-count-sub">women</span>
-                    </div>
-                    <div className="hcs-avatars" aria-hidden="true">
-                      {HERO_AVATARS.slice(0, 4).map((file, i) => (
-                        <img key={i} src={r2img(file, AVATAR_W)} alt="" loading="lazy" decoding="async" />
-                      ))}
-                      <span className="hcs-avatar-more">+</span>
-                    </div>
+                  <span className="lc-pct">{Math.round(pct)}%</span>
+                </div>
+
+                <div className="lc-row3">
+                  <div className="lc-avatars" aria-hidden="true">
+                    {HERO_AVATARS.slice(0, 5).map((file, i) => (
+                      <img key={i} src={r2img(file, AVATAR_W)} alt="" loading="lazy" decoding="async" />
+                    ))}
+                    <span className="lc-avatar-more">+</span>
+                  </div>
+                  <div className="lc-proof">
+                    <strong key={`c-${pop}`} className="lc-count">{displayed.toLocaleString("en-US")}</strong>
+                    <span className="lc-of"> of {COHORT_CAPACITY.toLocaleString("en-US")} women have joined</span>
                   </div>
                 </div>
               </div>
