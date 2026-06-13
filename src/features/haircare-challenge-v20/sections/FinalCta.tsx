@@ -13,7 +13,7 @@ export function FinalCta({ onCta }: { onCta?: () => void }) {
         <Reveal>
           <Eyebrow>The decision</Eyebrow>
           <h2 className="h-hero" style={{ marginTop: 14, marginBottom: 20, maxWidth: 720, marginInline: "auto" }}>
-            Stop waiting for your hair to grow. Start growing it.
+            Stop waiting for your hair to grow. <span style={{ color: "var(--orange-600)" }}>Start growing it.</span>
           </h2>
           <p className="lead" style={{ marginBottom: 36, maxWidth: 620, marginInline: "auto" }}>
             The length you want isn't out of reach - it's just out of reach of your current routine. In 14 days, you'll know exactly what's been holding it back. And you'll have everything you need to keep going. The knowledge is <strong>yours forever</strong>.
