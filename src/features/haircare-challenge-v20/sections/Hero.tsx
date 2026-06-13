@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Anno, Reveal, Button, Icon, Trustpilot } from "../primitives";
-import { useJoiningCount, COHORT_CAPACITY } from "../useJoiningCount";
+import { useJoiningCount } from "../useJoiningCount";
 import { r2img, AVATAR_W } from "../img";
 import { useStartDate, fmtShort } from "../useStartDate";
 
@@ -40,9 +40,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
   // Reset localBump when the minute-level base count advances.
   useEffect(() => { setLocalBump(0); }, [joining]);
 
-  const displayed = Math.min(joining + localBump, COHORT_CAPACITY);
-  const pct = Math.min(100, (displayed / COHORT_CAPACITY) * 100);
-  const isFull = displayed >= COHORT_CAPACITY;
+  const displayed = joining + localBump;
 
   return (
     <section className="bg-cream hero-section" style={{ paddingTop: 48, paddingBottom: 0 }}>
@@ -97,25 +95,11 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                       <span className="lc-pulse-dot" />
                     </span>
                     <span className="lc-live-label">Live</span>
-                    <span className="lc-sep" aria-hidden="true">·</span>
-                    <span className="lc-fills">cohort fills</span>
-                    <span className="lc-date start-date">
-                      {startDate ? fmtShort(startDate) : "Sun, June 14th"}
-                    </span>
                   </span>
-                  <span className="lc-ticker" aria-live="polite">
-                    <span className="lc-arrow" aria-hidden="true">↑</span>
-                    <span key={`h-${lastHour}`} className="lc-ticker-num">{lastHour}</span> joined this hour
+                  <span className="lc-fills">Community batch starting on</span>
+                  <span className="lc-date start-date">
+                    {startDate ? fmtShort(startDate) : "Sun, June 14th"}
                   </span>
-                </div>
-
-                <div className="lc-row2">
-                  <div className={`lc-bar ${isFull ? "is-full" : ""}`}>
-                    <span className="lc-bar-fill" style={{ width: `${pct}%` }}>
-                      <span className="lc-bar-sheen" aria-hidden="true" />
-                    </span>
-                  </div>
-                  <span className="lc-pct">{Math.round(pct)}%</span>
                 </div>
 
                 <div className="lc-row3">
@@ -127,7 +111,12 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                   </div>
                   <div className="lc-proof">
                     <strong key={`c-${pop}`} className="lc-count">{displayed.toLocaleString("en-US")}</strong>
-                    <span className="lc-of"> of {COHORT_CAPACITY.toLocaleString("en-US")} women have joined</span>
+                    <span className="lc-of"> women have joined</span>
+                    <span className="lc-dot-sep" aria-hidden="true">·</span>
+                    <span className="lc-ticker" aria-live="polite">
+                      <span className="lc-arrow" aria-hidden="true">↑</span>
+                      <span key={`h-${lastHour}`} className="lc-ticker-num">{lastHour}</span> joined this hour
+                    </span>
                   </div>
                 </div>
               </div>
