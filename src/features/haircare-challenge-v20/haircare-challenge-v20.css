@@ -988,8 +988,8 @@
     }
 .hq-sp-v20 .math-strike::after {
       content: ""; position: absolute; left: -4px; right: -4px;
-      top: 55%; height: 3px; background: var(--orange-600);
-      transform: rotate(-4deg); border-radius: 2px;
+      top: 55%; height: 1.5px; background: var(--slate);
+      opacity: 0.7; transform: rotate(-4deg); border-radius: 2px;
     }
 .hq-sp-v20 .skim-row {
       display: grid; grid-template-columns: auto 1fr; gap: 16px;
