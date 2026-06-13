@@ -5,20 +5,26 @@ import {
   Carousel,
   Eyebrow,
   GuaranteeBadge,
-  RImg,
   Reveal,
   StarRow,
   useIsMobile,
 } from "../primitives";
-import { BA_WIDTHS } from "../img";
 
 type Testi = {
   name: string;
   initials: string;
   context: string;
   text: string;
-  image: string;
+  imageUrl: string;
 };
+
+const CF_WIDTHS = [500, 800, 1200];
+const cfImg = (url: string, w: number) => {
+  const i = url.indexOf("//");
+  const slash = url.indexOf("/", i + 2);
+  return `${url.slice(0, slash)}/cdn-cgi/image/width=${w},quality=80,format=auto${url.slice(slash)}`;
+};
+const cfSrcSet = (url: string) => CF_WIDTHS.map((w) => `${cfImg(url, w)} ${w}w`).join(", ");
 
 function CompactTesti({ t }: { t: Testi }) {
   return (
@@ -35,11 +41,13 @@ function CompactTesti({ t }: { t: Testi }) {
       }}
     >
       <div style={{ position: "relative", background: "var(--cream, #faf6f1)" }}>
-        <RImg
-          file={t.image}
-          widths={BA_WIDTHS}
+        <img
+          src={cfImg(t.imageUrl, 800)}
+          srcSet={cfSrcSet(t.imageUrl)}
           sizes="(max-width: 860px) 86vw, 360px"
           alt={`Before and after - ${t.name}`}
+          loading="lazy"
+          decoding="async"
           style={{ width: "100%", height: "auto", display: "block" }}
         />
       </div>
@@ -81,11 +89,11 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
   const isMobile = useIsMobile();
 
   const testimonials: Testi[] = [
-    { name: "Eline Mulders", initials: "E", context: "Dry hair · length plateau", text: "My hair feels softer, it's clean… I like my hair, it feels good - and cutting off the split ends feels amazing honestly, it helps also with less tangling.", image: "ba-1.webp" },
-    { name: "Elena", initials: "E", context: "General hair health", text: "My hair is soft and it truly is good. It's a good cleansing shampoo.", image: "ba-2.webp" },
-    { name: "Alina Nuno", initials: "A", context: "Shine restoration", text: "My before and after photos were a wake up call! I could see how much shine my hair has now compared to day 1. It is so much smoother and softer, lighter, fluffier! I am loving the way my hair feels - seeing the marked change in just 14 days reinforces that the work is working!", image: "ba-3.webp" },
-    { name: "Brianna Reetz", initials: "B", context: "Split ends · dull, brittle hair", text: "I kept eating what I should be, and just from that, my hair has already changed. It's already becoming a lot thicker, it's already have a bit more shine to it. I trimmed the split ends, and it's already going great. Now my hair is softer.", image: "ba-5.webp" },
-    { name: "Haydée Fernández", initials: "H", context: "Frizz · wants shine & volume", text: "As you can see my hair is shiny - it feels super soft, it has volume.", image: "ba-13.webp" },
+    { name: "Eline Mulders", initials: "E", context: "Dry hair · length plateau", text: "My hair feels softer, it's clean… I like my hair, it feels good - and cutting off the split ends feels amazing honestly, it helps also with less tangling.", imageUrl: "https://pub.hairqare.co/SP21/Long-Hair-Before-After-1.webp" },
+    { name: "Elena", initials: "E", context: "General hair health", text: "My hair is soft and it truly is good. It's a good cleansing shampoo.", imageUrl: "https://pub.hairqare.co/SP21/ong-Hair-Before-After-2.webp" },
+    { name: "Alina Nuno", initials: "A", context: "Shine restoration", text: "My before and after photos were a wake up call! I could see how much shine my hair has now compared to day 1. It is so much smoother and softer, lighter, fluffier! I am loving the way my hair feels - seeing the marked change in just 14 days reinforces that the work is working!", imageUrl: "https://pub.hairqare.co/SP21/Long-hair-Damage-and-Shine-Before-After.webp" },
+    { name: "Brianna Reetz", initials: "B", context: "Split ends · dull, brittle hair", text: "I kept eating what I should be, and just from that, my hair has already changed. It's already becoming a lot thicker, it's already have a bit more shine to it. I trimmed the split ends, and it's already going great. Now my hair is softer.", imageUrl: "https://pub.hairqare.co/SP21/Long-hair-Damage-and-Shine-Before-After-4.webp" },
+    { name: "Haydée Fernández", initials: "H", context: "Frizz · wants shine & volume", text: "As you can see my hair is shiny - it feels super soft, it has volume.", imageUrl: "https://pub.hairqare.co/SP21/Long-hair-Damage-and-Shine-Before-After-3.webp" },
   ];
   const cards = testimonials.map((t, i) => <CompactTesti key={i} t={t} />);
 
