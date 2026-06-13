@@ -93,7 +93,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                 <picture>
                   <source
                     media="(max-width: 720px)"
-                    srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=85,format=auto/SP21/Sarah-longest-hair-1.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=85,format=auto/SP21/Sarah-longest-hair-1.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=85,format=auto/SP21/Sarah-longest-hair-1.webp 1200w"
+                    srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=85,format=auto/SP21/Sarah-for-20.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=85,format=auto/SP21/Sarah-for-20.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=85,format=auto/SP21/Sarah-for-20.webp 1200w"
                     sizes="100vw"
                   />
                   <img
