@@ -1442,6 +1442,16 @@
 .hq-sp-v20 .hero-sub-hl { font-size: 16px !important; margin-bottom: 10px !important; }
 .hq-sp-v20 .hero-validation { font-size: 14.5px !important; margin-bottom: 12px !important; }
 .hq-sp-v20 .hero-cohort { font-size: 12px; }
+.hq-sp-v20 .hero-cohort-strip { column-gap: 20px; margin-top: 8px; }
+.hq-sp-v20 .hcs-eyebrow { font-size: 9.5px; letter-spacing: 0.1em; }
+.hq-sp-v20 .hcs-value { font-size: 13.5px; }
+.hq-sp-v20 .hcs-count-sub { font-size: 12px; }
+.hq-sp-v20 .hcs-pulse { width: 7px; height: 7px; }
+.hq-sp-v20 .hcs-avatars img, .hq-sp-v20 .hcs-avatar-more { width: 15px; height: 15px; }
+.hq-sp-v20 .hcs-avatar-more { font-size: 10px; }
+@media (max-width: 360px) {
+  .hq-sp-v20 .hcs-avatars { display: none; }
+}
 .hq-sp-v20 .hero-grid { gap: 20px !important; }
 .hq-sp-v20 .hero-grid > div:nth-child(1) { order: 2; }
 .hq-sp-v20 .hero-grid > div:nth-child(2) { order: 1; }
