@@ -35,14 +35,15 @@ export function Hero({ onCta }: { onCta?: () => void }) {
 
             {/* Short supporting paragraph */}
             <p className="hero-supporting">
-              Grow waist-length hair, volume at the roots, thick at the ends and shines healthily. <strong>Just 10 min/Day for 14 days and you'll enjoy beautiful hair for decades to come.</strong>
+              Achieve waist-length hair, volume at the roots, thick at the ends and shines healthily.<br />
+              <strong>Just 10 min/Day for 14 days and you'll enjoy beautiful hair for decades to come.</strong>
             </p>
 
             {/* CTA block - must be above fold on mobile */}
             <div id="hero-cta-sentinel" style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start", marginBottom: 24 }}>
               <Button id="cta-hero" onClick={onCta} icon="arrow-right">Join the 14 Day Challenge</Button>
               <span className="small" style={{ fontWeight: 600, color: "var(--orange-700)", marginLeft: 4 }}>
-                Grow long hair or get your money back
+                {"\n"}
               </span>
               <GuaranteeBadge size="sm" />
               {/* cohort line - under CTA, not above headline */}
