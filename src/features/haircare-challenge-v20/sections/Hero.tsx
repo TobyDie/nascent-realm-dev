@@ -22,13 +22,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
 
           {/* TEXT column */}
           <Reveal>
-            {/* Top-left handwritten trust note */}
-            <div className="hero-trust-note" aria-label="4.8 rating from 12,400 reviews">
-              <span className="hero-trust-stars">★★★★★</span>
-              <span className="hero-trust-num">4.8</span>
-              <span className="hero-trust-count">12,400</span>
-            </div>
-
             {/* H1 - the single emotional hook, short enough for mobile */}
             <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
               <span style={{ color: "#090909", fontWeight: 800 }}>Grow the longest, healthiest, shiniest hair of your life,&nbsp;</span>
@@ -79,6 +72,11 @@ export function Hero({ onCta }: { onCta?: () => void }) {
           <Reveal delay={120}>
             <div style={{ position: "relative" }}>
               <div className="hero-image-wrap">
+                {/* Handwritten trust pill overlaying top-left of hero image */}
+                <div className="hero-trust-note" aria-label="4.8 rating from 12,000+ reviews">
+                  <span className="hero-trust-star">★</span>
+                  <span className="hero-trust-text">4.8 · 12K reviews</span>
+                </div>
                 <RImg
                   file="sarah-hero-v2.webp"
                   widths={HERO_WIDTHS}
