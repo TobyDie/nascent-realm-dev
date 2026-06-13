@@ -32,8 +32,8 @@ export function Hero({ onCta }: { onCta?: () => void }) {
 
             {/* Short supporting paragraph */}
             <p className="hero-supporting">
-              Achieve waist-length hair, volume at the roots, thick at the ends and shines healthily.<br />
-              <strong>Just 10 min/day for 14 days and you'll enjoy beautiful hair for decades to come.</strong>
+              Shiny waist-length hair, volume at the roots, thick at the ends and shines healthily.<br />
+              <strong>Just 10 min/day. In 14 days you'll have the routine that grows beautiful hair for decades to come.</strong>
             </p>
 
             {/* CTA block - must be above fold on mobile */}
@@ -58,7 +58,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
               </li>
               <li>
                 <span className="hero-bullet-emoji">✨</span>
-                <span>Heat-style and color without the damage affecting your length so you enjoy your favourite hair styles without guilt.</span>
+                <span>Heat-style and color without the damage holding your length back so you enjoy the hair styles your love with - Guilt free.&nbsp;</span>
               </li>
               <li>
                 <span className="hero-bullet-emoji">🛡️</span>
