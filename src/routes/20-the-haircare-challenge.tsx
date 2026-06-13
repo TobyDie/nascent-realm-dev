@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HaircareChallengePageV20 } from "@/features/haircare-challenge-v20/HaircareChallengePageV20";
-import { r2img, r2srcset, HERO_WIDTHS } from "@/features/haircare-challenge-v20/img";
 
 const HERO_SIZES = "(max-width: 720px) 100vw, (max-width: 860px) 90vw, 405px";
 
@@ -21,8 +20,8 @@ export const Route = createFileRoute("/20-the-haircare-challenge")({
       {
         rel: "preload",
         as: "image",
-        href: r2img("sarah-hero-v2.webp", 800),
-        imageSrcSet: r2srcset("sarah-hero-v2.webp", HERO_WIDTHS),
+        href: "https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/SP21/Sarah-Long-Hair.webp",
+        imageSrcSet: "https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/SP21/Sarah-Long-Hair.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/SP21/Sarah-Long-Hair.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/SP21/Sarah-Long-Hair.webp 1200w, https://pub.hairqare.co/cdn-cgi/image/width=1600,quality=80,format=auto/SP21/Sarah-Long-Hair.webp 1600w",
         imageSizes: HERO_SIZES,
         fetchPriority: "high",
       },

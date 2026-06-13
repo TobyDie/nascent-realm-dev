@@ -1,6 +1,6 @@
-import { Anno, Reveal, Button, GuaranteeBadge, Icon, Trustpilot, RImg } from "../primitives";
+import { Anno, Reveal, Button, GuaranteeBadge, Icon, Trustpilot } from "../primitives";
 import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
-import { r2img, HERO_WIDTHS, AVATAR_W } from "../img";
+import { r2img, AVATAR_W } from "../img";
 import { useStartDate, fmtShort } from "../useStartDate";
 
 const HERO_AVATARS: string[] = [
@@ -77,13 +77,15 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                   <span className="hero-trust-star">★</span>
                   <span className="hero-trust-text">4.8 · 12K reviews</span>
                 </div>
-                <RImg
-                  file="sarah-hero-v2.webp"
-                  widths={HERO_WIDTHS}
+                <img
+                  src="https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/SP21/Sarah-Long-Hair.webp"
+                  srcSet="https://pub.hairqare.co/cdn-cgi/image/width=500,quality=80,format=auto/SP21/Sarah-Long-Hair.webp 500w, https://pub.hairqare.co/cdn-cgi/image/width=800,quality=80,format=auto/SP21/Sarah-Long-Hair.webp 800w, https://pub.hairqare.co/cdn-cgi/image/width=1200,quality=80,format=auto/SP21/Sarah-Long-Hair.webp 1200w, https://pub.hairqare.co/cdn-cgi/image/width=1600,quality=80,format=auto/SP21/Sarah-Long-Hair.webp 1600w"
                   sizes="(max-width: 720px) 100vw, (max-width: 860px) 90vw, 405px"
-                  alt="Sarah Tran - founder of HairQare, with long healthy auburn hair, sunlit Mediterranean setting. Inset: before/after of a coached student."
+                  alt="Sarah Tran - founder of HairQare, with long healthy hair."
+                  loading="eager"
+                  fetchPriority="high"
                   className="hero-image"
-                  eager
+                  style={{ width: "100%", height: "auto", display: "block" }}
                 />
               </div>
             </div>
