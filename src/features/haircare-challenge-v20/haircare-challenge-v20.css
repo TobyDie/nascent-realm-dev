@@ -252,6 +252,17 @@
     }
 /* hero text hierarchy */
 .hq-sp-v20 .hero-h1 { margin: 0; }
+/* Desktop default for the second clause — inherits H1 typography, orange,
+   no handwritten treatment. Mobile media block overrides this. */
+.hq-sp-v20 .hero-h1-handwritten {
+      font-family: inherit;
+      font-weight: 800;
+      font-size: inherit;
+      line-height: inherit;
+      color: #e97b00;
+      display: block;
+      margin: 0 0 12px;
+    }
 .hq-sp-v20 .hero-sub-hl {
       font-family: var(--font-serif); font-weight: 600;
       font-size: 21px; line-height: 1.35; color: var(--ink);
