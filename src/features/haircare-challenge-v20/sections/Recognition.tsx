@@ -7,13 +7,12 @@ export function Recognition() {
         <Reveal className="center" style={{ marginBottom: 8 }}>
           <Eyebrow>What's actually happening</Eyebrow>
           <h2 className="h2" style={{ marginTop: 12, lineHeight: 1.2 }}>
-            You're doing more for your hair than ever.<br />
-            So why is it doing <span style={{ color: "var(--orange-600)", fontStyle: "italic" }}>less</span>?
+            You've done all of this. And you're still&nbsp;waiting for your hair to grow?
           </h2>
         </Reveal>
         <Reveal className="center" style={{ marginBottom: 28 }}>
           <p className="lead" style={{ maxWidth: 520, margin: "0 auto" }}>
-            jhghkjhkgfhgkhgkhgkhg
+            You chased every fix and each one took you further from the hair you were actually capable of growing.
           </p>
         </Reveal>
 
