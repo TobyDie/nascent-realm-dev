@@ -22,16 +22,6 @@ export function Fault() {
           </div>
         </Reveal>
 
-        <Reveal className="center" style={{ marginTop: 24 }}>
-          <Button
-            id="cta-fault"
-            variant="ghost"
-            onClick={() => { window.location.href = "https://join.hairqare.co/the-quiz-haircare"; }}
-            icon="arrow-right"
-          >
-            Show me how to fix it
-          </Button>
-        </Reveal>
       </div>
     </section>
   );
