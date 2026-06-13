@@ -32,7 +32,7 @@ export function Fault() {
                 <p className="fault-copy">
                   Many heat protectants damage your hair almost as much as they protect it. Shampoos dry it out instead of just cleaning it. Conditioners coat it in residue instead of actually conditioning it.
                 </p>
-                <p className="fault-copy">The things you bought to save your hair are <strong>quietly hurting it</strong> — even when the label promises the opposite.</p>
+                <p className="fault-copy">The things you bought to save your hair are quietly hurting it,&nbsp;even when the label promises the opposite.</p>
               </div>
             </li>
 
@@ -48,7 +48,7 @@ export function Fault() {
                   Once you understand how hair actually grows, it's <span className="fault-emoji">✨</span> <Underline>easy</Underline>.
                 </h3>
                 <p className="fault-copy">
-                  Your hair grows whether you ask it to or not. As long as you're alive, it grows — your only job is to get out of its way.
+                  Your hair grows whether you ask it to or not. As long as you're alive, it grows.&nbsp; Your only job is to get out of its way.
                 </p>
                 <p className="fault-copy">
                   <strong>And getting out of the way means less, not more.</strong> Fewer products, less money, less effort. Stop the unnecessary damage, and the length you've been growing all along shows up.
