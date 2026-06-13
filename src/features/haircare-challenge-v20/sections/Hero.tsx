@@ -1,6 +1,6 @@
-import { Anno, Reveal, Button, GuaranteeBadge, Icon, Trustpilot, RImg } from "../primitives";
+import { Anno, Reveal, Button, GuaranteeBadge, Icon, Trustpilot } from "../primitives";
 import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
-import { r2img, HERO_WIDTHS, AVATAR_W } from "../img";
+import { r2img, AVATAR_W } from "../img";
 import { useStartDate, fmtShort } from "../useStartDate";
 
 const HERO_AVATARS: string[] = [
