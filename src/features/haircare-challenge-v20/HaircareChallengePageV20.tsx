@@ -2,7 +2,7 @@ import "./haircare-challenge-v20.css";
 import { AgeStripe } from "./sections/AgeStripe";
 import { Hero } from "./sections/Hero";
 import { Recognition } from "./sections/Recognition";
-import { Science, ScienceTail } from "./sections/Science";
+import { Science } from "./sections/Science";
 import { VideoTestimonials } from "./sections/VideoTestimonials";
 import { SocialProof } from "./sections/SocialProof";
 import { HowItWorks } from "./sections/HowItWorks";
@@ -44,7 +44,6 @@ export function HaircareChallengePageV20() {
       </section>
       <Science />
       <Fault />
-      <ScienceTail />
       <SocialProof onCta={scrollToStart} />
       <TestimonialStrip variant="pull-quote" textIndex={0} imageIndex={0} bg="var(--cream)" />
       <Founder onCta={scrollToStart} />
