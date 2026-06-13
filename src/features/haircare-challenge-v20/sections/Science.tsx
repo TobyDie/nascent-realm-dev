@@ -12,35 +12,6 @@ export function Science() {
           </h2>
         </Reveal>
 
-        <Reveal>
-          <div className="biology-callout">
-            <div className="biology-callout-eyebrow">The myth</div>
-            <h3 className="biology-callout-headline">The "terminal length" myth</h3>
-            <p className="biology-callout-body">
-              Most women never get past shoulder length - not because their hair can't grow longer, but because their hair is breaking off as fast as it grows. Every product you've used was sold to you as the fix. None of them were ever going to teach you the cause.
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal style={{ marginTop: 22 }}>
-          <div className="biology-tile-row">
-            <div className="biology-tile">
-              <span className="biology-tile-icon">🩸</span>
-              <div className="biology-tile-title">Your scalp is the soil</div>
-              <div className="biology-tile-sub">Hair grows from a follicle that needs blood flow, the right nutrients, and the right pH at the surface. Most shampoos disrupt all three.</div>
-            </div>
-            <div className="biology-tile">
-              <span className="biology-tile-icon">🥦</span>
-              <div className="biology-tile-title">Iron and ferritin run hair growth</div>
-              <div className="biology-tile-sub">Women in their 20s and 30s are the single most deficient demographic. Your body deprioritises hair before almost anything else.</div>
-            </div>
-            <div className="biology-tile">
-              <span className="biology-tile-icon">🧬</span>
-              <div className="biology-tile-title">Damage compounds</div>
-              <div className="biology-tile-sub">Every wash, brush, heat tool, and UV exposure adds a tiny crack. Without a plan to seal them, the crack travels up the strand and snaps the length you grew.</div>
-            </div>
-          </div>
-        </Reveal>
 
         <Reveal>
           <div className="math-formula" style={{ marginTop: 40 }}>
