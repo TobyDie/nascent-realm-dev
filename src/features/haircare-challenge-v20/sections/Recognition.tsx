@@ -19,7 +19,7 @@ export function Recognition() {
           </p>
         </Reveal>
 
-        <div className="timeline-wrap">
+        <div className="confess-stack">
           {[
             {
               lead: "You got keratin treatments",
@@ -48,13 +48,14 @@ export function Recognition() {
             },
           ].map((b, i) => (
             <Reveal key={i} delay={i * 70}>
-              <div className="timeline-beat">
-                <span className="timeline-dot" />
-                <p className="timeline-trigger">
-                  <strong>{b.lead}</strong> — {b.neutral}{" "}
-                  <span style={{ color: "var(--orange-700)" }}>{b.accent}</span>
+              <article className="confess-card">
+                <span className="confess-num">{String(i + 1).padStart(2, "0")}</span>
+                <p className="confess-lead">{b.lead}</p>
+                <p className="confess-neutral">{b.neutral}</p>
+                <p className="confess-accent">
+                  <span className="confess-arrow" aria-hidden="true">↳</span> {b.accent}
                 </p>
-              </div>
+              </article>
             </Reveal>
           ))}
         </div>
