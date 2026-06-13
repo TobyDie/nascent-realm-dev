@@ -36,8 +36,8 @@ const IMAGE_PLACEHOLDERS = [
   { name: "Aurélie Guénué", initials: "A", image: "ba-new-1.webp", context: "Postpartum shedding · irritated scalp", text: "After just a few weeks my scalp feels calmer, the postpartum shedding has slowed down, and more than anything I'm finally feeling like myself again." },
   // After SelfQualifier (image slot) - damage from bleach/heat, length plateau
   { name: "Biljana Lemić", initials: "B", image: "ba-new-4.webp", context: "Years of bleach & heat · length plateau", text: "First time I used it I could already see the difference - shinier, stronger, and for the first time in years it actually feels like my length is moving." },
-  // After FAQ (image slot) - stress + texture change → bouncy
-  { name: "Sara Gouveia", initials: "S", image: "ba-new-5.webp", context: "Stress shedding · flat lifeless hair", text: "Now that it's dried it feels so clean, so smooth and gentle, and my curls are like, hey hello! My hair was always flat - now it's bouncy." },
+  // After FAQ (image slot) - frizz/breakage from long-hair perspective
+  { name: "Sara Gouveia", initials: "S", image: "ba-new-5.webp", context: "Frizz & breakage · long-hair journey", text: "I used to lose so much length to frizz and breakage at the ends — strands would snap before they ever got long. Now my hair finally feels smooth and strong from root to tip, and it's actually holding its length." },
   // Final-CTA-area - long-term, knowledge-as-an-asset story
   { name: "Rosemary", initials: "R", image: "ba-13.webp", context: "Spent years buying products that didn't work", text: "This course changed the way I think about my hair. I'm not buying the next bottle anymore - I finally know what I'm doing." },
 ];
