@@ -17,7 +17,6 @@ export const Route = createFileRoute("/20-the-haircare-challenge")({
     ],
     links: [
       { rel: "canonical", href: "https://glow.hairqare.co/20-the-haircare-challenge" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Allura&display=swap" },
       {
         rel: "preload",
         as: "image",
