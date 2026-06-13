@@ -1,4 +1,4 @@
-import { Reveal, Eyebrow, HandArrow, Icon, StarRow, Button, Hand } from "../primitives";
+import { Reveal, Eyebrow, Icon, StarRow, Button, Hand } from "../primitives";
 import { r2img } from "../img";
 
 export function Science() {
@@ -45,7 +45,15 @@ export function Science() {
             ↳ spoiler: it's fixable
           </Hand>
         </Reveal>
+      </div>
+    </section>
+  );
+}
 
+export function ScienceTail() {
+  return (
+    <section className="bg-white" id="science-tail" style={{ paddingTop: 0 }}>
+      <div className="wrap">
         <Reveal>
           <div className="skim-row">
             <span className="skim-emoji">📏</span>
@@ -78,7 +86,6 @@ export function Science() {
             <em>Stop chasing <span className="math-strike">faster growth</span>. Start protecting what you've already grown.</em>
           </p>
         </Reveal>
-
 
         <Reveal style={{ marginTop: 32 }}>
           <div style={{ background: "var(--lavender)", borderRadius: 20, padding: "32px 36px", position: "relative", maxWidth: 720, marginInline: "auto" }}>
