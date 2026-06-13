@@ -292,32 +292,43 @@
       padding: 26px 18px 16px;
       background: linear-gradient(to top, rgba(26,26,26,.85), rgba(26,26,26,0));
     }
-/* Handwritten top-left trust note */
+/* Handwritten trust pill overlaying top-left of hero image */
+.hq-sp-v20 .hero-image-wrap { position: relative; }
 .hq-sp-v20 .hero-trust-note {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 3;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-family: "Caveat", cursive;
+      gap: 8px;
+      padding: 8px 14px 7px;
+      background: #ffffff;
+      border: 1.5px solid var(--orange-600, #e97b00);
+      border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(20, 20, 20, 0.10);
+      font-family: "Caveat", "Kalam", cursive;
       font-weight: 700;
+      font-size: 20px;
+      line-height: 1;
+      color: var(--orange-600, #e97b00);
+      transform: rotate(-4deg);
+      transform-origin: left center;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+.hq-sp-v20 .hero-trust-note .hero-trust-star {
+      color: var(--orange-600, #e97b00);
       font-size: 18px;
       line-height: 1;
-      color: var(--ink);
-      transform: rotate(-3deg);
-      transform-origin: left center;
-      margin-bottom: 10px;
     }
-.hq-sp-v20 .hero-trust-note .hero-trust-stars {
-      color: var(--star, #F5A623);
-      font-size: 14px;
-      letter-spacing: -1px;
+.hq-sp-v20 .hero-trust-note .hero-trust-text {
+      color: var(--orange-600, #e97b00);
+      letter-spacing: 0.2px;
     }
-.hq-sp-v20 .hero-trust-note .hero-trust-num {
-      color: var(--orange-600);
-    }
-.hq-sp-v20 .hero-trust-note .hero-trust-count {
-      color: var(--slate);
-      font-weight: 500;
-      font-size: 16px;
+@media (max-width: 720px) {
+      .hq-sp-v20 .hero-trust-note { top: 10px; left: 10px; font-size: 17px; padding: 6px 12px 5px; }
+      .hq-sp-v20 .hero-trust-note .hero-trust-star { font-size: 15px; }
     }
 /* ===========================================================
        Video testimonials section
