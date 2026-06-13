@@ -15,7 +15,6 @@ export function Science() {
 
         <Reveal>
           <div className="math-formula" style={{ marginTop: 40 }}>
-            <div className="math-formula-eyebrow">turns out, it's just math ✏️</div>
             <div className="math-eq" aria-label="Hair length equals growth minus breakage">
               <span className="math-term">
                 <span className="math-term-emoji">💇‍♀️</span>
@@ -32,19 +31,18 @@ export function Science() {
               <span className="math-term">
                 <span className="math-term-emoji">✂️</span>
                 <span className="math-term-word">Breakage</span>
-                <span className="math-term-sub">the silent killer</span>
+                <span className="math-term-sub">the only part you control</span>
               </span>
             </div>
             <div className="math-formula-foot">
-              The whole industry has been selling you <span className="math-strike">growth boosters</span>.&nbsp;
-              <strong>The real lever is breakage.</strong>
+              You don't have a growing problem. <strong>You have a keeping problem.</strong>
             </div>
           </div>
         </Reveal>
 
         <Reveal style={{ marginTop: 28, textAlign: "center" }}>
           <Hand color="#2C5BAA" size={22} rotate={-2}>
-            here's why that one equation changes everything ↓
+            ↳ spoiler: it's fixable
           </Hand>
         </Reveal>
 
