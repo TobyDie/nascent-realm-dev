@@ -1,36 +1,61 @@
-## Problem
-The current fix gives `.hero-h1` a flat `max-width: 62%`, which constrains every line of the headline. The trailing hair only occupies the **top-right of the overlay zone** — once you're past the hair, the right side of the H1 is empty cream. Result: a tall blank column on the right of every H1 line, and lines below the image are still narrow for no reason.
+## Goal (mobile only, ≤720px — desktop untouched)
+Make the H1 in `/20-the-haircare-challenge` feel designed *into* the hero image: the bold black part hugs the bottom-left pocket and wraps tight around Sarah's trailing hair; the orange clause becomes a handwritten, slightly tilted line that fills the width once the hair ends. No blank cream column on the right.
 
-## Goal (mobile only, ≤720px)
-Make the H1 wrap **tight against the hair on the first 1–2 lines**, then **expand to full width** once it's below the hair. Everything below the H1 (supporting paragraph, CTA, bullets) stays full-width. Desktop untouched.
+## Visual target
 
-## Approach — CSS `shape-outside` floated spacer
-Use a transparent floated `::before` on `.hero-h1` whose shape mimics the negative space left by Sarah's trailing hair. Text flows around it naturally — narrow at top, widening as it descends.
+```text
+┌──────────────────────────────────┐
+│  [trust pill]                    │
+│                                  │
+│                     ╭─ Sarah ─╮  │  ← image full-bleed (already done)
+│                     │  hair   │  │
+│  Grow the longest,  │ trailing│  │  ← bold H1 line 1, narrow (hair on right)
+│  healthiest,        │ down    │  │  ← bold H1 line 2, narrow
+│  shiniest hair      ╰─────────╯  │  ← bold H1 line 3, narrow
+│  of your life,                   │  ← bold H1 line 4, full width (hair ended)
+│                                  │
+│   ~without giving up the color,~ │  ← handwritten, tilted -2deg, full width
+│   ~heat, and styling you love.~  │
+│                                  │
+│  [supporting paragraph]          │
+│  [CTA] [guarantee] [cohort]      │
+│  [bullets]                       │
+└──────────────────────────────────┘
+```
 
-1. **Remove the flat constraint**
-   - Delete the mobile-only `.hero-h1 { max-width: 62% }` rule added previously.
+## Approach
 
-2. **Add a `shape-outside` float on `.hero-h1::before`** (inside the existing `@media (max-width: 720px)` block)
-   - `content: ""; float: right; width: 55%; height: 30vw;`
-   - `shape-outside: polygon(100% 0, 100% 0, 0 100%, 100% 100%);` — a right-triangle that's full width at the top of the H1 and tapers to 0 at the bottom.
-   - This pushes line 1 of the H1 to ~45% width, line 2 to ~60%, line 3+ to ~100%.
-   - Tweakable: adjust the polygon's middle vertex and the `height` (28–34vw) to match where Sarah's hair actually ends.
+### 1. Split the H1 in `sections/Hero.tsx` (v20 only)
+Currently the H1 is one `<h1>` with two `<span>`s. Restructure to:
+- `<h1 class="hero-h1">` containing only the bold black clause: *"Grow the longest, healthiest, shiniest hair of your life,"*
+- A sibling `<div class="hero-h1-handwritten">` containing: *"without giving up the color, heat, and styling you love."*
 
-3. **Re-tune vertical overlap**
-   - Keep `margin-top: -32vw` on the text column, but verify the first H1 line lands just under Sarah's body. If the supporting paragraph crowds the bullets, nudge `margin-top` to `-28vw` or `-30vw`.
+This lets each piece be sized, tilted, and positioned independently. Desktop renders them stacked normally; mobile gets the handwritten treatment.
 
-4. **Spot-check at 360px, 390px, 414px**
-   - The polygon is percentage-based on the floated box, so it scales. The float's `width: 55%` (of the text column) and `height` in `vw` mean the shape tracks viewport width.
+### 2. Mobile CSS rewrite (`haircare-challenge-v20.css`, inside the existing `@media (max-width: 720px)` block)
+
+**Remove** the previous failed attempts: the `shape-outside ::before` triangle, the flat `max-width`, and the `margin-top: -30vw` if it's overshooting.
+
+**Replace with:**
+- `.hero-grid > div:nth-child(1)` — `position: relative; z-index: 2; margin-top: -34vw;` (tuned so H1 line 1 sits just under Sarah's chin/shoulder line — exact value verified in preview).
+- `.hero-h1` — keep bold weight, drop font-size slightly (e.g. `clamp(26px, 7.2vw, 32px)`) so 3 narrow lines actually fit beside the hair before breaking free. Add a `::before` floated spacer **only** sized to the real hair footprint: `float: right; width: 48%; height: 22vw; shape-outside: polygon(100% 0, 100% 100%, 0 0);` — a triangle that's full-width at the top of the H1 and tapers down-left, which matches the hair silhouette (widest at top of text, gone by the bottom). Tune `width` (45–52%) and `height` (18–26vw) against the actual image in preview.
+- `.hero-h1-handwritten` — `font-family: "Caveat", cursive; font-weight: 700; font-size: clamp(22px, 6.2vw, 28px); color: var(--orange-700); line-height: 1.15; transform: rotate(-2deg); transform-origin: left center; display: block; margin: 10px 0 14px; max-width: 100%;`
+- `.hero-supporting` — keep tight `margin-top: 6px`.
+
+### 3. Desktop CSS (≥721px)
+- `.hero-h1-handwritten` — render inline-ish: same font-family but lighter treatment, or fall back to matching the H1 weight/color so the desktop layout doesn't suddenly look handwritten. Simplest: on desktop, style `.hero-h1-handwritten` as plain orange bold text matching today's look (no Caveat, no rotation). Only mobile gets the handwritten flourish.
+
+### 4. Verify
+- `browser--view_preview` at 390×844, then 360 and 414.
+- Confirm: bold H1 lines 1–3 hug the hair tightly (no cream gap on the right of those lines); bold H1 last line spans full width; handwritten clause sits below, tilted, filling width; supporting paragraph + CTA + bullets unaffected; trust pill still top-left of image; image still full-bleed and uncropped.
+- Confirm desktop at 1280px is visually identical to current.
 
 ## Files to change
-- `src/features/haircare-challenge-v20/haircare-challenge-v20.css` — mobile media block only.
+- `src/features/haircare-challenge-v20/sections/Hero.tsx` — split H1 into two elements.
+- `src/features/haircare-challenge-v20/haircare-challenge-v20.css` — replace the mobile H1 overlap rules; add desktop fallback styling for `.hero-h1-handwritten`.
 
 ## Out of scope
-- No JSX changes, no desktop changes, no copy edits, no changes to other sections or routes.
-- No new images.
+- No changes to other v* routes, no copy edits beyond the structural split, no JSX changes outside the H1, no new images, no desktop layout changes.
 
-## Verification
-- `browser--view_preview` at 390×844, then 360 and 414, confirming:
-  - H1 line 1 sits in the bottom-left pocket, hugging Sarah's hair
-  - H1 lines below the hair span the full column width — no right-side dead zone
-  - Trust pill, image (uncropped, full-bleed), CTA, bullets, trust bar all render correctly
+## Risk / fallback
+If the `shape-outside` triangle still leaves an awkward gap because the real hair silhouette isn't triangular, fallback is a two-step `shape-outside` using a polygon with 4–5 points traced from the actual image, or alternatively use `shape-outside: url(<hair-mask.png>)` with a transparent mask exported from the hero image. We'll only escalate to the mask approach if the polygon tuning can't get within ~8px of the hair edge.
