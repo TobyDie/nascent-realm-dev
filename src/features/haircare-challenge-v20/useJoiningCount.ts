@@ -7,6 +7,9 @@ const END = 2593;
 const START_HOUR = 12;              // Monday 12:00 WITA
 const TOTAL_HOURS = 7 * 24 - START_HOUR; // 156h until Sunday 24:00 WITA
 
+// Total spots per cohort (used for scarcity progress meter in Hero).
+export const COHORT_CAPACITY = 3000;
+
 export function computeJoiningCount(now: number = Date.now()): number {
   const d = new Date(now + 8 * 3600_000); // shift UTC -> WITA wall clock
   const witaDay = (d.getUTCDay() + 6) % 7; // Mon=0 .. Sun=6
