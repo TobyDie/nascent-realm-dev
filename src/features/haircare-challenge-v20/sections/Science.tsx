@@ -1,4 +1,5 @@
 import { Reveal, Eyebrow, Icon, StarRow, Button, Hand, Underline } from "../primitives";
+import { Ruler, Unlink } from "lucide-react";
 import { r2img } from "../img";
 
 export function Science() {
@@ -6,7 +7,7 @@ export function Science() {
     <section className="bg-white" id="science">
       <div className="wrap">
         <Reveal style={{ marginBottom: 28, textAlign: "center" }}>
-          <Eyebrow style={{ color: "var(--slate)" }}>WHY YOUR HAIR NEVER GETS LONGER</Eyebrow>
+          <Eyebrow>WHY YOUR HAIR NEVER GETS LONGER</Eyebrow>
           <h2 className="h2" style={{ marginTop: 12, maxWidth: 720, marginInline: "auto" }}>
             It's not your <span className="math-strike">genetics</span>. <em>Turns out, it's just simple <Underline>math</Underline>.</em>
           </h2>
@@ -17,19 +18,29 @@ export function Science() {
           <div className="math-formula" style={{ marginTop: 40 }}>
             <div className="math-eq" aria-label="Hair length equals growth minus breakage">
               <span className="math-term">
-                <span className="math-term-emoji">💇‍♀️</span>
+                <span className="math-term-emoji" aria-hidden="true">
+                  <Ruler size={28} strokeWidth={1.75} color="var(--orange-600)" />
+                </span>
                 <span className="math-term-word">Length</span>
                 <span className="math-term-sub">what you see</span>
               </span>
-              <span className="math-op">=</span>
+              <span className="math-op">
+                <span className="math-op-sym">=</span>
+                <span className="math-op-word">equals</span>
+              </span>
               <span className="math-term">
                 <span className="math-term-emoji">🌱</span>
                 <span className="math-term-word">Growth</span>
                 <span className="math-term-sub">~1 cm / month</span>
               </span>
-              <span className="math-op">−</span>
+              <span className="math-op">
+                <span className="math-op-sym">−</span>
+                <span className="math-op-word">minus</span>
+              </span>
               <span className="math-term">
-                <span className="math-term-emoji">✂️</span>
+                <span className="math-term-emoji" aria-hidden="true">
+                  <Unlink size={28} strokeWidth={1.75} color="var(--orange-600)" />
+                </span>
                 <span className="math-term-word">Breakage</span>
                 <span className="math-term-sub">the only part you control</span>
               </span>
@@ -40,7 +51,7 @@ export function Science() {
           </div>
         </Reveal>
 
-        <Reveal style={{ marginTop: 18, textAlign: "center" }}>
+        <Reveal style={{ marginTop: 36, marginBottom: -8, textAlign: "center" }}>
           <Hand color="#2C5BAA" size={22} rotate={-2}>
             ↳ spoiler: it's fixable
           </Hand>
