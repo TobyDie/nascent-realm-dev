@@ -96,7 +96,7 @@ export function SocialProof({ onCta }: { onCta?: () => void }) {
         <Reveal style={{ textAlign: "center", marginBottom: 20, maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
           <Eyebrow>The plateau wasn't real</Eyebrow>
           <h2 className="h2" style={{ margin: "12px 0 0", lineHeight: 1.2 }}>
-            Real women, finally seeing the length they were already growing - once they stopped the leak.
+            Real women, finally seeing the length once they learned the right technique.
           </h2>
         </Reveal>
 
