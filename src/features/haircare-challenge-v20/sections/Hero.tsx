@@ -1,5 +1,5 @@
 import { Anno, Reveal, Button, GuaranteeBadge, Icon, Trustpilot } from "../primitives";
-import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
+import { useJoiningCount } from "../useJoiningCount";
 import { r2img, AVATAR_W } from "../img";
 import { useStartDate, fmtShort } from "../useStartDate";
 
@@ -56,11 +56,38 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                 {"\n"}
               </span>
               <GuaranteeBadge size="sm" className="guarantee-not-cta" />
-              {/* cohort line - under CTA, not above headline */}
-              <span className="hero-cohort">
-                <Icon name="calendar-heart" size={13} color="var(--orange-600)" />
-                Next cohort: <strong className="start-date">{startDate ? fmtShort(startDate) : "Fri, June 6th"}</strong> · {formatJoiningCount(joining)} women joining this week
-              </span>
+              {/* cohort strip - two minimal blocks, no box */}
+              <div className="hero-cohort-strip" role="group" aria-label="Next cohort and community size">
+                <div className="hcs-block">
+                  <div className="hcs-eyebrow">
+                    <Icon name="calendar-heart" size={12} color="var(--orange-600)" />
+                    <span>Next cohort</span>
+                  </div>
+                  <div className="hcs-value start-date">
+                    {startDate ? fmtShort(startDate) : "Fri, June 6th"}
+                  </div>
+                </div>
+                <div className="hcs-block hcs-block-right">
+                  <div className="hcs-eyebrow">
+                    <span className="hcs-pulse" aria-hidden="true">
+                      <span className="hcs-pulse-ring" />
+                      <span className="hcs-pulse-dot" />
+                    </span>
+                    <span>Joining this week</span>
+                  </div>
+                  <div className="hcs-value-row">
+                    <div className="hcs-value hcs-count">
+                      {joining.toLocaleString("en-US")} <span className="hcs-count-sub">women</span>
+                    </div>
+                    <div className="hcs-avatars" aria-hidden="true">
+                      {HERO_AVATARS.slice(0, 4).map((file, i) => (
+                        <img key={i} src={r2img(file, AVATAR_W)} alt="" loading="lazy" decoding="async" />
+                      ))}
+                      <span className="hcs-avatar-more">+</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Bullets - proof layer, below the CTA */}
