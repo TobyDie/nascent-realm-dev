@@ -104,8 +104,8 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             </div>
             <div className="ct-community-text">
               <div className="ct-community-inline">
-                <span className="ct-num">250,000+</span>
-                <span className="ct-label">women have taken the challenge</span>
+                <span className="ct-num">250,000+ Women</span>
+                <span className="ct-label">have taken the challenge</span>
               </div>
             </div>
           </div>
