@@ -2092,8 +2092,6 @@
 /* ============================================================
    Hero H1 — Scale Contrast lockup (v20 only)
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Allura&display=swap');
-
 .hq-sp-v20 .hero-h1-stack {
   display: flex;
   flex-direction: column;
