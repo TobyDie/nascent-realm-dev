@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HaircareChallengePageV20 } from "@/features/haircare-challenge-v20/HaircareChallengePageV20";
-import { r2img, r2srcset, HERO_WIDTHS } from "@/features/haircare-challenge-v20/img";
 
 const HERO_SIZES = "(max-width: 720px) 100vw, (max-width: 860px) 90vw, 405px";
 
