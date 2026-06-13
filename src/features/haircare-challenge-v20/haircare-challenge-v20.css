@@ -2092,6 +2092,8 @@
 /* ============================================================
    Hero H1 — Scale Contrast lockup (v20 only)
    ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Allura&display=swap');
+
 .hq-sp-v20 .hero-h1-stack {
   display: flex;
   flex-direction: column;
@@ -2101,14 +2103,16 @@
   font-weight: 400;
 }
 .hq-sp-v20 .hero-h1-stack .hh-intro {
+  font-family: 'DM Sans', system-ui, sans-serif;
   font-size: 40px;
   font-weight: 400;
   line-height: 1;
   margin-bottom: 4px;
 }
 .hq-sp-v20 .hero-h1-stack .hh-key {
+  font-family: 'Cormorant Garamond', ui-serif, Georgia, serif;
   font-size: 76px;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 0.98;
 }
@@ -2122,26 +2126,27 @@
 }
 .hq-sp-v20 .hero-h1-stack .hh-payoff { color: #e97b00; }
 .hq-sp-v20 .hero-h1-stack .hh-sub {
-  font-size: 28px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 26px;
   font-weight: 500;
   color: var(--ink);
   line-height: 1.15;
   letter-spacing: -0.01em;
   margin-top: 22px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* Handwritten payoff line */
 .hq-sp-v20 .hero-h1-stack .hh-script {
   display: inline-block;
   position: relative;
-  font-family: 'Caveat', cursive;
+  font-family: 'Allura', 'Caveat', cursive;
   color: var(--orange-500);
-  font-weight: 600;
-  font-size: 72px;
+  font-weight: 400;
+  font-size: 80px;
   line-height: 1;
   letter-spacing: 0;
-  margin-top: 14px;
+  margin-top: 18px;
   align-self: flex-start;
   padding-right: 22px;
 }
