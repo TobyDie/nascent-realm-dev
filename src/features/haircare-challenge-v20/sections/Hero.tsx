@@ -24,7 +24,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
           <Reveal>
             {/* H1 - the single emotional hook, short enough for mobile */}
             <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
-              <span style={{ color: "#090909", fontWeight: 800 }}>Grow the longest, healthiest and shiniest hair of your life,&nbsp;</span>
+              <span style={{ color: "#090909", fontWeight: 800 }}>Grow the longest, healthiest, shiniest hair of your life,&nbsp;</span>
               <span style={{ color: "#e97b00", fontWeight: 800 }}>without giving up the color, heat, and styling you love.</span>
             </h1>
 
@@ -33,7 +33,7 @@ export function Hero({ onCta }: { onCta?: () => void }) {
             {/* Short supporting paragraph */}
             <p className="hero-supporting">
               Achieve waist-length hair, volume at the roots, thick at the ends and shines healthily.<br />
-              <strong>Just 10 min/Day for 14 days and you'll enjoy beautiful hair for decades to come.</strong>
+              <strong>Just 10 min/day for 14 days and you'll enjoy beautiful hair for decades to come.</strong>
             </p>
 
             {/* CTA block - must be above fold on mobile */}
