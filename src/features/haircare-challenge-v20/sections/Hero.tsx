@@ -22,6 +22,13 @@ export function Hero({ onCta }: { onCta?: () => void }) {
 
           {/* TEXT column */}
           <Reveal>
+            {/* Top-left handwritten trust note */}
+            <div className="hero-trust-note" aria-label="4.8 rating from 12,400 reviews">
+              <span className="hero-trust-stars">★★★★★</span>
+              <span className="hero-trust-num">4.8</span>
+              <span className="hero-trust-count">12,400</span>
+            </div>
+
             {/* H1 - the single emotional hook, short enough for mobile */}
             <h1 className="h-hero hero-h1" style={{ marginBottom: 12, color: "rgb(233, 123, 0)" }}>
               <span style={{ color: "#090909", fontWeight: 800 }}>Grow the longest, healthiest, shiniest hair of your life,&nbsp;</span>
