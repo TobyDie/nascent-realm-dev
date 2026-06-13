@@ -2124,15 +2124,53 @@
 .hq-sp-v20 .hero-h1-stack .hh-sub {
   font-size: 28px;
   font-weight: 500;
-  color: #e97b00;
+  color: var(--ink);
   line-height: 1.15;
   letter-spacing: -0.01em;
-  margin-top: 10px;
+  margin-top: 22px;
+  font-weight: 400;
+}
+
+/* Handwritten payoff line */
+.hq-sp-v20 .hero-h1-stack .hh-script {
+  display: inline-block;
+  position: relative;
+  font-family: 'Caveat', cursive;
+  color: var(--orange-500);
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 1;
+  letter-spacing: 0;
+  margin-top: 14px;
+  align-self: flex-start;
+  padding-right: 22px;
+}
+.hq-sp-v20 .hero-h1-stack .hh-script-text { display: inline-block; }
+.hq-sp-v20 .hero-h1-stack .hh-script-underline {
+  position: absolute;
+  left: 0;
+  right: 22px;
+  bottom: -14px;
+  width: calc(100% - 22px);
+  height: 16px;
+  color: var(--orange-500);
+  pointer-events: none;
+}
+.hq-sp-v20 .hero-h1-stack .hh-script-spark {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
+  color: var(--orange-500);
+  pointer-events: none;
 }
 
 @media (max-width: 640px) {
   .hq-sp-v20 .hero-h1-stack .hh-intro { font-size: 32px !important; }
   .hq-sp-v20 .hero-h1-stack .hh-key   { font-size: 56px !important; }
   .hq-sp-v20 .hero-h1-stack .hh-tail  { font-size: 36px !important; }
-  .hq-sp-v20 .hero-h1-stack .hh-sub   { font-size: 22px !important; }
+  .hq-sp-v20 .hero-h1-stack .hh-sub   { font-size: 20px !important; margin-top: 20px !important; }
+  .hq-sp-v20 .hero-h1-stack .hh-script { font-size: 56px !important; margin-top: 10px !important; }
+  .hq-sp-v20 .hero-h1-stack .hh-script-spark { width: 18px; height: 18px; }
 }
