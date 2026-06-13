@@ -1,61 +1,78 @@
 ## Goal
 
-Replace the current single text line ("Next cohort: Sun, June 14th · 2,364 women joining this week") that gets lost in the wall of text with a minimal, two-block, openly-laid-out cohort strip — no border, no card, no extra vertical real estate, and a subtle feminine "live community" animation.
+Make the cohort strip impossible to miss while staying minimal and on-brand. Replace the current quiet two-block label/value layout with a **live, gamified scarcity bar** — a thin gradient progress meter, a live-pulsing tick-up counter, a "just joined" micro-ticker, and a small avatar cluster. Free vertical space by removing the redundant GuaranteeBadge under the hero CTA.
 
-## Scope
+## Files to change
 
-- File: `src/features/haircare-challenge-v20/sections/Hero.tsx` — replace the `<span className="hero-cohort">…</span>` block (lines 60–63) only.
-- File: `src/features/haircare-challenge-v20/haircare-challenge-v20.css` — replace `.hero-cohort` rule (line 264) and its mobile override (line 1370) with new `.hero-cohort-strip` rules.
-- No changes to other sections, no new dependencies, no extra Reveal animations on first paint.
+1. `src/features/haircare-challenge-v20/sections/Hero.tsx`
+  - Remove the `<GuaranteeBadge size="sm" className="guarantee-not-cta" />` line directly under the CTA (final-CTA guarantee remains untouched, this one is duplicative — guarantee already lives inside the CTA button area visually and is repeated near final-cta).
+  - Replace the current `.hero-cohort-strip` block with the new gamified strip described below.
+  - Add a small local `useEffect` to drive the live tick-up.
+2. `src/features/haircare-challenge-v20/haircare-challenge-v20.css`
+  - Replace `.hero-cohort-strip` and `.hcs-*` rules + the mobile overrides with the new `.live-cohort` ruleset.
+3. `src/features/haircare-challenge-v20/useJoiningCount.ts`
+  - No behavior change; just expose a derived `COHORT_CAPACITY = 3000` constant alongside existing exports so progress % is computed in one place.
 
-## New layout (no box, no border, no background fill)
+No new packages, no new files, no Reveal wrappers (must render instantly above the fold).
 
-Two side-by-side blocks separated by generous space, each with a small label-on-top + value-below stack. Mobile keeps the same two columns; only font sizes shrink.
+## New strip — anatomy (mobile-first, ~64px tall)
 
 ```text
- 📅  NEXT COHORT               ●  JOINING THIS WEEK
-     Sun, June 14th                2,364 women
-                                   ◖◗◖◗◖◗ +
+ 🟢 LIVE  ·  Next community batch starts sun, june 14th                 ▲ 12 joined in the last hour
+ ────────────────────────────────────────────────── 
+ [👤][👤][👤][👤]+   2,364 women have joined
 ```
 
-Left block:
-- Tiny calendar-heart icon (existing `Icon name="calendar-heart"`) in orange.
-- Eyebrow label "NEXT COHORT" — 10.5px, uppercase, letter-spaced, `--slate-soft`.
-- Value "Sun, June 14th" — 14.5px, `--ink`, font-weight 700, serif (var(--font-serif)) for a feminine editorial feel.
+Three short rows, no borders, no card, sits flush in the hero column under the CTA. The whole strip has `margin-top: 14px` and no padding.
 
-Right block:
-- A small live "pulse dot" (8px green `--trust-green` circle with a CSS `@keyframes` ping ring expanding + fading every 2.2s) instead of a bullet.
-- Eyebrow label "JOINING THIS WEEK".
-- Value: animated counter `2,364 women` — CSS-only subtle count-up (uses `@property --n` + `counter-reset` trick) that runs once on mount over ~1.8s, from `2,340` → real value. Falls back to static number when `@property` is unsupported.
-- Below the number: a tiny row of 4 overlapping mini avatars (16px circles, reuse first 4 entries from `HERO_AVATARS`) + a `+` chip — purely decorative, no extra height because it sits inline with the eyebrow's line-height budget on the right column.
+### Row 1 — live eyebrow (single line, space-between)
 
-## Visual / motion details
+Left: green `.live-cohort-pulse` dot (8px) with a 2.2s ping ring + the label `Live · cohort fills` in 10.5px uppercase tracked `--slate-soft`, followed by the date `Sun, June 14th` in serif italic 12.5px `--ink`.
 
-- Container: `display: grid; grid-template-columns: auto 1fr; column-gap: 28px; align-items: start;` — no border, no background, no padding, sits directly under the GuaranteeBadge with `margin-top: 10px`.
-- Eyebrow rows use `display:flex; gap:6px; align-items:center` so the icon/dot sits inline with the label.
-- Pulse dot animation: two stacked spans — solid dot + absolutely-positioned ring that scales 1→2.4 and fades 0.6→0 in a 2.2s infinite loop, `prefers-reduced-motion: reduce` disables it.
-- Count-up: implemented via `@property --joining { syntax:'<integer>'; inherits:false; initial-value:0; }` and a 1.8s ease-out transition triggered by adding `.is-live` class in a `useEffect` on mount; number shown via `counter(joining)`. Reduced-motion users get the final value with no transition.
-- Mini avatars: `.hero-cohort-avatars` flex row, each `<img>` 18px, `border-radius:999px`, `border:1.5px solid var(--cream)`, negative `margin-left:-6px` from the second onward. Lazy-loaded.
-- No `Reveal` wrapper — must render immediately so LCP/above-fold layout doesn't shift.
+Right (mobile: wraps under on ≤360px): a tiny "just joined" chip — `↑ 12 joined in the last hour` in 11px `--orange-700`, no background. The number animates +1 every 18–28s (randomized) with a `scale(1)→1.18→1` pop and re-settles; resets when it crosses 30.
 
-## Vertical space budget
+### Row 2 — scarcity progress bar (full width, 5px tall)
 
-Current single line is ~18px tall. New strip is two short text rows (~14px label + ~18px value) per side ≈ 36px, but it replaces both the cohort line AND visually subsumes information already implied elsewhere, so the section grows by ~18px on desktop and ~14px on mobile only. Mini-avatar row on the right sits on the same line as the value via inline-flex with no added height (avatars are 16–18px, same as the value baseline). Net vertical increase: negligible on mobile (≤8px after font-size shrink), within the user's "don't grow vertical space" guardrail.
+A hairline track in `rgba(0,0,0,0.06)` with a gradient fill `linear-gradient(90deg, var(--orange-100), var(--orange-500), var(--orange-700))` and a soft glow `box-shadow: 0 0 6px rgba(232,98,42,0.45)`. Width animates from `0%` to the real percentage (`joining / 3000 * 100`) over 1.4s `cubic-bezier(.2,.7,.2,1)` once on mount.
 
-## Mobile rules (≤640px)
+Right of the bar: a small `78%` label, 11px tabular-nums, `--slate`. The percent number also animates (CSS `transition` on a JS-updated value).
 
-- Same two-column grid, `column-gap: 18px`.
-- Eyebrow 9.5px, value 13.5px, dot 6px, avatars 14px.
-- Mini-avatar row hides past 360px width (`@media (max-width: 360px)`) so the right column never wraps "week" as an orphan again.
+A subtle moving sheen sweeps left→right across the filled portion every 4s (`::after` with a linear-gradient highlight, 18% width, translating from -30% to 130%) to telegraph "live filling". Disabled under `prefers-reduced-motion`.
 
-## Data wiring
+### Row 3 — proof line
 
-- Keep `useStartDate()` for the date (already imported); format via `fmtShort`.
-- Keep `useJoiningCount()` for the number; drop `formatJoiningCount` wrapper and render `{count.toLocaleString()} women`.
-- Reuse first 4 entries of `HERO_AVATARS` already declared at top of `Hero.tsx`.
+Left: overlapping mini avatars (5 round 22px images from `HERO_AVATARS`, `-8px` overlap, 1.5px `--cream` ring) + a `+` chip.
 
-## Out of scope
+Right of avatars (same line): `**2,364** of 3,000 women have joined` — number in serif 18px `--ink` weight 700 tabular-nums, the rest in 12.5px sans `--slate`. The big number gets a subtle `pop` animation each time the live tick fires (synced with row 1's "+X joined").
 
-- No changes to the GuaranteeBadge, CTA button, or any text/copy above the strip.
-- No changes to the final-CTA cohort line (different section).
-- No new files, no new packages.
+## Live behavior (no backend, deterministic-feeling but lightweight)
+
+- Base count comes from existing `useJoiningCount()` (already updates each minute).
+- Add a local `useEffect` that, every 14–26s (randomized), increments a `localBump` state by 1, plays the pop animation, and pushes the "+X joined in the last hour" number up by 1. Every 60s, decay that "last hour" number by 1 toward 0 so it feels organic and never balloons.
+- Displayed count = `useJoiningCount() + localBump`. When `useJoiningCount()` ticks the next minute, reset `localBump` to 0 so we never exceed real ramp drift.
+- All animations honor `prefers-reduced-motion`.
+
+## Color & spacing revision
+
+- Use brand orange ramp (no new colors): track on neutral, fill on brand gradient, percent in slate, live dot in `--trust-green`.
+- Generous breathing room: `gap: 10px` between rows on mobile, `12px` desktop.
+- Typography: row 1 eyebrow tracked uppercase, row 2 numeric, row 3 mixes serif emphasis (the count number) with sans to draw the eye. This is the only place in the hero block that uses serif at body size, so it stands out.
+- No box, no border, no background fill anywhere — relies on the progress bar and pulse motion to anchor attention.
+
+## Vertical budget
+
+Removing the hero GuaranteeBadge frees ~28–34px on mobile. New strip is ~60–66px tall (three short lines + 5px bar + 6px gaps). Net change: roughly neutral on mobile (≤6px more), zero or negative on desktop. Well within the "don't grow vertical space" guardrail.
+
+## Edge cases / safety
+
+- Avatars hidden on `< 340px` viewports (already done in current rule, kept).
+- Progress bar capped at 100%; if `joining > 3000`, label switches to `cohort full · join the waitlist` (still no background, just text color shifts to `--orange-700`).
+- All timers cleaned up on unmount.
+- `useReducedMotion` check: no pop, no sheen, no ping; progress bar still renders at final width but skips the width transition.
+
+## Explicitly out of scope
+
+- The desktop layout / image column on /20 — untouched.
+- Other sales pages (v17/v18/v19) — untouched, per page-fork rule.
+- Final-CTA cohort line further down the page — untouched.
+- The GuaranteeBadge component itself — only the hero usage is removed; component remains for FinalCta which still uses it.
