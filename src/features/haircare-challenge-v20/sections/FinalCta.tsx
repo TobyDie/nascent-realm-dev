@@ -1,5 +1,5 @@
 import { Anno, Button, Eyebrow, GuaranteeBadge, Icon, Reveal, Trustpilot } from "../primitives";
-import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
+import { useLiveJoiningCount as useJoiningCount, formatJoiningCount } from "../useJoiningCount";
 import { useStartDate, fmtLongDay, fmtMonthDay } from "../useStartDate";
 
 export function FinalCta({ onCta }: { onCta?: () => void }) {

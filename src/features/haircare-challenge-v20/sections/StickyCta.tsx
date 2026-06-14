@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "../primitives";
-import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
+import { useLiveJoiningCount, formatJoiningCount } from "../useJoiningCount";
 import { useStartDate, fmtShort } from "../useStartDate";
 
 // Countdown to the next 10:00 / 22:00 WITA (UTC+8) boundary.
@@ -39,7 +39,7 @@ function useCountdown() {
 export function StickyCta({ onCta }: { onCta?: () => void }) {
   const [show, setShow] = useState(false);
   const countdown = useCountdown();
-  const joining = useJoiningCount();
+  const joining = useLiveJoiningCount();
   const startDate = useStartDate();
 
   useEffect(() => {

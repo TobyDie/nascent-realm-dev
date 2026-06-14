@@ -33,3 +33,42 @@ export function useJoiningCount(): number {
   }, []);
   return n;
 }
+
+// Shared "live bump" so Hero, StickyCta, WhatsIncluded and FinalCta
+// all display the SAME joining count (base + live bumps).
+let liveBump = 0;
+const bumpListeners = new Set<(n: number) => void>();
+let tickerStarted = false;
+
+function startTicker() {
+  if (tickerStarted || typeof window === "undefined") return;
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;
+  tickerStarted = true;
+  const schedule = () => {
+    const delay = 14000 + Math.random() * 12000;
+    setTimeout(() => {
+      liveBump += 1;
+      bumpListeners.forEach((l) => l(liveBump));
+      schedule();
+    }, delay);
+  };
+  schedule();
+}
+
+export function useLiveJoiningCount(): number {
+  const base = useJoiningCount();
+  const [bump, setBump] = useState<number>(liveBump);
+  useEffect(() => {
+    startTicker();
+    bumpListeners.add(setBump);
+    setBump(liveBump);
+    return () => { bumpListeners.delete(setBump); };
+  }, []);
+  // Reset bump when base advances (every minute the base may tick up).
+  useEffect(() => {
+    liveBump = 0;
+    bumpListeners.forEach((l) => l(0));
+  }, [base]);
+  return base + bump;
+}

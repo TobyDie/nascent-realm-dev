@@ -10,7 +10,7 @@ import {
   Reveal,
   Underline,
 } from "../primitives";
-import { useJoiningCount, formatJoiningCount } from "../useJoiningCount";
+import { useLiveJoiningCount as useJoiningCount, formatJoiningCount } from "../useJoiningCount";
 import { useStartDate, fmtShort } from "../useStartDate";
 
 export function WhatsIncluded({ onCta }: { onCta?: () => void }) {
