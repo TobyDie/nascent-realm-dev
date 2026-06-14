@@ -150,8 +150,8 @@ export function Recognition() {
             {ITEMS.map((b, i) => {
               const Glyph = GLYPHS[i];
               return (
-                <Reveal key={i} delay={i * 80} className={`cycle-card side-${i % 2 === 0 ? "l" : "r"}`} data-variant={i + 1}>
-                  <div className="cycle-card-inner">
+                <Reveal key={i} delay={i * 80} className={`cycle-card side-${i % 2 === 0 ? "l" : "r"} cycle-v${i + 1}`}>
+                  <div className="cycle-card-inner" data-variant={i + 1}>
                     <span className="cycle-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
                     <div className="cycle-node" aria-hidden="true">
                       <Glyph />
