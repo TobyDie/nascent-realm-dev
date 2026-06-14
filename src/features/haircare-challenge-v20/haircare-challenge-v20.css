@@ -2406,6 +2406,125 @@
 .hq-sp-v20 .cycle-arrow { color: var(--orange-600); display: inline-flex; }
 .hq-sp-v20 .cycle-arrow-svg { width: 32px; height: 18px; margin-top: 2px; }
 
+/* ===== Per-card variants — break visual monotony ===== */
+/* Card 1 — cream/ivory baseline */
+.hq-sp-v20 .cycle-card-inner[data-variant="1"] {
+  background: #fffaf3;
+  border-color: color-mix(in oklab, var(--orange-500) 18%, var(--line));
+}
+.hq-sp-v20 .cycle-v1 .cycle-card-inner { transform: rotate(-.6deg); }
+.hq-sp-v20 .cycle-v1 .cycle-node { border-color: var(--orange-500); }
+
+/* Card 2 — soft lavender, number top-left, slight right nudge */
+.hq-sp-v20 .cycle-card-inner[data-variant="2"] {
+  background: #f4f1fb;
+  border-color: color-mix(in oklab, #8a72c8 22%, var(--line));
+  margin-left: 10px;
+  padding-top: 26px;
+}
+.hq-sp-v20 .cycle-v2 .cycle-card-inner { transform: rotate(.7deg); }
+.hq-sp-v20 .cycle-card-inner[data-variant="2"] .cycle-num {
+  right: auto;
+  left: 14px;
+  top: 8px;
+  font-size: 40px;
+  -webkit-text-stroke-color: #8a72c8;
+  transform: rotate(-4deg);
+}
+.hq-sp-v20 .cycle-card-inner[data-variant="2"] .cycle-body { padding-right: 0; padding-top: 28px; }
+.hq-sp-v20 .cycle-card-inner[data-variant="2"] .cycle-accent {
+  background: linear-gradient(0deg, color-mix(in oklab, #8a72c8 14%, transparent), color-mix(in oklab, #8a72c8 14%, transparent)) no-repeat;
+  background-size: 100% 60%;
+  background-position: 0 100%;
+}
+.hq-sp-v20 .cycle-v2 .cycle-node { border-color: #8a72c8; color: #6b4fb0; }
+
+/* Card 3 — climax: warm blush, full-bleed accent, bigger number, deeper shadow */
+.hq-sp-v20 .cycle-card-inner[data-variant="3"] {
+  background: #fdeee6;
+  border-color: color-mix(in oklab, #d65a35 28%, var(--line));
+  padding: 28px 26px 0 26px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 24px 40px -22px rgba(214,90,53,.35);
+  overflow: hidden;
+}
+.hq-sp-v20 .cycle-v3 .cycle-card-inner { transform: rotate(-.3deg) scale(1.015); }
+.hq-sp-v20 .cycle-card-inner[data-variant="3"] .cycle-num {
+  font-size: 60px;
+  -webkit-text-stroke-width: 1.8px;
+  -webkit-text-stroke-color: #d65a35;
+  opacity: 1;
+  top: 14px;
+  right: 20px;
+}
+.hq-sp-v20 .cycle-card-inner[data-variant="3"] .cycle-accent {
+  margin: 14px -26px 0 -26px;
+  padding: 14px 26px 16px 26px;
+  border-radius: 0 0 16px 16px;
+  background: linear-gradient(0deg, #fbd9c9, #fbd9c9) no-repeat;
+  background-size: 100% 100%;
+}
+.hq-sp-v20 .cycle-v3 .cycle-node { border-color: #d65a35; color: #b04020; background: #fff3ec; transform: scale(1.1); }
+.hq-sp-v20 .cycle-wrap.in .cycle-v3 .cycle-node { transform: scale(1.1); }
+
+/* Card 4 — pale sand, number inline-small, accent becomes left-border quote */
+.hq-sp-v20 .cycle-card-inner[data-variant="4"] {
+  background: #f7f1e6;
+  border-color: color-mix(in oklab, #b08a5c 22%, var(--line));
+  padding-top: 20px;
+}
+.hq-sp-v20 .cycle-v4 .cycle-card-inner { transform: rotate(.5deg); }
+.hq-sp-v20 .cycle-card-inner[data-variant="4"] .cycle-num {
+  position: static;
+  display: inline-block;
+  font-size: 26px;
+  margin-right: 10px;
+  vertical-align: -2px;
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: #a87a44;
+  opacity: 1;
+}
+.hq-sp-v20 .cycle-card-inner[data-variant="4"] .cycle-body { padding-right: 8px; }
+.hq-sp-v20 .cycle-card-inner[data-variant="4"] .cycle-lead { display: inline; }
+.hq-sp-v20 .cycle-card-inner[data-variant="4"] .cycle-accent {
+  background: none;
+  border-left: 3px solid #a87a44;
+  border-radius: 0;
+  padding: 4px 0 4px 12px;
+  margin-left: 2px;
+}
+.hq-sp-v20 .cycle-v4 .cycle-node { border-color: #a87a44; color: #7a5a2e; }
+
+/* Card 5 — resignation tone: off-white, huge faint watermark number, italic only accent */
+.hq-sp-v20 .cycle-card-inner[data-variant="5"] {
+  background: #f5f4f1;
+  border-color: color-mix(in oklab, #8a8275 30%, var(--line));
+  margin-right: 14px;
+  overflow: hidden;
+}
+.hq-sp-v20 .cycle-v5 .cycle-card-inner { transform: rotate(-.5deg); }
+.hq-sp-v20 .cycle-card-inner[data-variant="5"] .cycle-num {
+  font-size: 120px;
+  top: -10px;
+  right: -8px;
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: color-mix(in oklab, #8a8275 55%, transparent);
+  opacity: .35;
+  z-index: 0;
+}
+.hq-sp-v20 .cycle-card-inner[data-variant="5"] .cycle-body { position: relative; z-index: 1; }
+.hq-sp-v20 .cycle-card-inner[data-variant="5"] .cycle-accent {
+  background: none;
+  padding: 4px 0;
+  border-radius: 0;
+  color: #5a544a;
+}
+.hq-sp-v20 .cycle-v5 .cycle-node { border-color: #8a8275; color: #5a544a; }
+
+/* Vary vertical spacing between cards — break the metronome */
+.hq-sp-v20 .cycle-list > .cycle-card + .cycle-v2 { margin-top: -6px; }
+.hq-sp-v20 .cycle-list > .cycle-card + .cycle-v4 { margin-top: 14px; }
+.hq-sp-v20 .cycle-list > .cycle-card + .cycle-v5 { margin-top: 18px; }
+
 /* Closing loop arrow — the trap repeats */
 .hq-sp-v20 .cycle-loop {
   position: absolute;
@@ -2438,6 +2557,18 @@
   .hq-sp-v20 .cycle-accent { font-size: 14.5px; grid-template-columns: 30px 1fr; }
   .hq-sp-v20 .cycle-arrow-svg { width: 26px; height: 16px; }
   .hq-sp-v20 .cycle-loop svg { width: 220px; }
+  /* Mobile: keep color variation, drop rotations & horizontal offsets */
+  .hq-sp-v20 .cycle-card-inner { margin-left: 0 !important; margin-right: 0 !important; }
+  .hq-sp-v20 .cycle-v1 .cycle-card-inner,
+  .hq-sp-v20 .cycle-v2 .cycle-card-inner,
+  .hq-sp-v20 .cycle-v3 .cycle-card-inner,
+  .hq-sp-v20 .cycle-v4 .cycle-card-inner,
+  .hq-sp-v20 .cycle-v5 .cycle-card-inner { transform: none; }
+  .hq-sp-v20 .cycle-card-inner[data-variant="3"] { padding: 22px 18px 0 18px; }
+  .hq-sp-v20 .cycle-card-inner[data-variant="3"] .cycle-num { font-size: 46px; top: 10px; right: 14px; }
+  .hq-sp-v20 .cycle-card-inner[data-variant="3"] .cycle-accent { margin: 12px -18px 0 -18px; padding: 12px 18px 14px 18px; }
+  .hq-sp-v20 .cycle-card-inner[data-variant="5"] .cycle-num { font-size: 96px; top: -6px; right: -4px; }
+  .hq-sp-v20 .cycle-card-inner[data-variant="2"] .cycle-num { font-size: 34px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hq-sp-v20 .cycle-strand { stroke-dashoffset: 0; transition: none; }
