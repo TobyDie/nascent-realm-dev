@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Anno, Reveal, Button, Icon, Trustpilot } from "../primitives";
-import { useJoiningCount } from "../useJoiningCount";
+import { useJoiningCount, useLiveJoiningCount } from "../useJoiningCount";
 import { r2img, AVATAR_W } from "../img";
 import { useStartDate, fmtShort } from "../useStartDate";
 
@@ -11,8 +11,8 @@ const HERO_AVATARS: string[] = [
 
 export function Hero({ onCta }: { onCta?: () => void }) {
   const joining = useJoiningCount();
+  const displayed = useLiveJoiningCount();
   const startDate = useStartDate();
-  const [localBump, setLocalBump] = useState(0);
   const [lastHour, setLastHour] = useState(8);
   const [pop, setPop] = useState(0);
 
@@ -26,7 +26,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
       const delay = 14000 + Math.random() * 12000;
       return setTimeout(() => {
         if (cancelled) return;
-        setLocalBump((b) => b + 1);
         setLastHour((h) => Math.min(h + 1, 28));
         setPop((p) => p + 1);
         t = schedule();
@@ -36,11 +35,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
     const decay = setInterval(() => setLastHour((h) => (h > 4 ? h - 1 : h)), 60000);
     return () => { cancelled = true; clearTimeout(t); clearInterval(decay); };
   }, []);
-
-  // Reset localBump when the minute-level base count advances.
-  useEffect(() => { setLocalBump(0); }, [joining]);
-
-  const displayed = joining + localBump;
 
   return (
     <section className="bg-cream hero-section" style={{ paddingTop: 48, paddingBottom: 0 }}>
