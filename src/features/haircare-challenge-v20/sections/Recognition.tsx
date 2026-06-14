@@ -150,8 +150,8 @@ export function Recognition() {
             {ITEMS.map((b, i) => {
               const Glyph = GLYPHS[i];
               return (
-                <Reveal key={i} delay={i * 80} className={`cycle-card side-${i % 2 === 0 ? "l" : "r"}`}>
-                  <div className="cycle-card-inner">
+                <Reveal key={i} delay={i * 80} className={`cycle-card side-${i % 2 === 0 ? "l" : "r"} cycle-v${i + 1}`}>
+                  <div className="cycle-card-inner" data-variant={i + 1}>
                     <span className="cycle-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
                     <div className="cycle-node" aria-hidden="true">
                       <Glyph />
@@ -168,15 +168,6 @@ export function Recognition() {
                 </Reveal>
               );
             })}
-          </div>
-
-          {/* Closing loop — the trap completes back to the top */}
-          <div className="cycle-loop" aria-hidden="true">
-            <svg viewBox="0 0 240 90" fill="none">
-              <path d="M20 20 C 20 70, 220 70, 220 20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeDasharray="5 5"/>
-              <path d="M20 20l-5 8M20 20l5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-              <text x="120" y="55" textAnchor="middle" className="cycle-loop-label">the loop repeats</text>
-            </svg>
           </div>
         </div>
 
