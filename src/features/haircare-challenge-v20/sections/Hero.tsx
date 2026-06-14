@@ -59,9 +59,6 @@ export function Hero({ onCta }: { onCta?: () => void }) {
                   <path d="M2 7 Q 75 1, 150 6 T 298 5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
                   <path d="M4 14 Q 80 9, 155 13 T 296 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
-                <svg className="hh-script-spark" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 2 L12 9 M4 12 L10 12 M19 6 L15 10 M19 18 L15 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                </svg>
               </span>
               <span className="hh-sub">{"\n"}</span>
             </h1>
