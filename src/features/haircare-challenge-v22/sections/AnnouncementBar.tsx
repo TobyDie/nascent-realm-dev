@@ -6,10 +6,10 @@ export function AnnouncementBar() {
       <Marquee
         variant="bar"
         items={[
-          "JOIN 250,000+ WOMEN",
-          "RESULTS OR YOUR MONEY BACK",
-          "NO PRODUCTS TO BUY",
-          "149 COUNTRIES",
+          "HEALTHIER HAIR GUARANTEED",
+          "FREE 14-DAY CHALLENGE",
+          "HEALTHIER HAIR GUARANTEED",
+          "FREE 14-DAY CHALLENGE",
         ]}
       />
     </div>

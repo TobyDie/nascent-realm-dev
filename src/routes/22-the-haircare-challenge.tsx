@@ -17,7 +17,7 @@ export const Route = createFileRoute("/22-the-haircare-challenge")({
       { rel: "canonical", href: "https://glow.hairqare.co/22-the-haircare-challenge" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;700&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@700;800;900&family=Inter:wght@400;500;700&display=swap" },
     ],
   }),
   component: ListiclePageV22,
