@@ -1,42 +1,66 @@
-## Goal
-On `/20-the-haircare-challenge`, the 5 cards in "What's actually happening" feel repetitive — same card color, same layout, same rhythm. Users skim past. Make each card visually distinct so the eye is forced to slow down and read. Also remove the "the loop repeats" closing doodle.
+# Plan: /22-the-haircare-challenge — Listicle Landing Page
 
-No copy changes. Only the 5 cards in `Recognition.tsx` + scoped CSS in `haircare-challenge-v20.css`.
+Build a brand-new, fully isolated route at `/22-the-haircare-challenge` implementing the "5 Reasons Women Are Finally Quitting Expensive Hair Products" listicle brief. Per project memory, this page is completely forked — no shared section files, no shared CSS, no shared hooks with v17–v21.
 
-## Changes
+## Isolation rules (per project memory)
+- All code lives under `src/features/haircare-challenge-v22/`.
+- CSS root scope: `.hq-sp-v22` (every selector prefixed with it).
+- Route file imports ONLY from `src/features/haircare-challenge-v22/`.
+- No edits to any other page, feature folder, or shared component.
 
-### 1. Per-card color variation (break monotony)
-Add a `data-variant="1..5"` attribute to each `.cycle-card`. Each variant gets its own scoped palette (card background tint, accent box tint, number color shade, glyph node ring tint) — all pulled from the existing v20 warm/peach/cream/lavender system so it stays on-brand.
+## File structure
 
-- Card 1 — cream/ivory base, soft peach accent box
-- Card 2 — soft lavender base, dusty rose accent box
-- Card 3 — warm blush base, terracotta accent box (heaviest — escalation peak)
-- Card 4 — pale sand base, muted clay accent box
-- Card 5 — off-white with subtle gray wash, faded peach accent box (resignation tone)
+```text
+src/routes/22-the-haircare-challenge.tsx          (route + head/SEO metadata)
+src/features/haircare-challenge-v22/
+  ListiclePageV22.tsx                              (page composition)
+  listicle-v22.css                                 (all styles, scoped to .hq-sp-v22)
+  primitives.tsx                                   (Placeholder image, Stars, CtaButton, Marquee)
+  sections/
+    AnnouncementBar.tsx        (S4 marquee bar — top)
+    Nav.tsx                    (logo + links + hairline)
+    FloatingChip.tsx           (sticky testimonial chip, appears after 400px scroll)
+    Hero.tsx                   (S5: eyebrow, H1, lede, CTA, stars, hero image)
+    RiskStrip.tsx              (thin accent-soft band)
+    Reason.tsx                 (shared reason block: eyebrow/number/headline/image/body/optional quote)
+    Reasons.tsx                (renders R1–R5 with the exact copy from the brief)
+    Transition.tsx             (S11 program pivot)
+    Stats.tsx                  (S12 — 3 stat blocks, __% placeholders)
+    ResultCards.tsx            (S13 — 4 transformation cards w/ placeholder images, real quotes + tags)
+    BottomCta.tsx              (S14 marquee + final button)
+    Footer.tsx                 (S15 email capture + links + logo)
+    StickyMobileCta.tsx        (mobile-only bottom bar)
+```
 
-Number outline color and glyph ring also tint per variant so the eye registers "different card" instantly.
+## Route + SEO (`src/routes/22-the-haircare-challenge.tsx`)
+- `createFileRoute("/22-the-haircare-challenge")`
+- `head()` with unique title, description, og:*, twitter:*, canonical = `https://glow.hairqare.co/22-the-haircare-challenge` (per project convention).
+- Title: `5 Reasons Women Are Finally Quitting Expensive Hair Products | Hairqare`
+- Description: lede line from the brief, trimmed to <160 chars.
+- Renders `<ListiclePageV22 />`.
 
-### 2. Break the isometric structure
-Right now every card is the same width, same padding, same internal layout (number top-right, lead → neutral → accent stacked identically). Introduce variation that's still cohesive:
+## Design system (in `listicle-v22.css`, all under `.hq-sp-v22`)
+- CSS custom props: `--bg #FFFDFB`, `--surface #FFFFFF`, `--ink #1E1A17`, `--body #4A433D`, `--muted #8A817A`, `--accent #D86B4A`, `--accent-deep #B4502F`, `--accent-soft #FBE7DE`, `--star #E8A33D`, `--line #EDE6DF`, plus radius/shadow tokens.
+- Container: max-width 640px desktop, 20/24px side padding, mobile-first.
+- Full-bleed images break out via negative margins to the viewport.
+- Typography: Archivo 800 for H1/reason headlines, Inter 400/700 for body/eyebrow. Fonts loaded via `<link>` tags injected from the page component head — local to v22 only (no global font changes).
+- Section gap: 64px mobile / 88px desktop.
+- Marquee: CSS `@keyframes` translateX, ~25s linear infinite, two duplicated tracks for seamless loop.
+- Buttons: pill, full-width on mobile, accent bg, hover -> accent-deep.
 
-- **Card 1**: current layout (baseline anchor).
-- **Card 2**: number moves to top-left, slight rotation (-2°); card itself nudged 6px right.
-- **Card 3**: full-bleed accent box (extends edge-to-edge inside the card), bigger number, card slightly wider with a soft shadow lift — this is the climax card.
-- **Card 4**: number shrunk and inlined next to the lead text; accent box becomes a left-border quote style (no fill, thick left border) instead of filled pill.
-- **Card 5**: card slightly narrower and shifted left; number rendered huge as a faint background watermark behind the text; accent box italic only, no background.
+## Content
+- All copy pasted verbatim from the brief (eyebrows, numbers 01–05, "Because…" headlines, body paragraphs, quote blocks for R1 + R4).
+- Image placeholders use `placehold.co/{W}x{H}/FBE7DE/D86B4A?text=…` URLs at exact dimensions specified per section, with the brief's alt text.
+- Data-pull slots (S12 stats, S13 result-card photos) kept as `__%` and placeholder images; real quotes from brief slotted into the 4 cards with the tag pills.
+- All 4 CTAs (+ sticky mobile bar) point to a single `CTA_URL` const = `https://join.hairqare.co/the-quiz-haircare` (matching the convention used by sibling pages; trivially swappable later).
 
-Each card stays recognizably part of the same family (same font, same strand connection, same glyph node) but the rhythm changes every row so the eye has to re-orient.
-
-Slight rotation (±1–2°) on alternating cards and varied vertical spacing between cards (tighter between 1–2, looser between 3–4) further breaks the metronome feel.
-
-### 3. Remove "the loop repeats"
-Delete the `.cycle-loop` SVG + Caveat-font label block at the bottom of the section. The closing strand curve and CTA flow stay; only the doodle arrow + handwritten text are removed.
-
-## Files
-- `src/features/haircare-challenge-v20/sections/Recognition.tsx` — add `data-variant` to each card, restructure cards 2–5 per above, remove `.cycle-loop` block.
-- `src/features/haircare-challenge-v20/haircare-challenge-v20.css` — add `.cycle-card[data-variant="N"]` rules (bg, accent, number color, transform, padding, shadow); adjust mobile breakpoint so variations degrade gracefully (drop rotations and offsets under 720px, keep color variation).
+## Behavior
+- Floating chip: `useEffect` listens to scroll, toggles visibility after `window.scrollY > 400`.
+- Sticky mobile CTA: visible only `< 768px`, appears after hero scrolls past (IntersectionObserver on hero sentinel).
+- Reduced motion: marquee animation paused under `prefers-reduced-motion`.
 
 ## Out of scope
-- No copy changes.
-- No changes to the connecting strand SVG or glyph icons themselves.
-- No changes to other sections or other v17/v19/v21 pages.
+- No real assets uploaded (placeholders only — per brief).
+- No live stat numbers or real card photos (data-pull slots).
+- No edits to `__root.tsx`, other routes, or any sibling `haircare-challenge-v*` folder.
+- `src/routeTree.gen.ts` will be regenerated automatically by the TanStack Router plugin.
