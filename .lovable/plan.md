@@ -1,66 +1,90 @@
-# Plan: /22-the-haircare-challenge — Listicle Landing Page
 
-Build a brand-new, fully isolated route at `/22-the-haircare-challenge` implementing the "5 Reasons Women Are Finally Quitting Expensive Hair Products" listicle brief. Per project memory, this page is completely forked — no shared section files, no shared CSS, no shared hooks with v17–v21.
+## Goal
+Make `/22-the-haircare-challenge` look and feel like the Glow Gummies "ft-listicle2" page — same typographic system, dual-color headlines, color tokens, section rhythm, hero layout, alternating peach backgrounds, and card styling — without breaking page isolation (`src/features/haircare-challenge-v22/` + `.hq-sp-v22` scope).
 
-## Isolation rules (per project memory)
-- All code lives under `src/features/haircare-challenge-v22/`.
-- CSS root scope: `.hq-sp-v22` (every selector prefixed with it).
-- Route file imports ONLY from `src/features/haircare-challenge-v22/`.
-- No edits to any other page, feature folder, or shared component.
+## What the reference actually does (design audit)
 
-## File structure
+**Typography**
+- Display face: a heavy condensed grotesk (Druk / Tusker-like — closest free pairing: **"Anton"** or **"Bebas Neue"** for the wordmark; **"Archivo Black"** or **"Inter Tight 900"** for headlines). Headlines are tight (line-height ~1.02), heavy 900, slight negative tracking.
+- Body: clean humanist sans (Inter/Geist-like) at ~17px, line-height ~1.55, dark warm-gray (#2A2522 not pure black).
+- Eyebrows: ALL-CAPS, **letter-spacing 0.18em**, tiny (11–12px), **orange** (`#F36A3A`), with a thin **underline divider** running across the column and the step number "01 / 02 …" right-aligned on the same row.
 
-```text
-src/routes/22-the-haircare-challenge.tsx          (route + head/SEO metadata)
-src/features/haircare-challenge-v22/
-  ListiclePageV22.tsx                              (page composition)
-  listicle-v22.css                                 (all styles, scoped to .hq-sp-v22)
-  primitives.tsx                                   (Placeholder image, Stars, CtaButton, Marquee)
-  sections/
-    AnnouncementBar.tsx        (S4 marquee bar — top)
-    Nav.tsx                    (logo + links + hairline)
-    FloatingChip.tsx           (sticky testimonial chip, appears after 400px scroll)
-    Hero.tsx                   (S5: eyebrow, H1, lede, CTA, stars, hero image)
-    RiskStrip.tsx              (thin accent-soft band)
-    Reason.tsx                 (shared reason block: eyebrow/number/headline/image/body/optional quote)
-    Reasons.tsx                (renders R1–R5 with the exact copy from the brief)
-    Transition.tsx             (S11 program pivot)
-    Stats.tsx                  (S12 — 3 stat blocks, __% placeholders)
-    ResultCards.tsx            (S13 — 4 transformation cards w/ placeholder images, real quotes + tags)
-    BottomCta.tsx              (S14 marquee + final button)
-    Footer.tsx                 (S15 email capture + links + logo)
-    StickyMobileCta.tsx        (mobile-only bottom bar)
-```
+**Dual-color H1 pattern**
+"**5 Reasons** Women Are Finally **Quitting Fake Tan**" — orange + black words interleaved. Each reason H2 is **entirely orange** (`#F36A3A`). Body text stays near-black.
 
-## Route + SEO (`src/routes/22-the-haircare-challenge.tsx`)
-- `createFileRoute("/22-the-haircare-challenge")`
-- `head()` with unique title, description, og:*, twitter:*, canonical = `https://glow.hairqare.co/22-the-haircare-challenge` (per project convention).
-- Title: `5 Reasons Women Are Finally Quitting Expensive Hair Products | Hairqare`
-- Description: lede line from the brief, trimmed to <160 chars.
-- Renders `<ListiclePageV22 />`.
+**Color & surface system**
+- Page bg alternates: **off-white `#FFFBF7`** ↔ **peach `#FBEDE2`** band per section.
+- Accent orange `#F36A3A`; deep orange (hover) `#D9501F`.
+- Pill CTA: full-width on mobile, big rounded-pill orange, white uppercase label, subtle drop shadow.
+- Announcement bar: peach (not deep orange) with orange uppercase text + bullet separators.
+- Risk-strip pill ("TAN SKIN OR MONEY BACK") is a **small inline pill above the H1**, not a full-width bar.
 
-## Design system (in `listicle-v22.css`, all under `.hq-sp-v22`)
-- CSS custom props: `--bg #FFFDFB`, `--surface #FFFFFF`, `--ink #1E1A17`, `--body #4A433D`, `--muted #8A817A`, `--accent #D86B4A`, `--accent-deep #B4502F`, `--accent-soft #FBE7DE`, `--star #E8A33D`, `--line #EDE6DF`, plus radius/shadow tokens.
-- Container: max-width 640px desktop, 20/24px side padding, mobile-first.
-- Full-bleed images break out via negative margins to the viewport.
-- Typography: Archivo 800 for H1/reason headlines, Inter 400/700 for body/eyebrow. Fonts loaded via `<link>` tags injected from the page component head — local to v22 only (no global font changes).
-- Section gap: 64px mobile / 88px desktop.
-- Marquee: CSS `@keyframes` translateX, ~25s linear infinite, two duplicated tracks for seamless loop.
-- Buttons: pill, full-width on mobile, accent bg, hover -> accent-deep.
+**Hero composition (desktop)**
+- 2-column split: left = large rounded image with a **floating white testimonial card** overlapping the bottom-left corner (5 stars, quote, name, "Verified Customer" check). Right = small pill chip, H1, lede, full-width CTA, stars row.
+- Mobile = stacked, image first OR after CTA (reference uses image left/text right desktop, stacked mobile).
 
-## Content
-- All copy pasted verbatim from the brief (eyebrows, numbers 01–05, "Because…" headlines, body paragraphs, quote blocks for R1 + R4).
-- Image placeholders use `placehold.co/{W}x{H}/FBE7DE/D86B4A?text=…` URLs at exact dimensions specified per section, with the brief's alt text.
-- Data-pull slots (S12 stats, S13 result-card photos) kept as `__%` and placeholder images; real quotes from brief slotted into the 4 cards with the tag pills.
-- All 4 CTAs (+ sticky mobile bar) point to a single `CTA_URL` const = `https://join.hairqare.co/the-quiz-haircare` (matching the convention used by sibling pages; trivially swappable later).
+**Reason sections**
+- Eyebrow row with orange underline + right-aligned step number.
+- H2 (all orange).
+- Full-bleed rounded image.
+- Body copy, no card chrome — just type on the bg.
+- Quotes are inline italic body, not boxed.
 
-## Behavior
-- Floating chip: `useEffect` listens to scroll, toggles visibility after `window.scrollY > 400`.
-- Sticky mobile CTA: visible only `< 768px`, appears after hero scrolls past (IntersectionObserver on hero sentinel).
-- Reduced motion: marquee animation paused under `prefers-reduced-motion`.
+**Result cards**
+- Horizontal layout: photo left, name + "DAY 32 RESULTS" label, quote, "Key Concerns:" tag pills (peach bg, orange text).
 
-## Out of scope
-- No real assets uploaded (placeholders only — per brief).
-- No live stat numbers or real card photos (data-pull slots).
-- No edits to `__root.tsx`, other routes, or any sibling `haircare-challenge-v*` folder.
-- `src/routeTree.gen.ts` will be regenerated automatically by the TanStack Router plugin.
+**Stats**
+- 3 huge orange numerals (~96px), short caption beneath, centered, on peach band.
+
+**Marquee CTA strip**
+- Big orange uppercase Archivo-Black text with dot separators, on white between peach sections.
+
+## What v22 currently has vs needs to change
+
+| Area | Current v22 | Change to match |
+|---|---|---|
+| H1 | Single ink color | Dual-color: orange + ink words, heavier display font |
+| Display font | Archivo 800 | **Archivo Black 900** (or Anton) with `letter-spacing: -0.02em`, `line-height: 1.02` |
+| Reason H2 | Ink color | **Entirely orange `#F36A3A`** |
+| Eyebrow | Orange caps only | Caps + **orange hairline underline across column** + **right-aligned step number** on same row (remove separate `v22-bignum`) |
+| Announcement bar | Deep orange bg, white text | **Peach `#FBEDE2` bg, orange uppercase text**, dot separators |
+| Risk strip | Full-width peach band | Small **inline pill** placed above hero H1 |
+| Hero layout | Stacked, image below | **2-col desktop split**: image left w/ floating testimonial card; copy right. Stacked mobile. |
+| Page bg | Flat off-white | **Alternating bands**: hero off-white → reason-01 peach → reason-02 white → reason-03 peach … |
+| Section rhythm | 64/88px margins | Tighter inner padding (72–96px vertical), full-bleed bands edge-to-edge |
+| CTA | Pill orange | Keep, but +subtle `box-shadow: 0 10px 24px rgba(243,106,58,.28)` and slightly larger radius/height on desktop |
+| Stars row | Small muted | Orange stars, larger, bullet-separated "4.9 Stars • 250,000+ Reviews" |
+| Result cards | Vertical card w/ shadow | **Horizontal**: square photo left, name+day label, quote, peach tag pills, no heavy shadow |
+| Stats numerals | 48px | **88–96px**, tighter tracking, peach band |
+| Marquee CTA | Already close | Make text Archivo Black, ensure dot separators render correctly |
+| Quote blocks | Left orange border | Convert to inline italic body paragraph + em-dash attribution (reference has no boxed quotes) |
+| Floating chip | Top center pill | Keep, but restyle to match testimonial card: white, 5-star row, italic quote, small "Verified Customer" tick |
+
+## Implementation steps (all inside `src/features/haircare-challenge-v22/`)
+
+1. **`22-the-haircare-challenge.tsx` route**: add font links for **Archivo Black 900** and **Inter 400/500/700** (Archivo Black is a separate family from Archivo).
+2. **`listicle-v22.css`** — token + style overhaul:
+   - Update tokens: `--bg: #FFFBF7`, `--bg-peach: #FBEDE2`, `--ink: #1A1613`, `--accent: #F36A3A`, `--accent-deep: #D9501F`.
+   - Add `--font-display: "Archivo Black", "Anton", sans-serif`.
+   - New utility classes: `.v22-band--peach`, `.v22-band--white`, `.v22-hero-grid` (2-col desktop), `.v22-h1--dual` (with `.v22-h1__accent` span), `.v22-eyebrow-row` (flex: underline + step #), `.v22-pill--inline` (risk strip), `.v22-cta` (shadow + bigger desktop).
+   - Convert section margins to inner padding so bands are edge-to-edge.
+3. **Section components** (edit only v22 files):
+   - `AnnouncementBar.tsx`: peach bg, orange text.
+   - `Hero.tsx`: split grid; image left with absolutely-positioned testimonial card overlay; small "TAN SKIN OR MONEY BACK"-style pill above H1; H1 broken into `<span class="v22-h1__accent">5 Reasons</span> Women Are Finally <span class="v22-h1__accent">Quitting Expensive Hair Products</span>`.
+   - `RiskStrip.tsx`: delete the standalone band (moved into hero as inline pill).
+   - `Reasons.tsx`: new eyebrow row markup (`<div class="v22-eyebrow-row"><span>eyebrow</span><hr/><span>01</span></div>`), H2 in orange, alternating band wrapper per reason (1,3,5 = peach; 2,4 = white).
+   - `Stats.tsx`: bigger numerals on peach band.
+   - `ResultCards.tsx`: horizontal card layout with peach tag pills.
+   - `Transition.tsx`: keep peach band, recompose copy block.
+   - `FloatingChip.tsx`: restyle to white testimonial card aesthetic.
+4. **Images**: keep `placehold.co` placeholders (no asset work in this pass); only structure/typography/color change. Real photos can be wired later.
+5. **Isolation guarantee**: every selector stays under `.hq-sp-v22`. No edits to other v* folders, root, or shared CSS. Font `<link>`s added only inside the `/22` route head.
+
+## Out of scope (ask before doing)
+- Replacing placeholder images with real R2 photos.
+- Wiring real stat percentages.
+- Adding a real reviews widget / Loox-style block.
+- Building a top dark nav (reference has a light nav like ours — keep).
+
+## Deliverable
+After approval, I'll edit ~7 files in v22 only: `listicle-v22.css`, `Hero.tsx`, `Reasons.tsx`, `AnnouncementBar.tsx`, `Stats.tsx`, `ResultCards.tsx`, `FloatingChip.tsx`, plus remove the standalone `RiskStrip` mount from `ListiclePageV22.tsx`, and add the Archivo Black font link in the route file.
