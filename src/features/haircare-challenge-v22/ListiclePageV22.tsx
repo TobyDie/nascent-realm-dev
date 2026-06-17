@@ -3,7 +3,6 @@ import { AnnouncementBar } from "./sections/AnnouncementBar";
 import { Nav } from "./sections/Nav";
 import { FloatingChip } from "./sections/FloatingChip";
 import { Hero } from "./sections/Hero";
-import { RiskStrip } from "./sections/RiskStrip";
 import { Reasons } from "./sections/Reasons";
 import { Transition } from "./sections/Transition";
 import { Stats } from "./sections/Stats";
@@ -21,7 +20,6 @@ export function ListiclePageV22() {
       <Nav />
       <FloatingChip />
       <Hero />
-      <RiskStrip />
       <Reasons />
       <Transition />
       <Stats />

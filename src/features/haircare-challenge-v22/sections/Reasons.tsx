@@ -8,14 +8,18 @@ type ReasonProps = {
   image: { w: number; h: number; label: string; alt: string };
   body: ReactNode;
   quote?: { text: string; attribution: string };
+  band: "peach" | "white";
 };
 
-function Reason({ eyebrow, number, headline, image, body, quote }: ReasonProps) {
+function Reason({ eyebrow, number, headline, image, body, quote, band }: ReasonProps) {
   return (
-    <section className="v22-section v22-reason">
+    <section className={`v22-band v22-band--${band} v22-reason`}>
       <div className="v22-container">
-        <div className="v22-eyebrow">{eyebrow}</div>
-        <div className="v22-bignum">{number}</div>
+        <div className="v22-eyebrow-row">
+          <span className="v22-eyebrow-row__label">{eyebrow}</span>
+          <span className="v22-eyebrow-row__rule" aria-hidden="true" />
+          <span className="v22-eyebrow-row__num">{number}</span>
+        </div>
         <h2 className="v22-reason__h">{headline}</h2>
       </div>
       <div className="v22-container v22-reason__imgwrap">
@@ -24,10 +28,10 @@ function Reason({ eyebrow, number, headline, image, body, quote }: ReasonProps) 
       <div className="v22-container v22-reason__body">
         {body}
         {quote && (
-          <blockquote className="v22-quote">
-            <p>"{quote.text}"</p>
-            <cite>— {quote.attribution}</cite>
-          </blockquote>
+          <p className="v22-inline-quote">
+            <em>"{quote.text}"</em>
+            <span className="v22-inline-quote__attr"> — {quote.attribution}</span>
+          </p>
         )}
       </div>
     </section>
@@ -41,6 +45,7 @@ export function Reasons() {
         eyebrow="The Price Lie"
         number="01"
         headline="Because Expensive Doesn't Mean Effective."
+        band="peach"
         image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine" }}
         body={
           <>
@@ -57,6 +62,7 @@ export function Reasons() {
         eyebrow="The Ingredient Gap"
         number="02"
         headline="Because The Front Of The Bottle Is Marketing, Not Truth."
+        band="white"
         image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle" }}
         body={
           <>
@@ -72,6 +78,7 @@ export function Reasons() {
         eyebrow="The Real Mechanism"
         number="03"
         headline="Because Products Are Designed To Mask, Not Solve."
+        band="peach"
         image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp" }}
         body={
           <>
@@ -89,6 +96,7 @@ export function Reasons() {
         eyebrow="The Hidden Cost"
         number="04"
         headline="Because $80 A Month Isn't Just $80."
+        band="white"
         image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending" }}
         body={
           <>
@@ -105,6 +113,7 @@ export function Reasons() {
         eyebrow="The Simpler Way"
         number="05"
         headline="Because The Women With The Best Hair Aren't Using More — They're Using Less."
+        band="peach"
         image={{ w: 1080, h: 1350, label: "The result of using less", alt: "The result of using less, not more" }}
         body={
           <>
