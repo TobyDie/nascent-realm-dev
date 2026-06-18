@@ -3,26 +3,14 @@ import { CtaButton, Placeholder, Stars } from "../primitives";
 export function Hero() {
   return (
     <section className="v22-hero" id="hero">
-      <div className="v22-container v22-hero__grid">
+      <div className="v22-container v22-hero__stack">
         <div className="v22-hero__media">
           <Placeholder
             w={1080}
-            h={1200}
+            h={1080}
             label="Sarah · solution state"
             alt="Sarah, solution state, healthy hair, warm editorial tone"
           />
-          <div className="v22-testimonial-card" role="figure">
-            <Stars />
-            <p className="v22-testimonial-card__quote">
-              "I stopped chasing the next miracle product and my hair has never looked healthier."
-            </p>
-            <div className="v22-testimonial-card__meta">
-              <span>— Chloe R.</span>
-              <span className="v22-verified">
-                <span className="v22-verified__tick" aria-hidden="true">✓</span> Verified Customer
-              </span>
-            </div>
-          </div>
         </div>
         <div className="v22-hero__copy">
           <span className="v22-pill-inline">Healthier Hair or Your Money Back</span>
@@ -36,10 +24,10 @@ export function Hero() {
           <div className="v22-cta-wrap">
             <CtaButton full>Healthier hair in 14 days →</CtaButton>
           </div>
-          <div className="v22-stars-line">
+          <div className="v22-stars-line v22-stars-line--center">
             <Stars />
             <span>
-              <strong>4.9</strong> Stars · <strong>250,000+</strong> Women
+              <strong>4.8</strong> Stars · <strong>250,000+</strong> Women
             </span>
           </div>
         </div>
