@@ -19,7 +19,7 @@ export function Hero() {
             <span className="v22-accent">Finally Quitting</span> Expensive Hair Products
           </h1>
           <p className="v22-lede">
-            If you still want healthy, beautiful hair… but you're tired of buying bottle after bottle that promised everything and changed nothing — here's why 250,000+ women stopped shopping for the answer and started learning it.
+            If you still want healthy, beautiful hair… but you're tired of buying bottle after bottle that promised everything and changed nothing, here's why 250,000+ women stopped shopping for the answer and started learning it.
           </p>
           <div className="v22-cta-wrap">
             <CtaButton full>Healthier hair in 14 days →</CtaButton>

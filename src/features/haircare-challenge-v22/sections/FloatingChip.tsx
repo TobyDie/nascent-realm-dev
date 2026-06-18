@@ -21,7 +21,7 @@ export function FloatingChip() {
         <Stars />
         <p>"The hardest part was throwing out all the products I thought were good."</p>
         <span className="v22-chip__meta">
-          — Chloe R. · <span className="v22-verified__tick" aria-hidden="true">✓</span> Verified
+          Chloe R. · <span className="v22-verified__tick" aria-hidden="true">✓</span> Verified
         </span>
       </div>
     </div>
