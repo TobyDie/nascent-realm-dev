@@ -274,7 +274,7 @@
 /* ----- Reasons ----- */
 .hq-sp-v22 .v22-reason__h {
   font-family: var(--font-display);
-  font-weight: 900; color: var(--accent);
+  font-weight: 400; color: var(--accent);
   font-size: 30px; line-height: 1.05; letter-spacing: -0.015em;
   margin: 0;
 }
@@ -302,7 +302,7 @@
 /* ----- Stats ----- */
 .hq-sp-v22 .v22-stats__title {
   font-family: var(--font-display);
-  font-weight: 900; color: var(--ink);
+  font-weight: 400; color: var(--ink);
   text-align: center;
   font-size: 28px; line-height: 1.1; letter-spacing: -0.01em;
   margin: 0 0 40px;
@@ -318,7 +318,7 @@
 }
 .hq-sp-v22 .v22-stat__num {
   font-family: var(--font-display);
-  font-weight: 900; color: var(--accent);
+  font-weight: 400; color: var(--accent);
   font-size: 76px; line-height: 1; margin-bottom: 12px;
   letter-spacing: -0.03em;
 }
@@ -380,7 +380,7 @@
 .hq-sp-v22 .v22-transition__inner { text-align: center; max-width: 720px; margin: 0 auto; }
 .hq-sp-v22 .v22-h2 {
   font-family: var(--font-display);
-  font-weight: 900; color: var(--ink);
+  font-weight: 400; color: var(--ink);
   font-size: 32px; line-height: 1.05; letter-spacing: -0.015em;
   margin: 12px 0; text-align: center;
 }
@@ -407,7 +407,7 @@
   text-align: center;
 }
 .hq-sp-v22 .v22-footer__h {
-  font-family: var(--font-display); font-weight: 900;
+  font-family: var(--font-display); font-weight: 400;
   color: var(--ink); font-size: 24px; line-height: 1.2; margin: 0 0 8px;
 }
 .hq-sp-v22 .v22-footer__sub { color: var(--muted); margin: 0 0 20px; }
