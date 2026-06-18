@@ -46,7 +46,8 @@ function startTicker() {
   if (reduce) return;
   tickerStarted = true;
   const schedule = () => {
-    const delay = 14000 + Math.random() * 12000;
+    // v22: more visible cadence for the sticky-bar gamification (every 6–10s).
+    const delay = 6000 + Math.random() * 4000;
     setTimeout(() => {
       liveBump += 1;
       bumpListeners.forEach((l) => l(liveBump));
