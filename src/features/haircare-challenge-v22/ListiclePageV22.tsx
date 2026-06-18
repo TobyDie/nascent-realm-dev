@@ -1,6 +1,5 @@
 import "./listicle-v22.css";
 import { AnnouncementBar } from "./sections/AnnouncementBar";
-import { FloatingChip } from "./sections/FloatingChip";
 import { Hero } from "./sections/Hero";
 import { Reasons } from "./sections/Reasons";
 import { Transition } from "./sections/Transition";
@@ -14,7 +13,6 @@ export function ListiclePageV22() {
   return (
     <div className="hq-sp-v22">
       <AnnouncementBar />
-      <FloatingChip />
       <Hero />
       <Reasons />
       <Transition />
