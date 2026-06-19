@@ -1,77 +1,65 @@
-All changes scoped to `src/features/haircare-challenge-v22/` and the v22 route. No other pages touched.
 
-## 1. Headings — lighter weight, centered, serif-style (match reference)
+## Scope
+All changes are confined to `src/features/haircare-challenge-v22/` (page-fork rule). Nothing in `/21` is modified or shared.
 
-In `listicle-v22.css`:
-- Replace `--font-display` with a serif display in the reference's spirit: **"DM Serif Display"** (closest free Google match to Glow's heavy-but-not-blocky serif). Add it to the Google Fonts URL in `src/routes/22-the-haircare-challenge.tsx`.
-- Drop `font-weight` from 900 → **400** (DM Serif Display only ships in 400; the face itself is heavy enough). Remove `Archivo Black` from the stack everywhere.
-- `.v22-h1`, `.v22-reason__h`, `.v22-h2`, `.v22-stats__title`, `.v22-footer__h`, `.v22-marquee--cta .v22-marquee__item`: `font-weight: 400`, `letter-spacing: -0.01em`, `line-height: 1.05`.
-- Center the hero: `.v22-hero__copy { text-align: center }`, center the pill, lede, stars line, CTA.
-- Collapse hero to a single centered column on ALL viewports (remove the 2-col `@media (min-width: 900px)` grid). Image on top, copy below — exactly like the reference screenshot.
-- Move the floating in-image testimonial card out of the hero (delete it from `Hero.tsx`) — reference has no overlay card on the hero image.
-- Stars row: center it (`.v22-stars-line--center` already exists, apply it).
+## 1. Rebuild the Solution section (`sections/Transition.tsx`)
 
-## 2. Remove top-left Hairqare logo / Nav entirely
+Keep the Sarah placeholder image at top, centered layout, same `.v22-eyebrow`, `.v22-h2`, `.v22-subhead`, `.v22-body`, `.v22-cta-wrap`, `.v22-stars-line` classes, same pill CTA. Only swap copy:
 
-- Delete `<Nav />` from `ListiclePageV22.tsx` (keep file but stop rendering it). Result: no header element on the page.
+- Eyebrow: `THE WAY OUT`
+- H2: `What If You Never Had To Buy Another "Miracle" Again?`
+- Body paragraphs (one `<p>` each, no em dashes):
+  1. Picture your bathroom shelf with nothing on it you regret.
+  2. No more standing in the aisle, hoping this one's finally different. No more watching money leave your account for a result that never shows up. No more treating your own hair like a problem you can't solve.
+  3. Here's the part the industry buried: your hair was never the problem. You were just never taught how it actually works.
+  4. That's the whole challenge. Over 14 days, Sarah shows you what your hair truly needs, from the inside out. Not another product to add to the pile. The understanding that finally lets you stop guessing.
+  5. The women who've done this don't talk about a product afterwards. They talk about relief. The quiet confidence of finally knowing. Looking in the mirror and recognising their hair again. Spending less, and somehow seeing more.
+  6. Sarah did it for herself first. She walked away from an industry that paid her to sell you the problem. Today she keeps the healthiest hair of her life on two simple things and about $10 a month. She built this so you could do the same.
+  7. You don't have to commit to anything right now.
+  8. Just take the 60-second quiz. A few questions about your hair, and you'll see whether this is actually for you. No pressure. No shelf full of regret. Just the first honest look at your hair you've had in a long time.
+- Remove the existing `.v22-subhead` ("Stop Shopping For The Answer…") since new copy has no subhead — or repurpose as the first italic line. Decision: drop subhead entirely; lead with paragraph 1 in slightly larger size via existing `.v22-body` (no new CSS).
+- CTA button text: `Take the 60-second quiz →` (existing `CtaButton` + `CTA_URL`).
+- Stars line: `★★★★★ 4.8 | 250,000+ women joined in 149 countries` (drop "Rated").
 
-## 3. Remove footer entirely
+## 2. Port testimonial carousel from /21 — independently
 
-- Delete `<Footer />` from `ListiclePageV22.tsx`. Page ends after the bottom CTA marquee. No nav links, no email form, no social, no footer logo anywhere.
-- Also remove any in-page nav anchors that might remain.
+Create new self-contained files under v22 (no imports from v21):
 
-## 4. Stats — change 4.9 → 4.8
+- `src/features/haircare-challenge-v22/sections/TestimonialsCarousel.tsx` — port the testimonial logic from `v21/sections/SocialProof.tsx` (the `CompactTesti` card + Carousel/grid switch, same 5 testimonials, same R2 BA image filenames, same StarRow). Self-contained: inline the small helpers (`Stars`, mobile detection via `window.matchMedia`, image URL via `https://pub.hairqare.co/cdn-cgi/image/...`).
+- For the carousel mechanics, use `embla-carousel-react` directly (already in repo via `src/components/ui/carousel.tsx`) with the same peek/snap behavior as v21 (`peek: 0.78`, dot indicators, swipe). Desktop: 3-col grid. Mobile: swipeable carousel with dots.
+- Add scoped CSS rules to `listicle-v22.css` under `.hq-sp-v22 .v22-testis*` (card, grid, carousel track, dots). No global selectors. No reuse of v21 classes.
+- Section heading: `From women who stopped buying and started learning` (use `.v22-h2`, centered, same band styling).
+- Place between `<SocialProofV22 />` and `<BottomCta />` in `ListiclePageV22.tsx`.
 
-- In `Hero.tsx` `.v22-stars-line`: `4.9` → `4.8`.
-- Anywhere else `4.9` appears in v22 → `4.8`.
+## 3. Ratings → 4.8 everywhere
 
-## 5. Replace `ResultCards` section with v21-style SocialProof block
+- `Transition.tsx` stars line: `4.9` → `4.8` (covered in step 1).
+- Grep confirmed only that one `4.9` occurrence in v22.
 
-The reference "250,000+ Women / 92% / 86% / Trustpilot 4.8" block (screenshot 2) maps directly to a simplified version of v21's SocialProof trust bar. Build it natively in v22 (no cross-folder import — keeps v22 isolated per the page-fork rule):
+## 4. Replace "cohort" with "group"
 
-- New section `sections/SocialProofV22.tsx`:
-  - Avatar row (10 small circular profile photos + an orange "+" chip), using `pub.hairqare.co` profile images via `/cdn-cgi/image/`.
-  - Big serif heading `250,000+ Women` in orange + small grey subline `have taken the challenge`.
-  - Two-column stat block: `92% — saw results within 14 days` | `86% — called it life-changing` (vertical divider between, stacks on mobile).
-  - Trustpilot row: `Trustpilot` wordmark + 5 green star tiles + `4.8/5 · 12,400 reviews`.
-- Remove `ResultCards.tsx` from `ListiclePageV22.tsx` and replace with `<SocialProofV22 />` in the same slot.
-- Remove the separate `<Stats />` section since SocialProofV22 already carries the headline stats (avoids duplication). If keeping, leave it but verify spacing.
+- `StickyMobileCta.tsx` line 77: `Next cohort:` → `Next group starts`.
+- Rename CSS class `.v22-stickycta__cohort` → `.v22-stickycta__group` in both the JSX and `listicle-v22.css`.
+- Internal comments in `useStartDate.ts`/`useJoiningCount.ts` may stay (not user-facing) — leave untouched.
 
-## 6. Sticky bottom CTA — port v20 style + animated rising women count
+## 5. Remove the word "free"
 
-Rewrite `sections/StickyMobileCta.tsx` (rename concept; keep filename so imports don't break) to mirror v20's `StickyCta.tsx` visually but inside the v22 namespace:
+- `AnnouncementBar.tsx`: replace marquee items with neutral copy, e.g. `["HEALTHIER HAIR GUARANTEED", "14-DAY HAIR KNOWLEDGE CHALLENGE", "HEALTHIER HAIR GUARANTEED", "14-DAY HAIR KNOWLEDGE CHALLENGE"]`.
+- `Reasons.tsx` line 69 quote `"Sulfate-free." "Paraben-free." "Clean." "Natural."` — this is intentional industry-jargon quote inside Reason 02 copy. **Confirming with user**: leave as-is because it is a quoted marketing-label list illustrating the ingredient-gap reason, not a Hairqare offer claim. If user wants strict removal, will rewrite as `"Sulfate." "Paraben." "Clean." "Natural."` or paraphrase.
 
-- Left column (stacked, small text):
-  - Orange offer chip: `85% OFF` + live countdown `HH:MM:SS` to next 10:00/22:00 WITA boundary.
-  - Bold line: `Next cohort: Fri, Jun 26th` (orange date) — use a simple v22-local `useStartDate` helper (next Friday).
-  - Muted line: `<animated number> women joining this week` — number animates upward.
-- Right: orange pill CTA `Join now →` (or current "Healthier hair in 14 days →" — confirm copy preference, default to `Join now →` matching v20).
-- Show after `scrollY > 90vh`, hide when hero or final CTA in view (IntersectionObserver on `#hero` and a sentinel at the bottom CTA).
-- Reveal on BOTH mobile and desktop (current v22 is mobile-only `display:none ≥768px`). Reference flow uses sticky on all sizes; keep desktop too — confirm in implementation.
+## Final page order (unchanged structural beyond carousel insert)
 
-### Gamified rising women count (new — beyond v20)
-Add a v22-local `useJoiningCount.ts` cloned from v20 with one upgrade for visible animation in the sticky bar:
-- Base ramp identical to v20 (1,222 Mon 12:00 WITA → 2,593 Sun 24:00 WITA).
-- `useLiveJoiningCount` ticker fires more visibly: every **6–10s** add +1 (jittered). Respects `prefers-reduced-motion`.
-- Render the number with a CSS roll/fade animation on each change: wrap digits in a span with `key={value}` + `@keyframes v22-tick-up { 0% { transform: translateY(8px); opacity: 0 } 100% { transform: translateY(0); opacity: 1 } }` so each new value slides up. Small green ▲ indicator next to it.
+AnnouncementBar → Hero → Reasons (01–05) → Transition (rebuilt solution) → SocialProofV22 (stats) → TestimonialsCarousel (new) → BottomCta → StickyMobileCta
 
-## Files
+## QA after build
 
-Edit:
-- `src/routes/22-the-haircare-challenge.tsx` — swap font URL to DM Serif Display + Inter.
-- `src/features/haircare-challenge-v22/listicle-v22.css` — font swap, weight 400, center hero, single-column hero, sticky bar styles, tick-up keyframes, remove footer/nav-related rules.
-- `src/features/haircare-challenge-v22/ListiclePageV22.tsx` — remove `<Nav/>`, `<Footer/>`, `<ResultCards/>`; insert `<SocialProofV22/>`.
-- `src/features/haircare-challenge-v22/sections/Hero.tsx` — centered single-column, remove overlay testimonial card, 4.8 stars.
-- `src/features/haircare-challenge-v22/sections/StickyMobileCta.tsx` — full rewrite (offer chip, countdown, animated count, desktop+mobile).
+- `rg -n "cohort|4\.9|FREE|Free|\\bfree\\b" src/features/haircare-challenge-v22/` returns nothing user-facing.
+- All CTAs resolve to `CTA_URL` (`https://join.hairqare.co/the-quiz-haircare`).
+- No em dashes in new copy.
+- Verify carousel renders + swipes via `browser--view_preview` at mobile width.
 
-Create:
-- `src/features/haircare-challenge-v22/sections/SocialProofV22.tsx`
-- `src/features/haircare-challenge-v22/useJoiningCount.ts`
-- `src/features/haircare-challenge-v22/useStartDate.ts`
+## Question for you before I implement
 
-Leave alone (still present but unused): `Nav.tsx`, `Footer.tsx`, `ResultCards.tsx`, `Stats.tsx` (or remove from import list — files stay for safety).
-
-## Out of scope
-- Real photography (continues to use `placehold.co` / R2 placeholders).
-- Real Trustpilot widget integration.
-- Touching any other `/14`…`/21` page.
+The Reason 02 quote uses `"Sulfate-free." "Paraben-free."` as in-world marketing labels women see on bottles. Do you want me to:
+(a) keep them as-is (they're quoted industry copy, not our promise), or
+(b) rewrite to remove the word entirely?
