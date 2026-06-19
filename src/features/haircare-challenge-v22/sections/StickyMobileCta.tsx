@@ -73,8 +73,8 @@ export function StickyMobileCta() {
             <span className="v22-stickycta__chip-label">85% OFF</span>
             <span className="v22-stickycta__chip-timer" aria-live="off">{countdown}</span>
           </span>
-          <span className="v22-stickycta__cohort">
-            Next cohort: <span className="v22-stickycta__date">{startDate ? fmtShort(startDate) : "Fri, Jun 26th"}</span>
+          <span className="v22-stickycta__group">
+            Next group starts <span className="v22-stickycta__date">{startDate ? fmtShort(startDate) : "Fri, Jun 26th"}</span>
           </span>
           <span className="v22-stickycta__count">
             <span className="v22-stickycta__tick" aria-hidden="true">▲</span>

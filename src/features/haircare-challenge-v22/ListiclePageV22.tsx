@@ -4,6 +4,7 @@ import { Hero } from "./sections/Hero";
 import { Reasons } from "./sections/Reasons";
 import { Transition } from "./sections/Transition";
 import { SocialProofV22 } from "./sections/SocialProofV22";
+import { TestimonialsCarousel } from "./sections/TestimonialsCarousel";
 import { BottomCta } from "./sections/BottomCta";
 import { StickyMobileCta } from "./sections/StickyMobileCta";
 
@@ -17,6 +18,7 @@ export function ListiclePageV22() {
       <Reasons />
       <Transition />
       <SocialProofV22 />
+      <TestimonialsCarousel />
       <BottomCta />
       <StickyMobileCta />
     </div>

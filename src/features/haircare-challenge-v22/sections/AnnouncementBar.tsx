@@ -7,9 +7,9 @@ export function AnnouncementBar() {
         variant="bar"
         items={[
           "HEALTHIER HAIR GUARANTEED",
-          "FREE 14-DAY CHALLENGE",
+          "14-DAY HAIR KNOWLEDGE CHALLENGE",
           "HEALTHIER HAIR GUARANTEED",
-          "FREE 14-DAY CHALLENGE",
+          "14-DAY HAIR KNOWLEDGE CHALLENGE",
         ]}
       />
     </div>

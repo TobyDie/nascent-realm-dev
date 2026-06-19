@@ -66,7 +66,7 @@ export function Reasons() {
         image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle" }}
         body={
           <>
-            <p>"Sulfate-free." "Paraben-free." "Clean." "Natural."</p>
+            <p>"No sulfates." "No parabens." "Clean." "Natural."</p>
             <p>It sounds like care. It's copywriting.</p>
             <p>The front of the bottle is written to sell you. The real story is on the back, in the ingredients list nobody ever taught you to read.</p>
             <p>And once you can read it, you can't unsee it. So many "clean" products simply swapped one harsh ingredient for three worse ones you've never heard of.</p>
