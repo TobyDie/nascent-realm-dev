@@ -1,6 +1,6 @@
 const AVATARS = [
-  "profile-1.webp", "profile-2.webp", "profile-3.webp", "profile-4.webp", "profile-5.webp",
-  "profile-6.webp", "profile-7.webp", "profile-8.webp", "profile-9.webp", "profile-10.webp",
+  "hero-avatar-11.webp", "hero-avatar-13.webp", "hero-avatar-14.webp", "hero-avatar-15.webp", "hero-avatar-16.webp",
+  "hero-avatar-17.webp", "hero-avatar-18.webp", "hero-avatar-19.webp", "hero-avatar-20.webp", "profile-4.webp",
 ];
 
 function avatarUrl(file: string, w = 96) {
