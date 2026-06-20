@@ -15,14 +15,53 @@ export function Transition() {
       <div className="v22-container v22-transition__inner">
         <div className="v22-eyebrow v22-eyebrow--center">THE WAY OUT</div>
         <h2 className="v22-h2">What If You Never Had To Buy Another "Miracle" Again?</h2>
-        <p className="v22-body">Picture your bathroom shelf with nothing on it you regret.</p>
-        <p className="v22-body">No more standing in the aisle, hoping this one's finally different. No more watching money leave your account for a result that never shows up. No more treating your own hair like a problem you can't solve.</p>
-        <p className="v22-body">Here's the part the industry buried: your hair was never the problem. You were just never taught how it actually works.</p>
-        <p className="v22-body">That's the whole challenge. Over 14 days, Sarah shows you what your hair truly needs, from the inside out. Not another product to add to the pile. The understanding that finally lets you stop guessing.</p>
-        <p className="v22-body">The women who've done this don't talk about a product afterwards. They talk about relief. The quiet confidence of finally knowing. Looking in the mirror and recognising their hair again. Spending less, and somehow seeing more.</p>
-        <p className="v22-body">Sarah did it for herself first. She walked away from an industry that paid her to sell you the problem. Today she keeps the healthiest hair of her life on two simple things and about $10 a month. She built this so you could do the same.</p>
-        <p className="v22-body">You don't have to commit to anything right now.</p>
-        <p className="v22-body">Just take the 60-second quiz. A few questions about your hair, and you'll see whether this is actually for you. No pressure. No shelf full of regret. Just the first honest look at your hair you've had in a long time.</p>
+
+        <div className="v22-wayout">
+          <p className="v22-wayout__lead">Picture your bathroom shelf with nothing on it you regret.</p>
+
+          <ul className="v22-wayout__pains">
+            <li className="v22-wayout__pain">
+              <span className="v22-wayout__pain-mark" aria-hidden="true"><span /></span>
+              <span>No more standing in the aisle, hoping this one's finally different.</span>
+            </li>
+            <li className="v22-wayout__pain">
+              <span className="v22-wayout__pain-mark" aria-hidden="true"><span /></span>
+              <span>No more watching money leave your account for a result that never shows up.</span>
+            </li>
+            <li className="v22-wayout__pain">
+              <span className="v22-wayout__pain-mark" aria-hidden="true"><span /></span>
+              <span>No more treating your own hair like a problem you can't solve.</span>
+            </li>
+          </ul>
+
+          <blockquote className="v22-wayout__reveal">
+            Here's the part the industry buried: your hair was never the problem. You were just never taught how it actually works.
+          </blockquote>
+
+          <div className="v22-wayout__solution">
+            <p>That's the whole challenge. Over 14 days, Sarah shows you what your hair truly needs, from the inside out.</p>
+            <p className="v22-wayout__solution-em">Not another product to add to the pile. The understanding that finally lets you stop guessing.</p>
+          </div>
+
+          <div className="v22-wayout__result">
+            <div className="v22-wayout__result-eyebrow">THE RESULT</div>
+            <p>
+              The women who've done this don't talk about a product afterwards. They talk about <strong>relief</strong>. The quiet confidence of finally knowing. Looking in the mirror and recognising their hair again. Spending less, and somehow seeing more.
+            </p>
+          </div>
+
+          <p className="v22-wayout__founder">
+            Sarah did it for herself first. She walked away from an industry that paid her to sell you the problem. Today she keeps the healthiest hair of her life on two simple things and about $10 a month. She built this so you could do the same.
+          </p>
+
+          <div className="v22-wayout__reassure-wrap">
+            <span className="v22-wayout__reassure">You don't have to commit to anything right now.</span>
+          </div>
+
+          <p className="v22-wayout__close">
+            Just take the 60-second quiz. A few questions about your hair, and you'll see whether this is actually for you. No pressure. No shelf full of regret. Just the first honest look at your hair you've had in a long time.
+          </p>
+        </div>
       </div>
       <ConvictionCard
         avatar="hero-avatar-19.webp"

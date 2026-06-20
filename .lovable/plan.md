@@ -1,66 +1,41 @@
-# /22-the-haircare-challenge — Three targeted changes
+## What changes
 
-Scope is strictly v22. No layout/type changes outside what's listed.
+Restructure the body of the Transition section ("What If You Never Had To Buy Another Miracle Again?") on `/22-the-haircare-challenge` so the wall of 8 paragraphs becomes a scannable, layered narrative. **All copy stays verbatim.** The founder image, eyebrow, H2, CTA button, and stars line above/below stay exactly as they are today.
 
-## A. Inline conviction cards (new component)
+## New visual order (top → bottom)
 
-Create `src/features/haircare-challenge-v22/sections/ConvictionCard.tsx` — a single full-width pull-quote card visually distinct from the carousel and from the inline italic body quotes.
+1. **Lead** — paragraph 1 ("Picture your bathroom shelf…") centered, serif (DM Serif Display), italic, ~20–22px. Acts as a quiet opening line.
 
-Card structure (props: `initial`, `name`, `descriptor`, `tag`, `quote`, `bhcId`):
-- White surface card with `border-radius: 18px`, soft shadow, 28px padding.
-- 4px left accent rule in `var(--accent)`.
-- Large decorative coral `"` mark top-left (~40px, `var(--accent)`).
-- Quote: 20px desktop / 18px mobile, weight 500, `var(--ink)`, line-height 1.45, NOT italic.
-- Attribution row (margin-top 18px, flex/centered):
-  - 40px circular initial badge — `var(--accent-soft)` bg, `var(--accent-deep)` bold initial (matches carousel K/E style).
-  - Name (`var(--ink)` 600) + descriptor (`var(--muted)` 13px) stacked.
-  - Pushed right: 5 gold stars (`var(--star)`) + small "Verified · Day 14" label (`var(--muted)` 12px).
-- One concern-tag pill under attribution: `var(--accent-soft)` bg, `var(--accent-deep)` text, `--radius-pill`, 12px.
-- `data-bhc-id={bhcId}` attribute preserved on the root for verification.
+2. **Pain-point list** — paragraph 2 split at its three natural "No more…" sentences into a 3-row list. Each row: small coral outlined circle with a coral minus bar + the sentence. Top + bottom hairline divider (`#1A1613` at 10% alpha) frames the block. Wording untouched.
 
-All styles added to `listicle-v22.css` under `.hq-sp-v22` scope (classes prefixed `v22-conviction*`). Section vertical margin = existing v22 section gap so it reads as its own beat.
+3. **Industry reveal pull-quote** — paragraph 3 styled as a serif pull-quote with a 4px solid coral left rule, ~22px DM Serif Display, ink color.
 
-### Placement (in `Reasons.tsx` or composed in `ListiclePageV22.tsx`)
+4. **Solution card** — paragraph 4 in a soft white card (`rgba(255,255,255,0.55)`, 18px radius, hairline border). The last two sentences ("Not another product to add to the pile. The understanding that finally lets you stop guessing.") split into a second line styled in **coral, semibold** for emphasis.
 
-The current `Reasons` component renders 5 `<Reason>` sections back-to-back. Refactor so cards can sit between them — simplest path: have `Reasons` render `<Reason />` + optional `<ConvictionCard />` siblings inline, in the right order. Card 3 goes inside `Transition.tsx` directly after the body copy and before the CTA/stars line (since the Stats section currently doesn't exist on this page — the after-Solution / before-stats slot is the end of the Transition section).
+5. **"The Result" block** — small uppercase coral eyebrow "THE RESULT" (existing `v22-eyebrow` style), then paragraph 5 centered, ~18px, with the single word **relief** bolded inline.
 
-Order:
-1. After Reason 03 — Card 1 (G · A pharmacist · "Product Overload") — BHC `ddbcc5bb-3670-46e4-9636-0dbf07baf0a0`.
-2. After Reason 05 — Card 2 (B · Brooke · Canada · "Free Of The Shelf") — BHC `d457edad-ef31-46a2-8e1d-3ff27ab65243`.
-3. Inside `Transition.tsx`, after the closing "first honest look" paragraph and before the CTA — Card 3 (A · Abigail · United States · "Made Her Own") — BHC `bf43cac3-602a-4e4b-b529-d3ddab807e7f`.
+6. **Founder context** — paragraph 6 separated by a top hairline divider, slightly muted (opacity 0.85). Reads as a quiet footnote about Sarah.
 
-All quotes verbatim per spec. No 4th card (optional, skipping). Existing italic inline quotes in R01/R04 left as-is (no consistency rewrite).
+7. **Reassurance pill** — paragraph 7 ("You don't have to commit…") inside a centered rounded-pill outline (1px ink @ 20%), small + medium weight.
 
-## B. Delay the sticky urgency bar past Reason 01
+8. **Closing + CTA** — paragraph 8 centered, normal body, then the existing `CtaButton` and stars line render unchanged below.
 
-Edit `Reasons.tsx`: append a sentinel `<div id="v22-r1-end" aria-hidden="true" />` at the very end of Reason 01's section.
-
-Edit `StickyMobileCta.tsx`: replace the current hero/scroll logic with a single IntersectionObserver on `#v22-r1-end`:
-- Initial state: hidden.
-- When the sentinel's `boundingClientRect.top <= 0` (scrolled past), set `show=true` and **latch** it — never flip back to false (persistent for rest of page, even on scroll-up to hero).
-- Keep the existing `.is-show` class + CSS transition (slide-up + fade ~200ms already in CSS, verify `.v22-stickycta` transition is ≤200ms; tune in CSS only if currently longer).
-- Fallback: if sentinel missing, observe `document.body` scroll past `100vh` with the same latch behavior.
-
-Bar content (copy, countdown, group date, CTA) is untouched.
-
-## C. Fix Trustpilot count
-
-In `SocialProofV22.tsx`:
-- Change `4.8/5 · 12,400 reviews` → `4.8/5 · 1,400+ reviews`.
-- Wrap the entire Trustpilot block in an `<a href="https://www.trustpilot.com/review/hairqare.co" target="_blank" rel="noopener noreferrer">` with a class (`v22-sp22__tp-link`) that removes default underline/color so visual is unchanged.
+Vertical rhythm between blocks: ~32–40px on mobile, ~48px on desktop.
 
 ## Files touched
 
-- new `src/features/haircare-challenge-v22/sections/ConvictionCard.tsx`
-- `src/features/haircare-challenge-v22/sections/Reasons.tsx` — insert cards after R03 + R05, add R01-end sentinel.
-- `src/features/haircare-challenge-v22/sections/Transition.tsx` — insert Card 3 before CTA.
-- `src/features/haircare-challenge-v22/sections/StickyMobileCta.tsx` — switch trigger to sentinel + latch.
-- `src/features/haircare-challenge-v22/sections/SocialProofV22.tsx` — fix count + wrap in link.
-- `src/features/haircare-challenge-v22/listicle-v22.css` — add `.v22-conviction*` styles (scoped under `.hq-sp-v22`); no other rules changed.
+- `src/features/haircare-challenge-v22/sections/Transition.tsx` — replace the single `.v22-transition__inner` paragraph stack with the 8 structured blocks above. Keep the image wrap, eyebrow, H2, ConvictionCard, and CTA wrap intact and in their current order. Wrap the new narrative in a new `.v22-wayout` container so styles are scoped.
+- `src/features/haircare-challenge-v22/listicle-v22.css` — append a `/* ===== The Way Out narrative ===== */` block with classes scoped under `.hq-sp-v22 .v22-wayout` for each piece: `__lead`, `__pains`, `__pain`, `__pain-mark`, `__reveal`, `__solution`, `__solution-em`, `__result`, `__result-eyebrow`, `__founder`, `__reassure`, `__close`. Use existing tokens only (`--accent`, `--ink`, `--surface`, `--line`, `--font-display`, `--font-body`, `--radius-card`, `--radius-pill`).
 
-## QA
+## Constraints
 
-- 3 conviction cards render in the correct slots, visually distinct from carousel + italic inline quotes; left accent rule, initial avatar, tag, 5 stars, "Verified · Day 14" all present; `data-bhc-id` on each.
-- Sticky bar hidden on initial load over Hero + R01; slides in once R01 scrolls off; stays visible thereafter (including scroll-up to hero).
-- Trustpilot reads `4.8/5 · 1,400+ reviews`, badge links to live profile in new tab.
-- No regrowth/"reverse" copy introduced.
+- No copy changes, no paragraph removals, no reordering of sentences within paragraphs.
+- No new images, icons libraries, or fonts — SVG/CSS marks only, using DM Serif Display + Inter already loaded.
+- Stay inside v22 palette: peach `#FBEDE2`, ink `#1A1613`, coral `#F36A3A`, surface `#FFFFFF`, line `#ECE3DA`.
+- Mobile-first; verify at 390px then desktop.
+- The existing `ConvictionCard` (Abigail) between the narrative and the CTA stays where it is.
+
+## Out of scope
+
+- No changes to other sections (Hero, Reasons, ConvictionCards, SocialProof, sticky bar, footer).
+- No changes to fonts, global tokens, or shared primitives.
