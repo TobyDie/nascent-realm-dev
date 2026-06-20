@@ -669,3 +669,98 @@
 /* Trustpilot link wrapper */
 .hq-sp-v22 .v22-sp22__tp-link { display: block; color: inherit; text-decoration: none; }
 .hq-sp-v22 .v22-sp22__tp-link:hover { text-decoration: none; }
+
+/* ===== The Way Out narrative ===== */
+.hq-sp-v22 .v22-wayout { display: flex; flex-direction: column; gap: 32px; margin-top: 28px; }
+@media (min-width: 768px) { .hq-sp-v22 .v22-wayout { gap: 44px; margin-top: 36px; } }
+
+.hq-sp-v22 .v22-wayout__lead {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 21px;
+  line-height: 1.4;
+  color: var(--ink);
+  text-align: center;
+  margin: 0;
+}
+@media (min-width: 768px) { .hq-sp-v22 .v22-wayout__lead { font-size: 24px; } }
+
+.hq-sp-v22 .v22-wayout__pains {
+  list-style: none;
+  margin: 0;
+  padding: 22px 4px;
+  border-top: 1px solid rgba(26,22,19,0.10);
+  border-bottom: 1px solid rgba(26,22,19,0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.hq-sp-v22 .v22-wayout__pain {
+  display: flex; align-items: flex-start; gap: 14px;
+  color: var(--body); font-size: 15px; line-height: 1.55;
+}
+.hq-sp-v22 .v22-wayout__pain-mark {
+  flex: none; margin-top: 6px;
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 1px solid var(--accent);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.hq-sp-v22 .v22-wayout__pain-mark > span {
+  display: block; width: 8px; height: 2px; background: var(--accent); border-radius: 1px;
+}
+
+.hq-sp-v22 .v22-wayout__reveal {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 0;
+  padding: 6px 0 6px 22px;
+  border-left: 4px solid var(--accent);
+}
+@media (min-width: 768px) { .hq-sp-v22 .v22-wayout__reveal { font-size: 26px; padding-left: 28px; } }
+
+.hq-sp-v22 .v22-wayout__solution {
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: var(--radius-card);
+  padding: 22px 22px 20px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.hq-sp-v22 .v22-wayout__solution > p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--body); }
+.hq-sp-v22 .v22-wayout__solution-em {
+  color: var(--accent-deep) !important;
+  font-weight: 600;
+}
+
+.hq-sp-v22 .v22-wayout__result { text-align: center; display: flex; flex-direction: column; gap: 12px; }
+.hq-sp-v22 .v22-wayout__result-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent);
+}
+.hq-sp-v22 .v22-wayout__result > p {
+  margin: 0; font-size: 17px; line-height: 1.55; color: var(--ink);
+}
+.hq-sp-v22 .v22-wayout__result strong { font-weight: 700; color: var(--ink); }
+
+.hq-sp-v22 .v22-wayout__founder {
+  margin: 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(26,22,19,0.08);
+  font-size: 15px; line-height: 1.6; color: var(--body);
+  opacity: 0.92;
+}
+
+.hq-sp-v22 .v22-wayout__reassure-wrap { text-align: center; }
+.hq-sp-v22 .v22-wayout__reassure {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid rgba(26,22,19,0.22);
+  border-radius: var(--radius-pill);
+  font-size: 14px; font-weight: 500; color: var(--ink);
+}
+
+.hq-sp-v22 .v22-wayout__close {
+  margin: 0; text-align: center;
+  font-size: 16px; line-height: 1.6; color: var(--body);
+}
