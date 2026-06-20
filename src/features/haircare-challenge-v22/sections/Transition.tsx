@@ -1,13 +1,13 @@
-import { CtaButton, Placeholder, Stars } from "../primitives";
+import { CtaButton, R2Image, Stars } from "../primitives";
 
 export function Transition() {
   return (
     <section className="v22-section v22-transition" id="challenge">
       <div className="v22-container v22-transition__imgwrap">
-        <Placeholder
+        <R2Image
+          url="https://pub.hairqare.co/22-the-haircare/sarah-14-day.webp"
           w={1080}
           h={1080}
-          label="Sarah hero · the proof"
           alt="Sarah, founder of the 14-Day Hair Knowledge Challenge"
         />
       </div>
