@@ -70,7 +70,7 @@ export function Reasons() {
         number="02"
         headline="Because The Front Of The Bottle Is Marketing, Not Truth."
         band="white"
-        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/22-the-haircare/Ingredient-.webp" }}
+        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/22-the-haircare/ingredient-list.webp" }}
         body={
           <>
             <p>"No sulfates." "No parabens." "Clean." "Natural."</p>
