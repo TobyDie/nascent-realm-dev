@@ -53,7 +53,7 @@ export function Reasons() {
         number="01"
         headline="Because Expensive Doesn't Mean Effective."
         band="peach"
-        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/22-the-haircare/Price.webp" }}
+        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/22-the-haircare/expensive.webp" }}
         body={
           <>
             <p>You've been told the next bottle is the one. The $40 shampoo. The $90 serum. The treatment with the name you can't pronounce.</p>
