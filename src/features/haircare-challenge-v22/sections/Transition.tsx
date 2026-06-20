@@ -1,4 +1,5 @@
 import { CtaButton, R2Image, Stars } from "../primitives";
+import { ConvictionCard } from "./ConvictionCard";
 
 export function Transition() {
   return (
@@ -22,6 +23,16 @@ export function Transition() {
         <p className="v22-body">Sarah did it for herself first. She walked away from an industry that paid her to sell you the problem. Today she keeps the healthiest hair of her life on two simple things and about $10 a month. She built this so you could do the same.</p>
         <p className="v22-body">You don't have to commit to anything right now.</p>
         <p className="v22-body">Just take the 60-second quiz. A few questions about your hair, and you'll see whether this is actually for you. No pressure. No shelf full of regret. Just the first honest look at your hair you've had in a long time.</p>
+      </div>
+      <ConvictionCard
+        initial="A"
+        name="Abigail"
+        descriptor="United States · Day 14"
+        tag="Made Her Own"
+        quote={"I love that we get to make our own products and that we can save money and make more of an impact on our hair."}
+        bhcId="bf43cac3-602a-4e4b-b529-d3ddab807e7f"
+      />
+      <div className="v22-container v22-transition__inner">
         <div className="v22-cta-wrap">
           <CtaButton full>Take the 60-second quiz →</CtaButton>
         </div>
