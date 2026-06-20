@@ -40,7 +40,7 @@ export function StickyMobileCta() {
   const startDate = useStartDate();
 
   useEffect(() => {
-    const sentinel = document.getElementById("v22-r1-end");
+    const sentinel = document.getElementById("v22-ingredient-end");
     let io: IntersectionObserver | undefined;
     let onScroll: (() => void) | undefined;
     const reveal = () => setShow(true);
