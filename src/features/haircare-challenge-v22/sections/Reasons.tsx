@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Placeholder, R2Image } from "../primitives";
+import { ConvictionCard } from "./ConvictionCard";
 
 type ReasonProps = {
   eyebrow: string;
@@ -9,9 +10,10 @@ type ReasonProps = {
   body: ReactNode;
   quote?: { text: string; attribution: string };
   band: "peach" | "white";
+  endSentinelId?: string;
 };
 
-function Reason({ eyebrow, number, headline, image, body, quote, band }: ReasonProps) {
+function Reason({ eyebrow, number, headline, image, body, quote, band, endSentinelId }: ReasonProps) {
   return (
     <section className={`v22-band v22-band--${band} v22-reason`}>
       <div className="v22-container">
@@ -37,6 +39,7 @@ function Reason({ eyebrow, number, headline, image, body, quote, band }: ReasonP
             <span className="v22-inline-quote__attr"> {quote.attribution}</span>
           </p>
         )}
+        {endSentinelId && <div id={endSentinelId} aria-hidden="true" />}
       </div>
     </section>
   );
