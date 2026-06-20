@@ -53,7 +53,6 @@ export function Reasons() {
         number="01"
         headline="Because Expensive Doesn't Mean Effective."
         band="peach"
-        endSentinelId="v22-r1-end"
         image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/22-the-haircare/Price.webp" }}
         body={
           <>
@@ -81,6 +80,7 @@ export function Reasons() {
             <p>You were never bad at hair care. You were just reading the wrong side of the bottle.</p>
           </>
         }
+        endSentinelId="v22-ingredient-end"
       />
       <Reason
         eyebrow="The Real Mechanism"
