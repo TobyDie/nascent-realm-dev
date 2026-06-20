@@ -575,6 +575,7 @@
 }
 @media (min-width: 768px) { .hq-sp-v22 .v22-sp22__h { font-size: 56px; } }
 .hq-sp-v22 .v22-sp22__sub { color: var(--body); margin: 6px 0 32px; font-size: 16px; }
+.hq-sp-v22 .v22-sp22__h .v22-accent { color: var(--accent); }
 .hq-sp-v22 .v22-sp22__stats {
   display: flex; align-items: center; justify-content: center;
   gap: 28px; margin-bottom: 36px;
