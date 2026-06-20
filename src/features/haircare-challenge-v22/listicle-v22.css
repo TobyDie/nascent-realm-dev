@@ -106,6 +106,37 @@
   margin-bottom: 18px;
 }
 
+/* Trust marker — small icon + text, never a CTA */
+.hq-sp-v22 .v22-trust {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  line-height: 1;
+}
+.hq-sp-v22 .v22-trust__icon {
+  width: 16px;
+  height: 16px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.hq-sp-v22 .v22-trust--chip {
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  padding: 7px 12px 7px 10px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.hq-sp-v22 .v22-trust-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
 /* Stars row */
 .hq-sp-v22 .v22-stars { color: var(--star); letter-spacing: 2px; font-size: 16px; }
 .hq-sp-v22 .v22-stars-line {

@@ -14,7 +14,13 @@ export function Hero() {
           />
         </div>
         <div className="v22-hero__copy">
-          <span className="v22-pill-inline">Healthier Hair or Your Money Back</span>
+          <span className="v22-trust v22-trust--chip">
+            <svg className="v22-trust__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
+              <path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            14-Day Haircare Challenge
+          </span>
           <h1 className="v22-h1 v22-h1--dual">
             <span className="v22-accent">5 Reasons</span> Women Are{" "}
             <span className="v22-accent">Finally Quitting</span> Expensive Hair Products
