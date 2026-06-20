@@ -43,6 +43,47 @@ export function Placeholder({
   );
 }
 
+export function R2Image({
+  url,
+  w,
+  h,
+  alt,
+  eager = false,
+  widths = [500, 800, 1200, 1600],
+  sizes = "100vw",
+  fullBleed = true,
+}: {
+  url: string;
+  w: number;
+  h: number;
+  alt: string;
+  eager?: boolean;
+  widths?: number[];
+  sizes?: string;
+  fullBleed?: boolean;
+}) {
+  const m = url.match(/^(https?:\/\/[^/]+)(\/.*)$/);
+  const origin = m ? m[1] : "";
+  const path = m ? m[2] : url;
+  const tx = (width: number) =>
+    `${origin}/cdn-cgi/image/width=${width},quality=80,format=auto${path}`;
+  const srcSet = widths.map((wd) => `${tx(wd)} ${wd}w`).join(", ");
+  return (
+    <img
+      className={fullBleed ? "v22-img v22-img--bleed" : "v22-img"}
+      src={tx(800)}
+      srcSet={srcSet}
+      sizes={sizes}
+      width={w}
+      height={h}
+      alt={alt}
+      loading={eager ? "eager" : "lazy"}
+      decoding="async"
+      {...(eager ? { fetchPriority: "high" as const } : {})}
+    />
+  );
+}
+
 export function Marquee({
   items,
   variant = "bar",

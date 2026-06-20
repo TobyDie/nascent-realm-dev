@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
-import { Placeholder } from "../primitives";
+import { Placeholder, R2Image } from "../primitives";
 
 type ReasonProps = {
   eyebrow: string;
   number: string;
   headline: string;
-  image: { w: number; h: number; label: string; alt: string };
+  image: { w: number; h: number; label: string; alt: string; url?: string };
   body: ReactNode;
   quote?: { text: string; attribution: string };
   band: "peach" | "white";
@@ -23,7 +23,11 @@ function Reason({ eyebrow, number, headline, image, body, quote, band }: ReasonP
         <h2 className="v22-reason__h">{headline}</h2>
       </div>
       <div className="v22-container v22-reason__imgwrap">
-        <Placeholder w={image.w} h={image.h} label={image.label} alt={image.alt} />
+        {image.url ? (
+          <R2Image url={image.url} w={image.w} h={image.h} alt={image.alt} />
+        ) : (
+          <Placeholder w={image.w} h={image.h} label={image.label} alt={image.alt} />
+        )}
       </div>
       <div className="v22-container v22-reason__body">
         {body}
@@ -46,7 +50,7 @@ export function Reasons() {
         number="01"
         headline="Because Expensive Doesn't Mean Effective."
         band="peach"
-        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine" }}
+        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/22-the-haircare/Price.webp" }}
         body={
           <>
             <p>You've been told the next bottle is the one. The $40 shampoo. The $90 serum. The treatment with the name you can't pronounce.</p>
@@ -63,7 +67,7 @@ export function Reasons() {
         number="02"
         headline="Because The Front Of The Bottle Is Marketing, Not Truth."
         band="white"
-        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle" }}
+        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/22-the-haircare/Ingredient-.webp" }}
         body={
           <>
             <p>"No sulfates." "No parabens." "Clean." "Natural."</p>
@@ -79,7 +83,7 @@ export function Reasons() {
         number="03"
         headline="Because Products Are Designed To Mask, Not Solve."
         band="peach"
-        image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp" }}
+        image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp", url: "https://pub.hairqare.co/22-the-haircare/Mechanism.webp" }}
         body={
           <>
             <p>Here's the part the industry needs you to never figure out.</p>
@@ -97,7 +101,7 @@ export function Reasons() {
         number="04"
         headline="Because $80 A Month Isn't Just $80."
         band="white"
-        image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending" }}
+        image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending", url: "https://pub.hairqare.co/22-the-haircare/80.webp" }}
         body={
           <>
             <p>$80. That's what the average woman spends on her hair every single month.</p>
@@ -114,7 +118,7 @@ export function Reasons() {
         number="05"
         headline="Because The Women With The Best Hair Aren't Using More. They're Using Less."
         band="peach"
-        image={{ w: 1080, h: 1350, label: "The result of using less", alt: "The result of using less, not more" }}
+        image={{ w: 1080, h: 1350, label: "The result of using less", alt: "The result of using less, not more", url: "https://pub.hairqare.co/22-the-haircare/IMG-702-1_4X5.webp" }}
         body={
           <>
             <p>At some point you stop chasing the perfect product. You just get tired of the shelf.</p>
