@@ -1,15 +1,16 @@
-import { CtaButton, Placeholder, Stars } from "../primitives";
+import { CtaButton, R2Image, Stars } from "../primitives";
 
 export function Hero() {
   return (
     <section className="v22-hero" id="hero">
       <div className="v22-container v22-hero__stack">
         <div className="v22-hero__media">
-          <Placeholder
+          <R2Image
+            url="https://pub.hairqare.co/22-the-haircare/ATF.webp"
             w={1080}
             h={1080}
-            label="Sarah · solution state"
             alt="Sarah, solution state, healthy hair, warm editorial tone"
+            eager
           />
         </div>
         <div className="v22-hero__copy">
