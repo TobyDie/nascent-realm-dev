@@ -1,65 +1,66 @@
+# /22-the-haircare-challenge — Three targeted changes
 
-## Scope
-All changes are confined to `src/features/haircare-challenge-v22/` (page-fork rule). Nothing in `/21` is modified or shared.
+Scope is strictly v22. No layout/type changes outside what's listed.
 
-## 1. Rebuild the Solution section (`sections/Transition.tsx`)
+## A. Inline conviction cards (new component)
 
-Keep the Sarah placeholder image at top, centered layout, same `.v22-eyebrow`, `.v22-h2`, `.v22-subhead`, `.v22-body`, `.v22-cta-wrap`, `.v22-stars-line` classes, same pill CTA. Only swap copy:
+Create `src/features/haircare-challenge-v22/sections/ConvictionCard.tsx` — a single full-width pull-quote card visually distinct from the carousel and from the inline italic body quotes.
 
-- Eyebrow: `THE WAY OUT`
-- H2: `What If You Never Had To Buy Another "Miracle" Again?`
-- Body paragraphs (one `<p>` each, no em dashes):
-  1. Picture your bathroom shelf with nothing on it you regret.
-  2. No more standing in the aisle, hoping this one's finally different. No more watching money leave your account for a result that never shows up. No more treating your own hair like a problem you can't solve.
-  3. Here's the part the industry buried: your hair was never the problem. You were just never taught how it actually works.
-  4. That's the whole challenge. Over 14 days, Sarah shows you what your hair truly needs, from the inside out. Not another product to add to the pile. The understanding that finally lets you stop guessing.
-  5. The women who've done this don't talk about a product afterwards. They talk about relief. The quiet confidence of finally knowing. Looking in the mirror and recognising their hair again. Spending less, and somehow seeing more.
-  6. Sarah did it for herself first. She walked away from an industry that paid her to sell you the problem. Today she keeps the healthiest hair of her life on two simple things and about $10 a month. She built this so you could do the same.
-  7. You don't have to commit to anything right now.
-  8. Just take the 60-second quiz. A few questions about your hair, and you'll see whether this is actually for you. No pressure. No shelf full of regret. Just the first honest look at your hair you've had in a long time.
-- Remove the existing `.v22-subhead` ("Stop Shopping For The Answer…") since new copy has no subhead — or repurpose as the first italic line. Decision: drop subhead entirely; lead with paragraph 1 in slightly larger size via existing `.v22-body` (no new CSS).
-- CTA button text: `Take the 60-second quiz →` (existing `CtaButton` + `CTA_URL`).
-- Stars line: `★★★★★ 4.8 | 250,000+ women joined in 149 countries` (drop "Rated").
+Card structure (props: `initial`, `name`, `descriptor`, `tag`, `quote`, `bhcId`):
+- White surface card with `border-radius: 18px`, soft shadow, 28px padding.
+- 4px left accent rule in `var(--accent)`.
+- Large decorative coral `"` mark top-left (~40px, `var(--accent)`).
+- Quote: 20px desktop / 18px mobile, weight 500, `var(--ink)`, line-height 1.45, NOT italic.
+- Attribution row (margin-top 18px, flex/centered):
+  - 40px circular initial badge — `var(--accent-soft)` bg, `var(--accent-deep)` bold initial (matches carousel K/E style).
+  - Name (`var(--ink)` 600) + descriptor (`var(--muted)` 13px) stacked.
+  - Pushed right: 5 gold stars (`var(--star)`) + small "Verified · Day 14" label (`var(--muted)` 12px).
+- One concern-tag pill under attribution: `var(--accent-soft)` bg, `var(--accent-deep)` text, `--radius-pill`, 12px.
+- `data-bhc-id={bhcId}` attribute preserved on the root for verification.
 
-## 2. Port testimonial carousel from /21 — independently
+All styles added to `listicle-v22.css` under `.hq-sp-v22` scope (classes prefixed `v22-conviction*`). Section vertical margin = existing v22 section gap so it reads as its own beat.
 
-Create new self-contained files under v22 (no imports from v21):
+### Placement (in `Reasons.tsx` or composed in `ListiclePageV22.tsx`)
 
-- `src/features/haircare-challenge-v22/sections/TestimonialsCarousel.tsx` — port the testimonial logic from `v21/sections/SocialProof.tsx` (the `CompactTesti` card + Carousel/grid switch, same 5 testimonials, same R2 BA image filenames, same StarRow). Self-contained: inline the small helpers (`Stars`, mobile detection via `window.matchMedia`, image URL via `https://pub.hairqare.co/cdn-cgi/image/...`).
-- For the carousel mechanics, use `embla-carousel-react` directly (already in repo via `src/components/ui/carousel.tsx`) with the same peek/snap behavior as v21 (`peek: 0.78`, dot indicators, swipe). Desktop: 3-col grid. Mobile: swipeable carousel with dots.
-- Add scoped CSS rules to `listicle-v22.css` under `.hq-sp-v22 .v22-testis*` (card, grid, carousel track, dots). No global selectors. No reuse of v21 classes.
-- Section heading: `From women who stopped buying and started learning` (use `.v22-h2`, centered, same band styling).
-- Place between `<SocialProofV22 />` and `<BottomCta />` in `ListiclePageV22.tsx`.
+The current `Reasons` component renders 5 `<Reason>` sections back-to-back. Refactor so cards can sit between them — simplest path: have `Reasons` render `<Reason />` + optional `<ConvictionCard />` siblings inline, in the right order. Card 3 goes inside `Transition.tsx` directly after the body copy and before the CTA/stars line (since the Stats section currently doesn't exist on this page — the after-Solution / before-stats slot is the end of the Transition section).
 
-## 3. Ratings → 4.8 everywhere
+Order:
+1. After Reason 03 — Card 1 (G · A pharmacist · "Product Overload") — BHC `ddbcc5bb-3670-46e4-9636-0dbf07baf0a0`.
+2. After Reason 05 — Card 2 (B · Brooke · Canada · "Free Of The Shelf") — BHC `d457edad-ef31-46a2-8e1d-3ff27ab65243`.
+3. Inside `Transition.tsx`, after the closing "first honest look" paragraph and before the CTA — Card 3 (A · Abigail · United States · "Made Her Own") — BHC `bf43cac3-602a-4e4b-b529-d3ddab807e7f`.
 
-- `Transition.tsx` stars line: `4.9` → `4.8` (covered in step 1).
-- Grep confirmed only that one `4.9` occurrence in v22.
+All quotes verbatim per spec. No 4th card (optional, skipping). Existing italic inline quotes in R01/R04 left as-is (no consistency rewrite).
 
-## 4. Replace "cohort" with "group"
+## B. Delay the sticky urgency bar past Reason 01
 
-- `StickyMobileCta.tsx` line 77: `Next cohort:` → `Next group starts`.
-- Rename CSS class `.v22-stickycta__cohort` → `.v22-stickycta__group` in both the JSX and `listicle-v22.css`.
-- Internal comments in `useStartDate.ts`/`useJoiningCount.ts` may stay (not user-facing) — leave untouched.
+Edit `Reasons.tsx`: append a sentinel `<div id="v22-r1-end" aria-hidden="true" />` at the very end of Reason 01's section.
 
-## 5. Remove the word "free"
+Edit `StickyMobileCta.tsx`: replace the current hero/scroll logic with a single IntersectionObserver on `#v22-r1-end`:
+- Initial state: hidden.
+- When the sentinel's `boundingClientRect.top <= 0` (scrolled past), set `show=true` and **latch** it — never flip back to false (persistent for rest of page, even on scroll-up to hero).
+- Keep the existing `.is-show` class + CSS transition (slide-up + fade ~200ms already in CSS, verify `.v22-stickycta` transition is ≤200ms; tune in CSS only if currently longer).
+- Fallback: if sentinel missing, observe `document.body` scroll past `100vh` with the same latch behavior.
 
-- `AnnouncementBar.tsx`: replace marquee items with neutral copy, e.g. `["HEALTHIER HAIR GUARANTEED", "14-DAY HAIR KNOWLEDGE CHALLENGE", "HEALTHIER HAIR GUARANTEED", "14-DAY HAIR KNOWLEDGE CHALLENGE"]`.
-- `Reasons.tsx` line 69 quote `"Sulfate-free." "Paraben-free." "Clean." "Natural."` — this is intentional industry-jargon quote inside Reason 02 copy. **Confirming with user**: leave as-is because it is a quoted marketing-label list illustrating the ingredient-gap reason, not a Hairqare offer claim. If user wants strict removal, will rewrite as `"Sulfate." "Paraben." "Clean." "Natural."` or paraphrase.
+Bar content (copy, countdown, group date, CTA) is untouched.
 
-## Final page order (unchanged structural beyond carousel insert)
+## C. Fix Trustpilot count
 
-AnnouncementBar → Hero → Reasons (01–05) → Transition (rebuilt solution) → SocialProofV22 (stats) → TestimonialsCarousel (new) → BottomCta → StickyMobileCta
+In `SocialProofV22.tsx`:
+- Change `4.8/5 · 12,400 reviews` → `4.8/5 · 1,400+ reviews`.
+- Wrap the entire Trustpilot block in an `<a href="https://www.trustpilot.com/review/hairqare.co" target="_blank" rel="noopener noreferrer">` with a class (`v22-sp22__tp-link`) that removes default underline/color so visual is unchanged.
 
-## QA after build
+## Files touched
 
-- `rg -n "cohort|4\.9|FREE|Free|\\bfree\\b" src/features/haircare-challenge-v22/` returns nothing user-facing.
-- All CTAs resolve to `CTA_URL` (`https://join.hairqare.co/the-quiz-haircare`).
-- No em dashes in new copy.
-- Verify carousel renders + swipes via `browser--view_preview` at mobile width.
+- new `src/features/haircare-challenge-v22/sections/ConvictionCard.tsx`
+- `src/features/haircare-challenge-v22/sections/Reasons.tsx` — insert cards after R03 + R05, add R01-end sentinel.
+- `src/features/haircare-challenge-v22/sections/Transition.tsx` — insert Card 3 before CTA.
+- `src/features/haircare-challenge-v22/sections/StickyMobileCta.tsx` — switch trigger to sentinel + latch.
+- `src/features/haircare-challenge-v22/sections/SocialProofV22.tsx` — fix count + wrap in link.
+- `src/features/haircare-challenge-v22/listicle-v22.css` — add `.v22-conviction*` styles (scoped under `.hq-sp-v22`); no other rules changed.
 
-## Question for you before I implement
+## QA
 
-The Reason 02 quote uses `"Sulfate-free." "Paraben-free."` as in-world marketing labels women see on bottles. Do you want me to:
-(a) keep them as-is (they're quoted industry copy, not our promise), or
-(b) rewrite to remove the word entirely?
+- 3 conviction cards render in the correct slots, visually distinct from carousel + italic inline quotes; left accent rule, initial avatar, tag, 5 stars, "Verified · Day 14" all present; `data-bhc-id` on each.
+- Sticky bar hidden on initial load over Hero + R01; slides in once R01 scrolls off; stays visible thereafter (including scroll-up to hero).
+- Trustpilot reads `4.8/5 · 1,400+ reviews`, badge links to live profile in new tab.
+- No regrowth/"reverse" copy introduced.
