@@ -25,10 +25,9 @@ export function Transition() {
         <p className="v22-body">Just take the 60-second quiz. A few questions about your hair, and you'll see whether this is actually for you. No pressure. No shelf full of regret. Just the first honest look at your hair you've had in a long time.</p>
       </div>
       <ConvictionCard
-        initial="A"
+        avatar="hero-avatar-19.webp"
         name="Abigail"
         descriptor="United States · Day 14"
-        tag="Made Her Own"
         quote={"I love that we get to make our own products and that we can save money and make more of an impact on our hair."}
         bhcId="bf43cac3-602a-4e4b-b529-d3ddab807e7f"
       />
