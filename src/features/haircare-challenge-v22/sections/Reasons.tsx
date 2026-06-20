@@ -80,6 +80,7 @@ export function Reasons() {
             <p>You were never bad at hair care. You were just reading the wrong side of the bottle.</p>
           </>
         }
+        endSentinelId="v22-ingredient-end"
       />
       <Reason
         eyebrow="The Real Mechanism"
