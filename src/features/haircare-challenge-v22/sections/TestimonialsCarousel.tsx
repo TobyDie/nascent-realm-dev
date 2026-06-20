@@ -14,11 +14,21 @@ const TESTIS: Testi[] = [
   { name: "Anna Koval", initials: "A", context: "Thinning · hair felt lifeless", text: "My hair definitely looks so much better. Feels softer. There's some life added back into it.", image: "ba-3.webp" },
   { name: "Yer Yang", initials: "Y", context: "New mother · postpartum hair loss", text: "My hair feels lighter, not as oily, not as weighed down. There's more volume and it just looks so much better.", image: "ba-5.webp" },
   { name: "Karen Patdu", initials: "K", context: "Thinning · hair loss", text: "You can see hair growing right here in the front. Slowly but surely it's coming back. My hair feels healthier, cleaner, not so oily.", image: "ba-13.webp" },
+  { name: "Eline Mulders", initials: "E", context: "Dry hair · length plateau", text: "My hair feels softer, it's clean… I like my hair, it feels good, and cutting off the split ends feels amazing honestly, it helps also with less tangling.", image: "https://pub.hairqare.co/SP21/Long-Hair-Before-After-1.webp" },
+  { name: "Elena", initials: "E", context: "General hair health", text: "My hair is soft and it truly is good. It's a good cleansing shampoo.", image: "https://pub.hairqare.co/SP21/ong-Hair-Before-After-2.webp" },
+  { name: "Alina Nuno", initials: "A", context: "Shine restoration", text: "My before and after photos were a wake up call! I could see how much length my hair has now compared to when I first joined. It is so much smoother and softer, lighter, fluffier! I am loving the way my hair feels, seeing the marked change reinforces that the work is working!", image: "https://pub.hairqare.co/SP21/Long-hair-Damage-and-Shine-Before-After.webp" },
+  { name: "Brianna Reetz", initials: "B", context: "Split ends · dull, brittle hair", text: "I kept eating what I should be, and just from that, my hair has already changed. It's already becoming a lot thicker, it's already have a bit more shine to it. I trimmed the split ends, and it's already going great. Now my hair is softer and longer.", image: "https://pub.hairqare.co/SP21/Long-hair-Damage-and-Shine-Before-After-4.webp" },
+  { name: "Haydée Fernández", initials: "H", context: "Frizz · wants shine & volume", text: "As you can see my hair is shiny, it feels super soft, it has volume.", image: "https://pub.hairqare.co/SP21/Long-hair-Damage-and-Shine-Before-After-3.webp" },
 ];
 
 const BA_WIDTHS = [400, 700, 1000, 1400];
 
 function r2img(file: string, w: number) {
+  if (file.startsWith("http")) {
+    const i = file.indexOf("//");
+    const slash = file.indexOf("/", i + 2);
+    return `${file.slice(0, slash)}/cdn-cgi/image/width=${w},quality=80,format=auto${file.slice(slash)}`;
+  }
   return `https://pub.hairqare.co/cdn-cgi/image/width=${w},quality=80,format=auto/glow/${file}`;
 }
 function r2srcset(file: string, widths: number[]) {
