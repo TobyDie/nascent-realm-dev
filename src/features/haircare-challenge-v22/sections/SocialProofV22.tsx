@@ -4,7 +4,7 @@ const AVATARS = [
 ];
 
 function avatarUrl(file: string, w = 96) {
-  return `https://pub.hairqare.co/cdn-cgi/image/width=${w},quality=80,format=auto/${file}`;
+  return `https://pub.hairqare.co/cdn-cgi/image/width=${w},quality=80,format=auto/glow/${file}`;
 }
 
 export function SocialProofV22() {
@@ -28,7 +28,7 @@ export function SocialProofV22() {
         </div>
 
         <h2 className="v22-sp22__h">
-          <span className="v22-accent">250,000+</span> Women
+          <span className="v22-accent">250,000+</span> <span className="v22-accent">Women</span>
         </h2>
         <p className="v22-sp22__sub">have taken the challenge</p>
 
