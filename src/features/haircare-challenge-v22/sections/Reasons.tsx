@@ -101,10 +101,9 @@ export function Reasons() {
         }
       />
       <ConvictionCard
-        initial="G"
-        name="Verified graduate"
-        descriptor="A pharmacist · Day 14"
-        tag="Product Overload"
+        avatar="hero-avatar-15.webp"
+        name="Grace"
+        descriptor="Pharmacist · Day 14"
         quote={"The hardest part was throwing out all the products I thought were good for my hair."}
         bhcId="ddbcc5bb-3670-46e4-9636-0dbf07baf0a0"
       />
@@ -143,10 +142,9 @@ export function Reasons() {
         }
       />
       <ConvictionCard
-        initial="B"
+        avatar="hero-avatar-17.webp"
         name="Brooke"
         descriptor="Canada · Day 14"
-        tag="Free Of The Shelf"
         quote={"I like that idea of not having to rely on always buying a product."}
         bhcId="d457edad-ef31-46a2-8e1d-3ff27ab65243"
       />

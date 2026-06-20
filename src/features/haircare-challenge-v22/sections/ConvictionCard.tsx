@@ -1,13 +1,16 @@
 type Props = {
-  initial: string;
+  avatar: string;
   name: string;
   descriptor: string;
-  tag: string;
   quote: string;
   bhcId: string;
 };
 
-export function ConvictionCard({ initial, name, descriptor, tag, quote, bhcId }: Props) {
+function avatarUrl(file: string, w = 96) {
+  return `https://pub.hairqare.co/cdn-cgi/image/width=${w},quality=80,format=auto/glow/${file}`;
+}
+
+export function ConvictionCard({ avatar, name, descriptor, quote, bhcId }: Props) {
   return (
     <section className="v22-conviction-wrap">
       <div className="v22-container">
@@ -15,19 +18,22 @@ export function ConvictionCard({ initial, name, descriptor, tag, quote, bhcId }:
           <span className="v22-conviction__mark" aria-hidden="true">&ldquo;</span>
           <blockquote className="v22-conviction__quote">{quote}</blockquote>
           <figcaption className="v22-conviction__foot">
-            <div className="v22-conviction__who">
-              <span className="v22-conviction__avatar" aria-hidden="true">{initial}</span>
-              <span className="v22-conviction__id">
-                <span className="v22-conviction__name">{name}</span>
-                <span className="v22-conviction__desc">{descriptor}</span>
-              </span>
-            </div>
-            <div className="v22-conviction__meta">
-              <span className="v22-conviction__stars" aria-label="5 out of 5">★★★★★</span>
-              <span className="v22-conviction__verified">Verified · Day 14</span>
-            </div>
+            <img
+              className="v22-conviction__avatar"
+              src={avatarUrl(avatar, 96)}
+              srcSet={`${avatarUrl(avatar, 96)} 1x, ${avatarUrl(avatar, 192)} 2x`}
+              width={36}
+              height={36}
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            <span className="v22-conviction__id">
+              <span className="v22-conviction__name">{name}</span>
+              <span className="v22-conviction__desc">{descriptor}</span>
+            </span>
+            <span className="v22-conviction__stars" aria-label="5 out of 5">★★★★★</span>
           </figcaption>
-          <span className="v22-conviction__tag">{tag}</span>
         </figure>
       </div>
     </section>
