@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Placeholder, R2Image } from "../primitives";
+import { ConvictionCard } from "./ConvictionCard";
 
 type ReasonProps = {
   eyebrow: string;
@@ -9,9 +10,10 @@ type ReasonProps = {
   body: ReactNode;
   quote?: { text: string; attribution: string };
   band: "peach" | "white";
+  endSentinelId?: string;
 };
 
-function Reason({ eyebrow, number, headline, image, body, quote, band }: ReasonProps) {
+function Reason({ eyebrow, number, headline, image, body, quote, band, endSentinelId }: ReasonProps) {
   return (
     <section className={`v22-band v22-band--${band} v22-reason`}>
       <div className="v22-container">
@@ -37,6 +39,7 @@ function Reason({ eyebrow, number, headline, image, body, quote, band }: ReasonP
             <span className="v22-inline-quote__attr"> {quote.attribution}</span>
           </p>
         )}
+        {endSentinelId && <div id={endSentinelId} aria-hidden="true" />}
       </div>
     </section>
   );
@@ -50,6 +53,7 @@ export function Reasons() {
         number="01"
         headline="Because Expensive Doesn't Mean Effective."
         band="peach"
+        endSentinelId="v22-r1-end"
         image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/22-the-haircare/Price.webp" }}
         body={
           <>
@@ -96,6 +100,14 @@ export function Reasons() {
           </>
         }
       />
+      <ConvictionCard
+        initial="G"
+        name="Verified graduate"
+        descriptor="A pharmacist · Day 14"
+        tag="Product Overload"
+        quote={"The hardest part was throwing out all the products I thought were good for my hair."}
+        bhcId="ddbcc5bb-3670-46e4-9636-0dbf07baf0a0"
+      />
       <Reason
         eyebrow="The Hidden Cost"
         number="04"
@@ -129,6 +141,14 @@ export function Reasons() {
             <p>You're trying to be done looking.</p>
           </>
         }
+      />
+      <ConvictionCard
+        initial="B"
+        name="Brooke"
+        descriptor="Canada · Day 14"
+        tag="Free Of The Shelf"
+        quote={"I like that idea of not having to rely on always buying a product."}
+        bhcId="d457edad-ef31-46a2-8e1d-3ff27ab65243"
       />
     </>
   );

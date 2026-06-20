@@ -44,19 +44,26 @@ export function SocialProofV22() {
           </div>
         </div>
 
-        <div className="v22-sp22__tp">
-          <div className="v22-sp22__tp-row">
-            <span className="v22-sp22__tp-name">
-              <span className="v22-sp22__tp-dot" aria-hidden="true">★</span> Trustpilot
-            </span>
-            <span className="v22-sp22__tp-stars" aria-label="4.8 out of 5">
-              {[0, 1, 2, 3, 4].map((i) => (
-                <span className="v22-sp22__tp-tile" key={i}>★</span>
-              ))}
-            </span>
+        <a
+          className="v22-sp22__tp-link"
+          href="https://www.trustpilot.com/review/hairqare.co"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="v22-sp22__tp">
+            <div className="v22-sp22__tp-row">
+              <span className="v22-sp22__tp-name">
+                <span className="v22-sp22__tp-dot" aria-hidden="true">★</span> Trustpilot
+              </span>
+              <span className="v22-sp22__tp-stars" aria-label="4.8 out of 5">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <span className="v22-sp22__tp-tile" key={i}>★</span>
+                ))}
+              </span>
+            </div>
+            <p className="v22-sp22__tp-meta">4.8/5 · 1,400+ reviews</p>
           </div>
-          <p className="v22-sp22__tp-meta">4.8/5 · 12,400 reviews</p>
-        </div>
+        </a>
       </div>
     </section>
   );

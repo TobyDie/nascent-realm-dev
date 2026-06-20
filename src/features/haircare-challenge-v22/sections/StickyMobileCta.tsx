@@ -40,27 +40,39 @@ export function StickyMobileCta() {
   const startDate = useStartDate();
 
   useEffect(() => {
-    let heroVisible = true;
-    let scrolledPast = false;
-    const update = () => setShow(scrolledPast && !heroVisible);
-
-    const onScroll = () => {
-      const next = window.scrollY > window.innerHeight * 0.9;
-      if (next !== scrolledPast) { scrolledPast = next; update(); }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-
-    const hero = document.getElementById("hero");
+    const sentinel = document.getElementById("v22-r1-end");
     let io: IntersectionObserver | undefined;
-    if (hero) {
-      io = new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; update(); }, { threshold: 0.1 });
-      io.observe(hero);
+    let onScroll: (() => void) | undefined;
+    const reveal = () => setShow(true);
+
+    if (sentinel) {
+      io = new IntersectionObserver(
+        ([entry]) => {
+          // Reveal once the sentinel has scrolled above the top of the viewport.
+          if (entry.boundingClientRect.top <= 0) {
+            reveal();
+            io?.disconnect();
+          }
+        },
+        { threshold: 0, rootMargin: "0px 0px -100% 0px" }
+      );
+      io.observe(sentinel);
+      // Initial check in case we mount already past the sentinel.
+      if (sentinel.getBoundingClientRect().top <= 0) reveal();
     } else {
-      heroVisible = false;
+      onScroll = () => {
+        if (window.scrollY > window.innerHeight) {
+          reveal();
+          if (onScroll) window.removeEventListener("scroll", onScroll);
+        }
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
     }
-    update();
-    return () => { io?.disconnect(); window.removeEventListener("scroll", onScroll); };
+    return () => {
+      io?.disconnect();
+      if (onScroll) window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   const formatted = formatJoiningCount(joining);
