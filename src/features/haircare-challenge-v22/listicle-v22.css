@@ -264,6 +264,15 @@
   border-radius: var(--radius-img);
   width: 100%; height: auto; display: block;
 }
+@media (max-width: 767px) {
+  .hq-sp-v22 .v22-hero__media {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .hq-sp-v22 .v22-hero__media .v22-img--bleed {
+    border-radius: 0;
+  }
+}
 
 .hq-sp-v22 .v22-testimonial-card {
   position: absolute;
