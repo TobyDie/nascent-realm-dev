@@ -248,7 +248,7 @@
 .hq-sp-v22 .v22-chip__meta { color: var(--muted); font-size: 11px; display: inline-flex; align-items: center; gap: 4px; }
 
 /* ----- Hero ----- */
-.hq-sp-v22 .v22-hero { padding: 40px 0 56px; }
+.hq-sp-v22 .v22-hero { padding: 40px 0 56px; overflow: hidden; }
 @media (min-width: 768px) { .hq-sp-v22 .v22-hero { padding: 56px 0 96px; } }
 
 .hq-sp-v22 .v22-hero__stack {
@@ -256,18 +256,20 @@
   align-items: center; text-align: center;
   max-width: 640px; margin: 0 auto;
 }
-.hq-sp-v22 .v22-hero__copy { text-align: center; }
+.hq-sp-v22 .v22-hero__copy { text-align: center; max-width: 640px; margin: 28px auto 0; }
 .hq-sp-v22 .v22-hero__copy .v22-cta-wrap { display: flex; justify-content: center; }
 
-.hq-sp-v22 .v22-hero__media { position: relative; width: 100%; align-self: stretch; }
+.hq-sp-v22 .v22-hero__media { position: relative; width: min(640px, calc(100% - 40px)); margin: 0 auto; }
 .hq-sp-v22 .v22-hero__media .v22-img--bleed {
   border-radius: var(--radius-img);
   width: 100%; height: auto; display: block;
 }
 @media (max-width: 767px) {
   .hq-sp-v22 .v22-hero__media {
-    margin-left: -20px;
-    margin-right: -20px;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: 0;
+    width: 100vw;
   }
   .hq-sp-v22 .v22-hero__media .v22-img--bleed {
     border-radius: 0;
