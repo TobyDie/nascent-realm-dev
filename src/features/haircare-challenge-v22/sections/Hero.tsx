@@ -3,16 +3,16 @@ import { CtaButton, R2Image, Stars } from "../primitives";
 export function Hero() {
   return (
     <section className="v22-hero" id="hero">
-      <div className="v22-container v22-hero__stack">
-        <div className="v22-hero__media">
-          <R2Image
-            url="https://pub.hairqare.co/22-the-haircare/ATF.webp"
-            w={1080}
-            h={1080}
-            alt="Sarah, solution state, healthy hair, warm editorial tone"
-            eager
-          />
-        </div>
+      <div className="v22-hero__media">
+        <R2Image
+          url="https://pub.hairqare.co/22-the-haircare/ATF.webp"
+          w={1080}
+          h={1080}
+          alt="Sarah, solution state, healthy hair, warm editorial tone"
+          eager
+        />
+      </div>
+      <div className="v22-container">
         <div className="v22-hero__copy">
           <span className="v22-trust v22-trust--chip">
             <svg className="v22-trust__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
