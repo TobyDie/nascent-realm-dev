@@ -259,7 +259,7 @@
 .hq-sp-v22 .v22-hero__copy { text-align: center; }
 .hq-sp-v22 .v22-hero__copy .v22-cta-wrap { display: flex; justify-content: center; }
 
-.hq-sp-v22 .v22-hero__media { position: relative; }
+.hq-sp-v22 .v22-hero__media { position: relative; width: 100%; align-self: stretch; }
 .hq-sp-v22 .v22-hero__media .v22-img--bleed {
   border-radius: var(--radius-img);
   width: 100%; height: auto; display: block;
