@@ -92,7 +92,7 @@ export function Fault() {
           <Button
             id="cta-fault"
             variant="primary"
-            onClick={() => { window.location.href = "https://join.hairqare.co/the-quiz-haircare"; }}
+            onClick={() => { window.location.href = "https://join.hairqare.co/40-the-quiz-haircare/"; }}
             icon="arrow-right"
           >
             Show me how to fix it
