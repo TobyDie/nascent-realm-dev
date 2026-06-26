@@ -1,11 +1,11 @@
 export function Footer() {
   return (
-    <footer className="v22-footer" id="contact">
-      <div className="v22-container">
-        <h3 className="v22-footer__h">Glow from within isn't a product.</h3>
-        <p className="v22-footer__sub">Sign up for what the industry won't tell you.</p>
+    <footer className="v24-footer" id="contact">
+      <div className="v24-container">
+        <h3 className="v24-footer__h">Glow from within isn't a product.</h3>
+        <p className="v24-footer__sub">Sign up for what the industry won't tell you.</p>
         <form
-          className="v22-footer__form"
+          className="v24-footer__form"
           onSubmit={(e) => e.preventDefault()}
           aria-label="Email signup"
         >
@@ -13,13 +13,13 @@ export function Footer() {
             type="email"
             required
             placeholder="you@email.com"
-            className="v22-footer__input"
+            className="v24-footer__input"
             aria-label="Email address"
           />
-          <button type="submit" className="v22-footer__btn">Subscribe</button>
+          <button type="submit" className="v24-footer__btn">Subscribe</button>
         </form>
-        <p className="v22-footer__trust">Loved by 250,000+ women in 149 countries</p>
-        <nav className="v22-footer__links" aria-label="Legal">
+        <p className="v24-footer__trust">Loved by 250,000+ women in 149 countries</p>
+        <nav className="v24-footer__links" aria-label="Legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Return Policy</a>
           <a href="#">Shipping Policy</a>
@@ -27,7 +27,7 @@ export function Footer() {
           <a href="#">Guarantee</a>
           <a href="#">Contact</a>
         </nav>
-        <div className="v22-footer__logo">
+        <div className="v24-footer__logo">
           <img
             src="https://placehold.co/160x40/FBE7DE/D86B4A?text=Hairqare"
             width={160}

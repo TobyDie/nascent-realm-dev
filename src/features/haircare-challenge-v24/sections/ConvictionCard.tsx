@@ -12,14 +12,14 @@ function avatarUrl(file: string, w = 96) {
 
 export function ConvictionCard({ avatar, name, descriptor, quote, bhcId }: Props) {
   return (
-    <section className="v22-conviction-wrap">
-      <div className="v22-container">
-        <figure className="v22-conviction" data-bhc-id={bhcId}>
-          <span className="v22-conviction__mark" aria-hidden="true">&ldquo;</span>
-          <blockquote className="v22-conviction__quote">{quote}</blockquote>
-          <figcaption className="v22-conviction__foot">
+    <section className="v24-conviction-wrap">
+      <div className="v24-container">
+        <figure className="v24-conviction" data-bhc-id={bhcId}>
+          <span className="v24-conviction__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote className="v24-conviction__quote">{quote}</blockquote>
+          <figcaption className="v24-conviction__foot">
             <img
-              className="v22-conviction__avatar"
+              className="v24-conviction__avatar"
               src={avatarUrl(avatar, 96)}
               srcSet={`${avatarUrl(avatar, 96)} 1x, ${avatarUrl(avatar, 192)} 2x`}
               width={36}
@@ -28,11 +28,11 @@ export function ConvictionCard({ avatar, name, descriptor, quote, bhcId }: Props
               loading="lazy"
               decoding="async"
             />
-            <span className="v22-conviction__id">
-              <span className="v22-conviction__name">{name}</span>
-              <span className="v22-conviction__desc">{descriptor}</span>
+            <span className="v24-conviction__id">
+              <span className="v24-conviction__name">{name}</span>
+              <span className="v24-conviction__desc">{descriptor}</span>
             </span>
-            <span className="v22-conviction__stars" aria-label="5 out of 5">★★★★★</span>
+            <span className="v24-conviction__stars" aria-label="5 out of 5">★★★★★</span>
           </figcaption>
         </figure>
       </div>

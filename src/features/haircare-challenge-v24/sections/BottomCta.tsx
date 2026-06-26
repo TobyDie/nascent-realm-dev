@@ -2,7 +2,7 @@ import { CtaButton, Marquee } from "../primitives";
 
 export function BottomCta() {
   return (
-    <section className="v22-section v22-bottomcta">
+    <section className="v24-section v24-bottomcta">
       <Marquee
         variant="cta"
         items={[
@@ -11,11 +11,11 @@ export function BottomCta() {
           "HEALTHIER HAIR IN 14 DAYS",
         ]}
       />
-      <div className="v22-container v22-cta-wrap v22-cta-wrap--big">
+      <div className="v24-container v24-cta-wrap v24-cta-wrap--big">
         <CtaButton full>Start the 14-day challenge →</CtaButton>
-        <div className="v22-trust-row">
-          <span className="v22-trust">
-            <svg className="v22-trust__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <div className="v24-trust-row">
+          <span className="v24-trust">
+            <svg className="v24-trust__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
               <path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

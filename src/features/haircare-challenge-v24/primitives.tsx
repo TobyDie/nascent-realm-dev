@@ -1,13 +1,13 @@
 import type { CSSProperties, ReactNode } from "react";
-import { CTA_URL } from "./ListiclePageV22";
+import { CTA_URL } from "./ListiclePageV24";
 
 export function Stars({ className }: { className?: string }) {
-  return <span className={`v22-stars ${className ?? ""}`} aria-label="5 out of 5 stars">★★★★★</span>;
+  return <span className={`v24-stars ${className ?? ""}`} aria-label="5 out of 5 stars">★★★★★</span>;
 }
 
 export function CtaButton({ children, full }: { children: ReactNode; full?: boolean }) {
   return (
-    <a className={`v22-cta ${full ? "v22-cta--full" : ""}`} href={CTA_URL}>
+    <a className={`v24-cta ${full ? "v24-cta--full" : ""}`} href={CTA_URL}>
       {children}
     </a>
   );
@@ -31,7 +31,7 @@ export function Placeholder({
   const src = `https://placehold.co/${w}x${h}/FBE7DE/D86B4A?text=${encodeURIComponent(label)}`;
   return (
     <img
-      className={fullBleed ? "v22-img v22-img--bleed" : "v22-img"}
+      className={fullBleed ? "v24-img v24-img--bleed" : "v24-img"}
       src={src}
       width={w}
       height={h}
@@ -70,7 +70,7 @@ export function R2Image({
   const srcSet = widths.map((wd) => `${tx(wd)} ${wd}w`).join(", ");
   return (
     <img
-      className={fullBleed ? "v22-img v22-img--bleed" : "v22-img"}
+      className={fullBleed ? "v24-img v24-img--bleed" : "v24-img"}
       src={tx(800)}
       srcSet={srcSet}
       sizes={sizes}
@@ -93,10 +93,10 @@ export function Marquee({
 }) {
   const track = [...items, ...items, ...items];
   return (
-    <div className={`v22-marquee v22-marquee--${variant}`} role="marquee" aria-hidden="true">
-      <div className="v22-marquee__track">
+    <div className={`v24-marquee v24-marquee--${variant}`} role="marquee" aria-hidden="true">
+      <div className="v24-marquee__track">
         {track.map((t, i) => (
-          <span key={i} className="v22-marquee__item">
+          <span key={i} className="v24-marquee__item">
             {t}
           </span>
         ))}
