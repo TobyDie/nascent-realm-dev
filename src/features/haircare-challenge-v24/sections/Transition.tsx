@@ -14,53 +14,13 @@ export function Transition() {
       </div>
       <div className="v24-container v24-transition__inner">
         <div className="v24-eyebrow v24-eyebrow--center">THE WAY OUT</div>
-        <h2 className="v24-h2">What If You Never Had To Buy Another "Miracle" Again?</h2>
+        <h2 className="v24-h2">What If You Never Had To Stand In The Shampoo Aisle Again?</h2>
 
         <div className="v24-wayout">
-          <p className="v24-wayout__lead">Picture your bathroom shelf with nothing on it you regret.</p>
-
-          <ul className="v24-wayout__pains">
-            <li className="v24-wayout__pain">
-              <span className="v24-wayout__pain-mark" aria-hidden="true"><span /></span>
-              <span>No more standing in the aisle, hoping this one's finally different.</span>
-            </li>
-            <li className="v24-wayout__pain">
-              <span className="v24-wayout__pain-mark" aria-hidden="true"><span /></span>
-              <span>No more watching money leave your account for a result that never shows up.</span>
-            </li>
-            <li className="v24-wayout__pain">
-              <span className="v24-wayout__pain-mark" aria-hidden="true"><span /></span>
-              <span>No more treating your own hair like a problem you can't solve.</span>
-            </li>
-          </ul>
-
-          <blockquote className="v24-wayout__reveal">
-            Here's the part the industry buried: your hair was never the problem. You were just never taught how it actually works.
-          </blockquote>
-
-          <div className="v24-wayout__solution">
-            <p>That's the whole challenge. Over 14 days, Sarah shows you what your hair truly needs, from the inside out.</p>
-            <p className="v24-wayout__solution-em">Not another product to add to the pile. The understanding that finally lets you stop guessing.</p>
-          </div>
-
-          <div className="v24-wayout__result">
-            <div className="v24-wayout__result-eyebrow">THE RESULT</div>
-            <p>
-              The women who've done this don't talk about a product afterwards. They talk about <strong>relief</strong>. The quiet confidence of finally knowing. Looking in the mirror and recognising their hair again. Spending less, and somehow seeing more.
-            </p>
-          </div>
-
-          <p className="v24-wayout__founder">
-            Sarah did it for herself first. She walked away from an industry that paid her to sell you the problem. Today she keeps the healthiest hair of her life on two simple things and about $10 a month. She built this so you could do the same.
-          </p>
-
-          <div className="v24-wayout__reassure-wrap">
-            <span className="v24-wayout__reassure">You don't have to commit to anything right now.</span>
-          </div>
-
-          <p className="v24-wayout__close">
-            Just take the 60-second quiz. A few questions about your hair, and you'll see whether this is actually for you. No pressure. No shelf full of regret. Just the first honest look at your hair you've had in a long time.
-          </p>
+          <p className="v24-wayout__lead">Picture this. You wash with two simple shampoos you actually understand. Your roots stay clean for days. Your ends stay soft. You stop reading labels. You stop spending. You stop guessing.</p>
+          <p>That's what happens when you stop looking for the perfect shampoo and start understanding your own hair.</p>
+          <p>Sarah used to be a paid hair influencer. She sold you those bottles. Then she walked away, figured out what her hair actually needed, and now keeps the healthiest hair of her life on two shampoos she makes herself. More than 250,000 women have learned to do the same.</p>
+          <p className="v24-wayout__close">You don't have to commit to anything right now. Just take the 60-second quiz. A few questions about your hair, and you'll see exactly which two shampoos your hair needs, and how often to use each. The end of the search. Finally.</p>
         </div>
       </div>
       <ConvictionCard
@@ -72,7 +32,7 @@ export function Transition() {
       />
       <div className="v24-container v24-transition__inner">
         <div className="v24-cta-wrap">
-          <CtaButton full>Take the 60-second quiz →</CtaButton>
+          <CtaButton full>Find out which two shampoos your hair needs</CtaButton>
         </div>
         <div className="v24-stars-line v24-stars-line--center">
           <Stars /> <span>4.8 | 250,000+ women joined in 149 countries</span>

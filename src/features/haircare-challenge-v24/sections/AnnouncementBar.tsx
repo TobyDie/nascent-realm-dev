@@ -6,14 +6,14 @@ export function AnnouncementBar() {
       <Marquee
         variant="bar"
         items={[
-          "250,000+ WOMEN COMMUNITY",
+          "STOP SEARCHING FOR THE PERFECT SHAMPOO",
+          "250,000+ WOMEN",
           "149 COUNTRIES",
-          "NO PRODUCTS TO BUY",
-          "VISIBLE RESULTS IN 14 DAYS",
-          "250,000+ WOMEN COMMUNITY",
+          "YOUR HAIR NEEDS TWO, NOT ONE",
+          "STOP SEARCHING FOR THE PERFECT SHAMPOO",
+          "250,000+ WOMEN",
           "149 COUNTRIES",
-          "NO PRODUCTS TO BUY",
-          "VISIBLE RESULTS IN 14 DAYS",
+          "YOUR HAIR NEEDS TWO, NOT ONE",
         ]}
       />
     </div>
