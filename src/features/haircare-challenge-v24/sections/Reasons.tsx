@@ -53,7 +53,7 @@ export function Reasons() {
         number="01"
         headline="Because Your Hair Is Oily And Dry At The Same Time."
         band="peach"
-        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/22-the-haircare/expensive.webp" }}
+        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/SP24/Website-page.webp" }}
         body={
           <>
             <p>Greasy at the roots by lunch. Dry and snapping at the ends by evening.</p>
@@ -68,7 +68,7 @@ export function Reasons() {
         number="02"
         headline="Because You've Been Using One Bottle For Two Different Jobs."
         band="white"
-        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/22-the-haircare/ingredient-list.webp" }}
+        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/SP24/Screenshot-2026-06-26-at-6.56.54-PM.webp" }}
         body={
           <>
             <p>Your scalp and your strands are not the same thing, and they never wanted the same thing.</p>
@@ -83,7 +83,7 @@ export function Reasons() {
         number="03"
         headline={'Because "Clean" And "Sulfate-Free" Were Never Made For You.'}
         band="peach"
-        image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp", url: "https://pub.hairqare.co/22-the-haircare/Mechanism.webp" }}
+        image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp", url: "https://pub.hairqare.co/SP24/Screenshot-2026-06-26-at-6.37.42-PM.webp" }}
         body={
           <>
             <p>So you reached for the "better" bottle. The sulfate-free one. The clean one. The natural one everyone swears by.</p>
@@ -104,7 +104,7 @@ export function Reasons() {
         number="04"
         headline="Because Conditioner Is The Bandage For A Wound The Shampoo Created."
         band="white"
-        image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending", url: "https://pub.hairqare.co/22-the-haircare/80.webp" }}
+        image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending", url: "https://pub.hairqare.co/SP24/Screenshot-2026-06-26-at-6.58.10-PM.webp" }}
         body={
           <>
             <p>Ever notice you can't use the shampoo without reaching for the conditioner? That's not an accident.</p>
