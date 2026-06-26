@@ -119,7 +119,7 @@ export function TestimonialsCarousel() {
   return (
     <section className="v24-band v24-band--white v24-testis" id="results">
       <div className="v24-container">
-        <h2 className="v24-h2 v24-testis__h">From women who stopped searching</h2>
+        <h2 className="v24-h2 v24-testis__h">From women who stopped buying and started making</h2>
 
         {isMobile ? (
           <>

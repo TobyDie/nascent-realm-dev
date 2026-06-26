@@ -56,40 +56,39 @@ export function Reasons() {
         image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/22-the-haircare/expensive.webp" }}
         body={
           <>
-            <p>Oily at the roots by lunch. Dry and snapping at the ends. At the same time.</p>
-            <p>You wash more, and the grease is back by day two. You add more conditioner, and the ends still feel like straw. You've started to feel a little crazy, because nothing you do fixes both at once.</p>
-            <p>You're not crazy. And it was never your fault.</p>
+            <p>Greasy at the roots by lunch. Dry and snapping at the ends by evening.</p>
+            <p>You've felt a little crazy, because nothing fixes both at once. Wash more, the grease comes back faster. Condition more, the ends still feel like straw.</p>
+            <p>You're not crazy. You've been handed the wrong tool for the job. Every single time.</p>
           </>
         }
         quote={{ text: "I have tried so many products and treatments and nothing worked for me.", attribution: "Sangheetha, Malaysia" }}
       />
       <Reason
-        eyebrow="The Shampoo Treadmill"
+        eyebrow="The Real Reason"
         number="02"
-        headline="Because No Single Shampoo Has Ever Fixed Both."
+        headline="Because You've Been Using One Bottle For Two Different Jobs."
         band="white"
         image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/22-the-haircare/ingredient-list.webp" }}
         body={
           <>
-            <p>So you went looking for the one that would. The clarifying one. The "sulfate-free" one everyone swears by. The expensive one. The clean one. The volumizing one.</p>
-            <p>You've switched a dozen times. Spent a small fortune. And your hair is still doing the exact same thing.</p>
-            <p>Here's the part no brand will admit. You weren't failing at the search. The search was never going to work.</p>
+            <p>Your scalp and your strands are not the same thing, and they never wanted the same thing.</p>
+            <p>Your scalp is alive. It makes oil. It's a garden. Your strands are not alive. They're dead protein. They're silk.</p>
+            <p>No single bottle can wash a garden and protect silk at the same time. One of them always loses. That's why every shampoo you ever tried worked for a week, then turned on you. You weren't failing. You were using one product for two opposite jobs.</p>
           </>
         }
         endSentinelId="v24-ingredient-end"
       />
       <Reason
-        eyebrow="The Real Reason"
+        eyebrow="The Label Lie"
         number="03"
-        headline="Because You've Been Using One Shampoo For Two Different Problems."
+        headline={'Because "Clean" And "Sulfate-Free" Were Never Made For You.'}
         band="peach"
         image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp", url: "https://pub.hairqare.co/22-the-haircare/Mechanism.webp" }}
         body={
           <>
-            <p>Your scalp and your strands are not the same thing.</p>
-            <p>Your scalp is alive. It makes oil. It's basically a garden. Your strands are not alive. They're dead protein. They're silk.</p>
-            <p>You cannot wash a garden and a silk dress with the same bottle and expect both to thrive. One shampoo will always fail one of them.</p>
-            <p>That's why you're oily and dry at the same time. And it's why every shampoo you ever tried let you down. You were looking for one answer to two completely different problems.</p>
+            <p>So you reached for the "better" bottle. The sulfate-free one. The clean one. The natural one everyone swears by.</p>
+            <p>Here's what the front never tells you. "Sulfate-free" doesn't mean gentle. It usually means they swapped the sulfate for a cheaper surfactant that strips your hair just as hard, then slipped a preservative like phenoxyethanol high up the list, where it has no business being.</p>
+            <p>And even the "good" bottle was mixed in a factory for the average head of hair. Not your scalp. Not your water. Not your hair. It was never going to be the one, because it was never made for you.</p>
           </>
         }
       />
@@ -101,31 +100,32 @@ export function Reasons() {
         bhcId="ddbcc5bb-3670-46e4-9636-0dbf07baf0a0"
       />
       <Reason
-        eyebrow="The Part No One Tells You"
+        eyebrow="The Patch"
         number="04"
-        headline="Because The Fix Isn't One Shampoo. It's Two, Used Your Way."
+        headline="Because Conditioner Is The Bandage For A Wound The Shampoo Created."
         band="white"
         image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending", url: "https://pub.hairqare.co/22-the-haircare/80.webp" }}
         body={
           <>
-            <p>The answer is two shampoos. A gentle one to protect your strands. A reset one to clean your scalp. And yes, the reset one uses the exact ingredient they spent a decade telling you to fear.</p>
-            <p>But here's what almost no one tells you. How often you use each one depends entirely on you. Your scalp. Your oil. Your water. Your life.</p>
-            <p>There's no universal "wash less." There's only your rhythm. Get that right, and the oily-and-dry nightmare just stops.</p>
+            <p>Ever notice you can't use the shampoo without reaching for the conditioner? That's not an accident.</p>
+            <p>A harsh shampoo strips your hair. So they sell you a conditioner to coat it back up and hide what the shampoo just did. Strip, patch, repeat. Two products, forever, for one problem they manufactured.</p>
+            <p>When your wash stops stripping your hair in the first place, the whole cycle falls apart. You stop patching what was never supposed to be broken.</p>
           </>
         }
         quote={{ text: "It impacts my bank account trying new products, which just frustrates me.", attribution: "Graduate, United States" }}
       />
       <Reason
-        eyebrow="The Simpler Way"
+        eyebrow="The Way Women Actually Win"
         number="05"
-        headline="Because The Women With The Easiest Hair Stopped Searching."
+        headline="Because The Women With The Healthiest Hair Stopped Buying And Started Making."
         band="peach"
         image={{ w: 1080, h: 1350, label: "The result of using less", alt: "The result of using less, not more", url: "https://pub.hairqare.co/22-the-haircare/IMG-702-1_4X5.webp" }}
         body={
           <>
-            <p>They're not using the most expensive shampoo. They're not using ten products. They figured out their two, found their rhythm, and never thought about the shampoo aisle again.</p>
-            <p>Sarah does it for about ten dollars a month.</p>
-            <p>No more chasing the next bottle. No more oily by lunch. No more straw ends. Just hair that finally behaves, on your terms.</p>
+            <p>The women whose hair finally calmed down aren't using a fancier bottle. They make their own.</p>
+            <p>Two simple shampoos from ingredients you already half-recognize. Aloe vera. Green tea. Chamomile. A gentle plant surfactant. Nothing on the label you can't pronounce. They mix a batch in the kitchen in minutes, enough for themselves and their whole family, for a few dollars.</p>
+            <p>And because they make it, they can tune it to their own hair, instead of the average stranger's. Sarah keeps the healthiest hair of her life this way, for about ten dollars a month.</p>
+            <p>The only thing you have to learn first is your own hair. That's the whole point of the challenge.</p>
           </>
         }
       />

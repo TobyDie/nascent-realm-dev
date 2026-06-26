@@ -9,11 +9,11 @@ export function AnnouncementBar() {
           "STOP SEARCHING FOR THE PERFECT SHAMPOO",
           "250,000+ WOMEN",
           "149 COUNTRIES",
-          "YOUR HAIR NEEDS TWO, NOT ONE",
+          "STOP BUYING IT. START MAKING IT.",
           "STOP SEARCHING FOR THE PERFECT SHAMPOO",
           "250,000+ WOMEN",
           "149 COUNTRIES",
-          "YOUR HAIR NEEDS TWO, NOT ONE",
+          "STOP BUYING IT. START MAKING IT.",
         ]}
       />
     </div>

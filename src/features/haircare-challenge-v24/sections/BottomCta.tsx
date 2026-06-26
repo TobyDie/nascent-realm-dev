@@ -6,13 +6,13 @@ export function BottomCta() {
       <Marquee
         variant="cta"
         items={[
-          "THE END OF THE SHAMPOO SEARCH",
-          "THE END OF THE SHAMPOO SEARCH",
-          "THE END OF THE SHAMPOO SEARCH",
+          "STOP BUYING IT. START MAKING IT.",
+          "STOP BUYING IT. START MAKING IT.",
+          "STOP BUYING IT. START MAKING IT.",
         ]}
       />
       <div className="v24-container v24-cta-wrap v24-cta-wrap--big">
-        <CtaButton full>Take the 60-second quiz</CtaButton>
+        <CtaButton full>Healthier Hair in 14 Days</CtaButton>
         <div className="v24-trust-row">
           <span className="v24-trust">
             <svg className="v24-trust__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">

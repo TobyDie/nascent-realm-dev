@@ -14,13 +14,14 @@ export function Transition() {
       </div>
       <div className="v24-container v24-transition__inner">
         <div className="v24-eyebrow v24-eyebrow--center">THE WAY OUT</div>
-        <h2 className="v24-h2">What If You Never Had To Stand In The Shampoo Aisle Again?</h2>
+        <h2 className="v24-h2">What If You Never Had To Buy Shampoo Again?</h2>
 
         <div className="v24-wayout">
-          <p className="v24-wayout__lead">Picture this. You wash with two simple shampoos you actually understand. Your roots stay clean for days. Your ends stay soft. You stop reading labels. You stop spending. You stop guessing.</p>
-          <p>That's what happens when you stop looking for the perfect shampoo and start understanding your own hair.</p>
-          <p>Sarah used to be a paid hair influencer. She sold you those bottles. Then she walked away, figured out what her hair actually needed, and now keeps the healthiest hair of her life on two shampoos she makes herself. More than 250,000 women have learned to do the same.</p>
-          <p className="v24-wayout__close">You don't have to commit to anything right now. Just take the 60-second quiz. A few questions about your hair, and you'll see exactly which two shampoos your hair needs, and how often to use each. The end of the search. Finally.</p>
+          <p className="v24-wayout__lead">Think about what you've already spent. The bottles that promised everything. The "clean" ones. The conditioner to fix the shampoo. The next thing a video told you to try. Hundreds of dollars a year, for hair that never settled. Multiply that across a lifetime.</p>
+          <p>Now picture the opposite. You finally understand your own hair. You make two simple shampoos from a handful of real ingredients, in minutes, in your own kitchen. A batch lasts ages and costs a few dollars. You make enough for your partner, your kids, your whole house. You stop reading labels. You stop buying conditioner you never needed. You stop guessing.</p>
+          <p>"But I can't make my own shampoo." Yes, you can. It's not a chemistry set. It's aloe, green tea, a gentle plant surfactant, and a pH strip, and Sarah walks you through every step.</p>
+          <p>That's exactly what the 14-day hair care challenge is. Over 14 days, Sarah teaches you to read your own hair, then make your own shampoo and conditioner around it. Not another product to add to the pile. The skill that ends the shopping for good.</p>
+          <p className="v24-wayout__close">Sarah used to be a paid hair influencer. She sold those bottles. Then she walked away, learned what her hair actually needed, and never bought shampoo off a shelf again. More than 250,000 women have done the same.</p>
         </div>
       </div>
       <ConvictionCard
@@ -32,7 +33,7 @@ export function Transition() {
       />
       <div className="v24-container v24-transition__inner">
         <div className="v24-cta-wrap">
-          <CtaButton full>Find out which two shampoos your hair needs</CtaButton>
+          <CtaButton full>Healthier Hair in 14 Days</CtaButton>
         </div>
         <div className="v24-stars-line v24-stars-line--center">
           <Stars /> <span>4.8 | 250,000+ women joined in 149 countries</span>

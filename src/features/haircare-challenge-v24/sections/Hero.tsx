@@ -26,10 +26,10 @@ export function Hero() {
             <span className="v24-accent">Finally Quitting</span> the "Perfect Shampoo" Search
           </h1>
           <p className="v24-lede">
-            If your hair is oily at the roots by lunch but dry and snapping at the ends, and you've tried every shampoo on the shelf to fix it, here's why 250,000+ women stopped searching for the perfect bottle and found something better.
+            If your hair is oily at the roots by lunch and dry at the ends by evening, and no shampoo you've ever bought has fixed it, there's a reason. And it isn't your hair. Here's why 250,000+ women stopped hunting for the perfect bottle and started making their own.
           </p>
           <div className="v24-cta-wrap">
-            <CtaButton full>Find out which two shampoos your hair needs</CtaButton>
+            <CtaButton full>Healthier Hair in 14 Days</CtaButton>
           </div>
           <div className="v24-stars-line v24-stars-line--center">
             <Stars />
