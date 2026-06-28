@@ -6,11 +6,20 @@ type Testi = {
   context: string;
   text: string;
   image: string;
+  imageOnly?: boolean;
 };
 
 const TESTIS: Testi[] = [
+  { name: "", initials: "", context: "", text: "", image: "https://pub.hairqare.co/SP24/1.webp", imageOnly: true },
+  { name: "", initials: "", context: "", text: "", image: "https://pub.hairqare.co/SP24/2.webp", imageOnly: true },
+  { name: "", initials: "", context: "", text: "", image: "https://pub.hairqare.co/SP24/3.webp", imageOnly: true },
+  { name: "", initials: "", context: "", text: "", image: "https://pub.hairqare.co/SP24/4.webp", imageOnly: true },
+  { name: "", initials: "", context: "", text: "", image: "https://pub.hairqare.co/SP24/5.webp", imageOnly: true },
   { name: "Kim", initials: "K", context: "Shedding every wash · hair loss", text: "I think I lost maybe half of the amount of hair I normally lose every time I wash.", image: "ba-1.webp" },
+  { name: "", initials: "", context: "", text: "", image: "https://pub.hairqare.co/SP24/6.webp", imageOnly: true },
+  { name: "", initials: "", context: "", text: "", image: "https://pub.hairqare.co/SP24/7.webp", imageOnly: true },
   { name: "Eline Mulders", initials: "E", context: "Dry hair · length plateau", text: "My hair feels softer, it's clean… I like my hair, it feels good, and cutting off the split ends feels amazing honestly, it helps also with less tangling.", image: "https://pub.hairqare.co/SP21/Long-Hair-Before-After-1.webp" },
+  { name: "", initials: "", context: "", text: "", image: "https://pub.hairqare.co/SP24/8.webp", imageOnly: true },
   { name: "Andrea Burns", initials: "A", context: "Hair loss · dry, itchy scalp", text: "By the end of 14 days, I was losing maybe a palm size amount when I'd wash my hair, about a third of what I used to lose.", image: "ba-2.webp" },
   { name: "Elena", initials: "E", context: "General hair health", text: "My hair is soft and it truly is good. It's a good cleansing shampoo.", image: "https://pub.hairqare.co/SP21/ong-Hair-Before-After-2.webp" },
   { name: "Anna Koval", initials: "A", context: "Thinning · hair felt lifeless", text: "My hair definitely looks so much better. Feels softer. There's some life added back into it.", image: "ba-3.webp" },
@@ -55,22 +64,24 @@ function Card({ t }: { t: Testi }) {
           src={r2img(t.image, 700)}
           srcSet={r2srcset(t.image, BA_WIDTHS)}
           sizes="(max-width: 860px) 86vw, 360px"
-          alt={`Before and after - ${t.name}`}
+          alt={t.name ? `Before and after - ${t.name}` : "Testimonial"}
           loading="lazy"
           decoding="async"
         />
       </div>
-      <div className="v24-testis__body">
-        <p className="v24-testis__quote">"{t.text}"</p>
-        <div className="v24-testis__meta">
-          <div className="v24-testis__avatar" aria-hidden="true">{t.initials}</div>
-          <div className="v24-testis__who">
-            <div className="v24-testis__name">{t.name}</div>
-            <div className="v24-testis__ctx">{t.context}</div>
+      {!t.imageOnly && (
+        <div className="v24-testis__body">
+          <p className="v24-testis__quote">"{t.text}"</p>
+          <div className="v24-testis__meta">
+            <div className="v24-testis__avatar" aria-hidden="true">{t.initials}</div>
+            <div className="v24-testis__who">
+              <div className="v24-testis__name">{t.name}</div>
+              <div className="v24-testis__ctx">{t.context}</div>
+            </div>
+            <Stars />
           </div>
-          <Stars />
         </div>
-      </div>
+      )}
     </div>
   );
 }
