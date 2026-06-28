@@ -809,3 +809,15 @@
   margin: 0; text-align: center;
   font-size: 16px; line-height: 1.6; color: var(--body);
 }
+
+/* ----- Video section ----- */
+.hq-sp-v24 .v24-video { background: var(--bg); padding: 40px 0; }
+.hq-sp-v24 .v24-video__wrap {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ----- Final CTA section ----- */
+.hq-sp-v24 .v24-final-cta { background: var(--bg); padding: 40px 0 64px; text-align: center; }
+.hq-sp-v24 .v24-final-cta .v24-cta-wrap { justify-content: center; margin-bottom: 20px; }
+.hq-sp-v24 .v24-trust-row--center { justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 16px; }

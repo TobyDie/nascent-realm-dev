@@ -7,6 +7,8 @@ import { SocialProofV24 } from "./sections/SocialProofV24";
 import { TestimonialsCarousel } from "./sections/TestimonialsCarousel";
 import { BottomCta } from "./sections/BottomCta";
 import { StickyMobileCta } from "./sections/StickyMobileCta";
+import { CtaButton, Stars } from "./primitives";
+import VideoPlayer from "../../components/VideoPlayer";
 
 export const CTA_URL = "https://join.hairqare.co/the-quiz-haircare";
 
@@ -33,6 +35,45 @@ export function ListiclePageV24() {
           />
         </div>
       </section>
+
+      <section className="v24-section v24-video">
+        <div className="v24-container v24-video__wrap">
+          <VideoPlayer
+            src="https://videos.hairqare.co/hairqare-testimonial-2ef02ab0/master.m3u8"
+            aspectRatio="2160/3840"
+            autoplay
+          />
+        </div>
+      </section>
+
+      <section className="v24-section v24-final-cta">
+        <div className="v24-container">
+          <div className="v24-cta-wrap">
+            <CtaButton full>Healthier Hair in 14 Days</CtaButton>
+          </div>
+          <div className="v24-stars-line v24-stars-line--center">
+            <Stars />
+            <span><strong>4.8</strong> Stars · <strong>250,000+</strong> Women · 149 Countries</span>
+          </div>
+          <div className="v24-trust-row v24-trust-row--center">
+            <span className="v24-trust">
+              <svg className="v24-trust__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
+                <path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              30-day money-back guarantee
+            </span>
+            <span className="v24-trust">
+              <svg className="v24-trust__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
+                <path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Cancel any time
+            </span>
+          </div>
+        </div>
+      </section>
+
       <StickyMobileCta />
     </div>
   );
