@@ -53,7 +53,7 @@ export function Reasons() {
         number="01"
         headline="Because Product Recommendations From Friends, Influencers Or Hairdressers Did Nothing For Yours."
         band="peach"
-        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/SP24/Screenshot-2026-06-26-at-6.56.54-PM.webp" }}
+        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/SP24/shampoo-on-couter.webp" }}
         body={
           <>
             <p>A shampoo is formulated to sell to millions of people. So it's made for the average woman, with the average scalp and the average hair.</p>
