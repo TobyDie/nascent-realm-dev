@@ -53,7 +53,7 @@ export function Reasons() {
         number="01"
         headline="Because Product Recommendations From Friends, Influencers Or Hairdressers Did Nothing For Yours."
         band="peach"
-        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/SP24/Website-page.webp" }}
+        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/SP24/Screenshot-2026-06-26-at-6.56.54-PM.webp" }}
         body={
           <>
             <p>A shampoo is formulated to sell to millions of people. So it's made for the average woman, with the average scalp and the average hair.</p>
@@ -68,7 +68,7 @@ export function Reasons() {
         number="02"
         headline="Because Your Roots Are Greasy By Lunch But Your Ends Are Dry As Straw."
         band="white"
-        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/SP24/Screenshot-2026-06-26-at-6.56.54-PM.webp" }}
+        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/SP24/Website-page.webp" }}
         body={
           <>
             <p>Your scalp and your strands never want the same thing.</p>
