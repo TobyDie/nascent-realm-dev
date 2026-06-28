@@ -87,7 +87,7 @@ export function Reasons() {
         image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp", url: "https://pub.hairqare.co/SP24/Screenshot-2026-06-26-at-6.37.42-PM.webp" }}
         body={
           <>
-            <p>"Sulfate-free." "Clean." "Natural." It sounds like care, but it's marketing. The front of the bottle is written to sell you.</p>
+            <p>"Sulfate-free."<br />"Clean."<br />"Natural."<br />It sounds like care, but it's marketing. The front of the bottle is written to sell you.</p>
             <p>A lot of "clean" bottles just swap one harsh ingredient for three worse ones. They count on you not reading the ingredients list. Once you can read it, you can't unsee it.</p>
             <p>The only way to know nothing harsh is in your shampoo is to make it yourself. When you make it yourself, the list is short and you chose everything you want and nothing you don't want. Aloe. Green tea. A gentle plant surfactant. Nothing nasty slipped in.</p>
           </>
