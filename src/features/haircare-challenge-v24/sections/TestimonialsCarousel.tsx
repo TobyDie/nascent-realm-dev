@@ -30,7 +30,7 @@ const TESTIS: Testi[] = [
   { name: "Haydée Fernández", initials: "H", context: "Frizz · wants shine & volume", text: "As you can see my hair is shiny, it feels super soft, it has volume.", image: "https://pub.hairqare.co/SP21/Long-hair-Damage-and-Shine-Before-After-3.webp" },
 ];
 
-const BA_WIDTHS = [400, 700, 1000, 1400];
+const BA_WIDTHS = [500, 800, 1200, 1600];
 
 function r2img(file: string, w: number) {
   if (file.startsWith("http")) {
@@ -61,7 +61,7 @@ function Card({ t }: { t: Testi }) {
     <div className="v24-testis__card">
       <div className="v24-testis__imgwrap">
         <img
-          src={r2img(t.image, 700)}
+          src={r2img(t.image, 800)}
           srcSet={r2srcset(t.image, BA_WIDTHS)}
           sizes="(max-width: 860px) 86vw, 360px"
           alt={t.name ? `Before and after - ${t.name}` : "Testimonial"}
