@@ -22,11 +22,11 @@ export function Hero() {
             Loved by 250,000+ women in 149 countries
           </span>
           <h1 className="v24-h1 v24-h1--dual">
-            <span className="v24-accent">5 Reasons</span> Women Are{" "}
-            <span className="v24-accent">Finally Quitting</span> the "Perfect Shampoo" Search
+            <span className="v24-accent">5 Reasons</span> Women Quit{" "}
+            <span className="v24-accent">Buying Shampoo</span> And Started Making It
           </h1>
           <p className="v24-lede">
-            If your hair is oily at the roots by lunch and dry at the ends by evening, and no shampoo you've ever bought has fixed it, there's a reason. And it isn't your hair. Here's why 250,000+ women stopped hunting for the perfect bottle and started making their own.
+            If you want beautiful, low-maintenance hair but your roots go oily and your ends stay dry no matter what you buy... here's why 250,000+ women stopped buying shampoo and started making their own.
           </p>
           <div className="v24-cta-wrap">
             <CtaButton full>Healthier Hair in 14 Days</CtaButton>

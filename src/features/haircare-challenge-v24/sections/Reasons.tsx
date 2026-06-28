@@ -49,31 +49,32 @@ export function Reasons() {
   return (
     <>
       <Reason
-        eyebrow="The Impossible Hair"
+        eyebrow="Made For The Average"
         number="01"
-        headline="Because Your Hair Is Oily And Dry At The Same Time."
+        headline="Because Product Recommendations From Friends, Influencers Or Hairdressers Did Nothing For Yours."
         band="peach"
         image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/SP24/Website-page.webp" }}
         body={
           <>
-            <p>Greasy at the roots by lunch. Dry and snapping at the ends by evening.</p>
-            <p>You've felt a little crazy, because nothing fixes both at once. Wash more, the grease comes back faster. Condition more, the ends still feel like straw.</p>
-            <p>You're not crazy. You've been handed the wrong tool for the job. Every single time.</p>
+            <p>A shampoo is formulated to sell to millions of people. So it's made for the average woman, with the average scalp and the average hair.</p>
+            <p>Your hair isn't average. Your hair is unique. That's why the bottle your friend swears by did nothing for you.</p>
+            <p>When you make it yourself, you can tailor the formula and recipe to fit your exact hair needs and goals.</p>
           </>
         }
         quote={{ text: "I have tried so many products and treatments and nothing worked for me.", attribution: "Sangheetha, Malaysia" }}
       />
       <Reason
-        eyebrow="The Real Reason"
+        eyebrow="The Impossible Hair"
         number="02"
-        headline="Because You've Been Using One Bottle For Two Different Jobs."
+        headline="Because Your Roots Are Greasy By Lunch But Your Ends Are Dry As Straw."
         band="white"
         image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/SP24/Screenshot-2026-06-26-at-6.56.54-PM.webp" }}
         body={
           <>
-            <p>Your scalp and your strands are not the same thing, and they never wanted the same thing.</p>
-            <p>Your scalp is alive. It makes oil. It's a garden. Your strands are not alive. They're dead protein. They're silk.</p>
-            <p>No single bottle can wash a garden and protect silk at the same time. One of them always loses. That's why every shampoo you ever tried worked for a week, then turned on you. You weren't failing. You were using one product for two opposite jobs.</p>
+            <p>Your scalp and your strands never want the same thing.</p>
+            <p>Your scalp is alive. It makes oil. It needs cleansing. Your ends are dead protein. They're dry and fragile, and they need protecting, not stripping.</p>
+            <p>One bottle can't deep-clean oily roots and protect dry ends in the same wash. One side always loses. Wash harder for the roots, the ends snap. Go gentle for the ends, the roots are greasy by lunch.</p>
+            <p>When you make your own, you make one for the scalp and one for the ends. Both get what they need.</p>
           </>
         }
         endSentinelId="v24-ingredient-end"
@@ -81,14 +82,14 @@ export function Reasons() {
       <Reason
         eyebrow="The Label Lie"
         number="03"
-        headline={'Because "Clean" And "Sulfate-Free" Were Never Made For You.'}
+        headline={'Because You Switched To The "Clean" One And Your Hair Still Didn\'t Change.'}
         band="peach"
         image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp", url: "https://pub.hairqare.co/SP24/Screenshot-2026-06-26-at-6.37.42-PM.webp" }}
         body={
           <>
-            <p>So you reached for the "better" bottle. The sulfate-free one. The clean one. The natural one everyone swears by.</p>
-            <p>Here's what the front never tells you. "Sulfate-free" doesn't mean gentle. It usually means they swapped the sulfate for a cheaper surfactant that strips your hair just as hard, then slipped a preservative like phenoxyethanol high up the list, where it has no business being.</p>
-            <p>And even the "good" bottle was mixed in a factory for the average head of hair. Not your scalp. Not your water. Not your hair. It was never going to be the one, because it was never made for you.</p>
+            <p>"Sulfate-free." "Clean." "Natural." It sounds like care, but it's marketing. The front of the bottle is written to sell you.</p>
+            <p>A lot of "clean" bottles just swap one harsh ingredient for three worse ones. They count on you not reading the ingredients list. Once you can read it, you can't unsee it.</p>
+            <p>The only way to know nothing harsh is in your shampoo is to make it yourself. When you make it yourself, the list is short and you chose everything you want and nothing you don't want. Aloe. Green tea. A gentle plant surfactant. Nothing nasty slipped in.</p>
           </>
         }
       />
@@ -115,17 +116,16 @@ export function Reasons() {
         quote={{ text: "It impacts my bank account trying new products, which just frustrates me.", attribution: "Graduate, United States" }}
       />
       <Reason
-        eyebrow="The Way Women Actually Win"
+        eyebrow="Done Starting Over"
         number="05"
-        headline="Because The Women With The Healthiest Hair Stopped Buying And Started Making."
+        headline="Because You're Tired Of Starting Over Every Time A Bottle Lets You Down."
         band="peach"
         image={{ w: 1080, h: 1350, label: "The result of using less", alt: "The result of using less, not more", url: "https://pub.hairqare.co/22-the-haircare/IMG-702-1_4X5.webp" }}
         body={
           <>
-            <p>The women whose hair finally calmed down aren't using a fancier bottle. They make their own.</p>
-            <p>Two simple shampoos from ingredients you already half-recognize. Aloe vera. Green tea. Chamomile. A gentle plant surfactant. Nothing on the label you can't pronounce. They mix a batch in the kitchen in minutes, enough for themselves and their whole family, for a few dollars.</p>
-            <p>And because they make it, they can tune it to their own hair, instead of the average stranger's. Sarah keeps the healthiest hair of her life this way, for about ten dollars a month.</p>
-            <p>The only thing you have to learn first is your own hair. That's the whole point of the challenge.</p>
+            <p>You're tired of searching for another shampoo in the hopes it will fix your hair problems.</p>
+            <p>The women whose hair finally calmed down stopped searching. They make their own. Aloe, green tea, chamomile, a gentle plant surfactant — things you may already have at home. A batch takes minutes in the kitchen, makes enough for you and your entire family, and costs a few dollars.</p>
+            <p>And because you made it, you can tune it to your own hair.</p>
           </>
         }
       />
