@@ -49,8 +49,8 @@ function Stars({ size = 13 }: { size?: number }) {
 
 function Card({ t }: { t: Testi }) {
   return (
-    <div className="v25-testis__card">
-      <div className="v25-testis__imgwrap">
+    <div className="v27-testis__card">
+      <div className="v27-testis__imgwrap">
         <img
           src={r2img(t.image, 700)}
           srcSet={r2srcset(t.image, BA_WIDTHS)}
@@ -60,13 +60,13 @@ function Card({ t }: { t: Testi }) {
           decoding="async"
         />
       </div>
-      <div className="v25-testis__body">
-        <p className="v25-testis__quote">"{t.text}"</p>
-        <div className="v25-testis__meta">
-          <div className="v25-testis__avatar" aria-hidden="true">{t.initials}</div>
-          <div className="v25-testis__who">
-            <div className="v25-testis__name">{t.name}</div>
-            <div className="v25-testis__ctx">{t.context}</div>
+      <div className="v27-testis__body">
+        <p className="v27-testis__quote">"{t.text}"</p>
+        <div className="v27-testis__meta">
+          <div className="v27-testis__avatar" aria-hidden="true">{t.initials}</div>
+          <div className="v27-testis__who">
+            <div className="v27-testis__name">{t.name}</div>
+            <div className="v27-testis__ctx">{t.context}</div>
           </div>
           <Stars />
         </div>
@@ -117,24 +117,24 @@ export function TestimonialsCarousel() {
   };
 
   return (
-    <section className="v25-band v25-band--white v25-testis" id="results">
-      <div className="v25-container">
-        <h2 className="v25-h2 v25-testis__h">From women who stopped buying and started learning</h2>
+    <section className="v27-band v27-band--white v27-testis" id="results">
+      <div className="v27-container">
+        <h2 className="v27-h2 v27-testis__h">From women who stopped buying and started learning</h2>
 
         {isMobile ? (
           <>
-            <div ref={trackRef} className="v25-testis__track">
+            <div ref={trackRef} className="v27-testis__track">
               {TESTIS.map((t, i) => (
-                <div key={i} className="v25-testis__slide">
+                <div key={i} className="v27-testis__slide">
                   <Card t={t} />
                 </div>
               ))}
             </div>
-            <div className="v25-testis__dots">
+            <div className="v27-testis__dots">
               {TESTIS.map((_, i) => (
                 <button
                   key={i}
-                  className={`v25-testis__dot ${i === idx ? "is-on" : ""}`}
+                  className={`v27-testis__dot ${i === idx ? "is-on" : ""}`}
                   onClick={() => scrollTo(i)}
                   aria-label={`Slide ${i + 1}`}
                 />
@@ -142,7 +142,7 @@ export function TestimonialsCarousel() {
             </div>
           </>
         ) : (
-          <div className="v25-testis__grid">
+          <div className="v27-testis__grid">
             {TESTIS.map((t, i) => <Card key={i} t={t} />)}
           </div>
         )}

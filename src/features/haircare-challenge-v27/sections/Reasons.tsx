@@ -15,28 +15,28 @@ type ReasonProps = {
 
 function Reason({ eyebrow, number, headline, image, body, quote, band, endSentinelId }: ReasonProps) {
   return (
-    <section className={`v25-band v25-band--${band} v25-reason`}>
-      <div className="v25-container">
-        <div className="v25-eyebrow-row">
-          <span className="v25-eyebrow-row__label">{eyebrow}</span>
-          <span className="v25-eyebrow-row__rule" aria-hidden="true" />
-          <span className="v25-eyebrow-row__num">{number}</span>
+    <section className={`v27-band v27-band--${band} v27-reason`}>
+      <div className="v27-container">
+        <div className="v27-eyebrow-row">
+          <span className="v27-eyebrow-row__label">{eyebrow}</span>
+          <span className="v27-eyebrow-row__rule" aria-hidden="true" />
+          <span className="v27-eyebrow-row__num">{number}</span>
         </div>
-        <h2 className="v25-reason__h">{headline}</h2>
+        <h2 className="v27-reason__h">{headline}</h2>
       </div>
-      <div className="v25-container v25-reason__imgwrap">
+      <div className="v27-container v27-reason__imgwrap">
         {image.url ? (
           <R2Image url={image.url} w={image.w} h={image.h} alt={image.alt} />
         ) : (
           <Placeholder w={image.w} h={image.h} label={image.label} alt={image.alt} />
         )}
       </div>
-      <div className="v25-container v25-reason__body">
+      <div className="v27-container v27-reason__body">
         {body}
         {quote && (
-          <p className="v25-inline-quote">
+          <p className="v27-inline-quote">
             <em>"{quote.text}"</em>
-            <span className="v25-inline-quote__attr"> {quote.attribution}</span>
+            <span className="v27-inline-quote__attr"> {quote.attribution}</span>
           </p>
         )}
         {endSentinelId && <div id={endSentinelId} aria-hidden="true" />}
@@ -80,7 +80,7 @@ export function Reasons() {
             <p>You were never bad at hair care. You were just reading the wrong side of the bottle.</p>
           </>
         }
-        endSentinelId="v25-ingredient-end"
+        endSentinelId="v27-ingredient-end"
       />
       <Reason
         eyebrow="The Real Mechanism"

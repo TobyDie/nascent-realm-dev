@@ -29,11 +29,11 @@ const CARDS = [
 
 export function ResultCards() {
   return (
-    <section className="v25-band v25-band--white v25-cards">
-      <div className="v25-container v25-cards__grid">
+    <section className="v27-band v27-band--white v27-cards">
+      <div className="v27-container v27-cards__grid">
         {CARDS.map((c, i) => (
-          <article className="v25-rcard" key={i}>
-            <div className="v25-rcard__media">
+          <article className="v27-rcard" key={i}>
+            <div className="v27-rcard__media">
               <Placeholder
                 w={600}
                 h={600}
@@ -43,17 +43,17 @@ export function ResultCards() {
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
             </div>
-            <div className="v25-rcard__body">
-              <div className="v25-rcard__head">
+            <div className="v27-rcard__body">
+              <div className="v27-rcard__head">
                 <strong>{c.name}</strong>
-                <span className="v25-rcard__day">{c.day}</span>
+                <span className="v27-rcard__day">{c.day}</span>
               </div>
-              <p className="v25-rcard__quote">"{c.quote}"</p>
-              <div className="v25-rcard__concerns">
-                <span className="v25-rcard__concerns-label">Key Concerns:</span>
-                <div className="v25-rcard__tags">
+              <p className="v27-rcard__quote">"{c.quote}"</p>
+              <div className="v27-rcard__concerns">
+                <span className="v27-rcard__concerns-label">Key Concerns:</span>
+                <div className="v27-rcard__tags">
                   {c.tags.map((t) => (
-                    <span className="v25-pill" key={t}>{t}</span>
+                    <span className="v27-pill" key={t}>{t}</span>
                   ))}
                 </div>
               </div>

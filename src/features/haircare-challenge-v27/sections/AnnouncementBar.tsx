@@ -2,7 +2,7 @@ import { Marquee } from "../primitives";
 
 export function AnnouncementBar() {
   return (
-    <div className="v25-announce">
+    <div className="v27-announce">
       <Marquee
         variant="bar"
         items={[

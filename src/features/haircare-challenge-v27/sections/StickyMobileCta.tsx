@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CTA_URL } from "../ListiclePageV25";
+import { CTA_URL } from "../ListiclePageV27";
 import { useLiveJoiningCount, formatJoiningCount } from "../useJoiningCount";
 import { useStartDate, fmtShort } from "../useStartDate";
 
@@ -40,7 +40,7 @@ export function StickyMobileCta() {
   const startDate = useStartDate();
 
   useEffect(() => {
-    const sentinel = document.getElementById("v25-ingredient-end");
+    const sentinel = document.getElementById("v27-ingredient-end");
     let io: IntersectionObserver | undefined;
     let onScroll: (() => void) | undefined;
     const reveal = () => setShow(true);
@@ -78,23 +78,23 @@ export function StickyMobileCta() {
   const formatted = formatJoiningCount(joining);
 
   return (
-    <div className={`v25-stickycta ${show ? "is-show" : ""}`} aria-hidden={!show}>
-      <div className="v25-stickycta__inner">
-        <div className="v25-stickycta__meta">
-          <span className="v25-stickycta__chip">
-            <span className="v25-stickycta__chip-label">85% OFF</span>
-            <span className="v25-stickycta__chip-timer" aria-live="off">{countdown}</span>
+    <div className={`v27-stickycta ${show ? "is-show" : ""}`} aria-hidden={!show}>
+      <div className="v27-stickycta__inner">
+        <div className="v27-stickycta__meta">
+          <span className="v27-stickycta__chip">
+            <span className="v27-stickycta__chip-label">85% OFF</span>
+            <span className="v27-stickycta__chip-timer" aria-live="off">{countdown}</span>
           </span>
-          <span className="v25-stickycta__group">
-            Next group starts <span className="v25-stickycta__date">{startDate ? fmtShort(startDate) : "Fri, Jun 26th"}</span>
+          <span className="v27-stickycta__group">
+            Next group starts <span className="v27-stickycta__date">{startDate ? fmtShort(startDate) : "Fri, Jun 26th"}</span>
           </span>
-          <span className="v25-stickycta__count">
-            <span className="v25-stickycta__tick" aria-hidden="true">▲</span>
-            <span key={formatted} className="v25-stickycta__num">{formatted}</span>
+          <span className="v27-stickycta__count">
+            <span className="v27-stickycta__tick" aria-hidden="true">▲</span>
+            <span key={formatted} className="v27-stickycta__num">{formatted}</span>
             <span> women joining this week</span>
           </span>
         </div>
-        <a className="v25-stickycta__btn" href={CTA_URL}>Join now <span aria-hidden="true">→</span></a>
+        <a className="v27-stickycta__btn" href={CTA_URL}>Join now <span aria-hidden="true">→</span></a>
       </div>
     </div>
   );
