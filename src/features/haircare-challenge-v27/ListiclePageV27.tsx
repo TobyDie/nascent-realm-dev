@@ -8,7 +8,7 @@ import { TestimonialsCarousel } from "./sections/TestimonialsCarousel";
 import { BottomCta } from "./sections/BottomCta";
 import { StickyMobileCta } from "./sections/StickyMobileCta";
 
-export const CTA_URL = "https://join.hairqare.co/40-the-quiz-haircare/";
+export const CTA_URL = "https://join.hairqare.co/41-the-quiz-haircare/";
 
 export function ListiclePageV27() {
   return (
