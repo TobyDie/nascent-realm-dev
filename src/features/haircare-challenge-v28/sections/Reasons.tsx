@@ -53,7 +53,7 @@ export function Reasons() {
         number="01"
         headline="Because your hair is growing right now. You're just not keeping it."
         band="peach"
-        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/22-the-haircare/expensive.webp" }}
+        image={{ w: 1448, h: 1086, label: "Hair length compared last July to this July", alt: "Side-by-side comparison of the same hair length last July and this July", url: "https://pub.hairqare.co/28sp/r1.webp" }}
         body={
           <>
             <p>Your hair grows about half an inch every month. It doesn't take breaks. It doesn't stop at your shoulders. Which means in one year, you should have 6 inches of new length.</p>
@@ -69,7 +69,7 @@ export function Reasons() {
         number="02"
         headline="Because you break it off a little every single day. Never enough to notice."
         band="white"
-        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/22-the-haircare/ingredient-list.webp" }}
+        image={{ w: 1080, h: 1350, label: "Broken hair in a hairbrush", alt: "Hairbrush full of broken hair strands next to hair ties, a towel, and a flat iron on a bathroom counter", url: "https://pub.hairqare.co/28sp/sr2.webp" }}
         body={
           <>
             <p>Nobody loses 6 inches in one dramatic moment. It goes quietly.</p>
@@ -85,7 +85,7 @@ export function Reasons() {
         number="03"
         headline="Because your ends are 3 years old, and nothing in your routine knows that."
         band="peach"
-        image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp", url: "https://pub.hairqare.co/22-the-haircare/Mechanism.webp" }}
+        image={{ w: 1080, h: 1350, label: "Frayed hair ends held to the light", alt: "Close-up of dry, frayed hair ends held up to the light", url: "https://pub.hairqare.co/28sp/sr3.webp" }}
         body={
           <>
             <p>The hair at your roots is brand new. The hair at your shoulders has been on your head for about 2 years. If it reached your waist, those ends would be 4 or 5 years old.</p>
@@ -107,7 +107,7 @@ export function Reasons() {
         number="04"
         headline="Because trims aren't protecting your length. They're replacing it."
         band="white"
-        image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending", url: "https://pub.hairqare.co/22-the-haircare/80.webp" }}
+        image={{ w: 1080, h: 1350, label: "Cut hair on a salon floor", alt: "Cut hair clippings scattered on a salon floor after a haircut", url: "https://pub.hairqare.co/28sp/sr4.webp" }}
         body={
           <>
             <p>"Get regular trims so it grows healthy." You've heard it a hundred times.</p>
