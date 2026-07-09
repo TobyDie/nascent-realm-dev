@@ -22,11 +22,17 @@ export function Hero() {
             10-Minute Read
           </span>
           <h1 className="v28-h1 v28-h1--dual">
-            <span className="v28-accent">5 Reasons</span> Your Hair Never Grows Past{" "}
-            <span className="v28-accent">The Same Length</span>
+            How Women in Their 30s and 40s Are Finally Growing Their Dream{" "}
+            <span className="v28-accent">Waist-Length</span> Hair
           </h1>
           <p className="v28-lede">
-            If your hair reaches your shoulders, maybe your collarbone, and then just... stays there year after year, this is the most important thing you'll read about your hair. Because the reason has nothing to do with your genetics. Here's what 250,000+ women learned about why their hair stopped, and how they got it moving again.
+            You know the cycle. Your hair grows to a certain length, then it gets thinner and starts breaking. It always seems to break in the same place. After a while, you cut it so it looks decent again.
+          </p>
+          <p className="v28-lede">
+            A year goes by, and your hair is still the same length. Most women think that's just their genetics and accept it.
+          </p>
+          <p className="v28-lede">
+            But the 250,000+ women in this story didn't. They made a few simple changes, and that's what made the difference. Here are the five things they did differently.
           </p>
           <div className="v28-cta-wrap">
             <CtaButton full>Healthier hair in 14 days →</CtaButton>

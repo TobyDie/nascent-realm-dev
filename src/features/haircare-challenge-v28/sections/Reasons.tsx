@@ -51,49 +51,58 @@ export function Reasons() {
       <Reason
         eyebrow="The Math"
         number="01"
-        headline="Because your hair is growing right now. You're just not keeping it."
+        headline="They threw away all of their growth serums and supplements"
         band="peach"
-        image={{ w: 1448, h: 1086, label: "Hair length compared last July to this July", alt: "Side-by-side comparison of the same hair length last July and this July", url: "https://pub.hairqare.co/28sp/r1.webp" }}
+        image={{ w: 1254, h: 1254, label: "Shelf of expensive haircare products with price tags", alt: "Expensive serums, shampoos, and creams on a bathroom counter with visible price tags", url: "https://pub.hairqare.co/22-the-haircare/expensive.webp" }}
         body={
           <>
-            <p>Your hair grows about half an inch every month. It doesn't take breaks. It doesn't stop at your shoulders. Which means in one year, you should have 6 inches of new length.</p>
-            <p>So think back to last summer. Is your hair 6 inches longer today?</p>
-            <p>If it's the same length, that growth didn't disappear. It broke off. A little at the ends, week after week, at almost exactly the same speed it was growing. That's why it feels like your hair "stopped." It never stopped. It's been growing and breaking at the same time, and the two cancel each other out.</p>
-            <p>You don't have a growth problem. You have a keeping problem. And that changes everything, because keeping is something you can actually control.</p>
+            <p>Most women who want longer hair end up buying more and more products.</p>
+            <p>A growth serum, a bond repair mask, gummies, a $40 shampoo. But if those products really worked, your hair would already be longer.</p>
+            <p>The real problem is that those products weren't made for your hair. They're made for everyone. They don't match your unique hair profile, so they rarely help. Some can even make things worse.</p>
+            <p>They strip your hair, then cover the damage so it feels soft for a day or two. After the next wash, you're back where you started.</p>
+            <p>During the first few days of the 14-Day Haircare Challenge, women learn their Unique Hair Profile. They learn what their hair is made of, what it's missing, and what it really needs. They also learn how to read an ingredient list in seconds.</p>
+            <p>Most women realise they don't need half the products they own. They stop wasting money, keep more of the length they grow, and spend much less than they did before.</p>
           </>
         }
-        quote={{ text: "My hair stopped growing at a certain level, I would like nourish it better because everything I tried so far is not working.", attribution: "Zei, United Arab Emirates" }}
+        quote={{ text: "I found I was already wasting money on products that don't help my hair.", attribution: "Keri, United Kingdom" }}
       />
       <Reason
         eyebrow="The Invisible Leak"
         number="02"
-        headline="Because you break it off a little every single day. Never enough to notice."
+        headline="They stopped taking advice from people who never grew long hair"
         band="white"
-        image={{ w: 1080, h: 1350, label: "Broken hair in a hairbrush", alt: "Hairbrush full of broken hair strands next to hair ties, a towel, and a flat iron on a bathroom counter", url: "https://pub.hairqare.co/28sp/sr2.webp" }}
+        image={{ w: 1080, h: 1350, label: "Cut hair on a salon floor", alt: "Cut hair clippings scattered on a salon floor after a haircut", url: "https://pub.hairqare.co/28sp/sr4.webp" }}
         body={
           <>
-            <p>Nobody loses 6 inches in one dramatic moment. It goes quietly.</p>
-            <p>The brush ripping through a knot in the morning. The towel you wrap tight after the shower. The elastic sitting in the same spot every day. The pillowcase working on your ends all night. The flat iron on hair that was already thirsty.</p>
-            <p>Each one takes almost nothing. A few millimeters here, a snapped strand there. You'd never see it happen. But it happens every day, on hair that's already weakened, and by the end of the year it has quietly eaten everything you grew.</p>
-            <p>This is why the women who "do everything right" still stay stuck at the same length. The leak isn't one big mistake. It's a dozen tiny ones that were never pointed out to them.</p>
+            <p>Think about where your hair advice comes from.</p>
+            <p>A hairdresser who sees you every eight weeks? A friend with a bob? An influencer wearing extensions?</p>
+            <p>You've probably heard this before: "Get regular trims to help your hair grow."</p>
+            <p>Your hairdresser tells this because it keeps your hair looking neat and brings you back to the salon. But trimming doesn't actually make your hair grow longer.</p>
+            <p>Millions of women follow this kind of wrong advice, that's why your hair stays the same length year after year.</p>
+            <p>You need to learn from those who have lived the transformation on their own.</p>
+            <p>Sarah lost 10 years following advice that didn't work. In the end, she had to figure it out on her own. Now that she has 120 cm, hip-length hair, she shares everything she learned so other women don't have to waste a decade and thousands of dollars.</p>
           </>
         }
+        quote={{ text: "I really hated throwing out my expensive hair products. And feeling that everything the hair care industry tells us is just a load of rubbish. How does my hairdresser not even know these things?", attribution: "Shaney, South Africa" }}
         endSentinelId="v28-ingredient-end"
       />
       <Reason
         eyebrow="The Oldest Part Of You"
         number="03"
-        headline="Because your ends are 3 years old, and nothing in your routine knows that."
+        headline="They fixed the small daily habits that were damaging their hair for years"
         band="peach"
-        image={{ w: 1080, h: 1350, label: "Frayed hair ends held to the light", alt: "Close-up of dry, frayed hair ends held up to the light", url: "https://pub.hairqare.co/28sp/sr3.webp" }}
+        image={{ w: 1080, h: 1350, label: "Broken hair in a hairbrush", alt: "Hairbrush full of broken hair strands next to hair ties, a towel, and a flat iron on a bathroom counter", url: "https://pub.hairqare.co/28sp/sr2.webp" }}
         body={
           <>
-            <p>The hair at your roots is brand new. The hair at your shoulders has been on your head for about 2 years. If it reached your waist, those ends would be 4 or 5 years old.</p>
-            <p>That means your ends have survived hundreds of washes, two or three summers of sun, years of brushing, friction, and styling. They are the oldest, most worn part of your hair. They need the most protection.</p>
-            <p>And yet your products treat every inch the same. Store-bought formulas are made for the average head, tuned to feel great at the store, not to protect a 3-year-old strand. Many strip your hair harder than it needs, then patch the feeling with a coating, wash after wash. The newest hair shrugs it off. The oldest hair pays for it.</p>
-            <p>That's why your hair always gives out at the same point. It's exactly where age meets a routine that was never built for it.</p>
+            <p>It's not your genetics. It's the little things you do every single day.</p>
+            <p>Brushing from the roots down through wet hair. Rubbing it dry with a towel. The blow dryer too hot and too close. The same tight elastic in the same spot. Sleeping with your hair rubbing on the pillow. Going into a hot sauna without covering your hair.</p>
+            <p>None of these breaks your hair in one day. They slowly wear it down. Then one day your ends start breaking, your hair gets thinner, and you think, "That's just how my hair is."</p>
+            <p>The 14-Day Challenge helps you change these habits, one day at a time.</p>
+            <p>You learn the right way to brush, dry, tie, and sleep with your hair. It doesn't add any extra time to your day. You do the same things, only the right way.</p>
+            <p>93% of women noticed fewer hairs in their brush within the first week. Once the breakage slows down, their hair finally starts getting longer.</p>
           </>
         }
+        quote={{ text: "Prior to taking the challenge, I didn't pay too much attention to how daily habits, such as combing or tying hair up, may or may not damage our hair.", attribution: "Mawaddah" }}
       />
       <ConvictionCard
         avatar="hero-avatar-15.webp"
@@ -105,33 +114,34 @@ export function Reasons() {
       <Reason
         eyebrow="The Reset Button"
         number="04"
-        headline="Because trims aren't protecting your length. They're replacing it."
+        headline="They started making their own shampoo and conditioner for about $10 a month"
         band="white"
-        image={{ w: 1080, h: 1350, label: "Cut hair on a salon floor", alt: "Cut hair clippings scattered on a salon floor after a haircut", url: "https://pub.hairqare.co/28sp/sr4.webp" }}
+        image={{ w: 1080, h: 1350, label: "Women holding homemade DIY shampoo bottles", alt: "Collage of women showing off homemade shampoo they mixed themselves", url: "https://pub.hairqare.co/28sp/DIY-Shampoo-making.webp" }}
         body={
           <>
-            <p>"Get regular trims so it grows healthy." You've heard it a hundred times.</p>
-            <p>But growth happens at your scalp. The scissors never touch it. Cutting your hair doesn't make it grow faster, it just makes it shorter. What trims actually do is remove the damage after it happened.</p>
-            <p>So look at the cycle you've been put in. You grow half an inch a month. Your ends wear down. Then every couple of months, someone cuts off an inch or two "to keep it healthy." You leave the salon with hair the exact length you had last year, feeling like you did something good for it.</p>
-            <p>Trims are maintenance for a routine that keeps damaging your ends. They were never a plan for getting past your shoulders. When your ends stop wearing down, the trim stops taking your progress, and the length finally starts to stack.</p>
+            <p>Brands use labels like "paraben-free," "sulfate-free," and "all natural" to make their products look safe. But they often replace those ingredients with other harsh chemicals that can still damage your hair.</p>
+            <p>So wash after wash you keep using something you don't fully understand, and that's the quiet reason your hair never gets healthy enough to grow long.</p>
+            <p>That's why women in the challenge stop buying more products and make their own instead. They make a gentle shampoo and conditioner from a few simple ingredients, matched to their hair type.</p>
+            <p>As their hair changes, they change the recipe too. Their hair finally gets something made for its needs, so it feels softer, looks shinier, and breaks less within days.</p>
           </>
         }
-        quote={{ text: "I was dealing with like tons of breakage and split ends. I haven't cut my hair like my whole life and it's never gotten past a certain length.", attribution: "Sophie, Verified Student" }}
+        quote={{ text: "It's very difficult to find the product that will be completely free. I have spent a lot of time reviewing products and it just seems impossible.", attribution: "Anna Bishop, Canada" }}
       />
       <Reason
         eyebrow="The Real Difference"
         number="05"
-        headline="Because women with waist-length hair don't have better genetics. They have almost zero breakage."
+        headline="They no longer felt like growing long hair was a second job"
         band="peach"
-        image={{ w: 1080, h: 1350, label: "The result of using less", alt: "The result of using less, not more", url: "https://pub.hairqare.co/22-the-haircare/IMG-702-1_4X5.webp" }}
+        image={{ w: 1254, h: 1254, label: "A small, simple haircare routine on a bathroom counter", alt: "A few simple haircare tools on a bathroom counter with a woman walking away in the background", url: "https://pub.hairqare.co/28sp/one-product.webp" }}
         body={
           <>
-            <p>You've seen her. The woman with hair down her back that looks healthy the whole way down. And you've probably thought what everyone thinks: good genes, lucky her.</p>
-            <p>Here's what she actually has: hair that keeps what it grows. She knows her hair profile, so she uses what her hair needs instead of what an ad told her to buy. Her ends aren't being stripped and patched every wash. So her half inch a month simply stays. Give that two years and it looks like a genetic miracle. It's arithmetic.</p>
-            <p>I know because my hair is 120cm long. And bleached. And I don't have good hair genetics. I maintain it on about $10 a month, not because I found a magic product, but because I stopped breaking off everything I grew.</p>
-            <p>You haven't reached your hair's limit. You've reached your current routine's limit. Those are very different things.</p>
+            <p>Add up what you're spending to achieve your dream hair.</p>
+            <p>The weekend hair masks. The oils. The gummies. The rice water phase. Then think about the time you spend on all of it, only to see the same hair length every summer.</p>
+            <p>It feels this hard because those everyday habits are still working against you. You're spending hours trying to fix the damage instead of a few minutes stopping it in the first place.</p>
+            <p>After the 14 days, your routine is short and low cost. Wash your hair with the right shampoo, handle it gently, and leave it alone. Healthy hair doesn't need a long routine. Within two weeks, most women notice softer hair and fewer hairs in their brush. After that, your hair keeps getting longer and longer.</p>
           </>
         }
+        quote={{ text: "The steps were simple to implement into my daily routine. Even the ingredients recommended in the program were easy to find and purchase.", attribution: "Rodeelyn, Philippines" }}
       />
       <ConvictionCard
         avatar="hero-avatar-17.webp"
