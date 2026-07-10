@@ -22,8 +22,8 @@ export function Hero() {
             10-Minute Read
           </span>
           <h1 className="v28-h1 v28-h1--dual">
-            How Women in Their 30s and 40s Are Finally Growing Their Dream{" "}
-            <span className="v28-accent">Waist-Length</span> Hair
+            How Women in Their 30s and 40s Are{" "}
+            <span className="v28-accent">Finally Growing Their Dream Waist-Length Hair</span>
           </h1>
           <p className="v28-lede">
             You know the cycle. Your hair grows to a certain length, then it gets thinner and starts breaking. It always seems to break in the same place. After a while, you cut it so it looks decent again.
@@ -35,7 +35,7 @@ export function Hero() {
             But the 250,000+ women in this story didn't. They made a few simple changes, and that's what made the difference. Here are the five things they did differently.
           </p>
           <div className="v28-cta-wrap">
-            <CtaButton full>Healthier hair in 14 days →</CtaButton>
+            <CtaButton full>Start growing longer hair →</CtaButton>
           </div>
           <div className="v28-stars-line v28-stars-line--center">
             <Stars />
