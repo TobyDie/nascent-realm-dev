@@ -40,39 +40,20 @@ export function StickyMobileCta() {
   const startDate = useStartDate();
 
   useEffect(() => {
-    const sentinel = document.getElementById("v25-ingredient-end");
-    let io: IntersectionObserver | undefined;
-    let onScroll: (() => void) | undefined;
-    const reveal = () => setShow(true);
-
-    if (sentinel) {
-      io = new IntersectionObserver(
-        ([entry]) => {
-          // Reveal once the sentinel has scrolled above the top of the viewport.
-          if (entry.boundingClientRect.top <= 0) {
-            reveal();
-            io?.disconnect();
-          }
-        },
-        { threshold: 0, rootMargin: "0px 0px -100% 0px" }
-      );
-      io.observe(sentinel);
-      // Initial check in case we mount already past the sentinel.
-      if (sentinel.getBoundingClientRect().top <= 0) reveal();
-    } else {
-      onScroll = () => {
-        if (window.scrollY > window.innerHeight) {
-          reveal();
-          if (onScroll) window.removeEventListener("scroll", onScroll);
-        }
-      };
-      window.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
-    }
-    return () => {
-      io?.disconnect();
-      if (onScroll) window.removeEventListener("scroll", onScroll);
+    // Reveal after the user has scrolled past a fixed distance, roughly a
+    // couple of scrolls on mobile. Plain scroll-distance check on purpose:
+    // no dependency on any specific content element existing on the page,
+    // so a future copy rewrite can never silently break this again.
+    const threshold = window.innerHeight * 1.2;
+    const onScroll = () => {
+      if (window.scrollY > threshold) {
+        setShow(true);
+        window.removeEventListener("scroll", onScroll);
+      }
     };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const formatted = formatJoiningCount(joining);

@@ -10,10 +10,9 @@ type ReasonProps = {
   body: ReactNode;
   quote?: { text: string; attribution: string };
   band: "peach" | "white";
-  endSentinelId?: string;
 };
 
-function Reason({ eyebrow, number, headline, image, body, quote, band, endSentinelId }: ReasonProps) {
+function Reason({ eyebrow, number, headline, image, body, quote, band }: ReasonProps) {
   return (
     <section className={`v27-band v27-band--${band} v27-reason`}>
       <div className="v27-container">
@@ -39,7 +38,6 @@ function Reason({ eyebrow, number, headline, image, body, quote, band, endSentin
             <span className="v27-inline-quote__attr"> {quote.attribution}</span>
           </p>
         )}
-        {endSentinelId && <div id={endSentinelId} aria-hidden="true" />}
       </div>
     </section>
   );
@@ -80,7 +78,6 @@ export function Reasons() {
             <p>You were never bad at hair care. You were just reading the wrong side of the bottle.</p>
           </>
         }
-        endSentinelId="v27-ingredient-end"
       />
       <Reason
         eyebrow="The Real Mechanism"
