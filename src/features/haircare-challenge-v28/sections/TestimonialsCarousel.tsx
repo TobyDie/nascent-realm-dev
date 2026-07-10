@@ -52,6 +52,25 @@ function Stars({ size = 13 }: { size?: number }) {
 }
 
 function Card({ t }: { t: Testi }) {
+  const hasQuote = t.text.trim().length > 0;
+
+  if (!hasQuote) {
+    return (
+      <div className="v28-testis__card v28-testis__card--imageonly">
+        <div className="v28-testis__imgwrap v28-testis__imgwrap--full">
+          <img
+            src={r2img(t.image, 700)}
+            srcSet={r2srcset(t.image, BA_WIDTHS)}
+            sizes="(max-width: 860px) 86vw, 360px"
+            alt="Before and after hair transformation"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="v28-testis__card">
       <div className="v28-testis__imgwrap">
