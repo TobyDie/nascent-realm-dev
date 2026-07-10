@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { Placeholder, R2Image } from "../primitives";
-import { ConvictionCard } from "./ConvictionCard";
 
 type ReasonProps = {
   eyebrow: string;
@@ -86,7 +85,10 @@ export function Reasons() {
         image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/22-the-haircare/expensive.webp" }}
         body={
           <>
-            <p>For years, they bought whatever influencers recommended or whatever happened to be trending that month. Every new bottle promised healthier hair, so they kept switching products, hoping the next one would finally be different. Once they understood that no product works for everyone, buying became much simpler. Inside the 14-Day Haircare Challenge, you'll learn how to understand your own hair, so you can recognize which ingredients and products suit it, and stop spending money on things your hair never needed in the first place.</p>
+            <p>For years, they bought whatever influencers recommended or whatever happened to be trending that month.</p>
+            <p>Every new bottle promised healthier hair, so they kept switching products, hoping the next one would finally be different.</p>
+            <p>Once they understood that <strong>no product works for everyone</strong>, buying became much simpler.</p>
+            <p>Inside the <strong>14-Day Haircare Challenge</strong>, you'll learn how to understand your own hair, so you can recognize which ingredients and products suit it, and stop spending money on things your hair never needed in the first place.</p>
           </>
         }
         // customer_id: 3e253d53-da78-4bd6-a356-45ca88336d40
@@ -106,7 +108,10 @@ export function Reasons() {
         image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/22-the-haircare/ingredient-list.webp" }}
         body={
           <>
-            <p>They spent years replacing shampoos while repeating the same damaging habits every single day. Rough towel drying, brushing wet hair the wrong way, tight hairstyles and too much heat quietly caused more damage than any shampoo could undo. The Challenge shows you which everyday habits are working against your hair and how to replace them with better ones. Once you stop causing unnecessary damage, you'll rely far less on expensive products to hide it.</p>
+            <p>They spent years replacing shampoos while repeating the same damaging habits every single day.</p>
+            <p><strong>Rough towel drying, brushing wet hair the wrong way, tight hairstyles and too much heat</strong> quietly caused more damage than any shampoo could undo.</p>
+            <p>The Challenge shows you which everyday habits are working against your hair and how to replace them with better ones.</p>
+            <p>Once you stop causing unnecessary damage, you'll rely <strong>far less on expensive products</strong> to hide it.</p>
           </>
         }
         // customer_id: 1afeca2e-6c62-450a-b327-2b2186b111b3
@@ -126,7 +131,9 @@ export function Reasons() {
         image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp", url: "https://pub.hairqare.co/22-the-haircare/Mechanism.webp" }}
         body={
           <>
-            <p>They kept buying products for frizz, breakage, dryness or thinning, but every bottle only targeted the symptom they could see. The real reason behind those problems was never addressed, so the cycle kept repeating. The Challenge helps you understand what's creating those issues in the first place, so you can work on the cause instead of constantly buying another temporary fix.</p>
+            <p>They kept buying products for frizz, breakage, dryness or thinning, but every bottle only targeted the symptom they could see.</p>
+            <p>The real reason behind those problems was never addressed, so the cycle kept repeating.</p>
+            <p>The Challenge helps you understand <strong>what's creating those issues in the first place</strong>, so you can work on the cause instead of constantly buying another temporary fix.</p>
           </>
         }
         // customer_id: 86344a1c-c860-4aee-9319-50251f50ca55
@@ -137,13 +144,6 @@ export function Reasons() {
           tint: "sage",
         }}
       />
-      <ConvictionCard
-        avatar="hero-avatar-15.webp"
-        name="Grace"
-        descriptor="Pharmacist · Day 14"
-        quote={"The hardest part was throwing out all the products I thought were good for my hair."}
-        bhcId="ddbcc5bb-3670-46e4-9636-0dbf07baf0a0"
-      />
       <Reason
         eyebrow="MARKETING VS INGREDIENTS"
         number="04"
@@ -152,7 +152,9 @@ export function Reasons() {
         image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending", url: "https://pub.hairqare.co/22-the-haircare/80.webp" }}
         body={
           <>
-            <p>They believed words like "repair", "strengthening" and "salon quality" meant a product would work. In reality, they were making decisions based on packaging, advertising and viral recommendations instead of understanding the ingredient list. The Challenge teaches you how to read labels with confidence, so you'll know what belongs in your routine and what is only clever marketing.</p>
+            <p>They believed words like "repair", "strengthening" and "salon quality" meant a product would work.</p>
+            <p>In reality, they were making decisions based on <strong>packaging, advertising and viral recommendations</strong> instead of understanding the ingredient list.</p>
+            <p>The Challenge teaches you how to <strong>read labels with confidence</strong>, so you'll know what belongs in your routine and what is only clever marketing.</p>
           </>
         }
         // customer_id: cb6795cb-755c-433a-8e52-e6061808553e
@@ -172,7 +174,11 @@ export function Reasons() {
         image={{ w: 1080, h: 1350, label: "The result of using less", alt: "The result of using less, not more", url: "https://pub.hairqare.co/22-the-haircare/IMG-702-1_4X5.webp" }}
         body={
           <>
-            <p>For years, they chased every new trend, jumping from rosemary oil to rice water to the latest viral shampoo, juggling a shelf full of bottles on every wash day. No one ever told them that healthy hair doesn't need twenty products. It needs the right two. Your scalp and your strands need completely different things, and once you understand that, your whole routine gets shorter, not longer. The Challenge gives you one clear routine built around your own hair, so you spend a few minutes preventing damage instead of hours trying to fix it, and you stop reaching for something new every time a trend appears. Within two weeks most women notice less shedding and softer, shinier hair, and with less breakage, their hair finally holds onto the length it grows.</p>
+            <p>For years, they chased every new trend, jumping from rosemary oil to rice water to the latest viral shampoo, juggling a shelf full of bottles on every wash day.</p>
+            <p>No one ever told them that <strong>healthy hair doesn't need twenty products. It needs the right two.</strong></p>
+            <p>Your scalp and your strands need completely different things, and once you understand that, your whole routine gets shorter, not longer.</p>
+            <p>The Challenge gives you <strong>one clear routine</strong> built around your own hair, so you spend a few minutes preventing damage instead of hours trying to fix it, and you stop reaching for something new every time a trend appears.</p>
+            <p>Within two weeks most women notice <strong>less shedding and softer, shinier hair</strong>, and with less breakage, their hair finally holds onto the length it grows.</p>
           </>
         }
         // customer_id: 655c6650-e8cd-4fc7-827a-2b629f9851b0
@@ -183,13 +189,6 @@ export function Reasons() {
           initial: "B",
           tint: "sand",
         }}
-      />
-      <ConvictionCard
-        avatar="hero-avatar-17.webp"
-        name="Brooke"
-        descriptor="Canada · Day 14"
-        quote={"I like that idea of not having to rely on always buying a product."}
-        bhcId="d457edad-ef31-46a2-8e1d-3ff27ab65243"
       />
     </>
   );

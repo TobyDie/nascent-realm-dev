@@ -22,14 +22,18 @@ export function Hero() {
             14-Day Haircare Challenge
           </span>
           <h1 className="v29-h1 v29-h1--dual">
-            <span className="v29-accent">5 Reasons</span> Women Are{" "}
-            <span className="v29-accent">Finally Quitting</span> Expensive Hair Products
+            5 Reasons Women Are Finally{" "}
+            <span className="v29-accent">Quitting Expensive Hair Products</span>
           </h1>
           <p className="v29-lede">
-            If you still want healthy hair you can actually wear down again, but you've tried everything and spent so much on products that never worked, here's why 250,000+ women quit expensive haircare and learned to make their own shampoo that actually works for their hair.
+            If you still want healthy hair you can actually wear down again, but you've tried everything and spent so much on products that never worked.
+          </p>
+          <p className="v29-lede">
+            Here's why <strong>250,000+ women quit expensive haircare</strong> and learned to{" "}
+            <strong>make their own shampoo that actually works for their hair</strong>.
           </p>
           <div className="v29-cta-wrap">
-            <CtaButton full>Discover hair in 14 days →</CtaButton>
+            <CtaButton full>Healthier hair in 14 days →</CtaButton>
           </div>
           <div className="v29-stars-line v29-stars-line--center">
             <Stars />

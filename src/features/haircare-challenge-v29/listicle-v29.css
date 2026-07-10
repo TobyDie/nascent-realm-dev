@@ -326,6 +326,7 @@
 .hq-sp-v29 .v29-reason__imgwrap { margin: 32px auto; max-width: 820px; }
 .hq-sp-v29 .v29-reason__body { max-width: 720px; margin: 0 auto; }
 .hq-sp-v29 .v29-reason__body p { margin: 0 0 18px; color: var(--body); }
+.hq-sp-v29 .v29-reason__body strong { font-weight: 700; color: var(--ink); }
 
 /* ----- Pointer quote card (avatar monogram testimonial) ----- */
 .hq-sp-v29 .v29-pqcard {
