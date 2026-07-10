@@ -10,7 +10,6 @@ type ReasonProps = {
   body: ReactNode;
   quote?: { text: string; attribution: string; photo?: string };
   band: "peach" | "white";
-  endSentinelId?: string;
 };
 
 type QuoteCardProps = { quote: { text: string; attribution: string; photo?: string } };
@@ -43,7 +42,7 @@ function QuoteCard({ quote }: QuoteCardProps) {
   );
 }
 
-function Reason({ eyebrow, number, headline, image, body, quote, band, endSentinelId }: ReasonProps) {
+function Reason({ eyebrow, number, headline, image, body, quote, band }: ReasonProps) {
   return (
     <section className={`v28-band v28-band--${band} v28-reason`}>
       <div className="v28-container">
@@ -64,7 +63,6 @@ function Reason({ eyebrow, number, headline, image, body, quote, band, endSentin
       <div className="v28-container v28-reason__body">
         {body}
         {quote && <QuoteCard quote={quote} />}
-        {endSentinelId && <div id={endSentinelId} aria-hidden="true" />}
       </div>
     </section>
   );
@@ -105,7 +103,6 @@ export function Reasons() {
           </>
         }
         quote={{ text: "I really hated throwing out my expensive hair products. And feeling that everything the hair care industry tells us is just a load of rubbish. How does my hairdresser not even know these things?", attribution: "Shaney, South Africa", photo: "https://pub.hairqare.co/glow/hero-avatar-14.webp" }}
-        endSentinelId="v28-ingredient-end"
       />
       <Reason
         eyebrow="Reason 3"
