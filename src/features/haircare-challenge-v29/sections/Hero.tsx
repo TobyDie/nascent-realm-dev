@@ -26,10 +26,10 @@ export function Hero() {
             <span className="v29-accent">Finally Quitting</span> Expensive Hair Products
           </h1>
           <p className="v29-lede">
-            If you still want healthy, beautiful hair… but you're tired of buying bottle after bottle that promised everything and changed nothing, here's why 250,000+ women stopped shopping for the answer and started learning it.
+            If you still want healthy hair you can actually wear down again, but you've tried everything and spent so much on products that never worked, here's why 250,000+ women quit expensive haircare and learned to make their own shampoo that actually works for their hair.
           </p>
           <div className="v29-cta-wrap">
-            <CtaButton full>Healthier hair in 14 days →</CtaButton>
+            <CtaButton full>Discover hair in 14 days →</CtaButton>
           </div>
           <div className="v29-stars-line v29-stars-line--center">
             <Stars />

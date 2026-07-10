@@ -8,9 +8,46 @@ type ReasonProps = {
   headline: string;
   image: { w: number; h: number; label: string; alt: string; url?: string };
   body: ReactNode;
-  quote?: { text: string; attribution: string };
+  quote?: PointerQuoteCardProps;
   band: "peach" | "white";
 };
+
+type AvatarTint = "peach" | "periwinkle" | "sage" | "blush" | "sand";
+
+const AVATAR_TINTS: Record<AvatarTint, { bg: string; fg: string }> = {
+  peach: { bg: "#FBEDE2", fg: "#B5622F" },
+  periwinkle: { bg: "#E8E9F7", fg: "#4A4E9C" },
+  sage: { bg: "#E7EFE4", fg: "#4C6B45" },
+  blush: { bg: "#F8E6E6", fg: "#B24C57" },
+  sand: { bg: "#F1E9DA", fg: "#8A6A3D" },
+};
+
+type PointerQuoteCardProps = {
+  quote: string;
+  name: string;
+  location?: string;
+  initial: string;
+  tint: AvatarTint;
+};
+
+function PointerQuoteCard({ quote, name, location, initial, tint }: PointerQuoteCardProps) {
+  const t = AVATAR_TINTS[tint];
+  return (
+    <figure className="v29-pqcard">
+      <span className="v29-pqcard__mark" aria-hidden="true">&ldquo;</span>
+      <blockquote className="v29-pqcard__quote">{quote}</blockquote>
+      <figcaption className="v29-pqcard__foot">
+        <span className="v29-pqcard__avatar" style={{ background: t.bg, color: t.fg }} aria-hidden="true">
+          {initial}
+        </span>
+        <span className="v29-pqcard__id">
+          <span className="v29-pqcard__name">{name}{location ? `, ${location}` : ""}</span>
+        </span>
+        <span className="v29-pqcard__stars" aria-label="5 out of 5 stars">★★★★★</span>
+      </figcaption>
+    </figure>
+  );
+}
 
 function Reason({ eyebrow, number, headline, image, body, quote, band }: ReasonProps) {
   return (
@@ -32,12 +69,7 @@ function Reason({ eyebrow, number, headline, image, body, quote, band }: ReasonP
       </div>
       <div className="v29-container v29-reason__body">
         {body}
-        {quote && (
-          <p className="v29-inline-quote">
-            <em>"{quote.text}"</em>
-            <span className="v29-inline-quote__attr"> {quote.attribution}</span>
-          </p>
-        )}
+        {quote && <PointerQuoteCard {...quote} />}
       </div>
     </section>
   );
@@ -47,55 +79,63 @@ export function Reasons() {
   return (
     <>
       <Reason
-        eyebrow="The Price Lie"
+        eyebrow="UNDERSTANDING YOUR HAIR"
         number="01"
-        headline="Because Expensive Doesn't Mean Effective."
+        headline="They Finally Learned What Their Own Hair Actually Needs"
         band="peach"
         image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/22-the-haircare/expensive.webp" }}
         body={
           <>
-            <p>You've been told the next bottle is the one. The $40 shampoo. The $90 serum. The treatment with the name you can't pronounce.</p>
-            <p>You bought it. You believed it. Your hair stayed exactly the same.</p>
-            <p>Here's what nobody selling it wants you to know: the price has almost nothing to do with the result.</p>
-            <p>The expensive bottle and the cheap one are often built from the same handful of ingredients. You're not paying for better hair. You're paying for better packaging.</p>
-            <p>Sarah knows, because she was paid to promote them. Brands worth tens of thousands. While her own hair was falling out in the shower.</p>
+            <p>For years, they bought whatever influencers recommended or whatever happened to be trending that month. Every new bottle promised healthier hair, so they kept switching products, hoping the next one would finally be different. Once they understood that no product works for everyone, buying became much simpler. Inside the 14-Day Haircare Challenge, you'll learn how to understand your own hair, so you can recognize which ingredients and products suit it, and stop spending money on things your hair never needed in the first place.</p>
           </>
         }
-        quote={{ text: "I have tried so many products and treatments and nothing worked for me.", attribution: "Sangheetha, Malaysia" }}
+        // customer_id: 3e253d53-da78-4bd6-a356-45ca88336d40
+        quote={{
+          quote: "I did find a good hair routine, but to me it is difficult to maintain the routine every day as it takes quite some time. I don't know what to look for when I buy products for my hair and it gets frizzy quite fast. So it took me 6 months to finally join this program. I reached a point, where I really wanted to know more about hair.",
+          name: "Maria",
+          location: "Germany",
+          initial: "M",
+          tint: "peach",
+        }}
       />
       <Reason
-        eyebrow="The Ingredient Gap"
+        eyebrow="EVERYDAY HABITS"
         number="02"
-        headline="Because The Front Of The Bottle Is Marketing, Not Truth."
+        headline="They Realized Daily Habits Damage Their Hair More Than The Shampoo They Use"
         band="white"
         image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/22-the-haircare/ingredient-list.webp" }}
         body={
           <>
-            <p>"No sulfates." "No parabens." "Clean." "Natural."</p>
-            <p>It sounds like care. It's copywriting.</p>
-            <p>The front of the bottle is written to sell you. The real story is on the back, in the ingredients list nobody ever taught you to read.</p>
-            <p>And once you can read it, you can't unsee it. So many "clean" products simply swapped one harsh ingredient for three worse ones you've never heard of.</p>
-            <p>You were never bad at hair care. You were just reading the wrong side of the bottle.</p>
+            <p>They spent years replacing shampoos while repeating the same damaging habits every single day. Rough towel drying, brushing wet hair the wrong way, tight hairstyles and too much heat quietly caused more damage than any shampoo could undo. The Challenge shows you which everyday habits are working against your hair and how to replace them with better ones. Once you stop causing unnecessary damage, you'll rely far less on expensive products to hide it.</p>
           </>
         }
+        // customer_id: 1afeca2e-6c62-450a-b327-2b2186b111b3
+        quote={{
+          quote: "I am also aware that putting your hair in tight hairstyles is not good for it but I genuinely hate my hair down now.",
+          name: "Daniela",
+          location: "United States",
+          initial: "D",
+          tint: "periwinkle",
+        }}
       />
       <Reason
-        eyebrow="The Real Mechanism"
+        eyebrow="SYMPTOM VS CAUSE"
         number="03"
-        headline="Because Products Are Designed To Mask, Not Solve."
+        headline="They Stopped Treating Symptoms And Started Fixing The Cause"
         band="peach"
         image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp", url: "https://pub.hairqare.co/22-the-haircare/Mechanism.webp" }}
         body={
           <>
-            <p>Here's the part the industry needs you to never figure out.</p>
-            <p>Your hair isn't a product problem. It's a biology problem.</p>
-            <p>Healthy hair grows from a healthy scalp, fed by what you eat, protected by a routine built for <em>your</em> hair, not the routine an influencer was paid to recommend this month.</p>
-            <p>Products sit on the surface. They coat, they smooth, they make today look a little better. But they were never built to change what's happening underneath. They were built to keep you coming back.</p>
-            <p>Because an industry doesn't profit from solving your hair. It profits from renting you a result that wears off by the next wash.</p>
-            <p>When you finally understand the few things your hair actually needs, something strange happens.</p>
-            <p>You stop needing the shelf.</p>
+            <p>They kept buying products for frizz, breakage, dryness or thinning, but every bottle only targeted the symptom they could see. The real reason behind those problems was never addressed, so the cycle kept repeating. The Challenge helps you understand what's creating those issues in the first place, so you can work on the cause instead of constantly buying another temporary fix.</p>
           </>
         }
+        // customer_id: 86344a1c-c860-4aee-9319-50251f50ca55
+        quote={{
+          quote: "I tried so many expensive products and treatments etc, and my hair only looks good when I go to the hair dresser, but 2 days later its frizzy, I dont get my natural waves under control and my hair got thinner and thinner.",
+          name: "Alicja",
+          initial: "A",
+          tint: "sage",
+        }}
       />
       <ConvictionCard
         avatar="hero-avatar-15.webp"
@@ -105,38 +145,44 @@ export function Reasons() {
         bhcId="ddbcc5bb-3670-46e4-9636-0dbf07baf0a0"
       />
       <Reason
-        eyebrow="The Hidden Cost"
+        eyebrow="MARKETING VS INGREDIENTS"
         number="04"
-        headline="Because $80 A Month Isn't Just $80."
+        headline="They Discovered They Were Buying Products For Marketing Claims, Not Ingredients"
         band="white"
         image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending", url: "https://pub.hairqare.co/22-the-haircare/80.webp" }}
         body={
           <>
-            <p>$80. That's what the average woman spends on her hair every single month.</p>
-            <p>Not on one miracle product. On the rotation. The new shampoo, the mask, the oil, the thing a video told her to try.</p>
-            <p>$80 a month is almost $1,000 a year. Over a lifetime, invested instead, it's more than $300,000.</p>
-            <p>That's a house deposit. A career break. The trip you keep saying you'll take "one day."</p>
-            <p>All quietly leaking out of your account for products that left your hair exactly where it started.</p>
+            <p>They believed words like "repair", "strengthening" and "salon quality" meant a product would work. In reality, they were making decisions based on packaging, advertising and viral recommendations instead of understanding the ingredient list. The Challenge teaches you how to read labels with confidence, so you'll know what belongs in your routine and what is only clever marketing.</p>
           </>
         }
-        quote={{ text: "It impacts my bank account trying new products, which just frustrates me.", attribution: "Graduate, United States" }}
+        // customer_id: cb6795cb-755c-433a-8e52-e6061808553e
+        quote={{
+          quote: "i was trying different types of shampoos, vegan, paraben free, cruelty free, etc... but lately my hair has felt straw-like and dull and i don't know what else to do",
+          name: "Francisca",
+          location: "Chile",
+          initial: "F",
+          tint: "blush",
+        }}
       />
       <Reason
-        eyebrow="The Simpler Way"
+        eyebrow="ROUTINE VS TRENDS"
         number="05"
-        headline="Because The Women With The Best Hair Aren't Using More. They're Using Less."
+        headline="They Built One Simple Routine Instead Of Chasing Every New Trend"
         band="peach"
         image={{ w: 1080, h: 1350, label: "The result of using less", alt: "The result of using less, not more", url: "https://pub.hairqare.co/22-the-haircare/IMG-702-1_4X5.webp" }}
         body={
           <>
-            <p>At some point you stop chasing the perfect product. You just get tired of the shelf.</p>
-            <p>The bottles you don't finish. The money you don't get back. The hope you feel in the store and the disappointment you feel by day three.</p>
-            <p>The women with the healthiest hair aren't the ones using the most. They're the ones who figured out they needed the least.</p>
-            <p>Sarah maintains her hair on two products. About $10 a month. Not because she can't afford more. Because she learned she doesn't need it.</p>
-            <p>You're not trying to find the right product.</p>
-            <p>You're trying to be done looking.</p>
+            <p>For years, they chased every new trend, jumping from rosemary oil to rice water to the latest viral shampoo, juggling a shelf full of bottles on every wash day. No one ever told them that healthy hair doesn't need twenty products. It needs the right two. Your scalp and your strands need completely different things, and once you understand that, your whole routine gets shorter, not longer. The Challenge gives you one clear routine built around your own hair, so you spend a few minutes preventing damage instead of hours trying to fix it, and you stop reaching for something new every time a trend appears. Within two weeks most women notice less shedding and softer, shinier hair, and with less breakage, their hair finally holds onto the length it grows.</p>
           </>
         }
+        // customer_id: 655c6650-e8cd-4fc7-827a-2b629f9851b0
+        quote={{
+          quote: "I have just ended up putting up with it, after trying too many products that keep filling up my cupboard that never end up being used.",
+          name: "Bianka",
+          location: "Australia",
+          initial: "B",
+          tint: "sand",
+        }}
       />
       <ConvictionCard
         avatar="hero-avatar-17.webp"
