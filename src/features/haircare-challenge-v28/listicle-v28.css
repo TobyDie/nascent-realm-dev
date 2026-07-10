@@ -339,24 +339,29 @@
 }
 .hq-sp-v28 .v28-quotecard__media {
   flex: none;
-  width: 96px;
+  width: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--accent-soft);
 }
 @media (min-width: 768px) {
-  .hq-sp-v28 .v28-quotecard__media { width: 120px; }
+  .hq-sp-v28 .v28-quotecard__media { width: 100px; }
 }
 .hq-sp-v28 .v28-quotecard__img {
-  width: 100%;
-  height: 100%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   object-fit: cover;
   display: block;
+  box-shadow: 0 0 0 3px var(--surface);
+}
+@media (min-width: 768px) {
+  .hq-sp-v28 .v28-quotecard__img { width: 60px; height: 60px; }
 }
 .hq-sp-v28 .v28-quotecard__mark {
   font-family: var(--font-display);
-  font-size: 44px;
+  font-size: 36px;
   line-height: 1;
   color: var(--accent);
   opacity: 0.55;
