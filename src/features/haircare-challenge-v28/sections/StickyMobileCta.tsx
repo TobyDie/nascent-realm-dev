@@ -48,13 +48,14 @@ export function StickyMobileCta() {
     if (sentinel) {
       io = new IntersectionObserver(
         ([entry]) => {
-          // Reveal once the sentinel has scrolled above the top of the viewport.
-          if (entry.boundingClientRect.top <= 0) {
+          // Reveal once the sentinel has scrolled above the top of the viewport
+          // (it was intersecting, now it isn't, and it exited off the top edge).
+          if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
             reveal();
             io?.disconnect();
           }
         },
-        { threshold: 0, rootMargin: "0px 0px -100% 0px" }
+        { threshold: 0 }
       );
       io.observe(sentinel);
       // Initial check in case we mount already past the sentinel.
