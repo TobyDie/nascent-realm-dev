@@ -19,7 +19,7 @@ export function Hero() {
               <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
               <path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            10-Minute Read
+            1-Minute Read
           </span>
           <h1 className="v28-h1 v28-h1--dual">
             How Women in Their 30s and 40s Are{" "}
