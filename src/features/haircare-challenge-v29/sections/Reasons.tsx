@@ -82,7 +82,7 @@ export function Reasons() {
         number="01"
         headline="They Finally Learned What Their Own Hair Actually Needs"
         band="peach"
-        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/22-the-haircare/expensive.webp" }}
+        image={{ w: 1080, h: 1080, label: "A simple, minimal hair routine", alt: "A simple, minimal hair routine", url: "https://pub.hairqare.co/29SP/point1.webp" }}
         body={
           <>
             <p>For years, they bought whatever influencers recommended or whatever happened to be trending that month.</p>
@@ -105,7 +105,7 @@ export function Reasons() {
         number="02"
         headline="They Realized Daily Habits Damage Their Hair More Than The Shampoo They Use"
         band="white"
-        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/22-the-haircare/ingredient-list.webp" }}
+        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/29SP/point2.webp" }}
         body={
           <>
             <p>They spent years replacing shampoos while repeating the same damaging habits every single day.</p>
@@ -128,7 +128,7 @@ export function Reasons() {
         number="03"
         headline="They Stopped Treating Symptoms And Started Fixing The Cause"
         band="peach"
-        image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp", url: "https://pub.hairqare.co/22-the-haircare/Mechanism.webp" }}
+        image={{ w: 1080, h: 1350, label: "Healthy scalp · close-up", alt: "Healthy hair grows from a healthy scalp", url: "https://pub.hairqare.co/29SP/Point3.webp" }}
         body={
           <>
             <p>They kept buying products for frizz, breakage, dryness or thinning, but every bottle only targeted the symptom they could see.</p>
@@ -149,7 +149,7 @@ export function Reasons() {
         number="04"
         headline="They Discovered They Were Buying Products For Marketing Claims, Not Ingredients"
         band="white"
-        image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending", url: "https://pub.hairqare.co/22-the-haircare/80.webp" }}
+        image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending", url: "https://pub.hairqare.co/29SP/4.webp" }}
         body={
           <>
             <p>They believed words like "repair", "strengthening" and "salon quality" meant a product would work.</p>
@@ -171,7 +171,7 @@ export function Reasons() {
         number="05"
         headline="They Built One Simple Routine Instead Of Chasing Every New Trend"
         band="peach"
-        image={{ w: 1080, h: 1350, label: "The result of using less", alt: "The result of using less, not more", url: "https://pub.hairqare.co/22-the-haircare/IMG-702-1_4X5.webp" }}
+        image={{ w: 1080, h: 1350, label: "The result of using less", alt: "The result of using less, not more", url: "https://pub.hairqare.co/29SP/point-5.webp" }}
         body={
           <>
             <p>For years, they chased every new trend, jumping from rosemary oil to rice water to the latest viral shampoo, juggling a shelf full of bottles on every wash day.</p>
