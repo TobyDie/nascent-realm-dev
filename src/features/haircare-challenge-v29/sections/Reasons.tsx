@@ -105,7 +105,7 @@ export function Reasons() {
         number="02"
         headline="They Realized Daily Habits Damage Their Hair More Than The Shampoo They Use"
         band="white"
-        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/29SP/point2.webp" }}
+        image={{ w: 1080, h: 1080, label: "Reading the back label", alt: "Reading the ingredients list on the back of a bottle", url: "https://pub.hairqare.co/28sp/Fallen-hair.webp" }}
         body={
           <>
             <p>They spent years replacing shampoos while repeating the same damaging habits every single day.</p>
@@ -149,7 +149,7 @@ export function Reasons() {
         number="04"
         headline="They Discovered They Were Buying Products For Marketing Claims, Not Ingredients"
         band="white"
-        image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending", url: "https://pub.hairqare.co/29SP/4.webp" }}
+        image={{ w: 1080, h: 1080, label: "Confidence without spending", alt: "Confidence without the constant spending", url: "https://pub.hairqare.co/22-the-haircare/ingredient-list.webp" }}
         body={
           <>
             <p>They believed words like "repair", "strengthening" and "salon quality" meant a product would work.</p>
