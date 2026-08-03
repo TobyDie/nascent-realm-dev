@@ -215,7 +215,7 @@ export function CreatorHubPage() {
             >
               <div className="flex items-start gap-4">
                 {REWARD_IMG[r.badge] && (
-                  <div className="relative hidden aspect-[3/4] w-24 shrink-0 overflow-hidden rounded-card bg-sand cs:block">
+                  <div className="relative aspect-[3/4] w-20 shrink-0 overflow-hidden rounded-card bg-sand cs:w-24">
                     <CdnImage
                       src={REWARD_IMG[r.badge]!}
                       alt=""
