@@ -37,6 +37,13 @@ export const IMG = {
   /** S2 "Haircare made simple" letter portrait — 4/5 crop on R2. */
   missionLetter: `${ORIGIN}/creators/Haircare-made-simple-for-every-woman-5-2.webp`,
 
+  // Hub-only art. All native 4:5 (2160×2700) or 3:4 (1800×2400) — the
+  // containers match these ratios exactly so nothing is ever cropped.
+  hubWhyStudents: `${ORIGIN}/creators/Haircare-made-simple-for-every-woman-3.webp`,
+  hubPostFive: `${ORIGIN}/creators/Haircare-made-simple-for-every-woman-4.webp`,
+  hubViews: `${ORIGIN}/creators/Keep-earning-for-life-3.webp`,
+  hubCommission: `${ORIGIN}/creators/Unlock-gifts-and-the-founding-draw-2.webp`,
+
   // S3 "What you get" cards — all 1800×2400 (3:4), matching the card containers.
   perkEarn: `${ORIGIN}/creators/Earn-50-of-every-Challenge-sale-2.webp`,
   perkGifts: `${ORIGIN}/creators/Unlock-gifts-and-the-founding-draw.webp`,
