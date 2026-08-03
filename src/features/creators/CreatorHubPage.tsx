@@ -22,6 +22,7 @@ import {
   PAID,
   PAID_FACTS,
   PAID_INTRO,
+  PROGRAM,
   REWARDS,
   RULES,
   START_STEPS,
@@ -82,6 +83,54 @@ export function CreatorHubPage() {
           <ArrowRightIcon width={16} height={16} />
         </a>
       </section>
+
+      {/* ── Tier 0: what the program is ─────────────────────────────────── */}
+      <TierLabel>The program</TierLabel>
+
+      <Section id="program" n="00" title="The program">
+        <div className="max-w-prose space-y-1.5 leading-relaxed text-ink/70">
+          {PROGRAM.what.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </div>
+
+        <h3 className="mt-7 font-fraunces text-xl text-ink">
+          {PROGRAM.whyTitle}
+        </h3>
+        <div className="mt-2 max-w-prose space-y-3 leading-relaxed text-ink/70">
+          {PROGRAM.why.map((para) => (
+            <p key={para}>{para}</p>
+          ))}
+        </div>
+        <p className="mt-4 font-fraunces text-2xl text-ink">
+          {PROGRAM.signature}
+        </p>
+
+        <h3 className="mt-8 font-fraunces text-xl text-ink">
+          {PROGRAM.waysTitle}
+        </h3>
+        <ul className="mt-3 space-y-0">
+          {PROGRAM.ways.map((w) => (
+            <li key={w.label} className="border-t border-line first:border-t-0">
+              <a
+                href={w.href}
+                className="grid gap-0.5 py-3.5 transition-colors hover:text-ink cs:grid-cols-[11rem_1fr] cs:gap-4"
+              >
+                <span className="font-semibold text-ink">{w.label}</span>
+                <span className="text-ink/70">{w.body}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 text-sm text-ink/55">{PROGRAM.waysNote}</p>
+        <p className="mt-5 text-sm text-ink/55">
+          {PROGRAM.notYetApplied}{" "}
+          <Link to="/creators" className="text-flame-deep hover:underline">
+            {PROGRAM.notYetLink}
+          </Link>
+          .
+        </p>
+      </Section>
 
       {/* ── Tier 1: the essentials ──────────────────────────────────────── */}
       <TierLabel>The essentials</TierLabel>
