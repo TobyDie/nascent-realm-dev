@@ -254,7 +254,7 @@ export function BuildYourJourney() {
               <h3 className="mb-2 font-fraunces text-2xl text-ink">
                 {JOURNEY.controls.watch}
               </h3>
-              <div className="mb-2 flex items-baseline justify-between">
+              <div className="mb-2 flex flex-col gap-0.5 cs:flex-row cs:items-baseline cs:justify-between">
                 <p
                   className={[
                     "text-sm transition-colors",
@@ -263,7 +263,7 @@ export function BuildYourJourney() {
                 >
                   {reachedTarget
                     ? "Hairqare Lab unlocked."
-                    : JOURNEY.viewsProgress(views)}
+                    : JOURNEY.viewsProgress()}
                 </p>
                 <span className="tnum text-sm font-medium text-ink/70">
                   {views.toLocaleString("en-US")}
@@ -311,7 +311,7 @@ export function BuildYourJourney() {
               <h3 className="mb-2 font-fraunces text-2xl text-ink">
                 {JOURNEY.controls.buy}
               </h3>
-              <div className="mb-4 flex items-baseline justify-between">
+              <div className="mb-4 flex flex-col gap-0.5 cs:flex-row cs:items-baseline cs:justify-between">
                 <p className="text-sm text-ink/65">
                   Sales a month through your code
                 </p>
@@ -331,7 +331,7 @@ export function BuildYourJourney() {
                 style={{ background: salesTrack }}
               />
               <div className="mt-5 rounded-card border border-flame/20 bg-flame/[0.06] px-5 py-4">
-                <div className="flex items-end justify-between gap-4">
+                <div className="flex flex-col gap-4 cs:flex-row cs:items-end cs:justify-between">
                   <div>
                     <p className="text-xs uppercase tracking-wide text-ink/65">
                       Per month
@@ -342,7 +342,7 @@ export function BuildYourJourney() {
                       className="font-fraunces text-[2.75rem] leading-none text-flame"
                     />
                   </div>
-                  <div className="text-right">
+                  <div className="cs:text-right">
                     <p className="text-xs uppercase tracking-wide text-ink/65">
                       Per year
                     </p>
