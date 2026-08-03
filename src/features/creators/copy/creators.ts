@@ -95,8 +95,7 @@ export const JOURNEY = {
     },
     hql: { title: "Hairqare Lab", note: "$997 · lifetime" },
   },
-  viewsProgress: (n: number) =>
-    `${n.toLocaleString("en-US")} views: on the way to Hairqare Lab`,
+  viewsProgress: () => "On the way to Hairqare Lab",
   salesCaption: "and this part never stops.",
   disclaimer: EARNINGS_DISCLAIMER,
   closingLine: "There is no version of this where you walk away with nothing.",
