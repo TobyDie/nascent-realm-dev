@@ -140,8 +140,8 @@ export function Perks() {
                     className="h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out motion-safe:group-hover:scale-[1.03]"
                   />
                 </div>
-                <div className="order-1 cs:order-2">
-                  <p className="mt-5 text-xs font-medium uppercase tracking-[0.18em] text-flame-deep">
+                <div className="order-1 cs:order-2 mb-5 cs:mb-0 cs:mt-5">
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-flame-deep">
                     {card.eyebrow}
                   </p>
                   <h3 className="mt-2 font-fraunces text-[1.5rem] leading-tight text-ink">
