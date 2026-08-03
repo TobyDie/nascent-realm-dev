@@ -245,3 +245,37 @@
   overflow: hidden;
   min-height: 0;
 }
+
+/* Mobile summary bar feedback: a brief tinted flash + value pop so slider
+   changes are visible without opening the sheet. Transform/opacity only. */
+@keyframes hq-bar-flash {
+  0% { opacity: 0; }
+  22% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.hq-creators .hq-bar-flash {
+  animation: hq-bar-flash 0.6s var(--ease-out-quiet) forwards;
+  will-change: opacity;
+}
+@keyframes hq-value-pop {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+.hq-creators .hq-value-pop {
+  display: inline-block;
+  animation: hq-value-pop 0.45s var(--ease-out-quiet);
+  will-change: transform;
+}
+@keyframes hq-pip-in {
+  from { transform: scale(0.3); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.hq-creators .hq-pip {
+  animation: hq-pip-in 0.3s var(--ease-out-quiet) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hq-creators .hq-bar-flash,
+  .hq-creators .hq-value-pop,
+  .hq-creators .hq-pip { animation: none; }
+}
