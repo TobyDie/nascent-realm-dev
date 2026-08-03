@@ -331,7 +331,7 @@ export function BuildYourJourney() {
                 style={{ background: salesTrack }}
               />
               <div className="mt-5 rounded-card border border-flame/20 bg-flame/[0.06] px-5 py-4">
-                <div className="flex items-end justify-between gap-4">
+                <div className="flex flex-col gap-4 cs:flex-row cs:items-end cs:justify-between">
                   <div>
                     <p className="text-xs uppercase tracking-wide text-ink/65">
                       Per month
@@ -342,7 +342,7 @@ export function BuildYourJourney() {
                       className="font-fraunces text-[2.75rem] leading-none text-flame"
                     />
                   </div>
-                  <div className="text-right">
+                  <div className="cs:text-right">
                     <p className="text-xs uppercase tracking-wide text-ink/65">
                       Per year
                     </p>
