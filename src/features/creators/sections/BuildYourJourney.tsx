@@ -311,7 +311,7 @@ export function BuildYourJourney() {
               <h3 className="mb-2 font-fraunces text-2xl text-ink">
                 {JOURNEY.controls.buy}
               </h3>
-              <div className="mb-4 flex items-baseline justify-between">
+              <div className="mb-4 flex flex-col gap-0.5 cs:flex-row cs:items-baseline cs:justify-between">
                 <p className="text-sm text-ink/65">
                   Sales a month through your code
                 </p>
