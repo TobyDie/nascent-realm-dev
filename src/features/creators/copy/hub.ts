@@ -9,7 +9,6 @@
  * The program terms live in ./terms (their own page). `{{TBA}}` marks an open
  * decision — see ./tokens.
  */
-import { TBA } from "./tokens";
 
 export const INTRO = {
   eyebrow: "Hairqare Creators",
