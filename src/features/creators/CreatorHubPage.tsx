@@ -206,6 +206,17 @@ export function CreatorHubPage() {
               key={r.badge}
               className="rounded-card border border-line bg-white p-6 cs:p-7"
             >
+              {REWARD_IMG[r.badge] && (
+                <div className="mb-5 aspect-[16/9] w-full overflow-hidden rounded-card bg-sand cs:aspect-[21/9]">
+                  <CdnImage
+                    src={REWARD_IMG[r.badge]!}
+                    alt={r.title}
+                    sizes="(max-width: 1120px) 88vw, 42rem"
+                    widths={COLUMN_WIDTHS}
+                    className="h-full w-full object-cover object-[center_28%]"
+                  />
+                </div>
+              )}
               <div className="flex items-start gap-4">
                 <span
                   className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-pill font-fraunces text-sm font-semibold ${
