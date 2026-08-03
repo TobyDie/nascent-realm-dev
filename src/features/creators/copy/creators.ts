@@ -41,7 +41,7 @@ export const PERKS = {
     {
       eyebrow: "SHARE YOUR CODE OR LINK",
       headline: "Earn 50% of every Challenge sale",
-      body: "When someone joins the $37 Better Hair Challenge through your personal code or link, half of that sale is yours, up to $18.50 each time. Share it on TikTok, Instagram, YouTube, email, or anywhere else. Paid to your PayPal every month.",
+      body: "When someone joins the $37 Better Hair Challenge through your personal code or link, half of that sale is yours, up to $18.50 each time. Share it on TikTok, Instagram, YouTube, email, or anywhere else. Paid out to the payment method you give us.",
       image: IMG.perkEarn,
     },
     {
@@ -139,7 +139,7 @@ export const FAQ = {
     },
     {
       q: "How do I get paid?",
-      a: "50% of every Challenge sale through your code or link, monthly to your PayPal, for life.",
+      a: "50% of every Challenge sale through your code or link, sent to the payment method you give us, for life.",
     },
     {
       q: "Do I need to show my face?",
