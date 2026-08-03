@@ -1,11 +1,6 @@
 
-import {
-  AnimatePresence,
-  MotionConfig,
-  motion,
-  useReducedMotion,
-} from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useReducedMotion } from "../ui/useReducedMotion";
 import { JOURNEY } from "../copy/creators";
 import {
   COMMISSION_PER_SALE,
@@ -38,39 +33,26 @@ function DotBurst({ fireKey }: { fireKey: number }) {
   if (reduce || fireKey === 0) return null;
   return (
     <span className="pointer-events-none absolute left-1/2 top-2 z-10 h-0 w-0">
-      <AnimatePresence>
-        <motion.span key={fireKey} className="absolute">
-          {BURST.map((d, i) => (
-            <motion.span
-              key={i}
-              className="absolute block h-1.5 w-1.5 rounded-full"
-              style={{ background: d.color }}
-              initial={{ opacity: 0, x: 0, y: 0, scale: 0.4 }}
-              animate={{ opacity: [0, 1, 0], x: d.x, y: d.y, scale: 1 }}
-              transition={{ duration: 0.6, delay: d.delay, ease: "easeOut" }}
-            />
-          ))}
-        </motion.span>
-      </AnimatePresence>
+      {/* keyed on fireKey so each celebration remounts and replays */}
+      <span key={fireKey} className="absolute">
+        {BURST.map((d, i) => (
+          <span
+            key={i}
+            className="hq-burst-dot absolute block h-1.5 w-1.5 rounded-full"
+            style={
+              {
+                background: d.color,
+                "--dx": `${d.x}px`,
+                "--dy": `${d.y}px`,
+                "--d": `${d.delay}s`,
+              } as React.CSSProperties
+            }
+          />
+        ))}
+      </span>
     </span>
   );
 }
-
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
-  exit: { transition: { staggerChildren: 0.04, staggerDirection: -1 } },
-};
-const item = {
-  hidden: { opacity: 0, y: 8, scale: 0.96 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { type: "spring" as const, stiffness: 380, damping: 26 },
-  },
-  exit: { opacity: 0, y: -6, scale: 0.98, transition: { duration: 0.18 } },
-};
 
 function RewardStack({
   committed,
@@ -85,51 +67,46 @@ function RewardStack({
   const c = JOURNEY.rewards;
   return (
     <div className="flex flex-col gap-2.5">
-      <AnimatePresence>
-        {committed && (
-          <motion.div
-            key="layer1"
-            variants={container}
-            initial="hidden"
-            animate="show"
-            exit="exit"
-            className="flex flex-col gap-2.5"
-          >
-            <motion.div variants={item}>
-              <RewardCard
-                title={c.founding.title}
-                note={c.founding.note}
-                icon={<CheckIcon width={17} height={17} />}
-              />
-            </motion.div>
-            <motion.div variants={item}>
-              <RewardCard
-                title={c.giftPass.title}
-                note={c.giftPass.note}
-                icon={<GiftIcon width={17} height={17} />}
-                value="$37"
-              />
-            </motion.div>
-            <motion.div variants={item}>
-              <RewardCard title={c.hqlDraw.title} note={c.hqlDraw.note} />
-            </motion.div>
-            <motion.div variants={item}>
-              <RewardCard title={c.merely.title} note={c.merely.note} />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {committed && (
+        <div className="flex flex-col gap-2.5">
+          {[
+            <RewardCard
+              key="founding"
+              title={c.founding.title}
+              note={c.founding.note}
+              icon={<CheckIcon width={17} height={17} />}
+            />,
+            <RewardCard
+              key="gift"
+              title={c.giftPass.title}
+              note={c.giftPass.note}
+              icon={<GiftIcon width={17} height={17} />}
+              value="$37"
+            />,
+            <RewardCard
+              key="draw"
+              title={c.hqlDraw.title}
+              note={c.hqlDraw.note}
+            />,
+            <RewardCard
+              key="merely"
+              title={c.merely.title}
+              note={c.merely.note}
+            />,
+          ].map((card, i) => (
+            <div
+              key={card.key}
+              className="hq-reward-in"
+              style={{ "--i": i } as React.CSSProperties}
+            >
+              {card}
+            </div>
+          ))}
+        </div>
+      )}
 
-      <AnimatePresence>
-        {reachedTarget && (
-          <motion.div
-            key="hql"
-            initial={{ opacity: 0, rotateX: reduce ? 0 : 90 }}
-            animate={{ opacity: 1, rotateX: 0 }}
-            exit={{ opacity: 0, transition: { duration: 0.2 } }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            style={{ transformPerspective: 700 }}
-          >
+      {reachedTarget && (
+        <div className={reduce ? undefined : "hq-flip-in"}>
             <div className="relative overflow-hidden rounded-card">
               {/* The one gold treatment in the whole project. */}
               <RewardCard
@@ -139,13 +116,10 @@ function RewardStack({
                 icon={<SparkIcon width={17} height={17} />}
               />
               {!reduce && (
-                <motion.span
+                <span
                   key={`shimmer-${hqlBurst}`}
                   aria-hidden
-                  className="pointer-events-none absolute inset-0"
-                  initial={{ x: "-130%" }}
-                  animate={{ x: "230%" }}
-                  transition={{ duration: 0.85, ease: "easeInOut" }}
+                  className="hq-shimmer pointer-events-none absolute inset-0"
                   style={{
                     background:
                       "linear-gradient(105deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%)",
@@ -154,9 +128,8 @@ function RewardStack({
               )}
               <DotBurst fireKey={hqlBurst} />
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        </div>
+      )}
     </div>
   );
 }
@@ -223,8 +196,7 @@ export function BuildYourJourney() {
   const monthlyFmt = (n: number) => usd(n, n % 1 !== 0);
 
   return (
-    <MotionConfig reducedMotion="user">
-      <div ref={sectionRef}>
+    <div ref={sectionRef}>
         <div className="grid grid-cols-1 gap-10 cm:grid-cols-[55fr_45fr] cm:gap-12">
           {/* LEFT: controls */}
           <div className="flex flex-col gap-9">
@@ -254,15 +226,15 @@ export function BuildYourJourney() {
                   ].join(" ")}
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
-                    <motion.path
+                    <path
+                      className="hq-tick"
+                      data-checked={committed}
+                      pathLength={1}
                       d="M5 12.5 10 17.5 19 7"
                       stroke="currentColor"
                       strokeWidth={2.5}
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      initial={false}
-                      animate={{ pathLength: committed ? 1 : 0 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
                     />
                   </svg>
                 </span>
@@ -460,33 +432,24 @@ export function BuildYourJourney() {
                 {sheetOpen ? "Hide" : "See all"}
               </span>
             </button>
-            <AnimatePresence>
-              {sheetOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                  className="overflow-hidden"
-                >
-                  <div className="max-h-[55vh] overflow-y-auto px-5 pb-4 pt-1">
-                    <RewardStack
-                      committed={committed}
-                      reachedTarget={reachedTarget}
-                      hqlBurst={hqlBurst}
-                    />
-                    <p className="mt-3 text-xs italic text-ink/55">
-                      {JOURNEY.earningsNote}
-                    </p>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <div className="hq-sheet" data-open={sheetOpen} aria-hidden={!sheetOpen}>
+              <div>
+                <div className="max-h-[55vh] overflow-y-auto px-5 pb-4 pt-1">
+                  <RewardStack
+                    committed={committed}
+                    reachedTarget={reachedTarget}
+                    hqlBurst={hqlBurst}
+                  />
+                  <p className="mt-3 text-xs italic text-ink/55">
+                    {JOURNEY.earningsNote}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
           {/* spacer so the fixed bar never covers the disclaimer */}
           <div className="h-24" aria-hidden />
-        </div>
       </div>
-    </MotionConfig>
+    </div>
   );
 }

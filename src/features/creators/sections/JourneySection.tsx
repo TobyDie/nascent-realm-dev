@@ -2,7 +2,6 @@ import { JOURNEY } from "../copy/creators";
 import { BuildYourJourney } from "./BuildYourJourney";
 
 // Statically imported: Vite already splits this route into its own chunk, so
-// framer-motion never reaches any other glow page. (The Next build used
 // next/dynamic here for a second, finer split — not worth a lazy boundary that
 // would strip this section from the SSR'd HTML.)
 

@@ -146,3 +146,102 @@
     scroll-behavior: smooth;
   }
 }
+
+/* ─── Build Your Journey animations ──────────────────────────────────────────
+   These replace framer-motion so this port adds ZERO dependencies to the glow
+   repo (and nothing to bun.lock). All of them are opacity/transform only, which
+   is what the design system restricts motion to anyway. The reduced-motion
+   block above already zeroes every duration inside .hq-creators, which is what
+   framer-motion's <MotionConfig reducedMotion="user"> used to do.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* 12-dot celebration burst. --dx/--dy/--d are set per dot inline. */
+@keyframes hq-burst {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.4);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(1);
+  }
+}
+.hq-creators .hq-burst-dot {
+  animation: hq-burst 0.6s ease-out var(--d, 0s) both;
+}
+
+/* Reward cards entering, staggered via --i. */
+@keyframes hq-reward-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hq-creators .hq-reward-in {
+  animation: hq-reward-in 0.36s var(--ease-out-quiet)
+    calc(0.1s + var(--i, 0) * 0.08s) both;
+}
+
+/* The gold Hairqare Lab card flipping in. */
+@keyframes hq-flip-in {
+  from {
+    opacity: 0;
+    transform: perspective(700px) rotateX(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(700px) rotateX(0deg);
+  }
+}
+.hq-creators .hq-flip-in {
+  animation: hq-flip-in 0.4s var(--ease-out-quiet) both;
+}
+
+/* One-shot shine sweep across the gold card. */
+@keyframes hq-shimmer {
+  from {
+    transform: translateX(-130%);
+  }
+  to {
+    transform: translateX(230%);
+  }
+}
+.hq-creators .hq-shimmer {
+  animation: hq-shimmer 0.85s ease-in-out both;
+}
+
+/* Commitment tick drawing itself (replaces motion.path pathLength). */
+.hq-creators .hq-tick {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.3s ease-out;
+}
+.hq-creators .hq-tick[data-checked="true"] {
+  stroke-dashoffset: 0;
+}
+
+/* "See all" sheet. grid-template-rows 0fr→1fr animates to auto height, which
+   plain height cannot, and it collapses as well as expands. */
+.hq-creators .hq-sheet {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.28s var(--ease-out-quiet),
+    opacity 0.28s var(--ease-out-quiet);
+}
+.hq-creators .hq-sheet[data-open="true"] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.hq-creators .hq-sheet > * {
+  overflow: hidden;
+  min-height: 0;
+}
