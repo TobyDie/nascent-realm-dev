@@ -45,7 +45,6 @@ export const START_STEPS: { step: string; body: string[] }[] = [
   {
     step: "Post your first video within 14 days",
     body: [
-      "Post your first video within 14 days.",
       "That keeps your founding member spot active.",
       "Your real hair journey, in your own words.",
     ],
