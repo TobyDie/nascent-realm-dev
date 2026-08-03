@@ -145,6 +145,18 @@ export function BuildYourJourney() {
   const total = totalRewardValue(committed, views);
   const unlockedCount = (committed ? 4 : 0) + (reachedTarget ? 1 : 0);
 
+  // Mobile bar feedback: flash + pop whenever the reward total or unlocked
+  // count actually changes, so slider moves register without opening the sheet.
+  const [pulse, setPulse] = useState(0);
+  const prevSummary = useRef(`${total}|${unlockedCount}`);
+  useEffect(() => {
+    const next = `${total}|${unlockedCount}`;
+    if (prevSummary.current !== next) {
+      prevSummary.current = next;
+      setPulse((k) => k + 1);
+    }
+  }, [total, unlockedCount]);
+
   // Only pin the mobile summary bar while S4 is on screen.
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [inView, setInView] = useState(false);
@@ -417,18 +429,45 @@ export function BuildYourJourney() {
               type="button"
               onClick={() => setSheetOpen((v) => !v)}
               aria-expanded={sheetOpen}
-              className="flex w-full items-center justify-between px-5 py-4 text-left"
+              className="relative flex w-full items-center justify-between overflow-hidden px-5 py-4 text-left"
             >
-              <span>
+              {pulse > 0 && (
+                <span
+                  key={pulse}
+                  aria-hidden
+                  className="hq-bar-flash pointer-events-none absolute inset-0 bg-flame/10"
+                />
+              )}
+              <span className="relative">
                 <span className="block text-xs uppercase tracking-wide text-ink/65">
                   {unlockedCount} reward{unlockedCount === 1 ? "" : "s"} ·{" "}
                   {JOURNEY.totalLabel}
                 </span>
-                <span className="tnum font-fraunces text-2xl text-ink">
-                  {usd(total)}
+                <span key={pulse} className="hq-value-pop tnum font-fraunces text-2xl text-ink">
+                  <AnimatedNumber
+                    value={total}
+                    duration={0.3}
+                    format={(n) => usd(n)}
+                  />
+                </span>
+                <span className="mt-1.5 flex items-center gap-1.5" aria-hidden>
+                  {Array.from({ length: 5 }, (_, i) => {
+                    const on = i < unlockedCount;
+                    const gold = i === 4;
+                    return (
+                      <span
+                        key={`${i}-${on}`}
+                        className={[
+                          on ? "hq-pip" : "",
+                          "block h-1.5 w-5 rounded-pill transition-colors duration-200",
+                          on ? (gold ? "bg-gold" : "bg-flame") : "bg-line",
+                        ].join(" ")}
+                      />
+                    );
+                  })}
                 </span>
               </span>
-              <span className="rounded-pill border border-line px-4 py-2 text-sm font-medium text-ink/70">
+              <span className="relative rounded-pill border border-line px-4 py-2 text-sm font-medium text-ink/70">
                 {sheetOpen ? "Hide" : "See all"}
               </span>
             </button>
