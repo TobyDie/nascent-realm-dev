@@ -92,12 +92,13 @@ export function Mission() {
             </div>
           </FadeUp>
           <FadeUp delay={80}>
-            {/* 4/5 wrapper matches the source (2160×2700) — nothing is cropped. */}
+            {/* 4/5 wrapper reserves the box before load; the image is served
+                through Cloudflare Image Transformations with a responsive srcset. */}
             <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-card bg-ivory">
               <CdnImage
                 src={IMG.missionLetter}
                 alt="Haircare made simple, for every woman"
-                sizes="(max-width: 768px) 92vw, 36vw"
+                sizes="(max-width: 1120px) 92vw, 36vw"
                 widths={COLUMN_WIDTHS}
                 className="h-full w-full object-cover"
               />
