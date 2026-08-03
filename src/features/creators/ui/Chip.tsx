@@ -5,7 +5,7 @@ type Tone = "default" | "flame" | "sage" | "gold";
 const tones: Record<Tone, string> = {
   default: "bg-ivory border-line text-ink/80",
   flame: "bg-flame/[0.08] border-flame/25 text-flame-deep",
-  sage: "bg-sage/[0.14] border-sage/40 text-[#4d5c50]",
+  sage: "bg-sage/[0.14] border-sage/40 text-[#48566b]",
   gold: "bg-gold/[0.12] border-gold/40 text-[#7a6224]",
 };
 
