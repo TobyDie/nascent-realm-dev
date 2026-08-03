@@ -248,7 +248,7 @@ export function CreatorHubPage() {
       </Section>
 
       <footer className="mt-12 border-t border-line pt-6 text-sm text-ink/55">
-        <Link href="/creators/terms" className="text-flame-deep hover:underline">
+        <Link to="/creators/terms" className="text-flame-deep hover:underline">
           Program terms
         </Link>
           </footer>
