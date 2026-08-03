@@ -25,17 +25,16 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export function Hero() {
   return (
     <section id="s1-hero" className="relative bg-ivory">
-      {/* Full-bleed banner. The 16/9 wrapper matches the source (1672×941) exactly,
-          so object-cover crops nothing and the box is reserved before it loads.
-          The source is composed with empty copy-space on its left half, so from md
-          up the hero copy sits in it; below md the copy stacks underneath. */}
-      <div className="aspect-[16/9] w-full overflow-hidden bg-sand">
+      {/* Full-bleed banner. Desktop: 16/9 with copy-space on the left for the
+          overlay headline. Mobile: 4/5 crop that focuses on Sarah (right side
+          of the source) so the hero face is visible above the fold. */}
+      <div className="aspect-[4/5] w-full overflow-hidden bg-sand cs:aspect-[16/9]">
         <CdnImage
           src={IMG.creatorsBanner}
           alt="Sarah, founder of Hairqare"
           sizes="100vw"
           priority
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-[70%_top] cs:object-center"
         />
       </div>
       <div className="cm:absolute cm:inset-0 cm:flex cm:items-center">
