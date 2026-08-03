@@ -21,7 +21,7 @@ export const SECTION_GROUPS: {
   {
     group: "Look it up",
     items: [
-      { id: "eligible", label: "Video eligibility" },
+      { id: "eligible", label: "Which videos count?" },
       { id: "rules", label: "The rules" },
       { id: "dos", label: "Do & Don'ts" },
       { id: "ideas", label: "Content ideas" },

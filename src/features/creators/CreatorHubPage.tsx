@@ -10,15 +10,18 @@ import { SUPPORT_EMAIL, VIDEO_SUBMIT_FORM_URL } from "./config";
 import {
   DONTS,
   DOS,
+  EARN_WAYS,
   EARN_INTRO,
   ELIGIBLE,
   ELIGIBLE_INTRO,
+  ELIGIBLE_TITLE,
   FAQ_GROUPS,
   IDEAS,
   IDEAS_INTRO,
   INTRO,
   PAID,
   PAID_FACTS,
+  PAID_INTRO,
   REWARDS,
   RULES,
   START_STEPS,
@@ -53,17 +56,21 @@ export function CreatorHubPage() {
           {INTRO.eyebrow}
         </p>
         <h1 className="mt-2 font-fraunces text-head text-ink">{INTRO.title}</h1>
-        <p className="mt-3 max-w-prose leading-relaxed text-ink/70">
-          {INTRO.lede}
-        </p>
+        <div className="mt-3 max-w-prose space-y-1.5 leading-relaxed text-ink/70">
+          {INTRO.lede.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </div>
       </header>
 
       <section className="mt-7 flex flex-col gap-5 rounded-card bg-ink p-6 text-ivory cs:flex-row cs:items-center cs:justify-between cs:p-7">
         <div>
           <p className="font-fraunces text-xl">{INTRO.action.title}</p>
-          <p className="mt-1 max-w-[46ch] text-sm leading-relaxed text-ivory/65">
-            {INTRO.action.body}
-          </p>
+          <div className="mt-1 max-w-[46ch] space-y-0.5 text-sm leading-relaxed text-ivory/65">
+            {INTRO.action.body.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+          </div>
         </div>
         <a
           href={VIDEO_SUBMIT_FORM_URL}
@@ -92,9 +99,11 @@ export function CreatorHubPage() {
               <span className="font-fraunces text-2xl text-flame/70">{i + 1}</span>
               <div>
                 <p className="font-semibold text-ink">{s.step}</p>
-                <p className="mt-1 max-w-prose leading-relaxed text-ink/70">
-                  {s.body}
-                </p>
+                <div className="mt-1 max-w-prose space-y-1 leading-relaxed text-ink/70">
+                  {s.body.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
               </div>
             </li>
           ))}
@@ -102,7 +111,17 @@ export function CreatorHubPage() {
       </Section>
 
       <Section id="earn" n="02" title="What you earn">
-        <p className="mb-6 max-w-prose text-ink/70">{EARN_INTRO}</p>
+        <p className="mb-3 max-w-prose text-ink/70">{EARN_INTRO}</p>
+        <ul className="mb-6 flex flex-wrap gap-2">
+          {EARN_WAYS.map((way) => (
+            <li
+              key={way}
+              className="rounded-pill border border-line bg-sand px-4 py-1.5 text-sm font-medium text-ink/80"
+            >
+              {way}
+            </li>
+          ))}
+        </ul>
         <div className="space-y-4">
           {REWARDS.map((r) => (
             <article
@@ -138,6 +157,7 @@ export function CreatorHubPage() {
 
       <Section id="paid" n="03" title="Getting paid">
         <div className="mb-5 rounded-card border border-line bg-white p-6">
+          <p className="mb-1 font-medium text-ink">{PAID_INTRO}</p>
           {PAID_FACTS.map((fact) => (
             <p
               key={fact}
@@ -160,7 +180,7 @@ export function CreatorHubPage() {
       {/* ── Tier 2: reference ───────────────────────────────────────────── */}
       <TierLabel>Look it up</TierLabel>
 
-      <Section id="eligible" n="04" title="Video eligibility">
+      <Section id="eligible" n="04" title={ELIGIBLE_TITLE}>
         <Prose>
           <p>{ELIGIBLE_INTRO}</p>
         </Prose>
@@ -222,7 +242,13 @@ export function CreatorHubPage() {
               </h3>
               {group.items.map((item) => (
                 <AccordionItem key={item.q} q={item.q}>
-                  <RichText>{item.a}</RichText>
+                  <div className="space-y-1.5">
+                    {item.a.map((line) => (
+                      <p key={line}>
+                        <RichText>{line}</RichText>
+                      </p>
+                    ))}
+                  </div>
                 </AccordionItem>
               ))}
             </div>
@@ -232,9 +258,11 @@ export function CreatorHubPage() {
 
       <Section id="support" n="09" title={SUPPORT.title}>
         <div className="rounded-card border border-line bg-sand p-6 cs:p-7">
-          <p className="max-w-prose leading-relaxed text-ink/75">
-            {SUPPORT.body}
-          </p>
+          <div className="max-w-prose space-y-1 leading-relaxed text-ink/75">
+            {SUPPORT.body.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+          </div>
           <a
             href={`mailto:${SUPPORT_EMAIL}`}
             className="mt-3 inline-flex min-h-[44px] items-center font-fraunces text-xl text-flame-deep underline"
