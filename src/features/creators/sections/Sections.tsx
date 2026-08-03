@@ -131,7 +131,7 @@ export function Perks() {
           {PERKS.cards.map((card, i) => (
             <FadeUp as="article" key={card.headline} delay={i * 70}>
               <div className="group flex h-full flex-col text-center">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-card bg-sand">
+                <div className="order-2 cs:order-1 relative aspect-[3/4] overflow-hidden rounded-card bg-sand">
                   <CdnImage
                     src={card.image}
                     alt={card.headline}
@@ -140,15 +140,17 @@ export function Perks() {
                     className="h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out motion-safe:group-hover:scale-[1.03]"
                   />
                 </div>
-                <p className="mt-5 text-xs font-medium uppercase tracking-[0.18em] text-flame-deep">
-                  {card.eyebrow}
-                </p>
-                <h3 className="mt-2 font-fraunces text-[1.5rem] leading-tight text-ink">
-                  {card.headline}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink/70">
-                  {card.body}
-                </p>
+                <div className="order-1 cs:order-2">
+                  <p className="mt-5 text-xs font-medium uppercase tracking-[0.18em] text-flame-deep">
+                    {card.eyebrow}
+                  </p>
+                  <h3 className="mt-2 font-fraunces text-[1.5rem] leading-tight text-ink">
+                    {card.headline}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink/70">
+                    {card.body}
+                  </p>
+                </div>
               </div>
             </FadeUp>
           ))}
