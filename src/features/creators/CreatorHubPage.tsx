@@ -31,6 +31,13 @@ import {
   SUPPORT,
 } from "./copy/hub";
 
+/** Reward tier badge → the matching /creators card art. */
+const REWARD_IMG: Record<string, string | undefined> = {
+  "5": IMG.perkGifts,
+  "100k": IMG.perkLab,
+  "%": IMG.perkEarn,
+};
+
 /** Surface B — the whole creator hub on one ungated page. */
 export function CreatorHubPage() {
   // Smooth in-page anchor jumps, added to <html> only while the hub is mounted
