@@ -111,7 +111,7 @@ export const REWARDS: {
       "Every sale made through your code or link earns you a commission, from any platform you share on.",
       "Taxes, refunds, order bumps, upsells, and other products are not included.",
       "Your founding rate never goes down. You keep earning for as long as you're in the program.",
-      "You see your sales in the Friday email. Payouts go to your PayPal every month. Refunded orders are taken off.",
+      "You see your sales in the Friday email. Your commission is paid to the payment method you give us. Refunded orders are taken off.",
     ],
   },
 ];
@@ -121,7 +121,7 @@ export const PAID_INTRO = "Every Friday you'll get an email showing:";
 export const PAID_FACTS = ["Your sales", "Your commission"];
 
 export const PAID = [
-  `Payouts go to your PayPal once a month. Commission for the previous month is paid during ${TBA}.`,
+  "Your commission is paid to the payment method you give us.",
   "You are paid for sales that were not refunded. If a sale is refunded, it is taken off your payout. A refund that comes in after a payout can be taken off a later one.",
 ];
 
@@ -274,7 +274,7 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string[] }[] }[
         q: "How do I get paid?",
         a: [
           "You earn 50% of the Challenge price actually paid through your code or link, up to $18.50 per sale.",
-          `Payouts go to your PayPal once a month, during ${TBA}.`,
+          "We pay it to the payment method you give us.",
           "You are paid for sales that were not refunded.",
         ],
       },
@@ -311,7 +311,7 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string[] }[] }[
         a: [
           "In most cases, yes.",
           "We accept creators from any country where we can run the program and send payouts.",
-          "We confirm PayPal payouts for your country by email when you're accepted.",
+          "We confirm payout options for your country by email when you're accepted.",
         ],
       },
       {
