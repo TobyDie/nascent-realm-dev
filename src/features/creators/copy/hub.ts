@@ -10,6 +10,8 @@
  * decision — see ./tokens.
  */
 
+import { MISSION } from "./creators";
+
 export const INTRO = {
   eyebrow: "Hairqare Creators",
   title: "Everything you need to know",
@@ -29,6 +31,49 @@ export const INTRO = {
     ],
     cta: "Submit a video link",
   },
+};
+
+// ─── Tier 0: what this program actually is ────────────────────────────────────
+// For anyone who lands straight on the hub and never saw /creators. Sarah's
+// letter is imported, not copied, so the story stays in one place.
+
+export const PROGRAM = {
+  what: [
+    "Hairqare Creators is a small founding crew of Hairqare students.",
+    "Not hired influencers. Real women who did the Challenge.",
+    "Your account. Your words. Your style. Any language.",
+    "When your story helps another woman join the 14-Day Haircare Challenge, you earn.",
+  ],
+  whyTitle: "Why students, not influencers",
+  // Sarah's message, trimmed to the three beats that matter here.
+  why: [MISSION.letter[1], MISSION.letter[2], MISSION.letter[4]],
+  signature: MISSION.signature,
+  waysTitle: "The ways you earn",
+  ways: [
+    {
+      label: "Every sale",
+      body: "50% of every $37 Challenge sale through your code or link, up to $18.50 each.",
+      href: "#earn",
+    },
+    {
+      label: "Post 5 videos",
+      body: "A $37 gift pass for someone you love, a Hairqare Lab draw entry, and Merely priority access.",
+      href: "#earn",
+    },
+    {
+      label: "100,000 views",
+      body: "The full $997 Hairqare Lab, free for life.",
+      href: "#earn",
+    },
+    {
+      label: "Founding status",
+      body: "Your code, your link, and your 50% rate stay yours for life.",
+      href: "#paid",
+    },
+  ],
+  waysNote: "Every reward stacks. The details are in section 02.",
+  notYetApplied: "Haven't applied yet?",
+  notYetLink: "Read the program page",
 };
 
 // ─── Tier 1: the essentials ───────────────────────────────────────────────────
