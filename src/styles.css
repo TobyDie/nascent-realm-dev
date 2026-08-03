@@ -154,3 +154,46 @@
     letter-spacing: -0.01em;
   }
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Hairqare Creators ("Quiet Editorial") design tokens — /creators, /creators/hub,
+   /creators/terms only.
+   ADDITIVE ONLY. Every name here was checked against the rest of src/ and is
+   unused elsewhere, so no existing glow page changes. In particular this does
+   NOT touch --font-serif (270 uses across the funnel), --font-display, or the
+   stock sm/md/lg breakpoints — the creator pages use `font-fraunces` and their
+   own cs/cm/cl breakpoints instead.
+   Component styles live in src/features/creators/creators.css, scoped under
+   `.hq-creators`.
+   ──────────────────────────────────────────────────────────────────────────── */
+@theme {
+  --color-ivory: #faf8f5;
+  --color-ink: #1c1917;
+  --color-sand: #f0eae2;
+  /* Brand orange: the required CTA fill. 3.38:1 on white — fine for large text
+     and UI shapes, so `flame-deep` (4.99:1) carries small text and hovers. */
+  --color-flame: #e8622c;
+  --color-flame-deep: #c0491a;
+  --color-sage: #8a9b8e;
+  --color-line: #e4ddd3;
+  --color-gold: #c9a24b;
+
+  --radius-card: 20px;
+  --radius-input: 12px;
+  --radius-pill: 999px;
+
+  --text-display: clamp(2.5rem, 6vw, 6rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.02em;
+  --text-head: clamp(1.75rem, 3.2vw, 2.5rem);
+  --text-head--line-height: 1.1;
+  --text-head--letter-spacing: -0.01em;
+
+  --font-fraunces: "Fraunces", Georgia, serif;
+  --ease-out-quiet: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* The creator layouts were designed on 768/1120/1440, not glow's 640/768/1024. */
+  --breakpoint-cs: 768px;
+  --breakpoint-cm: 1120px;
+  --breakpoint-cl: 1440px;
+}
