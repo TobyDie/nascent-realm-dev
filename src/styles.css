@@ -169,13 +169,19 @@
 @theme {
   --color-ivory: #faf8f5;
   --color-ink: #1c1917;
-  --color-sand: #f0eae2;
+  /* Cool counterpoint band, matching the lavender-gray used on /20-. Replaces
+     the old warm sand so the pages breathe warm/cool instead of warm/warm. */
+  --color-sand: #f0f0f6;
+  --color-mist: #f0f0f6;
   /* Brand orange: the required CTA fill. 3.38:1 on white — fine for large text
      and UI shapes, so `flame-deep` (4.99:1) carries small text and hovers. */
   --color-flame: #e8622c;
   --color-flame-deep: #c0491a;
-  --color-sage: #8a9b8e;
-  --color-line: #e4ddd3;
+  /* Muted slate blue; was a green sage. Same value weight, cooler hue. */
+  --color-sage: #6f7d92;
+  --color-slate-blue: #6f7d92;
+  --color-line: #e5e3ea;
+  --color-line-cool: #e3e3ec;
   --color-gold: #c9a24b;
 
   --radius-card: 20px;
