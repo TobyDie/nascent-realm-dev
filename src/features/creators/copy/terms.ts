@@ -17,7 +17,7 @@ export const TERMS: { n: number; title: string; body: string }[] = [
   {
     n: 1,
     title: "Who can join.",
-    body: "You must be 18 or older, a Better Hair Challenge student or graduate, with a public TikTok or Instagram account. Acceptance is by application and at our discretion. We accept international applications where we can operate the program and send payouts; PayPal availability varies by country and is confirmed by email when you're accepted.",
+    body: "You must be 18 or older, a Better Hair Challenge student or graduate, with a public TikTok or Instagram account. Acceptance is by application and at our discretion. We accept international applications where we can operate the program and send payouts; available payout methods vary by country and are confirmed by email when you're accepted.",
   },
   {
     n: 2,
@@ -52,7 +52,7 @@ export const TERMS: { n: number; title: string; body: string }[] = [
   {
     n: 8,
     title: "Payouts.",
-    body: `Commission is reported in your weekly email. Approved commission for the previous calendar month is paid to your nominated PayPal account during ${TBA}. ${TBA}. Commission is payable only on sales that were not refunded; refunds or chargebacks recorded after a payout may be deducted from a future commission balance. If a PayPal payment fails, we will contact you to update your details and retry in the next cycle. You are responsible for any taxes on your earnings in your country; currency conversion and PayPal fees follow PayPal's terms.`,
+    body: "Commission is reported in your weekly email. Approved commission is paid to the payment method you provide. Commission is payable only on sales that were not refunded; refunds or chargebacks recorded after a payout may be deducted from a future commission balance. If a payment fails, we will contact you to update your details and send it again. You are responsible for any taxes on your earnings in your country; currency conversion and any provider fees follow your payment provider's terms.",
   },
   {
     n: 9,
