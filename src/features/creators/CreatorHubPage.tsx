@@ -6,6 +6,8 @@ import { ContentsRail, MobileContents } from "./hub/ContentsRail";
 import { Prose, RichText } from "./hub/Prose";
 import { AccordionItem } from "./ui/Accordion";
 import { ArrowRightIcon, CheckIcon } from "./ui/Icons";
+import { CdnImage } from "./ui/CdnImage";
+import { COLUMN_WIDTHS, IMG, SMALL_WIDTHS } from "./images";
 import { SUPPORT_EMAIL, VIDEO_SUBMIT_FORM_URL } from "./config";
 import {
   DONTS,
@@ -29,6 +31,13 @@ import {
   SUPPORT,
 } from "./copy/hub";
 
+/** Reward tier badge → the matching /creators card art. */
+const REWARD_IMG: Record<string, string | undefined> = {
+  "5": IMG.perkGifts,
+  "100k": IMG.perkLab,
+  "%": IMG.perkEarn,
+};
+
 /** Surface B — the whole creator hub on one ungated page. */
 export function CreatorHubPage() {
   // Smooth in-page anchor jumps, added to <html> only while the hub is mounted
@@ -50,6 +59,20 @@ export function CreatorHubPage() {
           </span>
         </header>
         <MobileContents />
+        {/* Visual anchor: the same founder banner as /creators, cropped short so
+            the hub still opens on content rather than a full hero. */}
+        <div className="mx-auto max-w-3xl px-5 pt-6 cm:px-10 cm:pt-8">
+          <div className="aspect-[16/9] w-full overflow-hidden rounded-card bg-sand cs:aspect-[21/9]">
+            <CdnImage
+              src={IMG.creatorsBanner}
+              alt="Sarah, founder of Hairqare"
+              sizes="(max-width: 1120px) 92vw, 46rem"
+              widths={COLUMN_WIDTHS}
+              priority
+              className="h-full w-full object-cover object-[65%_top] cs:object-[center_20%]"
+            />
+          </div>
+        </div>
         <div id="top" className="mx-auto max-w-3xl px-5 py-10 cm:px-10 cm:py-12">
       {/* ── Header + the one action ─────────────────────────────────────── */}
       <header>
@@ -97,14 +120,27 @@ export function CreatorHubPage() {
         <h3 className="mt-7 font-fraunces text-xl text-ink">
           {PROGRAM.whyTitle}
         </h3>
-        <div className="mt-2 max-w-prose space-y-3 leading-relaxed text-ink/70">
-          {PROGRAM.why.map((para) => (
-            <p key={para}>{para}</p>
-          ))}
+        <div className="mt-3 grid gap-5 cs:grid-cols-[1fr_13rem] cs:items-start cs:gap-7">
+          <div>
+            <div className="max-w-prose space-y-3 leading-relaxed text-ink/70">
+              {PROGRAM.why.map((para) => (
+                <p key={para}>{para}</p>
+              ))}
+            </div>
+            <p className="mt-4 font-fraunces text-2xl text-ink">
+              {PROGRAM.signature}
+            </p>
+          </div>
+          <div className="order-first aspect-[4/5] w-full max-w-[13rem] overflow-hidden rounded-card bg-sand cs:order-none">
+            <CdnImage
+              src={IMG.missionLetter}
+              alt="Haircare made simple, for every woman"
+              sizes="(max-width: 640px) 92vw, 13rem"
+              widths={SMALL_WIDTHS}
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
-        <p className="mt-4 font-fraunces text-2xl text-ink">
-          {PROGRAM.signature}
-        </p>
 
         <h3 className="mt-8 font-fraunces text-xl text-ink">
           {PROGRAM.waysTitle}
@@ -177,6 +213,17 @@ export function CreatorHubPage() {
               key={r.badge}
               className="rounded-card border border-line bg-white p-6 cs:p-7"
             >
+              {REWARD_IMG[r.badge] && (
+                <div className="mb-5 aspect-[16/9] w-full overflow-hidden rounded-card bg-sand">
+                  <CdnImage
+                    src={REWARD_IMG[r.badge]!}
+                    alt=""
+                    sizes="(max-width: 1120px) 88vw, 40rem"
+                    widths={COLUMN_WIDTHS}
+                    className="h-full w-full object-cover object-[center_30%]"
+                  />
+                </div>
+              )}
               <div className="flex items-start gap-4">
                 <span
                   className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-pill font-fraunces text-sm font-semibold ${
