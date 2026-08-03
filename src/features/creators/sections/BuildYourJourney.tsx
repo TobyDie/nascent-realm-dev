@@ -263,7 +263,7 @@ export function BuildYourJourney() {
                 >
                   {reachedTarget
                     ? "Hairqare Lab unlocked."
-                    : JOURNEY.viewsProgress(views)}
+                    : JOURNEY.viewsProgress()}
                 </p>
                 <span className="tnum text-sm font-medium text-ink/70">
                   {views.toLocaleString("en-US")}
