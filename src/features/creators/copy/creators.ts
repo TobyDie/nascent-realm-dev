@@ -11,20 +11,25 @@ import { IMG } from "../images";
 
 export const HERO = {
   eyebrow: "HAIRQARE CREATORS",
-  headline: "Your hair story could change another woman's hair.",
-  sub: "I'm opening a small founding crew of my students who share their real hair journey, in their own words. You earn on every woman you bring in, and you can earn your way into Hairqare Lab.",
-  trust: ["250,000+ students", "149 countries", "By application only"],
+  headline: "Your hair story could change how another woman sees hers.",
+  sub: "I'm building a small founding crew of Hairqare students, not hired influencers, to share what really changed for them. Your account. Your words. Your style. And when your story helps another woman join the 14-Day Haircare Challenge, you earn.",
+  trust: [
+    "250,000+ students",
+    "149 countries",
+    "Founding crew by application only",
+  ],
 };
 
 export const MISSION = {
-  pullLine: "Haircare made simple, for every woman.",
+  pullLine: "Why I'm choosing students, not influencers.",
   tapeLabel: "why I'm doing this",
   // Faithful draft of Sarah's letter (Doc 08 S2). Confessed, first-person register.
   letter: [
-    "For years I watched women spend money they didn't have on products that were never going to work. Not because they weren't trying. Because no one ever taught them how their own hair actually works.",
-    "My students changed that for themselves. They stopped guessing. They understood their hair, and their hair changed.",
-    "Here's the honest part: no ad I could ever buy will be as truthful as one of you talking about your own hair. So I'd rather hand you the microphone.",
-    "If you did the challenge and your hair has a story, I want you in.",
+    "Almost every week, an agency offers me the same thing: influencer packages, reach guarantees, “authentic creator content.” It would be the fastest way to put Hairqare in front of more women.",
+    "But I used to be an influencer. I know the pre-written captions, the template “personal stories,” and the rate cards. A campaign can buy reach. It cannot buy the truth of a woman who has actually been there.",
+    "Hairqare was built to put clear, science-backed education and control back into women's hands. More than 250,000 students have begun that journey. So why would I hand this mission to people who have never lived it?",
+    "If the Challenge changed how you understand your hair, your story is the one another woman needs to hear.",
+    "I'd rather put the microphone, and the money, in your hands.",
   ],
   signature: "Sarah",
 };
