@@ -34,8 +34,8 @@ export const IMG = {
   /** /creators full-bleed banner — 1672×941 (16:9). Above the fold, the LCP element. */
   creatorsBanner: `${ORIGIN}/creators/Sarah-1.2.webp`,
 
-  /** S2 "Haircare made simple" letter portrait — 2160×2700 (4:5). */
-  missionLetter: `${ORIGIN}/creators/Haircare-made-simple-for-every-woman-2.webp`,
+  /** S2 "Haircare made simple" letter portrait — 4/5 crop on R2. */
+  missionLetter: `${ORIGIN}/creators/Haircare-made-simple-for-every-woman-5-2.webp`,
 
   // S3 "What you get" cards — all 1800×2400 (3:4), matching the card containers.
   perkEarn: `${ORIGIN}/creators/Earn-50-of-every-Challenge-sale-2.webp`,
