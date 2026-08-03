@@ -39,31 +39,31 @@ export const MISSION = {
 // Each card carries its own image so the pairing can't drift out of order.
 export const PERKS = {
   eyebrow: "WHAT YOU GET",
-  heading: "The perks of joining the founding crew",
+  heading: "A real mission should reward the women carrying it.",
   intro:
-    "Share your real hair journey in your own words and earn in three separate ways. You earn commission on every sale, you earn rewards just for posting, and you unlock bigger rewards as your videos reach more women. Every reward is separate, and they all stack.",
+    "Instead of giving this money to agencies, I want it to land in our students' pockets. You can earn from every sale, unlock rewards for showing up, and earn Hairqare Lab through your reach. Every reward stacks.",
   cards: [
     {
-      eyebrow: "SHARE YOUR CODE OR LINK",
+      eyebrow: "EVERY WOMAN YOU HELP JOIN",
       headline: "Earn 50% of every Challenge sale",
-      body: "When someone joins the $37 Better Hair Challenge through your personal code or link, half of that sale is yours, up to $18.50 each time. Share it on TikTok, Instagram, YouTube, email, or anywhere else. Paid out to the payment method you give us.",
+      body: "Each time someone joins the $37 14-Day Haircare Challenge through your personal code or link, 50% is yours, up to $18.50 per sale. Share it on TikTok, Instagram, YouTube, email, or anywhere your story lives. Verified commissions are paid to the payment method you give us.",
       image: IMG.perkEarn,
     },
     {
-      eyebrow: "POST 5 VIDEOS",
-      headline: "Unlock gifts and the founding draw",
-      body: "Post five videos and you unlock a Challenge gift pass for someone you love, your name in the draw for lifetime Hairqare Lab access, and priority access to Merely the moment it launches.",
+      eyebrow: "POST YOUR FIRST 5 VIDEOS",
+      headline: "Unlock rewards just for showing up",
+      body: "Post five eligible videos and unlock a $37 Challenge gift pass for someone you love, entry into the founding crew's Hairqare Lab draw, and priority access to Merely when it launches. No viral moment required. Start by sharing what really happened.",
       image: IMG.perkGifts,
     },
     {
       eyebrow: "REACH 100,000 VIEWS",
-      headline: "Hairqare Lab is yours, free for life",
-      body: "Reach 100,000 total organic TikTok views across your eligible videos and you receive lifetime access to Hairqare Lab, the full $997 program. Views earned within 30 days of each post count toward your total.",
+      headline: "Earn Hairqare Lab, free for life",
+      body: "Reach 100,000 total organic TikTok views across your eligible videos and the complete $997 Hairqare Lab is yours, for life. Views earned within 30 days of each post count toward your combined total.",
       image: IMG.perkLab,
     },
     {
-      eyebrow: "FOUNDING MEMBER STATUS",
-      headline: "Keep earning for life",
+      eyebrow: "FOUNDING CREATOR STATUS",
+      headline: "Keep your 50% rate for life",
       body: "This is yours to keep. As a founding creator, your code, your link, and your 50% rate are locked in for life — they stay yours as the program grows.",
       image: IMG.perkForLife,
     },
