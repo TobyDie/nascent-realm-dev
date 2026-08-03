@@ -11,6 +11,10 @@ export const SECTION_GROUPS: {
   items: { id: string; label: string }[];
 }[] = [
   {
+    group: "The program",
+    items: [{ id: "program", label: "The program" }],
+  },
+  {
     group: "The essentials",
     items: [
       { id: "start", label: "Start here" },
