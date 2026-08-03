@@ -113,14 +113,27 @@ export function CreatorHubPage() {
         <h3 className="mt-7 font-fraunces text-xl text-ink">
           {PROGRAM.whyTitle}
         </h3>
-        <div className="mt-2 max-w-prose space-y-3 leading-relaxed text-ink/70">
-          {PROGRAM.why.map((para) => (
-            <p key={para}>{para}</p>
-          ))}
+        <div className="mt-3 grid gap-5 cs:grid-cols-[1fr_13rem] cs:items-start cs:gap-7">
+          <div>
+            <div className="max-w-prose space-y-3 leading-relaxed text-ink/70">
+              {PROGRAM.why.map((para) => (
+                <p key={para}>{para}</p>
+              ))}
+            </div>
+            <p className="mt-4 font-fraunces text-2xl text-ink">
+              {PROGRAM.signature}
+            </p>
+          </div>
+          <div className="order-first aspect-[4/5] w-full max-w-[13rem] overflow-hidden rounded-card bg-sand cs:order-none">
+            <CdnImage
+              src={IMG.missionLetter}
+              alt="Haircare made simple, for every woman"
+              sizes="(max-width: 640px) 92vw, 13rem"
+              widths={SMALL_WIDTHS}
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
-        <p className="mt-4 font-fraunces text-2xl text-ink">
-          {PROGRAM.signature}
-        </p>
 
         <h3 className="mt-8 font-fraunces text-xl text-ink">
           {PROGRAM.waysTitle}
