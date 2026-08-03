@@ -1,41 +1,24 @@
-## What changes
+# Subtle blue tone for the Creators pages
 
-Restructure the body of the Transition section ("What If You Never Had To Buy Another Miracle Again?") on `/22-the-haircare-challenge` so the wall of 8 paragraphs becomes a scannable, layered narrative. **All copy stays verbatim.** The founder image, eyebrow, H2, CTA button, and stars line above/below stay exactly as they are today.
+## What's there now
+The three creator pages (`/creators`, `/creators/hub`, `/creators/terms`) run on an all-warm palette: ivory `#faf8f5` background, sand `#f0eae2` bands, warm line `#e4ddd3`, flame orange CTA, plus a green sage accent and gold.
 
-## New visual order (top → bottom)
+The listicle pages (`/20-`, `/30-`) are also warm, but `/20-` carries a cool counterpoint the creators pages lack: a lavender-gray section surface `#F0F0F6` and a cool hairline `#E3E3EC` used on those cool bands.
 
-1. **Lead** — paragraph 1 ("Picture your bathroom shelf…") centered, serif (DM Serif Display), italic, ~20–22px. Acts as a quiet opening line.
+## The change
+Borrow exactly that cool counterpoint. Layout, type, spacing, and the flame CTA stay untouched.
 
-2. **Pain-point list** — paragraph 2 split at its three natural "No more…" sentences into a 3-row list. Each row: small coral outlined circle with a coral minus bar + the sentence. Top + bottom hairline divider (`#1A1613` at 10% alpha) frames the block. Wording untouched.
+1. Add two cool tokens alongside the existing ones (nothing removed):
+   - `--color-mist: #f0f0f6` (cool lavender-gray band, same value `/20-` uses)
+   - `--color-line-cool: #e3e3ec` (hairline on cool surfaces)
+   - `--color-slate-blue: #6f7d92` (muted blue accent to replace the green sage on the creators pages only)
+2. Alternate section bands: the sand-filled sections become mist, so the page breathes warm/cool instead of warm/warm. Ivory stays the base.
+3. Hairlines and card borders on any mist band switch to `line-cool`.
+4. Sage-tinted chips, ticks, and reward accents move from green to `slate-blue` at the same low opacities (`/[0.12]`–`/45`), so weight is identical, only hue shifts.
+5. Flame orange CTAs, gold Hairqare Lab card, and ink text are unchanged.
 
-3. **Industry reveal pull-quote** — paragraph 3 styled as a serif pull-quote with a 4px solid coral left rule, ~22px DM Serif Display, ink color.
-
-4. **Solution card** — paragraph 4 in a soft white card (`rgba(255,255,255,0.55)`, 18px radius, hairline border). The last two sentences ("Not another product to add to the pile. The understanding that finally lets you stop guessing.") split into a second line styled in **coral, semibold** for emphasis.
-
-5. **"The Result" block** — small uppercase coral eyebrow "THE RESULT" (existing `v22-eyebrow` style), then paragraph 5 centered, ~18px, with the single word **relief** bolded inline.
-
-6. **Founder context** — paragraph 6 separated by a top hairline divider, slightly muted (opacity 0.85). Reads as a quiet footnote about Sarah.
-
-7. **Reassurance pill** — paragraph 7 ("You don't have to commit…") inside a centered rounded-pill outline (1px ink @ 20%), small + medium weight.
-
-8. **Closing + CTA** — paragraph 8 centered, normal body, then the existing `CtaButton` and stars line render unchanged below.
-
-Vertical rhythm between blocks: ~32–40px on mobile, ~48px on desktop.
-
-## Files touched
-
-- `src/features/haircare-challenge-v22/sections/Transition.tsx` — replace the single `.v22-transition__inner` paragraph stack with the 8 structured blocks above. Keep the image wrap, eyebrow, H2, ConvictionCard, and CTA wrap intact and in their current order. Wrap the new narrative in a new `.v22-wayout` container so styles are scoped.
-- `src/features/haircare-challenge-v22/listicle-v22.css` — append a `/* ===== The Way Out narrative ===== */` block with classes scoped under `.hq-sp-v22 .v22-wayout` for each piece: `__lead`, `__pains`, `__pain`, `__pain-mark`, `__reveal`, `__solution`, `__solution-em`, `__result`, `__result-eyebrow`, `__founder`, `__reassure`, `__close`. Use existing tokens only (`--accent`, `--ink`, `--surface`, `--line`, `--font-display`, `--font-body`, `--radius-card`, `--radius-pill`).
-
-## Constraints
-
-- No copy changes, no paragraph removals, no reordering of sentences within paragraphs.
-- No new images, icons libraries, or fonts — SVG/CSS marks only, using DM Serif Display + Inter already loaded.
-- Stay inside v22 palette: peach `#FBEDE2`, ink `#1A1613`, coral `#F36A3A`, surface `#FFFFFF`, line `#ECE3DA`.
-- Mobile-first; verify at 390px then desktop.
-- The existing `ConvictionCard` (Abigail) between the narrative and the CTA stays where it is.
-
-## Out of scope
-
-- No changes to other sections (Hero, Reasons, ConvictionCards, SocialProof, sticky bar, footer).
-- No changes to fonts, global tokens, or shared primitives.
+## Technical notes
+- New tokens go in the existing creators `@theme` block at the bottom of `src/styles.css`; they are additive and unused elsewhere, so no other route changes.
+- Class swaps happen in `CreatorsProgramPage.tsx`, `CreatorHubPage.tsx`, `CreatorTermsPage.tsx`, `sections/*`, `hub/*`, and `ui/Chip.tsx`, `ui/RewardCard.tsx`, `ui/Accordion.tsx` — `bg-sand` → `bg-mist` on alternating sections, `sage` → `slate-blue`, `border-line` → `border-line-cool` inside mist bands.
+- `creators.css` only needs a check on the range-slider track/thumb colors so they sit correctly on the cooler bands.
+- Contrast: `slate-blue` on ivory is ~4.6:1, safe for the small text it carries.
