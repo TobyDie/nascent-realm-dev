@@ -33,9 +33,16 @@ import {
 
 /** Reward tier badge → the matching /creators card art. */
 const REWARD_IMG: Record<string, string | undefined> = {
-  "5": IMG.perkGifts,
-  "100k": IMG.perkLab,
-  "%": IMG.perkEarn,
+  "5": IMG.hubPostFive,
+  "100k": IMG.hubViews,
+  "%": IMG.hubCommission,
+};
+
+/** Native aspect ratio per reward image, so none of them get cropped. */
+const REWARD_RATIO: Record<string, string> = {
+  "5": "aspect-[4/5]",
+  "100k": "aspect-[3/4]",
+  "%": "aspect-[3/4]",
 };
 
 /** Surface B — the whole creator hub on one ungated page. */
@@ -133,7 +140,7 @@ export function CreatorHubPage() {
           </div>
           <div className="order-first aspect-[4/5] w-full max-w-[13rem] overflow-hidden rounded-card bg-sand cs:order-none">
             <CdnImage
-              src={IMG.missionLetter}
+              src={IMG.hubWhyStudents}
               alt="Haircare made simple, for every woman"
               sizes="(max-width: 640px) 92vw, 13rem"
               widths={SMALL_WIDTHS}
@@ -214,13 +221,15 @@ export function CreatorHubPage() {
               className="rounded-card border border-line bg-white p-6 cs:p-7"
             >
               {REWARD_IMG[r.badge] && (
-                <div className="mb-5 aspect-[16/9] w-full overflow-hidden rounded-card bg-sand">
+                <div
+                  className={`mb-5 w-full max-w-[15rem] overflow-hidden rounded-card bg-sand ${REWARD_RATIO[r.badge]}`}
+                >
                   <CdnImage
                     src={REWARD_IMG[r.badge]!}
                     alt=""
-                    sizes="(max-width: 1120px) 88vw, 40rem"
-                    widths={COLUMN_WIDTHS}
-                    className="h-full w-full object-cover object-[center_30%]"
+                    sizes="(max-width: 640px) 92vw, 15rem"
+                    widths={SMALL_WIDTHS}
+                    className="h-full w-full object-cover"
                   />
                 </div>
               )}
