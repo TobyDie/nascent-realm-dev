@@ -64,7 +64,7 @@ export const PERKS = {
     {
       eyebrow: "FOUNDING CREATOR STATUS",
       headline: "Keep your 50% rate for life",
-      body: "This is yours to keep. As a founding creator, your code, your link, and your 50% rate are locked in for life — they stay yours as the program grows.",
+      body: "Your personal code and link are yours to keep. As a founding creator, your 50% commission rate is locked in for life, even as the program grows. Your content can keep helping women, and your link can keep earning.",
       image: IMG.perkForLife,
     },
   ],
