@@ -26,7 +26,7 @@ export const MISSION = {
   // Faithful draft of Sarah's letter (Doc 08 S2). Confessed, first-person register.
   letter: [
     "Almost every week, an agency offers me the same thing: influencer packages, reach guarantees, “authentic creator content.” It would be the fastest way to put Hairqare in front of more women.",
-    "But I used to be an influencer. I know the pre-written captions, the template “personal stories,” and the rate cards. A campaign can buy reach. It cannot buy the truth of a woman who has actually been there.",
+    "Because I used to be an influencer. I know the pre-written captions, the template “personal stories,” and the rate cards. A campaign can buy reach. It cannot buy the truth of a woman who has actually been there.",
     "Hairqare was built to put clear, science-backed education and control back into women's hands. More than 250,000 students have begun that journey. So why would I hand this mission to people who have never lived it?",
     "If the Challenge changed how you understand your hair, your story is the one another woman needs to hear.",
     "I'd rather put the microphone, and the money, in your hands.",
