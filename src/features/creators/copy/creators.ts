@@ -46,7 +46,10 @@ export const PERKS = {
     {
       eyebrow: "EVERY WOMAN YOU HELP JOIN",
       headline: "Earn 50% of every Challenge sale",
-      body: "Each time someone joins the $37 14-Day Haircare Challenge through your personal code or link, 50% is yours, up to $18.50 per sale. Share it on TikTok, Instagram, YouTube, email, or anywhere your story lives. Verified commissions are paid to the payment method you give us.",
+      // Per-sale cap removed at Toby's request — the promise is stated as a
+      // plain 50% here; the cap still lives in ./terms, which is the binding
+      // text. 50% of $37 is $18.50, so the two never disagree in practice.
+      body: "Each time someone joins the $37 14-Day Haircare Challenge through your personal code or link, 50% is yours. Share it on TikTok, Instagram, YouTube, email, or anywhere your story lives. Verified commissions are paid to the payment method you give us.",
       image: IMG.perkEarn,
     },
     {

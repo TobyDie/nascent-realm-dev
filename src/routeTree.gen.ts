@@ -9,38 +9,119 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TheHaircareChallengeRouteImport } from './routes/the-haircare-challenge'
-import { Route as CreatorsRouteImport } from './routes/creators'
-import { Route as Backup14TheHaircareChallengeRouteImport } from './routes/backup-14-the-haircare-challenge'
-import { Route as R30TheHaircareChallengeRouteImport } from './routes/30-the-haircare-challenge'
-import { Route as R29TheHaircareChallengeRouteImport } from './routes/29-the-haircare-challenge'
-import { Route as R28TheHaircareChallengeRouteImport } from './routes/28-the-haircare-challenge'
-import { Route as R27TheHaircareChallengeRouteImport } from './routes/27-the-haircare-challenge'
-import { Route as R26TheHaircareChallengeRouteImport } from './routes/26-the-haircare-challenge'
-import { Route as R25TheHaircareChallengeRouteImport } from './routes/25-the-haircare-challenge'
-import { Route as R24TheHaircareChallengeRouteImport } from './routes/24-the-haircare-challenge'
-import { Route as R23TheHaircareChallengeRouteImport } from './routes/23-the-haircare-challenge'
-import { Route as R22TheHaircareChallengeRouteImport } from './routes/22-the-haircare-challenge'
-import { Route as R21TheHaircareChallengeRouteImport } from './routes/21-the-haircare-challenge'
-import { Route as R20TheHaircareChallengeRouteImport } from './routes/20-the-haircare-challenge'
-import { Route as R19TheHaircareChallengeRouteImport } from './routes/19-the-haircare-challenge'
-import { Route as R18TheHaircareChallengeRouteImport } from './routes/18-the-haircare-challenge'
-import { Route as R17TheHaircareChallengeRouteImport } from './routes/17-the-haircare-challenge'
-import { Route as R14TheHaircareChallengeRouteImport } from './routes/14-the-haircare-challenge'
-import { Route as R14NativeRouteImport } from './routes/14-native'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as R14NativeRouteImport } from './routes/14-native'
+import { Route as R14TheHaircareChallengeRouteImport } from './routes/14-the-haircare-challenge'
+import { Route as R17TheHaircareChallengeRouteImport } from './routes/17-the-haircare-challenge'
+import { Route as R18TheHaircareChallengeRouteImport } from './routes/18-the-haircare-challenge'
+import { Route as R19TheHaircareChallengeRouteImport } from './routes/19-the-haircare-challenge'
+import { Route as R20TheHaircareChallengeRouteImport } from './routes/20-the-haircare-challenge'
+import { Route as R21TheHaircareChallengeRouteImport } from './routes/21-the-haircare-challenge'
+import { Route as R22TheHaircareChallengeRouteImport } from './routes/22-the-haircare-challenge'
+import { Route as R23TheHaircareChallengeRouteImport } from './routes/23-the-haircare-challenge'
+import { Route as R24TheHaircareChallengeRouteImport } from './routes/24-the-haircare-challenge'
+import { Route as R25TheHaircareChallengeRouteImport } from './routes/25-the-haircare-challenge'
+import { Route as R26TheHaircareChallengeRouteImport } from './routes/26-the-haircare-challenge'
+import { Route as R27TheHaircareChallengeRouteImport } from './routes/27-the-haircare-challenge'
+import { Route as R28TheHaircareChallengeRouteImport } from './routes/28-the-haircare-challenge'
+import { Route as R29TheHaircareChallengeRouteImport } from './routes/29-the-haircare-challenge'
+import { Route as R30TheHaircareChallengeRouteImport } from './routes/30-the-haircare-challenge'
+import { Route as Backup14TheHaircareChallengeRouteImport } from './routes/backup-14-the-haircare-challenge'
+import { Route as CreatorsRouteImport } from './routes/creators'
+import { Route as TheHaircareChallengeRouteImport } from './routes/the-haircare-challenge'
 import { Route as CreatorsIndexRouteImport } from './routes/creators.index'
-import { Route as CreatorsTermsRouteImport } from './routes/creators.terms'
 import { Route as CreatorsHubRouteImport } from './routes/creators.hub'
+import { Route as CreatorsTermsRouteImport } from './routes/creators.terms'
+import { Route as CreatorsHubIndexRouteImport } from './routes/creators.hub.index'
+import { Route as CreatorsHubFaqRouteImport } from './routes/creators.hub.faq'
+import { Route as CreatorsHubProgramRouteImport } from './routes/creators.hub.program'
+import { Route as CreatorsHubRewardsRouteImport } from './routes/creators.hub.rewards'
+import { Route as CreatorsHubStartRouteImport } from './routes/creators.hub.start'
+import { Route as CreatorsHubTipsRouteImport } from './routes/creators.hub.tips'
 
-const TheHaircareChallengeRoute = TheHaircareChallengeRouteImport.update({
-  id: '/the-haircare-challenge',
-  path: '/the-haircare-challenge',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CreatorsRoute = CreatorsRouteImport.update({
-  id: '/creators',
-  path: '/creators',
+const R14NativeRoute = R14NativeRouteImport.update({
+  id: '/14-native',
+  path: '/14-native',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R14TheHaircareChallengeRoute = R14TheHaircareChallengeRouteImport.update({
+  id: '/14-the-haircare-challenge',
+  path: '/14-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R17TheHaircareChallengeRoute = R17TheHaircareChallengeRouteImport.update({
+  id: '/17-the-haircare-challenge',
+  path: '/17-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R18TheHaircareChallengeRoute = R18TheHaircareChallengeRouteImport.update({
+  id: '/18-the-haircare-challenge',
+  path: '/18-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R19TheHaircareChallengeRoute = R19TheHaircareChallengeRouteImport.update({
+  id: '/19-the-haircare-challenge',
+  path: '/19-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R20TheHaircareChallengeRoute = R20TheHaircareChallengeRouteImport.update({
+  id: '/20-the-haircare-challenge',
+  path: '/20-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R21TheHaircareChallengeRoute = R21TheHaircareChallengeRouteImport.update({
+  id: '/21-the-haircare-challenge',
+  path: '/21-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R22TheHaircareChallengeRoute = R22TheHaircareChallengeRouteImport.update({
+  id: '/22-the-haircare-challenge',
+  path: '/22-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R23TheHaircareChallengeRoute = R23TheHaircareChallengeRouteImport.update({
+  id: '/23-the-haircare-challenge',
+  path: '/23-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R24TheHaircareChallengeRoute = R24TheHaircareChallengeRouteImport.update({
+  id: '/24-the-haircare-challenge',
+  path: '/24-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R25TheHaircareChallengeRoute = R25TheHaircareChallengeRouteImport.update({
+  id: '/25-the-haircare-challenge',
+  path: '/25-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R26TheHaircareChallengeRoute = R26TheHaircareChallengeRouteImport.update({
+  id: '/26-the-haircare-challenge',
+  path: '/26-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R27TheHaircareChallengeRoute = R27TheHaircareChallengeRouteImport.update({
+  id: '/27-the-haircare-challenge',
+  path: '/27-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R28TheHaircareChallengeRoute = R28TheHaircareChallengeRouteImport.update({
+  id: '/28-the-haircare-challenge',
+  path: '/28-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R29TheHaircareChallengeRoute = R29TheHaircareChallengeRouteImport.update({
+  id: '/29-the-haircare-challenge',
+  path: '/29-the-haircare-challenge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R30TheHaircareChallengeRoute = R30TheHaircareChallengeRouteImport.update({
+  id: '/30-the-haircare-challenge',
+  path: '/30-the-haircare-challenge',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Backup14TheHaircareChallengeRoute =
@@ -49,89 +130,14 @@ const Backup14TheHaircareChallengeRoute =
     path: '/backup-14-the-haircare-challenge',
     getParentRoute: () => rootRouteImport,
   } as any)
-const R30TheHaircareChallengeRoute = R30TheHaircareChallengeRouteImport.update({
-  id: '/30-the-haircare-challenge',
-  path: '/30-the-haircare-challenge',
+const CreatorsRoute = CreatorsRouteImport.update({
+  id: '/creators',
+  path: '/creators',
   getParentRoute: () => rootRouteImport,
 } as any)
-const R29TheHaircareChallengeRoute = R29TheHaircareChallengeRouteImport.update({
-  id: '/29-the-haircare-challenge',
-  path: '/29-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R28TheHaircareChallengeRoute = R28TheHaircareChallengeRouteImport.update({
-  id: '/28-the-haircare-challenge',
-  path: '/28-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R27TheHaircareChallengeRoute = R27TheHaircareChallengeRouteImport.update({
-  id: '/27-the-haircare-challenge',
-  path: '/27-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R26TheHaircareChallengeRoute = R26TheHaircareChallengeRouteImport.update({
-  id: '/26-the-haircare-challenge',
-  path: '/26-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R25TheHaircareChallengeRoute = R25TheHaircareChallengeRouteImport.update({
-  id: '/25-the-haircare-challenge',
-  path: '/25-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R24TheHaircareChallengeRoute = R24TheHaircareChallengeRouteImport.update({
-  id: '/24-the-haircare-challenge',
-  path: '/24-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R23TheHaircareChallengeRoute = R23TheHaircareChallengeRouteImport.update({
-  id: '/23-the-haircare-challenge',
-  path: '/23-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R22TheHaircareChallengeRoute = R22TheHaircareChallengeRouteImport.update({
-  id: '/22-the-haircare-challenge',
-  path: '/22-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R21TheHaircareChallengeRoute = R21TheHaircareChallengeRouteImport.update({
-  id: '/21-the-haircare-challenge',
-  path: '/21-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R20TheHaircareChallengeRoute = R20TheHaircareChallengeRouteImport.update({
-  id: '/20-the-haircare-challenge',
-  path: '/20-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R19TheHaircareChallengeRoute = R19TheHaircareChallengeRouteImport.update({
-  id: '/19-the-haircare-challenge',
-  path: '/19-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R18TheHaircareChallengeRoute = R18TheHaircareChallengeRouteImport.update({
-  id: '/18-the-haircare-challenge',
-  path: '/18-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R17TheHaircareChallengeRoute = R17TheHaircareChallengeRouteImport.update({
-  id: '/17-the-haircare-challenge',
-  path: '/17-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R14TheHaircareChallengeRoute = R14TheHaircareChallengeRouteImport.update({
-  id: '/14-the-haircare-challenge',
-  path: '/14-the-haircare-challenge',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R14NativeRoute = R14NativeRouteImport.update({
-  id: '/14-native',
-  path: '/14-native',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const TheHaircareChallengeRoute = TheHaircareChallengeRouteImport.update({
+  id: '/the-haircare-challenge',
+  path: '/the-haircare-challenge',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreatorsIndexRoute = CreatorsIndexRouteImport.update({
@@ -139,15 +145,45 @@ const CreatorsIndexRoute = CreatorsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => CreatorsRoute,
 } as any)
+const CreatorsHubRoute = CreatorsHubRouteImport.update({
+  id: '/hub',
+  path: '/hub',
+  getParentRoute: () => CreatorsRoute,
+} as any)
 const CreatorsTermsRoute = CreatorsTermsRouteImport.update({
   id: '/terms',
   path: '/terms',
   getParentRoute: () => CreatorsRoute,
 } as any)
-const CreatorsHubRoute = CreatorsHubRouteImport.update({
-  id: '/hub',
-  path: '/hub',
-  getParentRoute: () => CreatorsRoute,
+const CreatorsHubIndexRoute = CreatorsHubIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CreatorsHubRoute,
+} as any)
+const CreatorsHubFaqRoute = CreatorsHubFaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => CreatorsHubRoute,
+} as any)
+const CreatorsHubProgramRoute = CreatorsHubProgramRouteImport.update({
+  id: '/program',
+  path: '/program',
+  getParentRoute: () => CreatorsHubRoute,
+} as any)
+const CreatorsHubRewardsRoute = CreatorsHubRewardsRouteImport.update({
+  id: '/rewards',
+  path: '/rewards',
+  getParentRoute: () => CreatorsHubRoute,
+} as any)
+const CreatorsHubStartRoute = CreatorsHubStartRouteImport.update({
+  id: '/start',
+  path: '/start',
+  getParentRoute: () => CreatorsHubRoute,
+} as any)
+const CreatorsHubTipsRoute = CreatorsHubTipsRouteImport.update({
+  id: '/tips',
+  path: '/tips',
+  getParentRoute: () => CreatorsHubRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -171,9 +207,15 @@ export interface FileRoutesByFullPath {
   '/backup-14-the-haircare-challenge': typeof Backup14TheHaircareChallengeRoute
   '/creators': typeof CreatorsRouteWithChildren
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
-  '/creators/hub': typeof CreatorsHubRoute
+  '/creators/hub': typeof CreatorsHubRouteWithChildren
   '/creators/terms': typeof CreatorsTermsRoute
   '/creators/': typeof CreatorsIndexRoute
+  '/creators/hub/faq': typeof CreatorsHubFaqRoute
+  '/creators/hub/program': typeof CreatorsHubProgramRoute
+  '/creators/hub/rewards': typeof CreatorsHubRewardsRoute
+  '/creators/hub/start': typeof CreatorsHubStartRoute
+  '/creators/hub/tips': typeof CreatorsHubTipsRoute
+  '/creators/hub/': typeof CreatorsHubIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -195,9 +237,14 @@ export interface FileRoutesByTo {
   '/30-the-haircare-challenge': typeof R30TheHaircareChallengeRoute
   '/backup-14-the-haircare-challenge': typeof Backup14TheHaircareChallengeRoute
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
-  '/creators/hub': typeof CreatorsHubRoute
   '/creators/terms': typeof CreatorsTermsRoute
   '/creators': typeof CreatorsIndexRoute
+  '/creators/hub/faq': typeof CreatorsHubFaqRoute
+  '/creators/hub/program': typeof CreatorsHubProgramRoute
+  '/creators/hub/rewards': typeof CreatorsHubRewardsRoute
+  '/creators/hub/start': typeof CreatorsHubStartRoute
+  '/creators/hub/tips': typeof CreatorsHubTipsRoute
+  '/creators/hub': typeof CreatorsHubIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -221,9 +268,15 @@ export interface FileRoutesById {
   '/backup-14-the-haircare-challenge': typeof Backup14TheHaircareChallengeRoute
   '/creators': typeof CreatorsRouteWithChildren
   '/the-haircare-challenge': typeof TheHaircareChallengeRoute
-  '/creators/hub': typeof CreatorsHubRoute
+  '/creators/hub': typeof CreatorsHubRouteWithChildren
   '/creators/terms': typeof CreatorsTermsRoute
   '/creators/': typeof CreatorsIndexRoute
+  '/creators/hub/faq': typeof CreatorsHubFaqRoute
+  '/creators/hub/program': typeof CreatorsHubProgramRoute
+  '/creators/hub/rewards': typeof CreatorsHubRewardsRoute
+  '/creators/hub/start': typeof CreatorsHubStartRoute
+  '/creators/hub/tips': typeof CreatorsHubTipsRoute
+  '/creators/hub/': typeof CreatorsHubIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -251,6 +304,12 @@ export interface FileRouteTypes {
     | '/creators/hub'
     | '/creators/terms'
     | '/creators/'
+    | '/creators/hub/faq'
+    | '/creators/hub/program'
+    | '/creators/hub/rewards'
+    | '/creators/hub/start'
+    | '/creators/hub/tips'
+    | '/creators/hub/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -272,9 +331,14 @@ export interface FileRouteTypes {
     | '/30-the-haircare-challenge'
     | '/backup-14-the-haircare-challenge'
     | '/the-haircare-challenge'
-    | '/creators/hub'
     | '/creators/terms'
     | '/creators'
+    | '/creators/hub/faq'
+    | '/creators/hub/program'
+    | '/creators/hub/rewards'
+    | '/creators/hub/start'
+    | '/creators/hub/tips'
+    | '/creators/hub'
   id:
     | '__root__'
     | '/'
@@ -300,6 +364,12 @@ export interface FileRouteTypes {
     | '/creators/hub'
     | '/creators/terms'
     | '/creators/'
+    | '/creators/hub/faq'
+    | '/creators/hub/program'
+    | '/creators/hub/rewards'
+    | '/creators/hub/start'
+    | '/creators/hub/tips'
+    | '/creators/hub/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -327,130 +397,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/the-haircare-challenge': {
-      id: '/the-haircare-challenge'
-      path: '/the-haircare-challenge'
-      fullPath: '/the-haircare-challenge'
-      preLoaderRoute: typeof TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/creators': {
-      id: '/creators'
-      path: '/creators'
-      fullPath: '/creators'
-      preLoaderRoute: typeof CreatorsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/backup-14-the-haircare-challenge': {
-      id: '/backup-14-the-haircare-challenge'
-      path: '/backup-14-the-haircare-challenge'
-      fullPath: '/backup-14-the-haircare-challenge'
-      preLoaderRoute: typeof Backup14TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/30-the-haircare-challenge': {
-      id: '/30-the-haircare-challenge'
-      path: '/30-the-haircare-challenge'
-      fullPath: '/30-the-haircare-challenge'
-      preLoaderRoute: typeof R30TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/29-the-haircare-challenge': {
-      id: '/29-the-haircare-challenge'
-      path: '/29-the-haircare-challenge'
-      fullPath: '/29-the-haircare-challenge'
-      preLoaderRoute: typeof R29TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/28-the-haircare-challenge': {
-      id: '/28-the-haircare-challenge'
-      path: '/28-the-haircare-challenge'
-      fullPath: '/28-the-haircare-challenge'
-      preLoaderRoute: typeof R28TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/27-the-haircare-challenge': {
-      id: '/27-the-haircare-challenge'
-      path: '/27-the-haircare-challenge'
-      fullPath: '/27-the-haircare-challenge'
-      preLoaderRoute: typeof R27TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/26-the-haircare-challenge': {
-      id: '/26-the-haircare-challenge'
-      path: '/26-the-haircare-challenge'
-      fullPath: '/26-the-haircare-challenge'
-      preLoaderRoute: typeof R26TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/25-the-haircare-challenge': {
-      id: '/25-the-haircare-challenge'
-      path: '/25-the-haircare-challenge'
-      fullPath: '/25-the-haircare-challenge'
-      preLoaderRoute: typeof R25TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/24-the-haircare-challenge': {
-      id: '/24-the-haircare-challenge'
-      path: '/24-the-haircare-challenge'
-      fullPath: '/24-the-haircare-challenge'
-      preLoaderRoute: typeof R24TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/23-the-haircare-challenge': {
-      id: '/23-the-haircare-challenge'
-      path: '/23-the-haircare-challenge'
-      fullPath: '/23-the-haircare-challenge'
-      preLoaderRoute: typeof R23TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/22-the-haircare-challenge': {
-      id: '/22-the-haircare-challenge'
-      path: '/22-the-haircare-challenge'
-      fullPath: '/22-the-haircare-challenge'
-      preLoaderRoute: typeof R22TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/21-the-haircare-challenge': {
-      id: '/21-the-haircare-challenge'
-      path: '/21-the-haircare-challenge'
-      fullPath: '/21-the-haircare-challenge'
-      preLoaderRoute: typeof R21TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/20-the-haircare-challenge': {
-      id: '/20-the-haircare-challenge'
-      path: '/20-the-haircare-challenge'
-      fullPath: '/20-the-haircare-challenge'
-      preLoaderRoute: typeof R20TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/19-the-haircare-challenge': {
-      id: '/19-the-haircare-challenge'
-      path: '/19-the-haircare-challenge'
-      fullPath: '/19-the-haircare-challenge'
-      preLoaderRoute: typeof R19TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/18-the-haircare-challenge': {
-      id: '/18-the-haircare-challenge'
-      path: '/18-the-haircare-challenge'
-      fullPath: '/18-the-haircare-challenge'
-      preLoaderRoute: typeof R18TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/17-the-haircare-challenge': {
-      id: '/17-the-haircare-challenge'
-      path: '/17-the-haircare-challenge'
-      fullPath: '/17-the-haircare-challenge'
-      preLoaderRoute: typeof R17TheHaircareChallengeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/14-the-haircare-challenge': {
-      id: '/14-the-haircare-challenge'
-      path: '/14-the-haircare-challenge'
-      fullPath: '/14-the-haircare-challenge'
-      preLoaderRoute: typeof R14TheHaircareChallengeRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/14-native': {
@@ -460,11 +411,130 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof R14NativeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/14-the-haircare-challenge': {
+      id: '/14-the-haircare-challenge'
+      path: '/14-the-haircare-challenge'
+      fullPath: '/14-the-haircare-challenge'
+      preLoaderRoute: typeof R14TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/17-the-haircare-challenge': {
+      id: '/17-the-haircare-challenge'
+      path: '/17-the-haircare-challenge'
+      fullPath: '/17-the-haircare-challenge'
+      preLoaderRoute: typeof R17TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/18-the-haircare-challenge': {
+      id: '/18-the-haircare-challenge'
+      path: '/18-the-haircare-challenge'
+      fullPath: '/18-the-haircare-challenge'
+      preLoaderRoute: typeof R18TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/19-the-haircare-challenge': {
+      id: '/19-the-haircare-challenge'
+      path: '/19-the-haircare-challenge'
+      fullPath: '/19-the-haircare-challenge'
+      preLoaderRoute: typeof R19TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/20-the-haircare-challenge': {
+      id: '/20-the-haircare-challenge'
+      path: '/20-the-haircare-challenge'
+      fullPath: '/20-the-haircare-challenge'
+      preLoaderRoute: typeof R20TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/21-the-haircare-challenge': {
+      id: '/21-the-haircare-challenge'
+      path: '/21-the-haircare-challenge'
+      fullPath: '/21-the-haircare-challenge'
+      preLoaderRoute: typeof R21TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/22-the-haircare-challenge': {
+      id: '/22-the-haircare-challenge'
+      path: '/22-the-haircare-challenge'
+      fullPath: '/22-the-haircare-challenge'
+      preLoaderRoute: typeof R22TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/23-the-haircare-challenge': {
+      id: '/23-the-haircare-challenge'
+      path: '/23-the-haircare-challenge'
+      fullPath: '/23-the-haircare-challenge'
+      preLoaderRoute: typeof R23TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/24-the-haircare-challenge': {
+      id: '/24-the-haircare-challenge'
+      path: '/24-the-haircare-challenge'
+      fullPath: '/24-the-haircare-challenge'
+      preLoaderRoute: typeof R24TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/25-the-haircare-challenge': {
+      id: '/25-the-haircare-challenge'
+      path: '/25-the-haircare-challenge'
+      fullPath: '/25-the-haircare-challenge'
+      preLoaderRoute: typeof R25TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/26-the-haircare-challenge': {
+      id: '/26-the-haircare-challenge'
+      path: '/26-the-haircare-challenge'
+      fullPath: '/26-the-haircare-challenge'
+      preLoaderRoute: typeof R26TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/27-the-haircare-challenge': {
+      id: '/27-the-haircare-challenge'
+      path: '/27-the-haircare-challenge'
+      fullPath: '/27-the-haircare-challenge'
+      preLoaderRoute: typeof R27TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/28-the-haircare-challenge': {
+      id: '/28-the-haircare-challenge'
+      path: '/28-the-haircare-challenge'
+      fullPath: '/28-the-haircare-challenge'
+      preLoaderRoute: typeof R28TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/29-the-haircare-challenge': {
+      id: '/29-the-haircare-challenge'
+      path: '/29-the-haircare-challenge'
+      fullPath: '/29-the-haircare-challenge'
+      preLoaderRoute: typeof R29TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/30-the-haircare-challenge': {
+      id: '/30-the-haircare-challenge'
+      path: '/30-the-haircare-challenge'
+      fullPath: '/30-the-haircare-challenge'
+      preLoaderRoute: typeof R30TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/backup-14-the-haircare-challenge': {
+      id: '/backup-14-the-haircare-challenge'
+      path: '/backup-14-the-haircare-challenge'
+      fullPath: '/backup-14-the-haircare-challenge'
+      preLoaderRoute: typeof Backup14TheHaircareChallengeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creators': {
+      id: '/creators'
+      path: '/creators'
+      fullPath: '/creators'
+      preLoaderRoute: typeof CreatorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/the-haircare-challenge': {
+      id: '/the-haircare-challenge'
+      path: '/the-haircare-challenge'
+      fullPath: '/the-haircare-challenge'
+      preLoaderRoute: typeof TheHaircareChallengeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/creators/': {
@@ -474,13 +544,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CreatorsIndexRouteImport
       parentRoute: typeof CreatorsRoute
     }
-    '/creators/terms': {
-      id: '/creators/terms'
-      path: '/terms'
-      fullPath: '/creators/terms'
-      preLoaderRoute: typeof CreatorsTermsRouteImport
-      parentRoute: typeof CreatorsRoute
-    }
     '/creators/hub': {
       id: '/creators/hub'
       path: '/hub'
@@ -488,17 +551,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CreatorsHubRouteImport
       parentRoute: typeof CreatorsRoute
     }
+    '/creators/terms': {
+      id: '/creators/terms'
+      path: '/terms'
+      fullPath: '/creators/terms'
+      preLoaderRoute: typeof CreatorsTermsRouteImport
+      parentRoute: typeof CreatorsRoute
+    }
+    '/creators/hub/': {
+      id: '/creators/hub/'
+      path: '/'
+      fullPath: '/creators/hub/'
+      preLoaderRoute: typeof CreatorsHubIndexRouteImport
+      parentRoute: typeof CreatorsHubRoute
+    }
+    '/creators/hub/faq': {
+      id: '/creators/hub/faq'
+      path: '/faq'
+      fullPath: '/creators/hub/faq'
+      preLoaderRoute: typeof CreatorsHubFaqRouteImport
+      parentRoute: typeof CreatorsHubRoute
+    }
+    '/creators/hub/program': {
+      id: '/creators/hub/program'
+      path: '/program'
+      fullPath: '/creators/hub/program'
+      preLoaderRoute: typeof CreatorsHubProgramRouteImport
+      parentRoute: typeof CreatorsHubRoute
+    }
+    '/creators/hub/rewards': {
+      id: '/creators/hub/rewards'
+      path: '/rewards'
+      fullPath: '/creators/hub/rewards'
+      preLoaderRoute: typeof CreatorsHubRewardsRouteImport
+      parentRoute: typeof CreatorsHubRoute
+    }
+    '/creators/hub/start': {
+      id: '/creators/hub/start'
+      path: '/start'
+      fullPath: '/creators/hub/start'
+      preLoaderRoute: typeof CreatorsHubStartRouteImport
+      parentRoute: typeof CreatorsHubRoute
+    }
+    '/creators/hub/tips': {
+      id: '/creators/hub/tips'
+      path: '/tips'
+      fullPath: '/creators/hub/tips'
+      preLoaderRoute: typeof CreatorsHubTipsRouteImport
+      parentRoute: typeof CreatorsHubRoute
+    }
   }
 }
 
+interface CreatorsHubRouteChildren {
+  CreatorsHubFaqRoute: typeof CreatorsHubFaqRoute
+  CreatorsHubProgramRoute: typeof CreatorsHubProgramRoute
+  CreatorsHubRewardsRoute: typeof CreatorsHubRewardsRoute
+  CreatorsHubStartRoute: typeof CreatorsHubStartRoute
+  CreatorsHubTipsRoute: typeof CreatorsHubTipsRoute
+  CreatorsHubIndexRoute: typeof CreatorsHubIndexRoute
+}
+
+const CreatorsHubRouteChildren: CreatorsHubRouteChildren = {
+  CreatorsHubFaqRoute: CreatorsHubFaqRoute,
+  CreatorsHubProgramRoute: CreatorsHubProgramRoute,
+  CreatorsHubRewardsRoute: CreatorsHubRewardsRoute,
+  CreatorsHubStartRoute: CreatorsHubStartRoute,
+  CreatorsHubTipsRoute: CreatorsHubTipsRoute,
+  CreatorsHubIndexRoute: CreatorsHubIndexRoute,
+}
+
+const CreatorsHubRouteWithChildren = CreatorsHubRoute._addFileChildren(
+  CreatorsHubRouteChildren,
+)
+
 interface CreatorsRouteChildren {
-  CreatorsHubRoute: typeof CreatorsHubRoute
+  CreatorsHubRoute: typeof CreatorsHubRouteWithChildren
   CreatorsTermsRoute: typeof CreatorsTermsRoute
   CreatorsIndexRoute: typeof CreatorsIndexRoute
 }
 
 const CreatorsRouteChildren: CreatorsRouteChildren = {
-  CreatorsHubRoute: CreatorsHubRoute,
+  CreatorsHubRoute: CreatorsHubRouteWithChildren,
   CreatorsTermsRoute: CreatorsTermsRoute,
   CreatorsIndexRoute: CreatorsIndexRoute,
 }
@@ -532,3 +666,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

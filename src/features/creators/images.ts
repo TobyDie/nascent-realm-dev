@@ -18,6 +18,8 @@ export const FULL_WIDTHS = [500, 800, 1200, 1600];
 export const COLUMN_WIDTHS = [500, 800, 1200];
 /** Widths for a small, always-constrained image. */
 export const SMALL_WIDTHS = [500, 800];
+/** Widths for a thumbnail — the reward rows on /creators/hub/rewards. */
+export const THUMB_WIDTHS = [200, 400];
 
 /** One transformed variant. */
 export function cdn(src: string, width: number): string {
@@ -49,6 +51,9 @@ export const IMG = {
   perkGifts: `${ORIGIN}/creators/Unlock-gifts-and-the-founding-draw.webp`,
   perkLab: `${ORIGIN}/creators/Hairqare-Lab-is-yours-free-for-life-3.webp`,
   perkForLife: `${ORIGIN}/creators/Keep-earning-for-life-4.webp`,
+
+  /** Hub /program banner — 1672×941 (16:9). Above the fold, the LCP element. */
+  hubProgramBanner: `${ORIGIN}/creators/Sarah-1.4.webp`,
 
   // Placeholders still awaiting real art (see README "Image swap map").
   square: `${ORIGIN}/site-assets/placeholder-square.webp`,

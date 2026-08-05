@@ -3,7 +3,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useReducedMotion } from "../ui/useReducedMotion";
 import { JOURNEY } from "../copy/creators";
 import {
-  COMMISSION_PER_SALE,
   VIEWS_TARGET,
   monthlyEarnings,
   totalRewardValue,
@@ -368,8 +367,11 @@ export function BuildYourJourney() {
                 <p className="mt-3 text-sm italic text-ink/65">
                   {JOURNEY.salesCaption}
                 </p>
+                {/* The maths still uses journey.ts's COMMISSION_PER_SALE — 50%
+                    of the $37 Challenge — but the per-sale figure is no longer
+                    quoted to creators. */}
                 <p className="mt-1 text-[0.7rem] text-ink/70">
-                  50% of every Challenge sale, up to {usd(COMMISSION_PER_SALE, true)} each.
+                  50% of every Challenge sale.
                 </p>
               </div>
             </div>

@@ -11,163 +11,505 @@
  */
 
 import { MISSION } from "./creators";
+import { IMG } from "../images";
+import type { HubTabPath } from "./hub-nav";
 
 export const INTRO = {
   eyebrow: "Hairqare Creators",
-  title: "Everything you need to know",
+  title: "Welcome to the Founding Crew",
   lede: [
-    "Share your real hair journey in your own way.",
-    "Use your own words, your own style, and your own language.",
-    "No scripts. No acting.",
-    "Earn rewards for posting, views, and sales.",
+    "You're in. Congratulations.",
+    "Share your real hair journey in your own way — your own words, your own style, your own language. No scripts. No acting.",
   ],
-  codeNote:
-    "Your personal code and link are in your acceptance email. Lost it? Email us and we'll send it again the same day.",
   action: {
     title: "Posted a new video?",
+    // Says "the link to your posted video" rather than "the link", because a
+    // creator also has a Challenge link and the two were being confused.
     body: [
-      "Send us the link so we can count it.",
-      "TikTok and Instagram both count.",
+      "Copy the link to your posted TikTok or Instagram Reel and send it to us so we can count it.",
     ],
-    cta: "Submit a video link",
+    cta: "Submit my video",
   },
+};
+
+/**
+ * The welcome block that opens the hub, before the four steps.
+ *
+ * Written for someone who has never been in an affiliate or creator program
+ * and would not recognise the words "code", "link", or "commission" as things
+ * that belong to them. Nothing here assumes prior knowledge.
+ */
+export const WELCOME = {
+  /**
+   * Rendered as a highlighted callout rather than body copy: "bookmark this"
+   * is the one instruction that changes how a creator uses the hub for the
+   * next three months, and as plain paragraphs it read straight past.
+   */
+  homeBase: {
+    title: "This page is your home base.",
+    body: "The form for sending us your videos, the rules, the rewards, and every answer — it all lives here.",
+    action: "Bookmark it, so you never have to dig through your emails again.",
+  },
+
+  cardsTitle: "Everything you need to know",
+  cardsIntroTitle: "First time doing something like this?",
+  cardsIntro: [
+    "Read these before you post.",
+    "It takes about five minutes, and they cover what counts as a video, what to avoid, and how your rewards work.",
+  ],
+
+  questions: "Questions, anytime:",
+};
+
+/**
+ * Copy for /creators/hub/start — the walkthrough a creator reads once, on
+ * their first day.
+ *
+ * Written for someone who has never been in an affiliate or creator program
+ * and would not recognise the words "code", "link", or "commission" as things
+ * that belong to them. Nothing here assumes prior knowledge.
+ */
+export const START = {
+  lede: ["What to do, in order.", "Nothing here needs our approval. You post, then you tell us."],
+
+  /**
+   * Always "your Challenge link" here, never "your link". A creator deals with
+   * two different links — the Challenge link that goes in their bio, and the
+   * link to a video they just posted, which they send to us. Calling both of
+   * them "your link" was making people submit the wrong one.
+   */
+  codeTitle: "Your code and your Challenge link",
+  codeIntro: "Open your acceptance email. It has two things that are yours alone:",
+  codeItems: [
+    {
+      term: "Your code",
+      def: "A short word, like SARA. You say it or show it in your videos, and people type it at checkout.",
+    },
+    {
+      term: "Your Challenge link",
+      def: "Your own web address for the Challenge. You put it in your profile on TikTok or Instagram, and people tap it to join.",
+    },
+  ],
+  codeWhy: [
+    "Either one tells us that a sale came from you. That is how you get paid.",
+    "So keep that email somewhere safe. Everything starts from there.",
+    "Lost it? Email us and we'll send it again the same day.",
+  ],
+
+  stepsTitle: "Your first steps",
+};
+
+/**
+ * How to get the Challenge link into a profile, per platform.
+ *
+ * Sits behind a disclosure inside step 2 rather than in the step flow: it's
+ * reference a creator needs once, on one platform, and at full weight it
+ * buried the five steps it was meant to support.
+ */
+export const PLATFORM_GUIDE = {
+  summary: "How do I add my Challenge link to my profile?",
+  platforms: [
+    {
+      name: "On Instagram",
+      steps: [
+        "Open your profile.",
+        "Tap Edit profile.",
+        "Tap Links.",
+        "Tap Add external link.",
+        "Paste your personal Challenge link and save it.",
+      ],
+      note: "In your video, you can say:",
+      say: "Use my code SARA when you join, or tap the link in my bio.",
+    },
+    {
+      name: "On TikTok",
+      steps: [
+        "Open your profile.",
+        "Tap Edit profile.",
+        "Look for Links or Website.",
+        "If you see it, paste your personal Challenge link and save it.",
+      ],
+      note: "If you do not see the website option, don't worry. Say and show your personal code in every video instead:",
+      say: "Use my code SARA when you join the Challenge.",
+    },
+  ],
+  caution:
+    "Do not rely on putting a link in a caption or comment. Direct people to your profile link or give them your code.",
 };
 
 // ─── Tier 0: what this program actually is ────────────────────────────────────
 // For anyone who lands straight on the hub and never saw /creators. Sarah's
 // letter is imported, not copied, so the story stays in one place.
 
+/**
+ * This page answers "what is this, and what am I meant to do?" — nothing else.
+ * No reward amounts and no earning breakdown: those belong on Rewards & pay,
+ * and repeating them here is what made the old ways-you-earn table confusing.
+ */
 export const PROGRAM = {
   what: [
-    "Hairqare Creators is a small founding crew of Hairqare students.",
-    "Not hired influencers. Real women who did the Challenge.",
-    "Your account. Your words. Your style. Any language.",
-    "When your story helps another woman join the 14-Day Haircare Challenge, you earn.",
+    "Hairqare Creators is a small crew of Hairqare students.",
+    "Not paid influencers. Real women who did the Challenge themselves.",
+    "You tell people what happened to your hair. When someone joins the Challenge because of you, you earn.",
   ],
+
   whyTitle: "Why students, not influencers",
   // Sarah's message, trimmed to the three beats that matter here.
   why: [MISSION.letter[1], MISSION.letter[2], MISSION.letter[4]],
   signature: MISSION.signature,
-  waysTitle: "The ways you earn",
-  ways: [
+
+  asksTitle: "What we ask of you",
+  asks: [
+    "Tell your own story, in your own words. Your account, your style, your language.",
+    "Post at least 5 videos. Post more if you enjoy it.",
+    "Tag @hairqare and say your code, so we know the video is yours.",
+    "We never send you a script. There is nothing to learn by heart.",
+  ],
+
+  /**
+   * A short, visual look at what's waiting — not a pitch. Whoever reads this
+   * has already applied and been accepted, so the job is to get them posting,
+   * not to sell them the program again. The full detail (how views are
+   * counted, how payouts work, what can cancel a reward) stays on Rewards &
+   * pay; these are one line each on purpose.
+   *
+   * Images are the /creators PERKS art, reused as-is. Deliberately different
+   * files from the ones on Rewards & pay so the two pages don't look identical.
+   *
+   * Two things this must never say, per Toby: no per-sale cap figure, and no
+   * promise that the 50% rate is permanent.
+   */
+  rewardsTitle: "What you can earn",
+  rewardsCards: [
     {
-      label: "Every sale",
-      body: "50% of every $37 Challenge sale through your code or link, up to $18.50 each.",
-      href: "#earn",
+      eyebrow: "Every enrollment",
+      headline: "You earn 50% of every enrollment",
+      body: "Someone enrolls in the Challenge with your code or link, and half of it is yours.",
+      image: IMG.perkEarn,
     },
     {
-      label: "Post 5 videos",
-      body: "A $37 gift pass for someone you love, a Hairqare Lab draw entry, and Merely priority access.",
-      href: "#earn",
+      eyebrow: "Post 5 videos",
+      headline: "Rewards just for showing up",
+      body: "A gift pass for someone you love, and a place in the draw for Hairqare Lab.",
+      image: IMG.perkGifts,
     },
     {
-      label: "100,000 views",
-      body: "The full $997 Hairqare Lab, free for life.",
-      href: "#earn",
+      eyebrow: "Reach 100,000 views",
+      headline: "Hairqare Lab, free for life",
+      body: "The full $997 program, yours to keep.",
+      image: IMG.perkLab,
     },
     {
-      label: "Founding status",
-      body: "Your code, your link, and your 50% rate stay yours for life.",
-      href: "#paid",
+      eyebrow: "Founding creator",
+      headline: "You're in the first crew",
+      body: "Your own code and your own link, chosen by hand.",
+      image: IMG.perkForLife,
     },
   ],
-  waysNote: "Every reward stacks. The details are in section 02.",
+  rewardsNudge:
+    "You don't have to claim any of this. Post your videos, send us the links, and we do the counting.",
+
   notYetApplied: "Haven't applied yet?",
   notYetLink: "Read the program page",
 };
 
 // ─── Tier 1: the essentials ───────────────────────────────────────────────────
 
-export const START_STEPS: { step: string; body: string[] }[] = [
+/**
+ * One block per piece of step content, so the page can give each kind its own
+ * weight — a prompt list should not look like an instruction, and a line you
+ * can read aloud should not look like either.
+ *
+ *   text     plain lines, the step's own voice
+ *   list     bulleted, with an optional lead-in label
+ *   ordered  numbered sub-steps (taps to make, in order)
+ *   quote    something the creator can say word for word
+ *   note     a caution, held at lower contrast than an instruction
+ *   links    a way out to another hub page, mid-step
+ *   guide    renders PLATFORM_GUIDE behind a disclosure
+ */
+export type StepBlock =
+  | { kind: "text"; lines: string[] }
+  | { kind: "list"; label?: string; items: string[] }
+  | { kind: "ordered"; label?: string; items: string[] }
+  | { kind: "quote"; label?: string; text: string }
+  | { kind: "note"; text: string }
+  | {
+      kind: "links";
+      label?: string;
+      items: { label: string; to: HubTabPath; note: string }[];
+    }
+  | { kind: "guide" };
+
+export const START_STEPS: { step: string; blocks: StepBlock[] }[] = [
   {
-    step: "Get your code",
-    body: [
-      "It's in your acceptance email, with your personal link.",
-      "You can say the code in your videos (“use my code SARA at checkout”). The link goes in your bio if TikTok allows it for your account.",
+    step: "Save your code and Challenge link",
+    blocks: [
+      {
+        kind: "text",
+        lines: ["Find both in your acceptance email and keep them somewhere easy to access."],
+      },
+    ],
+  },
+  {
+    step: "Prepare your account",
+    blocks: [
+      {
+        kind: "list",
+        items: [
+          "Make sure your TikTok or Instagram account is public so we can see and count your videos.",
+          "Add your Challenge link to your profile if the option is available. Otherwise, use your personal code.",
+        ],
+      },
+      { kind: "guide" },
+      {
+        kind: "note",
+        text: "Do not rely on putting a link in a caption or comment. Direct people to your profile link or give them your code.",
+      },
     ],
   },
   {
     step: "Post your first video within 14 days",
-    body: [
-      "That keeps your founding member spot active.",
-      "Your real hair journey, in your own words.",
+    blocks: [
+      {
+        kind: "text",
+        lines: ["Posting your first video activates your founding creator spot."],
+      },
+      {
+        kind: "list",
+        label: "Your video can be simple:",
+        items: [
+          "What was happening with your hair before?",
+          "What did the Challenge help you understand?",
+          "What changed for you?",
+          "What would you tell another woman experiencing the same thing?",
+        ],
+      },
+      {
+        kind: "text",
+        lines: [
+          "Show your face, film your hands, or use a voiceover. Choose whatever feels natural.",
+        ],
+      },
+      {
+        kind: "list",
+        label: "Before posting:",
+        items: [
+          "Tag @hairqare.",
+          "Mention your code or say “link in my bio.”",
+          "Share only your honest experience. Do not promise that everyone will get the same result.",
+        ],
+      },
+      {
+        kind: "links",
+        label: "Not sure what to film, or what counts?",
+        items: [
+          {
+            label: "Tips & advice",
+            to: "/creators/hub/tips",
+            note: "Ideas for your video, and what works on camera.",
+          },
+          {
+            label: "Rules & FAQ",
+            to: "/creators/hub/faq",
+            note: "What counts as a video, and what to avoid.",
+          },
+        ],
+      },
+      {
+        kind: "text",
+        lines: [
+          "You do not need our approval before posting. Your account, your words, and your real story.",
+        ],
+      },
     ],
   },
   {
-    step: "Send us your video link",
-    body: [
-      "Use the submit button above.",
-      "No approval needed. Just post it, then tell us.",
+    step: "Send us your posted video",
+    blocks: [
+      {
+        kind: "ordered",
+        label: "After posting:",
+        items: [
+          "Open your TikTok video or Instagram Reel.",
+          "Tap Share.",
+          "Tap Copy link.",
+          "Return to this page and tap Submit my video.",
+          "Paste the video link and submit it.",
+        ],
+      },
+      { kind: "text", lines: ["Repeat this after every new video."] },
+      {
+        kind: "text",
+        lines: [
+          "Post and submit five videos to unlock your first creator rewards. Want to make more? Go for it.",
+        ],
+      },
     ],
   },
   {
-    step: "Keep going",
-    body: [
-      "Aim for at least 5 videos.",
-      "Want to post more? Go for it.",
-      "Everything you can earn is on this page.",
+    step: "Watch for your Friday update",
+    blocks: [
+      {
+        kind: "list",
+        label: "Every Friday, we'll email you an update showing:",
+        items: [
+          "Enrollments tracked through your code and link.",
+          "Your progress toward the next reward.",
+        ],
+      },
     ],
   },
 ];
 
-export const EARN_INTRO = "You can earn in 3 ways:";
+export const EARN_TITLE = "Three ways your videos pay you back";
+export const EARN_LEDE =
+  "You earn for posting, for being watched, and for every woman who joins because of you.";
 
-export const EARN_WAYS = ["Posting", "Views", "Sales"];
+/** Column headings for the rewards table. Hidden below cs, where it stacks. */
+export const REWARD_COLUMNS = { doing: "What you do", getting: "What you get" };
 
+/**
+ * Two short lines per reward, not four paragraphs.
+ *
+ * The operational detail that used to sit here — how to claim the 100k reward,
+ * the 30-day window that makes a reward final, what happens if you delete a
+ * counted video — all still exists, in the FAQ and the rules, which is where
+ * someone goes looking for it. Repeating it on the card made the page unreadable
+ * for the far more common visit, which is "remind me what I get".
+ */
+/**
+ * Rendered as a table: `label` is the narrow left column and has to stay short
+ * and consistent, so every row reads as the same kind of thing — the trigger
+ * that earns you something. `summary` is the reward itself.
+ */
 export const REWARDS: {
-  badge: string;
-  tone: "sand" | "gold" | "flame";
-  title: string;
+  key: string; // image lookup only
+  label: string;
   summary: string;
   details: string[];
 }[] = [
   {
-    badge: "5",
-    tone: "sand",
-    title: "Post 5 videos",
-    summary:
-      "A Better Hair Challenge gift pass, a draw entry, and early access to Merely.",
+    key: "5",
+    label: "Post 5 videos",
+    summary: "A gift pass for someone you love, a place in the draw, and early access to Merely.",
     details: [
-      "Post at least 5 videos. Want to post more? Go for it, there is no limit.",
-      "When you send us your fifth video you get three things: a Better Hair Challenge gift pass for someone you care about, your name in the draw for lifetime Hairqare Lab (one founding member wins it), and early access to Merely when it launches.",
-      "We check your links after your fifth video and email the gift pass within a few days. Nothing to claim.",
-      "These rewards are confirmed for now, and become final once each counted video has stayed live for 30 days. Deleting a counted video early can cancel a reward.",
+      "Send us your fifth video and all three are yours.",
+      "We email the gift pass within a few days. Nothing to claim.",
     ],
   },
   {
-    badge: "100k",
-    tone: "gold",
-    title: "Reach 100,000 views",
-    summary: "Hairqare Lab, free for life. Lifetime access to the full $997 program.",
+    key: "100k",
+    label: "Reach 100,000 views",
+    summary: "Hairqare Lab, free for life. The full $997 program.",
     details: [
-      "Every video that counts adds up. For each video we count the views it earned in its first 30 days.",
-      "TikTok and Instagram views both count. Organic views only.",
-      "To claim, email support with each video link, its posting date, and an analytics screenshot showing the views from its first 30 days. We check every claim.",
+      "TikTok and Instagram both count. Organic views only.",
+      "For each video, the views from its first 30 days count towards your total.",
     ],
   },
   {
-    badge: "%",
-    tone: "flame",
-    title: "Commission on every Challenge sale",
+    // Matches the eyebrow on the Program page card, so the two pages agree.
+    key: "%",
+    label: "Every enrollment",
     summary:
-      "50% of the Better Hair Challenge price actually paid, up to $18.50 per sale.",
-    details: [
-      "Every sale made through your code or link earns you a commission, from any platform you share on.",
-      "Taxes, refunds, order bumps, upsells, and other products are not included.",
-      "Your founding rate never goes down. You keep earning for as long as you're in the program.",
-      "You see your sales in the Friday email. Your commission is paid to the payment method you give us. Refunded orders are taken off.",
-    ],
+      "50% of every Challenge enrollment. Someone enrolls with your code or link, and half of it is yours.",
+    // Stays on the row: enrollments count from any platform, but views only
+    // count on TikTok and Instagram, so this can't move to the shared note.
+    details: ["Any enrollment counts, wherever you shared it."],
   },
 ];
 
-export const PAID_INTRO = "Every Friday you'll get an email showing:";
+// ─── Getting paid ─────────────────────────────────────────────────────────────
+// Same voice as Start here: one idea per line, no clauses stacked up.
 
-export const PAID_FACTS = ["Your sales", "Your commission"];
+export const PAID_INTRO = "Every Friday we email you an update showing:";
+
+export const PAID_FACTS = [
+  "Enrollments tracked through your code and link.",
+  "Your progress towards the next reward.",
+];
 
 export const PAID = [
-  "Your commission is paid to the payment method you give us.",
-  "You are paid for sales that were not refunded. If a sale is refunded, it is taken off your payout. A refund that comes in after a payout can be taken off a later one.",
+  "We pay your commission to the preferred payment method you gave us when you applied.",
+  "Want to change it? Email us and we'll update it for you.",
 ];
+
+/**
+ * Where to go for the detail this page deliberately no longer carries.
+ *
+ * Ordered by what someone standing on "Getting paid" actually wants next: the
+ * money questions first (refunds, sales without a code — the things people
+ * worry about once money is involved), then what keeps a video counting, and
+ * the legal text last, because almost nobody arrives here wanting it.
+ */
+export const PAY_LINKS = {
+  title: "More detail, if you need it",
+  items: [
+    {
+      label: "Money questions",
+      note: "Refunds, upsells, and enrollments without your code.",
+      to: "/creators/hub/faq" as const,
+      hash: "faq",
+    },
+    {
+      label: "The rules",
+      note: "What keeps a video counting.",
+      to: "/creators/hub/faq" as const,
+      hash: "rules",
+    },
+    {
+      label: "Program terms",
+      note: "The full legal detail.",
+      to: "/creators/terms" as const,
+      hash: undefined,
+    },
+  ],
+};
+
+/**
+ * Copy for the hub's earnings visualiser.
+ *
+ * The /creators version is written to persuade someone to apply ("everything
+ * you walk away with", "there is no version of this where you walk away with
+ * nothing"). Whoever reads this has already joined, so the labels here just
+ * describe what the sliders do.
+ *
+ * The reward names themselves are imported from JOURNEY so the two surfaces
+ * can't drift apart.
+ */
+export const EARNINGS = {
+  title: "See what it adds up to",
+  intro: "Move the sliders to see what your videos could add up to.",
+
+  postTitle: "You post",
+  postLabel: "I post 5 videos and tag @hairqare",
+  postSub: "Five is the baseline. There's no limit.",
+
+  viewsTitle: "People watch",
+  viewsHint: "On the way to Hairqare Lab",
+  viewsReached: "Hairqare Lab unlocked.",
+  viewsUnit: "views",
+
+  salesTitle: "People join",
+  salesHint: "People a month who join with your code or link",
+  salesUnit: "a month",
+
+  perMonth: "Per month",
+  perYear: "Per year",
+  saleNote: "50% of every Challenge enrollment.",
+
+  panelTitle: "What you'd have",
+  panelEmpty: "Switch on “I post 5 videos” to see what you'd unlock.",
+  totalLabel: "Rewards unlocked",
+
+  /**
+   * Our own illustrative note rather than the LOCKED EARNINGS_DISCLAIMER from
+   * ./compliance — that one is scoped to /creators S4 and ends "your code keeps
+   * earning for life", which is the permanence promise this hub no longer makes.
+   * This keeps the part that matters: the figures are illustrative.
+   */
+  note: "Illustrative only. What you earn depends on your videos and your audience. Most creators start small.",
+};
 
 // ─── Tier 2: reference ────────────────────────────────────────────────────────
 
@@ -317,9 +659,9 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string[] }[] }[
       {
         q: "How do I get paid?",
         a: [
-          "You earn 50% of the Challenge price actually paid through your code or link, up to $18.50 per sale.",
-          "We pay it to the payment method you give us.",
-          "You are paid for sales that were not refunded.",
+          "You earn 50% of every Challenge enrollment through your code or link.",
+          "We pay it to the preferred payment method you gave us when you applied.",
+          "You are paid for enrollments that were not refunded.",
         ],
       },
       {
@@ -360,10 +702,7 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string[] }[] }[
       },
       {
         q: "I'm still in the middle of the Challenge. Can I post already?",
-        a: [
-          "Yes, please do.",
-          "Filming while you live it makes the most honest content.",
-        ],
+        a: ["Yes, please do.", "Filming while you live it makes the most honest content."],
       },
       {
         q: "How do I claim the 100,000 view reward?",
