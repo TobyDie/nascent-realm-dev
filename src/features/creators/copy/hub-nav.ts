@@ -49,35 +49,39 @@ export const HUB_TABS: {
     to: "/creators/hub/start",
     label: "Start here",
     short: "Start",
-    blurb: "What your code and link are, and what to do first.",
+    blurb:
+      "Start here before you share your first video. This page gives you everything you need to begin with confidence: your personal code, your link, where to send us your posts, and the simple steps to make sure every video you create is counted properly toward your rewards.",
   },
   {
     id: "program",
     to: "/creators/hub/program",
     label: "The program",
     short: "Program",
-    blurb: "What Hairqare Creators is, and why it's students and not influencers.",
+    blurb: "Why we built this for students like you, and how your story can create real impact.",
   },
   {
     id: "rewards",
     to: "/creators/hub/rewards",
     label: "Rewards & pay",
     short: "Rewards",
-    blurb: "The three ways you earn, and how the money reaches you.",
+    blurb:
+      "All the practical details about the benefits and earnings you can get through the program.",
   },
   {
     id: "tips",
     to: "/creators/hub/tips",
     label: "Tips & advice",
     short: "Tips",
-    blurb: "Ideas for your next video, and what works on camera.",
+    blurb:
+      "Tips and tricks to start with confidence and make this a confidence-boosting experience for you!",
   },
   {
     id: "faq",
     to: "/creators/hub/faq",
     label: "Rules & FAQ",
     short: "Rules",
-    blurb: "Which videos count, the full rules, and every question answered.",
+    blurb:
+      "How to make your efforts pay off, what to avoid, and the answers to the most common questions so everything stays clear, fair, and easy.",
   },
 ];
 

@@ -1,13 +1,21 @@
 /**
  * All copy for Surface B (/creators/hub) — the post-acceptance creator hub.
  *
- * Written for a global audience: short sentences, plain words, one idea per
- * line. Several fields are arrays of lines rather than paragraphs, because the
- * page renders each line separately and that rhythm is what makes the page
- * skimmable in two minutes.
+ * Voice: Sarah, talking to a creator she is glad to have. Warm before
+ * instructive. The rules that follow are the same rules, but this hub invites
+ * rather than commands — "take a few minutes to read these", not "read these" —
+ * and an instruction carries the reason it exists ("so we can count it toward
+ * your rewards"). Reassurance is part of the information, not decoration.
  *
- * The program terms live in ./terms (their own page). `{{TBA}}` marks an open
- * decision — see ./tokens.
+ * Still written for a global audience: plain words, no idiom a non-native
+ * reader would trip on. Several fields are arrays of lines rather than
+ * paragraphs, because the page renders each line separately.
+ *
+ * The exceptions are deliberate. RULES, DOS, DONTS and ELIGIBLE stay plain and
+ * exact — they decide whether a video counts and whether someone gets paid, and
+ * softening them into "try to" and "it's best if" would buy warmth with
+ * ambiguity. The terms page (./terms) stays direct throughout for the same
+ * reason. `{{TBA}}` marks an open decision — see ./tokens.
  */
 
 import { MISSION } from "./creators";
@@ -17,16 +25,21 @@ import type { HubTabPath } from "./hub-nav";
 export const INTRO = {
   eyebrow: "Hairqare Creators",
   title: "Welcome to the Founding Crew",
+  // Sarah's voice, first person. The welcome is the one place she speaks to a
+  // creator directly on this page, so it opens with the greeting and only then
+  // says what the program is.
   lede: [
-    "You're in. Congratulations.",
-    "Share your real hair journey in your own way — your own words, your own style, your own language. No scripts. No acting.",
+    "You're officially in, and I'm so happy to have you here.",
+    "Hairqare Creators is not an influencer program. It's a small group of real Hairqare students sharing their honest hair journey in their own words, on their own account, in the way they would naturally tell a friend. No scripts, no acting, no pretending. Just your real experience, because that is what helps other women feel seen enough to start their own journey too.",
   ],
   action: {
     title: "Posted a new video?",
-    // Says "the link to your posted video" rather than "the link", because a
-    // creator also has a Challenge link and the two were being confused.
+    // Names the platforms rather than saying "the link", because a creator also
+    // has a Challenge link and the two were being confused. TikTok and
+    // Instagram only: those are the platforms ELIGIBLE and the view rewards
+    // actually count.
     body: [
-      "Copy the link to your posted TikTok or Instagram Reel and send it to us so we can count it.",
+      "Copy the link to your TikTok, Instagram Reel, or video post and send it to us here so we can count it toward your rewards.",
     ],
     cta: "Submit my video",
   },
@@ -47,15 +60,18 @@ export const WELCOME = {
    */
   homeBase: {
     title: "This page is your home base.",
-    body: "The form for sending us your videos, the rules, the rewards, and every answer — it all lives here.",
-    action: "Bookmark it, so you never have to dig through your emails again.",
+    // "in your hub", not "on this page": since the hub was split into six
+    // routes the rules and rewards are a click away, not here.
+    body: "Everything you need to participate is right here in your hub: where to send your videos, how your code and link work, what counts toward your rewards, what to avoid, and the answers to the questions that usually come up along the way.",
+    action: "Bookmark this page so you can come back anytime you need!",
   },
 
   cardsTitle: "Everything you need to know",
   cardsIntroTitle: "First time doing something like this?",
+  // One line, not two. The old second line promised "about five minutes" and
+  // then listed what the pages cover — both of which this line already does.
   cardsIntro: [
-    "Read these before you post.",
-    "It takes about five minutes, and they cover what counts as a video, what to avoid, and how your rewards work.",
+    "Take a few minutes to read through these pages so you know exactly how to share, how your rewards work, and how we keep this program honest, simple, and safe for everyone.",
   ],
 
   questions: "Questions, anytime:",
@@ -70,7 +86,10 @@ export const WELCOME = {
  * that belong to them. Nothing here assumes prior knowledge.
  */
 export const START = {
-  lede: ["What to do, in order.", "Nothing here needs our approval. You post, then you tell us."],
+  lede: [
+    "Here's everything you need to begin, in the order that makes it easiest.",
+    "Nothing here needs our approval first. You post in your own way, and then you tell us so we can count it.",
+  ],
 
   /**
    * Always "your Challenge link" here, never "your link". A creator deals with
@@ -79,21 +98,22 @@ export const START = {
    * them "your link" was making people submit the wrong one.
    */
   codeTitle: "Your code and your Challenge link",
-  codeIntro: "Open your acceptance email. It has two things that are yours alone:",
+  codeIntro:
+    "When you open your acceptance email, you'll find two things that belong to you alone:",
   codeItems: [
     {
       term: "Your code",
-      def: "A short word, like SARA. You say it or show it in your videos, and people type it at checkout.",
+      def: "A short word, like SARA. You can say it or show it in your videos, and people type it at checkout when they join.",
     },
     {
       term: "Your Challenge link",
-      def: "Your own web address for the Challenge. You put it in your profile on TikTok or Instagram, and people tap it to join.",
+      def: "Your own web address for the Challenge. It goes in your profile on TikTok or Instagram, and people can tap it to join.",
     },
   ],
   codeWhy: [
-    "Either one tells us that a sale came from you. That is how you get paid.",
-    "So keep that email somewhere safe. Everything starts from there.",
-    "Lost it? Email us and we'll send it again the same day.",
+    "Either one tells us that an enrollment came from you, and that is how your rewards find their way back to you.",
+    "So keep that email somewhere safe, because everything starts from there.",
+    "If you've lost it, just email us and we'll send it again the same day.",
   ],
 
   stepsTitle: "Your first steps",
@@ -129,12 +149,12 @@ export const PLATFORM_GUIDE = {
         "Look for Links or Website.",
         "If you see it, paste your personal Challenge link and save it.",
       ],
-      note: "If you do not see the website option, don't worry. Say and show your personal code in every video instead:",
+      note: "If you don't see the website option, don't worry at all. Just say and show your personal code in every video instead:",
       say: "Use my code SARA when you join the Challenge.",
     },
   ],
   caution:
-    "Do not rely on putting a link in a caption or comment. Direct people to your profile link or give them your code.",
+    "Links in captions and comments don't always work, so it's safest to point people to the link in your profile, or simply give them your code.",
 };
 
 // ─── Tier 0: what this program actually is ────────────────────────────────────
@@ -147,10 +167,12 @@ export const PLATFORM_GUIDE = {
  * and repeating them here is what made the old ways-you-earn table confusing.
  */
 export const PROGRAM = {
+  // Deliberately not a rerun of the Welcome lede, which already says "not an
+  // influencer program". This leads with why the crew exists instead.
   what: [
-    "Hairqare Creators is a small crew of Hairqare students.",
-    "Not paid influencers. Real women who did the Challenge themselves.",
-    "You tell people what happened to your hair. When someone joins the Challenge because of you, you earn.",
+    "Hairqare Creators is a small crew of Hairqare students who share what the Challenge did for their hair.",
+    "There are no paid influencers here. Every woman in the crew has lived it herself.",
+    "You tell people what happened to your hair, and when someone joins the Challenge because of you, you earn.",
   ],
 
   whyTitle: "Why students, not influencers",
@@ -161,9 +183,9 @@ export const PROGRAM = {
   asksTitle: "What we ask of you",
   asks: [
     "Tell your own story, in your own words. Your account, your style, your language.",
-    "Post at least 5 videos. Post more if you enjoy it.",
+    "Share at least 5 videos, and more if you enjoy it.",
     "Tag @hairqare and say your code, so we know the video is yours.",
-    "We never send you a script. There is nothing to learn by heart.",
+    "We never send you a script, and there is nothing to learn by heart.",
   ],
 
   /**
@@ -184,7 +206,7 @@ export const PROGRAM = {
     {
       eyebrow: "Every enrollment",
       headline: "You earn 50% of every enrollment",
-      body: "Someone enrolls in the Challenge with your code or link, and half of it is yours.",
+      body: "When someone enrolls in the Challenge with your code or link, half of it is yours.",
       image: IMG.perkEarn,
     },
     {
@@ -207,7 +229,7 @@ export const PROGRAM = {
     },
   ],
   rewardsNudge:
-    "You don't have to claim any of this. Post your videos, send us the links, and we do the counting.",
+    "There's nothing to claim and nothing to chase. You share your videos, send us the links, and we take care of the counting.",
 
   notYetApplied: "Haven't applied yet?",
   notYetLink: "Read the program page",
@@ -247,7 +269,9 @@ export const START_STEPS: { step: string; blocks: StepBlock[] }[] = [
     blocks: [
       {
         kind: "text",
-        lines: ["Find both in your acceptance email and keep them somewhere easy to access."],
+        lines: [
+          "You'll find both in your acceptance email. Keep them somewhere easy to reach, so they're there whenever you need them.",
+        ],
       },
     ],
   },
@@ -257,14 +281,14 @@ export const START_STEPS: { step: string; blocks: StepBlock[] }[] = [
       {
         kind: "list",
         items: [
-          "Make sure your TikTok or Instagram account is public so we can see and count your videos.",
-          "Add your Challenge link to your profile if the option is available. Otherwise, use your personal code.",
+          "Set your TikTok or Instagram account to public, so we can see your videos and count them toward your rewards.",
+          "Add your Challenge link to your profile if the option is there. If it isn't, your personal code works just as well.",
         ],
       },
       { kind: "guide" },
       {
         kind: "note",
-        text: "Do not rely on putting a link in a caption or comment. Direct people to your profile link or give them your code.",
+        text: "Links in captions and comments don't always work, so it's safest to point people to the link in your profile, or simply give them your code.",
       },
     ],
   },
@@ -273,7 +297,7 @@ export const START_STEPS: { step: string; blocks: StepBlock[] }[] = [
     blocks: [
       {
         kind: "text",
-        lines: ["Posting your first video activates your founding creator spot."],
+        lines: ["Posting your first video is what activates your founding creator spot."],
       },
       {
         kind: "list",
@@ -288,16 +312,16 @@ export const START_STEPS: { step: string; blocks: StepBlock[] }[] = [
       {
         kind: "text",
         lines: [
-          "Show your face, film your hands, or use a voiceover. Choose whatever feels natural.",
+          "Show your face, film your hands, or talk over the top. Whatever feels most natural to you is the right choice.",
         ],
       },
       {
         kind: "list",
         label: "Before posting:",
         items: [
-          "Tag @hairqare.",
-          "Mention your code or say “link in my bio.”",
-          "Share only your honest experience. Do not promise that everyone will get the same result.",
+          "Tag @hairqare, so we can find your video.",
+          "Mention your code, or say “link in my bio,” so people know where to go.",
+          "Share your honest experience. Please don't promise that everyone will get the same result, because every woman's hair is different.",
         ],
       },
       {
@@ -319,7 +343,7 @@ export const START_STEPS: { step: string; blocks: StepBlock[] }[] = [
       {
         kind: "text",
         lines: [
-          "You do not need our approval before posting. Your account, your words, and your real story.",
+          "You never need our approval before posting. It's your account, your words, and your real story.",
         ],
       },
     ],
@@ -338,11 +362,11 @@ export const START_STEPS: { step: string; blocks: StepBlock[] }[] = [
           "Paste the video link and submit it.",
         ],
       },
-      { kind: "text", lines: ["Repeat this after every new video."] },
+      { kind: "text", lines: ["Do the same after every new video you post."] },
       {
         kind: "text",
         lines: [
-          "Post and submit five videos to unlock your first creator rewards. Want to make more? Go for it.",
+          "Five videos is all it takes to unlock your first creator rewards. If you enjoy it and want to make more, please do!",
         ],
       },
     ],
@@ -395,7 +419,7 @@ export const REWARDS: {
     summary: "A gift pass for someone you love, a place in the draw, and early access to Merely.",
     details: [
       "Send us your fifth video and all three are yours.",
-      "We email the gift pass within a few days. Nothing to claim.",
+      "We'll email the gift pass within a few days, so there's nothing for you to claim.",
     ],
   },
   {
@@ -403,8 +427,8 @@ export const REWARDS: {
     label: "Reach 100,000 views",
     summary: "Hairqare Lab, free for life. The full $997 program.",
     details: [
-      "TikTok and Instagram both count. Organic views only.",
-      "For each video, the views from its first 30 days count towards your total.",
+      "TikTok and Instagram views both count, as long as they're organic.",
+      "For each video, the views from its first 30 days count toward your total.",
     ],
   },
   {
@@ -422,16 +446,16 @@ export const REWARDS: {
 // ─── Getting paid ─────────────────────────────────────────────────────────────
 // Same voice as Start here: one idea per line, no clauses stacked up.
 
-export const PAID_INTRO = "Every Friday we email you an update showing:";
+export const PAID_INTRO = "Every Friday, we'll email you an update showing:";
 
 export const PAID_FACTS = [
   "Enrollments tracked through your code and link.",
-  "Your progress towards the next reward.",
+  "Your progress toward the next reward.",
 ];
 
 export const PAID = [
-  "We pay your commission to the preferred payment method you gave us when you applied.",
-  "Want to change it? Email us and we'll update it for you.",
+  "We send your commission to the payment method you chose when you applied.",
+  "If you'd like to change it, just email us and we'll update it for you.",
 ];
 
 /**
@@ -483,7 +507,7 @@ export const EARNINGS = {
 
   postTitle: "You post",
   postLabel: "I post 5 videos and tag @hairqare",
-  postSub: "Five is the baseline. There's no limit.",
+  postSub: "Five is the baseline, and there's no limit.",
 
   viewsTitle: "People watch",
   viewsHint: "On the way to Hairqare Lab",
@@ -515,7 +539,7 @@ export const EARNINGS = {
 
 export const ELIGIBLE_TITLE = "Which videos count?";
 
-export const ELIGIBLE_INTRO = "Your video counts if it:";
+export const ELIGIBLE_INTRO = "Your video counts toward your rewards when it:";
 
 export const ELIGIBLE = [
   "Is posted on your own public TikTok or Instagram",
@@ -568,7 +592,8 @@ export const DONTS = [
   "Don't worry about fancy editing. Real videos work best",
 ];
 
-export const IDEAS_INTRO = "Need ideas? Try one of these.";
+export const IDEAS_INTRO =
+  "Not sure what to film? Here are a few ideas that work beautifully, and you can take any of them in your own direction.";
 
 export const IDEAS = [
   "Making your shampoo in your kitchen for the first time",
@@ -585,7 +610,7 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string[] }[] }[
       {
         q: "Do I need a big following?",
         a: [
-          "No.",
+          "No, not at all.",
           "Small creators earn too.",
           "What matters is real content. We read every application ourselves.",
         ],
@@ -601,8 +626,8 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string[] }[] }[
       {
         q: "Do I need to show my face?",
         a: [
-          "No.",
-          "Face on camera, hands only, or voiceover. All fine.",
+          "No, you don't.",
+          "Face on camera, hands only, or voiceover are all completely fine.",
           "Post in any language you like.",
         ],
       },
@@ -666,21 +691,24 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string[] }[] }[
       },
       {
         q: "Do I earn on the upsells?",
-        a: ["No.", "You earn on the Challenge only."],
+        a: ["No, not on the upsells.", "You earn on the Challenge itself."],
       },
       {
         q: "What if someone buys without my code or link?",
         a: [
-          "We can only pay for sales we can trace.",
-          "That's why saying your code in the video matters.",
+          "We can only pay for enrollments we can trace back to you.",
+          "That's why saying your code in the video matters so much.",
         ],
       },
       {
+        // Answers what is stable — the program, the code, the founding place —
+        // without putting a number on it. Deliberately silent on how long the
+        // 50% rate lasts: this hub neither promises it is permanent nor warns
+        // that it could change. Do not reintroduce a rate promise here.
         q: "Will this always be here?",
         a: [
-          "Yes.",
-          "Your code, your link, and your 50% founding rate are yours to keep.",
-          "Your terms stay the same as the program grows.",
+          "Yes, the program is here to stay.",
+          "Your code and your link are yours, and your place in the founding crew doesn't expire.",
         ],
       },
     ],
@@ -738,8 +766,8 @@ export const FAQ_GROUPS: { group: string; items: { q: string; a: string[] }[] }[
 export const SUPPORT = {
   title: "Need help?",
   body: [
-    "Email us anytime.",
-    "Payment, links, rewards, or questions. We're here to help.",
+    "You can email us anytime.",
+    "Payment, links, rewards, or anything you're wondering about — we're here to help.",
     "You can also just reply to any of our emails.",
   ],
   wellbeing:

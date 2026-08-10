@@ -18,7 +18,10 @@ export function RulesFaqPage() {
     <>
       <PageHead
         title="Rules & FAQ"
-        lede={["Everything you might need to look up, in one place."]}
+        lede={[
+          "Everything you might need to look up, in one place.",
+          "None of this is here to catch you out. It's here so the program stays clear, fair, and easy for everyone, and if you can't find your answer, just email us.",
+        ]}
       />
 
       <Section id="eligible" title={ELIGIBLE_TITLE}>
