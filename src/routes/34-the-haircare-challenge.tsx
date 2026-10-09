@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import pageHtml from "@/features/haircare-challenge-v32/page.html?raw";
+import pageHtml from "@/features/haircare-challenge-v34/page.html?raw";
 
-/* /32 is a Webflow export (built in Claude Design), served byte-for-byte so it
+/* /34 is a Webflow export (built in Claude Design), served byte-for-byte so it
    matches the design exactly. It bypasses the React shell: its own Webflow CSS
    and webflow.js would clash with the app's Tailwind styles. Assets live in
-   public/32-the-haircare-challenge-assets/. Tracking inside page.html mirrors
+   public/34-the-haircare-challenge-assets/. Tracking inside page.html mirrors
    the GTM / Converge / Clarity tags in __root.tsx; keep them in sync. */
 
-export const Route = createFileRoute("/32-the-haircare-challenge")({
+export const Route = createFileRoute("/34-the-haircare-challenge")({
   server: {
     handlers: {
       GET: () =>
@@ -24,6 +24,6 @@ export const Route = createFileRoute("/32-the-haircare-challenge")({
 });
 
 function FullPageLoad() {
-  if (typeof window !== "undefined") window.location.replace("/32-the-haircare-challenge");
+  if (typeof window !== "undefined") window.location.replace("/34-the-haircare-challenge");
   return null;
 }
